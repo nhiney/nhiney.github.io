@@ -1,0 +1,31 @@
+
+> portfolio@0.1.0 lint
+> eslint
+
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/mdx/MDXComponents.tsx
+  18:39  error    Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  29:3   warning  Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images          jsx-a11y/alt-text
+  33:3   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  35:3   error    Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/ThemeToggle.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/ThemeToggle.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+  14 |     if (savedTheme) {
+  15 |       setTheme(savedTheme);  react-hooks/set-state-in-effect
+
+✖ 5 problems (4 errors, 1 warning)
+

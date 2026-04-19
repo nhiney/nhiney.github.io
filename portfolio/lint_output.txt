@@ -1,0 +1,49 @@
+
+> portfolio@0.1.0 lint
+> eslint
+
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/mdx/MDXComponents.tsx
+   7:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  39:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  42:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  45:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  54:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/Badge.tsx
+  3:11  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/Card.tsx
+  3:11  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/Container.tsx
+  3:11  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/Section.tsx
+  3:11  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/ThemeToggle.tsx
+  13:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/nguyenlephong/Documents/Source/nhiney.github.io/portfolio/components/ui/ThemeToggle.tsx:13:7
+  11 |     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+  12 |     if (savedTheme) {
+> 13 |       setTheme(savedTheme);
+     |       ^^^^^^^^ Avoid calling setState() directly within an effect
+  14 |       document.documentElement.classList.toggle("dark", savedTheme === "dark");
+  15 |     } else {
+  16 |       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;  react-hooks/set-state-in-effect
+
+✖ 15 problems (15 errors, 0 warnings)
+
