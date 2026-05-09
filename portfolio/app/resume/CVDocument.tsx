@@ -2,7 +2,8 @@
 
 import { Phone, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/widgets/Icons";
-import { CV } from "@/data/cv";
+import { useCV, type Project } from "@/data/cv";
+import { useLanguage } from "@/context/LanguageContext";
 
 // ─── Internal building blocks ─────────────────────────────────────────────────
 
@@ -26,7 +27,7 @@ function Bullet({ children }: { children: React.ReactNode }) {
   );
 }
 
-function ProjectBlock({ project }: { project: typeof CV.projects[number] }) {
+function ProjectBlock({ project, t }: { project: Project; t: (key: string) => string }) {
   return (
     <article className="space-y-3">
       <header className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
@@ -42,12 +43,12 @@ function ProjectBlock({ project }: { project: typeof CV.projects[number] }) {
       </header>
 
       <p className="italic leading-7 text-foreground/75">
-        <span className="font-semibold not-italic text-foreground">Problem: </span>
+        <span className="font-semibold not-italic text-foreground">{t("pages.resume.cv.problem")}: </span>
         {project.problem}
       </p>
 
       <div className="space-y-2">
-        <p className="font-sans text-[11px] font-bold uppercase tracking-widest text-foreground/70">Key Contributions</p>
+        <p className="font-sans text-[11px] font-bold uppercase tracking-widest text-foreground/70">{t("pages.resume.cv.contributions")}</p>
         <ul className="space-y-2">
           {project.contributions.map((c, i) => (
             <Bullet key={i}>{c}</Bullet>
@@ -56,7 +57,7 @@ function ProjectBlock({ project }: { project: typeof CV.projects[number] }) {
       </div>
 
       <p className="leading-7">
-        <span className="font-sans font-bold uppercase tracking-widest text-[11px] text-foreground/70">Key Tech: </span>
+        <span className="font-sans font-bold uppercase tracking-widest text-[11px] text-foreground/70">{t("pages.resume.cv.tech")}: </span>
         <span className="text-foreground/80">{project.tech}</span>
       </p>
     </article>
@@ -66,6 +67,9 @@ function ProjectBlock({ project }: { project: typeof CV.projects[number] }) {
 // ─── Main document ────────────────────────────────────────────────────────────
 
 export function CVDocument() {
+  const cv = useCV();
+  const { t } = useLanguage();
+
   return (
     <article
       className="
@@ -80,37 +84,37 @@ export function CVDocument() {
       {/* ── Header ────────────────────────────────────────────────── */}
       <header className="space-y-5 border-b border-border pb-8 text-center">
         <h1 className="font-sans text-4xl sm:text-5xl lg:text-[2.75rem] font-black tracking-tight uppercase text-foreground">
-          {CV.name}
+          {cv.name}
         </h1>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-foreground/75">
-          <a href={`tel:${CV.contact.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
-            <Phone size={13} /> {CV.contact.phone}
+          <a href={`tel:${cv.contact.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
+            <Phone size={13} /> {cv.contact.phone}
           </a>
-          <a href={`mailto:${CV.contact.email}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
-            <Mail size={13} /> {CV.contact.email}
+          <a href={`mailto:${cv.contact.email}`} className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
+            <Mail size={13} /> {cv.contact.email}
           </a>
-          <a href={CV.contact.github.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
-            <GithubIcon size={13} /> {CV.contact.github.handle}
+          <a href={cv.contact.github.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
+            <GithubIcon size={13} /> {cv.contact.github.handle}
           </a>
-          <a href={CV.contact.linkedin.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
-            <LinkedinIcon size={13} /> {CV.contact.linkedin.handle}
+          <a href={cv.contact.linkedin.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 transition-colors hover:text-primary">
+            <LinkedinIcon size={13} /> {cv.contact.linkedin.handle}
           </a>
         </div>
       </header>
 
       {/* ── Summary ───────────────────────────────────────────────── */}
-      <CVSection title="Summary">
+      <CVSection title={t("pages.resume.cv.summary")}>
         <div className="space-y-3 leading-7 text-foreground/85">
-          {CV.summary.map((line, i) => (
+          {cv.summary.map((line, i) => (
             <p key={i}>{line}</p>
           ))}
         </div>
       </CVSection>
 
       {/* ── Skills & Tools ────────────────────────────────────────── */}
-      <CVSection title="Skills & Tools">
+      <CVSection title={t("pages.resume.cv.skills")}>
         <dl className="space-y-3 leading-7">
-          {CV.skills.map(({ category, items }) => (
+          {cv.skills.map(({ category, items }) => (
             <div key={category} className="flex flex-col gap-1 sm:flex-row sm:gap-4">
               <dt className="font-sans font-bold text-foreground sm:w-48 sm:shrink-0">{category}</dt>
               <dd className="text-foreground/80">{items}</dd>
@@ -120,29 +124,34 @@ export function CVDocument() {
       </CVSection>
 
       {/* ── Projects ──────────────────────────────────────────────── */}
-      <CVSection title="Projects">
+      <CVSection title={t("pages.resume.cv.projects")}>
         <div className="space-y-10">
-          {CV.projects.map((p) => (
-            <ProjectBlock key={p.title} project={p} />
+          {cv.projects.map((p) => (
+            <ProjectBlock key={p.title} project={p} t={t} />
           ))}
         </div>
         <p className="mt-6 italic text-foreground/70 leading-7">
-          If you are interested in the project aspect, please visit my GitHub at{" "}
-          <a
-            href={CV.contact.github.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-primary hover:underline"
-          >
-            github.com/{CV.contact.github.handle}
-          </a>
-          {" "}for a more comprehensive overview.
+          {cv.github_note.split("github.com/nhiney").map((part, i, arr) => (
+            <span key={i}>
+              {part}
+              {i < arr.length - 1 && (
+                <a
+                  href={cv.contact.github.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold not-italic text-primary hover:underline"
+                >
+                  github.com/{cv.contact.github.handle}
+                </a>
+              )}
+            </span>
+          ))}
         </p>
       </CVSection>
 
       {/* ── Education ─────────────────────────────────────────────── */}
-      <CVSection title="Education">
-        {CV.education.map((edu) => (
+      <CVSection title={t("pages.resume.cv.education")}>
+        {cv.education.map((edu) => (
           <div key={edu.school} className="space-y-3">
             <header className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
               <h3 className="font-sans text-lg font-bold tracking-tight text-foreground">{edu.school}</h3>
@@ -152,10 +161,10 @@ export function CVDocument() {
             </header>
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between italic text-foreground/75">
               <span>
-                {edu.degree} | <span className="font-semibold not-italic text-foreground">GPA: {edu.gpa}</span>
+                {edu.degree} | <span className="font-semibold not-italic text-foreground">{t("pages.resume.cv.gpa")}: {edu.gpa}</span>
               </span>
               <span className="font-sans text-xs font-semibold uppercase tracking-widest not-italic shrink-0">
-                Expected: {edu.expected}
+                {t("pages.resume.cv.expected")}: {edu.expected}
               </span>
             </div>
             <ul className="space-y-2">
@@ -168,9 +177,9 @@ export function CVDocument() {
       </CVSection>
 
       {/* ── Certifications & Honors ───────────────────────────────── */}
-      <CVSection title="Certifications & Honors">
+      <CVSection title={t("pages.resume.cv.certifications")}>
         <div className="space-y-8">
-          {CV.certifications.map((cert) => (
+          {cv.certifications.map((cert) => (
             <div key={cert.title} className="space-y-3">
               <header className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                 <h3 className="font-sans text-lg font-bold tracking-tight text-foreground">{cert.title}</h3>
@@ -183,7 +192,7 @@ export function CVDocument() {
                 {cert.items.map((item) => (
                   <Bullet key={item.label}>
                     <span className="font-bold text-foreground">{item.label}: </span>
-                    <span className="italic">Certificate</span> | {item.description}
+                    <span className="italic">{t("pages.resume.cv.certificate")}</span> | {item.description}
                   </Bullet>
                 ))}
               </ul>
@@ -193,14 +202,14 @@ export function CVDocument() {
           {/* Research */}
           <div className="space-y-3">
             <header className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 className="font-sans text-lg font-bold tracking-tight text-foreground">{CV.research.title}</h3>
+              <h3 className="font-sans text-lg font-bold tracking-tight text-foreground">{cv.research.title}</h3>
               <span className="font-sans text-xs font-semibold uppercase tracking-widest text-muted-foreground shrink-0">
-                {CV.research.period}
+                {cv.research.period}
               </span>
             </header>
-            <p className="italic text-foreground/75">{CV.research.source}</p>
+            <p className="italic text-foreground/75">{cv.research.source}</p>
             <ul className="space-y-2">
-              <Bullet>{CV.research.description}</Bullet>
+              <Bullet>{cv.research.description}</Bullet>
             </ul>
           </div>
         </div>
