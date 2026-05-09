@@ -11,8 +11,6 @@ import { GlowingEffect }      from "@/components/ui/GlowingEffect";
 import { QuestionSection }    from "@/components/ui/QuestionSection";
 import { CursorTrailCanvas }  from "@/components/ui/CursorTrailCanvas";
 import { Container }          from "@/components/ui/Container";
-import { GithubIcon, LinkedinIcon, FacebookIcon, MailIcon } from "@/components/ui/Icons";
-
 import { useLanguage }   from "@/context/LanguageContext";
 import { SITE_CONFIG }   from "@/lib/constants";
 import { cn }            from "@/lib/utils";
@@ -162,19 +160,12 @@ function PersonalBentoGrid() {
 export function HomeClient({ projects: _ }: { projects: Post[] }) {
   const { t } = useLanguage();
 
-  const socials = [
-    { href: SITE_CONFIG.links.github,            Icon: GithubIcon   },
-    { href: SITE_CONFIG.links.linkedin,          Icon: LinkedinIcon  },
-    { href: SITE_CONFIG.links.facebook,          Icon: FacebookIcon  },
-    { href: `mailto:${SITE_CONFIG.links.email}`, Icon: MailIcon      },
-  ];
-
   return (
     <>
       <CursorTrailCanvas className="pointer-events-none fixed inset-0 z-50 h-full w-full hidden [@media(hover:hover)]:block" />
 
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden min-h-[calc(100dvh-4rem)]">
+      <section className="relative overflow-hidden">
 
         {/* Background lines — desktop-only, infinite SVG animations are too heavy for mobile GPUs during scroll */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
@@ -183,7 +174,7 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
           </BackgroundLines>
         </div>
 
-        <Container className="relative z-10 flex flex-col justify-center min-h-[calc(100dvh-4rem)] py-24">
+        <Container className="relative z-10 flex flex-col justify-center py-12 md:py-16">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 w-full xl:items-center">
 
             {/* ── Left: text ─────────────────────────────────────────── */}
@@ -221,10 +212,10 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
                 <div className="flex pl-4">
                   <AnimatedTooltip items={TECH_ITEMS} />
                 </div>
-                <div className="flex flex-col gap-0.5 text-sm">
+                <div className="flex flex-col gap-2 text-sm leading-relaxed">
                   <span>
-                    <span className="font-semibold">6 </span>
-                    <span className="text-neutral-500 dark:text-neutral-400">core technologies mastered</span>
+                    <span className="font-semibold">6</span>
+                    <span className="text-neutral-500 dark:text-neutral-400"> core technologies mastered</span>
                   </span>
                   <span>
                     <span className="text-neutral-500 dark:text-neutral-400">shipped </span>
@@ -232,25 +223,6 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
                     <span className="text-neutral-500 dark:text-neutral-400"> complete systems</span>
                   </span>
                 </div>
-              </div>
-
-              {/* Social icons */}
-              <div className="flex items-center gap-6">
-                {socials.map(({ href, Icon }) => (
-                  <motion.div
-                    key={href}
-                    whileHover={{ y: -3, scale: 1.15 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                  >
-                    <Link
-                      href={href}
-                      target={href.startsWith("mailto") ? undefined : "_blank"}
-                      className="text-muted-foreground transition-colors hover:text-primary"
-                    >
-                      <Icon size={20} />
-                    </Link>
-                  </motion.div>
-                ))}
               </div>
 
             </div>
@@ -265,7 +237,7 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
       </section>
 
       {/* ══ FEATURES ══════════════════════════════════════════════════════════ */}
-      <Container className="py-16">
+      <Container className="pt-2 pb-12 md:pt-4 md:pb-16">
         <div className="flex gap-4 flex-col sm:flex-row">
           {FEATURES.map(({ icon: Icon, title, description, href }) => (
             <Link key={title} href={href} className="flex-1">
