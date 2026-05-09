@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, MessageSquare, ArrowRight, Mail, User, Bell } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Heading } from "./Heading";
-import { Text } from "./Text";
+import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 type ContactTab = "contact" | "waitlist";
 
