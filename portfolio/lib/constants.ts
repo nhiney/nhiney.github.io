@@ -16,7 +16,6 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { name: "Fellowship", href: "/fellowship" },
-  { name: "Portfolio", href: "/portfolio" },
   { name: "Projects", href: "/projects" },
   { name: "Certificates", href: "/certificates" },
   { name: "Resume", href: "/resume" },

@@ -41,16 +41,16 @@ export function Navbar() {
             Nguyễn Thị Yến Nhi
           </Link>
 
-          <Link href="/#about" className="hidden xl:block">
-            <AnimatedGradientText className="py-1 px-3 text-xs cursor-pointer">
+          <Link href="/portfolio" className="hidden xl:block">
+            <AnimatedGradientText className="py-2 px-5 text-sm cursor-pointer">
               🚀{" "}
-              <span className="mx-1.5 inline-block h-3.5 w-[1px] shrink-0 bg-gray-400/60 align-middle" />
+              <span className="mx-2 inline-block h-4 w-[1px] shrink-0 bg-gray-400/60 align-middle" />
               <span className="animate-gradient inline bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent font-semibold">
-                Introduction
+                {t("nav.portfolio")}
               </span>
               <ChevronRight
-                size={12}
-                className="ml-1 inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
+                size={14}
+                className="ml-1.5 inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
               />
             </AnimatedGradientText>
           </Link>
