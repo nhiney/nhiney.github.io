@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, FileText, ExternalLink } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -11,21 +11,13 @@ import { CVDocument } from "./CVDocument";
 
 const CV_PATH = "/cv.pdf";
 
-const HIGHLIGHTS = [
-  { key: "specialisation" },
-  { key: "stack"          },
-  { key: "hours"          },
-  { key: "contrib"        },
-] as const;
-
 export function ResumeClient() {
   const { t } = useLanguage();
 
   return (
     <>
-      {/* ══ Hero + Highlights — kept inside the body container ═══════════════ */}
-      <Container className="space-y-10 pb-10">
-        {/* ── Header ── */}
+      {/* ══ Hero — kept inside the body container ═══════════════════════════ */}
+      <Container className="pb-10">
         <Section className="space-y-6 pt-12 text-center">
           <FadeIn className="space-y-5 flex flex-col items-center">
             <Badge
@@ -63,36 +55,11 @@ export function ResumeClient() {
             </div>
           </FadeIn>
         </Section>
-
-        {/* ── Quick highlights ── */}
-        <Section className="pt-0">
-          <FadeIn>
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-              {HIGHLIGHTS.map(({ key }) => (
-                <div
-                  key={key}
-                  className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/60 p-6 glass-card transition-all hover:border-primary/30 hover:bg-card/80"
-                >
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                  <p className="mb-2 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
-                    {t(`pages.resume.${key}_label`)}
-                  </p>
-                  <p className="text-sm font-bold text-foreground leading-snug">{t(`pages.resume.${key}_value`)}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </Section>
       </Container>
 
-      {/* ══ PDF Viewer — escapes the body container, near full-viewport ══════ */}
+      {/* ══ CV Document — escapes the body container ════════════════════════ */}
       <section className="pb-20">
         <div className="px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mx-auto flex max-w-[1700px] items-center gap-3 pb-4">
-            <FileText size={18} className="text-primary" />
-            <Heading variant="section">{t("pages.resume.preview_section")}</Heading>
-          </FadeIn>
-
           <FadeIn>
             <div className="mx-auto max-w-[1100px]">
               <CVDocument />
