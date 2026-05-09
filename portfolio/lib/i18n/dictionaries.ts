@@ -175,9 +175,14 @@ export const dictionaries = {
         hero: {
           badge: "Portfolio",
           title: "Selected Works",
-          description: "A collection of technical projects focused on backend architecture, security, and scalable system design.",
+          description: "Featured GitHub projects — what was broken, how I solved it, and what shipped.",
         },
-        card_cta: "Read Case Study",
+        card_cta: "View on GitHub",
+        problem_label:  "Problem",
+        approach_label: "How I solved it",
+        results_label:  "Results",
+        tech_label:     "Tech stack",
+        view_repo:      "View repository",
       },
       certificates: {
         hero: {
@@ -189,6 +194,16 @@ export const dictionaries = {
         view_image: "View Image",
         close: "Close",
         image_pending: "Image coming soon",
+        verify: "Verify Certificate",
+        courses_included: "Courses included",
+        filter: {
+          view_all: "All",
+          view_certificates: "Certificates",
+          view_courses: "Courses",
+          all: "All",
+          empty: "No items match the current filter.",
+          part_of: "Part of",
+        },
       },
       resume: {
         hero: {
@@ -409,9 +424,14 @@ export const dictionaries = {
         hero: {
           badge: "Portfolio",
           title: "Tác phẩm chọn lọc",
-          description: "Tập hợp các dự án kỹ thuật tập trung vào kiến trúc backend, bảo mật và thiết kế hệ thống có khả năng mở rộng.",
+          description: "Các dự án nổi bật trên GitHub — vấn đề gặp phải, cách tôi giải quyết và kết quả đạt được.",
         },
-        card_cta: "Xem chi tiết dự án",
+        card_cta: "Xem trên GitHub",
+        problem_label:  "Vấn đề",
+        approach_label: "Cách tôi giải quyết",
+        results_label:  "Kết quả",
+        tech_label:     "Công nghệ",
+        view_repo:      "Xem repository",
       },
       certificates: {
         hero: {
@@ -423,6 +443,16 @@ export const dictionaries = {
         view_image: "Xem ảnh chứng chỉ",
         close: "Đóng",
         image_pending: "Ảnh sẽ được cập nhật",
+        verify: "Xác thực chứng chỉ",
+        courses_included: "Các khóa học bao gồm",
+        filter: {
+          view_all: "Tất cả",
+          view_certificates: "Chứng chỉ",
+          view_courses: "Khoá học",
+          all: "Tất cả",
+          empty: "Không có mục nào khớp với bộ lọc.",
+          part_of: "Thuộc",
+        },
       },
       resume: {
         hero: {

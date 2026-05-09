@@ -5,9 +5,17 @@ export type Project = {
   title: string;
   role?: string;
   period: string;
+  /** "Shipped", "In progress", or a duration like "1 month" — short label rendered as a status pill on the projects page. */
+  status: { label: string; tone: "shipped" | "ongoing" | "duration" };
   problem: string;
   contributions: string[];
+  /** Outcomes / measurable results (showcased on the projects page, not the CV). */
+  results: string[];
   tech: string;
+  /** Tech stack as separate pills for the projects page. */
+  techPills: string[];
+  /** Optional repo link — defaults to the CV-level GitHub if absent. */
+  github?: string;
 };
 
 export type SkillGroup = {
@@ -79,6 +87,7 @@ export const CV: CVData = {
       title:  "Smart Medical Booking App",
       role:   "Team Leader & Core Developer",
       period: "Feb 2026 – Present",
+      status: { label: "In progress", tone: "ongoing" },
       problem:
         "Healthcare scheduling in Vietnam lacks real-time conflict prevention and is inaccessible to elderly and non-tech users — causing double-bookings, appointment confusion, and low self-service adoption among at-risk demographics.",
       contributions: [
@@ -89,12 +98,20 @@ export const CV: CVData = {
         "Designed 100+ manual test scenarios to validate core booking flows; deployed and tested on real mobile devices to surface environment-specific defects beyond emulator coverage.",
         "Integrated Google Maps API for location-based clinic discovery to reduce drop-off at the selection step.",
       ],
+      results: [
+        "Eliminated double-booking at the data layer via Firebase Transactions",
+        "Voice-assisted flow opens the app to elderly / non-tech users",
+        "100+ manual test scenarios passing on real devices",
+        "4-member team delivering on a tracked sprint cadence",
+      ],
       tech: "Flutter, Dart, Firebase (Firestore, Auth, Cloud Functions), Google Maps API, Figma",
+      techPills: ["Flutter", "Dart", "Firebase", "Google Maps API", "Figma"],
     },
     {
       title:  "E-Commerce Shoe Shop System",
       role:   "Team Leader & Core Developer",
       period: "Dec 2025",
+      status: { label: "Shipped in 1 month", tone: "duration" },
       problem:
         "Manual inventory tracking caused stockout errors and delayed order responses; no self-service support channel existed, creating unnecessary friction for customers.",
       contributions: [
@@ -103,20 +120,35 @@ export const CV: CVData = {
         "Reduced customer support load by integrating a lightweight AI chatbot to handle common inquiries at scale.",
         "Improved perceived UX responsiveness by applying AJAX to eliminate disruptive full-page reloads.",
       ],
+      results: [
+        "Stockout errors removed via automated SQL Triggers + Stored Procedures",
+        "Customer support load cut by handling common queries through an AI chatbot",
+        "Snappier UX after replacing full-page reloads with targeted AJAX calls",
+        "Clean MVC separation made the codebase easy for the 3-person team to extend",
+      ],
       tech: "ASP.NET MVC, C#, SQL Server, JavaScript",
+      techPills: ["ASP.NET MVC", "C#", "SQL Server", "JavaScript"],
     },
     {
       title:  "English Vocabulary Learning App",
       period: "Jun 2025",
+      status: { label: "9.5 / 10 final score", tone: "shipped" },
       problem:
-        "Built a desktop vocabulary tool to solve data-loss and content-staleness issues in manual flashcard methods — achieving a perfect evaluation score.",
+        "Manual flashcard methods kept losing user data and serving stale content — there was no lightweight desktop tool that combined fresh definitions with reliable persistence for learners.",
       contributions: [
         "Designed 5+ UI screens with Tkinter focused on intuitive, low-friction interaction for learners.",
         "Integrated external REST APIs for real-time definitions and examples, eliminating static data dependencies.",
         "Managed 500+ vocabulary entries with full CRUD and a robust file-handling mechanism to prevent data loss.",
         "Delivered a fully packaged executable; received a 9.5/10 evaluation score.",
       ],
+      results: [
+        "9.5 / 10 evaluation score from the course panel",
+        "500+ vocabulary entries with full CRUD and durable file storage",
+        "Fresh definitions and examples on every lookup via live REST APIs",
+        "One-click executable — no setup required for the end user",
+      ],
       tech: "Python, Tkinter, JSON, REST API",
+      techPills: ["Python", "Tkinter", "JSON", "REST API"],
     },
   ],
   github_note:
