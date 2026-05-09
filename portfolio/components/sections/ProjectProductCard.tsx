@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, ShieldCheck, Target, User } from "lucide-react";
-import { GithubIcon } from "./Icons";
+import { GithubIcon } from "@/components/widgets/Icons";
 import { Post } from "@/types";
 import Link from "next/link";
-import { Badge } from "./Badge";
+import { Badge } from "@/components/ui/Badge";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";

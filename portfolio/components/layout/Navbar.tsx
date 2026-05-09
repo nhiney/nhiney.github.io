@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { AnimatedGradientText } from "@/components/ui/AnimatedGradientText";
+import { LanguageSwitcher } from "@/components/widgets/LanguageSwitcher";
+import { ThemeToggle } from "@/components/widgets/ThemeToggle";
+import { AnimatedGradientText } from "@/components/effects/AnimatedGradientText";
 import { useLanguage } from "@/context/LanguageContext";
 import { NAV_ITEMS } from "@/lib/constants";
 import { useState, useEffect } from "react";

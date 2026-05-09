@@ -4,8 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-import { Heading } from "./Heading";
-import { Text } from "./Text";
+import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 interface TimelineItemProps {
   year?: string;
