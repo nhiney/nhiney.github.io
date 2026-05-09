@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { BackgroundEffects } from "@/components/ui/BackgroundEffects";
+import { BackgroundEffects } from "@/components/effects/BackgroundEffects";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { PostHogProvider } from "@/components/posthog/PostHogProvider";
 import Script from "next/script";

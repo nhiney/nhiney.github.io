@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Badge } from "./Badge";
+import { Badge } from "@/components/ui/Badge";
 import { SKILLS } from "@/lib/constants";
 import { CheckCircle2 } from "lucide-react";
 

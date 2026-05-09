@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Folder, Code2, Clock, Zap } from "lucide-react";
-import { GithubIcon } from "./Icons";
+import { GithubIcon } from "@/components/widgets/Icons";
 import { useLanguage } from "@/context/LanguageContext";
 import { IMPACT_METRICS } from "@/lib/constants";
 

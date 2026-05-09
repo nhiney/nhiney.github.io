@@ -4,12 +4,12 @@ import Link from "next/link";
 import { ArrowRight, GitBranch, Clock, Code2, Folder, Award, FileText, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { ColourfulText }      from "@/components/ui/ColourfulText";
-import { BackgroundLines }    from "@/components/ui/BackgroundLines";
-import { AnimatedTooltip, type TooltipItem } from "@/components/ui/AnimatedTooltip";
-import { GlowingEffect }      from "@/components/ui/GlowingEffect";
-import { QuestionSection }    from "@/components/ui/QuestionSection";
-import { CursorTrailCanvas }  from "@/components/ui/CursorTrailCanvas";
+import { ColourfulText }      from "@/components/effects/ColourfulText";
+import { BackgroundLines }    from "@/components/effects/BackgroundLines";
+import { AnimatedTooltip, type TooltipItem } from "@/components/effects/AnimatedTooltip";
+import { GlowingEffect }      from "@/components/effects/GlowingEffect";
+import { QuestionSection }    from "@/components/sections/QuestionSection";
+import { CursorTrailCanvas }  from "@/components/effects/CursorTrailCanvas";
 import { Container }          from "@/components/ui/Container";
 import { useLanguage }   from "@/context/LanguageContext";
 import { SITE_CONFIG }   from "@/lib/constants";
