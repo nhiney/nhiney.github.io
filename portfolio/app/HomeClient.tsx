@@ -171,19 +171,19 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
 
   return (
     <>
-      <CursorTrailCanvas className="pointer-events-none fixed inset-0 z-50 h-full w-full" />
+      <CursorTrailCanvas className="pointer-events-none fixed inset-0 z-50 h-full w-full hidden md:block" />
 
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden min-h-[calc(100vh-4rem)]">
+      <section className="relative overflow-hidden min-h-[calc(100dvh-4rem)]">
 
-        {/* Background lines — sits behind everything */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Background lines — desktop-only, infinite SVG animations are too heavy for mobile GPUs during scroll */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
           <BackgroundLines className="h-full w-full [&_svg]:opacity-[0.10]">
             <span />
           </BackgroundLines>
         </div>
 
-        <Container className="relative z-10 flex flex-col justify-center min-h-[calc(100vh-4rem)] py-24">
+        <Container className="relative z-10 flex flex-col justify-center min-h-[calc(100dvh-4rem)] py-24">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 w-full xl:items-center">
 
             {/* ── Left: text ─────────────────────────────────────────── */}
