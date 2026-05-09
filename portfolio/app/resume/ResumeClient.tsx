@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, FileText } from "lucide-react";
+import { Download, FileText, ExternalLink } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/Badge";
 import { SITE_CONFIG } from "@/lib/constants";
 import { useLanguage } from "@/context/LanguageContext";
 
-const CV_PATH = "/CV - Nguyễn Thị Yến Nhi.pdf";
+const CV_PATH = "/cv.pdf";
 
 const HIGHLIGHTS = [
   { key: "specialisation" },
@@ -39,14 +39,26 @@ export function ResumeClient() {
             {t("pages.resume.hero.description")}
           </p>
 
-          <a
-            href={CV_PATH}
-            download
-            className="group inline-flex items-center gap-3 rounded-full bg-primary px-10 py-5 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] active:scale-95"
-          >
-            <Download size={16} className="transition-transform group-hover:-translate-y-0.5" />
-            {t("pages.resume.hero.download")}
-          </a>
+          {/* Dual CTAs — primary download + secondary open-in-new-tab */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <a
+              href={CV_PATH}
+              download
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-9 py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] active:scale-95"
+            >
+              <Download size={16} className="transition-transform group-hover:-translate-y-0.5" />
+              {t("pages.resume.hero.download")}
+            </a>
+            <a
+              href={CV_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-3 rounded-full border border-border/60 px-9 py-4 text-sm font-black uppercase tracking-widest transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
+            >
+              <ExternalLink size={15} className="transition-transform group-hover:translate-x-0.5" />
+              {t("pages.resume.hero.open_tab")}
+            </a>
+          </div>
         </FadeIn>
       </Section>
 
@@ -57,12 +69,13 @@ export function ResumeClient() {
             {HIGHLIGHTS.map(({ key }) => (
               <div
                 key={key}
-                className="rounded-2xl border border-border/50 bg-card/60 p-6 glass-card"
+                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/60 p-6 glass-card transition-all hover:border-primary/30 hover:bg-card/80"
               >
-                <p className="mb-1 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                <p className="mb-2 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
                   {t(`pages.resume.${key}_label`)}
                 </p>
-                <p className="text-sm font-bold text-foreground">{t(`pages.resume.${key}_value`)}</p>
+                <p className="text-sm font-bold text-foreground leading-snug">{t(`pages.resume.${key}_value`)}</p>
               </div>
             ))}
           </div>
@@ -77,10 +90,50 @@ export function ResumeClient() {
         </FadeIn>
 
         <FadeIn>
-          <div className="relative overflow-hidden rounded-3xl border border-border/50 glass-card">
-            <div className="relative w-full" style={{ paddingBottom: "141.4%" }}>
+          <div className="relative overflow-hidden rounded-3xl border border-border/50 bg-card/60 glass-card shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
+
+            {/* Toolbar strip — filename on the left, quick actions on the right */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/40 bg-background/40 px-6 py-4">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <FileText size={16} />
+                </div>
+                <div className="flex flex-col min-w-0">
+                  <span className="text-sm font-bold text-foreground truncate">
+                    {t("pages.resume.preview_filename")}
+                  </span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                    {t("pages.resume.preview_meta")}
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={CV_PATH}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border/60 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-all hover:border-primary/40 hover:text-primary"
+                  title={t("pages.resume.hero.open_tab")}
+                >
+                  <ExternalLink size={11} />
+                  {t("pages.resume.hero.open_tab")}
+                </a>
+                <a
+                  href={CV_PATH}
+                  download
+                  className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-white transition-all hover:opacity-90"
+                  title={t("pages.resume.hero.download")}
+                >
+                  <Download size={11} />
+                  {t("pages.resume.hero.download")}
+                </a>
+              </div>
+            </div>
+
+            {/* Iframe — A4 ratio (≈ 1:1.414) */}
+            <div className="relative w-full bg-neutral-950" style={{ paddingBottom: "141.4%" }}>
               <iframe
-                src={`${CV_PATH}#toolbar=1&navpanes=0&scrollbar=1`}
+                src={`${CV_PATH}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
                 className="absolute inset-0 h-full w-full"
                 title={`CV — ${SITE_CONFIG.fullName}`}
               />
@@ -102,16 +155,6 @@ export function ResumeClient() {
               </div>
             </noscript>
           </div>
-        </FadeIn>
-
-        <FadeIn className="text-center">
-          <a
-            href={CV_PATH}
-            download
-            className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-primary hover:opacity-80 transition-opacity"
-          >
-            <Download size={13} /> {t("pages.resume.save_copy")}
-          </a>
         </FadeIn>
       </Section>
     </Container>
