@@ -9,7 +9,7 @@ import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import { Badge } from "@/components/ui/Badge";
 import { useLanguage } from "@/context/LanguageContext";
-import { CV, type Project } from "@/data/cv";
+import { useCV, type Project } from "@/data/cv";
 
 // ─── Status pill ──────────────────────────────────────────────────────────────
 
@@ -153,7 +153,8 @@ function ProjectCard({ project, index, githubFallback }: { project: Project; ind
 
 export function ProjectsClient() {
   const { t } = useLanguage();
-  const githubFallback = CV.contact.github.url;
+  const cv = useCV();
+  const githubFallback = cv.contact.github.url;
 
   return (
     <Container className="pb-24 space-y-12">
@@ -172,7 +173,7 @@ export function ProjectsClient() {
       <Section className="pt-0">
         {/* One project per row, centered, generous max-width — no more 3-up cramming */}
         <div className="mx-auto max-w-[1100px] space-y-10">
-          {CV.projects.map((p, i) => (
+          {cv.projects.map((p, i) => (
             <FadeIn key={p.title} delay={i * 0.08}>
               <ProjectCard project={p} index={i} githubFallback={githubFallback} />
             </FadeIn>
