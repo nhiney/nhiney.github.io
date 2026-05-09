@@ -28,11 +28,11 @@ const TECH_ITEMS: TooltipItem[] = [
 ];
 
 const FEATURES = [
-  { icon: Folder,   title: "Projects",         description: "4 shipped systems — clinic booking, sports field, database security, and English learning app.",          href: "/portfolio#projects" },
-  { icon: Award,    title: "Certificates",     description: "Professional certifications covering backend engineering, security, and cloud fundamentals.",              href: "/certificates" },
-  { icon: FileText, title: "CV / Resume",      description: "Complete engineering background — education, experience, and technical skills at a glance.",              href: "/resume" },
-  { icon: Globe,    title: "Fellowship VNNIC", description: "My application for VNNIC Internet Fellowship — contributing to Vietnam's internet infrastructure.",        href: "/fellowship" },
-];
+  { icon: Folder,   key: "projects",     href: "/portfolio#projects" },
+  { icon: Award,    key: "certificates", href: "/certificates"       },
+  { icon: FileText, key: "resume",       href: "/resume"             },
+  { icon: Globe,    key: "fellowship",   href: "/fellowship"         },
+] as const;
 
 const TECH_PILLS = [
   { label: "Laravel",   color: "bg-red-500/10    border-red-500/20    text-red-400"    },
@@ -75,22 +75,23 @@ function BentoItem({ area, icon, title, children }: {
 // ─── Right-side bento grid ────────────────────────────────────────────────────
 
 function PersonalBentoGrid() {
+  const { t } = useLanguage();
   return (
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-2 xl:max-h-[34rem] xl:grid-rows-2">
 
       <BentoItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/7]"
         icon={<GitBranch className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
-        title="GitHub Activity"
+        title={t("home.bento.github_title")}
       >
         <div className="grid grid-cols-2 gap-3 mt-1">
           <div className="rounded-xl bg-primary/5 border border-primary/10 p-3 text-center">
             <div className="text-2xl font-black text-primary">186+</div>
-            <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">Contributions</div>
+            <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">{t("home.bento.github_contributions")}</div>
           </div>
           <div className="rounded-xl bg-primary/5 border border-primary/10 p-3 text-center">
             <div className="text-2xl font-black text-primary">8+</div>
-            <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">Repositories</div>
+            <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">{t("home.bento.github_repos")}</div>
           </div>
         </div>
         <Link
@@ -99,23 +100,23 @@ function PersonalBentoGrid() {
           rel="noopener noreferrer"
           className="mt-3 flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
         >
-          View on GitHub <ArrowRight size={11} />
+          {t("home.bento.github_cta")} <ArrowRight size={11} />
         </Link>
       </BentoItem>
 
       <BentoItem
         area="md:[grid-area:1/7/2/13] xl:[grid-area:1/7/2/13]"
         icon={<Clock className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
-        title="Coding Hours"
+        title={t("home.bento.coding_title")}
       >
         <div className="mt-1 space-y-3">
           <div>
             <span className="text-3xl font-black text-foreground">442+</span>
-            <span className="ml-2 text-xs text-muted-foreground">hrs on Wakatime</span>
+            <span className="ml-2 text-xs text-muted-foreground">{t("home.bento.coding_hours_unit")}</span>
           </div>
           <div className="space-y-1">
             <div className="flex justify-between text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">
-              <span>All time</span><span>≈ 18 days</span>
+              <span>{t("home.bento.coding_alltime")}</span><span>{t("home.bento.coding_days")}</span>
             </div>
             <div className="h-1.5 w-full rounded-full bg-secondary/30 overflow-hidden">
               <motion.div
@@ -132,7 +133,7 @@ function PersonalBentoGrid() {
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
           >
-            View on Wakatime <ArrowRight size={11} />
+            {t("home.bento.coding_cta")} <ArrowRight size={11} />
           </Link>
         </div>
       </BentoItem>
@@ -140,7 +141,7 @@ function PersonalBentoGrid() {
       <BentoItem
         area="md:[grid-area:2/1/3/13] xl:[grid-area:2/1/3/13]"
         icon={<Code2 className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
-        title="Tech Stack"
+        title={t("home.bento.tech_title")}
       >
         <div className="flex flex-wrap gap-2 mt-1">
           {TECH_PILLS.map((t) => (
@@ -182,7 +183,7 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
 
               {/* Title */}
               <h1 className="text-4xl font-semibold leading-tight dark:text-zinc-100 md:text-5xl md:leading-[3.8rem]">
-                Building secure backend systems with{" "}
+                {t("home.hero.title_prefix")}{" "}
                 <ColourfulText text="Nguyễn Thị Yến Nhi" />
               </h1>
 
@@ -203,7 +204,7 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
                   href="/fellowship"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 px-7 h-12 text-base font-medium transition-all hover:border-primary/40 hover:bg-primary/5"
                 >
-                  Fellowship VNNIC
+                  {t("home.hero.cta_secondary")}
                 </Link>
               </div>
 
@@ -215,12 +216,12 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
                 <div className="flex flex-col gap-2 text-sm leading-relaxed">
                   <span>
                     <span className="font-semibold">6</span>
-                    <span className="text-neutral-500 dark:text-neutral-400"> core technologies mastered</span>
+                    <span className="text-neutral-500 dark:text-neutral-400"> {t("home.hero.tech_count_label")}</span>
                   </span>
                   <span>
-                    <span className="text-neutral-500 dark:text-neutral-400">shipped </span>
+                    <span className="text-neutral-500 dark:text-neutral-400">{t("home.hero.shipped_prefix")} </span>
                     <ColourfulText text="4" />
-                    <span className="text-neutral-500 dark:text-neutral-400"> complete systems</span>
+                    <span className="text-neutral-500 dark:text-neutral-400"> {t("home.hero.shipped_suffix")}</span>
                   </span>
                 </div>
               </div>
@@ -239,18 +240,18 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
       {/* ══ FEATURES ══════════════════════════════════════════════════════════ */}
       <Container className="pt-2 pb-12 md:pt-4 md:pb-16">
         <div className="flex gap-4 flex-col sm:flex-row">
-          {FEATURES.map(({ icon: Icon, title, description, href }) => (
-            <Link key={title} href={href} className="flex-1">
+          {FEATURES.map(({ icon: Icon, key, href }) => (
+            <Link key={key} href={href} className="flex-1">
               <div className="h-full p-5 rounded-3xl border border-border/40 dark:border-neutral-800 dark:bg-neutral-900/40 hover:dark:bg-neutral-800/60 hover:border-primary/30 transition-all">
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3">
                     <div className="w-11 h-11 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5 text-purple-500" />
                     </div>
-                    <h2 className="text-base font-semibold">{title}</h2>
+                    <h2 className="text-base font-semibold">{t(`home.features.${key}_title`)}</h2>
                   </div>
                   <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                    {description}
+                    {t(`home.features.${key}_desc`)}
                   </p>
                 </div>
               </div>

@@ -68,7 +68,38 @@ export const dictionaries = {
     common: {
       within_24: "Within 24 Hours",
       fast_response: "Fast Response",
-    }
+    },
+    home: {
+      hero: {
+        title_prefix: "Building secure backend systems with",
+        cta_secondary: "Fellowship VNNIC",
+        tech_count_label: "core technologies mastered",
+        shipped_prefix: "shipped",
+        shipped_suffix: "complete systems",
+      },
+      bento: {
+        github_title: "GitHub Activity",
+        github_contributions: "Contributions",
+        github_repos: "Repositories",
+        github_cta: "View on GitHub",
+        coding_title: "Coding Hours",
+        coding_hours_unit: "hrs on Wakatime",
+        coding_alltime: "All time",
+        coding_days: "≈ 18 days",
+        coding_cta: "View on Wakatime",
+        tech_title: "Tech Stack",
+      },
+      features: {
+        projects_title: "Projects",
+        projects_desc: "Four shipped systems — clinic booking, sports field reservation, database security, and an English learning app.",
+        certificates_title: "Certificates",
+        certificates_desc: "Professional certifications covering backend engineering, application security, and cloud fundamentals.",
+        resume_title: "CV / Resume",
+        resume_desc: "Complete engineering background — education, experience, and technical skills at a glance.",
+        fellowship_title: "Fellowship VNNIC",
+        fellowship_desc: "My application for the VNNIC Internet Fellowship — contributing to Vietnam's internet infrastructure.",
+      },
+    },
   },
   vi: {
     nav: {
@@ -137,7 +168,38 @@ export const dictionaries = {
     common: {
       within_24: "Trong vòng 24 giờ",
       fast_response: "Phản hồi nhanh",
-    }
+    },
+    home: {
+      hero: {
+        title_prefix: "Xây dựng hệ thống backend bảo mật cùng",
+        cta_secondary: "Học bổng VNNIC",
+        tech_count_label: "công nghệ cốt lõi đã thành thạo",
+        shipped_prefix: "đã hoàn thành",
+        shipped_suffix: "hệ thống hoàn chỉnh",
+      },
+      bento: {
+        github_title: "Hoạt động GitHub",
+        github_contributions: "Lượt đóng góp",
+        github_repos: "Kho mã nguồn",
+        github_cta: "Xem trên GitHub",
+        coding_title: "Giờ lập trình",
+        coding_hours_unit: "giờ trên Wakatime",
+        coding_alltime: "Toàn thời gian",
+        coding_days: "≈ 18 ngày",
+        coding_cta: "Xem trên Wakatime",
+        tech_title: "Công nghệ sử dụng",
+      },
+      features: {
+        projects_title: "Dự án",
+        projects_desc: "Bốn hệ thống đã hoàn thiện — đặt lịch phòng khám, đặt sân thể thao, bảo mật cơ sở dữ liệu và ứng dụng học tiếng Anh.",
+        certificates_title: "Chứng chỉ",
+        certificates_desc: "Các chứng chỉ chuyên môn về kỹ thuật backend, bảo mật ứng dụng và nền tảng điện toán đám mây.",
+        resume_title: "CV / Hồ sơ",
+        resume_desc: "Toàn bộ hành trình kỹ thuật — học vấn, kinh nghiệm và kỹ năng công nghệ được tóm gọn trong một trang.",
+        fellowship_title: "Học bổng VNNIC",
+        fellowship_desc: "Hồ sơ ứng tuyển VNNIC Internet Fellowship — góp phần phát triển hạ tầng Internet Việt Nam.",
+      },
+    },
   },
   ja: {
     nav: {
