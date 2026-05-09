@@ -1,6 +1,11 @@
 node_modules/
 .DS_Store
 
+# Reference / scratch — never commit
+saasfly-main/
+tasks/
+task.md
+
 # Next.js build output — deployed via gh-pages branch, never committed to main
 _next/
 _not-found/
