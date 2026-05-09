@@ -26,7 +26,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 flex w-full justify-center transition-all duration-300",
         scrolled
-          ? "border-b border-border/40 bg-background/85 md:bg-background/70 md:backdrop-blur-md"
+          ? "border-b border-border/40 bg-background/70 backdrop-blur-md"
           : "bg-background/0"
       )}
     >
