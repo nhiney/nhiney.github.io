@@ -171,7 +171,7 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
 
   return (
     <>
-      <CursorTrailCanvas className="pointer-events-none fixed inset-0 z-50 h-full w-full hidden md:block" />
+      <CursorTrailCanvas className="pointer-events-none fixed inset-0 z-50 h-full w-full hidden [@media(hover:hover)]:block" />
 
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden min-h-[calc(100dvh-4rem)]">
