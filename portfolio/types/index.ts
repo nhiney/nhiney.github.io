@@ -4,6 +4,11 @@ export interface PostFrontmatter {
   date: string;
   tags: string[];
   image?: string;
+  problem?: string;
+  role?: string;
+  impact?: string;
+  github?: string;
+  demo?: string;
 }
 
 export interface Post extends PostFrontmatter {

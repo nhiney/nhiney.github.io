@@ -2,37 +2,14 @@
 
 @layer base {
   :root {
-    /* Clelia.dev inspired palette - Dark mode by default */
-    --background: 222 47% 5%; /* #030617 */
-    --foreground: 0 0% 100%;
-    --card: 222 47% 8%;
-    --card-foreground: 0 0% 100%;
-    --popover: 222 47% 5%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 217 100% 50%; /* #0060FF */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 222 47% 12%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 215 20% 65%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 100% 50%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 217 100% 50%;
-    --radius: 0.75rem;
-  }
-
-  .light {
+    /* Standard Light Mode - Vibrant & Clean */
     --background: 0 0% 100%;
     --foreground: 222 47% 5%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 5%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 5%;
-    --primary: 217 100% 50%;
+    --primary: 217 100% 50%; /* #0060FF */
     --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
@@ -45,6 +22,30 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Clelia.dev inspired Dark Mode */
+    --background: 222 47% 5%; /* #030617 */
+    --foreground: 0 0% 100%;
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 222 47% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 217 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 20% 65%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 100% 50%;
   }
 }
 
@@ -61,12 +62,14 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit), sans-serif;
     font-weight: 800;
     letter-spacing: -0.04em;
     color: hsl(var(--foreground));
   }
 
   p {
+    font-family: var(--font-inter), sans-serif;
     color: hsl(var(--muted-foreground));
     line-height: 1.7;
     font-weight: 400;
@@ -79,13 +82,77 @@
     background-size: 24px 24px;
   }
 
+  .text-spectrum {
+    background: linear-gradient(135deg, #00C2FF 0%, #0060FF 25%, #7000FF 50%, #FF00C1 75%, #FF5C00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: spectrum-flow 8s linear infinite;
+  }
+
+  @keyframes spectrum-flow {
+    to { background-position: 200% center; }
+  }
+
+  .spectrum-accent {
+    position: relative;
+    display: inline-block;
+  }
+
+  .spectrum-accent::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #00C2FF, #7000FF, #FF00C1);
+    border-radius: 4px;
+    opacity: 0.6;
+    z-index: -1;
+  }
+
   .text-gradient {
-    background: linear-gradient(135deg, #fff 0%, #0060FF 100%);
+    background: linear-gradient(135deg, #fff 0%, #7000FF 50%, #00C2FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
   .blue-glow {
     box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.3);
+  }
+
+  .luminous-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; filter: brightness(1.2); }
+    50% { opacity: 0.8; filter: brightness(1); }
+  }
+
+  .highlight-accent {
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight-accent::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    z-index: -1;
+    transform: skewX(-15deg);
+    background: linear-gradient(135deg, #00C2FF 0%, #7000FF 100%);
+    opacity: 0.15;
   }
 }
