@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Calendar } from "lucide-react";
+import { ArrowUpRight, Calendar, AlertCircle, Lightbulb, CheckCircle2, Wrench } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -28,25 +28,71 @@ function StatusPill({ status }: { status: Project["status"] }) {
   );
 }
 
-// ─── Section block (label + body) ─────────────────────────────────────────────
+// ─── Mini card per section (Problem / Approach / Results / Tech) ──────────────
 
-function Block({
+type Tone = "red" | "amber" | "emerald" | "violet";
+
+const TONE_STYLES: Record<Tone, { card: string; icon: string; bullet: string }> = {
+  red: {
+    card:   "bg-red-500/[0.04]     border-red-500/20     dark:bg-red-500/[0.06]",
+    icon:   "bg-red-500/15         text-red-500",
+    bullet: "bg-red-500/70",
+  },
+  amber: {
+    card:   "bg-amber-500/[0.04]   border-amber-500/20   dark:bg-amber-500/[0.06]",
+    icon:   "bg-amber-500/15       text-amber-500",
+    bullet: "bg-amber-500/70",
+  },
+  emerald: {
+    card:   "bg-emerald-500/[0.04] border-emerald-500/20 dark:bg-emerald-500/[0.06]",
+    icon:   "bg-emerald-500/15     text-emerald-500",
+    bullet: "bg-emerald-500",
+  },
+  violet: {
+    card:   "bg-violet-500/[0.04]  border-violet-500/20  dark:bg-violet-500/[0.06]",
+    icon:   "bg-violet-500/15      text-violet-500",
+    bullet: "bg-violet-500/70",
+  },
+};
+
+function MiniCard({
+  icon: Icon,
   label,
-  accent,
+  tone,
   children,
 }: {
+  icon: typeof AlertCircle;
   label: string;
-  accent: string;
+  tone: Tone;
   children: React.ReactNode;
 }) {
+  const s = TONE_STYLES[tone];
   return (
-    <div className="space-y-3">
+    <div className={`rounded-2xl border ${s.card} p-6 sm:p-7 space-y-4`}>
       <div className="flex items-center gap-3">
-        <span className={`h-px w-6 ${accent}`} />
-        <h3 className="text-[11px] font-black uppercase tracking-[0.25em] text-foreground/60">{label}</h3>
+        <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${s.icon}`}>
+          <Icon size={16} />
+        </div>
+        <h3 className="text-[11px] font-black uppercase tracking-[0.25em] text-foreground/80">{label}</h3>
       </div>
       <div className="text-[15px] leading-7 text-foreground/85">{children}</div>
     </div>
+  );
+}
+
+function BulletList({ items, tone }: { items: string[]; tone: Tone }) {
+  const dot = TONE_STYLES[tone].bullet;
+  return (
+    <ul className="space-y-2.5">
+      {items.map((item, i) => (
+        <li
+          key={i}
+          className={`relative pl-5 before:absolute before:left-0 before:top-[0.7em] before:h-1.5 before:w-1.5 before:rounded-full before:${dot}`}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -86,51 +132,57 @@ function ProjectCard({ project, index, githubFallback }: { project: Project; ind
       {/* Soft divider */}
       <div className="mx-8 sm:mx-12 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* ── Body ──────────────────────────────────────────────────── */}
-      <div className="p-8 sm:p-12 pt-10 space-y-10">
+      {/* ── Body — each section is its own mini card ──────────────── */}
+      <div className="p-8 sm:p-12 pt-10 grid gap-5 md:grid-cols-2">
 
-        <Block label={t("pages.projects.problem_label")} accent="bg-red-500/70">
-          {project.problem}
-        </Block>
+        {/* Problem — full width on md+ */}
+        <div className="md:col-span-2">
+          <MiniCard
+            icon={AlertCircle}
+            label={t("pages.projects.problem_label")}
+            tone="red"
+          >
+            {project.problem}
+          </MiniCard>
+        </div>
 
-        <Block label={t("pages.projects.approach_label")} accent="bg-amber-500/70">
-          <ul className="space-y-2.5">
-            {project.contributions.slice(0, 4).map((c, i) => (
-              <li
-                key={i}
-                className="relative pl-6 before:absolute before:left-0 before:top-[0.7em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-amber-500/70"
-              >
-                {c}
-              </li>
-            ))}
-          </ul>
-        </Block>
+        {/* Approach */}
+        <MiniCard
+          icon={Lightbulb}
+          label={t("pages.projects.approach_label")}
+          tone="amber"
+        >
+          <BulletList items={project.contributions.slice(0, 4)} tone="amber" />
+        </MiniCard>
 
-        <Block label={t("pages.projects.results_label")} accent="bg-emerald-500/70">
-          <ul className="space-y-2.5">
-            {project.results.map((r, i) => (
-              <li
-                key={i}
-                className="relative pl-6 before:absolute before:left-0 before:top-[0.6em] before:h-2 before:w-2 before:rounded-full before:bg-emerald-500"
-              >
-                {r}
-              </li>
-            ))}
-          </ul>
-        </Block>
+        {/* Results */}
+        <MiniCard
+          icon={CheckCircle2}
+          label={t("pages.projects.results_label")}
+          tone="emerald"
+        >
+          <BulletList items={project.results} tone="emerald" />
+        </MiniCard>
 
-        <Block label={t("pages.projects.tech_label")} accent="bg-violet-500/70">
-          <div className="flex flex-wrap gap-2">
-            {project.techPills.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-border bg-secondary/50 px-3.5 py-1.5 text-[12px] font-semibold text-foreground/80"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </Block>
+        {/* Tech — full width on md+ */}
+        <div className="md:col-span-2">
+          <MiniCard
+            icon={Wrench}
+            label={t("pages.projects.tech_label")}
+            tone="violet"
+          >
+            <div className="flex flex-wrap gap-2">
+              {project.techPills.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-violet-500/25 bg-violet-500/[0.06] px-3.5 py-1.5 text-[12px] font-semibold text-foreground/85"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </MiniCard>
+        </div>
       </div>
 
       {/* ── Footer ────────────────────────────────────────────────── */}
@@ -171,7 +223,6 @@ export function ProjectsClient() {
       </Section>
 
       <Section className="pt-0">
-        {/* One project per row, centered, generous max-width — no more 3-up cramming */}
         <div className="mx-auto max-w-[1100px] space-y-10">
           {cv.projects.map((p, i) => (
             <FadeIn key={p.title} delay={i * 0.08}>
