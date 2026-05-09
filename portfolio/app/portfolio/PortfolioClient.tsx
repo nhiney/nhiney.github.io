@@ -18,10 +18,10 @@ export function PortfolioClient({ projects }: { projects: Post[] }) {
   const { t } = useLanguage();
 
   return (
-    <Container className="space-y-32 pb-32">
+    <Container className="space-y-16 pb-20">
 
       {/* ── Header ── */}
-      <Section className="space-y-8 pt-20 text-center">
+      <Section className="space-y-6 pt-12 text-center">
         <FadeIn className="flex flex-col items-center gap-6">
           <Badge variant="outline" className="px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]">
             {t("pages.portfolio.hero.badge")}
@@ -34,7 +34,7 @@ export function PortfolioClient({ projects }: { projects: Post[] }) {
       </Section>
 
       {/* ── GitHub Stats ── */}
-      <Section className="space-y-14 pt-0">
+      <Section className="space-y-8 pt-0">
         <FadeIn className="space-y-3">
           <Heading variant="section">{t("pages.portfolio.analytics_section")}</Heading>
           <Heading variant="title" className="text-spectrum">{t("pages.portfolio.analytics_title")}</Heading>
@@ -43,7 +43,7 @@ export function PortfolioClient({ projects }: { projects: Post[] }) {
       </Section>
 
       {/* ── Projects ── */}
-      <Section id="projects" className="space-y-16 pt-0">
+      <Section id="projects" className="space-y-8 pt-0">
         <FadeIn className="space-y-3">
           <Heading variant="section">{t("pages.portfolio.projects_section")}</Heading>
           <Heading variant="title">{t("pages.portfolio.projects_title")}</Heading>
@@ -56,7 +56,7 @@ export function PortfolioClient({ projects }: { projects: Post[] }) {
       </Section>
 
       {/* ── Skills ── */}
-      <Section className="space-y-14 pt-0">
+      <Section className="space-y-8 pt-0">
         <FadeIn className="space-y-3">
           <Heading variant="section">{t("pages.portfolio.skills_section")}</Heading>
           <Heading variant="title">{t("pages.portfolio.skills_title")}</Heading>
@@ -65,7 +65,7 @@ export function PortfolioClient({ projects }: { projects: Post[] }) {
       </Section>
 
       {/* ── Mind Map ── */}
-      <Section className="space-y-14 pt-0">
+      <Section className="space-y-8 pt-0">
         <FadeIn className="space-y-3">
           <Heading variant="section">{t("pages.portfolio.mindmap_section")}</Heading>
           <Heading variant="title">{t("pages.portfolio.mindmap_title")}</Heading>

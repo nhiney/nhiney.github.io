@@ -209,8 +209,8 @@ export function ProjectsClient() {
   const githubFallback = cv.contact.github.url;
 
   return (
-    <Container className="pb-24 space-y-12">
-      <Section className="space-y-6 pt-16 text-center">
+    <Container className="pb-20 space-y-10">
+      <Section className="space-y-6 pt-12 text-center">
         <FadeIn className="space-y-5 flex flex-col items-center">
           <Badge variant="outline" className="px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]">
             {t("pages.projects.hero.badge")}

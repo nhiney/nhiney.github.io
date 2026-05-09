@@ -34,10 +34,10 @@ export function FellowshipClient() {
   const { t } = useLanguage();
 
   return (
-    <Container className="pb-32 space-y-28">
+    <Container className="pb-20 space-y-16">
 
       {/* ── Hero ── */}
-      <Section className="space-y-10 pt-20">
+      <Section className="space-y-6 pt-12">
         <FadeIn className="flex flex-col gap-6">
           <Badge variant="outline" className="w-fit px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]">
             {t("pages.fellowship.hero.badge")}
@@ -66,7 +66,7 @@ export function FellowshipClient() {
       </Section>
 
       {/* ── Why VNNIC ── */}
-      <Section className="space-y-14 pt-0">
+      <Section className="space-y-8 pt-0">
         <FadeIn className="space-y-3">
           <Heading variant="section">{t("pages.fellowship.why.section")}</Heading>
           <Heading variant="title">{t("pages.fellowship.why.title")}</Heading>
@@ -87,7 +87,7 @@ export function FellowshipClient() {
       </Section>
 
       {/* ── What I bring ── */}
-      <Section className="space-y-14 pt-0">
+      <Section className="space-y-8 pt-0">
         <FadeIn className="space-y-3">
           <Heading variant="section">{t("pages.fellowship.bring.section")}</Heading>
           <Heading variant="title">{t("pages.fellowship.bring.title")}</Heading>
@@ -105,7 +105,7 @@ export function FellowshipClient() {
       </Section>
 
       {/* ── Goals ── */}
-      <Section className="space-y-14 pt-0">
+      <Section className="space-y-8 pt-0">
         <FadeIn className="space-y-3">
           <Heading variant="section">{t("pages.fellowship.goals.section")}</Heading>
           <Heading variant="title">{t("pages.fellowship.goals.title")}</Heading>
