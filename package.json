@@ -1,0 +1,10 @@
+{
+  "name": "nhiney.github.io-workspace",
+  "private": true,
+  "workspaces": [
+    "portfolio"
+  ],
+  "scripts": {
+    "deploy": "bash deploy.sh"
+  }
+}
