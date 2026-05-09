@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { AnimatedGradientText } from "@/components/ui/AnimatedGradientText";
 import { useLanguage } from "@/context/LanguageContext";
-import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
+import { NAV_ITEMS } from "@/lib/constants";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
@@ -20,48 +22,66 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className={cn(
-      "sticky top-0 z-50 w-full transition-all duration-300",
-      scrolled ? "border-b border-border bg-background/80 backdrop-blur-md py-4" : "bg-transparent py-6"
-    )}>
-      <Container className="flex items-center justify-between gap-8">
-        {/* ① Logo */}
-        <Link href="/" className="group -ml-1 shrink-0 flex items-center gap-2">
-          <span className="text-xl font-extrabold tracking-tight sm:text-2xl">
-            HI <span className="inline-block transition-transform group-hover:rotate-12">😊</span>
-          </span>
-        </Link>
+    <header
+      className={cn(
+        "sticky top-0 z-50 flex w-full justify-center transition-all duration-300",
+        scrolled
+          ? "border-b border-border/40 bg-background/70 backdrop-blur-xl"
+          : "bg-background/0 backdrop-blur-none"
+      )}
+    >
+      <Container className="flex h-16 items-center justify-between py-3">
 
-        {/* ② Nav links — pushed to the right, close to controls, far from HI */}
-        <nav className="hidden items-center gap-7 md:flex ml-auto">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {t(`nav.${item.name.toLowerCase()}`)}
-            </Link>
-          ))}
-        </nav>
-
-        {/* ③ Controls — pinned to the right */}
-        <div className="hidden items-center gap-4 md:flex">
-          <LanguageSwitcher />
-          <ThemeToggle />
+        {/* ① Left — name + introduction badge */}
+        <div className="flex items-center gap-3 shrink-0">
           <Link
-            href="/#contact"
-            className="rounded-full bg-primary px-5 py-2 text-xs font-bold text-primary-foreground transition-all hover:opacity-90 active:scale-95"
+            href="/"
+            className="text-base font-black tracking-tight transition-opacity hover:opacity-80 whitespace-nowrap"
           >
-            {t("nav.contactBtn")}
+            Nguyễn Thị Yến Nhi
+          </Link>
+
+          <Link href="/#about" className="hidden xl:block">
+            <AnimatedGradientText className="py-1 px-3 text-xs cursor-pointer">
+              🚀{" "}
+              <span className="mx-1.5 inline-block h-3.5 w-[1px] shrink-0 bg-gray-400/60 align-middle" />
+              <span className="animate-gradient inline bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent font-semibold">
+                Introduction
+              </span>
+              <ChevronRight
+                size={12}
+                className="ml-1 inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
+              />
+            </AnimatedGradientText>
           </Link>
         </div>
 
-        {/* Mobile controls */}
-        <div className="flex items-center gap-4 md:hidden">
+        {/* ② Right — nav links + controls (natural width, empty space in the middle) */}
+        <div className="hidden items-center gap-2 md:flex shrink-0">
+          <nav className="flex items-center gap-5">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="whitespace-nowrap text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {t(`nav.${item.name.toLowerCase()}`)}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="h-6 w-[1px] bg-border/60 mx-1" />
+
           <LanguageSwitcher />
           <ThemeToggle />
         </div>
+
+        {/* Mobile controls */}
+        <div className="flex items-center gap-2 md:hidden shrink-0">
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
+
       </Container>
     </header>
   );
