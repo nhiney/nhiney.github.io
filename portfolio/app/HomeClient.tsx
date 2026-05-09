@@ -106,7 +106,7 @@ function PersonalBentoGrid() {
       </BentoItem>
 
       <BentoItem
-        area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/7]"
+        area="md:[grid-area:1/7/2/13] xl:[grid-area:1/7/2/13]"
         icon={<Clock className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
         title="Coding Hours"
       >
@@ -140,7 +140,7 @@ function PersonalBentoGrid() {
       </BentoItem>
 
       <BentoItem
-        area="md:[grid-area:2/1/3/7] xl:[grid-area:1/7/3/13]"
+        area="md:[grid-area:2/1/3/13] xl:[grid-area:2/1/3/13]"
         icon={<Code2 className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
         title="Tech Stack"
       >
