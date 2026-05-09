@@ -25,6 +25,9 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Heading } from "@/components/ui/Heading";
 import { Badge } from "@/components/ui/Badge";
 import { useLanguage } from "@/context/LanguageContext";
+import { DiagramMindmap } from "./diagrams/DiagramMindmap";
+import { DiagramComparison } from "./diagrams/DiagramComparison";
+import { DiagramArchitecture } from "./diagrams/DiagramArchitecture";
 
 const CONTEXT_TIERS = [
   { key: "tier1", color: "bg-rose-600",    icon: Award    },
@@ -74,41 +77,87 @@ const WHAT_I_BRING = [
 
 const ASKS = ["ask_1", "ask_2", "ask_3"] as const;
 
+const ESSAY_REFS = ["ref1", "ref2", "ref3", "ref4"] as const;
+
 export function FellowshipClient() {
   const { t } = useLanguage();
 
   return (
     <Container className="pb-20 space-y-16">
 
-      {/* ── Slide 1 · Hero ── */}
-      <Section className="space-y-6 pt-12">
-        <FadeIn className="flex flex-col gap-6">
-          <Badge variant="outline" className="w-fit px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]">
-            {t("pages.fellowship.hero.badge")}
-          </Badge>
-          <Heading variant="hero" as="h1" className="text-spectrum max-w-4xl">
-            {t("pages.fellowship.hero.title")}
-          </Heading>
-          <p className="max-w-3xl text-base text-muted-foreground leading-relaxed">
+      {/* ── Slide 1 · Hero (Manifesto Cover) ── */}
+      <Section className="pt-12">
+        <FadeIn>
+          <div className="relative overflow-hidden rounded-[2rem] border border-border/50 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 px-6 py-16 text-center shadow-[0_0_120px_-30px_rgba(37,99,235,0.45)] sm:px-12 sm:py-24">
+            {/* Background glows */}
+            <div aria-hidden className="pointer-events-none absolute -top-32 left-1/2 -z-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-blue-600/20 blur-3xl" />
+            <div aria-hidden className="pointer-events-none absolute -bottom-40 left-1/4 -z-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div aria-hidden className="pointer-events-none absolute -bottom-40 right-1/4 -z-0 h-72 w-72 rounded-full bg-indigo-600/10 blur-3xl" />
+
+            <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-7">
+              {/* Top badge */}
+              <Badge variant="outline" className="w-fit border-blue-400/30 bg-blue-500/10 px-6 py-2 font-bold uppercase tracking-[0.25em] text-blue-200 text-[10px]">
+                {t("pages.fellowship.hero.badge")}
+              </Badge>
+
+              {/* Eyebrow */}
+              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-blue-300/80">
+                {t("pages.fellowship.hero.eyebrow")}
+              </p>
+
+              {/* Core title — centered manifesto style */}
+              <h1 className="text-balance bg-gradient-to-br from-white via-blue-100 to-blue-300 bg-clip-text text-5xl font-black tracking-tighter text-transparent sm:text-6xl lg:text-7xl">
+                {t("pages.fellowship.hero.title")}
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-balance text-base font-semibold tracking-wide text-blue-100/80 sm:text-lg">
+                {t("pages.fellowship.hero.subtitle")}
+              </p>
+
+              {/* Divider */}
+              <div className="h-px w-32 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent" />
+
+              {/* Author block */}
+              <div className="flex flex-col items-center gap-1.5">
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-300/70">
+                  {t("pages.fellowship.hero.author_label")}
+                </span>
+                <span className="text-xl font-black tracking-tight text-white">
+                  {t("pages.fellowship.hero.author_name")}
+                </span>
+                <span className="text-xs font-semibold tracking-wider text-blue-200/70">
+                  {t("pages.fellowship.hero.author_meta")}
+                </span>
+              </div>
+
+              {/* Thesis pull-quote */}
+              <blockquote className="mt-2 max-w-3xl border-l-2 border-blue-400/50 pl-5 text-left text-sm font-semibold italic leading-relaxed text-blue-50/90 sm:text-base">
+                {t("pages.fellowship.hero.thesis")}
+              </blockquote>
+
+              {/* CTA */}
+              <div className="mt-2 flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/portfolio"
+                  className="group inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:bg-blue-500 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.8)] active:scale-95"
+                >
+                  {t("pages.fellowship.hero.cta_primary")} <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/resume"
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-300/30 px-8 py-4 text-sm font-black uppercase tracking-widest text-blue-100 transition-all hover:border-blue-300/60 hover:bg-blue-500/10 active:scale-95"
+                >
+                  {t("pages.fellowship.hero.cta_secondary")}
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Sub-bio under hero card */}
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-muted-foreground">
             {t("pages.fellowship.hero.description")}
           </p>
-          <blockquote className="max-w-3xl border-l-4 border-primary/50 pl-5 text-base font-semibold italic text-foreground/90">
-            {t("pages.fellowship.hero.thesis")}
-          </blockquote>
-          <div className="flex flex-wrap gap-4 pt-2">
-            <Link
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] active:scale-95"
-            >
-              {t("pages.fellowship.hero.cta_primary")} <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/resume"
-              className="inline-flex items-center gap-2 rounded-full border border-border/60 px-8 py-4 text-sm font-black uppercase tracking-widest transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
-            >
-              {t("pages.fellowship.hero.cta_secondary")}
-            </Link>
-          </div>
         </FadeIn>
       </Section>
 
@@ -365,6 +414,183 @@ export function FellowshipClient() {
             <blockquote className="mt-6 border-l-4 border-primary/50 pl-5 text-sm font-semibold italic text-foreground/90">
               “{t("pages.fellowship.mindset.quote")}”
             </blockquote>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* ── Position Paper · Strategic Vision Essay ── */}
+      <Section className="space-y-8 pt-0">
+        <FadeIn className="space-y-3">
+          <Heading variant="section">{t("pages.fellowship.essay.section")}</Heading>
+          <Heading variant="title">{t("pages.fellowship.essay.title")}</Heading>
+        </FadeIn>
+
+        {/* Cover meta */}
+        <FadeIn>
+          <div className="rounded-3xl border border-primary/20 bg-primary/5 p-7 glass-card">
+            <div className="grid gap-5 sm:grid-cols-3">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+                  {t("pages.fellowship.essay.cover_applicant_label")}
+                </p>
+                <p className="mt-2 text-sm font-black tracking-tight text-foreground">
+                  {t("pages.fellowship.essay.cover_applicant")}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+                  {t("pages.fellowship.essay.cover_institution_label")}
+                </p>
+                <p className="mt-2 text-sm font-semibold leading-relaxed text-foreground">
+                  {t("pages.fellowship.essay.cover_institution")}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+                  {t("pages.fellowship.essay.cover_competencies_label")}
+                </p>
+                <p className="mt-2 text-sm font-semibold leading-relaxed text-foreground">
+                  {t("pages.fellowship.essay.cover_competencies")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* Section 1 */}
+        <FadeIn>
+          <article className="rounded-3xl border border-border/50 bg-card/60 p-8 glass-card">
+            <header className="mb-4 flex items-baseline gap-4">
+              <span className="text-3xl font-black text-primary">
+                {t("pages.fellowship.essay.s1_number")}
+              </span>
+              <h3 className="text-xl font-black tracking-tight text-foreground">
+                {t("pages.fellowship.essay.s1_title")}
+              </h3>
+            </header>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("pages.fellowship.essay.s1_body")}
+            </p>
+            <div className="mt-6">
+              <DiagramMindmap />
+            </div>
+          </article>
+        </FadeIn>
+
+        {/* Section 2 */}
+        <FadeIn>
+          <article className="rounded-3xl border border-border/50 bg-card/60 p-8 glass-card">
+            <header className="mb-4 flex items-baseline gap-4">
+              <span className="text-3xl font-black text-primary">
+                {t("pages.fellowship.essay.s2_number")}
+              </span>
+              <h3 className="text-xl font-black tracking-tight text-foreground">
+                {t("pages.fellowship.essay.s2_title")}
+              </h3>
+            </header>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("pages.fellowship.essay.s2_intro")}
+            </p>
+
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-border/40 bg-background/40 p-5">
+                <h4 className="mb-2 text-sm font-black tracking-tight text-foreground">
+                  {t("pages.fellowship.essay.s2_iot_title")}
+                </h4>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {t("pages.fellowship.essay.s2_iot_body")}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border/40 bg-background/40 p-5">
+                <h4 className="mb-2 text-sm font-black tracking-tight text-foreground">
+                  {t("pages.fellowship.essay.s2_5g_title")}
+                </h4>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {t("pages.fellowship.essay.s2_5g_body")}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <DiagramComparison />
+            </div>
+          </article>
+        </FadeIn>
+
+        {/* Section 3 */}
+        <FadeIn>
+          <article className="rounded-3xl border border-border/50 bg-card/60 p-8 glass-card">
+            <header className="mb-4 flex items-baseline gap-4">
+              <span className="text-3xl font-black text-primary">
+                {t("pages.fellowship.essay.s3_number")}
+              </span>
+              <h3 className="text-xl font-black tracking-tight text-foreground">
+                {t("pages.fellowship.essay.s3_title")}
+              </h3>
+            </header>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("pages.fellowship.essay.s3_body")}
+            </p>
+          </article>
+        </FadeIn>
+
+        {/* Section 4 */}
+        <FadeIn>
+          <article className="rounded-3xl border border-border/50 bg-card/60 p-8 glass-card">
+            <header className="mb-4 flex items-baseline gap-4">
+              <span className="text-3xl font-black text-primary">
+                {t("pages.fellowship.essay.s4_number")}
+              </span>
+              <h3 className="text-xl font-black tracking-tight text-foreground">
+                {t("pages.fellowship.essay.s4_title")}
+              </h3>
+            </header>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("pages.fellowship.essay.s4_intro")}
+            </p>
+
+            <div className="mt-5 space-y-4">
+              <div className="rounded-2xl border border-border/40 bg-background/40 p-5">
+                <h4 className="mb-2 flex items-center gap-2 text-sm font-black tracking-tight text-foreground">
+                  <Code2 size={16} className="text-primary" />
+                  {t("pages.fellowship.essay.s4_arch_title")}
+                </h4>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {t("pages.fellowship.essay.s4_arch_body")}
+                </p>
+                <div className="mt-5">
+                  <DiagramArchitecture />
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border/40 bg-background/40 p-5">
+                <h4 className="mb-2 flex items-center gap-2 text-sm font-black tracking-tight text-foreground">
+                  <Users size={16} className="text-primary" />
+                  {t("pages.fellowship.essay.s4_lead_title")}
+                </h4>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {t("pages.fellowship.essay.s4_lead_body")}
+                </p>
+              </div>
+            </div>
+          </article>
+        </FadeIn>
+
+        {/* References */}
+        <FadeIn>
+          <div className="rounded-3xl border border-border/50 bg-card/60 p-8 glass-card">
+            <h3 className="mb-5 flex items-center gap-2 text-sm font-black uppercase tracking-[0.2em] text-foreground">
+              <BookOpen size={16} className="text-primary" />
+              {t("pages.fellowship.essay.references_title")}
+            </h3>
+            <ol className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+              {ESSAY_REFS.map((k, i) => (
+                <li key={k} className="flex gap-3">
+                  <span className="font-mono text-xs font-bold text-primary/70">[{i + 1}]</span>
+                  <span>{t(`pages.fellowship.essay.${k}`)}</span>
+                </li>
+              ))}
+            </ol>
           </div>
         </FadeIn>
       </Section>

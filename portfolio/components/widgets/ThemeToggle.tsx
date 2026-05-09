@@ -23,9 +23,18 @@ export function ThemeToggle({ className }: { className?: string }) {
 
   const toggleTheme = () => {
     const nextTheme = theme === "light" ? "dark" : "light";
+    const root = document.documentElement;
+
+    // Enable temporary cross-fade transition for ALL color/border/shadow
+    // tokens, then strip it after the animation finishes so it doesn't
+    // permanently slow down other interactions.
+    root.classList.add("theme-transitioning");
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    root.classList.toggle("dark", nextTheme === "dark");
+    window.setTimeout(() => {
+      root.classList.remove("theme-transitioning");
+    }, 320);
   };
 
   if (!mounted) {
