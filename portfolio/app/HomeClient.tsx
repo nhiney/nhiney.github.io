@@ -11,6 +11,7 @@ import { AnimatedTooltip, type TooltipItem } from "@/components/effects/Animated
 import { GlowingEffect }      from "@/components/effects/GlowingEffect";
 import { QuestionSection }    from "@/components/sections/QuestionSection";
 import { CursorTrailCanvas }  from "@/components/effects/CursorTrailCanvas";
+import { MouseSpotlight }     from "@/components/effects/MouseSpotlight";
 import { Container }          from "@/components/ui/Container";
 import { useLanguage }   from "@/context/LanguageContext";
 import { SITE_CONFIG }   from "@/lib/constants";
@@ -221,6 +222,9 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
           </BackgroundLines>
         </div>
 
+        {/* Mouse spotlight — pointer-events-none, hover-only, never blocks scroll */}
+        <MouseSpotlight />
+
         <Container className="relative z-10 flex flex-col justify-center py-12 md:py-16">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 w-full xl:items-center">
 
@@ -274,8 +278,8 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
 
             </div>
 
-            {/* ── Right: bento grid (xl only) ────────────────────────── */}
-            <div className="hidden xl:block">
+            {/* ── Right: bento grid ─────────────────────────────────── */}
+            <div className="block">
               <PersonalBentoGrid />
             </div>
 

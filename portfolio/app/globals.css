@@ -28,26 +28,26 @@
 
 @layer base {
   :root {
-    /* Standard Light Mode - Vibrant & Clean */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 5%;
+    /* Light Mode — refined to mirror dark-mode contrast hierarchy */
+    --background: 220 30% 98.5%;          /* very subtle cool off-white */
+    --foreground: 222 47% 8%;
+    --card: 0 0% 100%;                     /* pure white cards lift off bg */
+    --card-foreground: 222 47% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 5%;
-    --primary: 217 100% 50%; /* #0060FF */
+    --popover-foreground: 222 47% 8%;
+    --primary: 217 100% 50%;               /* #0060FF */
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96%;
+    --secondary: 220 24% 95%;
     --secondary-foreground: 222 47% 11%;
-    --muted: 215 16% 47%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --muted: 215 16% 42%;                  /* darker for readability */
+    --muted-foreground: 215 16% 38%;
+    --accent: 217 100% 96%;
+    --accent-foreground: 217 100% 30%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 88%;                 /* slightly visible borders */
+    --input: 220 20% 88%;
+    --ring: 217 100% 50%;
     --radius: 0.75rem;
   }
 
@@ -79,12 +79,43 @@
   * {
     border-color: hsl(var(--border));
   }
+  html {
+    scroll-behavior: smooth;
+    /* Native momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent rubber-band overscroll bouncing into the layout */
+    overscroll-behavior-y: none;
+  }
+
+  /* Smooth theme switch — applied as a temporary class while toggling.
+     Avoids permanent transitions that would slow down regular interactions. */
+  .theme-transitioning,
+  .theme-transitioning *,
+  .theme-transitioning *::before,
+  .theme-transitioning *::after {
+    transition:
+      background-color 280ms ease,
+      color 280ms ease,
+      border-color 280ms ease,
+      fill 280ms ease,
+      stroke 280ms ease,
+      box-shadow 280ms ease !important;
+  }
+
+  /* Respect users who prefer less motion */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .theme-transitioning,
+    .theme-transitioning *,
+    .theme-transitioning *::before,
+    .theme-transitioning *::after { transition: none !important; }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -196,6 +227,29 @@
 
   .blue-glow {
     box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.3);
+  }
+
+  /* Mouse spotlight — soft radial glow that follows the cursor.
+     Positioned absolute inside a relative container; pointer-events-none
+     so it never blocks scroll, hover, taps, or focus. */
+  .mouse-spotlight {
+    --mx: 50%;
+    --my: 50%;
+    background:
+      radial-gradient(
+        520px circle at var(--mx) var(--my),
+        hsl(var(--primary) / 0.14),
+        transparent 60%
+      );
+    transition: background 120ms linear;
+  }
+  .dark .mouse-spotlight {
+    background:
+      radial-gradient(
+        560px circle at var(--mx) var(--my),
+        hsl(var(--primary) / 0.18),
+        transparent 65%
+      );
   }
 
   .luminous-pulse {
