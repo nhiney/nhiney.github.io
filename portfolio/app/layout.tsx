@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Lora } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
@@ -18,6 +18,11 @@ const inter = Inter({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
 });
 
 export const metadata: Metadata = {
@@ -73,6 +78,7 @@ export default function RootLayout({
       <body className={cn(
         inter.variable,
         outfit.variable,
+        lora.variable,
         inter.className,
         "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans"
       )}>
