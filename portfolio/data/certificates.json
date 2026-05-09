@@ -1,52 +1,245 @@
 [
   {
-    "id": 1,
-    "title": "Software Engineering Fundamentals",
-    "issuer": "University of Information Technology",
-    "date": "2024",
-    "category": "Academic",
-    "description": "Coursework covering algorithms, data structures, OOP, and software design patterns.",
-    "url": null,
-    "badge": "🎓"
-  },
-  {
-    "id": 2,
-    "title": "Flutter & Dart — The Complete Guide",
-    "issuer": "Udemy",
-    "date": "2023",
-    "category": "Mobile Development",
-    "description": "In-depth mobile development course covering Flutter widgets, state management, and Firebase integration.",
-    "url": null,
-    "badge": "📱"
-  },
-  {
-    "id": 3,
-    "title": "Laravel Backend Development",
-    "issuer": "Online Learning Platform",
-    "date": "2023",
+    "id": "coursera-ERRCIOPXMF5I",
+    "title": "Google IT Automation with Python",
+    "issuer": "Google · Coursera",
+    "date": "May 4, 2026",
     "category": "Backend",
-    "description": "Comprehensive Laravel course covering Eloquent ORM, REST API design, and authentication.",
-    "url": null,
-    "badge": "🔧"
+    "description": "A six-course Google certificate teaching Python, Git, and IT automation — writing scripts, configuration management, cloud automation, and debugging at scale to prepare learners for IT Support Specialist or Junior Systems Administrator roles.",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/ERRCIOPXMF5I",
+    "verifyUrl": "https://coursera.org/verify/professional-cert/ERRCIOPXMF5I",
+    "image": "/certificates/coursera-ERRCIOPXMF5I.png",
+    "courses": [
+      {
+        "title": "Crash Course on Python",
+        "image": "/certificates/courses/crash-course-on-python.png",
+        "verifyUrl": "https://coursera.org/verify/PTNT6E74SATL",
+        "date": "Apr 28, 2026"
+      },
+      {
+        "title": "Using Python to Interact with the Operating System",
+        "image": "/certificates/courses/using-python-to-interact-with-the-operating-system.png",
+        "verifyUrl": "https://coursera.org/verify/CR00QQXJT3ZU",
+        "date": "May 1, 2026"
+      },
+      {
+        "title": "Introduction to Git and GitHub",
+        "image": "/certificates/courses/introduction-to-git-and-github.png",
+        "verifyUrl": "https://coursera.org/verify/MSB0HAKJ8Y9E",
+        "date": "May 2, 2026"
+      },
+      {
+        "title": "Troubleshooting and Debugging Techniques",
+        "image": "/certificates/courses/troubleshooting-and-debugging-techniques.png",
+        "verifyUrl": "https://coursera.org/verify/PERI9NR6WH7S",
+        "date": "May 3, 2026"
+      },
+      {
+        "title": "Configuration Management and the Cloud",
+        "image": "/certificates/courses/configuration-management-and-the-cloud.png",
+        "verifyUrl": "https://coursera.org/verify/NL2RSWU8MAQ4",
+        "date": "May 4, 2026"
+      },
+      {
+        "title": "Automating Real-World Tasks with Python",
+        "image": "/certificates/courses/automating-real-world-tasks-with-python.png",
+        "verifyUrl": "https://coursera.org/verify/GRZ4R7KA69BL",
+        "date": "May 4, 2026"
+      },
+      {
+        "title": "Accelerate Your Job Search with AI",
+        "image": "/certificates/courses/accelerate-your-job-search-with-ai.png",
+        "verifyUrl": "https://coursera.org/verify/6DHE0HN2O6RB",
+        "date": "May 3, 2026"
+      }
+    ]
   },
   {
-    "id": 4,
-    "title": "Database Security & RBAC",
-    "issuer": "Self-directed Research",
-    "date": "2024",
-    "category": "Security",
-    "description": "Applied OWASP guidelines, implemented row-level security and audit logging on Oracle DB.",
-    "url": null,
-    "badge": "🛡️"
+    "id": "coursera-Y0JMYWUVVJG9",
+    "title": "Google Project Management",
+    "issuer": "Google · Coursera",
+    "date": "May 3, 2026",
+    "category": "Project Management",
+    "description": "Seven-course Google Professional Certificate covering traditional and agile project management — initiation, planning, execution, risk management, and stakeholder communication, with hands-on practice-based assessments.",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/Y0JMYWUVVJG9",
+    "verifyUrl": "https://coursera.org/verify/professional-cert/Y0JMYWUVVJG9",
+    "image": "/certificates/coursera-Y0JMYWUVVJG9.png",
+    "courses": [
+      {
+        "title": "Foundations of Project Management",
+        "image": "/certificates/courses/foundations-of-project-management.png",
+        "verifyUrl": "https://coursera.org/verify/JF170ZWTORO1",
+        "date": "Apr 24, 2026"
+      },
+      {
+        "title": "Project Initiation: Starting a Successful Project",
+        "image": "/certificates/courses/project-initiation-starting-a-successful-project.png",
+        "verifyUrl": "https://coursera.org/verify/PHO6O0SYGTPZ",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "title": "Project Planning: Putting It All Together",
+        "image": "/certificates/courses/project-planning-putting-it-all-together.png",
+        "verifyUrl": "https://coursera.org/verify/60X1WN8E8YJ8",
+        "date": "May 1, 2026"
+      },
+      {
+        "title": "Project Execution: Running the Project",
+        "image": "/certificates/courses/project-execution-running-the-project.png",
+        "verifyUrl": "https://coursera.org/verify/91D73ACD2N61",
+        "date": "May 2, 2026"
+      },
+      {
+        "title": "Agile Project Management",
+        "image": "/certificates/courses/agile-project-management.png",
+        "verifyUrl": "https://coursera.org/verify/HMIY26O1EZ9X",
+        "date": "May 2, 2026"
+      },
+      {
+        "title": "Capstone: Applying Project Management in the Real World",
+        "image": "/certificates/courses/capstone-applying-project-management-in-the-real-world.png",
+        "verifyUrl": "https://coursera.org/verify/1TP81UD1KL05",
+        "date": "May 3, 2026"
+      },
+      {
+        "title": "Accelerate Your Job Search with AI",
+        "image": "/certificates/courses/accelerate-your-job-search-with-ai.png",
+        "verifyUrl": "https://coursera.org/verify/6DHE0HN2O6RB",
+        "date": "May 3, 2026"
+      }
+    ]
   },
   {
-    "id": 5,
-    "title": "VNNIC Internet Technology Workshop",
-    "issuer": "VNNIC",
-    "date": "2025",
-    "category": "Internet Technology",
-    "description": "Workshop covering DNS infrastructure, domain management, and internet governance in Vietnam.",
+    "id": "coursera-84G1CO6ABM7P",
+    "title": "Google AI",
+    "issuer": "Google · Coursera",
+    "date": "Apr 29, 2026",
+    "category": "AI",
+    "description": "Google AI Professional Certificate — seven courses applying AI to brainstorming, research, communication, content creation, data analysis, and coding. Includes a portfolio of 20+ AI-built artifacts and a vibe-coded custom AI solution.",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/84G1CO6ABM7P",
+    "verifyUrl": "https://coursera.org/verify/professional-cert/84G1CO6ABM7P",
+    "image": "/certificates/coursera-84G1CO6ABM7P.png",
+    "courses": [
+      {
+        "title": "AI Fundamentals",
+        "image": "/certificates/courses/ai-fundamentals.png",
+        "verifyUrl": "https://coursera.org/verify/5M4L44MMDU0X",
+        "date": "Apr 28, 2026"
+      },
+      {
+        "title": "AI for Brainstorming and Planning",
+        "image": "/certificates/courses/ai-for-brainstorming-and-planning.png",
+        "verifyUrl": "https://coursera.org/verify/3ZB26IEBHCYN",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "title": "AI for Research and Insights",
+        "image": "/certificates/courses/ai-for-research-and-insights.png",
+        "verifyUrl": "https://coursera.org/verify/KPAT26FZ6CYZ",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "title": "AI for Writing and Communicating",
+        "image": "/certificates/courses/ai-for-writing-and-communicating.png",
+        "verifyUrl": "https://coursera.org/verify/X0PRYQ9UAP77",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "title": "AI for Content Creation",
+        "image": "/certificates/courses/ai-for-content-creation.png",
+        "verifyUrl": "https://coursera.org/verify/QAQNZVPRWWI6",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "title": "AI for Data Analysis",
+        "image": "/certificates/courses/ai-for-data-analysis.png",
+        "verifyUrl": "https://coursera.org/verify/SW452DOHOOZK",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "title": "AI for App Building",
+        "image": "/certificates/courses/ai-for-app-building.png",
+        "verifyUrl": "https://coursera.org/verify/2QAYGALW59TM",
+        "date": "Apr 29, 2026"
+      }
+    ]
+  },
+  {
+    "id": "coursera-POYFWIV2Y5VW",
+    "title": "Google AI Essentials",
+    "issuer": "Google · Coursera",
+    "date": "Apr 26, 2026",
+    "category": "AI",
+    "description": "Google AI Essentials Specialization — five courses developed by Google with hands-on practice in AI tools, prompting techniques, and responsible AI use to improve productivity across everyday workflows.",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/POYFWIV2Y5VW",
+    "verifyUrl": "https://coursera.org/verify/specialization/POYFWIV2Y5VW",
+    "image": "/certificates/coursera-POYFWIV2Y5VW.png",
+    "courses": [
+      {
+        "title": "Introduction to AI",
+        "image": "/certificates/courses/introduction-to-ai.png",
+        "verifyUrl": "https://coursera.org/verify/IZ9A3OUDWLBR",
+        "date": "Apr 26, 2026"
+      },
+      {
+        "title": "Maximize Productivity With AI Tools",
+        "image": "/certificates/courses/maximize-productivity-with-ai-tools.png",
+        "verifyUrl": "https://coursera.org/verify/TCW9J7Z0RUWF",
+        "date": "Apr 26, 2026"
+      },
+      {
+        "title": "Discover the Art of Prompting",
+        "image": "/certificates/courses/discover-the-art-of-prompting.png",
+        "verifyUrl": "https://coursera.org/verify/7VN2ZP0U1KON",
+        "date": "Apr 26, 2026"
+      },
+      {
+        "title": "Use AI Responsibly",
+        "image": "/certificates/courses/use-ai-responsibly.png",
+        "verifyUrl": "https://coursera.org/verify/M6KI4IY8NUD3",
+        "date": "Apr 26, 2026"
+      },
+      {
+        "title": "Stay Ahead of the AI Curve",
+        "image": "/certificates/courses/stay-ahead-of-the-ai-curve.png",
+        "verifyUrl": "https://coursera.org/verify/YIZKKN7AJTXQ",
+        "date": "Apr 26, 2026"
+      }
+    ]
+  },
+  {
+    "id": "coursera-google-ux-design",
+    "title": "Google UX Design",
+    "issuer": "Google · Coursera",
+    "date": "In Progress",
+    "category": "Design",
+    "description": "Seven-course Google Professional Certificate covering the UX design process — empathy, ideation, wireframing, prototyping in Figma, responsive design, and preparing for UX roles. (3 of 7 courses completed.)",
     "url": null,
-    "badge": "🌐"
+    "verifyUrl": null,
+    "image": null,
+    "courses": [
+      {
+        "title": "Foundations of User Experience (UX) Design",
+        "image": "/certificates/courses/foundations-of-user-experience-ux-design.png",
+        "verifyUrl": "https://coursera.org/verify/KTOSP3GTGHJX",
+        "date": "May 8, 2026"
+      },
+      {
+        "title": "Start the UX Design Process: Empathize, Define, and Ideate",
+        "image": "/certificates/courses/start-the-ux-design-process-empathize-define-and-ideate.png",
+        "verifyUrl": "https://coursera.org/verify/FQWXXBFTGPHW",
+        "date": "May 8, 2026"
+      },
+      {
+        "title": "Build Wireframes and Low-Fidelity Prototypes",
+        "image": "/certificates/courses/build-wireframes-and-low-fidelity-prototypes.png",
+        "verifyUrl": "https://coursera.org/verify/CRUMP8YNKXP1",
+        "date": "May 9, 2026"
+      },
+      { "title": "Conduct UX Research and Test Early Concepts", "image": null, "verifyUrl": null, "date": null },
+      { "title": "Create High-Fidelity Designs and Prototypes in Figma", "image": null, "verifyUrl": null, "date": null },
+      { "title": "Responsive Web Design in Adobe XD", "image": null, "verifyUrl": null, "date": null },
+      { "title": "Design a User Experience for Social Good & Prepare for Jobs", "image": null, "verifyUrl": null, "date": null }
+    ]
   }
 ]
