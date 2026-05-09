@@ -6,8 +6,8 @@ import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Heading } from "@/components/ui/Heading";
 import { Badge } from "@/components/ui/Badge";
-import { SITE_CONFIG } from "@/lib/constants";
 import { useLanguage } from "@/context/LanguageContext";
+import { CVDocument } from "./CVDocument";
 
 const CV_PATH = "/cv.pdf";
 
@@ -94,70 +94,8 @@ export function ResumeClient() {
           </FadeIn>
 
           <FadeIn>
-            <div className="mx-auto max-w-[1700px] overflow-hidden rounded-3xl border border-border/50 bg-card/60 glass-card shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
-
-              {/* Toolbar strip */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-border/40 bg-background/40 px-6 py-4">
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <FileText size={16} />
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-sm font-bold text-foreground truncate">
-                      {t("pages.resume.preview_filename")}
-                    </span>
-                    <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-                      {t("pages.resume.preview_meta")}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <a
-                    href={CV_PATH}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border/60 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-muted-foreground transition-all hover:border-primary/40 hover:text-primary"
-                    title={t("pages.resume.hero.open_tab")}
-                  >
-                    <ExternalLink size={11} />
-                    {t("pages.resume.hero.open_tab")}
-                  </a>
-                  <a
-                    href={CV_PATH}
-                    download
-                    className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-white transition-all hover:opacity-90"
-                    title={t("pages.resume.hero.download")}
-                  >
-                    <Download size={11} />
-                    {t("pages.resume.hero.download")}
-                  </a>
-                </div>
-              </div>
-
-              {/* Iframe — viewport-tall instead of A4 ratio so the wider container doesn't blow up the height */}
-              <div className="relative w-full bg-neutral-950 h-[85vh] min-h-[600px]">
-                <iframe
-                  src={`${CV_PATH}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
-                  className="absolute inset-0 h-full w-full"
-                  title={`CV — ${SITE_CONFIG.fullName}`}
-                />
-              </div>
-
-              <noscript>
-                <div className="flex flex-col items-center justify-center gap-4 p-20 text-center">
-                  <FileText size={48} className="text-muted-foreground" />
-                  <p className="text-muted-foreground">
-                    {t("pages.resume.no_js")}
-                  </p>
-                  <a
-                    href={CV_PATH}
-                    download
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-black uppercase tracking-widest text-white"
-                  >
-                    <Download size={14} /> {t("pages.resume.hero.download")}
-                  </a>
-                </div>
-              </noscript>
+            <div className="mx-auto max-w-[1100px]">
+              <CVDocument />
             </div>
           </FadeIn>
         </div>
