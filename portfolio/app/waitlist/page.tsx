@@ -9,6 +9,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { Heading } from "@/components/ui/Heading";
 import { Badge } from "@/components/ui/Badge";
 import { identifyUser, trackEvent } from "@/lib/posthog";
+import { useLanguage } from "@/context/LanguageContext";
 
 // ─── Mock backend — replace with real API (Supabase / Firebase / etc.) ────────
 
@@ -47,13 +48,10 @@ function Toast({ message, type }: { message: string; type: "success" | "error" }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-const PERKS = [
-  "Early access to project showcases",
-  "Updates on VNNIC Fellowship progress",
-  "Tech articles on backend & security",
-];
+const PERK_KEYS = ["early", "fellowship", "articles"] as const;
 
 export default function WaitlistPage() {
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
@@ -69,7 +67,7 @@ export default function WaitlistPage() {
     const trimmed = email.trim().toLowerCase();
 
     if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-      showToast("Please enter a valid email address.", "error");
+      showToast(t("pages.waitlist.invalid_email"), "error");
       inputRef.current?.focus();
       return;
     }
@@ -78,16 +76,14 @@ export default function WaitlistPage() {
     try {
       await saveEmailToWaitlist(trimmed);
 
-      // ── PostHog: identify this user by email ──────────────────────────────
       identifyUser(trimmed, { source: "waitlist", joined_at: new Date().toISOString() });
       trackEvent("waitlist_signup", { email: trimmed });
-      // ─────────────────────────────────────────────────────────────────────
 
       setStatus("done");
-      showToast("You're on the list! 🎉", "success");
+      showToast(t("pages.waitlist.success_toast"), "success");
     } catch {
       setStatus("error");
-      showToast("Something went wrong. Please try again.", "error");
+      showToast(t("pages.waitlist.error_toast"), "error");
       setStatus("idle");
     }
   };
@@ -105,26 +101,25 @@ export default function WaitlistPage() {
               variant="outline"
               className="px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]"
             >
-              Coming Soon
+              {t("pages.waitlist.hero.badge")}
             </Badge>
 
             {/* Heading */}
             <div className="space-y-4">
               <Heading variant="hero" as="h1" className="text-5xl md:text-6xl">
-                Stay in the loop
+                {t("pages.waitlist.hero.title")}
               </Heading>
               <p className="text-base text-muted-foreground leading-relaxed">
-                I'm building something worth waiting for. Join the waitlist and be the first to
-                know when it launches.
+                {t("pages.waitlist.hero.description")}
               </p>
             </div>
 
             {/* Perks */}
             <ul className="space-y-2 self-start text-left">
-              {PERKS.map((perk) => (
-                <li key={perk} className="flex items-center gap-3 text-sm text-muted-foreground">
+              {PERK_KEYS.map((key) => (
+                <li key={key} className="flex items-center gap-3 text-sm text-muted-foreground">
                   <CheckCircle2 size={15} className="shrink-0 text-primary" />
-                  {perk}
+                  {t(`pages.waitlist.perk_${key}`)}
                 </li>
               ))}
             </ul>
@@ -137,10 +132,9 @@ export default function WaitlistPage() {
                 className="flex flex-col items-center gap-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 px-10 py-8 w-full"
               >
                 <CheckCircle2 size={40} className="text-emerald-400" />
-                <p className="text-base font-black text-emerald-400">You're on the list!</p>
+                <p className="text-base font-black text-emerald-400">{t("pages.waitlist.success_title")}</p>
                 <p className="text-sm text-muted-foreground">
-                  I'll reach out to <strong className="text-foreground">{email}</strong> when
-                  things are ready.
+                  {t("pages.waitlist.success_desc_prefix")} <strong className="text-foreground">{email}</strong> {t("pages.waitlist.success_desc_suffix")}
                 </p>
               </motion.div>
             ) : (
@@ -155,7 +149,7 @@ export default function WaitlistPage() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
+                    placeholder={t("pages.waitlist.form_placeholder")}
                     disabled={status === "loading"}
                     className="w-full rounded-full border border-border/60 bg-card/60 py-4 pl-11 pr-5 text-sm font-medium placeholder:text-muted-foreground/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 disabled:opacity-50 transition-all"
                     autoComplete="email"
@@ -170,7 +164,7 @@ export default function WaitlistPage() {
                     <Loader2 size={16} className="animate-spin" />
                   ) : (
                     <>
-                      Join Waitlist
+                      {t("pages.waitlist.form_submit")}
                       <ArrowRight
                         size={15}
                         className="transition-transform group-hover:translate-x-1"
@@ -183,7 +177,7 @@ export default function WaitlistPage() {
 
             {/* Counter (static for now) */}
             <p className="text-[11px] text-muted-foreground/60">
-              Join <strong className="text-muted-foreground">12+ engineers</strong> already waiting
+              {t("pages.waitlist.counter_prefix")} <strong className="text-muted-foreground">{t("pages.waitlist.counter_middle")}</strong> {t("pages.waitlist.counter_suffix")}
             </p>
           </FadeIn>
         </Section>
