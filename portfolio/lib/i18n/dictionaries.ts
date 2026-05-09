@@ -186,6 +186,9 @@ export const dictionaries = {
           description: "A record of formal courses, workshops, and self-directed learning across my engineering journey.",
         },
         view_certificate: "View Certificate",
+        view_image: "View Image",
+        close: "Close",
+        image_pending: "Image coming soon",
       },
       resume: {
         hero: {
@@ -417,11 +420,14 @@ export const dictionaries = {
           description: "Hồ sơ các khóa học chính quy, workshop và quá trình tự học trong suốt hành trình kỹ thuật của tôi.",
         },
         view_certificate: "Xem chứng chỉ",
+        view_image: "Xem ảnh chứng chỉ",
+        close: "Đóng",
+        image_pending: "Ảnh sẽ được cập nhật",
       },
       resume: {
         hero: {
           badge: "Hồ sơ",
-          title: "CV / Resume",
+          title: "Resume",
           description: "Toàn bộ hành trình kỹ thuật của tôi gói gọn trong một tài liệu — hệ thống backend, kiến trúc cơ sở dữ liệu và thiết kế phần mềm an toàn.",
           download: "Tải PDF",
           open_tab: "Mở trong tab mới",
