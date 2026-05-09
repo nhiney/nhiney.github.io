@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, GitBranch, Clock, Code2, Folder, Award, FileText, Globe } from "lucide-react";
 import { motion } from "framer-motion";
@@ -49,6 +50,45 @@ const TECH_PILLS = [
   { label: "Git",       color: "bg-rose-500/10   border-rose-500/20   text-rose-400"   },
 ];
 
+// ─── Animated number counter ──────────────────────────────────────────────────
+
+function AnimatedCounter({
+  to,
+  duration = 1.4,
+  suffix = "",
+  delay = 0,
+}: {
+  to: number;
+  duration?: number;
+  suffix?: string;
+  delay?: number;
+}) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    let startTs: number | null = null;
+    const startDelay = window.setTimeout(() => {
+      const tick = (ts: number) => {
+        if (startTs === null) startTs = ts;
+        const progress = Math.min((ts - startTs) / (duration * 1000), 1);
+        // ease-out cubic for a natural deceleration
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setValue(Math.round(to * eased));
+        if (progress < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    }, delay * 1000);
+
+    return () => {
+      window.clearTimeout(startDelay);
+      cancelAnimationFrame(raf);
+    };
+  }, [to, duration, delay]);
+
+  return <>{value}{suffix}</>;
+}
+
 // ─── Bento card ───────────────────────────────────────────────────────────────
 
 function BentoItem({ area, icon, title, children }: {
@@ -86,11 +126,15 @@ function PersonalBentoGrid() {
       >
         <div className="grid grid-cols-2 gap-3 mt-1">
           <div className="rounded-xl bg-primary/5 border border-primary/10 p-3 text-center">
-            <div className="text-2xl font-black text-primary">186+</div>
+            <div className="text-2xl font-black text-primary">
+              <AnimatedCounter to={186} suffix="+" />
+            </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">{t("home.bento.github_contributions")}</div>
           </div>
           <div className="rounded-xl bg-primary/5 border border-primary/10 p-3 text-center">
-            <div className="text-2xl font-black text-primary">8+</div>
+            <div className="text-2xl font-black text-primary">
+              <AnimatedCounter to={8} suffix="+" duration={1.0} delay={0.2} />
+            </div>
             <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">{t("home.bento.github_repos")}</div>
           </div>
         </div>
@@ -111,7 +155,9 @@ function PersonalBentoGrid() {
       >
         <div className="mt-1 space-y-3">
           <div>
-            <span className="text-3xl font-black text-foreground">442+</span>
+            <span className="text-3xl font-black text-foreground">
+              <AnimatedCounter to={442} suffix="+" duration={1.6} delay={0.1} />
+            </span>
             <span className="ml-2 text-xs text-muted-foreground">{t("home.bento.coding_hours_unit")}</span>
           </div>
           <div className="space-y-1">
@@ -208,8 +254,8 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
                 </Link>
               </div>
 
-              {/* Tech stack avatars + stats */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              {/* Tech stack avatars + stats — hidden from UI (kept in code) */}
+              <div className="hidden flex-col sm:flex-row items-start sm:items-center gap-5">
                 <div className="flex pl-4">
                   <AnimatedTooltip items={TECH_ITEMS} />
                 </div>
