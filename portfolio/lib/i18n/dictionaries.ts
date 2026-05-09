@@ -226,6 +226,19 @@ export const dictionaries = {
         preview_meta: "PDF · A4 · single page",
         save_copy: "Save a copy",
         no_js: "PDF preview requires JavaScript. Please download the file directly.",
+        cv: {
+          summary:        "Summary",
+          skills:         "Skills & Tools",
+          projects:       "Projects",
+          education:      "Education",
+          certifications: "Certifications & Honors",
+          problem:        "Problem",
+          contributions:  "Key Contributions",
+          tech:           "Key Tech",
+          gpa:            "GPA",
+          expected:       "Expected",
+          certificate:    "Certificate",
+        },
       },
       waitlist: {
         hero: {
@@ -475,6 +488,19 @@ export const dictionaries = {
         preview_meta: "PDF · A4 · một trang",
         save_copy: "Lưu một bản",
         no_js: "Trình xem PDF cần JavaScript. Vui lòng tải tệp trực tiếp.",
+        cv: {
+          summary:        "Tóm tắt",
+          skills:         "Kỹ năng & Công cụ",
+          projects:       "Dự án",
+          education:      "Học vấn",
+          certifications: "Chứng chỉ & Danh hiệu",
+          problem:        "Vấn đề",
+          contributions:  "Đóng góp Chính",
+          tech:           "Công nghệ Chính",
+          gpa:            "GPA",
+          expected:       "Dự kiến",
+          certificate:    "Chứng chỉ",
+        },
       },
       waitlist: {
         hero: {
