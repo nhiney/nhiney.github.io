@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Software Engineering Fundamentals",
+    "issuer": "University of Information Technology",
+    "date": "2024",
+    "category": "Academic",
+    "description": "Coursework covering algorithms, data structures, OOP, and software design patterns.",
+    "url": null,
+    "badge": "🎓"
+  },
+  {
+    "id": 2,
+    "title": "Flutter & Dart — The Complete Guide",
+    "issuer": "Udemy",
+    "date": "2023",
+    "category": "Mobile Development",
+    "description": "In-depth mobile development course covering Flutter widgets, state management, and Firebase integration.",
+    "url": null,
+    "badge": "📱"
+  },
+  {
+    "id": 3,
+    "title": "Laravel Backend Development",
+    "issuer": "Online Learning Platform",
+    "date": "2023",
+    "category": "Backend",
+    "description": "Comprehensive Laravel course covering Eloquent ORM, REST API design, and authentication.",
+    "url": null,
+    "badge": "🔧"
+  },
+  {
+    "id": 4,
+    "title": "Database Security & RBAC",
+    "issuer": "Self-directed Research",
+    "date": "2024",
+    "category": "Security",
+    "description": "Applied OWASP guidelines, implemented row-level security and audit logging on Oracle DB.",
+    "url": null,
+    "badge": "🛡️"
+  },
+  {
+    "id": 5,
+    "title": "VNNIC Internet Technology Workshop",
+    "issuer": "VNNIC",
+    "date": "2025",
+    "category": "Internet Technology",
+    "description": "Workshop covering DNS infrastructure, domain management, and internet governance in Vietnam.",
+    "url": null,
+    "badge": "🌐"
+  }
+]

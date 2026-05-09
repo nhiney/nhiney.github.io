@@ -17,33 +17,35 @@ interface TimelineItemProps {
 
 function TimelineItem({ year, title, organization, description, isLast }: TimelineItemProps) {
   return (
-    <div className="relative pl-16 sm:pl-24 pb-12 last:pb-0">
-      {/* Year Indicator */}
-      <div className="absolute left-0 top-1 text-[10px] font-black uppercase tracking-widest text-zinc-500 w-12 sm:w-20">
-        {year}
-      </div>
-
+    <div className="relative pl-8 sm:pl-12 pb-12 last:pb-0 group">
       {!isLast && (
-        <div className="absolute left-[64px] sm:left-[96px] top-6 bottom-0 w-[1px] bg-zinc-800" />
+        <div className="absolute left-[3px] top-6 bottom-0 w-[1px] bg-gradient-to-b from-zinc-800 to-transparent" />
       )}
       
-      <div className="absolute left-[61px] sm:left-[93px] top-2 h-2 w-2 rounded-full bg-primary" />
+      <div className="absolute left-0 top-2.5 h-[7px] w-[7px] rounded-full bg-zinc-800 group-hover:bg-primary transition-colors border border-background shadow-[0_0_10px_rgba(var(--primary),0)] group-hover:shadow-[0_0_10px_rgba(var(--primary),0.5)] z-10" />
 
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: "easeOut" }}
+        whileHover={{ x: 5 }}
+        className="space-y-4 p-6 rounded-2xl bg-secondary/10 border border-border/30 hover:border-primary/20 hover:bg-secondary/20 transition-all cursor-default"
       >
-        <div className="space-y-2">
-          <Heading variant="subtitle" as="h3">{title}</Heading>
-          {organization && (
-            <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 italic">
-              {organization}
-            </div>
-          )}
-          <Text variant="small" className="max-w-xl">{description}</Text>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div className="space-y-1">
+            <Heading variant="subtitle" as="h3" className="text-sm font-black uppercase tracking-widest">{title}</Heading>
+            {organization && (
+              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/80 italic">
+                {organization}
+              </div>
+            )}
+          </div>
+          <div className="text-[10px] font-black uppercase tracking-widest text-zinc-600 group-hover:text-zinc-400 transition-colors">
+            {year}
+          </div>
         </div>
+        <Text variant="small" className="text-zinc-400 text-xs leading-relaxed max-w-xl">{description}</Text>
       </motion.div>
     </div>
   );

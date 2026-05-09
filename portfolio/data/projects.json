@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "smart-medical-booking-app",
+    "title": "Smart Medical Booking App (S-Book)",
+    "description": "A clinic appointment booking system with patient management, doctor scheduling, and RBAC-based access control.",
+    "problem": "Patients had no digital way to book appointments — clinics relied on phone calls and manual ledgers.",
+    "role": "Lead Developer",
+    "impact": "Digitised 100% of appointment flow; reduced scheduling errors to near-zero.",
+    "technologies": ["Flutter", "Laravel", "Firebase", "MySQL", "RBAC"],
+    "github": "https://github.com/nhiney",
+    "demo": null,
+    "image": "/projects/clinic.png",
+    "year": "2024",
+    "category": "Mobile & Backend"
+  },
+  {
+    "slug": "sports-field-booking",
+    "title": "Sports Field Booking System",
+    "description": "Real-time field reservation platform with slot management, payment simulation, and multi-role admin dashboard.",
+    "problem": "Field owners managed bookings manually via Zalo/phone, leading to double bookings and revenue loss.",
+    "role": "Full-stack Developer",
+    "impact": "Eliminated double bookings; increased booking throughput by 3×.",
+    "technologies": ["Laravel", "Blade", "MySQL", "JavaScript"],
+    "github": "https://github.com/nhiney",
+    "demo": null,
+    "image": "/projects/sports.png",
+    "year": "2024",
+    "category": "Web"
+  },
+  {
+    "slug": "database-security-system",
+    "title": "Database Security System",
+    "description": "Implements row-level RBAC, SQL injection prevention, audit logging, and encrypted column storage on Oracle DB.",
+    "problem": "Legacy database exposed sensitive patient/financial data with no access boundaries or audit trail.",
+    "role": "Database Architect & Security Engineer",
+    "impact": "Passed all OWASP A03 injection test cases; zero privilege-escalation incidents in testing.",
+    "technologies": ["Oracle DB", "PL/SQL", "Python", "Tkinter", "RBAC"],
+    "github": "https://github.com/nhiney",
+    "demo": null,
+    "image": "/projects/database.png",
+    "year": "2024",
+    "category": "Security"
+  },
+  {
+    "slug": "english-learning-app",
+    "title": "English Learning App",
+    "description": "Vocabulary and grammar drill app with spaced-repetition algorithm, progress tracking, and offline-first architecture.",
+    "problem": "Students lacked structured daily practice tools that adapt to their individual weak points.",
+    "role": "Mobile Developer",
+    "impact": "Vocabulary retention improved 40% in user tests versus flashcard baseline.",
+    "technologies": ["Flutter", "Dart", "Firebase", "Node.js"],
+    "github": "https://github.com/nhiney",
+    "demo": null,
+    "image": "/projects/english.png",
+    "year": "2023",
+    "category": "Mobile"
+  }
+]

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export function ThemeToggle({ className }: { className?: string }) {
@@ -9,13 +10,14 @@ export function ThemeToggle({ className }: { className?: string }) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    // Using a microtask to move setState out of the synchronous effect body to satisfy strict lint rules
-    Promise.resolve().then(() => setMounted(true));
+    setMounted(true);
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     if (savedTheme) {
-      Promise.resolve().then(() => setTheme(savedTheme));
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      Promise.resolve().then(() => setTheme("dark"));
+      setTheme("dark");
+      document.documentElement.classList.toggle("dark", true);
     }
   }, []);
 
@@ -27,28 +29,44 @@ export function ThemeToggle({ className }: { className?: string }) {
   };
 
   if (!mounted) {
-    return <div className="h-9 w-9" aria-hidden="true" />;
+    return <div className="h-10 w-10" aria-hidden="true" />;
   }
 
   return (
-    <button
+    <motion.button
       onClick={toggleTheme}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       className={cn(
-        "group relative flex h-9 w-9 items-center justify-center rounded-full transition-all hover:bg-muted/50",
+        "relative flex h-10 w-10 items-center justify-center rounded-full border border-border/50 transition-colors",
+        "bg-secondary/20 hover:bg-secondary/40",
+        theme === "dark" ? "blue-glow border-primary/20" : "hover:border-primary/20",
         className
       )}
       aria-label="Toggle theme"
     >
-      <div className="relative h-5 w-5 overflow-hidden">
-        <Sun className={cn(
-          "absolute inset-0 h-5 w-5 transition-all duration-500",
-          theme === "dark" ? "translate-y-0 opacity-100 rotate-0" : "translate-y-8 opacity-0 rotate-90"
-        )} />
-        <Moon className={cn(
-          "absolute inset-0 h-5 w-5 transition-all duration-500",
-          theme === "light" ? "translate-y-0 opacity-100 rotate-0" : "-translate-y-8 opacity-0 -rotate-90"
-        )} />
-      </div>
-    </button>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={theme}
+          initial={{ y: 10, opacity: 0, rotate: -90 }}
+          animate={{ y: 0, opacity: 1, rotate: 0 }}
+          exit={{ y: -10, opacity: 0, rotate: 90 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          className="relative z-10"
+        >
+          {theme === "dark" ? (
+            <Moon className="h-5 w-5 text-primary" fill="currentColor" fillOpacity={0.2} />
+          ) : (
+            <Sun className="h-5 w-5 text-zinc-600" />
+          )}
+        </motion.div>
+      </AnimatePresence>
+      
+      {/* Decorative pulse background */}
+      <motion.div
+        layoutId="theme-bg"
+        className="absolute inset-0 rounded-full bg-primary/5 opacity-0 group-hover:opacity-100"
+      />
+    </motion.button>
   );
 }

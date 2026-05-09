@@ -1,13 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BackgroundEffects } from "@/components/ui/BackgroundEffects";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { PostHogProvider } from "@/components/posthog/PostHogProvider";
+import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -58,14 +69,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="h-full antialiased">
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
-      <body className={cn(inter.className, "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20")}>
-        <BackgroundEffects />
-        <Navbar />
-        <main className="flex-1 relative z-10">{children}</main>
-        <Footer />
+      <head />
+      <body className={cn(
+        inter.variable,
+        outfit.variable,
+        inter.className,
+        "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans"
+      )}>
+        <Script 
+          id="theme-strategy" 
+          src="/theme-strategy.js" 
+          strategy="beforeInteractive" 
+        />
+        <PostHogProvider>
+          <LanguageProvider>
+            <BackgroundEffects />
+            <Navbar />
+            <main className="flex-1 relative z-10">{children}</main>
+            <Footer />
+          </LanguageProvider>
+        </PostHogProvider>
       </body>
     </html>
   );
