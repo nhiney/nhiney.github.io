@@ -1,0 +1,20 @@
+node_modules/
+.DS_Store
+
+# Next.js build output — deployed via gh-pages branch, never committed to main
+_next/
+_not-found/
+out/
+404/
+blog/
+projects/
+index.html
+index.txt
+404.html
+robots.txt
+sitemap.xml
+favicon.ico
+*.txt
+*.svg
+!portfolio/**
+!README.md

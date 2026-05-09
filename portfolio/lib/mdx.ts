@@ -2,22 +2,11 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
+import { Post, PostFrontmatter } from "@/types";
 
 const CONTENT_PATH = path.join(process.cwd(), "content");
 
-export interface PostMetadata {
-  title: string;
-  description: string;
-  date: string;
-  tags?: string[];
-  [key: string]: unknown;
-}
-
-export interface Post extends PostMetadata {
-  slug: string;
-  content: string;
-  readingTime: string;
-}
+export type { Post };
 
 export function getSlugs(type: "projects" | "blog") {
   const dir = path.join(CONTENT_PATH, type);
@@ -41,7 +30,7 @@ export async function getPostBySlug(type: "projects" | "blog", slug: string): Pr
   return {
     slug: normalizedSlug,
     content,
-    ...(data as PostMetadata),
+    ...(data as PostFrontmatter),
     readingTime: readingTime(content).text,
   } as Post;
 }
