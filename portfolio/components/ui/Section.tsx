@@ -7,7 +7,10 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 export function Section({ as: Component = "section", className, ...props }: SectionProps) {
   return (
     <Component
-      className={cn("py-20 md:py-28 lg:py-32", className)}
+      // Default has no built-in padding — pages set their own pt/pb explicitly
+      // so spacing is predictable and the page-level Container's space-y can
+      // actually take effect without 80-128px hidden bottom padding fighting it.
+      className={cn(className)}
       {...props}
     />
   );
