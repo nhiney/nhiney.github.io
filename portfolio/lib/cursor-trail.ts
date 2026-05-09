@@ -95,22 +95,14 @@ export function cursorTrail({ ref, color }: CursorTrailOptions) {
     );
   }
 
-  function onMove(e: MouseEvent | TouchEvent) {
-    if (e instanceof MouseEvent) {
-      cursor.x = e.clientX;
-      cursor.y = e.clientY;
-    } else {
-      cursor.x = e.touches[0].pageX;
-      cursor.y = e.touches[0].pageY;
-    }
-    e.preventDefault();
+  function onMove(e: MouseEvent) {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
   }
 
-  function onFirstMove(e: MouseEvent | TouchEvent) {
+  function onFirstMove(e: MouseEvent) {
     document.removeEventListener("mousemove", onFirstMove as EventListener);
-    document.removeEventListener("touchstart", onFirstMove as EventListener);
     document.addEventListener("mousemove", onMove as EventListener);
-    document.addEventListener("touchmove", onMove as EventListener, { passive: false });
     onMove(e);
     initLines();
     render();
@@ -129,7 +121,6 @@ export function cursorTrail({ ref, color }: CursorTrailOptions) {
 
   function renderTrailCursor() {
     document.addEventListener("mousemove", onFirstMove as EventListener);
-    document.addEventListener("touchstart", onFirstMove as EventListener);
     window.addEventListener("resize", resizeCanvas);
     window.addEventListener("focus", startAnimation);
     window.addEventListener("blur", stopAnimation);
@@ -139,9 +130,7 @@ export function cursorTrail({ ref, color }: CursorTrailOptions) {
   function cleanUp() {
     running = false;
     document.removeEventListener("mousemove", onFirstMove as EventListener);
-    document.removeEventListener("touchstart", onFirstMove as EventListener);
     document.removeEventListener("mousemove", onMove as EventListener);
-    document.removeEventListener("touchmove", onMove as EventListener);
     window.removeEventListener("resize", resizeCanvas);
     window.removeEventListener("focus", startAnimation);
     window.removeEventListener("blur", stopAnimation);
