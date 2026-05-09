@@ -1,12 +1,10 @@
-import { getAllPosts } from "@/lib/mdx";
 import { ProjectsClient } from "./ProjectsClient";
 
 export const metadata = {
   title: "Projects | Yen Nhi",
-  description: "Highlighting my experience across full-stack and backend development.",
+  description: "Featured engineering projects — what was broken, how I solved it, and what shipped.",
 };
 
-export default async function ProjectsPage() {
-  const projects = await getAllPosts("projects");
-  return <ProjectsClient projects={projects} />;
+export default function ProjectsPage() {
+  return <ProjectsClient />;
 }
