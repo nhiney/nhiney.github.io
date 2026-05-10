@@ -33,7 +33,9 @@ const FEATURES = [
   { icon: Folder,   key: "projects",     href: "/portfolio#projects" },
   { icon: Award,    key: "certificates", href: "/certificates"       },
   { icon: FileText, key: "resume",       href: "/resume"             },
-  { icon: Globe,    key: "fellowship",   href: "/fellowship"         },
+  // Fellowship VNNIC — hidden from home menu; page still reachable at /nguyenthiyennhi-fellowship-vnnic-hcm.
+  // To re-enable, uncomment the line below.
+  // { icon: Globe,    key: "fellowship",   href: "/nguyenthiyennhi-fellowship-vnnic-hcm" },
 ] as const;
 
 const TECH_PILLS = [
@@ -250,12 +252,16 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
                     <ArrowRight className="h-4 w-4" />
                   </button>
                 </Link>
-                <Link
-                  href="/fellowship"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 px-7 h-12 text-base font-medium transition-all hover:border-primary/40 hover:bg-primary/5"
-                >
-                  {t("home.hero.cta_secondary")}
-                </Link>
+                {/* Fellowship VNNIC CTA — hidden from home; page still reachable at /nguyenthiyennhi-fellowship-vnnic-hcm.
+                    To re-enable, remove the wrapping {false && (...)}. */}
+                {false && (
+                  <Link
+                    href="/nguyenthiyennhi-fellowship-vnnic-hcm"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 px-7 h-12 text-base font-medium transition-all hover:border-primary/40 hover:bg-primary/5"
+                  >
+                    {t("home.hero.cta_secondary")}
+                  </Link>
+                )}
               </div>
 
               {/* Tech stack avatars + stats — hidden from UI (kept in code) */}
