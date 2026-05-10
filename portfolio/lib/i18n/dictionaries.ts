@@ -358,22 +358,93 @@ export const dictionaries = {
       },
       portfolio: {
         hero: {
-          badge: "Full Portfolio",
-          title: "Engineering Work",
-          description: "A complete view of my projects, technical stack, GitHub activity, and background as a software engineering student specialising in backend systems and security.",
+          badge: "Behind the code",
+          eyebrow: "Identity",
+          title: "Engineering, with intent.",
+          description: "I'm Nhi — a backend-leaning engineer who cares more about how a system ages than how it launches. This page is not a CV or a project list; it's the bit of me that doesn't fit into either.",
         },
-        analytics_section: "Analytics",
-        analytics_title: "Engineering Intelligence Dashboard",
-        projects_section: "Showcase",
-        projects_title: "Featured Engineering Projects",
-        skills_section: "Inventory",
-        skills_title: "Technical Stack & Mastery",
-        mindmap_section: "Network",
-        mindmap_title: "Product Mindset",
-        education_section: "Credentials",
-        education_title: "Education",
-        extra_section: "Community",
-        extra_title: "Extra-curricular Activities",
+
+        signature: {
+          quote: "I build backend systems the way I'd want them inherited — clear, observable, and quietly reliable. Frontend matters too, but only when it serves the person on the other side of the screen.",
+          attribution: "— a working belief, not a slogan",
+        },
+
+        principles_section: "01 · Principles",
+        principles_title: "What I keep returning to",
+        principles_intro: "Habits I've built from getting things wrong, often. They show up in my pull requests more than in my résumé.",
+        principles: [
+          {
+            title: "Read the code before you write it",
+            body: "Most bugs aren't bugs — they're misread context. I spend more time understanding than typing.",
+          },
+          {
+            title: "Logs are louder than guesses",
+            body: "If a system can't explain itself at 2 a.m., it isn't finished. I optimise for observability before cleverness.",
+          },
+          {
+            title: "Boring shipped beats brilliant blocked",
+            body: "Predictable code that ships unblocks everyone else. The fancy refactor can wait for a sober Tuesday.",
+          },
+          {
+            title: "Security is hygiene, not a feature",
+            body: "Threat modelling lives at the requirements stage, not in a final-week 'security review'.",
+          },
+        ],
+
+        process_section: "02 · How I work",
+        process_title: "The shape of a good day",
+        process_intro: "Process is just the part of taste that's repeatable.",
+        process: [
+          { label: "Planning",        body: "I ask why before how. A small written one-pager beats an hour of meetings." },
+          { label: "Communication",   body: "Async-first, doc-heavy. If a decision is worth making, it's worth writing down." },
+          { label: "Code review",     body: "Slow, careful, and kind. Reviews teach the team — they aren't a gate." },
+          { label: "Shipping",        body: "Small commits, clear messages, tests where they matter. Done > perfect." },
+        ],
+
+        exploring_section: "03 · Currently exploring",
+        exploring_title: "What's on my radar this season",
+        exploring_intro: "A small, honest list — not everything I've ever clicked.",
+        exploring: [
+          {
+            tag: "Systems",
+            title: "Event-driven backends",
+            body: "Outbox pattern, idempotency keys, the boring details that decide whether a system survives Black Friday.",
+          },
+          {
+            tag: "Observability",
+            title: "OpenTelemetry & structured logs",
+            body: "Treating logs and traces as first-class API design — not an afterthought.",
+          },
+          {
+            tag: "Language",
+            title: "Rust, slowly",
+            body: "Borrow checker as a teacher. Reading more than I'm writing, on purpose.",
+          },
+          {
+            tag: "Workflow",
+            title: "AI-assisted engineering",
+            body: "Where the model genuinely speeds me up, and where it quietly makes me a worse engineer if I let it.",
+          },
+        ],
+
+        beyond_section: "04 · Beyond the code",
+        beyond_title: "What fuels the engineer",
+        beyond_intro: "Tools I happen to use; values I actually live by.",
+        beyond: [
+          { label: "Reading",     body: "Engineering essays, slow non-fiction, anything that respects the reader's time." },
+          { label: "Quiet mornings", body: "First two hours, no Slack. The work I'm proud of always starts there." },
+          { label: "Mentoring",   body: "Pairing with juniors. Half the time I'm the one who learns something." },
+          { label: "Coffee, walking, journaling", body: "Boring fuel for non-boring work. I'd rather be sustainable than fast." },
+        ],
+
+        manifesto_section: "05 · Heading toward",
+        manifesto_title: "The kind of work I want next",
+        manifesto_body: "Teams that respect users and reviewers in equal measure. Backends that are honest about their failure modes. A practice that can survive a decade — mine, and the codebase's. I'd rather be the careful engineer than the fast one, and I think those two things only feel opposed if the team is in a hurry for the wrong reasons.",
+
+        contact_title: "Building something quiet but excellent?",
+        contact_body: "I'd love to hear about it. Whether it's a backend that needs care, a team that values craft, or just a conversation about engineering done well — my inbox is open.",
+        contact_cta_primary: "Get in touch",
+        contact_cta_secondary: "See the projects",
       },
       projects: {
         hero: {
@@ -834,22 +905,93 @@ export const dictionaries = {
       },
       portfolio: {
         hero: {
-          badge: "Toàn bộ Portfolio",
-          title: "Công việc Kỹ thuật",
-          description: "Tổng quan đầy đủ về các dự án, công nghệ, hoạt động GitHub và hành trình của tôi với vai trò sinh viên kỹ thuật phần mềm chuyên về backend và bảo mật.",
+          badge: "Phía sau dòng code",
+          eyebrow: "Bản ngã",
+          title: "Lập trình, có chủ đích.",
+          description: "Tôi là Nhi — một kỹ sư thiên về backend, quan tâm tới việc một hệ thống 'già đi' như thế nào hơn là nó được ra mắt rầm rộ ra sao. Đây không phải CV hay danh sách dự án — đây là phần của tôi không gói gọn được trong hai cái đó.",
         },
-        analytics_section: "Phân tích",
-        analytics_title: "Bảng điều khiển Trí tuệ Kỹ thuật",
-        projects_section: "Trưng bày",
-        projects_title: "Dự án Kỹ thuật Nổi bật",
-        skills_section: "Kho kỹ năng",
-        skills_title: "Công nghệ & Mức độ thành thạo",
-        mindmap_section: "Mạng lưới",
-        mindmap_title: "Tư duy Sản phẩm",
-        education_section: "Bằng cấp",
-        education_title: "Học vấn",
-        extra_section: "Cộng đồng",
-        extra_title: "Hoạt động ngoại khóa",
+
+        signature: {
+          quote: "Tôi xây backend theo cách mình muốn được kế thừa lại — rõ ràng, dễ quan sát, và lặng lẽ đáng tin. Frontend cũng quan trọng, nhưng chỉ khi nó thật sự phục vụ người ở phía bên kia màn hình.",
+          attribution: "— một niềm tin đang sống, không phải khẩu hiệu",
+        },
+
+        principles_section: "01 · Nguyên tắc",
+        principles_title: "Những điều tôi luôn quay về",
+        principles_intro: "Thói quen được hình thành từ rất nhiều lần làm sai. Chúng xuất hiện trong pull request của tôi nhiều hơn trong CV.",
+        principles: [
+          {
+            title: "Đọc code trước khi viết code",
+            body: "Phần lớn 'bug' thực ra là hiểu sai bối cảnh. Tôi dành nhiều thời gian để đọc hiểu hơn là gõ phím.",
+          },
+          {
+            title: "Log nói to hơn phán đoán",
+            body: "Một hệ thống không tự giải thích được lúc 2 giờ sáng là một hệ thống chưa hoàn chỉnh. Tôi ưu tiên observability trước sự khôn ngoan kỹ thuật.",
+          },
+          {
+            title: "Chậm mà ra hơn là hay mà kẹt",
+            body: "Code dễ đoán mà ship được sẽ unblock cả team. Refactor đẹp đẽ có thể chờ một thứ Ba tỉnh táo hơn.",
+          },
+          {
+            title: "Bảo mật là vệ sinh, không phải tính năng",
+            body: "Threat modelling thuộc giai đoạn lấy yêu cầu, không phải một buổi 'security review' tuần cuối.",
+          },
+        ],
+
+        process_section: "02 · Cách tôi làm việc",
+        process_title: "Hình dáng của một ngày tốt",
+        process_intro: "Quy trình là phần của 'gu' đủ ổn định để lặp lại được.",
+        process: [
+          { label: "Lập kế hoạch", body: "Hỏi 'tại sao' trước khi hỏi 'làm sao'. Một trang viết ngắn ăn đứt một giờ họp." },
+          { label: "Giao tiếp",     body: "Async-first, viết nhiều. Quyết định đáng đưa ra là quyết định đáng được ghi lại." },
+          { label: "Review code",   body: "Chậm, kỹ, và tử tế. Review để dạy nhau, không phải để chặn cửa." },
+          { label: "Ship",          body: "Commit nhỏ, message rõ, test ở chỗ thật sự cần. 'Xong' lớn hơn 'hoàn hảo'." },
+        ],
+
+        exploring_section: "03 · Đang tìm hiểu",
+        exploring_title: "Đang trên radar của tôi mùa này",
+        exploring_intro: "Một danh sách nhỏ và thật — không phải mọi thứ tôi từng click vào.",
+        exploring: [
+          {
+            tag: "Hệ thống",
+            title: "Backend hướng sự kiện",
+            body: "Outbox pattern, idempotency key — những chi tiết 'nhàm' quyết định hệ thống sống sót Black Friday hay không.",
+          },
+          {
+            tag: "Quan sát",
+            title: "OpenTelemetry & log có cấu trúc",
+            body: "Coi log và trace như API hạng nhất, không phải thứ thêm vào sau cùng.",
+          },
+          {
+            tag: "Ngôn ngữ",
+            title: "Rust, từ tốn",
+            body: "Borrow checker như một người thầy. Tôi đang đọc nhiều hơn viết, một cách có chủ đích.",
+          },
+          {
+            tag: "Quy trình",
+            title: "Lập trình có AI hỗ trợ",
+            body: "Chỗ AI thật sự giúp tôi nhanh hơn — và chỗ tôi sẽ tệ đi nếu cứ để nó nghĩ thay.",
+          },
+        ],
+
+        beyond_section: "04 · Ngoài việc viết code",
+        beyond_title: "Thứ nuôi dưỡng người kỹ sư",
+        beyond_intro: "Công cụ là thứ tôi dùng; giá trị là thứ tôi sống.",
+        beyond: [
+          { label: "Đọc sách",        body: "Bài viết kỹ thuật, non-fiction chậm rãi, bất kỳ thứ gì tôn trọng thời gian của người đọc." },
+          { label: "Buổi sáng yên",   body: "Hai giờ đầu, không Slack. Việc tôi tự hào luôn bắt đầu từ đó." },
+          { label: "Đồng hành junior", body: "Pair với các bạn mới. Một nửa thời gian, người học được lại là tôi." },
+          { label: "Cà phê, đi bộ, viết nhật ký", body: "Nhiên liệu nhàm cho công việc không nhàm. Tôi chọn bền vững thay vì nhanh." },
+        ],
+
+        manifesto_section: "05 · Đang đi về phía",
+        manifesto_title: "Kiểu công việc tôi muốn tiếp theo",
+        manifesto_body: "Đội ngũ tôn trọng người dùng và người review code ngang nhau. Backend trung thực với cả những điểm yếu của chính nó. Một cách hành nghề có thể sống sót cả thập kỷ — của tôi, và của codebase. Tôi muốn làm người kỹ sư cẩn thận hơn là người kỹ sư nhanh — và tôi nghĩ hai thứ đó chỉ đối lập khi cả đội đang vội vì những lý do không đáng.",
+
+        contact_title: "Đang xây thứ gì lặng lẽ nhưng tử tế?",
+        contact_body: "Tôi rất muốn nghe. Dù là một backend cần được chăm chút, một đội ngũ trân trọng nghề, hay đơn giản là một cuộc trò chuyện về kỹ thuật được làm cho tử tế — hộp thư của tôi luôn mở.",
+        contact_cta_primary: "Liên hệ với tôi",
+        contact_cta_secondary: "Xem các dự án",
       },
       projects: {
         hero: {
