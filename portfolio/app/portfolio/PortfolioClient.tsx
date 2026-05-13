@@ -1,286 +1,510 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Mail, Quote } from "lucide-react";
-import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { FadeIn } from "@/components/ui/FadeIn";
-import { Heading } from "@/components/ui/Heading";
-import { Badge } from "@/components/ui/Badge";
-import { useLanguage } from "@/context/LanguageContext";
-import { dictionaries } from "@/lib/i18n/dictionaries";
-import { SITE_CONFIG } from "@/lib/constants";
-import type { Post } from "@/types";
+import {
+  ArrowRight, Mail, Download, ExternalLink,
+  CheckCircle2, Code2, Wrench, BarChart2,
+  Sparkles, Layers,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
-// Typed slices of the dictionary so the section data stays structured.
+import { MouseSpotlight }  from "@/components/effects/MouseSpotlight";
+import { BackgroundLines } from "@/components/effects/BackgroundLines";
+import { Container }       from "@/components/ui/Container";
+import { useLanguage }     from "@/context/LanguageContext";
+import { SITE_CONFIG }     from "@/lib/constants";
+import { cn }              from "@/lib/utils";
+import type { Post }       from "@/types";
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+type Stat        = { value: string; label: string };
+type Trait       = { icon: string; title: string; body: string };
+type SkillGroup  = { category: string; items: string[] };
+type ProjectItem = { tag: string; title: string; role: string; period: string; problem: string; impact: string[] };
+type TimelineItem= { period: string; title: string; org: string; desc: string };
+type CertItem    = { emoji: string; title: string; issuer: string; date: string };
+
 type PortfolioCopy = {
-  hero: { badge: string; eyebrow: string; title: string; description: string };
-  signature: { quote: string; attribution: string };
-  principles_section: string;
-  principles_title: string;
-  principles_intro: string;
-  principles: { title: string; body: string }[];
-  process_section: string;
-  process_title: string;
-  process_intro: string;
-  process: { label: string; body: string }[];
-  exploring_section: string;
-  exploring_title: string;
-  exploring_intro: string;
-  exploring: { tag: string; title: string; body: string }[];
-  beyond_section: string;
-  beyond_title: string;
-  beyond_intro: string;
-  beyond: { label: string; body: string }[];
-  manifesto_section: string;
-  manifesto_title: string;
-  manifesto_body: string;
-  contact_title: string;
-  contact_body: string;
-  contact_cta_primary: string;
-  contact_cta_secondary: string;
+  hero: {
+    status: string; headline_pre: string; headline_acc1: string;
+    headline_mid: string; headline_acc2: string;
+    sub_pre: string; sub_ba: string; sub_product: string; sub_ux: string; sub_end: string;
+    cta_projects: string; cta_cv: string; cta_contact: string;
+  };
+  stats: Stat[];
+  about: {
+    eyebrow: string; heading_1: string; heading_2: string; heading_3: string;
+    p1: string; p2: string; p3: string; tags: string[];
+  };
+  traits: Trait[];
+  skills: { eyebrow: string; heading: string; desc: string; groups: SkillGroup[] };
+  projects: {
+    eyebrow: string; heading: string; desc: string; all_cta: string;
+    label_problem: string; label_impact: string; label_case_study: string;
+    items: ProjectItem[];
+  };
+  experience: { eyebrow: string; heading: string; desc: string; items: TimelineItem[] };
+  certifications: { eyebrow: string; heading: string; desc: string; all_cta: string; items: CertItem[] };
+  contact: { eyebrow: string; heading: string; desc: string; cta: string; github: string; linkedin: string };
 };
 
 function usePortfolioCopy(): PortfolioCopy {
   const { language } = useLanguage();
-  // Fall back to English if a section is missing (mirrors the t() fallback).
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const lang = (dictionaries[language] as any)?.pages?.portfolio;
+  const lang = (require("@/lib/i18n/dictionaries").dictionaries[language] as any)?.pages?.portfolio;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const en = (dictionaries.en as any).pages.portfolio;
+  const en   = (require("@/lib/i18n/dictionaries").dictionaries.en as any).pages.portfolio;
   return { ...en, ...(lang ?? {}) } as PortfolioCopy;
 }
+
+// ─── Motion presets ───────────────────────────────────────────────────────────
+
+const inView = (delay = 0) => ({
+  initial:     { opacity: 0, y: 22 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport:    { once: true, margin: "-60px" },
+  transition:  { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
+});
+
+const inViewX = (delay = 0) => ({
+  initial:     { opacity: 0, x: -18 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport:    { once: true },
+  transition:  { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
+});
+
+// ─── Skill group icon map (not translatable) ──────────────────────────────────
+
+const SKILL_ICONS = [BarChart2, Layers, Code2, Wrench] as const;
+const SKILL_STYLES = [
+  { wrapperCls: "from-blue-500/10 to-blue-500/5 border-blue-500/20",   iconCls: "text-blue-500"   },
+  { wrapperCls: "from-violet-500/10 to-violet-500/5 border-violet-500/20", iconCls: "text-violet-500" },
+  { wrapperCls: "from-emerald-500/10 to-emerald-500/5 border-emerald-500/20", iconCls: "text-emerald-500" },
+  { wrapperCls: "from-amber-500/10 to-amber-500/5 border-amber-500/20", iconCls: "text-amber-500"  },
+] as const;
+
+const PROJECT_HREFS = [
+  "/projects/smart-medical-booking-app",
+  "/projects/database-security-system",
+  "/projects/english-learning-app",
+] as const;
+
+const PROJECT_TAG_CLS = [
+  "text-blue-400 bg-blue-400/10 border-blue-400/20",
+  "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+  "text-amber-400 bg-amber-400/10 border-amber-400/20",
+] as const;
+
+const CERT_CLS = [
+  "border-blue-500/30 bg-blue-500/5",
+  "border-violet-500/30 bg-violet-500/5",
+  "border-emerald-500/30 bg-emerald-500/5",
+  "border-amber-500/30 bg-amber-500/5",
+] as const;
+
+// ─── Root ─────────────────────────────────────────────────────────────────────
 
 export function PortfolioClient(_props: { projects: Post[] }) {
   const copy = usePortfolioCopy();
 
   return (
-    <Container className="space-y-24 pb-24">
-
-      {/* ── HERO ───────────────────────────────────────────────────────────── */}
-      <Section className="space-y-7 pt-14 text-center">
-        <FadeIn className="space-y-6 flex flex-col items-center">
-          <Badge
-            variant="outline"
-            className="px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]"
-          >
-            {copy.hero.badge}
-          </Badge>
-
-          <div className="space-y-3">
-            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/80">
-              {copy.hero.eyebrow}
-            </p>
-            <Heading variant="hero" as="h1" className="max-w-3xl">
-              {copy.hero.title}
-            </Heading>
-          </div>
-
-          <p className="max-w-2xl text-base text-muted-foreground leading-relaxed">
-            {copy.hero.description}
-          </p>
-        </FadeIn>
-      </Section>
-
-      {/* ── SIGNATURE QUOTE — the working belief ───────────────────────────── */}
-      <Section className="pt-0">
-        <FadeIn>
-          <figure className="relative mx-auto max-w-3xl rounded-3xl border border-border/50 bg-card/60 px-7 py-9 sm:px-10 sm:py-12">
-            <div className="absolute -left-3 -top-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/30 bg-background text-primary shadow-[0_0_30px_-10px_hsl(var(--primary))]">
-              <Quote size={16} />
-            </div>
-            <blockquote className="text-lg sm:text-xl leading-relaxed text-foreground/90 font-medium">
-              &ldquo;{copy.signature.quote}&rdquo;
-            </blockquote>
-            <figcaption className="mt-5 text-[11px] font-semibold uppercase tracking-[0.25em] text-muted-foreground/80">
-              {copy.signature.attribution}
-            </figcaption>
-          </figure>
-        </FadeIn>
-      </Section>
-
-      {/* ── PRINCIPLES (numbered cards) ────────────────────────────────────── */}
-      <Section className="space-y-10 pt-0">
-        <SectionHeader
-          eyebrow={copy.principles_section}
-          title={copy.principles_title}
-          intro={copy.principles_intro}
-        />
-
-        <div className="grid gap-5 sm:grid-cols-2">
-          {copy.principles.map((p, i) => (
-            <FadeIn key={p.title} delay={i * 0.06}>
-              <article className="group relative h-full overflow-hidden rounded-2xl border border-border/50 bg-card/40 p-6 transition-all hover:border-primary/40 hover:bg-card/70 sm:p-7">
-                {/* Vertical accent line */}
-                <span className="pointer-events-none absolute inset-y-6 left-0 w-[3px] rounded-full bg-gradient-to-b from-primary/80 via-primary/40 to-transparent" />
-                <div className="flex items-baseline gap-4 pl-3">
-                  <span className="text-xs font-black tabular-nums tracking-[0.25em] text-primary">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-lg font-black tracking-tight text-foreground sm:text-xl">
-                    {p.title}
-                  </h3>
-                </div>
-                <p className="mt-3 pl-3 text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
-                  {p.body}
-                </p>
-              </article>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
-
-      {/* ── PROCESS — how I work (2x2 grid) ────────────────────────────────── */}
-      <Section className="space-y-10 pt-0">
-        <SectionHeader
-          eyebrow={copy.process_section}
-          title={copy.process_title}
-          intro={copy.process_intro}
-        />
-
-        <FadeIn>
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-border/50 bg-border/40 sm:grid-cols-2">
-            {copy.process.map((step) => (
-              <div
-                key={step.label}
-                className="group relative bg-card/60 p-6 transition-colors hover:bg-card sm:p-8"
-              >
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">
-                  {step.label}
-                </div>
-                <p className="mt-3 text-[15px] leading-relaxed text-foreground/85">
-                  {step.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-      </Section>
-
-      {/* ── EXPLORING — current radar ──────────────────────────────────────── */}
-      <Section className="space-y-10 pt-0">
-        <SectionHeader
-          eyebrow={copy.exploring_section}
-          title={copy.exploring_title}
-          intro={copy.exploring_intro}
-        />
-
-        <ul className="space-y-3">
-          {copy.exploring.map((e, i) => (
-            <FadeIn key={e.title} delay={i * 0.05}>
-              <li className="group flex flex-col gap-3 rounded-2xl border border-border/50 bg-card/40 p-5 transition-all hover:border-primary/30 hover:bg-card/70 sm:flex-row sm:items-start sm:gap-6 sm:p-6">
-                <span className="inline-flex w-fit shrink-0 items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-primary">
-                  {e.tag}
-                </span>
-                <div className="flex-1 space-y-1.5">
-                  <h3 className="text-base font-black tracking-tight text-foreground sm:text-lg">
-                    {e.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
-                    {e.body}
-                  </p>
-                </div>
-              </li>
-            </FadeIn>
-          ))}
-        </ul>
-      </Section>
-
-      {/* ── BEYOND — values / fuels ────────────────────────────────────────── */}
-      <Section className="space-y-10 pt-0">
-        <SectionHeader
-          eyebrow={copy.beyond_section}
-          title={copy.beyond_title}
-          intro={copy.beyond_intro}
-        />
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {copy.beyond.map((b, i) => (
-            <FadeIn key={b.label} delay={i * 0.05}>
-              <div className="h-full rounded-2xl border border-dashed border-border/60 bg-background/30 p-5 transition-colors hover:border-primary/30 hover:bg-background/60">
-                <div className="text-[10px] font-black uppercase tracking-[0.25em] text-foreground/70">
-                  {b.label}
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {b.body}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
-
-      {/* ── MANIFESTO — heading toward ─────────────────────────────────────── */}
-      <Section className="pt-0">
-        <FadeIn>
-          <div className="mx-auto max-w-3xl rounded-3xl border border-border/50 bg-gradient-to-br from-primary/5 via-card/40 to-card/40 p-7 sm:p-10">
-            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">
-              {copy.manifesto_section}
-            </p>
-            <Heading variant="title" className="mt-4 text-2xl sm:text-3xl">
-              {copy.manifesto_title}
-            </Heading>
-            <p className="mt-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
-              {copy.manifesto_body}
-            </p>
-          </div>
-        </FadeIn>
-      </Section>
-
-      {/* ── CONTACT CTA ────────────────────────────────────────────────────── */}
-      <Section className="pt-0">
-        <FadeIn className="text-center space-y-6">
-          <Heading variant="title" className="text-2xl sm:text-3xl">
-            {copy.contact_title}
-          </Heading>
-          <p className="mx-auto max-w-xl text-base text-muted-foreground leading-relaxed">
-            {copy.contact_body}
-          </p>
-          <div className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row">
-            <Link
-              href={`mailto:${SITE_CONFIG.links.email}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-black uppercase tracking-widest text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] active:scale-95"
-            >
-              <Mail size={15} />
-              {copy.contact_cta_primary}
-            </Link>
-            <Link
-              href="/projects"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 px-7 py-3 text-sm font-black uppercase tracking-widest text-foreground transition-all hover:border-primary/40 hover:text-primary"
-            >
-              {copy.contact_cta_secondary}
-              <ArrowRight size={15} />
-            </Link>
-          </div>
-        </FadeIn>
-      </Section>
-
-    </Container>
+    <>
+      <HeroSection copy={copy} />
+      <AboutSection copy={copy} />
+      <SkillsSection copy={copy} />
+      <ProjectsSection copy={copy} />
+      <ExperienceSection copy={copy} />
+      <CertificationsSection copy={copy} />
+      <ContactSection copy={copy} />
+    </>
   );
 }
 
-// ─── Section header ───────────────────────────────────────────────────────────
+// ─── Hero ─────────────────────────────────────────────────────────────────────
 
-function SectionHeader({
-  eyebrow,
-  title,
-  intro,
-}: {
-  eyebrow: string;
-  title: string;
-  intro: string;
-}) {
+function HeroSection({ copy }: { copy: PortfolioCopy }) {
+  const { hero, stats } = copy;
   return (
-    <FadeIn className="space-y-3 max-w-2xl">
-      <p className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">
-        {eyebrow}
-      </p>
-      <Heading variant="title" className="text-2xl sm:text-3xl">
-        {title}
-      </Heading>
-      <p className="text-sm text-muted-foreground leading-relaxed sm:text-[15px]">
-        {intro}
-      </p>
-    </FadeIn>
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 hidden md:block">
+        <BackgroundLines className="h-full w-full [&_svg]:opacity-[0.07]">
+          <span />
+        </BackgroundLines>
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,hsl(var(--primary)/0.09),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
+      <MouseSpotlight />
+
+      <Container className="relative z-10 flex flex-col items-center text-center gap-8 py-28">
+
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary backdrop-blur-sm"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
+          {hero.status}
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="max-w-4xl text-5xl font-black tracking-tight leading-[1.06] sm:text-6xl md:text-7xl"
+        >
+          {hero.headline_pre}{" "}
+          <span className="text-gradient">{hero.headline_acc1}</span>
+          {" "}{hero.headline_mid}{" "}
+          <span className="text-gradient">{hero.headline_acc2}</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.22 }}
+          className="max-w-2xl text-base sm:text-lg leading-relaxed"
+        >
+          {hero.sub_pre}{" "}
+          <span className="font-semibold text-foreground">{hero.sub_ba}</span>,{" "}
+          <span className="font-semibold text-foreground">{hero.sub_product}</span>,{" "}
+          {/* i18n: some langs don't need "and" connector, keep it simple */}
+          <span className="font-semibold text-foreground">{hero.sub_ux}</span>.{" "}
+          {hero.sub_end}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.33 }}
+          className="flex flex-col sm:flex-row gap-3"
+        >
+          <Link href="/projects">
+            <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-7 py-3 text-sm font-semibold transition-all hover:shadow-[0_0_32px_-8px_hsl(var(--primary))] hover:scale-[1.02] active:scale-95">
+              {hero.cta_projects} <ArrowRight className="h-4 w-4" />
+            </button>
+          </Link>
+          <Link href="/resume">
+            <button className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 backdrop-blur-sm px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95">
+              <Download className="h-4 w-4" />
+              {hero.cta_cv}
+            </button>
+          </Link>
+          <Link href={`mailto:${SITE_CONFIG.links.email}`}>
+            <button className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 backdrop-blur-sm px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95">
+              <Mail className="h-4 w-4" />
+              {hero.cta_contact}
+            </button>
+          </Link>
+        </motion.div>
+
+      </Container>
+    </section>
+  );
+}
+
+// ─── About ────────────────────────────────────────────────────────────────────
+
+function AboutSection({ copy }: { copy: PortfolioCopy }) {
+  const { about, traits } = copy;
+  return (
+    <section className="py-24 border-t border-border/40">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 xl:gap-20 items-center">
+
+          <motion.div {...inView()} className="space-y-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{about.eyebrow}</p>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+              {about.heading_1}<br className="hidden sm:block" />
+              {about.heading_2}<br className="hidden sm:block" />
+              {about.heading_3}
+            </h2>
+            <div className="space-y-4 text-[15px] leading-relaxed">
+              <p>{about.p1}</p>
+              <p>{about.p2}</p>
+              <p>{about.p3}</p>
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              {about.tags.map((tag) => (
+                <span key={tag} className="rounded-full border border-border/60 bg-card/40 px-4 py-1.5 text-xs font-semibold text-foreground/80">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {traits.map((trait, i) => (
+              <motion.div
+                key={trait.title}
+                {...inView(i * 0.08)}
+                className="rounded-2xl border border-border/50 bg-card/40 p-5 space-y-2.5 hover:border-primary/30 hover:bg-card/70 transition-all group cursor-default"
+              >
+                <span className="text-2xl leading-none group-hover:scale-110 inline-block transition-transform">{trait.icon}</span>
+                <h3 className="text-sm font-black text-foreground">{trait.title}</h3>
+                <p className="text-xs leading-relaxed">{trait.body}</p>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+// ─── Skills ───────────────────────────────────────────────────────────────────
+
+function SkillsSection({ copy }: { copy: PortfolioCopy }) {
+  const { skills } = copy;
+  return (
+    <section className="py-24 bg-secondary/20 border-t border-border/40">
+      <Container className="space-y-12">
+
+        <motion.div {...inView()} className="space-y-3">
+          <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{skills.eyebrow}</p>
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{skills.heading}</h2>
+          <p className="max-w-xl text-[15px] leading-relaxed">{skills.desc}</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {skills.groups.map((group, i) => {
+            const Icon = SKILL_ICONS[i];
+            const style = SKILL_STYLES[i];
+            return (
+              <motion.div
+                key={group.category}
+                {...inView(i * 0.07)}
+                className={cn("rounded-2xl border bg-gradient-to-br p-6 space-y-4 hover:scale-[1.01] transition-all", style.wrapperCls)}
+              >
+                <div className="flex items-center gap-3">
+                  <Icon className={cn("h-5 w-5", style.iconCls)} />
+                  <h3 className="font-black text-foreground">{group.category}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span key={item} className="rounded-full bg-background/60 border border-border/50 px-3 py-1 text-xs font-medium text-foreground/80 hover:border-primary/30 transition-colors">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+      </Container>
+    </section>
+  );
+}
+
+// ─── Projects ─────────────────────────────────────────────────────────────────
+
+function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
+  const { projects } = copy;
+  return (
+    <section id="projects" className="py-24 border-t border-border/40">
+      <Container className="space-y-12">
+
+        <motion.div {...inView()} className="flex items-end justify-between gap-4">
+          <div className="space-y-3">
+            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{projects.eyebrow}</p>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{projects.heading}</h2>
+            <p className="max-w-xl text-[15px] leading-relaxed">{projects.desc}</p>
+          </div>
+          <Link href="/projects" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline shrink-0">
+            {projects.all_cta} <ArrowRight className="h-4 w-4" />
+          </Link>
+        </motion.div>
+
+        <div className="space-y-5">
+          {projects.items.map((project, i) => (
+            <motion.article
+              key={project.title}
+              {...inView(i * 0.07)}
+              className="group rounded-2xl border border-border/50 bg-card/40 p-6 sm:p-8 hover:border-primary/30 hover:bg-card/60 transition-all"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-10">
+
+                <div className="flex-1 space-y-4 min-w-0">
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    <span className={cn("rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-widest", PROJECT_TAG_CLS[i])}>
+                      {project.tag}
+                    </span>
+                    <span className="text-xs text-muted-foreground">{project.period}</span>
+                    <span className="text-xs text-muted-foreground hidden sm:inline">· {project.role}</span>
+                  </div>
+                  <h3 className="text-xl font-black tracking-tight text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="space-y-1.5">
+                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted-foreground/70">{projects.label_problem}</p>
+                    <p className="text-sm leading-relaxed">{project.problem}</p>
+                  </div>
+                </div>
+
+                <div className="sm:w-60 space-y-4 shrink-0">
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted-foreground/70">{projects.label_impact}</p>
+                    <ul className="space-y-1.5">
+                      {project.impact.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-xs text-foreground/80">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Link href={PROJECT_HREFS[i] ?? "/projects"} className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
+                    {projects.label_case_study} <ExternalLink className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        <motion.div {...inView()} className="sm:hidden text-center">
+          <Link href="/projects" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+            {projects.all_cta} <ArrowRight className="h-4 w-4" />
+          </Link>
+        </motion.div>
+
+      </Container>
+    </section>
+  );
+}
+
+// ─── Experience ───────────────────────────────────────────────────────────────
+
+function ExperienceSection({ copy }: { copy: PortfolioCopy }) {
+  const { experience } = copy;
+  return (
+    <section className="py-24 bg-secondary/20 border-t border-border/40">
+      <Container className="space-y-12">
+
+        <motion.div {...inView()} className="space-y-3">
+          <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{experience.eyebrow}</p>
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{experience.heading}</h2>
+          <p className="max-w-xl text-[15px] leading-relaxed">{experience.desc}</p>
+        </motion.div>
+
+        <div className="relative pl-7 sm:pl-10">
+          <div className="absolute left-[10px] sm:left-[13px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-border/40 to-transparent" />
+          <div className="space-y-5">
+            {experience.items.map((item, i) => (
+              <motion.div key={item.title} {...inViewX(i * 0.06)} className="relative">
+                <div className="absolute -left-[22px] sm:-left-[25px] top-[18px] h-2.5 w-2.5 rounded-full border-2 border-primary bg-background" />
+                <div className="rounded-2xl border border-border/50 bg-card/40 p-5 sm:p-6 hover:border-primary/30 hover:bg-card/60 transition-all">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
+                    <span className="text-xs font-black text-primary tabular-nums">{item.period}</span>
+                    <span className="hidden sm:block w-px h-3 bg-border/60" />
+                    <span className="text-xs text-muted-foreground">{item.org}</span>
+                  </div>
+                  <h3 className="font-black text-foreground text-sm sm:text-base mb-1">{item.title}</h3>
+                  <p className="text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+      </Container>
+    </section>
+  );
+}
+
+// ─── Certifications ───────────────────────────────────────────────────────────
+
+function CertificationsSection({ copy }: { copy: PortfolioCopy }) {
+  const { certifications } = copy;
+  return (
+    <section className="py-24 border-t border-border/40">
+      <Container className="space-y-12">
+
+        <motion.div {...inView()} className="flex items-end justify-between gap-4">
+          <div className="space-y-3">
+            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{certifications.eyebrow}</p>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{certifications.heading}</h2>
+            <p className="max-w-xl text-[15px] leading-relaxed">{certifications.desc}</p>
+          </div>
+          <Link href="/certificates" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline shrink-0">
+            {certifications.all_cta} <ArrowRight className="h-4 w-4" />
+          </Link>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {certifications.items.map((cert, i) => (
+            <motion.div
+              key={cert.title}
+              {...inView(i * 0.07)}
+              className={cn("rounded-2xl border p-5 space-y-3 hover:scale-[1.02] transition-all cursor-default group", CERT_CLS[i])}
+            >
+              <span className="text-2xl leading-none group-hover:scale-110 inline-block transition-transform">{cert.emoji}</span>
+              <div>
+                <h3 className="text-sm font-black text-foreground leading-snug">{cert.title}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
+              </div>
+              <span className="inline-block rounded-full bg-background/60 border border-border/50 px-2.5 py-1 text-[10px] font-semibold">
+                {cert.date}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+      </Container>
+    </section>
+  );
+}
+
+// ─── Contact ──────────────────────────────────────────────────────────────────
+
+function ContactSection({ copy }: { copy: PortfolioCopy }) {
+  const { contact } = copy;
+  return (
+    <section className="py-24 border-t border-border/40 bg-secondary/20">
+      <Container>
+        <motion.div {...inView()} className="mx-auto max-w-2xl text-center space-y-8">
+
+          <div className="space-y-5">
+            <div className="flex items-center justify-center gap-2">
+              <Sparkles className="h-4 w-4 text-primary" />
+              <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{contact.eyebrow}</p>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{contact.heading}</h2>
+            <p className="text-[15px] leading-relaxed max-w-lg mx-auto">{contact.desc}</p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href={`mailto:${SITE_CONFIG.links.email}`}
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-black text-white uppercase tracking-widest transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] active:scale-95"
+            >
+              <Mail className="h-4 w-4" />
+              {contact.cta}
+            </Link>
+            <Link
+              href={SITE_CONFIG.links.github}
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
+            >
+              {contact.github}
+            </Link>
+            <Link
+              href={SITE_CONFIG.links.linkedin}
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
+            >
+              {contact.linkedin}
+            </Link>
+          </div>
+
+          <p className="text-xs text-muted-foreground pt-2">{SITE_CONFIG.links.email}</p>
+
+        </motion.div>
+      </Container>
+    </section>
   );
 }
