@@ -77,7 +77,7 @@ export function CVDocument() {
         p-8 sm:p-12 lg:p-16 space-y-12
         shadow-[0_2px_4px_-1px_rgba(0,0,0,0.06),0_10px_30px_-12px_rgba(0,0,0,0.18)]
         dark:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)]
-        font-[var(--font-lora)]
+        font-[var(--font-inter)]
       "
     >
 

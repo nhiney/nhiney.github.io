@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { FellowshipClient } from "./FellowshipClient";
+import { FullDeckClient } from "./FullDeckClient";
 
 export const metadata: Metadata = {
-  title: "VNNIC Internet Conference 2026 Fellowship | Yen Nhi",
-  description: "My application for the VNNIC Internet Conference 2026 Fellowship — bridging Vietnam's IPv6-Only Transition Program (Resolution 57-NQ/TW) with production engineering: backend, mobile (Flutter/Firebase), ICare healthcare platform, and an AI-driven student social network.",
+  title: "IPv6 Strategic Foundation · VNNIC Fellowship 2026",
+  description:
+    "A 20-slide research-driven presentation on IPv6 as the strategic foundation for Vietnam's digital infrastructure in the AI & IoT era — VNNIC Internet School for Youth Fellowship 2026.",
 };
 
 export default function FellowshipPage() {
-  return <FellowshipClient />;
+  return <FullDeckClient />;
 }
