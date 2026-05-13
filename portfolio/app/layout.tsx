@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Lora } from "next/font/google";
+import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
@@ -10,19 +10,9 @@ import { PostHogProvider } from "@/components/posthog/PostHogProvider";
 import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  variable: "--font-lora",
 });
 
 export const metadata: Metadata = {
@@ -77,8 +67,6 @@ export default function RootLayout({
       <head />
       <body className={cn(
         inter.variable,
-        outfit.variable,
-        lora.variable,
         inter.className,
         "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans"
       )}>

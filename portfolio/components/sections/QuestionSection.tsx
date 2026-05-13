@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, MessageSquare, ArrowRight, Mail, User, Bell } from "lucide-react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
@@ -55,23 +54,7 @@ export const QuestionSection = () => {
     <section id="contact" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-[0.03] [mask-image:radial-gradient(white,transparent_70%)]" />
 
-      {/* Octocat mascot */}
-      <motion.div
-        className="absolute bottom-10 right-10 md:bottom-20 md:right-32 w-24 h-24 md:w-40 md:h-40 opacity-30 md:opacity-50 hover:opacity-100 transition-opacity z-0 pointer-events-auto cursor-default"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0], transition: { duration: 0.3 } }}
-      >
-        <Image
-          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWM5Yzk1ZjkxMzM1YTVkNDRhZThmMTkxNWI1NzRhMDk5M2Y2ZDJkMCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PXM/1k4UqEwLg32bHchFBB/giphy.gif"
-          alt="Hula Octocat"
-          fill
-          className="object-contain"
-          unoptimized
-        />
-      </motion.div>
-
-      <div className="container relative z-10 max-w-5xl mx-auto px-4">
+<div className="container relative z-10 max-w-5xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Content side */}

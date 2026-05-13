@@ -213,7 +213,7 @@
     "issuer": "Google · Coursera",
     "date": "In Progress",
     "category": "Design",
-    "description": "Seven-course Google Professional Certificate covering the UX design process — empathy, ideation, wireframing, prototyping in Figma, responsive design, and preparing for UX roles. (3 of 7 courses completed.)",
+    "description": "Seven-course Google Professional Certificate covering the UX design process — empathy, ideation, wireframing, prototyping in Figma, responsive design, and preparing for UX roles. (4 of 7 courses completed.)",
     "url": null,
     "verifyUrl": null,
     "image": null,
@@ -236,8 +236,13 @@
         "verifyUrl": "https://coursera.org/verify/CRUMP8YNKXP1",
         "date": "May 9, 2026"
       },
-      { "title": "Conduct UX Research and Test Early Concepts", "image": null, "verifyUrl": null, "date": null },
-      { "title": "Create High-Fidelity Designs and Prototypes in Figma", "image": null, "verifyUrl": null, "date": null },
+      {
+        "title": "Conduct UX Research and Test Early Concepts",
+        "image": "/certificates/courses/conduct-ux-research-and-test-early-concepts.png",
+        "verifyUrl": "https://coursera.org/verify/JTOGO8F3F4C3",
+        "date": "May 10, 2026"
+      },
+      { "title": "Create High-Fidelity Designs and Prototypes in Figma", "image": "/certificates/courses/create-high-fidelity-designs-and-prototypes-in-figma.png", "verifyUrl": "https://coursera.org/verify/QDJF4708OD9I", "date": "May 12, 2026" },
       { "title": "Responsive Web Design in Adobe XD", "image": null, "verifyUrl": null, "date": null },
       { "title": "Design a User Experience for Social Good & Prepare for Jobs", "image": null, "verifyUrl": null, "date": null }
     ]

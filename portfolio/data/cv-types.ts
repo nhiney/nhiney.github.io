@@ -15,6 +15,10 @@ export type Project = {
   techPills: string[];
   /** Optional repo link — defaults to the CV-level GitHub if absent. */
   github?: string;
+  /** Optional cover image rendered on the Projects grid card. Falls back to a deterministic placeholder when omitted. */
+  cover?: string;
+  /** Optional gallery shown as a slider inside the project detail modal. Drop in real screenshots when ready. */
+  gallery?: { src: string; caption: string }[];
 };
 
 export type SkillGroup = {
