@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/0dk9a-p1a2rbr.css","style"]
-:HL["/_next/static/chunks/16z~.5p_z1zyx.css","style"]
+:HL["/_next/static/chunks/0vfwk4h7gmah-.css","style"]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"projects","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sports-field-booking","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"YP-vJ1sW-ZkXZoTTgW6-L"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"projects","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sports-field-booking","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"fRNiQsImt9NQWfYlKbnjr"}
