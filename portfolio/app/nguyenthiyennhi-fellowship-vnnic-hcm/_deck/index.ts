@@ -1,5 +1,6 @@
 import {
   Slide01Cover,
+  SlideIntro,
   Slide02Vision,
   Slide03WhyInfrastructure,
   Slide04IPv4Crisis,
@@ -35,6 +36,7 @@ export type SlideEntry = {
 
 export const SLIDES: SlideEntry[] = [
   { id: "cover", label: "Cover", Component: Slide01Cover },
+  { id: "intro", label: "Perspective", Component: SlideIntro },
   { id: "vision", label: "Vision", Component: Slide02Vision },
   { id: "infrastructure", label: "Why Infrastructure", Component: Slide03WhyInfrastructure },
   { id: "ipv4-crisis", label: "IPv4 Crisis", Component: Slide04IPv4Crisis },

@@ -39,7 +39,7 @@ export function Slide06Strategy({ index }: { index: number }) {
       <Eyebrow index={5} label={s.eyebrow} />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -55,7 +55,7 @@ export function Slide06Strategy({ index }: { index: number }) {
             </div>
             <div className="mt-4 flex items-baseline gap-3">
               <span
-                className="text-spectrum text-6xl font-black tracking-tighter sm:text-7xl"
+                className="text-4xl font-black tracking-tight text-foreground sm:text-5xl"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 Top 10
@@ -64,17 +64,17 @@ export function Slide06Strategy({ index }: { index: number }) {
             </div>
             <div className="mt-3 flex items-baseline gap-3">
               <span
-                className="text-4xl font-black tracking-tight text-foreground sm:text-5xl"
+                className="text-3xl font-black tracking-tight text-foreground sm:text-4xl"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 Top 2
               </span>
               <span className="text-sm font-semibold text-muted-foreground">{s.aseanLabel}</span>
             </div>
-            <div className="mt-6 h-px w-full bg-border/60" />
-            <div className="mt-6 flex items-baseline gap-3">
+            <div className="mt-5 h-px w-full bg-border/60" />
+            <div className="mt-5 flex items-baseline gap-3">
               <span
-                className="text-5xl font-black tracking-tight text-cyan-500 sm:text-6xl"
+                className="text-4xl font-black tracking-tight text-primary sm:text-5xl"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 60%+
@@ -95,7 +95,7 @@ export function Slide06Strategy({ index }: { index: number }) {
             {s.objectives.map((o, i) => (
               <li key={i} className="flex items-start gap-4">
                 <span
-                  className="text-spectrum mt-0.5 font-mono text-2xl font-black"
+                  className="text-primary mt-0.5 font-mono text-2xl font-black"
                   style={{ fontFamily: "var(--font-inter), sans-serif" }}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -121,7 +121,7 @@ export function Slide07IPv6AI({ index }: { index: number }) {
     <Slide index={index}>
       <Eyebrow index={6} label={s.eyebrow} accent="text-cyan-500 dark:text-cyan-300" />
       <HeadlineDisplay>
-        {s.headline1} <span className="text-spectrum">{s.headline2}</span> {s.headline3}
+        {s.headline1} <span className="text-primary">{s.headline2}</span> {s.headline3}
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -149,7 +149,7 @@ export function Slide07IPv6AI({ index }: { index: number }) {
 
         <div className="grid gap-4 content-center">
           <StatBlock value="25K+" label={s.stat1label} accent="text-cyan-500" />
-          <StatBlock value="< 1 ms" label={s.stat2label} accent="text-spectrum" />
+          <StatBlock value="< 1 ms" label={s.stat2label} accent="text-primary" />
           <StatBlock value="3.4 × 10³⁸" label={s.stat3label} accent="text-violet-500" />
         </div>
       </div>
@@ -170,7 +170,7 @@ export function Slide08IPv6IoT({ index }: { index: number }) {
       <Eyebrow index={7} label={s.eyebrow} accent="text-amber-500 dark:text-amber-300" />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="bg-gradient-to-r from-amber-400 to-fuchsia-400 bg-clip-text text-transparent">
+        <span className="text-amber-500 dark:text-amber-400">
           {s.headline2}
         </span>
       </HeadlineDisplay>
@@ -178,8 +178,8 @@ export function Slide08IPv6IoT({ index }: { index: number }) {
 
       <div className="mt-10 grid gap-5 lg:grid-cols-3">
         <StatBlock value="75 B+" label={s.stat1label} accent="text-amber-500" />
-        <StatBlock value="5.6×" label={s.stat2label} accent="text-fuchsia-500" />
-        <StatBlock value="25+" label={s.stat3label} accent="text-spectrum" />
+        <StatBlock value="5.6×" label={s.stat2label} accent="text-primary" />
+        <StatBlock value="25+" label={s.stat3label} accent="text-primary" />
       </div>
 
       <motion.div
@@ -214,7 +214,7 @@ export function Slide09SmartCity({ index }: { index: number }) {
     <Slide index={index}>
       <Eyebrow index={8} label={s.eyebrow} accent="text-violet-500 dark:text-violet-300" />
       <HeadlineDisplay>
-        {s.headline1} <span className="text-spectrum">{s.headline2}</span>
+        {s.headline1} <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -239,27 +239,27 @@ export function Slide10IPv65G({ index }: { index: number }) {
 
   return (
     <Slide index={index}>
-      <Eyebrow index={9} label={s.eyebrow} accent="text-fuchsia-500 dark:text-fuchsia-300" />
+      <Eyebrow index={9} label={s.eyebrow} />
       <HeadlineDisplay>
-        {s.headline1} <span className="text-spectrum">{s.headline2}</span>
+        {s.headline1} <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
         <motion.div
           variants={itemVariants}
-          className="relative overflow-hidden rounded-2xl border border-fuchsia-500/30 bg-fuchsia-500/[0.06] p-7 backdrop-blur-md"
+          className="relative overflow-hidden rounded-2xl border border-primary/25 bg-primary/[0.05] p-7 backdrop-blur-md"
         >
-          <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-fuchsia-500/20 blur-3xl" />
+          <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative">
-            <Radio className="text-fuchsia-500" size={28} />
+            <Radio className="text-primary" size={28} />
             <h3 className="mt-4 text-2xl font-black tracking-tight text-foreground sm:text-3xl">
               {s.cardTitle}
             </h3>
             <ul className="mt-5 space-y-3 text-sm text-muted-foreground sm:text-base">
               {s.reasons.map((r, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <Wifi size={14} className="mt-1.5 shrink-0 text-fuchsia-500" />
+                  <Wifi size={14} className="mt-1.5 shrink-0 text-primary" />
                   <span>{r}</span>
                 </li>
               ))}
@@ -268,8 +268,8 @@ export function Slide10IPv65G({ index }: { index: number }) {
         </motion.div>
 
         <div className="grid gap-4 content-center">
-          <StatBlock value="1 M/km²" label={s.stat1label} accent="text-fuchsia-500" />
-          <StatBlock value="< 1 ms" label={s.stat2label} accent="text-spectrum" />
+          <StatBlock value="1 M/km²" label={s.stat1label} accent="text-primary" />
+          <StatBlock value="< 1 ms" label={s.stat2label} accent="text-primary" />
           <StatBlock value="10 Gbps" label={s.stat3label} accent="text-cyan-500" />
         </div>
       </div>
@@ -286,7 +286,7 @@ export function Slide11Cybersecurity({ index }: { index: number }) {
       <Eyebrow index={10} label={s.eyebrow} accent="text-emerald-500 dark:text-emerald-300" />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 

@@ -19,7 +19,7 @@ export default async function BlogPage() {
 
   return (
     <Container className="pb-32 space-y-24">
-      <Section className="space-y-12 pt-20 text-center">
+      <Section className="space-y-8 pt-8 text-center">
         <FadeIn className="space-y-6 flex flex-col items-center">
           <Badge variant="outline" className="px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]">
             Writings

@@ -48,7 +48,7 @@ function Toast({ message, type }: { message: string; type: "success" | "error" }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-const PERK_KEYS = ["early", "fellowship", "articles"] as const;
+const PERK_KEYS = ["early", "articles"] as const;
 
 export default function WaitlistPage() {
   const { t } = useLanguage();

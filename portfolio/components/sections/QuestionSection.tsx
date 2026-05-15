@@ -7,6 +7,7 @@ import { Send, CheckCircle2, MessageSquare, ArrowRight, Mail, User, Bell } from 
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
+import { SITE_CONFIG } from "@/lib/constants";
 
 type ContactTab = "contact" | "waitlist";
 
@@ -60,8 +61,8 @@ export const QuestionSection = () => {
           {/* Content side */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <Heading variant="section">{t("question.section")}</Heading>
-              <Heading variant="title" className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-spectrum">
+              <Heading variant="section" className="text-sm">{t("question.section")}</Heading>
+              <Heading variant="title" className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-spectrum">
                 {t("question.title").replace("{challenge}", t("question.challenge"))}
               </Heading>
             </div>
@@ -151,7 +152,7 @@ export const QuestionSection = () => {
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                placeholder="John Doe"
+                                placeholder={SITE_CONFIG.name}
                                 className="w-full bg-background/50 border border-border/50 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-primary/50 transition-all placeholder:text-zinc-700"
                               />
                             </div>
@@ -165,7 +166,7 @@ export const QuestionSection = () => {
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                placeholder="john@example.com"
+                                placeholder={SITE_CONFIG.links.email}
                                 className="w-full bg-background/50 border border-border/50 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-primary/50 transition-all placeholder:text-zinc-700"
                               />
                             </div>
@@ -243,24 +244,40 @@ export const QuestionSection = () => {
                           className="space-y-6"
                         >
                           <div className="space-y-2">
-                            <h3 className="text-lg font-black tracking-tight">Join the Waitlist</h3>
+                            <h3 className="text-lg font-black tracking-tight">{t("pages.waitlist.hero.title")}</h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                              Stay updated on new projects, blog posts, and open-source releases. No spam, ever.
+                              {t("pages.waitlist.hero.description")}
                             </p>
+                          </div>
+
+                          <div className="space-y-3">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">
+                              {t("pages.waitlist.perks_label")}
+                            </p>
+                            <ul className="space-y-2">
+                              {[t("pages.waitlist.perk_early"), t("pages.waitlist.perk_articles")]
+                                .filter(Boolean)
+                                .map((perk) => (
+                                  <li key={perk} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
+                                    {perk}
+                                  </li>
+                                ))}
+                            </ul>
                           </div>
 
                           <form onSubmit={handleWaitlistSubmit} className="space-y-4">
                             <div className="space-y-2">
                               <div className="flex items-center gap-3 text-primary mb-2">
                                 <Mail size={14} />
-                                <label className="text-[10px] font-black uppercase tracking-widest opacity-70">Email address</label>
+                                <label className="text-[10px] font-black uppercase tracking-widest opacity-70">{t("question.email_label")}</label>
                               </div>
                               <input
                                 required
                                 type="email"
                                 value={waitlistEmail}
                                 onChange={(e) => setWaitlistEmail(e.target.value)}
-                                placeholder="your@email.com"
+                                placeholder={t("pages.waitlist.form_placeholder")}
                                 className="w-full bg-background/50 border border-border/50 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-primary/50 transition-all placeholder:text-zinc-700"
                               />
                             </div>
@@ -274,16 +291,12 @@ export const QuestionSection = () => {
                               )}
                             >
                               <Send size={16} />
-                              {waitlistStatus === "sending" ? "Joining..." : "Join Waitlist"}
+                              {waitlistStatus === "sending" ? t("question.btn_sending") : t("pages.waitlist.form_submit")}
                               {waitlistStatus !== "sending" && (
                                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                               )}
                             </button>
                           </form>
-
-                          <p className="text-[10px] text-muted-foreground text-center">
-                            Your email is stored securely. Unsubscribe any time.
-                          </p>
                         </motion.div>
                       ) : (
                         <motion.div
@@ -295,9 +308,9 @@ export const QuestionSection = () => {
                           <div className="h-20 w-20 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 mb-4 animate-bounce">
                             <CheckCircle2 size={40} />
                           </div>
-                          <Heading variant="title" className="text-2xl">You're on the list!</Heading>
+                          <Heading variant="title" className="text-2xl">{t("pages.waitlist.success_title")}</Heading>
                           <Text className="text-zinc-400 max-w-xs mx-auto">
-                            Thanks for joining. I'll reach out when there's something worth sharing.
+                            {t("pages.waitlist.success_desc_prefix")} {waitlistEmail} {t("pages.waitlist.success_desc_suffix")}
                           </Text>
                         </motion.div>
                       )}
