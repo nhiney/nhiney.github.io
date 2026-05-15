@@ -126,7 +126,7 @@ export function FullDeckClient() {
       <div className="sticky top-16 z-30">
         <motion.div
           aria-hidden
-          className="h-[2px] w-full origin-left bg-gradient-to-r from-cyan-400 via-primary to-violet-500"
+          className="h-[2px] w-full origin-left bg-primary/80"
           animate={{ scaleX: (active + 1) / TOTAL_SLIDES }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         />
@@ -195,7 +195,7 @@ export function FullDeckClient() {
               <span
                 className={`block h-1.5 rounded-full transition-all duration-300 ${
                   i === active
-                    ? "w-6 bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.7)]"
+                    ? "w-5 bg-primary"
                     : "w-1.5 bg-foreground/25 group-hover:bg-foreground/55"
                 }`}
               />

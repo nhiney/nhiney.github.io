@@ -78,28 +78,74 @@ export function ProjectImageSlider({ images, alt }: Props) {
               src={slides[index].src}
               alt={`${alt} — ${slides[index].caption}`}
               draggable={false}
-              className="max-h-[68vh] w-full object-contain"
+              className="max-h-[40vh] sm:max-h-[55vh] w-full object-contain"
             />
           </motion.div>
         </AnimatePresence>
 
-        {/* Caption bar */}
-        {slides[index].caption && (
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-5 pb-3 pt-8">
-            <p className="text-center text-[11px] font-bold uppercase tracking-[0.22em] text-white/90 drop-shadow">
-              {slides[index].caption}
-            </p>
-          </div>
-        )}
+        {/* Caption annotation — left margin, arrow points right, light/dark adaptive */}
+        <AnimatePresence mode="wait">
+          {slides[index].caption && (
+            <motion.div
+              key={slides[index].caption}
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -8 }}
+              transition={{ duration: 0.25 }}
+              className="absolute left-2 top-12 flex flex-col items-start pointer-events-none z-10"
+            >
+              {/* Label pill — adaptive light/dark */}
+              <motion.div
+                initial={{ scale: 0.88, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.05 }}
+                className="rounded-full border border-primary/50 bg-background/90 px-3 py-1.5 backdrop-blur-md shadow-[0_2px_12px_hsl(var(--primary)/0.2)]"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest text-primary whitespace-nowrap">
+                  {slides[index].caption}
+                </p>
+              </motion.div>
 
-        {/* Prev / Next */}
+              {/* Curved arrow — uses currentColor = primary */}
+              <svg
+                width="68" height="50"
+                viewBox="0 0 68 50"
+                fill="none"
+                className="ml-3 text-primary drop-shadow-sm"
+              >
+                <motion.path
+                  d="M 4 6 C 4 26, 26 40, 64 30"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 0.8 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 0.9, 0.32, 1] }}
+                />
+                <motion.path
+                  d="M 59 25 L 64 30 L 59 35"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.8 }}
+                  transition={{ duration: 0.2, delay: 0.95 }}
+                />
+              </svg>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Prev / Next — larger tap area for mobile */}
         {total > 1 && (
           <>
             <button
               type="button"
               onClick={prev}
               aria-label={t("pages.projects.prev_slide")}
-              className="group/btn absolute left-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md transition hover:bg-black/70"
+              className="group/btn absolute left-2 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-primary/30 bg-background/80 text-primary backdrop-blur-md transition active:scale-95 hover:bg-primary/10 dark:border-white/20 dark:bg-black/40 dark:text-white dark:hover:bg-black/70"
             >
               <ChevronLeft size={18} className="transition-transform group-hover/btn:-translate-x-0.5" />
             </button>
@@ -107,39 +153,40 @@ export function ProjectImageSlider({ images, alt }: Props) {
               type="button"
               onClick={next}
               aria-label={t("pages.projects.next_slide")}
-              className="group/btn absolute right-3 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md transition hover:bg-black/70"
+              className="group/btn absolute right-2 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-primary/30 bg-background/80 text-primary backdrop-blur-md transition active:scale-95 hover:bg-primary/10 dark:border-white/20 dark:bg-black/40 dark:text-white dark:hover:bg-black/70"
             >
               <ChevronRight size={18} className="transition-transform group-hover/btn:translate-x-0.5" />
             </button>
           </>
         )}
 
-        {/* Dots */}
+        {/* Dots — padded for easier tap */}
         {total > 1 && (
-          <div className="absolute inset-x-0 bottom-3 flex items-center justify-center gap-1.5">
+          <div className="absolute inset-x-0 bottom-2 flex items-center justify-center gap-2 py-1">
             {slides.map((_, i) => (
               <button
                 key={i}
                 type="button"
                 onClick={() => goTo(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === index ? "w-6 bg-white" : "w-1.5 bg-white/40 hover:bg-white/70"
-                }`}
-              />
+                className="p-1.5 -m-1.5"
+              >
+                <span className={`block rounded-full transition-all duration-300 ${
+                  i === index
+                    ? "w-5 h-1.5 bg-primary dark:bg-white"
+                    : "w-1.5 h-1.5 bg-primary/40 dark:bg-white/40 hover:bg-primary/70 dark:hover:bg-white/70"
+                }`} />
+              </button>
             ))}
           </div>
         )}
 
-        {/* Counter */}
-        <div className="absolute right-3 top-3 rounded-full border border-white/20 bg-black/50 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur-md">
-          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        {/* Counter — adaptive */}
+        <div className="absolute right-3 top-3 rounded-full border border-primary/25 bg-background/80 px-2.5 py-0.5 text-[10px] font-bold tabular-nums text-primary backdrop-blur-md dark:border-white/20 dark:bg-black/50 dark:text-white">
+          {index + 1}/{total}
         </div>
       </div>
 
-      <p className="mt-3 text-center text-[11px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
-        {t("pages.projects.gallery_label")} · {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-      </p>
     </div>
   );
 }

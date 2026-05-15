@@ -11,6 +11,7 @@ import {
   ChevronRight,
   Clock,
   ExternalLink,
+  GraduationCap,
   Image as ImageIcon,
   ShieldCheck,
   X,
@@ -25,9 +26,9 @@ import { useLanguage } from "@/context/LanguageContext";
 import certificatesData from "@/data/certificates.json";
 
 type Certificate = (typeof certificatesData)[number];
-type Course = Certificate["courses"][number];
+type Course = NonNullable<Certificate["courses"]>[number];
 type ViewMode = "all" | "certificates" | "courses";
-type CourseEntry = { course: Course; cert: Certificate };
+type CourseEntry = { course: Course; cert: Certificate; isStandalone?: boolean };
 
 const CATEGORY_COLORS: Record<string, string> = {
   Academic: "bg-violet-500/10 text-violet-400 border-violet-500/20",
@@ -48,30 +49,60 @@ const CATEGORY_SHORT: Record<string, string> = {
 };
 
 export function CertificatesClient() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const locTitle = (item: { title: string; title_vi?: string | null }) =>
+    language === "vi" && item.title_vi ? item.title_vi : item.title;
+  const locDesc = (cert: Certificate) =>
+    language === "vi" && (cert as unknown as { description_vi?: string | null }).description_vi
+      ? (cert as unknown as { description_vi: string }).description_vi
+      : cert.description;
+  const VI_MONTHS: Record<string, string> = {
+    Jan: "tháng 1", Feb: "tháng 2", Mar: "tháng 3", Apr: "tháng 4",
+    May: "tháng 5", Jun: "tháng 6", Jul: "tháng 7", Aug: "tháng 8",
+    Sep: "tháng 9", Oct: "tháng 10", Nov: "tháng 11", Dec: "tháng 12",
+  };
+  const locDate = (date: string | null | undefined): string => {
+    if (!date) return "—";
+    if (language !== "vi") return date;
+    if (date === "In Progress") return t("pages.certificates.in_progress");
+    return date.replace(/^(\w{3})\s+(\d+),\s+(\d{4})$/, (_, mon, day, year) =>
+      `${day} ${VI_MONTHS[mon] ?? mon}, ${year}`
+    );
+  };
   const [active, setActive] = useState<Certificate | null>(null);
   const [activeCourse, setActiveCourse] = useState<CourseEntry | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("all");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
 
+  const isStandaloneCourse = (c: Certificate) =>
+    (c as Certificate & { type?: string }).type === "standalone_course";
+
   const categories = useMemo(
-    () => [...new Set(certificatesData.map((c) => c.category))],
+    () => [...new Set(certificatesData.filter((c) => !isStandaloneCourse(c)).map((c) => c.category))],
     [],
   );
 
   const filteredCerts = useMemo(
-    () =>
-      categoryFilter === "all"
-        ? certificatesData
-        : certificatesData.filter((c) => c.category === categoryFilter),
+    () => {
+      const certs = certificatesData.filter((c) => !isStandaloneCourse(c));
+      return categoryFilter === "all" ? certs : certs.filter((c) => c.category === categoryFilter);
+    },
     [categoryFilter],
   );
 
   const allCourses: CourseEntry[] = useMemo(() => {
     const out: CourseEntry[] = [];
     for (const cert of certificatesData) {
-      for (const course of cert.courses ?? []) {
-        out.push({ course, cert });
+      if (isStandaloneCourse(cert)) {
+        out.push({
+          course: { title: cert.title, image: cert.image ?? null, verifyUrl: cert.verifyUrl ?? null, date: cert.date } as Course,
+          cert,
+          isStandalone: true,
+        });
+      } else {
+        for (const course of cert.courses ?? []) {
+          out.push({ course, cert });
+        }
       }
     }
     return out;
@@ -175,7 +206,7 @@ export function CertificatesClient() {
           {filteredCerts.length === 0 ? (
             <EmptyState text={t("pages.certificates.filter.empty")} />
           ) : (
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {filteredCerts.map((cert, i) => {
                 const realUrl = cert.verifyUrl ?? cert.url;
                 return (
@@ -190,70 +221,91 @@ export function CertificatesClient() {
                           setActive(cert);
                         }
                       }}
-                      className="group relative flex h-full w-full flex-col rounded-2xl border border-border/50 bg-card/60 text-left glass-card transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_-12px_hsl(var(--primary))] overflow-hidden cursor-pointer"
+                      className="group flex h-full w-full flex-col gap-3 cursor-pointer text-left"
                     >
-                      <div className="relative w-full overflow-hidden border-b border-border/50">
-                        <div className="relative aspect-[5/4] w-full bg-white">
-                          {cert.image ? (
+                      {/* Card 1 — Image, border sát mép ảnh */}
+                      <div className="relative w-full overflow-hidden rounded-2xl border-2 border-zinc-900 dark:border-zinc-700 transition-all duration-500 group-hover:border-primary group-hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.6)]">
+                        {cert.image ? (
+                          <>
                             <Image
                               src={cert.image}
                               alt={cert.title}
-                              fill
-                              className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.02]"
+                              width={1413}
+                              height={1000}
+                              className="block w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             />
-                          ) : (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-amber-500/10 via-card to-background">
-                              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-amber-500">
-                                <Clock size={11} /> {t("pages.certificates.in_progress")}
-                              </span>
-                              <p className="px-6 text-center text-xs text-muted-foreground">
-                                {t("pages.certificates.in_progress_desc")}
-                              </p>
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/35">
+                              <div className="flex translate-y-4 items-center gap-2 rounded-full bg-white/95 px-5 py-2.5 opacity-0 shadow-2xl transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                                <span className="text-[11px] font-black uppercase tracking-widest text-zinc-900">
+                                  {t("pages.certificates.view_certificate")}
+                                </span>
+                                <ExternalLink size={12} className="text-primary" />
+                              </div>
                             </div>
-                          )}
-                        </div>
+                          </>
+                        ) : (
+                          <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-amber-500/10 via-card to-background px-6 py-10">
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-amber-500">
+                              <Clock size={11} /> {t("pages.certificates.in_progress")}
+                            </span>
+                            <p className="text-center text-xs text-muted-foreground">
+                              {t("pages.certificates.in_progress_desc")}
+                            </p>
+                          </div>
+                        )}
                       </div>
 
-                      <div className="flex flex-1 flex-col p-6">
-                        <div className="mb-4 flex items-center justify-between gap-3">
-                          <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+                      {/* Card 2 — Content */}
+                      <div className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 group-hover:border-primary/60 group-hover:bg-primary/[0.03] group-hover:shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.2)]">
+                        {/* Meta bar */}
+                        <div className="flex items-center justify-between gap-2 border-b border-border/40 px-5 py-3 transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/[0.05]">
+                          <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/60">
                             {cert.issuer}
                           </span>
-                          <span
-                            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[9px] font-black uppercase tracking-widest ${
-                              CATEGORY_COLORS[cert.category] ??
-                              "bg-primary/10 text-primary border-primary/20"
-                            }`}
-                          >
-                            {cert.category}
-                          </span>
+                          <div className="flex shrink-0 items-center gap-2">
+                            <span
+                              className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[9px] font-black uppercase tracking-widest ${
+                                CATEGORY_COLORS[cert.category] ??
+                                "bg-primary/10 text-primary border-primary/20"
+                              }`}
+                            >
+                              {CATEGORY_SHORT[cert.category] ?? cert.category}
+                            </span>
+                            <span className="text-[9px] font-semibold text-muted-foreground/50">
+                              {locDate(cert.date)}
+                            </span>
+                          </div>
                         </div>
-
-                        <h3 className="mb-1.5 text-base font-black tracking-tight text-foreground group-hover:text-primary transition-colors">
-                          {cert.title}
-                        </h3>
-
-                        <p className="mb-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/80">
-                          {cert.date}
-                        </p>
-
-                        <p className="flex-1 text-xs leading-relaxed text-muted-foreground line-clamp-3">
-                          {cert.description}
-                        </p>
-
-                        {realUrl && (
-                          <Link
-                            href={realUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className="mt-5 inline-flex items-center gap-2 self-start rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-primary transition-all hover:bg-primary/20"
-                          >
-                            {t("pages.certificates.view_real")}
-                            <ExternalLink size={11} />
-                          </Link>
-                        )}
+                        <div className="flex flex-1 flex-col p-5 pt-4">
+                          <h3 className="mb-2 flex items-start justify-between gap-2 text-[15px] font-black leading-tight tracking-tight text-foreground transition-colors group-hover:text-primary">
+                            <span>{cert.title}</span>
+                            <ChevronRight
+                              size={16}
+                              className="mt-0.5 shrink-0 translate-x-0 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                            />
+                          </h3>
+                          <p className="flex-1 text-xs leading-relaxed text-muted-foreground line-clamp-3">
+                            {locDesc(cert)}
+                          </p>
+                          {cert.courses && cert.courses.length > 0 && (
+                            <p className="mt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
+                              {cert.courses.length} {t("pages.certificates.courses_included")}
+                            </p>
+                          )}
+                          {realUrl && (
+                            <Link
+                              href={realUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="mt-4 inline-flex items-center gap-1.5 self-start rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-primary transition-all hover:gap-2 hover:border-primary/60 hover:bg-primary/25"
+                            >
+                              {t("pages.certificates.view_real")}
+                              <ExternalLink size={11} />
+                            </Link>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </FadeIn>
@@ -273,39 +325,68 @@ export function CertificatesClient() {
           {filteredCourses.length === 0 ? (
             <EmptyState text={t("pages.certificates.filter.empty")} />
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredCourses.map(({ course, cert }, i) => (
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredCourses.map(({ course, cert, isStandalone }, i) => (
                 <FadeIn key={`${cert.id}-${course.title}`} delay={Math.min(i, 12) * 0.03}>
                   <button
                     type="button"
                     onClick={() => handleCourseClick(course, cert)}
-                    className="group flex h-full w-full flex-col gap-3 rounded-xl border border-border/50 bg-card/40 p-5 text-left glass-card transition-all duration-300 hover:border-primary/40 hover:bg-card/70"
+                    className="group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-border/50 bg-card/40 text-left transition-all duration-300 hover:border-primary/60 hover:bg-primary/[0.04] hover:shadow-[0_4px_20px_-8px_hsl(var(--primary)/0.35)]"
                   >
-                    <div className="flex items-center justify-between gap-2">
-                      <span
-                        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[9px] font-black uppercase tracking-widest ${
-                          CATEGORY_COLORS[cert.category] ??
-                          "bg-primary/10 text-primary border-primary/20"
-                        }`}
-                      >
-                        {cert.category}
-                      </span>
-                      {course.image && (
-                        <span className="inline-flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-primary">
-                          <ImageIcon size={11} /> {t("pages.certificates.view_detail")}
+                    {/* Left accent bar */}
+                    <div className="absolute inset-y-0 left-0 w-[3px] origin-top scale-y-0 rounded-r-full bg-primary transition-transform duration-300 group-hover:scale-y-100" />
+
+                    {/* Body */}
+                    <div className="flex flex-1 flex-col gap-2 p-4 pl-5">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md border transition-all duration-300 ${
+                            course.image
+                              ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500/20 group-hover:scale-110"
+                              : "border-border/40 bg-muted/20 text-muted-foreground/40"
+                          }`}
+                        >
+                          {course.image ? (
+                            <Check size={11} strokeWidth={2.5} />
+                          ) : (
+                            <GraduationCap size={11} />
+                          )}
+                        </div>
+                        <span
+                          className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[9px] font-black uppercase tracking-widest ${
+                            CATEGORY_COLORS[cert.category] ??
+                            "bg-primary/10 text-primary border-primary/20"
+                          }`}
+                        >
+                          {cert.category}
                         </span>
+                      </div>
+                      <h4 className="line-clamp-3 text-sm font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
+                        {locTitle(course)}
+                      </h4>
+                      {course.date && (
+                        <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+                          {locDate(course.date)}
+                        </div>
                       )}
                     </div>
-                    <h4 className="text-sm font-bold leading-snug text-foreground group-hover:text-primary transition-colors">
-                      {course.title}
-                    </h4>
-                    {course.date && (
-                      <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/80">
-                        {course.date}
-                      </div>
-                    )}
-                    <div className="mt-auto pt-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-                      {t("pages.certificates.filter.part_of")} · {cert.title}
+
+                    {/* Footer cố định */}
+                    <div className="flex items-center justify-between gap-2 border-t border-border/40 bg-background/30 px-4 py-2.5 transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/[0.06]">
+                      <span className="max-w-[160px] truncate text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/50">
+                        {isStandalone ? "—" : cert.title}
+                      </span>
+                      {course.image ? (
+                        <span className="inline-flex shrink-0 items-center gap-1 text-[9px] font-black uppercase tracking-widest text-primary transition-all duration-300 group-hover:gap-1.5">
+                          <ImageIcon size={10} />
+                          {t("pages.certificates.view_detail")}
+                          <ChevronRight size={9} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                        </span>
+                      ) : (
+                        <span className="shrink-0 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/30">
+                          {t("pages.certificates.pending")}
+                        </span>
+                      )}
                     </div>
                   </button>
                 </FadeIn>
@@ -397,7 +478,7 @@ export function CertificatesClient() {
 
                 {/* Description */}
                 <p className="mb-5 text-xs leading-relaxed text-muted-foreground">
-                  {active.description}
+                  {locDesc(active)}
                 </p>
 
                 {/* Info grid */}
@@ -407,7 +488,7 @@ export function CertificatesClient() {
                       <CalendarDays size={11} />
                       {t("pages.certificates.issued")}
                     </div>
-                    <div className="text-sm font-bold text-foreground">{active.date}</div>
+                    <div className="text-sm font-bold text-foreground">{locDate(active.date)}</div>
                   </div>
                   <div className="space-y-1.5 bg-background/50 p-4">
                     <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-muted-foreground/70">
@@ -448,7 +529,7 @@ export function CertificatesClient() {
                                   {idx + 1}
                                 </span>
                                 <span className="flex-1 truncate text-xs font-semibold text-foreground/90 transition-colors group-hover:text-primary">
-                                  {course.title}
+                                  {locTitle(course)}
                                 </span>
                                 <ChevronRight
                                   size={12}
@@ -461,7 +542,7 @@ export function CertificatesClient() {
                                   {idx + 1}
                                 </span>
                                 <span className="flex-1 truncate text-xs font-semibold text-muted-foreground/70">
-                                  {course.title}
+                                  {locTitle(course)}
                                 </span>
                               </span>
                             )}
@@ -517,7 +598,7 @@ export function CertificatesClient() {
             onClick={() => setActiveCourse(null)}
             role="dialog"
             aria-modal="true"
-            aria-label={activeCourse.course.title}
+            aria-label={locTitle(activeCourse.course)}
           >
             <motion.div
               initial={{ scale: 0.98, opacity: 0, y: 8 }}
@@ -542,7 +623,7 @@ export function CertificatesClient() {
                   <div className="relative aspect-[1.414/1] w-full md:aspect-auto md:h-full md:min-h-[420px]">
                     <Image
                       src={activeCourse.course.image}
-                      alt={activeCourse.course.title}
+                      alt={locTitle(activeCourse.course)}
                       fill
                       className="object-contain p-3 sm:p-5 md:p-6"
                       sizes="(max-width: 768px) 100vw, 60vw"
@@ -572,7 +653,7 @@ export function CertificatesClient() {
 
                 {/* Title */}
                 <h2 className="mb-6 text-xl font-black leading-tight tracking-tight text-foreground sm:text-[1.6rem]">
-                  {activeCourse.course.title}
+                  {locTitle(activeCourse.course)}
                 </h2>
 
                 {/* Info grid */}
@@ -583,7 +664,7 @@ export function CertificatesClient() {
                       {t("pages.certificates.issued")}
                     </div>
                     <div className="text-sm font-bold text-foreground">
-                      {activeCourse.course.date ?? "—"}
+                      {locDate(activeCourse.course.date)}
                     </div>
                   </div>
                   <div className="space-y-1.5 bg-background/50 p-4">

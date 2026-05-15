@@ -99,7 +99,7 @@ export function Slide13Solutions({ index }: { index: number }) {
       <Eyebrow index={12} label={s.eyebrow} />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -123,7 +123,7 @@ export function Slide13Solutions({ index }: { index: number }) {
                 } size={20} />
               </div>
               <span
-                className="text-spectrum font-mono text-2xl font-black"
+                className="text-muted-foreground font-mono text-2xl font-black"
                 style={{ fontFamily: "var(--font-inter), sans-serif" }}
               >
                 {String(i + 1).padStart(2, "0")}
@@ -146,7 +146,7 @@ export function Slide14Roadmap({ index }: { index: number }) {
   const T = useDeckT();
   const s = T.s14;
   const WINDOWS = ["2026 – 2027", "2027 – 2028", "2028 – 2030"];
-  const GRADIENTS = ["from-cyan-400 to-blue-500", "from-blue-500 to-violet-500", "from-violet-500 to-fuchsia-500"];
+  const GRADIENTS = ["from-primary/70 to-primary", "from-primary to-blue-600", "from-blue-600 to-blue-800"];
   const PHASE_ICONS = [GraduationCap, Network, Rocket];
   const phases = s.phases.map((p, i) => ({ ...p, window: WINDOWS[i], gradient: GRADIENTS[i], icon: PHASE_ICONS[i] }));
 
@@ -155,7 +155,7 @@ export function Slide14Roadmap({ index }: { index: number }) {
       <Eyebrow index={13} label={s.eyebrow} />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -215,7 +215,7 @@ export function Slide15MyRole({ index }: { index: number }) {
       <Eyebrow index={14} label={s.eyebrow} accent="text-violet-500 dark:text-violet-300" />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -249,9 +249,9 @@ export function Slide15MyRole({ index }: { index: number }) {
             {s.constellation.map((c) => (
               <div
                 key={c}
-                className="group flex transform-gpu items-start gap-3 rounded-xl border border-border/60 bg-card/40 p-4 transition-all duration-300 ease-out hover:z-30 hover:-translate-y-2 hover:scale-[1.08] hover:border-violet-400/80 hover:bg-card/70 hover:shadow-[0_28px_60px_-18px_rgba(139,92,246,0.6)]"
+                className="group flex transform-gpu items-start gap-3 rounded-xl border border-border/60 bg-card/40 p-4 transition-all duration-300 ease-out hover:z-30 hover:-translate-y-1 hover:scale-[1.04] hover:border-primary/50 hover:bg-card/70 hover:shadow-[0_14px_36px_-10px_hsl(var(--primary)/0.30)]"
               >
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500 shadow-[0_0_10px_rgba(139,92,246,0.7)] transition-transform group-hover:scale-150" />
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500 transition-transform group-hover:scale-150" />
                 <span className="text-sm font-semibold text-foreground">{c}</span>
               </div>
             ))}
@@ -273,7 +273,7 @@ export function Slide16WhyFellowship({ index }: { index: number }) {
       <Eyebrow index={15} label={s.eyebrow} />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -304,7 +304,7 @@ export function Slide17FutureVision({ index }: { index: number }) {
   const T = useDeckT();
   const s = T.s17;
   const HORIZON_ICONS = [Rocket, Handshake, Telescope];
-  const GLOW_COLORS = ["bg-cyan-500/15", "bg-violet-500/15", "bg-fuchsia-500/15"];
+  const GLOW_COLORS = ["bg-primary/10", "bg-primary/8", "bg-primary/6"];
   const horizons = s.horizons.map((h, i) => ({ ...h, icon: HORIZON_ICONS[i], glow: GLOW_COLORS[i] }));
   const YEAR_LABELS = ["+5 years", "+10 years", "Long horizon"];
 
@@ -313,7 +313,7 @@ export function Slide17FutureVision({ index }: { index: number }) {
       <Eyebrow index={16} label={s.eyebrow} accent="text-cyan-500 dark:text-cyan-300" />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -322,7 +322,7 @@ export function Slide17FutureVision({ index }: { index: number }) {
           <motion.div
             key={h.title}
             variants={itemVariants}
-            className="group relative transform-gpu overflow-hidden rounded-2xl border border-border/60 bg-secondary/30 p-6 backdrop-blur-md transition-all duration-300 ease-out hover:z-30 hover:-translate-y-2 hover:scale-[1.08] hover:border-cyan-400/80 hover:bg-secondary/65 hover:shadow-[0_30px_70px_-18px_rgba(6,182,212,0.6)]"
+            className="group relative transform-gpu overflow-hidden rounded-2xl border border-border/60 bg-secondary/30 p-6 backdrop-blur-md transition-all duration-300 ease-out hover:z-30 hover:-translate-y-1 hover:scale-[1.04] hover:border-primary/50 hover:bg-secondary/60 hover:shadow-[0_16px_40px_-12px_hsl(var(--primary)/0.30)]"
           >
             <div className={`absolute -top-16 -right-16 h-44 w-44 rounded-full blur-3xl transition group-hover:opacity-90 ${h.glow}`} />
             <div className="relative">
@@ -340,7 +340,7 @@ export function Slide17FutureVision({ index }: { index: number }) {
 
       <motion.div
         variants={itemVariants}
-        className="mt-10 inline-flex items-center gap-3 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-300"
+        className="mt-10 inline-flex items-center gap-3 rounded-full border border-primary/25 bg-primary/10 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.3em] text-primary"
       >
         <AlertTriangle size={12} className="opacity-0" />
         {s.badge}

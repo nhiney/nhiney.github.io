@@ -3,8 +3,7 @@
 import Link from "next/link";
 import {
   ArrowRight, Mail, Download, ExternalLink,
-  CheckCircle2, Code2, Wrench, BarChart2,
-  Sparkles, Layers,
+  CheckCircle2, Code2, Wrench, BarChart2, Sparkles, Layers,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -21,7 +20,7 @@ import type { Post }       from "@/types";
 type Stat        = { value: string; label: string };
 type Trait       = { icon: string; title: string; body: string };
 type SkillGroup  = { category: string; items: string[] };
-type ProjectItem = { tag: string; title: string; role: string; period: string; problem: string; impact: string[] };
+type ProjectItem = { tag: string; title: string; role: string; period: string; problem: string; actions?: string[]; impact: string[] };
 type TimelineItem= { period: string; title: string; org: string; desc: string };
 type CertItem    = { emoji: string; title: string; issuer: string; date: string };
 
@@ -41,7 +40,7 @@ type PortfolioCopy = {
   skills: { eyebrow: string; heading: string; desc: string; groups: SkillGroup[] };
   projects: {
     eyebrow: string; heading: string; desc: string; all_cta: string;
-    label_problem: string; label_impact: string; label_case_study: string;
+    label_problem: string; label_actions: string; label_impact: string; label_case_study: string;
     items: ProjectItem[];
   };
   experience: { eyebrow: string; heading: string; desc: string; items: TimelineItem[] };
@@ -96,6 +95,18 @@ const PROJECT_TAG_CLS = [
   "text-amber-400 bg-amber-400/10 border-amber-400/20",
 ] as const;
 
+const PROJECT_STRIPE = [
+  "from-blue-500/60 via-blue-400/20 to-transparent",
+  "from-emerald-500/60 via-emerald-400/20 to-transparent",
+  "from-amber-500/60 via-amber-400/20 to-transparent",
+] as const;
+
+const PROJECT_NUM_CLS = [
+  "text-blue-500/10",
+  "text-emerald-500/10",
+  "text-amber-500/10",
+] as const;
+
 const CERT_CLS = [
   "border-blue-500/30 bg-blue-500/5",
   "border-violet-500/30 bg-violet-500/5",
@@ -126,7 +137,7 @@ export function PortfolioClient(_props: { projects: Post[] }) {
 function HeroSection({ copy }: { copy: PortfolioCopy }) {
   const { hero, stats } = copy;
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+    <section className="relative flex items-center overflow-hidden">
       <div className="pointer-events-none absolute inset-0 hidden md:block">
         <BackgroundLines className="h-full w-full [&_svg]:opacity-[0.07]">
           <span />
@@ -136,7 +147,7 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
       <MouseSpotlight />
 
-      <Container className="relative z-10 flex flex-col items-center text-center gap-8 py-28">
+      <Container className="relative z-10 flex flex-col items-center text-center gap-5 pt-10 pb-14">
 
         <motion.div
           initial={{ opacity: 0, y: -12 }}
@@ -152,12 +163,12 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="max-w-4xl text-5xl font-black tracking-tight leading-[1.06] sm:text-6xl md:text-7xl"
+          className="max-w-3xl text-[1.75rem] font-bold tracking-tight leading-[1.12] sm:text-3xl md:text-[2.25rem]"
         >
           {hero.headline_pre}{" "}
-          <span className="text-gradient">{hero.headline_acc1}</span>
+          <span className="text-primary">{hero.headline_acc1}</span>
           {" "}{hero.headline_mid}{" "}
-          <span className="text-gradient">{hero.headline_acc2}</span>
+          <span className="text-primary">{hero.headline_acc2}</span>
         </motion.h1>
 
         <motion.p
@@ -166,11 +177,12 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           transition={{ duration: 0.6, delay: 0.22 }}
           className="max-w-2xl text-base sm:text-lg leading-relaxed"
         >
-          {hero.sub_pre}{" "}
-          <span className="font-semibold text-foreground">{hero.sub_ba}</span>,{" "}
-          <span className="font-semibold text-foreground">{hero.sub_product}</span>,{" "}
-          {/* i18n: some langs don't need "and" connector, keep it simple */}
-          <span className="font-semibold text-foreground">{hero.sub_ux}</span>.{" "}
+          {hero.sub_pre}
+          {hero.sub_ba && (
+            <>{" "}<span className="font-semibold text-foreground">{hero.sub_ba}</span>,{" "}
+            <span className="font-semibold text-foreground">{hero.sub_product}</span>,{" "}
+            <span className="font-semibold text-foreground">{hero.sub_ux}</span>.{" "}</>
+          )}
           {hero.sub_end}
         </motion.p>
 
@@ -209,16 +221,14 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
 function AboutSection({ copy }: { copy: PortfolioCopy }) {
   const { about, traits } = copy;
   return (
-    <section className="py-24 border-t border-border/40">
+    <section className="py-16 border-t border-border/40">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 xl:gap-20 items-center">
 
           <motion.div {...inView()} className="space-y-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{about.eyebrow}</p>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
-              {about.heading_1}<br className="hidden sm:block" />
-              {about.heading_2}<br className="hidden sm:block" />
-              {about.heading_3}
+            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{about.eyebrow}</span>
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight leading-snug">
+              {about.heading_1} {about.heading_2} {about.heading_3}
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed">
               <p>{about.p1}</p>
@@ -242,7 +252,7 @@ function AboutSection({ copy }: { copy: PortfolioCopy }) {
                 className="rounded-2xl border border-border/50 bg-card/40 p-5 space-y-2.5 hover:border-primary/30 hover:bg-card/70 transition-all group cursor-default"
               >
                 <span className="text-2xl leading-none group-hover:scale-110 inline-block transition-transform">{trait.icon}</span>
-                <h3 className="text-sm font-black text-foreground">{trait.title}</h3>
+                <h3 className="text-sm font-semibold text-foreground">{trait.title}</h3>
                 <p className="text-xs leading-relaxed">{trait.body}</p>
               </motion.div>
             ))}
@@ -259,12 +269,12 @@ function AboutSection({ copy }: { copy: PortfolioCopy }) {
 function SkillsSection({ copy }: { copy: PortfolioCopy }) {
   const { skills } = copy;
   return (
-    <section className="py-24 bg-secondary/20 border-t border-border/40">
+    <section className="py-16 bg-secondary/20 border-t border-border/40">
       <Container className="space-y-12">
 
         <motion.div {...inView()} className="space-y-3">
-          <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{skills.eyebrow}</p>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{skills.heading}</h2>
+          <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{skills.eyebrow}</span>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{skills.heading}</h2>
           <p className="max-w-xl text-[15px] leading-relaxed">{skills.desc}</p>
         </motion.div>
 
@@ -280,7 +290,7 @@ function SkillsSection({ copy }: { copy: PortfolioCopy }) {
               >
                 <div className="flex items-center gap-3">
                   <Icon className={cn("h-5 w-5", style.iconCls)} />
-                  <h3 className="font-black text-foreground">{group.category}</h3>
+                  <h3 className="font-semibold text-foreground">{group.category}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
@@ -304,13 +314,13 @@ function SkillsSection({ copy }: { copy: PortfolioCopy }) {
 function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
   const { projects } = copy;
   return (
-    <section id="projects" className="py-24 border-t border-border/40">
+    <section id="projects" className="py-16 border-t border-border/40">
       <Container className="space-y-12">
 
         <motion.div {...inView()} className="flex items-end justify-between gap-4">
           <div className="space-y-3">
-            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{projects.eyebrow}</p>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{projects.heading}</h2>
+            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{projects.eyebrow}</span>
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{projects.heading}</h2>
             <p className="max-w-xl text-[15px] leading-relaxed">{projects.desc}</p>
           </div>
           <Link href="/projects" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline shrink-0">
@@ -323,44 +333,78 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
             <motion.article
               key={project.title}
               {...inView(i * 0.07)}
-              className="group rounded-2xl border border-border/50 bg-card/40 p-6 sm:p-8 hover:border-primary/30 hover:bg-card/60 transition-all"
+              className="group rounded-2xl border border-border/50 bg-card/40 hover:border-primary/20 transition-colors overflow-hidden"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-6 sm:gap-10">
+              {/* Accent stripe */}
+              <div className={cn("h-[2px] w-full bg-gradient-to-r", PROJECT_STRIPE[i])} />
 
-                <div className="flex-1 space-y-4 min-w-0">
-                  <div className="flex items-center gap-2.5 flex-wrap">
-                    <span className={cn("rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-widest", PROJECT_TAG_CLS[i])}>
-                      {project.tag}
+              <div className="p-6 sm:p-8 space-y-5">
+                {/* Title + meta + CTA */}
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-4 min-w-0">
+                    <span className={cn("text-5xl font-black tabular-nums leading-none select-none shrink-0 mt-0.5", PROJECT_NUM_CLS[i])}>
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-xs text-muted-foreground">{project.period}</span>
-                    <span className="text-xs text-muted-foreground hidden sm:inline">· {project.role}</span>
+                    <div className="min-w-0">
+                      <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <div className="flex items-center gap-2 mt-2 flex-wrap">
+                        <span className={cn("rounded-full border px-2.5 py-0.5 text-[10px] font-medium", PROJECT_TAG_CLS[i])}>
+                          {project.tag}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{project.period}</span>
+                        <span className="hidden sm:inline text-xs text-muted-foreground">· {project.role}</span>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-black tracking-tight text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="space-y-1.5">
-                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted-foreground/70">{projects.label_problem}</p>
-                    <p className="text-sm leading-relaxed">{project.problem}</p>
-                  </div>
+                  <Link
+                    href={PROJECT_HREFS[i] ?? "/projects"}
+                    className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline shrink-0 pt-1"
+                  >
+                    {projects.label_case_study} <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
                 </div>
 
-                <div className="sm:w-60 space-y-4 shrink-0">
+                {/* Divider */}
+                <div className="h-px bg-border/40" />
+
+                {/* 3-column: Problem · What I did · Results */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
                   <div className="space-y-2">
-                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted-foreground/70">{projects.label_impact}</p>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground/40">{projects.label_problem}</p>
+                    <p className="text-sm leading-relaxed text-foreground/75">{project.problem}</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground/40">{projects.label_actions}</p>
+                    <ul className="space-y-1.5">
+                      {(project.actions ?? []).map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-foreground/75">
+                          <span className="mt-[7px] h-1 w-1 rounded-full bg-muted-foreground/40 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground/40">{projects.label_impact}</p>
                     <ul className="space-y-1.5">
                       {project.impact.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-xs text-foreground/80">
+                        <li key={item} className="flex items-start gap-2 text-sm text-foreground/75">
                           <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
                           {item}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <Link href={PROJECT_HREFS[i] ?? "/projects"} className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
-                    {projects.label_case_study} <ExternalLink className="h-3.5 w-3.5" />
-                  </Link>
                 </div>
 
+                {/* Mobile CTA */}
+                <div className="sm:hidden pt-1">
+                  <Link href={PROJECT_HREFS[i] ?? "/projects"} className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
+                    {projects.label_case_study} <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </div>
             </motion.article>
           ))}
@@ -382,12 +426,12 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
 function ExperienceSection({ copy }: { copy: PortfolioCopy }) {
   const { experience } = copy;
   return (
-    <section className="py-24 bg-secondary/20 border-t border-border/40">
+    <section className="py-16 bg-secondary/20 border-t border-border/40">
       <Container className="space-y-12">
 
         <motion.div {...inView()} className="space-y-3">
-          <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{experience.eyebrow}</p>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{experience.heading}</h2>
+          <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{experience.eyebrow}</span>
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{experience.heading}</h2>
           <p className="max-w-xl text-[15px] leading-relaxed">{experience.desc}</p>
         </motion.div>
 
@@ -399,11 +443,11 @@ function ExperienceSection({ copy }: { copy: PortfolioCopy }) {
                 <div className="absolute -left-[22px] sm:-left-[25px] top-[18px] h-2.5 w-2.5 rounded-full border-2 border-primary bg-background" />
                 <div className="rounded-2xl border border-border/50 bg-card/40 p-5 sm:p-6 hover:border-primary/30 hover:bg-card/60 transition-all">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
-                    <span className="text-xs font-black text-primary tabular-nums">{item.period}</span>
+                    <span className="text-xs font-semibold text-primary tabular-nums">{item.period}</span>
                     <span className="hidden sm:block w-px h-3 bg-border/60" />
                     <span className="text-xs text-muted-foreground">{item.org}</span>
                   </div>
-                  <h3 className="font-black text-foreground text-sm sm:text-base mb-1">{item.title}</h3>
+                  <h3 className="font-semibold text-foreground text-sm sm:text-base mb-1">{item.title}</h3>
                   <p className="text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
@@ -421,13 +465,13 @@ function ExperienceSection({ copy }: { copy: PortfolioCopy }) {
 function CertificationsSection({ copy }: { copy: PortfolioCopy }) {
   const { certifications } = copy;
   return (
-    <section className="py-24 border-t border-border/40">
+    <section className="py-16 border-t border-border/40">
       <Container className="space-y-12">
 
         <motion.div {...inView()} className="flex items-end justify-between gap-4">
           <div className="space-y-3">
-            <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{certifications.eyebrow}</p>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{certifications.heading}</h2>
+            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{certifications.eyebrow}</span>
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{certifications.heading}</h2>
             <p className="max-w-xl text-[15px] leading-relaxed">{certifications.desc}</p>
           </div>
           <Link href="/certificates" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline shrink-0">
@@ -444,7 +488,7 @@ function CertificationsSection({ copy }: { copy: PortfolioCopy }) {
             >
               <span className="text-2xl leading-none group-hover:scale-110 inline-block transition-transform">{cert.emoji}</span>
               <div>
-                <h3 className="text-sm font-black text-foreground leading-snug">{cert.title}</h3>
+                <h3 className="text-sm font-semibold text-foreground leading-snug">{cert.title}</h3>
                 <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
               </div>
               <span className="inline-block rounded-full bg-background/60 border border-border/50 px-2.5 py-1 text-[10px] font-semibold">
@@ -464,23 +508,23 @@ function CertificationsSection({ copy }: { copy: PortfolioCopy }) {
 function ContactSection({ copy }: { copy: PortfolioCopy }) {
   const { contact } = copy;
   return (
-    <section className="py-24 border-t border-border/40 bg-secondary/20">
+    <section className="py-16 border-t border-border/40 bg-secondary/20">
       <Container>
         <motion.div {...inView()} className="mx-auto max-w-2xl text-center space-y-8">
 
           <div className="space-y-5">
             <div className="flex items-center justify-center gap-2">
               <Sparkles className="h-4 w-4 text-primary" />
-              <p className="text-[10px] font-black uppercase tracking-[0.35em] text-primary">{contact.eyebrow}</p>
+              <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{contact.eyebrow}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">{contact.heading}</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{contact.heading}</h2>
             <p className="text-[15px] leading-relaxed max-w-lg mx-auto">{contact.desc}</p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href={`mailto:${SITE_CONFIG.links.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-black text-white uppercase tracking-widest transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] active:scale-95"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white transition-all hover:scale-[1.01] active:scale-95"
             >
               <Mail className="h-4 w-4" />
               {contact.cta}

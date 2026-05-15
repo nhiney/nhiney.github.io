@@ -14,24 +14,48 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { ProjectImageSlider } from "./ProjectImageSlider";
-import { BulletList, ZoomTile } from "./ZoomTile";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Project } from "@/data/cv";
+import { cn } from "@/lib/utils";
 
-function StatusPill({ status }: { status: Project["status"] }) {
-  const tone = {
-    shipped: "bg-emerald-500/10 border-emerald-500/30 text-emerald-500",
-    duration: "bg-blue-500/10 border-blue-500/30 text-blue-500",
-    ongoing: "bg-amber-500/10 border-amber-500/30 text-amber-500",
-  }[status.tone];
-
+function SectionBlock({
+  icon: Icon,
+  label,
+  accent,
+  children,
+}: {
+  icon: React.ElementType;
+  label: string;
+  accent: string;
+  children: React.ReactNode;
+}) {
   return (
-    <span
-      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-black uppercase tracking-widest ${tone}`}
-    >
-      <span className="h-1.5 w-1.5 rounded-full bg-current" />
-      {status.label}
-    </span>
+    <div className="space-y-2.5">
+      <div className="flex items-center gap-2">
+        <div className={cn("flex h-6 w-6 shrink-0 items-center justify-center rounded-md", accent)}>
+          <Icon size={13} />
+        </div>
+        <h3 className="text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+          {label}
+        </h3>
+      </div>
+      <div className="text-sm leading-relaxed text-foreground/80 pl-8">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function BulletList({ items, dotClass }: { items: string[]; dotClass: string }) {
+  return (
+    <ul className="space-y-1.5">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-start gap-2">
+          <span className={cn("mt-[7px] h-1.5 w-1.5 rounded-full shrink-0", dotClass)} />
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -68,7 +92,7 @@ export function ProjectDetailModal({ project, index, onClose, githubFallback }: 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/70 px-4 py-6 backdrop-blur-md sm:py-10"
+          className="fixed inset-0 z-[60] flex items-start sm:items-center justify-center overflow-y-auto bg-black/75 px-4 py-6 backdrop-blur-md"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -76,125 +100,124 @@ export function ProjectDetailModal({ project, index, onClose, githubFallback }: 
         >
           <motion.article
             key="panel"
-            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            initial={{ opacity: 0, y: 18, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 240, damping: 28 }}
+            exit={{ opacity: 0, y: 18, scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 260, damping: 30 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative my-auto w-full max-w-5xl rounded-3xl border border-border bg-card shadow-2xl"
+            className="relative w-full max-w-5xl rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
           >
+            {/* Close */}
             <button
               type="button"
               onClick={onClose}
               aria-label={t("pages.projects.close_modal")}
-              className="absolute right-4 top-4 z-[80] grid h-10 w-10 place-items-center rounded-full border border-border bg-background/90 text-foreground backdrop-blur-md transition hover:rotate-90 hover:bg-background"
+              className="absolute right-4 top-4 z-[80] grid h-9 w-9 place-items-center rounded-full border border-border bg-background/80 text-muted-foreground backdrop-blur-md transition hover:text-foreground"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
 
-            <header className="space-y-5 px-6 pb-6 pt-8 sm:px-10 sm:pt-10">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-black uppercase tracking-[0.25em] text-muted-foreground">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <StatusPill status={project.status} />
-                </div>
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                  <Calendar size={13} />
-                  {project.period}
-                </span>
+            {/* Two-column layout */}
+            <div className="flex flex-col md:flex-row md:min-h-[500px]">
+
+              {/* Left — image panel */}
+              <div className="md:w-[44%] shrink-0 bg-black/20 border-b md:border-b-0 md:border-r border-border/40 flex flex-col justify-center">
+                <ProjectImageSlider images={project.gallery} alt={project.title} />
               </div>
 
-              <div className="space-y-1.5">
-                <h2 className="text-2xl font-black tracking-tight text-foreground sm:text-4xl">
-                  {project.title}
-                </h2>
-                {project.role && (
-                  <p className="inline-flex items-center gap-2 text-sm text-muted-foreground sm:text-base">
-                    <User size={14} className="text-primary" />
-                    {project.role}
-                  </p>
-                )}
-              </div>
-            </header>
+              {/* Right — content panel */}
+              <div className="flex-1 flex flex-col overflow-y-auto max-h-[85vh]">
 
-            <div className="px-6 sm:px-10">
-              <ProjectImageSlider images={project.gallery} alt={project.title} />
-            </div>
-
-            <p className="mt-6 hidden px-6 text-center text-[11px] font-bold uppercase tracking-[0.25em] text-muted-foreground md:block sm:px-10">
-              {t("pages.projects.hover_hint")}
-            </p>
-
-            <div className="grid gap-6 px-6 py-10 sm:grid-cols-2 sm:gap-8 sm:px-10 sm:py-14">
-              <div className="sm:col-span-2">
-                <ZoomTile
-                  icon={AlertCircle}
-                  label={t("pages.projects.problem_label")}
-                  tone="red"
-                  origin="tc"
-                >
-                  {project.problem}
-                </ZoomTile>
-              </div>
-
-              <ZoomTile
-                icon={Lightbulb}
-                label={t("pages.projects.approach_label")}
-                tone="amber"
-                origin="tl"
-              >
-                <BulletList items={project.contributions.slice(0, 5)} tone="amber" />
-              </ZoomTile>
-
-              <ZoomTile
-                icon={CheckCircle2}
-                label={t("pages.projects.results_label")}
-                tone="emerald"
-                origin="tr"
-              >
-                <BulletList items={project.results} tone="emerald" />
-              </ZoomTile>
-
-              <div className="sm:col-span-2">
-                <ZoomTile
-                  icon={Wrench}
-                  label={t("pages.projects.tech_label")}
-                  tone="violet"
-                  origin="bc"
-                >
-                  <div className="flex flex-wrap gap-2">
-                    {project.techPills.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-violet-500/25 bg-violet-500/[0.06] px-3.5 py-1.5 text-[12px] font-semibold text-foreground/85"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                {/* Header */}
+                <div className="px-6 pt-6 pb-5 sm:px-8 border-b border-border/40">
+                  <div className="flex items-center gap-2 mb-3 pr-10">
+                    <span className="text-xs font-bold tabular-nums text-muted-foreground/30">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="ml-auto inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <Calendar size={11} />
+                      {project.period}
+                    </span>
                   </div>
-                </ZoomTile>
+                  <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl pr-8">
+                    {project.title}
+                  </h2>
+                  {project.role && (
+                    <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <User size={12} className="text-primary" />
+                      {project.role}
+                    </p>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 px-6 py-5 sm:px-8 space-y-5 overflow-y-auto">
+
+                  <SectionBlock
+                    icon={AlertCircle}
+                    label={t("pages.projects.problem_label")}
+                    accent="bg-red-500/10 text-red-500"
+                  >
+                    <p>{project.problem}</p>
+                  </SectionBlock>
+
+                  <div className="h-px bg-border/30" />
+
+                  <SectionBlock
+                    icon={Lightbulb}
+                    label={t("pages.projects.approach_label")}
+                    accent="bg-amber-500/10 text-amber-500"
+                  >
+                    <BulletList items={project.contributions.slice(0, 5)} dotClass="bg-amber-500/60" />
+                  </SectionBlock>
+
+                  <div className="h-px bg-border/30" />
+
+                  <SectionBlock
+                    icon={CheckCircle2}
+                    label={t("pages.projects.results_label")}
+                    accent="bg-emerald-500/10 text-emerald-500"
+                  >
+                    <BulletList items={project.results} dotClass="bg-emerald-500" />
+                  </SectionBlock>
+
+                  <div className="h-px bg-border/30" />
+
+                  <SectionBlock
+                    icon={Wrench}
+                    label={t("pages.projects.tech_label")}
+                    accent="bg-primary/10 text-primary"
+                  >
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.techPills.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-border/60 bg-secondary/40 px-2.5 py-0.5 text-xs font-medium text-foreground/80"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </SectionBlock>
+                </div>
+
+                {/* Footer */}
+                <div className="flex items-center justify-between border-t border-border/40 px-6 py-3.5 sm:px-8">
+                  <span className="text-[10px] text-muted-foreground/30 uppercase tracking-widest">
+                    ESC
+                  </span>
+                  <Link
+                    href={project.github ?? githubFallback}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10"
+                  >
+                    {t("pages.projects.view_repo")}
+                    <ArrowUpRight size={13} />
+                  </Link>
+                </div>
               </div>
             </div>
-
-            <footer className="flex items-center justify-between gap-4 border-t border-border/60 px-6 py-5 sm:px-10">
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
-                ESC ↹
-              </span>
-              <Link
-                href={project.github ?? githubFallback}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/link inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2.5 text-xs font-black uppercase tracking-widest text-primary transition-all hover:bg-primary/10"
-              >
-                {t("pages.projects.view_repo")}
-                <ArrowUpRight
-                  size={15}
-                  className="transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
-                />
-              </Link>
-            </footer>
           </motion.article>
         </motion.div>
       )}

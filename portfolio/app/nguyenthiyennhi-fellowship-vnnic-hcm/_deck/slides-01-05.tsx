@@ -11,7 +11,6 @@ import {
   Infinity as InfinityIcon,
   AlertCircle,
   CheckCircle2,
-  TrendingDown,
   TrendingUp,
   Sparkles,
 } from "lucide-react";
@@ -35,43 +34,43 @@ export function Slide01Cover({ index }: { index: number }) {
       <div className="text-center">
         <motion.div
           variants={itemVariants}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-[10px] font-bold uppercase tracking-[0.35em] text-primary"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.3em] text-muted-foreground backdrop-blur-sm"
         >
-          <Globe size={12} />
+          <Globe size={11} className="text-primary" />
           {s.badge}
         </motion.div>
 
         <motion.h1
           variants={itemVariants}
-          className="text-balance text-5xl font-black tracking-tighter text-spectrum sm:text-6xl md:text-7xl lg:text-[5.5rem]"
-          style={{ fontFamily: "var(--font-inter), sans-serif", lineHeight: 1.02 }}
+          className="text-balance text-[1.65rem] font-black tracking-tight text-foreground sm:text-3xl md:text-[2.25rem]"
+          style={{ fontFamily: "var(--font-inter), sans-serif", lineHeight: 1.12 }}
         >
           {s.title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="mx-auto mt-7 max-w-2xl text-balance text-base font-medium text-muted-foreground sm:text-lg md:text-xl"
+          className="mx-auto mt-5 max-w-xl text-balance text-sm text-muted-foreground sm:text-[0.95rem]"
         >
           {s.subtitle}
         </motion.p>
 
         <motion.div
           variants={itemVariants}
-          className="mx-auto mt-10 h-px w-32 bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+          className="mx-auto mt-8 h-px w-20 bg-border/60"
         />
 
         <motion.div
           variants={itemVariants}
-          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          className="mt-8 flex flex-wrap items-center justify-center gap-2"
         >
           {s.tags.map((text, i) => (
             <span
               key={i}
-              className={`transform-gpu rounded-full border px-4 py-2 text-[11px] font-bold tracking-wider backdrop-blur-md transition-all duration-300 ease-out hover:z-30 hover:-translate-y-1.5 hover:scale-125 hover:border-primary/70 hover:shadow-[0_18px_40px_-12px_hsl(var(--primary)/0.5)] sm:text-xs ${
+              className={`rounded-full border px-3.5 py-1.5 text-[11px] font-medium transition-colors ${
                 i === 0
-                  ? "border-primary/50 bg-primary/15 text-foreground"
-                  : "border-border/60 bg-secondary/40 text-muted-foreground"
+                  ? "border-primary/30 bg-primary/8 text-foreground"
+                  : "border-border/50 bg-secondary/30 text-muted-foreground"
               }`}
             >
               {text}
@@ -81,16 +80,41 @@ export function Slide01Cover({ index }: { index: number }) {
 
         <motion.div
           variants={itemVariants}
-          className="mt-12 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-primary"
+          className="mt-10 inline-flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground/70"
         >
           <span>{s.cta}</span>
-          <motion.span
-            animate={{ x: [0, 6, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ArrowRight size={12} />
-          </motion.span>
+          <ArrowRight size={11} />
         </motion.div>
+      </div>
+    </Slide>
+  );
+}
+
+export function SlideIntro({ index }: { index: number }) {
+  const T = useDeckT();
+  const s = T.s_intro;
+  return (
+    <Slide index={index} maxWidth="max-w-2xl">
+      <Eyebrow index={1} label={s.eyebrow} />
+      <div className="mt-6 space-y-8">
+        {s.sections.map((section, i) => (
+          <motion.div key={i} variants={itemVariants} className="space-y-3">
+            <h3 className="text-sm font-black tracking-tight text-foreground sm:text-[0.9rem]">
+              {section.title}
+            </h3>
+            <p className="text-xs leading-relaxed text-muted-foreground sm:text-[0.8rem]">
+              {section.intro}
+            </p>
+            <ul className="space-y-2 pt-0.5">
+              {section.bullets.map((bullet, j) => (
+                <li key={j} className="flex items-start gap-2.5 text-xs text-foreground/80 sm:text-[0.8rem]">
+                  <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
       </div>
     </Slide>
   );
@@ -100,26 +124,50 @@ export function Slide02Vision({ index }: { index: number }) {
   const T = useDeckT();
   const s = T.s02;
   return (
-    <Slide index={index} maxWidth="max-w-5xl">
-      <Eyebrow index={1} label={s.eyebrow} />
+    <Slide index={index} maxWidth="max-w-6xl">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px] lg:items-start">
+        {/* Left: text */}
+        <div>
+          <Eyebrow index={1} label={s.eyebrow} />
+          <motion.h2
+            variants={itemVariants}
+            className="text-balance text-xl font-black leading-[1.14] tracking-tight text-foreground sm:text-2xl md:text-3xl"
+            style={{ fontFamily: "var(--font-inter), sans-serif" }}
+          >
+            {s.headline1}
+          </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="mt-4 max-w-2xl text-sm font-medium leading-relaxed text-foreground/80"
+          >
+            {s.headline2}
+          </motion.p>
+          <motion.p
+            variants={itemVariants}
+            className="mt-3 max-w-2xl text-[0.8rem] text-muted-foreground sm:text-sm"
+          >
+            {s.subhead}
+          </motion.p>
+          <PullQuote className="mt-8">{s.pullquote}</PullQuote>
+        </div>
 
-      <motion.h2
-        variants={itemVariants}
-        className="text-balance text-4xl font-black leading-[1.05] tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-[4.5rem]"
-        style={{ fontFamily: "var(--font-inter), sans-serif" }}
-      >
-        {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
-      </motion.h2>
-
-      <motion.p
-        variants={itemVariants}
-        className="mt-8 max-w-3xl text-base text-muted-foreground sm:text-lg"
-      >
-        {s.subhead}
-      </motion.p>
-
-      <PullQuote className="mt-10">{s.pullquote}</PullQuote>
+        {/* Right: globe image */}
+        <motion.div variants={itemVariants} className="hidden lg:block">
+          <div className="relative overflow-hidden rounded-2xl border border-border/40 h-[300px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=640&q=85"
+              alt="Global internet infrastructure — Earth from space"
+              className="h-full w-full object-cover opacity-70"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-card/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-card/40 to-transparent" />
+            <p className="absolute bottom-3 left-4 text-[9px] font-bold uppercase tracking-[0.3em] text-foreground/40">
+              Global Internet Infrastructure
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </Slide>
   );
 }
@@ -136,12 +184,28 @@ export function Slide03WhyInfrastructure({ index }: { index: number }) {
       <Eyebrow index={2} label={s.eyebrow} />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>{" "}
-        <span className="text-spectrum">{s.headline3}</span>
+        <span className="text-primary">{s.headline2}</span>{" "}
+        <span className="text-primary">{s.headline3}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
+      {/* Infrastructure analogy image strip */}
+      <motion.div variants={itemVariants} className="mt-6 relative overflow-hidden rounded-xl border border-border/40 h-28">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1400&q=80"
+          alt="Infrastructure analogy — highways and digital networks"
+          className="h-full w-full object-cover opacity-35"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-card/90 via-transparent to-card/90" />
+        <div className="absolute inset-0 flex items-center justify-center gap-5 px-6">
+          <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground whitespace-nowrap">Roads · Power Grids · Water</span>
+          <ArrowRight size={14} className="text-primary shrink-0" />
+          <span className="text-[11px] font-bold uppercase tracking-widest text-primary whitespace-nowrap">Internet Infrastructure</span>
+        </div>
+      </motion.div>
+
+      <div className="mt-8 grid gap-5 lg:grid-cols-3">
         {pillars.map((p) => (
           <GlassCard key={p.tag} accent={p.accent}>
             <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-current opacity-10 blur-3xl" />
@@ -168,69 +232,60 @@ export function Slide03WhyInfrastructure({ index }: { index: number }) {
 export function Slide04IPv4Crisis({ index }: { index: number }) {
   const T = useDeckT();
   const s = T.s04;
+  const CARD_ACCENTS = ["rose", "amber", "violet"] as const;
 
   return (
     <Slide index={index}>
       <Eyebrow index={3} label={s.eyebrow} accent="text-rose-500 dark:text-rose-300" />
       <HeadlineDisplay>
-        {s.headline1}{" "}
         <span className="bg-gradient-to-r from-rose-400 to-amber-400 bg-clip-text text-transparent">
-          {s.headline2}
+          {s.headline1}
         </span>
       </HeadlineDisplay>
+      <motion.p
+        variants={itemVariants}
+        className="mt-3 max-w-3xl text-sm font-medium leading-relaxed text-foreground/80"
+      >
+        {s.headline2}
+      </motion.p>
       <Subhead>{s.subhead}</Subhead>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-        <motion.div
-          variants={itemVariants}
-          className="relative overflow-hidden rounded-2xl border border-rose-500/30 bg-rose-500/[0.05] p-6 backdrop-blur-md sm:p-8"
-        >
-          <div className="absolute -top-20 -right-20 h-60 w-60 rounded-full bg-rose-500/20 blur-3xl" />
-          <div className="relative">
-            <div className="inline-flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-rose-600 dark:text-rose-300">
-              <TrendingDown size={11} /> {s.gaugeLabel}
-            </div>
-            <div className="mt-6 flex items-end gap-3">
-              <span
-                className="text-7xl font-black tracking-tighter text-rose-500 sm:text-8xl"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                0%
-              </span>
-              <span className="mb-3 text-sm font-semibold text-muted-foreground">
-                {s.gaugeSublabel}
-              </span>
-            </div>
-            <div className="mt-6 h-2 w-full overflow-hidden rounded-full bg-rose-500/15">
-              <motion.div
-                initial={{ width: "100%" }}
-                whileInView={{ width: "0%" }}
-                viewport={{ amount: 0.6, once: false }}
-                transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                className="h-full rounded-full bg-gradient-to-r from-amber-400 via-rose-500 to-rose-600"
-              />
-            </div>
-            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-              {s.cascade.map((c, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-rose-500" />
-                  {c}
+      <div className="mt-8 grid gap-4 lg:grid-cols-3">
+        {s.cascade.map((card, i) => (
+          <GlassCard key={i} accent={CARD_ACCENTS[i]}>
+            <h3 className="text-sm font-black leading-snug tracking-tight text-foreground">
+              {card.title}
+            </h3>
+            <ul className="mt-3 space-y-2">
+              {card.bullets.map((b, j) => (
+                <li key={j} className="flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
+                  <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-rose-500/70" />
+                  {b}
                 </li>
               ))}
             </ul>
-          </div>
-        </motion.div>
-
-        <div className="grid gap-4">
-          <StatBlock value="4.3 B" label={s.stat1label} accent="text-rose-500" />
-          <StatBlock value="75 B+" label={s.stat2label} accent="text-amber-500" />
-          <StatBlock value="0" label={s.stat3label} accent="text-rose-500" />
-        </div>
+          </GlassCard>
+        ))}
       </div>
+
+      <div className="mt-5 grid grid-cols-3 gap-4">
+        <StatBlock value={s.stat1value} label={s.stat1label} accent="text-rose-500" />
+        <StatBlock value={s.stat2value} label={s.stat2label} accent="text-amber-500" />
+        <StatBlock value={s.stat3value} label={s.stat3label} accent="text-rose-500" />
+      </div>
+
+      <motion.div
+        variants={itemVariants}
+        className="mt-5 rounded-xl border border-rose-500/20 bg-rose-500/[0.04] px-5 py-4"
+      >
+        <p className="text-xs leading-relaxed text-muted-foreground sm:text-[0.8rem]">
+          {s.closing}
+        </p>
+      </motion.div>
 
       <motion.p
         variants={itemVariants}
-        className="mt-8 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground"
+        className="mt-5 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground"
       >
         {s.sources}
       </motion.p>
@@ -249,7 +304,7 @@ export function Slide05WhyIPv6({ index }: { index: number }) {
       <Eyebrow index={4} label={s.eyebrow} accent="text-cyan-500 dark:text-cyan-300" />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-spectrum">{s.headline2}</span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 

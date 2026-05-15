@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Switch dark: variant from media query to class-based.
+   Tailwind v4 defaults to @media (prefers-color-scheme: dark), but this
+   app manages theme via a .dark class on <html> (see theme-strategy.js).
+   Without this, dark: utilities fire based on the OS setting instead of
+   the user's in-app toggle, causing dark backgrounds to leak into light mode. */
+@variant dark (&:is(.dark, .dark *));
+
 /* Tailwind v4 — expose the design-token CSS vars as utility classes
    (bg-primary, text-foreground, border-border, etc.). Without this @theme
    block Tailwind v4 doesn't know about the custom colors and silently
@@ -278,3 +285,6 @@
     background: hsl(var(--primary) / 0.15);
   }
 }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

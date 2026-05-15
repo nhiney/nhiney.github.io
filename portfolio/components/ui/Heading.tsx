@@ -12,10 +12,10 @@ export function Heading({
   ...props
 }: HeadingProps) {
   const variants = {
-    hero: "text-6xl font-[900] tracking-tighter sm:text-7xl lg:text-9xl leading-[1] text-gradient",
-    title: "text-4xl font-extrabold tracking-tighter sm:text-5xl",
-    subtitle: "text-lg font-semibold text-primary",
-    section: "text-sm font-bold uppercase tracking-[0.3em] text-muted-foreground",
+    hero: "text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15]",
+    title: "text-2xl font-semibold tracking-tight sm:text-3xl",
+    subtitle: "text-base font-medium text-primary",
+    section: "text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground",
   };
 
   return (

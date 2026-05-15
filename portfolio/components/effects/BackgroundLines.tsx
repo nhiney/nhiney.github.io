@@ -42,9 +42,9 @@ const paths = [
 ];
 
 const colors = [
-  "#46A5CA", "#8C2F2F", "#4FAE4D", "#D6590C", "#811010",
-  "#247AFB", "#A534A0", "#A8A438", "#D6590C", "#46A29C",
-  "#670F6D", "#D7C200",
+  "#4A8FD8", "#5E7EAA", "#6B83B5", "#3D7AC0", "#7491BE",
+  "#4A8FD8", "#5E7EAA", "#6B83B5", "#3D7AC0", "#7491BE",
+  "#5589C5", "#5C7AAD",
 ];
 
 function LinesSVG({ svgOptions }: { svgOptions?: { duration?: number } }) {
@@ -63,7 +63,7 @@ function LinesSVG({ svgOptions }: { svgOptions?: { duration?: number } }) {
           key={`line-${idx}`}
           d={path}
           stroke={colors[idx % colors.length]}
-          strokeWidth="2.3"
+          strokeWidth="1.5"
           strokeLinecap="round"
           variants={pathVariants}
           initial="initial"

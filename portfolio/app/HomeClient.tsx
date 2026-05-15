@@ -235,7 +235,7 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
 
               {/* Title */}
               <h1 className="text-4xl font-semibold leading-tight dark:text-zinc-100 md:text-5xl md:leading-[3.8rem]">
-                {t("home.hero.title_prefix")}{" "}
+                <span className="text-xl md:text-2xl font-medium block mb-1 text-zinc-400 dark:text-zinc-500">{t("home.hero.title_prefix")}</span>
                 <ColourfulText text="Nguyễn Thị Yến Nhi" />
               </h1>
 
