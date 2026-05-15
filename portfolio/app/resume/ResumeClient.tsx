@@ -18,8 +18,8 @@ export function ResumeClient() {
     <>
       {/* ══ Hero — kept inside the body container ═══════════════════════════ */}
       <Container className="pb-10">
-        <Section className="space-y-6 pt-12 text-center">
-          <FadeIn className="space-y-5 flex flex-col items-center">
+        <Section className="space-y-4 pt-8 text-center">
+          <FadeIn className="space-y-3 flex flex-col items-center">
             <Badge
               variant="outline"
               className="px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]"

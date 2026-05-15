@@ -27,25 +27,25 @@ export function Slide18Closing({ index }: { index: number }) {
 
       <motion.h2
         variants={itemVariants}
-        className="text-balance text-4xl font-black leading-[1.04] tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-[4.5rem]"
+        className="text-balance text-xl font-black leading-[1.14] tracking-tight text-foreground sm:text-2xl md:text-3xl"
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         {s.headline1}{" "}
-        <span className="text-muted-foreground/70">{s.headlineInherited}</span>
+        <span className="text-muted-foreground/60">{s.headlineInherited}</span>
         <br />
-        {s.headline2} <span className="text-spectrum">{s.headlineBuilt}</span> {s.headline3}
+        {s.headline2} <span className="text-primary">{s.headlineBuilt}</span> {s.headline3}
       </motion.h2>
 
       <motion.p
         variants={itemVariants}
-        className="mt-10 text-lg font-semibold italic text-muted-foreground sm:text-xl"
+        className="mt-6 text-sm font-medium italic text-muted-foreground sm:text-base"
       >
         {s.closing}
       </motion.p>
 
       <motion.div
         variants={itemVariants}
-        className="mt-10 h-px w-40 bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+        className="mt-8 h-px w-20 bg-border/50"
       />
     </Slide>
   );
@@ -80,7 +80,7 @@ export function Slide19References({ index }: { index: number }) {
     <Slide index={index}>
       <Eyebrow index={18} label={s.eyebrow} />
       <HeadlineDisplay>
-        {s.headline1} <span className="text-spectrum">{s.headline2}</span>
+        {s.headline1} <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
       <Subhead>{s.subhead}</Subhead>
 
@@ -129,44 +129,44 @@ export function Slide20ThankYou({ index }: { index: number }) {
       <div className="text-center">
         <motion.div
           variants={itemVariants}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-[10px] font-bold uppercase tracking-[0.35em] text-primary"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-4 py-1.5 text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground backdrop-blur-sm"
         >
-          <Heart size={12} /> {s.badge}
+          <Heart size={11} className="text-primary" /> {s.badge}
         </motion.div>
 
         <motion.h1
           variants={itemVariants}
-          className="text-balance text-6xl font-black tracking-tighter text-spectrum sm:text-7xl md:text-[7rem]"
-          style={{ fontFamily: "var(--font-inter), sans-serif", lineHeight: 1.0 }}
+          className="text-balance text-3xl font-black tracking-tight text-foreground sm:text-4xl md:text-5xl"
+          style={{ fontFamily: "var(--font-inter), sans-serif", lineHeight: 1.1 }}
         >
           {s.title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground sm:text-lg"
+          className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground"
         >
           {s.byline}
         </motion.p>
 
         <motion.div
           variants={itemVariants}
-          className="mx-auto mt-8 h-px w-32 bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+          className="mx-auto mt-7 h-px w-20 bg-border/50"
         />
 
         <motion.div
           variants={itemVariants}
-          className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-7 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4"
         >
           {s.contactLabels.map((label, i) => (
             <div
               key={label}
-              className="group transform-gpu rounded-2xl border border-border/60 bg-secondary/30 p-4 text-left backdrop-blur-md transition-all duration-300 ease-out hover:z-30 hover:-translate-y-2 hover:scale-[1.10] hover:border-primary/80 hover:bg-secondary/65 hover:shadow-[0_28px_60px_-18px_hsl(var(--primary)/0.6)]"
+              className="group rounded-xl border border-border/50 bg-secondary/30 p-4 text-left backdrop-blur-md transition-colors hover:border-primary/30 hover:bg-secondary/50"
             >
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+              <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-muted-foreground/70">
                 {label}
               </p>
-              <p className="mt-1.5 font-mono text-xs font-semibold text-foreground transition-colors group-hover:text-primary sm:text-sm">
+              <p className="mt-1.5 font-mono text-[11px] font-semibold text-foreground transition-colors group-hover:text-primary">
                 {contactValues[i]}
               </p>
             </div>
@@ -175,9 +175,9 @@ export function Slide20ThankYou({ index }: { index: number }) {
 
         <motion.div
           variants={itemVariants}
-          className="mt-12 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-primary"
+          className="mt-8 inline-flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.28em] text-muted-foreground/60"
         >
-          <ScanLine size={12} />
+          <ScanLine size={11} />
           {s.footer}
         </motion.div>
       </div>

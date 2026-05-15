@@ -1,10 +1,11 @@
 export type DeckLang = "en" | "vi";
 
 export interface SlideTexts {
-  s01: { badge: string; title: string; subtitle: string; tags: [string, string, string]; cta: string };
+  s01: { badge: string; title: string; subtitle: string; tags: string[]; cta: string };
+  s_intro: { eyebrow: string; sections: Array<{ title: string; intro: string; bullets: string[] }> };
   s02: { eyebrow: string; headline1: string; headline2: string; subhead: string; pullquote: string };
   s03: { eyebrow: string; headline1: string; headline2: string; headline3: string; subhead: string; pillars: Array<{ tag: string; title: string; body: string }>; pullquote: string };
-  s04: { eyebrow: string; headline1: string; headline2: string; subhead: string; gaugeLabel: string; gaugeSublabel: string; cascade: [string, string, string]; stat1label: string; stat2label: string; stat3label: string; sources: string };
+  s04: { eyebrow: string; headline1: string; headline2: string; subhead: string; cascade: Array<{ title: string; bullets: [string, string] }>; stat1value: string; stat1label: string; stat2value: string; stat2label: string; stat3value: string; stat3label: string; closing: string; sources: string };
   s05: { eyebrow: string; headline1: string; headline2: string; subhead: string; thDim: string; rows: Array<{ dim: string; v4: string; v6: string }>; pullquote: string };
   s06: { eyebrow: string; headline1: string; headline2: string; subhead: string; posLabel: string; globalLabel: string; aseanLabel: string; trafficLabel: string; objLabel: string; objectives: [string, string, string] };
   s07: { eyebrow: string; headline1: string; headline2: string; headline3: string; subhead: string; cardTitle: string; points: [string, string, string, string]; stat1label: string; stat2label: string; stat3label: string; pullquote: string };
@@ -26,47 +27,98 @@ export interface SlideTexts {
 export const deckTx: Record<DeckLang, SlideTexts> = {
   en: {
     s01: {
-      badge: "VNNIC Internet School for Youth · Fellowship 2026",
-      title: "IPv6 — Strategic Foundation for Vietnam’s Digital Infrastructure",
-      subtitle: "A research perspective for the AI, IoT & Digital Transformation era.",
-      tags: ["Nguyen Thi Yen Nhi", "IT Student · HCM", "Research · Strategy · Infrastructure"],
+      badge: "VNNIC Internet for Youth Fellowship 2026",
+      title: "IPv6 as a Strategic Foundation for Vietnam’s Digital Infrastructure",
+      subtitle: "A research perspective on IPv6 within the context of AI, IoT, and national digital transformation",
+      tags: ["Nguyen Thi Yen Nhi", "3rd-year IT Student · Ho Chi Minh City University of Industry and Trade"],
       cta: "Slide to begin",
+    },
+    s_intro: {
+      eyebrow: "Research Perspective",
+      sections: [
+        {
+          title: "1. My perspective on the Internet",
+          intro: "During my studies in Information Technology, I began to view the Internet not only as a user-facing platform, but as an infrastructure system with clear scalability constraints. As I explored system design and architecture in more depth, I realized that:",
+          bullets: [
+            "The most critical limitations are not at the application layer",
+            "But at the foundational Internet architecture and its long-term scalability",
+          ],
+        },
+        {
+          title: "2. Perspective on IPv6",
+          intro: "From this viewpoint, IPv6 is not simply a replacement for IPv4, but an architectural transition of the Internet. This transition is driven by scaling pressure from:",
+          bullets: [
+            "AI systems",
+            "IoT networks",
+            "Large-scale data infrastructures",
+          ],
+        },
+        {
+          title: "3. My approach to this topic",
+          intro: "I approach this topic from a systems analysis perspective, focusing on:",
+          bullets: [
+            "Changes at the protocol layer",
+            "Their impact on the operational structure of the digital ecosystem",
+            "At a national scale",
+          ],
+        },
+      ],
     },
     s02: {
       eyebrow: "Vision",
-      headline1: "Internet infrastructure is the bedrock of every modern economy.",
-      headline2: "IPv6 is how Vietnam builds for the next thirty years.",
-      subhead: "A national strategy at the intersection of policy, AI, IoT, and digital sovereignty.",
-      pullquote: "Whoever controls the address space, controls the architecture of the future.",
+      headline1: "Internet infrastructure is the foundation of the modern digital economy.",
+      headline2: "IPv6 is not merely a technical upgrade — it is a strategic choice for Vietnam's long-term vision over the next 20–30 years.",
+      subhead: "IPv6 sits at the intersection of national policy, artificial intelligence, the Internet of Things, and digital sovereignty — where decisions about network architecture can directly shape the growth trajectory of the entire digital economy.",
+      pullquote: "Whoever controls the address space, shapes the architecture of the future Internet.",
     },
     s03: {
-      eyebrow: "Why Infrastructure Matters",
-      headline1: "The Internet is not a tool.",
-      headline2: "It is national",
-      headline3: "infrastructure.",
-      subhead: "Roads carry goods. Power grids carry energy. The Internet carries everything else — commerce, governance, healthcare, intelligence.",
+      eyebrow: "Why Internet Infrastructure Is Strategic",
+      headline1: "The Internet is not simply a connectivity tool —",
+      headline2: "it is core",
+      headline3: "national infrastructure.",
+      subhead: "Like roads in logistics or power grids in energy, the Internet serves as the transport layer for the entire digital ecosystem: commerce, governance, healthcare, and artificial intelligence.",
       pillars: [
-        { tag: "Economic Layer", title: "Digital GDP runs on packets", body: "Cross-border services, cloud-native businesses, and the digital economy live or die on the underlying network." },
-        { tag: "Sovereignty Layer", title: "Governance &amp; data jurisdiction", body: "Cybersecurity, Internet governance, and national resilience all depend on protocol-level design choices." },
-        { tag: "Innovation Layer", title: "AI, IoT, 5G, smart cities", body: "Every next-generation technology terminates at an IP address. The protocol is the foundation under the foundation." },
+        { tag: "Economic Layer", title: "The digital economy runs on continuous data flows", body: "Cloud-native businesses depend directly on network infrastructure scalability. Digital economic growth is tied to the capacity of the Internet infrastructure layer." },
+        { tag: "Digital Sovereignty Layer", title: "Network architecture shapes national data control", body: "Cybersecurity and resilience depend on foundational protocol design. Infrastructure choices determine a nation's degree of digital autonomy." },
+        { tag: "Technology Innovation Layer", title: "AI, IoT, 5G, and smart cities all converge on Internet infrastructure", body: "Every next-generation digital system depends on connectivity and addressability. The Internet protocol is the foundation under every foundation in digital architecture." },
       ],
-      pullquote: "Infrastructure is invisible — until it fails. Then it is the only thing that matters.",
+      pullquote: "Infrastructure is invisible — until it fails. Then it becomes the most critical element of the entire system.",
     },
     s04: {
-      eyebrow: "The IPv4 Crisis",
-      headline1: "IPv4 was designed in 1981.",
-      headline2: "The world it described no longer exists.",
-      subhead: "Exhaustion is not a future risk — it is the present we are already managing around.",
-      gaugeLabel: "IPv4 exhaustion gauge",
-      gaugeSublabel: "free pools remaining across APNIC, RIPE, ARIN",
+      eyebrow: "IPv4 Exhaustion",
+      headline1: "IPv4 – The Scalability Limit of the Modern Internet",
+      headline2: "IPv4 was designed for a world of mainframes and research nodes. The Internet it serves today — billions of users, trillions of devices — looks nothing like what it was built for.",
+      subhead: "The challenge is no longer whether we have enough addresses. It is managing the structural consequences of an architecture that has already reached its limits.",
       cascade: [
-        "NAT complexity & broken end-to-end addressability",
-        "IPv4 lease markets driving up infrastructure costs",
-        "Innovation tax on startups & IoT deployments",
+        {
+          title: "No remaining free IPv4 pools",
+          bullets: [
+            "Major Internet registries — APNIC, RIPE NCC, ARIN — have fully exhausted their public IPv4 allocations",
+            "New addresses now depend entirely on reuse, reclamation, and secondary transfer markets",
+          ],
+        },
+        {
+          title: "NAT: a temporary fix that became the architecture",
+          bullets: [
+            "NAT hides thousands of devices behind a single address, destroying end-to-end connectivity",
+            "Peer-to-peer, VoIP, gaming, and IoT protocols all pay the cost of an architectural workaround",
+          ],
+        },
+        {
+          title: "Rising costs and an invisible innovation tax",
+          bullets: [
+            "IPv4 address leasing prices continue to climb as global scarcity deepens",
+            "Startups, IoT deployments, and cloud-native infrastructure absorb the cost of a 1981 design decision",
+          ],
+        },
       ],
-      stat1label: "Total IPv4 addresses on Earth",
+      stat1value: "4.3 B",
+      stat1label: "Total IPv4 addresses worldwide",
+      stat2value: "75 B+",
       stat2label: "IoT devices forecast by 2030 (Statista)",
+      stat3value: "0",
       stat3label: "Regional registries with free IPv4 pools",
+      closing: "IPv4 exhaustion is not simply an addressing problem — it is structural evidence that the current Internet architecture is approaching its scalability limits, and the cost of inaction compounds every year.",
       sources: "Sources: APNIC · IANA · Statista · RIPE NCC",
     },
     s05: {
@@ -287,47 +339,98 @@ export const deckTx: Record<DeckLang, SlideTexts> = {
 
   vi: {
     s01: {
-      badge: "VNNIC Trường Học Internet cho Thanh niên · Học bổng 2026",
-      title: "IPv6 — Nền tảng chiến lược cho hạ tầng kỹ thuật số Việt Nam",
-      subtitle: "Góc nhìn nghiên cứu trong kỷ nguyên AI, IoT & Chuyển đổi số.",
-      tags: ["Nguyễn Thị Yến Nhi", "Sinh viên CNTT · TP.HCM", "Nghiên cứu · Chiến lược · Hạ tầng"],
+      badge: "Học bổng VNNIC Internet for Youth 2026",
+      title: "IPv6 – Nền tảng chiến lược cho hạ tầng số Việt Nam",
+      subtitle: "Góc nhìn nghiên cứu về IPv6 trong bối cảnh AI, IoT và chuyển đổi số quốc gia",
+      tags: ["Nguyễn Thị Yến Nhi", "Sinh viên năm 3, ngành Công nghệ Thông tin | Đại học Công Thương TP. Hồ Chí Minh"],
       cta: "Vuốt để bắt đầu",
+    },
+    s_intro: {
+      eyebrow: "Góc nhìn nghiên cứu",
+      sections: [
+        {
+          title: "1. Cách em nhìn về Internet",
+          intro: "Trong quá trình học Công nghệ Thông tin, em không chỉ nhìn Internet dưới góc độ người sử dụng, mà bắt đầu xem nó như một hệ thống hạ tầng có giới hạn rõ ràng về khả năng mở rộng. Khi tìm hiểu sâu hơn về cách các hệ thống được thiết kế và vận hành, em nhận ra rằng:",
+          bullets: [
+            "Giới hạn quan trọng nhất không nằm ở lớp ứng dụng",
+            "Mà nằm ở kiến trúc nền tảng của Internet và khả năng mở rộng dài hạn",
+          ],
+        },
+        {
+          title: "2. Góc nhìn về IPv6",
+          intro: "Từ góc nhìn này, IPv6 không đơn thuần là một giải pháp thay thế IPv4, mà là một sự chuyển dịch về kiến trúc Internet. Sự chuyển dịch này xuất phát từ áp lực mở rộng đến từ:",
+          bullets: [
+            "AI",
+            "IoT",
+            "Các hệ thống dữ liệu quy mô lớn",
+          ],
+        },
+        {
+          title: "3. Cách em tiếp cận đề tài",
+          intro: "Em tiếp cận đề tài này theo hướng phân tích hệ thống, tập trung vào việc làm rõ:",
+          bullets: [
+            "Các thay đổi ở tầng giao thức",
+            "Ảnh hưởng đến cấu trúc vận hành của hệ sinh thái số",
+            "Ở cấp độ quốc gia",
+          ],
+        },
+      ],
     },
     s02: {
       eyebrow: "Tầm nhìn",
-      headline1: "Hạ tầng Internet là nền móng của mọi nền kinh tế hiện đại.",
-      headline2: "IPv6 là cách Việt Nam xây dựng cho ba mươi năm tới.",
-      subhead: "Một chiến lược quốc gia tại giao điểm giữa chính sách, AI, IoT và chủ quyền kỹ thuật số.",
-      pullquote: "Ai kiểm soát không gian địa chỉ, người đó kiểm soát kiến trúc của tương lai.",
+      headline1: "Hạ tầng Internet là nền móng của nền kinh tế số hiện đại.",
+      headline2: "Trong bối cảnh đó, IPv6 không chỉ là một nâng cấp kỹ thuật, mà là một lựa chọn chiến lược cho tầm nhìn dài hạn của Việt Nam trong 20–30 năm tới.",
+      subhead: "IPv6 nằm tại giao điểm giữa chính sách quốc gia, trí tuệ nhân tạo, Internet of Things và chủ quyền kỹ thuật số, nơi các quyết định về kiến trúc mạng có thể ảnh hưởng trực tiếp đến cấu trúc phát triển của toàn bộ nền kinh tế số.",
+      pullquote: "Ai kiểm soát không gian địa chỉ, người đó định hình kiến trúc của tương lai Internet.",
     },
     s03: {
-      eyebrow: "Tại sao hạ tầng quan trọng",
-      headline1: "Internet không phải là công cụ.",
-      headline2: "Đó là hạ tầng",
-      headline3: "quốc gia.",
-      subhead: "Đường bộ vận chuyển hàng hóa. Lưới điện truyền năng lượng. Internet vận chuyển mọi thứ còn lại — thương mại, quản trị, y tế, trí tuệ.",
+      eyebrow: "Tại sao hạ tầng Internet mang tính chiến lược",
+      headline1: "Internet không đơn thuần là một công cụ kết nối —",
+      headline2: "đó là hạ tầng",
+      headline3: "quốc gia cốt lõi.",
+      subhead: "Tương tự đường bộ trong logistics hay lưới điện trong năng lượng, Internet đóng vai trò lớp vận chuyển cho toàn bộ hệ sinh thái số: thương mại, quản trị, y tế và trí tuệ nhân tạo.",
       pillars: [
-        { tag: "Tầng kinh tế", title: "GDP kỹ thuật số chạy trên các gói tin", body: "Dịch vụ xuyên biên giới, doanh nghiệp cloud-native và nền kinh tế số tồn tại hay sụp đổ dựa trên mạng hạ tầng bên dưới." },
-        { tag: "Tầng chủ quyền", title: "Quản trị &amp; thẩm quyền dữ liệu", body: "An ninh mạng, quản trị Internet và khả năng chống chịu quốc gia đều phụ thuộc vào lựa chọn thiết kế ở cấp độ giao thức." },
-        { tag: "Tầng đổi mới", title: "AI, IoT, 5G, thành phố thông minh", body: "Mọi công nghệ thế hệ tiếp theo đều kết thúc tại một địa chỉ IP. Giao thức là nền tảng bên dưới nền tảng." },
+        { tag: "Tầng kinh tế số", title: "GDP kỹ thuật số vận hành trên luồng dữ liệu liên tục", body: "Doanh nghiệp cloud-native phụ thuộc trực tiếp vào khả năng mở rộng hạ tầng mạng. Tăng trưởng kinh tế số gắn liền với năng lực của tầng hạ tầng Internet." },
+        { tag: "Tầng chủ quyền số", title: "Kiến trúc mạng ảnh hưởng đến khả năng kiểm soát dữ liệu quốc gia", body: "An ninh mạng và khả năng chống chịu phụ thuộc vào thiết kế giao thức nền tảng. Lựa chọn hạ tầng = mức độ tự chủ số của quốc gia." },
+        { tag: "Tầng đổi mới công nghệ", title: "AI, IoT, 5G và smart city đều hội tụ trên hạ tầng Internet", body: "Mọi hệ thống số thế hệ mới đều phụ thuộc vào khả năng kết nối và địa chỉ hóa. Giao thức Internet là lớp nền của mọi lớp nền trong kiến trúc số." },
       ],
-      pullquote: "Hạ tầng vô hình — cho đến khi nó thất bại. Lúc đó, đó là thứ duy nhất quan trọng.",
+      pullquote: "Hạ tầng vô hình — cho đến khi nó thất bại. Khi đó, nó trở thành yếu tố quan trọng nhất của toàn hệ thống.",
     },
     s04: {
       eyebrow: "Khủng hoảng IPv4",
-      headline1: "IPv4 được thiết kế năm 1981.",
-      headline2: "Thế giới mà nó mô tả không còn tồn tại nữa.",
-      subhead: "Cạn kiệt không phải rủi ro trong tương lai — đó là thực tế hiện tại chúng ta đang phải xử lý.",
-      gaugeLabel: "Thước đo cạn kiệt IPv4",
-      gaugeSublabel: "pool địa chỉ miễn phí còn lại ở APNIC, RIPE, ARIN",
+      headline1: "IPv4 – Giới hạn khả năng mở rộng của Internet hiện đại",
+      headline2: "IPv4 được thiết kế cho thế giới của các mainframe và node nghiên cứu. Internet mà nó phục vụ hôm nay — hàng tỷ người dùng, hàng nghìn tỷ thiết bị — không còn giống gì với điều nó được tạo ra để phục vụ.",
+      subhead: "Thách thức không còn là liệu chúng ta có đủ địa chỉ hay không — mà là quản lý hậu quả cấu trúc của một kiến trúc đã chạm đến giới hạn.",
       cascade: [
-        "Độ phức tạp NAT & mất tính kết nối đầu-cuối",
-        "Thị trường thuê IPv4 đẩy chi phí hạ tầng lên cao",
-        "Gánh nặng đổi mới cho startup & triển khai IoT",
+        {
+          title: "Không còn pool IPv4 miễn phí",
+          bullets: [
+            "Các tổ chức đăng ký Internet lớn — APNIC, RIPE NCC, ARIN — đã cạn kiệt hoàn toàn phân bổ IPv4 công cộng",
+            "Địa chỉ mới hoàn toàn phụ thuộc vào tái sử dụng, thu hồi và thị trường chuyển nhượng thứ cấp",
+          ],
+        },
+        {
+          title: "NAT: giải pháp tạm thời trở thành kiến trúc chính",
+          bullets: [
+            "NAT ẩn hàng nghìn thiết bị sau một địa chỉ, phá vỡ kết nối đầu-cuối",
+            "Peer-to-peer, VoIP, gaming và giao thức IoT đều trả giá cho một giải pháp vá víu kiến trúc",
+          ],
+        },
+        {
+          title: "Chi phí tăng cao và thuế đổi mới vô hình",
+          bullets: [
+            "Giá thuê địa chỉ IPv4 tiếp tục leo thang khi sự khan hiếm toàn cầu ngày càng sâu sắc",
+            "Startup, triển khai IoT và hạ tầng cloud-native chịu chi phí từ quyết định thiết kế năm 1981",
+          ],
+        },
       ],
-      stat1label: "Tổng địa chỉ IPv4 trên Trái Đất",
+      stat1value: "4,3 tỷ",
+      stat1label: "Tổng địa chỉ IPv4 toàn cầu",
+      stat2value: "75 tỷ+",
       stat2label: "Thiết bị IoT dự báo đến 2030 (Statista)",
+      stat3value: "0",
       stat3label: "Tổ chức đăng ký khu vực còn pool IPv4 miễn phí",
+      closing: "Cạn kiệt IPv4 không đơn thuần là vấn đề địa chỉ — đó là bằng chứng cấu trúc cho thấy kiến trúc Internet hiện tại đang tiến đến giới hạn khả năng mở rộng, và chi phí của sự bất động tăng lên mỗi năm.",
       sources: "Nguồn: APNIC · IANA · Statista · RIPE NCC",
     },
     s05: {
