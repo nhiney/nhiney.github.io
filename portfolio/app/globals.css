@@ -35,50 +35,64 @@
 
 @layer base {
   :root {
-    /* Light Mode — refined to mirror dark-mode contrast hierarchy */
-    --background: 220 30% 98.5%;          /* very subtle cool off-white */
-    --foreground: 222 47% 8%;
-    --card: 0 0% 100%;                     /* pure white cards lift off bg */
-    --card-foreground: 222 47% 8%;
+    /* Light Mode — cool-neutral, coordinated with navy primary */
+    --background: 213 25% 97%;             /* #F2F5FA — light blue-gray */
+    /* Knowledge Tree palette */
+    --kt-trunk:  hsl(22 55% 28%);
+    --kt-branch: hsl(22 48% 24%);
+    --kt-leaf:   hsl(130 45% 32%);
+    --kt-leaf2:  hsl(128 50% 40%);
+    --kt-root:   hsl(22 45% 22%);
+    --foreground: 220 40% 10%;             /* #0E1529 — deep slate text */
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 8%;
-    --primary: 217 100% 50%;               /* #0060FF */
+    --popover-foreground: 220 40% 10%;
+    --primary: 220 68% 38%;               /* #1B4D96 — deep navy */
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 24% 95%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 215 16% 42%;                  /* darker for readability */
-    --muted-foreground: 215 16% 38%;
-    --accent: 217 100% 96%;
-    --accent-foreground: 217 100% 30%;
-    --destructive: 0 84% 60%;
+    --secondary: 213 22% 93%;             /* #E4EAF3 — light slate */
+    --secondary-foreground: 220 35% 14%;
+    --muted: 215 18% 44%;                  /* #5B6780 — slate mid */
+    --muted-foreground: 215 18% 40%;
+    --accent: 220 68% 94%;
+    --accent-foreground: 220 68% 28%;
+    --destructive: 0 80% 58%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 88%;                 /* slightly visible borders */
-    --input: 220 20% 88%;
-    --ring: 217 100% 50%;
+    --border: 215 20% 85%;
+    --input: 215 20% 85%;
+    --ring: 220 68% 38%;
     --radius: 0.75rem;
+
   }
 
   .dark {
-    /* Warm neutral dark — no blue cast, one calm accent */
-    --background: 20 6% 5%;          /* #0E0B09 — warm near-black */
-    --foreground: 30 8% 93%;         /* #EDECEA — warm off-white */
-    --card: 20 5% 8%;                /* #141210 — barely lifted from bg */
-    --card-foreground: 30 8% 93%;
-    --popover: 20 6% 5%;
-    --popover-foreground: 30 8% 93%;
-    --primary: 214 62% 54%;          /* #3D88CC — natural calm blue */
+    /* Sapphire Night — professional deep blue, clear contrast hierarchy */
+    --background: 228 50% 8%;          /* #0A1020 — deep sapphire (not near-black) */
+    /* Knowledge Tree palette — dark mode */
+    --kt-trunk:  hsl(22 40% 18%);
+    --kt-branch: hsl(22 36% 15%);
+    --kt-leaf:   hsl(130 32% 22%);
+    --kt-leaf2:  hsl(128 36% 28%);
+    --kt-root:   hsl(22 32% 12%);
+    --foreground: 210 25% 97%;         /* #F2F6FD — crisp cool white */
+    --card: 225 44% 14%;               /* #131D34 — clear card elevation */
+    --card-foreground: 210 25% 97%;
+    --popover: 228 50% 8%;
+    --popover-foreground: 210 25% 97%;
+    --primary: 215 100% 63%;           /* #3D96FF — vivid electric blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 20 5% 12%;          /* #1D1B18 */
-    --secondary-foreground: 30 8% 93%;
-    --muted: 25 5% 50%;              /* #857E79 — warm neutral mid-gray */
-    --muted-foreground: 25 5% 50%;
-    --accent: 214 62% 54%;
+    --secondary: 222 40% 20%;          /* #1D2D4B — visible indigo panel */
+    --secondary-foreground: 210 25% 97%;
+    --muted: 220 22% 52%;              /* #678099 — balanced mid-tone */
+    --muted-foreground: 218 30% 80%;   /* #BDC8DB — clearly readable secondary */
+    --accent: 215 100% 63%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 65% 52%;
+    --destructive: 0 72% 58%;
     --destructive-foreground: 0 0% 100%;
-    --border: 20 5% 15%;             /* #272320 — subtle warm border */
-    --input: 20 5% 15%;
-    --ring: 214 62% 54%;
+    --border: 224 38% 27%;             /* #243352 — clearly visible border */
+    --input: 224 38% 27%;
+    --ring: 215 100% 63%;
+
   }
 }
 
@@ -138,6 +152,21 @@
     line-height: 1.7;
     font-weight: 400;
   }
+}
+
+@keyframes atm-twinkle {
+  0%, 100% { opacity: 0.12; transform: scale(1);   }
+  50%       { opacity: 0.55; transform: scale(1.6); }
+}
+
+@keyframes kt-ripple {
+  0%   { r: 12; opacity: 0.7; }
+  100% { r: 32; opacity: 0;   }
+}
+
+@keyframes kt-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
 }
 
 @layer utilities {
@@ -253,9 +282,9 @@
   .dark .mouse-spotlight {
     background:
       radial-gradient(
-        400px circle at var(--mx) var(--my),
-        hsl(30 8% 50% / 0.06),
-        transparent 55%
+        600px circle at var(--mx) var(--my),
+        hsl(215 100% 63% / 0.15),
+        transparent 65%
       );
   }
 
@@ -284,7 +313,219 @@
     transform: skewX(-15deg);
     background: hsl(var(--primary) / 0.15);
   }
+
+  /* ── Dark mode overrides — Sapphire Night palette ── */
+
+  .dark .bg-grid {
+    background-image: radial-gradient(circle at 2px 2px, hsl(var(--border) / 0.55) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .dark .text-spectrum {
+    background: linear-gradient(
+      135deg,
+      hsl(210 25% 97%) 0%,
+      hsl(215 100% 72%) 22%,
+      hsl(190 100% 68%) 50%,
+      hsl(265 85% 76%) 72%,
+      hsl(210 25% 97%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: spectrum-flow 8s ease-in-out infinite alternate;
+  }
+
+  .dark .spectrum-accent::after {
+    background: hsl(215 100% 63% / 0.48);
+    height: 5px;
+  }
+
+  .dark .highlight-accent::after {
+    background: linear-gradient(90deg, hsl(215 100% 63% / 0.32), hsl(190 100% 68% / 0.20));
+    height: 40%;
+  }
+
+  .dark .blue-glow {
+    box-shadow: 0 0 60px -8px hsl(215 100% 63% / 0.52);
+  }
 }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Floating orb animations ─────────────────────────────────────────────── */
+
+@keyframes orb-drift-1 {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  25%  { transform: translate(4%, -5%) scale(1.04); }
+  50%  { transform: translate(-3%, 6%) scale(0.97); }
+  75%  { transform: translate(5%, 2%) scale(1.02); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+
+@keyframes orb-drift-2 {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  30%  { transform: translate(-5%, 4%) scale(1.05); }
+  60%  { transform: translate(4%, -3%) scale(0.96); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+
+@keyframes orb-drift-3 {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  40%  { transform: translate(6%, -4%) scale(1.03); }
+  70%  { transform: translate(-4%, 5%) scale(0.98); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+
+.animate-orb-1 { animation: orb-drift-1 18s ease-in-out infinite; }
+.animate-orb-2 { animation: orb-drift-2 22s ease-in-out infinite; }
+.animate-orb-3 { animation: orb-drift-3 26s ease-in-out infinite; }
+
+/* ── Entrance / scroll-reveal helpers ───────────────────────────────────── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Shimmer / skeleton loading ─────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg,
+    hsl(var(--muted)/0.1) 25%,
+    hsl(var(--muted)/0.3) 50%,
+    hsl(var(--muted)/0.1) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* ── Floating badge bounce ───────────────────────────────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+.animate-float    { animation: float 3s ease-in-out infinite; }
+.animate-float-d1 { animation: float 3s ease-in-out 0.4s infinite; }
+.animate-float-d2 { animation: float 3s ease-in-out 0.8s infinite; }
+
+/* ── Stagger fade-up utilities for card groups ───────────────────────────── */
+
+.stagger-children > * {
+  animation: fade-up 0.5s ease-out both;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 80ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 160ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 320ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 400ms; }
+
+/* ── Scroll progress bar at top of viewport ─────────────────────────────── */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(265 85% 76%));
+  transform-origin: left;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ── Glowing border on hover (card effect) ───────────────────────────────── */
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+  50%       { box-shadow: 0 0 20px 4px hsl(var(--primary) / 0.2); }
+}
+
+.hover-glow:hover {
+  animation: glow-pulse 1.5s ease-in-out infinite;
+}
+
+/* ── Cursor blink ─────────────────────────────────────────────────────────── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.animate-blink { animation: blink 1s step-end infinite; }
+
+/* ── Respect user motion preference ─────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-1,
+  .animate-orb-2,
+  .animate-orb-3,
+  .animate-float,
+  .animate-float-d1,
+  .animate-float-d2,
+  .animate-shimmer,
+  .stagger-children > * {
+    animation: none !important;
+  }
+}
+
+/* ── Fellowship deck — optimised Inter rendering ── */
+.deck-inter {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Dark mode — sapphire depth gradient centered on viewport */
+.dark .deck-inter {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    hsl(225 44% 14% / 0.80) 0%,
+    transparent 70%
+  );
+}
+
+/* Tabular lining numbers for deck stats */
+.deck-inter .tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "tnum" 1, "lnum" 1;
+}
+
+/* ── Sibling-dim hover focus ──
+   When any card with .group/card class is hovered inside a deck grid,
+   its siblings fade slightly so the focused card visually pops.
+   Uses CSS filter (not opacity) to avoid clashing with framer-motion's
+   inline opacity used during reveal animations. */
+.deck-inter [class*="grid"]:has(> .group\/card:hover) > .group\/card:not(:hover),
+.deck-inter [class*="grid"]:has(> div > .group\/card:hover) > div > .group\/card:not(:hover) {
+  filter: opacity(0.5);
+  transition: filter 0.4s ease-out;
+}
+.deck-inter .group\/card {
+  transition: filter 0.4s ease-out;
+}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, GitBranch, Clock, Code2, Folder, Award, FileText, Globe } from "lucide-react";
+import { ArrowRight, GitBranch, Clock, Code2, Folder, Award, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { ColourfulText }      from "@/components/effects/ColourfulText";
@@ -33,9 +33,6 @@ const FEATURES = [
   { icon: Folder,   key: "projects",     href: "/portfolio#projects" },
   { icon: Award,    key: "certificates", href: "/certificates"       },
   { icon: FileText, key: "resume",       href: "/resume"             },
-  // Fellowship VNNIC — hidden from home menu; page still reachable at /nguyenthiyennhi-fellowship-vnnic-hcm.
-  // To re-enable, uncomment the line below.
-  // { icon: Globe,    key: "fellowship",   href: "/nguyenthiyennhi-fellowship-vnnic-hcm" },
 ] as const;
 
 const TECH_PILLS = [
@@ -75,7 +72,6 @@ function AnimatedCounter({
       const tick = (ts: number) => {
         if (startTs === null) startTs = ts;
         const progress = Math.min((ts - startTs) / (duration * 1000), 1);
-        // ease-out cubic for a natural deceleration
         const eased = 1 - Math.pow(1 - progress, 3);
         setValue(Math.round(to * eased));
         if (progress < 1) raf = requestAnimationFrame(tick);
@@ -193,9 +189,9 @@ function PersonalBentoGrid() {
         title={t("home.bento.tech_title")}
       >
         <div className="flex flex-wrap gap-2 mt-1">
-          {TECH_PILLS.map((t) => (
-            <span key={t.label} className={cn("rounded-full border px-3 py-1 text-[10px] font-bold", t.color)}>
-              {t.label}
+          {TECH_PILLS.map((pill) => (
+            <span key={pill.label} className={cn("rounded-full border px-3 py-1 text-[10px] font-bold", pill.color)}>
+              {pill.label}
             </span>
           ))}
         </div>
@@ -217,14 +213,12 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden">
 
-        {/* Background lines — desktop-only, infinite SVG animations are too heavy for mobile GPUs during scroll */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
           <BackgroundLines className="h-full w-full [&_svg]:opacity-[0.10]">
             <span />
           </BackgroundLines>
         </div>
 
-        {/* Mouse spotlight — pointer-events-none, hover-only, never blocks scroll */}
         <MouseSpotlight />
 
         <Container className="relative z-10 flex flex-col justify-center py-12 md:py-16">
@@ -233,18 +227,17 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
             {/* ── Left: text ─────────────────────────────────────────── */}
             <div className="flex flex-col gap-7">
 
-              {/* Title */}
               <h1 className="text-4xl font-semibold leading-tight dark:text-zinc-100 md:text-5xl md:leading-[3.8rem]">
-                <span className="text-xl md:text-2xl font-medium block mb-1 text-zinc-400 dark:text-zinc-500">{t("home.hero.title_prefix")}</span>
+                <span className="text-xl md:text-2xl font-medium block mb-1 text-zinc-400 dark:text-zinc-500">
+                  {t("home.hero.title_prefix")}
+                </span>
                 <ColourfulText text="Nguyễn Thị Yến Nhi" />
               </h1>
 
-              {/* Subtitle */}
               <p className="text-neutral-500 dark:text-neutral-400 text-base sm:text-lg leading-relaxed max-w-lg">
                 {t("hero.description")}
               </p>
 
-              {/* CTA buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/portfolio">
                   <button className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-base px-7 h-12 font-medium transition-colors w-full sm:w-auto">
@@ -252,19 +245,8 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
                     <ArrowRight className="h-4 w-4" />
                   </button>
                 </Link>
-                {/* Fellowship VNNIC CTA — hidden from home; page still reachable at /nguyenthiyennhi-fellowship-vnnic-hcm.
-                    To re-enable, remove the wrapping {false && (...)}. */}
-                {false && (
-                  <Link
-                    href="/nguyenthiyennhi-fellowship-vnnic-hcm"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 px-7 h-12 text-base font-medium transition-all hover:border-primary/40 hover:bg-primary/5"
-                  >
-                    {t("home.hero.cta_secondary")}
-                  </Link>
-                )}
               </div>
 
-              {/* Tech stack avatars + stats — hidden from UI (kept in code) */}
               <div className="hidden flex-col sm:flex-row items-start sm:items-center gap-5">
                 <div className="flex pl-4">
                   <AnimatedTooltip items={TECH_ITEMS} />

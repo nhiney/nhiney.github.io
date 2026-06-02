@@ -1,32 +1,79 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Text } from "@/components/ui/Text";
+import { FooterLanguageSelector } from "@/components/widgets/FooterLanguageSelector";
+import { GithubIcon, LinkedinIcon, FacebookIcon, MailIcon } from "@/components/widgets/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
+import { TreePine } from "lucide-react";
+
+const SOCIAL_LINKS = [
+  { href: SITE_CONFIG.links.github,            icon: GithubIcon,   label: "GitHub"   },
+  { href: SITE_CONFIG.links.linkedin,          icon: LinkedinIcon, label: "LinkedIn"  },
+  { href: SITE_CONFIG.links.facebook,          icon: FacebookIcon, label: "Facebook"  },
+  { href: `mailto:${SITE_CONFIG.links.email}`, icon: MailIcon,     label: "Email"    },
+];
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-20 text-center bg-background">
-      <Container className="space-y-6">
-        <div className="flex justify-center gap-8">
-          {Object.entries(SITE_CONFIG.links).map(([key, value]) => (
-            <a 
-              key={key} 
-              href={value} 
-              target="_blank" 
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium capitalize"
-            >
-              {key}
-            </a>
-          ))}
+    <>
+    <footer className="border-t border-border/50 bg-background">
+      <Container className="flex items-center justify-between gap-6 py-8">
+
+        {/* Left — name + social icons */}
+        <div className="flex items-center gap-5">
+          <span className="text-sm font-semibold text-foreground whitespace-nowrap">
+            {SITE_CONFIG.fullName}
+          </span>
+          <span className="h-4 w-px bg-border/60" />
+          <div className="flex items-center gap-2">
+            {SOCIAL_LINKS.map(({ href, icon: Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
+                rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                aria-label={label}
+                className="flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
         </div>
-        <div className="space-y-2">
-          <Text variant="small">
-            © 2026 {SITE_CONFIG.fullName}
-          </Text>
-          <Text variant="small" className="text-[10px] opacity-50">
-            {SITE_CONFIG.url.replace("https://", "")}
-          </Text>
+
+        {/* Right — projects + language + copyright */}
+        <div className="flex items-center gap-5">
+          <div className="hidden sm:flex items-center gap-4">
+            {Object.entries(SITE_CONFIG.projects).map(([name, url]) => (
+              <Link
+                key={name}
+                href={url}
+                className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {name}
+              </Link>
+            ))}
+          </div>
+          <span className="hidden sm:block h-4 w-px bg-border/60" />
+          <FooterLanguageSelector />
+          <span className="hidden md:block h-4 w-px bg-border/60" />
+          <span className="hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap">
+            © 2026 {SITE_CONFIG.name}
+          </span>
         </div>
+
       </Container>
     </footer>
+
+    {/* Mind Map Easter-egg button — sits below the footer */}
+    <div className="flex justify-center pb-5 pt-2 bg-background">
+      <Link
+        href="/mind-map"
+        className="group inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-secondary/30 px-4 py-1.5 text-xs text-muted-foreground/50 transition-all hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
+      >
+        <TreePine className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
+        Mind Map
+      </Link>
+    </div>
+    </>
   );
 }

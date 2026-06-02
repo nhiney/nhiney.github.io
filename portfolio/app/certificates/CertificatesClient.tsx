@@ -38,7 +38,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Internet Technology": "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
   AI: "bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20",
   "Project Management": "bg-amber-500/10 text-amber-400 border-amber-500/20",
-  Design: "bg-rose-500/10 text-rose-400 border-rose-500/20",
+  Design: "bg-orange-500/10 text-orange-400 border-orange-500/20",
 };
 
 const CATEGORY_SHORT: Record<string, string> = {
