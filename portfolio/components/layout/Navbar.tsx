@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { ChevronRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
-import { LanguageSwitcher } from "@/components/widgets/LanguageSwitcher";
 import { ThemeToggle } from "@/components/widgets/ThemeToggle";
 import { AnimatedGradientText } from "@/components/effects/AnimatedGradientText";
 import { useLanguage } from "@/context/LanguageContext";
@@ -96,13 +95,11 @@ export function Navbar() {
 
           <div className="h-6 w-[1px] bg-border/60 mx-1" />
 
-          <LanguageSwitcher />
           <ThemeToggle />
         </div>
 
         {/* Mobile controls */}
         <div className="flex items-center gap-2 md:hidden shrink-0">
-          <LanguageSwitcher />
           <ThemeToggle />
           <button
             type="button"

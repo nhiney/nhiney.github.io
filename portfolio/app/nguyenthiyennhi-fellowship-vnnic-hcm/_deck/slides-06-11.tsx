@@ -2,21 +2,9 @@
 
 import { motion } from "framer-motion";
 import {
-  BrainCircuit,
-  Building2,
-  Cpu,
-  Lock,
+  ExternalLink,
+  FileText,
   MapPin,
-  Radio,
-  ShieldCheck,
-  Smartphone,
-  Stethoscope,
-  Sprout,
-  Truck,
-  Wifi,
-  Zap,
-  Activity,
-  ServerCog,
 } from "lucide-react";
 import {
   Eyebrow,
@@ -25,7 +13,6 @@ import {
   PullQuote,
   Slide,
   StatBlock,
-  Subhead,
   itemVariants,
 } from "./shared";
 import { useDeckT } from "./use-deck-t";
@@ -41,238 +28,279 @@ export function Slide06Strategy({ index }: { index: number }) {
         {s.headline1}{" "}
         <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
-      <Subhead>{s.subhead}</Subhead>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-        <motion.div
+      <div className="mt-5 grid gap-4 lg:grid-cols-[1.5fr_1fr] lg:items-start">
+        <motion.p
           variants={itemVariants}
-          className="relative overflow-hidden rounded-2xl border border-border/60 bg-secondary/30 p-7 backdrop-blur-md"
+          className="text-[0.8rem] leading-relaxed text-muted-foreground sm:text-sm"
         >
-          <div className="absolute -top-12 -right-12 h-44 w-44 rounded-full bg-primary/15 blur-3xl" />
-          <div className="relative">
-            <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
-              {s.posLabel}
-            </div>
-            <div className="mt-4 flex items-baseline gap-3">
-              <span
-                className="text-4xl font-black tracking-tight text-foreground sm:text-5xl"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                Top 10
-              </span>
-              <span className="text-sm font-semibold text-muted-foreground">{s.globalLabel}</span>
-            </div>
-            <div className="mt-3 flex items-baseline gap-3">
-              <span
-                className="text-3xl font-black tracking-tight text-foreground sm:text-4xl"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                Top 2
-              </span>
-              <span className="text-sm font-semibold text-muted-foreground">{s.aseanLabel}</span>
-            </div>
-            <div className="mt-5 h-px w-full bg-border/60" />
-            <div className="mt-5 flex items-baseline gap-3">
-              <span
-                className="text-4xl font-black tracking-tight text-primary sm:text-5xl"
-                style={{ fontFamily: "var(--font-inter), sans-serif" }}
-              >
-                60%+
-              </span>
-              <span className="text-sm font-semibold text-muted-foreground">{s.trafficLabel}</span>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="relative rounded-2xl border border-border/60 bg-secondary/30 p-7 backdrop-blur-md"
-        >
-          <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary">
-            {s.objLabel}
-          </div>
-          <ul className="mt-5 space-y-4">
-            {s.objectives.map((o, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span
-                  className="text-primary mt-0.5 font-mono text-2xl font-black"
-                  style={{ fontFamily: "var(--font-inter), sans-serif" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-base leading-relaxed text-foreground">{o}</p>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-7 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-primary">
-            <MapPin size={11} /> Hanoi · Da Nang · TP.HCM
-          </div>
-        </motion.div>
+          {s.intro}
+        </motion.p>
+        <motion.ul variants={itemVariants} className="flex flex-wrap gap-2">
+          {s.foundations.map((f, i) => (
+            <li
+              key={i}
+              className="rounded-full border border-primary/25 bg-primary/[0.07] px-3 py-1 text-[11px] font-semibold text-foreground"
+            >
+              {f}
+            </li>
+          ))}
+        </motion.ul>
       </div>
+
+      <motion.p
+        variants={itemVariants}
+        className="mt-6 mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-primary"
+      >
+        <FileText size={11} />
+        {s.policyLabel}
+      </motion.p>
+      <div className="grid gap-2.5 sm:grid-cols-3">
+        {s.policyAnchors.map((pa) => {
+          const inner = (
+            <div className="relative h-full overflow-hidden rounded-xl border border-primary/25 bg-secondary/30 p-3.5 transition-colors hover:border-primary/55 hover:bg-secondary/50">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[10px] font-black tracking-tight text-primary">
+                  {pa.code}
+                </span>
+                <span className="text-[9px] font-bold tabular-nums text-muted-foreground/70">
+                  {pa.year}
+                </span>
+              </div>
+              <p className="mt-1.5 text-[10.5px] leading-[1.45] text-foreground/85">
+                {pa.title}
+              </p>
+              {pa.url && (
+                <span className="mt-2 inline-flex items-center gap-1 text-[9px] font-semibold text-primary/70">
+                  <ExternalLink size={9} />
+                  {pa.url.replace(/^https?:\/\/(www\.)?/, "").slice(0, 40)}
+                </span>
+              )}
+            </div>
+          );
+          return (
+            <motion.div key={pa.code} variants={itemVariants}>
+              {pa.url ? (
+                <a href={pa.url} target="_blank" rel="noopener noreferrer">{inner}</a>
+              ) : (
+                inner
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+
+      <motion.p
+        variants={itemVariants}
+        className="mt-6 mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground"
+      >
+        {s.posLabel}
+      </motion.p>
+      <div className="grid grid-cols-3 gap-3">
+        {s.positionStats.map((ps) => (
+          <StatBlock
+            key={ps.label}
+            value={ps.value}
+            label={ps.label}
+            accent="text-primary"
+            cite={ps.cite}
+          />
+        ))}
+      </div>
+      <motion.p
+        variants={itemVariants}
+        className="mt-3 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.8rem]"
+      >
+        {s.posNote}
+      </motion.p>
+
+      <motion.p
+        variants={itemVariants}
+        className="mt-7 mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-primary"
+      >
+        {s.objLabel}
+      </motion.p>
+      <div className="grid gap-4 lg:grid-cols-3">
+        {s.objectives.map((obj, i) => (
+          <GlassCard key={i} accent="primary">
+            <div className="mb-2 tabular-nums text-2xl font-black leading-none text-primary/25">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <h3 className="text-sm font-black leading-snug tracking-tight text-foreground">
+              {obj.title}
+            </h3>
+            <ul className="mt-3 space-y-1.5">
+              {obj.bullets.map((b, j) => (
+                <li
+                  key={j}
+                  className="flex items-start gap-2 text-[11px] leading-relaxed text-muted-foreground"
+                >
+                  <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-primary/50" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </GlassCard>
+        ))}
+      </div>
+
+      <motion.div
+        variants={itemVariants}
+        className="mt-6 flex flex-wrap items-center gap-2"
+      >
+        <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+          {s.citiesLabel}:
+        </span>
+        {s.cities.map((city, i) => (
+          <span
+            key={i}
+            className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/[0.07] px-3 py-1 text-[11px] font-semibold text-foreground"
+          >
+            <MapPin size={10} className="text-primary" /> {city}
+          </span>
+        ))}
+      </motion.div>
+
+      <PullQuote className="mt-8">{s.pullquote}</PullQuote>
     </Slide>
   );
 }
 
-export function Slide07IPv6AI({ index }: { index: number }) {
+export function Slide07IntelligentSystems({ index }: { index: number }) {
   const T = useDeckT();
   const s = T.s07;
 
   return (
     <Slide index={index}>
-      <Eyebrow index={6} label={s.eyebrow} accent="text-cyan-500 dark:text-cyan-300" />
-      <HeadlineDisplay>
-        {s.headline1} <span className="text-primary">{s.headline2}</span> {s.headline3}
-      </HeadlineDisplay>
-      <Subhead>{s.subhead}</Subhead>
-
-      <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-        <motion.div
-          variants={itemVariants}
-          className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-cyan-500/[0.06] p-7 backdrop-blur-md"
-        >
-          <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-cyan-500/20 blur-3xl" />
-          <div className="relative">
-            <BrainCircuit className="text-cyan-500" size={28} />
-            <h3 className="mt-4 text-2xl font-black tracking-tight text-foreground sm:text-3xl">
-              {s.cardTitle}
-            </h3>
-            <ul className="mt-5 space-y-3 text-sm text-muted-foreground sm:text-base">
-              {s.points.map((p, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Activity size={14} className="mt-1.5 shrink-0 text-cyan-500" />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-
-        <div className="grid gap-4 content-center">
-          <StatBlock value="25K+" label={s.stat1label} accent="text-cyan-500" />
-          <StatBlock value="< 1 ms" label={s.stat2label} accent="text-primary" />
-          <StatBlock value="3.4 × 10³⁸" label={s.stat3label} accent="text-violet-500" />
-        </div>
-      </div>
-
-      <PullQuote className="mt-10">{s.pullquote}</PullQuote>
-    </Slide>
-  );
-}
-
-export function Slide08IPv6IoT({ index }: { index: number }) {
-  const T = useDeckT();
-  const s = T.s08;
-  const DOMAIN_ICONS = [Smartphone, Stethoscope, Truck, Sprout, ServerCog, Building2];
-  const domains = s.domains.map((label, i) => ({ icon: DOMAIN_ICONS[i], label }));
-
-  return (
-    <Slide index={index}>
-      <Eyebrow index={7} label={s.eyebrow} accent="text-amber-500 dark:text-amber-300" />
+      <Eyebrow index={6} label={s.eyebrow} />
       <HeadlineDisplay>
         {s.headline1}{" "}
-        <span className="text-amber-500 dark:text-amber-400">
-          {s.headline2}
-        </span>
+        <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
-      <Subhead>{s.subhead}</Subhead>
 
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
-        <StatBlock value="75 B+" label={s.stat1label} accent="text-amber-500" />
-        <StatBlock value="5.6×" label={s.stat2label} accent="text-primary" />
-        <StatBlock value="25+" label={s.stat3label} accent="text-primary" />
-      </div>
+      <motion.p variants={itemVariants} className="mt-3 text-[0.8rem] leading-relaxed text-muted-foreground sm:text-sm">
+        {s.intro}
+      </motion.p>
 
-      <motion.div
-        variants={itemVariants}
-        className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
-      >
-        {domains.map((d) => (
-          <div
-            key={d.label}
-            className="group flex transform-gpu flex-col items-center gap-2 rounded-2xl border border-border/60 bg-secondary/30 p-4 text-center backdrop-blur-md transition-all duration-300 ease-out hover:z-30 hover:-translate-y-2 hover:scale-[1.12] hover:border-amber-400/80 hover:bg-secondary/65 hover:shadow-[0_30px_70px_-18px_rgba(245,158,11,0.6)]"
-          >
-            <d.icon className="text-amber-500 transition-transform group-hover:scale-125" size={22} />
-            <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-foreground">
-              {d.label}
-            </p>
-          </div>
-        ))}
-      </motion.div>
-
-      <PullQuote className="mt-10">{s.pullquote}</PullQuote>
-    </Slide>
-  );
-}
-
-export function Slide09SmartCity({ index }: { index: number }) {
-  const T = useDeckT();
-  const s = T.s09;
-  const LAYER_ICONS = [Activity, Stethoscope, Zap, ShieldCheck, Building2];
-  const layers = s.layers.map((l, i) => ({ ...l, icon: LAYER_ICONS[i] }));
-
-  return (
-    <Slide index={index}>
-      <Eyebrow index={8} label={s.eyebrow} accent="text-violet-500 dark:text-violet-300" />
-      <HeadlineDisplay>
-        {s.headline1} <span className="text-primary">{s.headline2}</span>
-      </HeadlineDisplay>
-      <Subhead>{s.subhead}</Subhead>
-
-      <div className="mt-10 grid gap-4 lg:grid-cols-5 md:grid-cols-2">
-        {layers.map((l) => (
-          <GlassCard key={l.name} accent="violet" className="!p-5">
-            <l.icon className="text-violet-500" size={22} />
-            <h3 className="mt-3 text-base font-black tracking-tight text-foreground">{l.name}</h3>
-            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{l.body}</p>
-          </GlassCard>
-        ))}
-      </div>
-
-      <PullQuote className="mt-10">{s.pullquote}</PullQuote>
-    </Slide>
-  );
-}
-
-export function Slide10IPv65G({ index }: { index: number }) {
-  const T = useDeckT();
-  const s = T.s10;
-
-  return (
-    <Slide index={index}>
-      <Eyebrow index={9} label={s.eyebrow} />
-      <HeadlineDisplay>
-        {s.headline1} <span className="text-primary">{s.headline2}</span>
-      </HeadlineDisplay>
-      <Subhead>{s.subhead}</Subhead>
-
-      <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-        <motion.div
-          variants={itemVariants}
-          className="relative overflow-hidden rounded-2xl border border-primary/25 bg-primary/[0.05] p-7 backdrop-blur-md"
-        >
-          <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-primary/15 blur-3xl" />
-          <div className="relative">
-            <Radio className="text-primary" size={28} />
-            <h3 className="mt-4 text-2xl font-black tracking-tight text-foreground sm:text-3xl">
-              {s.cardTitle}
-            </h3>
-            <ul className="mt-5 space-y-3 text-sm text-muted-foreground sm:text-base">
-              {s.reasons.map((r, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Wifi size={14} className="mt-1.5 shrink-0 text-primary" />
-                  <span>{r}</span>
+      <div className="mt-6 grid gap-5 lg:grid-cols-2 lg:items-stretch">
+        {s.sections.map((sec, si) => (
+          <motion.div key={sec.tag} variants={itemVariants} className="relative flex flex-col overflow-hidden rounded-2xl border border-border/55 bg-secondary/35 p-5 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/30 hover:bg-secondary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+            {/* Tag */}
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.25em] text-primary">
+              {sec.tag}
+            </div>
+            {/* Headline */}
+            <h3 className="mt-3 text-[0.88rem] font-black leading-snug tracking-tight text-foreground sm:text-sm">{sec.headline}</h3>
+            {/* Intro */}
+            <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">{sec.intro}</p>
+            {/* Bullets */}
+            <ul className="mt-3 space-y-1.5">
+              {sec.highlights.map((h, i) => (
+                <li key={i} className="flex items-start gap-2 text-[10px] leading-relaxed text-muted-foreground">
+                  <span className="mt-[5px] h-[5px] w-[5px] shrink-0 rounded-full bg-primary/55" />{h}
                 </li>
               ))}
             </ul>
-          </div>
-        </motion.div>
-
-        <div className="grid gap-4 content-center">
-          <StatBlock value="1 M/km²" label={s.stat1label} accent="text-primary" />
-          <StatBlock value="< 1 ms" label={s.stat2label} accent="text-primary" />
-          <StatBlock value="10 Gbps" label={s.stat3label} accent="text-cyan-500" />
-        </div>
+            {/* Stat boxes — mt-auto pushes to card bottom, always aligned */}
+            <div className="mt-auto grid grid-cols-3 gap-2 border-t border-border/25 pt-4 mt-4">
+              {sec.stats.map((st) => (
+                <div key={st.label} className="relative flex flex-col overflow-hidden rounded-xl border border-border/40 bg-card/60 p-3 text-center">
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+                  {/* Value */}
+                  <p className="tabular-nums text-[0.9rem] font-black leading-tight text-primary">{st.value}</p>
+                  {/* Label — flex-1 so all boxes match tallest label */}
+                  <p className="mt-1.5 flex-1 text-[8px] leading-[1.35] text-muted-foreground">{st.label}</p>
+                  {/* Cite — always 1 line height to keep boxes uniform */}
+                  <p className="mt-1.5 h-[0.9rem] text-[7.5px] italic leading-tight text-primary/55">
+                    {st.cite ? `[${st.cite}]` : ""}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
+
+      <motion.div variants={itemVariants} className="mt-5">
+        <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.25em] text-muted-foreground/60">{s.domainsLabel}</p>
+        <div className="flex flex-wrap gap-2">
+          {s.domains.map((d) => (
+            <span key={d} className="rounded-full border border-border/50 bg-secondary/30 px-3 py-1 text-[10px] font-semibold text-foreground/70">{d}</span>
+          ))}
+        </div>
+      </motion.div>
+
+      <PullQuote className="mt-5">{s.pullquote}</PullQuote>
+    </Slide>
+  );
+}
+
+export function Slide09SmartInfrastructure({ index }: { index: number }) {
+  const T = useDeckT();
+  const s = T.s09;
+
+  return (
+    <Slide index={index}>
+      <Eyebrow index={7} label={s.eyebrow} />
+      <HeadlineDisplay>
+        {s.headline1}{" "}
+        <span className="text-primary">{s.headline2}</span>
+      </HeadlineDisplay>
+
+      <motion.p variants={itemVariants} className="mt-3 text-[0.8rem] leading-relaxed text-muted-foreground sm:text-sm">
+        {s.intro}
+      </motion.p>
+
+      <div className="mt-6 grid gap-5 lg:grid-cols-2 lg:items-stretch">
+        {s.sections.map((sec) => (
+          <motion.div key={sec.tag} variants={itemVariants} className="relative flex flex-col overflow-hidden rounded-2xl border border-border/55 bg-secondary/35 p-5 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/30 hover:bg-secondary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+            {/* Tag */}
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.25em] text-primary">
+              {sec.tag}
+            </div>
+            {/* Headline */}
+            <h3 className="mt-3 text-[0.88rem] font-black leading-snug tracking-tight text-foreground sm:text-sm">{sec.headline}</h3>
+            {/* Intro */}
+            <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">{sec.intro}</p>
+            {/* Bullets */}
+            <ul className="mt-3 space-y-1.5">
+              {sec.highlights.map((h, i) => (
+                <li key={i} className="flex items-start gap-2 text-[10px] leading-relaxed text-muted-foreground">
+                  <span className="mt-[5px] h-[5px] w-[5px] shrink-0 rounded-full bg-primary/55" />{h}
+                </li>
+              ))}
+            </ul>
+            {/* Extras (city tags etc.) */}
+            {sec.extras.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {sec.extras.map((e) => (
+                  <span key={e} className="rounded-full border border-primary/20 bg-primary/5 px-2.5 py-0.5 text-[9px] font-semibold text-primary">{e}</span>
+                ))}
+              </div>
+            )}
+            {/* Stat boxes — mt-auto keeps them at card bottom regardless of content height */}
+            <div className="mt-auto grid grid-cols-3 gap-2 border-t border-border/25 pt-4 mt-4">
+              {sec.stats.map((st) => (
+                <div key={st.label} className="relative flex flex-col overflow-hidden rounded-xl border border-border/40 bg-card/60 p-3 text-center">
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+                  {/* Value */}
+                  <p className="tabular-nums text-[0.9rem] font-black leading-tight text-primary">{st.value}</p>
+                  {/* Label — flex-1 equalises height across all 3 boxes */}
+                  <p className="mt-1.5 flex-1 text-[8px] leading-[1.35] text-muted-foreground">{st.label}</p>
+                  {/* Cite — fixed line height keeps boxes uniform */}
+                  <p className="mt-1.5 h-[0.9rem] text-[7.5px] italic leading-tight text-primary/55">
+                    {st.cite ? `[${st.cite}]` : ""}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <PullQuote className="mt-5">{s.pullquote}</PullQuote>
     </Slide>
   );
 }
@@ -283,44 +311,74 @@ export function Slide11Cybersecurity({ index }: { index: number }) {
 
   return (
     <Slide index={index}>
-      <Eyebrow index={10} label={s.eyebrow} accent="text-emerald-500 dark:text-emerald-300" />
+      <Eyebrow index={8} label={s.eyebrow} />
       <HeadlineDisplay>
         {s.headline1}{" "}
         <span className="text-primary">{s.headline2}</span>
       </HeadlineDisplay>
-      <Subhead>{s.subhead}</Subhead>
 
-      <div className="mt-10 grid gap-5 lg:grid-cols-2">
-        <GlassCard accent="emerald">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-600 dark:text-emerald-300">
-            <Lock size={11} /> {s.capLabel}
-          </div>
-          <ul className="mt-5 space-y-3 text-sm text-muted-foreground sm:text-base">
-            {s.capabilities.map((c, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <ShieldCheck size={14} className="mt-1 shrink-0 text-emerald-500" />
-                <span>{c}</span>
-              </li>
-            ))}
-          </ul>
-        </GlassCard>
+      <motion.p
+        variants={itemVariants}
+        className="mt-4 text-[0.8rem] leading-relaxed text-muted-foreground sm:text-sm"
+      >
+        {s.intro}
+      </motion.p>
 
-        <GlassCard accent="amber">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-amber-600 dark:text-amber-300">
-            <Cpu size={11} /> {s.cavLabel}
-          </div>
-          <ul className="mt-5 space-y-3 text-sm text-muted-foreground sm:text-base">
-            {s.caveats.map((c, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <Activity size={14} className="mt-1 shrink-0 text-amber-500" />
-                <span>{c}</span>
-              </li>
-            ))}
-          </ul>
-        </GlassCard>
+      <motion.p
+        variants={itemVariants}
+        className="mt-6 mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-primary"
+      >
+        {s.capLabel}
+      </motion.p>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {s.capabilities.map((cap, i) => (
+          <GlassCard key={i} accent="primary" className="!p-5">
+            <h3 className="text-[0.8rem] font-black tracking-tight text-foreground sm:text-sm">
+              {cap.title}
+            </h3>
+            <ul className="mt-3 space-y-1.5">
+              {cap.bullets.map((b, j) => (
+                <li
+                  key={j}
+                  className="flex items-start gap-2 text-[11px] leading-relaxed text-muted-foreground"
+                >
+                  <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-primary/50" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </GlassCard>
+        ))}
       </div>
 
-      <PullQuote className="mt-10">{s.pullquote}</PullQuote>
+      <motion.div
+        variants={itemVariants}
+        className="mt-6 rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-5"
+      >
+        <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-amber-600 dark:text-amber-400">
+          {s.cavLabel}
+        </p>
+        <ul className="space-y-2">
+          {s.caveats.map((c, i) => (
+            <li
+              key={i}
+              className="flex items-start gap-2 text-[11px] leading-relaxed text-foreground/80"
+            >
+              <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-amber-500/70" />
+              {c}
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+
+      <motion.p
+        variants={itemVariants}
+        className="mt-4 text-[0.75rem] leading-relaxed text-muted-foreground sm:text-[0.8rem]"
+      >
+        {s.closingNote}
+      </motion.p>
+
+      <PullQuote className="mt-6">{s.pullquote}</PullQuote>
     </Slide>
   );
 }

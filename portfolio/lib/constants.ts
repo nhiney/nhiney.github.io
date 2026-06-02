@@ -1,17 +1,44 @@
 export const SITE_CONFIG = {
   name: "Yen Nhi",
   fullName: "Nguyen Thi Yen Nhi",
-  title: "Nguyen Thi Yen Nhi | Software Engineering Portfolio",
-  description: "Detail-oriented Software Engineering student specializing in backend systems, database architecture, and robust application security.",
-  url: "https://nhiney.github.io/portfolio",
-  ogImage: "https://nhiney.github.io/portfolio/og.png",
+  // ≤60 chars — primary keyword first for Google ranking signal
+  title: "Nguyen Thi Yen Nhi — Software Engineer & Flutter Dev",
+  // ≤155 chars — natural keyword density, action-oriented
+  description: "Software Engineering student in Ho Chi Minh City building secure backend systems with Laravel, ASP.NET & Flutter. Open to internships & collaborations.",
+  // startup.id.vn is the live domain — GitHub Pages redirects to here
+  url: "https://startup.id.vn",
+  keywords: [
+    "Nguyen Thi Yen Nhi",
+    "Software Engineer Vietnam",
+    "Backend Developer Ho Chi Minh City",
+    "Flutter Developer",
+    "Laravel Developer",
+    "ASP.NET Developer",
+    "Oracle Database",
+    "Database Security",
+    "Mobile Development",
+    "Software Engineering Portfolio",
+    "Nguyễn Thị Yến Nhi",
+  ],
   links: {
     github: "https://github.com/nhiney",
     linkedin: "https://www.linkedin.com/in/nhi-yen-410b2a2b7/",
     facebook: "https://www.facebook.com/profile.php?id=100025133813586",
     email: "nhiyen.engineer@gmail.com",
+    wakatime: "https://wakatime.com/@_tolanhy",
+    portfolio: "https://startup.id.vn",
+  },
+  projects: {
+    "Mei Closet": "/mei-closet",
   },
   author: "Nguyen Thi Yen Nhi",
+  ogImages: {
+    home:         "https://startup.id.vn/og/home.png",
+    projects:     "https://startup.id.vn/og/projects.png",
+    certificates: "https://startup.id.vn/og/certificates.png",
+    resume:       "https://startup.id.vn/og/resume.png",
+    portfolio:    "https://startup.id.vn/og/portfolio.png",
+  },
 };
 
 export const NAV_ITEMS = [
