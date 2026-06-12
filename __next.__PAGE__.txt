@@ -1,9 +1,135 @@
 1:"$Sreact.fragment"
-2:I[19635,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/054ahiwgk6e0d.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/01u5uc88y7sa_.js","/_next/static/chunks/0bg~b80j3.6cz.js","/_next/static/chunks/00tt66~xy~dih.js"],"HomeClient"]
-6:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/054ahiwgk6e0d.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/01u5uc88y7sa_.js"],"OutletBoundary"]
-7:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"projects":[{"slug":"smart-medical-booking-app","content":"\n## Overview\n\nThe Smart Clinic Booking App was designed to bridge the gap between patients and clinics by providing a real-time interaction layer.\n\n## Key Features\n\n- **Real-time Scheduling**: Instant booking with slot availability sync.\n- **Medical Dashboard**: Secure access to prescription history and upcoming appointments.\n- **Role-Based Access**: Specialized interfaces for Patients and Doctors.\n- **Notification System**: Automated reminders for scheduled visits.\n\n## Technical Stack\n\n- **Frontend**: Flutter (Provider for state management)\n- **Backend**: Firebase Firestore (Real-time DB), Firebase Auth\n- **Security**: Granular Firestore security rules and authentication checks.\n","title":"S-Book: Smart Clinic Booking","description":"A comprehensive healthcare accessibility solution built with Flutter and Firebase, featuring real-time appointment scheduling and medical record management.","date":"2024-05-15","tags":["Flutter","Firebase","Healthcare","Mobile"],"image":"/projects/clinic.png","problem":"Patients often face long wait times and fragmented booking processes in traditional clinical environments.","role":"Lead Developer & System Architect","impact":"Streamlined the booking process for users, reducing average wait-time expectations and providing a centralized dashboard for medical history.","github":"https://github.com/nhiney/smart-clinic-booking-app","demo":"#","readingTime":"1 min read"},{"slug":"sports-field-booking","content":"\n## Overview\n\nA robust web application for field owners and sports enthusiasts to manage and book fields easily.\n\n## Key Features\n\n- **Automated Validation**: Real-time checking of field availability during booking.\n- **Admin Dashboard**: Comprehensive management of users, fields, and revenue reports.\n- **Dynamic Pricing**: Support for different rates based on peak hours and field types.\n- **Secure Auth**: Laravel-based authentication for both users and administrators.\n\n## Technical Stack\n\n- **Framework**: Laravel 10\n- **Database**: MySQL with optimized indexing for time-range queries.\n- **Templating**: Blade / Tailwind CSS\n","title":"SportField: Booking & Admin","description":"A centralized platform for managing sports field rentals, featuring time-slot validation, admin dashboards, and dynamic field pricing.","date":"2024-03-20","tags":["Laravel","PHP","MySQL","Admin Panel"],"image":"/projects/sports.png","problem":"Traditional phone-call based booking systems are prone to double-booking and inefficient field utilization.","role":"Backend Lead","impact":"Implemented an automated conflict-resolution engine that completely eliminated double-booking issues.","github":"https://github.com/nhiney/sports-field-booking-system","demo":"#","readingTime":"1 min read"},{"slug":"database-security-system","content":"\n## Overview\n\nA proof-of-concept for enterprise-grade data management where security is baked into the core architecture.\n\n## Key Features\n\n- **RBAC Implementation**: Comprehensive roles from Admin to Junior staff for strict data access.\n- **Audit Logging**: Automated triggers to track every change in the Oracle database.\n- **Encryption**: Applied encryption patterns for sensitive fields.\n- **Facial Auth Integration**: Proof-of-concept level biometric check for high-privilege operations.\n\n## Technical Stack\n\n- **Core**: C# (.NET)\n- **Database**: Oracle DB with advanced PL/SQL procedures.\n- **Security**: Advanced Encryption Standard (AES) equivalent logic.\n","title":"Secured Enterprise Database","description":"An Oracle-based enterprise application focused on multi-layer security, RBAC, and advanced data encryption patterns.","date":"2024-01-10","tags":["Oracle","C#","Security","PL/SQL"],"image":"/projects/database.png","problem":"Enterprise systems often lack granular control and audit trails for sensitive data transactions.","role":"Database & Security Engineer","impact":"Engineered a robust security layer involving facial recognition integration and RBAC (Role-Based Access Control).","github":"https://github.com/nhiney/database-security","demo":"#","readingTime":"1 min read"},{"slug":"english-learning-app","content":"\n## Overview\n\nA standalone Python application focused on providing a simple, distraction-free environment for learning English.\n\n## Key Features\n\n- **JSON Storage**: Lightweight data management ensures portability and easy backups.\n- **Dynamic Quiz**: Self-testing mode for vocabulary reinforcement.\n- **Search & Filter**: Quickly find words and categorize them by difficulty.\n\n## Technical Stack\n\n- **Language**: Python 3\n- **GUI**: Tkinter (Standard Library)\n- **Data**: JSON persistence\n","title":"English Learning Assistant","description":"A desktop application for vocabulary mastery, featuring JSON-based persistence and a dynamic Tkinter interface.","date":"2023-11-20","tags":["Python","Tkinter","Productivity"],"image":"/projects/english.png","problem":"Traditional flashcards are hard to manage and lack persistent tracking of mastery.","role":"Solo Developer","impact":"Created a lightweight, zero-dependency assistant that helps students manage 500+ vocabulary words.","github":"https://github.com/nhiney/english-app","demo":"#","readingTime":"1 min read"}],"latestPosts":[{"slug":"future-of-frontend","content":"\n# The Shift to RSC\n\nThe introduction of **React Server Components (RSC)** has completely changed how we think about full-stack web applications. By default, we now optimize for the server, and use client-side interactivity only where it's truly needed.\n\n## Why it matters\n\n- **Zero Bundle Size**: Server components don't ship their logic to the browser.\n- **Data Fetching**: Fetching happens closer to the source.\n- **Cleaner Patterns**: Less boilerplate for data management.\n\n### Example Architecture\n\nA modern system should be **data-driven** and **statically generated** where possible.\n\n```typescript\n// All detail pages are pre-rendered at build time\nexport async function generateStaticParams() {\n  const slugs = await getSlugs(\"blog\");\n  return slugs.map((slug) => ({ slug }));\n}\n```\n\n## Embracing Constraint\n\nBy embracing the constraints of static export and RSC, we force ourselves to build more resilient and performant systems. This portfolio is a living example of that philosophy.\n","title":"The Future of Scalable Frontend Systems","description":"Exploring the evolution of the web from CSR to RSC and how we build robust architectures for the modern age.","date":"2026-03-30","tags":["Architecture","React","Next.js","Performance"],"readingTime":"1 min read"},{"slug":"article-1","content":"\n## Understanding CNNs\n\nConvolutional Neural Networks (CNNs) have revolutionized the way computer vision works. They are designed to automatically and adaptively learn spatial hierarchies of features from input images.\n\n## Why ResNet50?\n\nResidual Networks (ResNet) introduced the concept of \"skip connections\" or \"shortcuts\" to address the vanishing gradient problem in deep networks. ResNet50 consists of 50 layers, offering a great balance between depth and performance.\n\n### Key Advantages:\n- **Accuracy**: Performs exceptionally well on image classification tasks.\n- **Pre-trained Models**: Many frameworks provide pre-trained ResNet50 weights from ImageNet.\n- **Ease of Training**: ResNet architectures are easier to optimize than plain deep networks.\n\n## Conclusion\n\nDeep learning continues to evolve rapidly, and understanding architectures like ResNet50 is essential for building effective computer vision systems.\n","title":"CNN and ResNet50 in Deep Learning","description":"A look into Convolutional Neural Networks and why ResNet50 is a common choice for image classification.","date":"2024-03-20","tags":["Deep Learning","CNN","ResNet50","Performance"],"readingTime":"1 min read"}]}],["$L3","$L4"],"$L5"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"YW9xLTA9F9PWXaezvfpOz"}
-3:["$","script","script-0",{"src":"/_next/static/chunks/0bg~b80j3.6cz.js","async":true}]
-4:["$","script","script-1",{"src":"/_next/static/chunks/00tt66~xy~dih.js","async":true}]
-5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
-8:null
+2:I[19635,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0fws5z2.s6~ma.js","/_next/static/chunks/0ts-4mk5_6gxl.js"],"HomeClient"]
+9:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+3:T752,
+There's a version of success that society hands you early: graduate on time, land the right job, know exactly where you're going by 23. And if you don't — if you're 22 and still unsure, 25 and pivoting, 28 and starting over — the world makes you feel like you've already missed something.
+
+You haven't.
+
+---
+
+## The myth of the linear path
+
+We grew up watching highlight reels. The friend who made it, the LinkedIn post with the promotion, the person who "always knew" what they wanted. What we don't see are the years of doubt behind the confidence, the quiet nights of uncertainty behind the polished résumé.
+
+The truth is: most people are figuring it out as they go. The ones who look the most certain are often the ones who've simply learned to act despite uncertainty — not to eliminate it.
+
+---
+
+## Confusion is not the same as failure
+
+When you feel lost, it doesn't mean you've done something wrong. It often means you're honest enough to acknowledge that you don't know — and that takes more courage than pretending.
+
+Confusion is a signal, not a verdict. It means you care enough about your direction to question it. That caring is a gift.
+
+---
+
+## What you can do right now
+
+You don't need a 10-year plan. You need a next step you believe in.
+
+- **Talk to people who are doing things that interest you.** Not to copy their path, but to see what the terrain looks like.
+- **Do one thing you're curious about, without needing it to be your "calling."** Curiosity doesn't owe you certainty.
+- **Stop comparing your chapter 2 to someone else's chapter 10.** The timelines are completely different.
+
+---
+
+The best lives I've seen aren't the ones that followed the plan. They're the ones built by people who stayed curious, stayed honest, and kept moving — even when they didn't know exactly where they were going.
+
+That's enough. That's more than enough.
+4:T742,
+We live in a culture that treats busyness as a badge of honor. "How are you?" — "Busy." As if the fullness of a calendar is proof of a life well-lived.
+
+I used to wear it too. The packed schedule, the back-to-back commitments, the pride of having no time to pause. And underneath it all, a quiet exhaustion I kept dismissing.
+
+---
+
+## What slowing down isn't
+
+Slowing down doesn't mean doing nothing. It doesn't mean being lazy, falling behind, or giving up on ambition.
+
+It means being intentional. It means choosing what deserves your energy rather than saying yes to everything and stretching yourself thin across tasks that don't actually matter to you.
+
+---
+
+## The things I noticed when I stopped rushing
+
+When I started building in more stillness — mornings without a phone, evenings without obligations — I began to notice things I'd been too busy to see.
+
+I noticed which relationships energized me and which drained me. I noticed what I actually wanted versus what I thought I should want. I noticed that a lot of what I was "achieving" was for an audience that didn't exist.
+
+Stillness has a way of making the unnecessary obvious.
+
+---
+
+## A practice, not a destination
+
+You don't wake up one day and become someone who lives slowly. It's a practice — and like all practices, you'll fall off and return to it.
+
+Some ways to begin:
+
+- **One screen-free morning a week.** Not forever. Just one.
+- **Eat one meal without anything else happening.** Just the food. Just the taste.
+- **Let there be gaps in your day.** Not every minute needs to be filled.
+
+---
+
+The world will always have more for you to do. There will always be another task, another message, another thing demanding your attention.
+
+The question isn't whether you can do more. It's whether what you're doing is worth the life you're spending on it.
+
+Slow down enough to ask.
+5:T898,
+I picked up *The Psychology of Money* expecting finance tips. What I found instead was a quiet excavation of human nature — how we reason, how we rationalize, and how rarely our decisions about money are actually about money.
+
+---
+
+## No one is crazy
+
+The opening idea is the one that stayed with me longest: **no one is crazy**. When someone makes a financial decision that seems irrational to you, it's because they've lived a different life, seen different risks, and internalized different lessons.
+
+The person who grew up during a recession hoards cash because they've felt what it's like when the floor disappears. The person who grew up in stability takes risk because they never had to fear the fall.
+
+We don't make decisions in a vacuum. We make them through the lens of every experience we've ever had. That's not irrationality — that's humanity.
+
+---
+
+## Enough
+
+Housel talks about a concept that modern culture rarely celebrates: **enough**.
+
+We live in a system optimized to make you feel like you're behind. There's always a bigger house, a better title, a higher number. And the goalposts keep moving.
+
+The people who are most at peace financially aren't the ones with the most. They're the ones who know what "enough" looks like for them — and have stopped running past it.
+
+---
+
+## Compounding isn't just about money
+
+The most underrated idea in the book: **compounding applies to more than returns**.
+
+It applies to habits. To relationships. To trust. To knowledge.
+
+The things you build slowly, consistently, with patience — they accumulate in ways that seem unremarkable at first and then become undeniable. The same mathematical force that grows a portfolio grows a reputation, a skill, a character.
+
+---
+
+## What I took away
+
+I didn't finish the book with a new investment strategy. I finished it with a few questions I keep returning to:
+
+- What am I optimizing for, really?
+- What does "enough" look like for me, at this stage of life?
+- Am I making decisions based on my own values, or based on what I think success is supposed to look like?
+
+Those aren't finance questions. They're life questions. And that's exactly the point.
+
+---
+
+*Read it. Slowly. With a pen.*
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"projects":[],"latestPosts":[{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$3","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read"},{"slug":"the-quiet-power-of-doing-less","content":"$4","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read"},{"slug":"what-the-psychology-of-money-taught-me","content":"$5","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read"}]}],["$L6","$L7"],"$L8"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"d4q0Z2e-Xxbk6OP-ACe_T"}
+6:["$","script","script-0",{"src":"/_next/static/chunks/0fws5z2.s6~ma.js","async":true}]
+7:["$","script","script-1",{"src":"/_next/static/chunks/0ts-4mk5_6gxl.js","async":true}]
+8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
+b:null

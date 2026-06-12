@@ -1,11 +1,135 @@
 1:"$Sreact.fragment"
-2:I[7723,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/054ahiwgk6e0d.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/01u5uc88y7sa_.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
-3:I[22016,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/054ahiwgk6e0d.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/01u5uc88y7sa_.js","/_next/static/chunks/0it83kqv7-025.js"],""]
-4:I[58541,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/054ahiwgk6e0d.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/01u5uc88y7sa_.js","/_next/static/chunks/0it83kqv7-025.js"],"default"]
-8:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/054ahiwgk6e0d.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/01u5uc88y7sa_.js"],"OutletBoundary"]
-9:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32 space-y-24","children":["$","section",null,{"className":"space-y-8 pt-8 text-center","children":[["$","$L2",null,{"className":"space-y-6 flex flex-col items-center","children":[["$","span",null,{"className":"inline-flex items-center rounded-full border transition-all px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]","children":"Writings"}],["$","h1",null,{"className":"text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15] text-foreground","children":"Latest Thoughts"}],["$","p",null,{"className":"text-lg md:text-xl leading-relaxed max-w-2xl text-zinc-400","children":"Diving deep into backend engineering, security protocols, and algorithmic art."}]]}],["$","div",null,{"className":"grid gap-10 md:grid-cols-2 lg:grid-cols-3 pt-12","children":[["$","$L2","future-of-frontend",{"delay":0,"children":["$","$L3",null,{"href":"/blog/future-of-frontend","className":"group block h-full","children":["$","div",null,{"className":"h-full flex flex-col p-10 rounded-3xl bg-secondary/30 border border-border hover:border-primary/50 transition-all hover:-translate-y-2 group","children":[["$","div",null,{"className":"space-y-6 flex-1","children":[["$","div",null,{"className":"flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-zinc-500","children":[["$","span",null,{"className":"flex items-center gap-2","children":[["$","$L4",null,{"iconNode":[["path",{"d":"M8 2v4","key":"1cmpym"}],["path",{"d":"M16 2v4","key":"4m81vk"}],["rect",{"width":"18","height":"18","x":"3","y":"4","rx":"2","key":"1hopcy"}],["path",{"d":"M3 10h18","key":"8toen8"}]],"className":"lucide-calendar text-primary","size":12}]," ","March 30, 2026"]}],["$","span",null,{"className":"flex items-center gap-2","children":[["$","$L4",null,{"iconNode":[["circle",{"cx":"12","cy":"12","r":"10","key":"1mglay"}],["path",{"d":"M12 6v6l4 2","key":"mmk7yg"}]],"className":"lucide-clock text-primary","size":12}]," ","1 min read"]}]]}],["$","h2",null,{"className":"font-medium group-hover:text-foreground text-2xl leading-tight text-white transition-colors","children":"The Future of Scalable Frontend Systems"}],["$","p",null,{"className":"text-sm font-medium tracking-tight line-clamp-3 text-zinc-400 leading-relaxed","children":"Exploring the evolution of the web from CSR to RSC and how we build robust architectures for the modern age."}]]}],["$","div",null,{"className":"mt-10 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-primary border-t border-border/50 pt-8 opacity-0 group-hover:opacity-100 transition-opacity","children":[["$","span",null,{"children":"Read Article"}],["$","$L4",null,{"iconNode":[["path",{"d":"M5 12h14","key":"1ays0h"}],["path",{"d":"m12 5 7 7-7 7","key":"xquz4c"}]],"className":"lucide-arrow-right","size":16}]]}]]}]}]}],["$","$L2","article-1",{"delay":0.1,"children":["$","$L3",null,{"href":"/blog/article-1","className":"group block h-full","children":["$","div",null,{"className":"h-full flex flex-col p-10 rounded-3xl bg-secondary/30 border border-border hover:border-primary/50 transition-all hover:-translate-y-2 group","children":[["$","div",null,{"className":"space-y-6 flex-1","children":[["$","div",null,{"className":"flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-zinc-500","children":[["$","span",null,{"className":"flex items-center gap-2","children":[["$","$L4",null,{"iconNode":"$0:rsc:props:children:0:props:children:props:children:1:props:children:0:props:children:props:children:props:children:0:props:children:0:props:children:0:props:children:0:props:iconNode","className":"lucide-calendar text-primary","size":12}]," ","March 20, 2024"]}],["$","span",null,{"className":"flex items-center gap-2","children":[["$","$L4",null,{"iconNode":"$0:rsc:props:children:0:props:children:props:children:1:props:children:0:props:children:props:children:props:children:0:props:children:0:props:children:1:props:children:0:props:iconNode","className":"lucide-clock text-primary","size":12}]," ","1 min read"]}]]}],["$","h2",null,{"className":"font-medium group-hover:text-foreground text-2xl leading-tight text-white transition-colors","children":"CNN and ResNet50 in Deep Learning"}],["$","p",null,{"className":"text-sm font-medium tracking-tight line-clamp-3 text-zinc-400 leading-relaxed","children":"A look into Convolutional Neural Networks and why ResNet50 is a common choice for image classification."}]]}],"$L5"]}]}]}]]}]]}]}],["$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"YW9xLTA9F9PWXaezvfpOz"}
-5:["$","div",null,{"className":"mt-10 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-primary border-t border-border/50 pt-8 opacity-0 group-hover:opacity-100 transition-opacity","children":[["$","span",null,{"children":"Read Article"}],["$","$L4",null,{"iconNode":"$0:rsc:props:children:0:props:children:props:children:1:props:children:0:props:children:props:children:props:children:1:props:children:1:props:iconNode","className":"lucide-arrow-right","size":16}]]}]
-6:["$","script","script-0",{"src":"/_next/static/chunks/0it83kqv7-025.js","async":true}]
-7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
-a:null
+2:I[7723,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ke_v7fju~9z..js"],"FadeIn"]
+3:I[9264,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ke_v7fju~9z..js"],"BlogClient"]
+9:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+4:T752,
+There's a version of success that society hands you early: graduate on time, land the right job, know exactly where you're going by 23. And if you don't — if you're 22 and still unsure, 25 and pivoting, 28 and starting over — the world makes you feel like you've already missed something.
+
+You haven't.
+
+---
+
+## The myth of the linear path
+
+We grew up watching highlight reels. The friend who made it, the LinkedIn post with the promotion, the person who "always knew" what they wanted. What we don't see are the years of doubt behind the confidence, the quiet nights of uncertainty behind the polished résumé.
+
+The truth is: most people are figuring it out as they go. The ones who look the most certain are often the ones who've simply learned to act despite uncertainty — not to eliminate it.
+
+---
+
+## Confusion is not the same as failure
+
+When you feel lost, it doesn't mean you've done something wrong. It often means you're honest enough to acknowledge that you don't know — and that takes more courage than pretending.
+
+Confusion is a signal, not a verdict. It means you care enough about your direction to question it. That caring is a gift.
+
+---
+
+## What you can do right now
+
+You don't need a 10-year plan. You need a next step you believe in.
+
+- **Talk to people who are doing things that interest you.** Not to copy their path, but to see what the terrain looks like.
+- **Do one thing you're curious about, without needing it to be your "calling."** Curiosity doesn't owe you certainty.
+- **Stop comparing your chapter 2 to someone else's chapter 10.** The timelines are completely different.
+
+---
+
+The best lives I've seen aren't the ones that followed the plan. They're the ones built by people who stayed curious, stayed honest, and kept moving — even when they didn't know exactly where they were going.
+
+That's enough. That's more than enough.
+5:T742,
+We live in a culture that treats busyness as a badge of honor. "How are you?" — "Busy." As if the fullness of a calendar is proof of a life well-lived.
+
+I used to wear it too. The packed schedule, the back-to-back commitments, the pride of having no time to pause. And underneath it all, a quiet exhaustion I kept dismissing.
+
+---
+
+## What slowing down isn't
+
+Slowing down doesn't mean doing nothing. It doesn't mean being lazy, falling behind, or giving up on ambition.
+
+It means being intentional. It means choosing what deserves your energy rather than saying yes to everything and stretching yourself thin across tasks that don't actually matter to you.
+
+---
+
+## The things I noticed when I stopped rushing
+
+When I started building in more stillness — mornings without a phone, evenings without obligations — I began to notice things I'd been too busy to see.
+
+I noticed which relationships energized me and which drained me. I noticed what I actually wanted versus what I thought I should want. I noticed that a lot of what I was "achieving" was for an audience that didn't exist.
+
+Stillness has a way of making the unnecessary obvious.
+
+---
+
+## A practice, not a destination
+
+You don't wake up one day and become someone who lives slowly. It's a practice — and like all practices, you'll fall off and return to it.
+
+Some ways to begin:
+
+- **One screen-free morning a week.** Not forever. Just one.
+- **Eat one meal without anything else happening.** Just the food. Just the taste.
+- **Let there be gaps in your day.** Not every minute needs to be filled.
+
+---
+
+The world will always have more for you to do. There will always be another task, another message, another thing demanding your attention.
+
+The question isn't whether you can do more. It's whether what you're doing is worth the life you're spending on it.
+
+Slow down enough to ask.
+6:T898,
+I picked up *The Psychology of Money* expecting finance tips. What I found instead was a quiet excavation of human nature — how we reason, how we rationalize, and how rarely our decisions about money are actually about money.
+
+---
+
+## No one is crazy
+
+The opening idea is the one that stayed with me longest: **no one is crazy**. When someone makes a financial decision that seems irrational to you, it's because they've lived a different life, seen different risks, and internalized different lessons.
+
+The person who grew up during a recession hoards cash because they've felt what it's like when the floor disappears. The person who grew up in stability takes risk because they never had to fear the fall.
+
+We don't make decisions in a vacuum. We make them through the lens of every experience we've ever had. That's not irrationality — that's humanity.
+
+---
+
+## Enough
+
+Housel talks about a concept that modern culture rarely celebrates: **enough**.
+
+We live in a system optimized to make you feel like you're behind. There's always a bigger house, a better title, a higher number. And the goalposts keep moving.
+
+The people who are most at peace financially aren't the ones with the most. They're the ones who know what "enough" looks like for them — and have stopped running past it.
+
+---
+
+## Compounding isn't just about money
+
+The most underrated idea in the book: **compounding applies to more than returns**.
+
+It applies to habits. To relationships. To trust. To knowledge.
+
+The things you build slowly, consistently, with patience — they accumulate in ways that seem unremarkable at first and then become undeniable. The same mathematical force that grows a portfolio grows a reputation, a skill, a character.
+
+---
+
+## What I took away
+
+I didn't finish the book with a new investment strategy. I finished it with a few questions I keep returning to:
+
+- What am I optimizing for, really?
+- What does "enough" look like for me, at this stage of life?
+- Am I making decisions based on my own values, or based on what I think success is supposed to look like?
+
+Those aren't finance questions. They're life questions. And that's exactly the point.
+
+---
+
+*Read it. Slowly. With a pen.*
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32","children":["$","section",null,{"className":"pt-16 space-y-4","children":[["$","$L2",null,{"className":"flex flex-col items-center text-center gap-5","children":[["$","span",null,{"className":"inline-flex items-center rounded-full border transition-all px-6 py-2 bg-primary/10 border-primary/20 text-primary font-black tracking-widest uppercase text-[10px]","children":"Writings"}],["$","h1",null,{"className":"text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15] text-foreground","children":"All Thoughts"}],["$","p",null,{"className":"text-lg md:text-xl leading-relaxed max-w-xl text-muted-foreground","children":"Reflections on youth, slow living, and the books that shape how I see the world."}]]}],["$","$L3",null,{"posts":[{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$4","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read"},{"slug":"the-quiet-power-of-doing-less","content":"$5","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read"},{"slug":"what-the-psychology-of-money-taught-me","content":"$6","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read"}]}]]}]}],["$L7"],"$L8"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"d4q0Z2e-Xxbk6OP-ACe_T"}
+7:["$","script","script-0",{"src":"/_next/static/chunks/0ke_v7fju~9z..js","async":true}]
+8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
+b:null
