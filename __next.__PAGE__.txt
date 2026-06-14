@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[19635,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0fws5z2.s6~ma.js","/_next/static/chunks/0ts-4mk5_6gxl.js"],"HomeClient"]
-9:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-a:"$Sreact.suspense"
+2:I[19635,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/16wa93c3m_q71.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0fws5z2.s6~ma.js","/_next/static/chunks/0ts-4mk5_6gxl.js"],"HomeClient"]
+f:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/16wa93c3m_q71.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+10:"$Sreact.suspense"
 3:Td74,
 I judged this book by its cover. Literally.
 
@@ -66,7 +66,135 @@ If you're tired in the quiet way, or you've forgotten how to be soft with yourse
 I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
 
 > "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
-4:Te47,
+4:Td74,
+I judged this book by its cover. Literally.
+
+It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
+
+I bought it as a gift for someone else. Then I read it on the train home first — "just to check it" — and quietly fell apart somewhere around page forty.
+
+---
+
+## Why this book found me
+
+Here's the thing I don't admit often: I'd been running on empty for a while.
+
+Not in a dramatic way. Just the low, grey kind of tired where you're functioning fine, ticking off tasks, answering messages, and somewhere underneath it all there's a small voice asking *are you okay?* that you keep promising to get back to later.
+
+I think I'd forgotten how to be kind to myself. I was good at being kind to everyone else. With me, the inner voice was a manager, not a friend.
+
+This little book — a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking — snuck right past all my defenses precisely *because* it was so simple. There was nothing to analyze. Only something to feel.
+
+---
+
+## The lines that stayed with me
+
+It has almost no plot. It's barely a hundred pages, half of them drawings. And yet I've underlined more of it than books five times its length.
+
+### "Asking for help isn't giving up"
+
+There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
+
+> "Asking for help isn't giving up," said the horse. "It's refusing to give up."
+
+I'd always quietly filed asking for help under *weakness*. Something to do only when I'd exhausted every other option and could no longer pretend. Reading that one line on a moving train, I realized how lonely I'd made my own life by believing it.
+
+### The smallest things are not small
+
+The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
+
+It sounds almost too simple to mean anything. But it landed because I've spent so long measuring myself by output — what I made, what I achieved, what I could point to. Nobody ever taught me to measure a day by how gentle I was in it.
+
+### "This storm will pass"
+
+Near the end, in the rain, the horse says the storms always pass — something I logically know and emotionally forget every single time I'm inside one.
+
+There's a difference between knowing a thing and being reminded of it by someone who clearly means it. This book is a hundred pages of the second kind.
+
+---
+
+## What I'm carrying with me
+
+I'm not going to pretend a picture book rearranged my whole life. But it nudged a few quiet things:
+
+* **I'm talking to myself like I'd talk to a friend** — or at least catching it when I don't.
+* **I'm letting "kind" count as an achievement** — a gentle day is not a wasted day.
+* **I keep it on my desk, not my shelf** — some mornings I open it to one random page and that's the whole ritual.
+
+---
+
+## A few last thoughts
+
+If you're tired in the quiet way, or you've forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or anything to "figure out" — this isn't that, and it never tries to be.
+
+I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
+
+> "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
+5:T13cc,
+Tôi đã trông mặt mà bắt hình dong cuốn sách này. Theo đúng nghĩa đen.
+
+Nó nằm đó trong một hiệu sách, toàn màu nước dịu nhẹ và một chú ngựa với đôi mắt hiền, và tôi nghĩ: *dễ thương đấy, nhưng không hợp với mình.* Tôi đôi mươi rồi. Tôi đọc Sách Nghiêm Túc không tranh ảnh, cảm ơn nhé.
+
+Tôi mua nó làm quà cho người khác. Rồi tôi đọc nó trên chuyến tàu về nhà trước — "chỉ để kiểm tra thôi mà" — và lặng lẽ vỡ òa đâu đó quanh trang bốn mươi.
+
+---
+
+## Vì sao cuốn sách này tìm đến tôi
+
+Có một điều tôi ít khi thừa nhận: tôi đã chạy trong tình trạng cạn kiệt một thời gian rồi.
+
+Không phải theo kiểu kịch tính. Chỉ là cái mệt mỏi xám xịt, âm thầm, khi bạn vẫn vận hành ổn, vẫn gạch đầu việc, vẫn trả lời tin nhắn, mà đâu đó bên dưới có một giọng nói nhỏ hỏi *bạn ổn không?* — cái giọng bạn cứ hứa sẽ quay lại trả lời sau.
+
+Tôi nghĩ tôi đã quên cách tử tế với chính mình. Tôi giỏi tử tế với mọi người khác. Còn với mình, giọng nói bên trong là một ông sếp, chứ không phải một người bạn.
+
+Cuốn sách nhỏ này — một cậu bé, một chú chuột chũi mê bánh, một con cáo dè chừng, và một chú ngựa khôn ngoan, cùng nhau lang thang và trò chuyện — lách qua mọi hàng phòng thủ của tôi đúng *vì* nó quá đơn giản. Chẳng có gì để phân tích. Chỉ có thứ gì đó để cảm nhận.
+
+---
+
+## Những dòng chữ ở lại với tôi
+
+Nó gần như không có cốt truyện. Vỏn vẹn hơn trăm trang, một nửa là tranh vẽ. Vậy mà tôi đã gạch chân nó nhiều hơn cả những cuốn dày gấp năm lần.
+
+### "Nhờ giúp đỡ không phải là bỏ cuộc"
+
+Có một khoảnh khắc khi cậu bé thừa nhận mình đang chật vật, và chú ngựa nói ra điều mà tôi đã cần ai đó nói với mình suốt nhiều năm.
+
+> "Nhờ giúp đỡ không phải là bỏ cuộc," chú ngựa nói. "Đó là từ chối bỏ cuộc."
+
+Tôi luôn lặng lẽ xếp việc nhờ giúp đỡ vào ngăn *yếu đuối*. Một điều chỉ làm khi đã cạn mọi lựa chọn khác và không thể giả vờ thêm được nữa. Đọc dòng chữ ấy trên một con tàu đang chạy, tôi nhận ra mình đã khiến cuộc đời mình cô đơn đến mức nào chỉ vì tin vào điều đó.
+
+### Những điều nhỏ nhất không hề nhỏ
+
+Chú chuột chũi, khi được hỏi muốn trở thành gì khi lớn lên, trả lời: *tử tế.* Không phải thành công. Không phải gây ấn tượng. Mà là tử tế.
+
+Nghe đơn giản đến mức tưởng chẳng có nghĩa gì. Nhưng nó chạm vào tôi bởi tôi đã dành quá lâu để đo lường bản thân bằng năng suất — bằng những gì tôi tạo ra, đạt được, có thể chỉ tay vào. Chẳng ai từng dạy tôi đo một ngày bằng việc mình đã dịu dàng đến đâu trong ngày đó.
+
+### "Cơn bão này rồi sẽ qua"
+
+Gần cuối sách, trong mưa, chú ngựa nói rằng những cơn bão luôn rồi sẽ qua — điều mà về lý trí tôi biết, nhưng về cảm xúc lại quên sạch mỗi lần tôi đang ở trong một cơn bão.
+
+Có một sự khác biệt giữa việc biết một điều và việc được nhắc lại nó bởi một người rõ ràng đang nói thật lòng. Cuốn sách này là hơn trăm trang của kiểu thứ hai.
+
+---
+
+## Điều tôi mang theo
+
+Tôi sẽ không giả vờ rằng một cuốn truyện tranh sắp xếp lại cả cuộc đời tôi. Nhưng nó đã hích nhẹ vài điều:
+
+* **Tôi nói chuyện với chính mình như nói với một người bạn** — hoặc ít nhất là bắt được mình khi không làm vậy.
+* **Tôi cho phép "tử tế" được tính là một thành tựu** — một ngày dịu dàng không phải một ngày lãng phí.
+* **Tôi để nó trên bàn làm việc, không phải trên kệ sách** — vài buổi sáng tôi mở đại một trang, và đó là toàn bộ nghi thức.
+
+---
+
+## Có đáng đọc không?
+
+Nếu bạn đang mệt theo kiểu lặng lẽ, hoặc đã quên cách mềm mỏng với chính mình, cuốn sách này là một hành động nhân từ nho nhỏ. Còn nếu bạn muốn cốt truyện, sự phức tạp, hay điều gì đó để "giải mã" — thì đây không phải vậy, và nó cũng chẳng cố gồng để trở thành thế.
+
+Cuối cùng tôi vẫn tặng cuốn của mình đi, đúng như dự định. Rồi ngày hôm sau tôi mua lại một cuốn khác cho chính mình. Chừng đó chắc đã nói lên tất cả.
+
+> "Điều dũng cảm nhất cậu từng nói là gì?" cậu bé hỏi. "Giúp với," chú ngựa đáp.
+6:Te47,
 It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been talking about you the whole time without ever asking permission.
 
 I'd been carrying a quiet question for months: what if I'd chosen differently?
@@ -130,7 +258,135 @@ For me, the timing was everything. Some books don't teach you anything new; they
 I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
 
 > The only way to learn is to live.
-5:T752,
+7:Te47,
+It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been talking about you the whole time without ever asking permission.
+
+I'd been carrying a quiet question for months: what if I'd chosen differently?
+
+---
+
+## Why this book found me
+
+I'm at the age where everyone seems to be becoming someone. Friends picking paths, posting milestones, sounding so sure. And I kept catching myself running the other timelines in my head — the major I didn't take, the city I didn't move to, the version of me who was braver, earlier.
+
+It's a quiet kind of exhausting, living next to all the lives you didn't pick.
+
+A friend left *The Midnight Library* on my desk without saying much. The premise is simple: a woman named Nora, at her lowest point, lands in a library where every book is a life she could have lived. She gets to try them on.
+
+I think my friend knew I needed to try a few on too.
+
+---
+
+## The lines that stayed with me
+
+It's not a flawless book — some of the lives feel a little neat, and it wears its message on its sleeve. But a few moments genuinely caught me.
+
+### The other lives aren't as perfect as my regret makes them look
+
+In my head, the roads I didn't take are always sunlit. Nora actually walks into hers — and finds they have their own losses, their own dull Tuesdays, their own quiet disappointments.
+
+> Every life contains many millions of decisions. Some big, some small. But every time one decision is made, the outcome could not have been otherwise.
+
+Regret had been selling me a lie. It only ever showed me the highlight reel of the lives I didn't choose, never the full weather. That reframing loosened something I'd been gripping for a long time.
+
+### I'd been treating "what if" as a fact instead of a feeling
+
+I always thought my regrets were telling me the truth — that I'd genuinely messed up, taken the wrong door. The book made me see they were mostly just fear wearing a costume, a story I told myself at night.
+
+Most of my "what ifs" aren't real plans. They're just a way of being unkind to myself for being human and not knowing the future.
+
+### The life I have is also one I could have only imagined
+
+There was a version of me, years ago, who would have given anything to be where I am now — the small ordinary things I walk past without noticing. The book quietly reminded me that this life, too, was once a "what if."
+
+That undid me a little. I've been so busy mourning the lives I didn't live that I forgot to actually live this one.
+
+---
+
+## What I'm carrying with me
+
+Nothing dramatic changed. I didn't wake up cured of overthinking. But a few small things have shifted:
+
+* **I catch the comparison sooner** — when my mind starts running someone else's timeline, I notice it now, and I let it pass instead of moving in.
+* **I'm trying to romanticize the life I have** — the slow coffee, the walk home, the ordinary evening. The stuff a past me would have envied.
+* **I'm being gentler about old decisions** — I made them with what I knew then. That's all any of us ever do.
+
+---
+
+## A few last thoughts
+
+If you're someone who lies awake editing your past, this book will feel like it's holding your hand. If you prefer subtle, literary writing, it might feel a touch on-the-nose — and that's fair.
+
+For me, the timing was everything. Some books don't teach you anything new; they just say the thing you already half-knew, out loud, at the moment you needed to hear it.
+
+I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
+
+> The only way to learn is to live.
+8:T15d3,
+Đã gần 2 giờ sáng khi tôi đọc xong. Tôi gấp sách lại, ngồi trong bóng tối một lúc lâu, và cảm thấy cái nhói lạ lùng mà bạn có được khi một câu chuyện đã nói về chính bạn suốt từ đầu mà chẳng hề xin phép.
+
+Mấy tháng nay tôi mang theo một câu hỏi lặng lẽ: sẽ thế nào nếu tôi đã chọn khác đi?
+
+---
+
+## Vì sao cuốn sách này tìm đến tôi
+
+Tôi đang ở cái tuổi mà ai cũng dường như đang trở thành một ai đó. Bạn bè chọn lối đi, đăng những cột mốc, nói chuyện đầy chắc chắn. Còn tôi thì cứ bắt gặp mình đang chạy thử những dòng thời gian khác trong đầu — ngành học tôi đã không chọn, thành phố tôi đã không chuyển đến, phiên bản của tôi can đảm hơn, và sớm hơn.
+
+Đó là một kiểu mệt mỏi lặng lẽ: sống bên cạnh tất cả những cuộc đời mà mình đã không chọn.
+
+Một người bạn để cuốn *The Midnight Library* lên bàn tôi mà chẳng nói gì nhiều. Tiền đề rất đơn giản: một người phụ nữ tên Nora, ở thời điểm tồi tệ nhất, lạc vào một thư viện nơi mỗi cuốn sách là một cuộc đời cô đã có thể sống. Cô được thử khoác chúng lên người.
+
+Tôi nghĩ người bạn ấy biết tôi cũng cần thử khoác vài cuộc đời như thế.
+
+---
+
+## Những dòng chữ ở lại với tôi
+
+Đây không phải cuốn sách hoàn hảo — vài cuộc đời được vẽ hơi gọn gàng quá, và nó để thông điệp lộ rõ trên bề mặt. Nhưng vài khoảnh khắc đã thật sự níu lấy tôi.
+
+### Những cuộc đời khác không hoàn hảo như nỗi nuối tiếc khiến tôi tưởng
+
+Trong đầu tôi, những con đường tôi đã không chọn lúc nào cũng ngập nắng. Nora thì thật sự bước vào chúng — và phát hiện chúng cũng có những mất mát riêng, những ngày thứ Ba tẻ nhạt riêng, những nỗi thất vọng lặng lẽ riêng.
+
+> Mỗi cuộc đời chứa hàng triệu quyết định. Có cái lớn, có cái nhỏ. Nhưng mỗi lần một quyết định được đưa ra, kết quả không thể nào khác đi được.
+
+Sự nuối tiếc đã bán cho tôi một lời nói dối. Nó chỉ luôn cho tôi xem thước phim highlight của những cuộc đời tôi đã không chọn, không bao giờ cho thấy đủ cả mưa lẫn nắng. Cách nhìn lại đó đã nới lỏng một thứ tôi đã siết chặt rất lâu.
+
+### Tôi đã coi "giá như" là sự thật thay vì một cảm xúc
+
+Tôi luôn nghĩ những nuối tiếc của mình đang nói cho tôi sự thật — rằng tôi đã thật sự làm hỏng, đã chọn nhầm cánh cửa. Cuốn sách khiến tôi thấy chúng phần lớn chỉ là nỗi sợ khoác lên một bộ trang phục, một câu chuyện tôi tự kể mình trong đêm.
+
+Phần lớn những "giá như" của tôi không phải là kế hoạch thật. Chúng chỉ là một cách tôi tự đối xử không tử tế với bản thân vì đã làm người và đã không biết trước tương lai.
+
+### Cuộc đời tôi đang có cũng từng là điều tôi chỉ dám tưởng tượng
+
+Từng có một phiên bản của tôi, nhiều năm trước, sẵn sàng đánh đổi mọi thứ để được ở nơi tôi đang đứng bây giờ — những điều bình thường nhỏ bé mà tôi đi ngang qua chẳng buồn để ý. Cuốn sách lặng lẽ nhắc tôi rằng cuộc đời này, cũng vậy, từng là một "giá như".
+
+Điều đó làm tôi vỡ ra đôi chút. Tôi đã quá bận thương tiếc những cuộc đời mình không sống đến mức quên mất việc thật sự sống cuộc đời này.
+
+---
+
+## Điều tôi mang theo
+
+Chẳng có gì kịch tính thay đổi. Tôi không thức dậy và hết hẳn bệnh suy nghĩ quá nhiều. Nhưng vài điều nhỏ đã dịch chuyển:
+
+* **Tôi bắt được sự so sánh sớm hơn** — khi tâm trí bắt đầu chạy theo dòng thời gian của người khác, giờ tôi nhận ra nó, và để nó trôi qua thay vì dọn vào ở.
+* **Tôi đang tập trân trọng cuộc đời mình đang có** — ly cà phê chậm rãi, đoạn đường về nhà, một buổi tối bình thường. Những thứ mà một phiên bản tôi trong quá khứ từng thèm khát.
+* **Tôi nhẹ nhàng hơn với những quyết định cũ** — tôi đã đưa ra chúng với những gì tôi biết khi đó. Tất cả chúng ta cũng chỉ làm được đến vậy mà thôi.
+
+---
+
+## Có đáng đọc không?
+
+Nếu bạn là người hay nằm thao thức biên tập lại quá khứ của mình, cuốn sách này sẽ giống như một bàn tay nắm lấy tay bạn. Nếu bạn thích lối viết tinh tế, hàm ẩn, nó có thể hơi lộ liễu — và điều đó cũng công bằng thôi.
+
+Với tôi, thời điểm là tất cả. Có những cuốn sách không dạy bạn điều gì mới; chúng chỉ nói thành lời cái điều bạn đã lờ mờ biết, đúng vào khoảnh khắc bạn cần nghe nó.
+
+Tôi sẽ đọc một cuốn gì đó nhẹ nhàng hơn tiếp theo. Nhưng tôi nghĩ mình sẽ tử tế hơn một chút với chính những lựa chọn của mình, trong một thời gian.
+
+> Cách duy nhất để học là sống.
+9:T752,
 There's a version of success that society hands you early: graduate on time, land the right job, know exactly where you're going by 23. And if you don't — if you're 22 and still unsure, 25 and pivoting, 28 and starting over — the world makes you feel like you've already missed something.
 
 You haven't.
@@ -166,8 +422,80 @@ You don't need a 10-year plan. You need a next step you believe in.
 The best lives I've seen aren't the ones that followed the plan. They're the ones built by people who stayed curious, stayed honest, and kept moving — even when they didn't know exactly where they were going.
 
 That's enough. That's more than enough.
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"projects":[],"latestPosts":[{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$3","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read"},{"slug":"the-midnight-library","content":"$4","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read"},{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$5","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read"}]}],["$L6","$L7"],"$L8"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"nS_VXfTig-GQtUS3aWaGY"}
-6:["$","script","script-0",{"src":"/_next/static/chunks/0fws5z2.s6~ma.js","async":true}]
-7:["$","script","script-1",{"src":"/_next/static/chunks/0ts-4mk5_6gxl.js","async":true}]
-8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
-b:null
+a:T752,
+There's a version of success that society hands you early: graduate on time, land the right job, know exactly where you're going by 23. And if you don't — if you're 22 and still unsure, 25 and pivoting, 28 and starting over — the world makes you feel like you've already missed something.
+
+You haven't.
+
+---
+
+## The myth of the linear path
+
+We grew up watching highlight reels. The friend who made it, the LinkedIn post with the promotion, the person who "always knew" what they wanted. What we don't see are the years of doubt behind the confidence, the quiet nights of uncertainty behind the polished résumé.
+
+The truth is: most people are figuring it out as they go. The ones who look the most certain are often the ones who've simply learned to act despite uncertainty — not to eliminate it.
+
+---
+
+## Confusion is not the same as failure
+
+When you feel lost, it doesn't mean you've done something wrong. It often means you're honest enough to acknowledge that you don't know — and that takes more courage than pretending.
+
+Confusion is a signal, not a verdict. It means you care enough about your direction to question it. That caring is a gift.
+
+---
+
+## What you can do right now
+
+You don't need a 10-year plan. You need a next step you believe in.
+
+- **Talk to people who are doing things that interest you.** Not to copy their path, but to see what the terrain looks like.
+- **Do one thing you're curious about, without needing it to be your "calling."** Curiosity doesn't owe you certainty.
+- **Stop comparing your chapter 2 to someone else's chapter 10.** The timelines are completely different.
+
+---
+
+The best lives I've seen aren't the ones that followed the plan. They're the ones built by people who stayed curious, stayed honest, and kept moving — even when they didn't know exactly where they were going.
+
+That's enough. That's more than enough.
+b:Tad8,
+Có một phiên bản thành công mà xã hội trao cho bạn từ rất sớm: tốt nghiệp đúng hạn, kiếm được công việc "chuẩn", biết chính xác mình đang đi đâu khi mới 23 tuổi. Và nếu bạn không như vậy — nếu bạn 22 tuổi vẫn còn mơ hồ, 25 tuổi đổi hướng, 28 tuổi làm lại từ đầu — thế giới khiến bạn cảm thấy mình đã bỏ lỡ điều gì đó.
+
+Bạn không hề bỏ lỡ.
+
+---
+
+## Lầm tưởng về con đường thẳng tắp
+
+Chúng ta lớn lên cùng những thước phim highlight. Người bạn đã thành công, dòng trạng thái LinkedIn khoe thăng chức, người "luôn biết" mình muốn gì. Thứ chúng ta không thấy là những năm tháng hoài nghi đằng sau vẻ tự tin đó, những đêm bất an lặng lẽ đằng sau bản CV bóng bẩy.
+
+Sự thật là: phần lớn mọi người đều vừa đi vừa tìm ra câu trả lời. Những người trông chắc chắn nhất thường chỉ là những người đã học được cách hành động bất chấp sự bất định — chứ không phải xóa bỏ được nó.
+
+---
+
+## Hoang mang không đồng nghĩa với thất bại
+
+Khi bạn cảm thấy lạc lối, điều đó không có nghĩa là bạn đã làm sai. Nó thường có nghĩa là bạn đủ thành thật để thừa nhận rằng mình chưa biết — và điều đó cần nhiều can đảm hơn việc giả vờ.
+
+Hoang mang là một tín hiệu, không phải một bản án. Nó cho thấy bạn đủ quan tâm đến hướng đi của mình để dám đặt câu hỏi. Sự quan tâm đó là một món quà.
+
+---
+
+## Điều bạn có thể làm ngay bây giờ
+
+Bạn không cần một kế hoạch 10 năm. Bạn cần một bước tiếp theo mà bạn tin tưởng.
+
+- **Trò chuyện với những người đang làm điều khiến bạn tò mò.** Không phải để sao chép con đường của họ, mà để thấy địa hình phía trước trông ra sao.
+- **Làm một điều bạn tò mò, mà không cần nó phải là "sứ mệnh" của đời mình.** Sự tò mò không nợ bạn một câu trả lời chắc chắn.
+- **Ngừng so chương 2 của bạn với chương 10 của người khác.** Hai dòng thời gian hoàn toàn khác nhau.
+
+---
+
+Những cuộc đời đẹp nhất tôi từng thấy không phải là những cuộc đời đi đúng theo kế hoạch. Mà là những cuộc đời được dựng nên bởi những người luôn giữ sự tò mò, sự thành thật, và tiếp tục bước đi — kể cả khi họ không biết chính xác mình đang đi về đâu.
+
+Vậy là đủ. Vậy là quá đủ rồi.
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"projects":[],"latestPosts":[{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$3","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","content":"$4","readingTime":"4 min read"},"vi":{"title":"The Boy, the Mole, the Fox and the Horse — Cuốn sách thiếu nhi khiến một người lớn khóc trên tàu","description":"Tôi suýt đã không đọc nó. Trông nó cứ như một cuốn truyện tranh cho trẻ con. Hóa ra nó lại là điều dịu dàng nhất ai đó từng nói với tôi trong nhiều năm.","content":"$5","readingTime":"5 min read"}}},{"slug":"the-midnight-library","content":"$6","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","content":"$7","readingTime":"4 min read"},"vi":{"title":"The Midnight Library — Về những cuộc đời tôi cứ tưởng tượng lẽ ra mình nên sống","description":"Tiểu thuyết của Matt Haig về một thư viện nằm giữa sự sống và cái chết đã lặng lẽ thay đổi cách tôi nghĩ về sự nuối tiếc, và về tất cả những phiên bản của tôi mà tôi sẽ không bao giờ trở thành.","content":"$8","readingTime":"5 min read"}}},{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$9","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read","i18n":{"en":{"title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","content":"$a","readingTime":"2 min read"},"vi":{"title":"Bạn không cần phải biết hết mọi thứ ngay từ bây giờ","description":"Một lá thư gửi mọi người trẻ đang cảm thấy mình tụt lại phía sau — bạn không hề. Con đường không cần phải thẳng tắp mới là con đường đúng.","content":"$b","readingTime":"3 min read"}}}]}],["$Lc","$Ld"],"$Le"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"IYnPsORGfO9ZDoRKt9av8"}
+c:["$","script","script-0",{"src":"/_next/static/chunks/0fws5z2.s6~ma.js","async":true}]
+d:["$","script","script-1",{"src":"/_next/static/chunks/0ts-4mk5_6gxl.js","async":true}]
+e:["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]
+11:null
