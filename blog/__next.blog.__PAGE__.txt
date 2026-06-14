@@ -1,9 +1,137 @@
 1:"$Sreact.fragment"
-2:I[7723,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ke_v7fju~9z..js"],"FadeIn"]
-3:I[9264,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ke_v7fju~9z..js"],"BlogClient"]
-9:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0~ov0_j2morlg.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-a:"$Sreact.suspense"
-4:T752,
+2:I[7723,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10a_drqwjuifi.js"],"FadeIn"]
+3:I[9264,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10a_drqwjuifi.js"],"BlogClient"]
+b:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+c:"$Sreact.suspense"
+4:Td74,
+I judged this book by its cover. Literally.
+
+It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
+
+I bought it as a gift for someone else. Then I read it on the train home first — "just to check it" — and quietly fell apart somewhere around page forty.
+
+---
+
+## Why this book found me
+
+Here's the thing I don't admit often: I'd been running on empty for a while.
+
+Not in a dramatic way. Just the low, grey kind of tired where you're functioning fine, ticking off tasks, answering messages, and somewhere underneath it all there's a small voice asking *are you okay?* that you keep promising to get back to later.
+
+I think I'd forgotten how to be kind to myself. I was good at being kind to everyone else. With me, the inner voice was a manager, not a friend.
+
+This little book — a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking — snuck right past all my defenses precisely *because* it was so simple. There was nothing to analyze. Only something to feel.
+
+---
+
+## The lines that stayed with me
+
+It has almost no plot. It's barely a hundred pages, half of them drawings. And yet I've underlined more of it than books five times its length.
+
+### "Asking for help isn't giving up"
+
+There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
+
+> "Asking for help isn't giving up," said the horse. "It's refusing to give up."
+
+I'd always quietly filed asking for help under *weakness*. Something to do only when I'd exhausted every other option and could no longer pretend. Reading that one line on a moving train, I realized how lonely I'd made my own life by believing it.
+
+### The smallest things are not small
+
+The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
+
+It sounds almost too simple to mean anything. But it landed because I've spent so long measuring myself by output — what I made, what I achieved, what I could point to. Nobody ever taught me to measure a day by how gentle I was in it.
+
+### "This storm will pass"
+
+Near the end, in the rain, the horse says the storms always pass — something I logically know and emotionally forget every single time I'm inside one.
+
+There's a difference between knowing a thing and being reminded of it by someone who clearly means it. This book is a hundred pages of the second kind.
+
+---
+
+## What I'm carrying with me
+
+I'm not going to pretend a picture book rearranged my whole life. But it nudged a few quiet things:
+
+* **I'm talking to myself like I'd talk to a friend** — or at least catching it when I don't.
+* **I'm letting "kind" count as an achievement** — a gentle day is not a wasted day.
+* **I keep it on my desk, not my shelf** — some mornings I open it to one random page and that's the whole ritual.
+
+---
+
+## A few last thoughts
+
+If you're tired in the quiet way, or you've forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or anything to "figure out" — this isn't that, and it never tries to be.
+
+I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
+
+> "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
+5:Te47,
+It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been talking about you the whole time without ever asking permission.
+
+I'd been carrying a quiet question for months: what if I'd chosen differently?
+
+---
+
+## Why this book found me
+
+I'm at the age where everyone seems to be becoming someone. Friends picking paths, posting milestones, sounding so sure. And I kept catching myself running the other timelines in my head — the major I didn't take, the city I didn't move to, the version of me who was braver, earlier.
+
+It's a quiet kind of exhausting, living next to all the lives you didn't pick.
+
+A friend left *The Midnight Library* on my desk without saying much. The premise is simple: a woman named Nora, at her lowest point, lands in a library where every book is a life she could have lived. She gets to try them on.
+
+I think my friend knew I needed to try a few on too.
+
+---
+
+## The lines that stayed with me
+
+It's not a flawless book — some of the lives feel a little neat, and it wears its message on its sleeve. But a few moments genuinely caught me.
+
+### The other lives aren't as perfect as my regret makes them look
+
+In my head, the roads I didn't take are always sunlit. Nora actually walks into hers — and finds they have their own losses, their own dull Tuesdays, their own quiet disappointments.
+
+> Every life contains many millions of decisions. Some big, some small. But every time one decision is made, the outcome could not have been otherwise.
+
+Regret had been selling me a lie. It only ever showed me the highlight reel of the lives I didn't choose, never the full weather. That reframing loosened something I'd been gripping for a long time.
+
+### I'd been treating "what if" as a fact instead of a feeling
+
+I always thought my regrets were telling me the truth — that I'd genuinely messed up, taken the wrong door. The book made me see they were mostly just fear wearing a costume, a story I told myself at night.
+
+Most of my "what ifs" aren't real plans. They're just a way of being unkind to myself for being human and not knowing the future.
+
+### The life I have is also one I could have only imagined
+
+There was a version of me, years ago, who would have given anything to be where I am now — the small ordinary things I walk past without noticing. The book quietly reminded me that this life, too, was once a "what if."
+
+That undid me a little. I've been so busy mourning the lives I didn't live that I forgot to actually live this one.
+
+---
+
+## What I'm carrying with me
+
+Nothing dramatic changed. I didn't wake up cured of overthinking. But a few small things have shifted:
+
+* **I catch the comparison sooner** — when my mind starts running someone else's timeline, I notice it now, and I let it pass instead of moving in.
+* **I'm trying to romanticize the life I have** — the slow coffee, the walk home, the ordinary evening. The stuff a past me would have envied.
+* **I'm being gentler about old decisions** — I made them with what I knew then. That's all any of us ever do.
+
+---
+
+## A few last thoughts
+
+If you're someone who lies awake editing your past, this book will feel like it's holding your hand. If you prefer subtle, literary writing, it might feel a touch on-the-nose — and that's fair.
+
+For me, the timing was everything. Some books don't teach you anything new; they just say the thing you already half-knew, out loud, at the moment you needed to hear it.
+
+I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
+
+> The only way to learn is to live.
+6:T752,
 There's a version of success that society hands you early: graduate on time, land the right job, know exactly where you're going by 23. And if you don't — if you're 22 and still unsure, 25 and pivoting, 28 and starting over — the world makes you feel like you've already missed something.
 
 You haven't.
@@ -39,7 +167,7 @@ You don't need a 10-year plan. You need a next step you believe in.
 The best lives I've seen aren't the ones that followed the plan. They're the ones built by people who stayed curious, stayed honest, and kept moving — even when they didn't know exactly where they were going.
 
 That's enough. That's more than enough.
-5:T742,
+7:T742,
 We live in a culture that treats busyness as a badge of honor. "How are you?" — "Busy." As if the fullness of a calendar is proof of a life well-lived.
 
 I used to wear it too. The packed schedule, the back-to-back commitments, the pride of having no time to pause. And underneath it all, a quiet exhaustion I kept dismissing.
@@ -81,7 +209,7 @@ The world will always have more for you to do. There will always be another task
 The question isn't whether you can do more. It's whether what you're doing is worth the life you're spending on it.
 
 Slow down enough to ask.
-6:T898,
+8:T898,
 I picked up *The Psychology of Money* expecting finance tips. What I found instead was a quiet excavation of human nature — how we reason, how we rationalize, and how rarely our decisions about money are actually about money.
 
 ---
@@ -129,7 +257,7 @@ Those aren't finance questions. They're life questions. And that's exactly the p
 ---
 
 *Read it. Slowly. With a pen.*
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32","children":["$","section",null,{"className":"pt-16 space-y-4","children":[["$","$L2",null,{"className":"flex flex-col items-center text-center gap-5","children":[["$","span",null,{"className":"inline-flex items-center rounded-full border transition-all px-6 py-2 bg-primary/10 border-primary/20 text-primary font-black tracking-widest uppercase text-[10px]","children":"Writings"}],["$","h1",null,{"className":"text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15] text-foreground","children":"All Thoughts"}],["$","p",null,{"className":"text-lg md:text-xl leading-relaxed max-w-xl text-muted-foreground","children":"Reflections on youth, slow living, and the books that shape how I see the world."}]]}],["$","$L3",null,{"posts":[{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$4","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read"},{"slug":"the-quiet-power-of-doing-less","content":"$5","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read"},{"slug":"what-the-psychology-of-money-taught-me","content":"$6","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read"}]}]]}]}],["$L7"],"$L8"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"d4q0Z2e-Xxbk6OP-ACe_T"}
-7:["$","script","script-0",{"src":"/_next/static/chunks/0ke_v7fju~9z..js","async":true}]
-8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
-b:null
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32","children":["$","section",null,{"className":"pt-16 space-y-4","children":[["$","$L2",null,{"className":"flex flex-col items-center text-center gap-5","children":[["$","span",null,{"className":"inline-flex items-center rounded-full border transition-all px-6 py-2 bg-primary/10 border-primary/20 text-primary font-black tracking-widest uppercase text-[10px]","children":"Writings"}],["$","h1",null,{"className":"text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15] text-foreground","children":"All Thoughts"}],["$","p",null,{"className":"text-lg md:text-xl leading-relaxed max-w-xl text-muted-foreground","children":"Reflections on youth, slow living, and the books that shape how I see the world."}]]}],["$","$L3",null,{"posts":[{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$4","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read"},{"slug":"the-midnight-library","content":"$5","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read"},{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$6","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read"},{"slug":"the-quiet-power-of-doing-less","content":"$7","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read"},{"slug":"what-the-psychology-of-money-taught-me","content":"$8","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read"}]}]]}]}],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"pFzjdCWgIsSY366QLy6iY"}
+9:["$","script","script-0",{"src":"/_next/static/chunks/10a_drqwjuifi.js","async":true}]
+a:["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]
+d:null
