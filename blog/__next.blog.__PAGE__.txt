@@ -1,9 +1,8 @@
 1:"$Sreact.fragment"
-2:I[7723,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10a_drqwjuifi.js"],"FadeIn"]
-3:I[9264,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10a_drqwjuifi.js"],"BlogClient"]
-b:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-c:"$Sreact.suspense"
-4:Td74,
+2:I[9264,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0tiabrx~sm9kd.js"],"BlogClient"]
+a:I[97367,["/_next/static/chunks/0qc6vhe-ytu6k.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/09.i0hq.562uz.js","/_next/static/chunks/04d87e4aw-nzq.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+b:"$Sreact.suspense"
+3:Td74,
 I judged this book by its cover. Literally.
 
 It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
@@ -67,7 +66,7 @@ If you're tired in the quiet way, or you've forgotten how to be soft with yourse
 I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
 
 > "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
-5:Te47,
+4:Te47,
 It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been talking about you the whole time without ever asking permission.
 
 I'd been carrying a quiet question for months: what if I'd chosen differently?
@@ -131,7 +130,7 @@ For me, the timing was everything. Some books don't teach you anything new; they
 I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
 
 > The only way to learn is to live.
-6:T752,
+5:T752,
 There's a version of success that society hands you early: graduate on time, land the right job, know exactly where you're going by 23. And if you don't — if you're 22 and still unsure, 25 and pivoting, 28 and starting over — the world makes you feel like you've already missed something.
 
 You haven't.
@@ -167,7 +166,7 @@ You don't need a 10-year plan. You need a next step you believe in.
 The best lives I've seen aren't the ones that followed the plan. They're the ones built by people who stayed curious, stayed honest, and kept moving — even when they didn't know exactly where they were going.
 
 That's enough. That's more than enough.
-7:T742,
+6:T742,
 We live in a culture that treats busyness as a badge of honor. "How are you?" — "Busy." As if the fullness of a calendar is proof of a life well-lived.
 
 I used to wear it too. The packed schedule, the back-to-back commitments, the pride of having no time to pause. And underneath it all, a quiet exhaustion I kept dismissing.
@@ -209,7 +208,7 @@ The world will always have more for you to do. There will always be another task
 The question isn't whether you can do more. It's whether what you're doing is worth the life you're spending on it.
 
 Slow down enough to ask.
-8:T898,
+7:T898,
 I picked up *The Psychology of Money* expecting finance tips. What I found instead was a quiet excavation of human nature — how we reason, how we rationalize, and how rarely our decisions about money are actually about money.
 
 ---
@@ -257,7 +256,7 @@ Those aren't finance questions. They're life questions. And that's exactly the p
 ---
 
 *Read it. Slowly. With a pen.*
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32","children":["$","section",null,{"className":"pt-16 space-y-4","children":[["$","$L2",null,{"className":"flex flex-col items-center text-center gap-5","children":[["$","span",null,{"className":"inline-flex items-center rounded-full border transition-all px-6 py-2 bg-primary/10 border-primary/20 text-primary font-black tracking-widest uppercase text-[10px]","children":"Writings"}],["$","h1",null,{"className":"text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15] text-foreground","children":"All Thoughts"}],["$","p",null,{"className":"text-lg md:text-xl leading-relaxed max-w-xl text-muted-foreground","children":"Reflections on youth, slow living, and the books that shape how I see the world."}]]}],["$","$L3",null,{"posts":[{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$4","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read"},{"slug":"the-midnight-library","content":"$5","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read"},{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$6","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read"},{"slug":"the-quiet-power-of-doing-less","content":"$7","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read"},{"slug":"what-the-psychology-of-money-taught-me","content":"$8","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read"}]}]]}]}],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"pFzjdCWgIsSY366QLy6iY"}
-9:["$","script","script-0",{"src":"/_next/static/chunks/10a_drqwjuifi.js","async":true}]
-a:["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]
-d:null
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32","children":["$","section",null,{"className":"pt-10","children":["$","$L2",null,{"posts":[{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$3","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read"},{"slug":"the-midnight-library","content":"$4","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read"},{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$5","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read"},{"slug":"the-quiet-power-of-doing-less","content":"$6","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read"},{"slug":"what-the-psychology-of-money-taught-me","content":"$7","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read"}]}]}]}],["$L8"],"$L9"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"nS_VXfTig-GQtUS3aWaGY"}
+8:["$","script","script-0",{"src":"/_next/static/chunks/0tiabrx~sm9kd.js","async":true}]
+9:["$","$La",null,{"children":["$","$b",null,{"name":"Next.MetadataOutlet","children":"$@c"}]}]
+c:null
