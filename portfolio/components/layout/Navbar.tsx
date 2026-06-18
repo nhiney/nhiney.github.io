@@ -55,7 +55,7 @@ export function Navbar() {
     >
       <Container className="flex h-16 items-center justify-between py-3">
 
-        {/* ① Left — name + introduction badge */}
+        {/* ① Left — name + portfolio badge */}
         <div className="flex items-center gap-3 shrink-0">
           <Link
             href="/"
@@ -64,17 +64,11 @@ export function Navbar() {
             Nguyễn Thị Yến Nhi
           </Link>
 
-          <Link href="/portfolio" className="hidden xl:block">
-            <AnimatedGradientText className="py-2 px-5 text-sm cursor-pointer">
-              🚀{" "}
-              <span className="mx-2 inline-block h-4 w-[1px] shrink-0 bg-gray-400/60 align-middle" />
+          <Link href="/portfolio" className="hidden md:block">
+            <AnimatedGradientText className="py-1.5 px-4 text-sm cursor-pointer">
               <span className="animate-gradient inline bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent font-semibold">
                 {t("nav.portfolio")}
               </span>
-              <ChevronRight
-                size={14}
-                className="ml-1.5 inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
-              />
             </AnimatedGradientText>
           </Link>
         </div>
@@ -82,7 +76,7 @@ export function Navbar() {
         {/* ② Right — nav links + controls (natural width, empty space in the middle) */}
         <div className="hidden items-center gap-2 md:flex shrink-0">
           <nav className="flex items-center gap-5">
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.filter((item) => item.name !== "Portfolio").map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -181,17 +175,25 @@ export function Navbar() {
                           onClick={() => setMobileOpen(false)}
                           className={cn(
                             "group flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium transition-colors",
-                            active
-                              ? "bg-primary/10 text-foreground"
-                              : "text-muted-foreground hover:bg-primary/5 hover:text-foreground"
+                            item.name === "Portfolio"
+                              ? "bg-primary/8 border border-primary/20"
+                              : active
+                                ? "bg-primary/10 text-foreground"
+                                : "text-muted-foreground hover:bg-primary/5 hover:text-foreground"
                           )}
                         >
-                          <span>{t(`nav.${item.name.toLowerCase()}`)}</span>
+                          {item.name === "Portfolio" ? (
+                            <span className="animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:300%_100%] bg-clip-text text-transparent font-semibold">
+                              {t("nav.portfolio")}
+                            </span>
+                          ) : (
+                            <span>{t(`nav.${item.name.toLowerCase()}`)}</span>
+                          )}
                           <ChevronRight
                             size={16}
                             className={cn(
                               "transition-transform duration-200 group-hover:translate-x-0.5",
-                              active ? "text-primary" : "text-muted-foreground/60"
+                              active || item.name === "Portfolio" ? "text-primary" : "text-muted-foreground/60"
                             )}
                           />
                         </Link>

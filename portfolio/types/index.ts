@@ -11,10 +11,19 @@ export interface PostFrontmatter {
   demo?: string;
 }
 
+export interface PostTranslation {
+  title: string;
+  description: string;
+  content: string;
+  readingTime: string;
+}
+
 export interface Post extends PostFrontmatter {
   slug: string;
   content: string;
   readingTime: string;
+  /** Per-locale variants (keyed by language code, always includes "en"). */
+  i18n?: Record<string, PostTranslation>;
 }
 
 export interface ProjectFrontmatter extends PostFrontmatter {
