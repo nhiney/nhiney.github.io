@@ -11,7 +11,6 @@ import {
   ChevronRight,
   Clock,
   ExternalLink,
-  GraduationCap,
   Image as ImageIcon,
   ShieldCheck,
   X,
@@ -47,6 +46,19 @@ const CATEGORY_SHORT: Record<string, string> = {
   "Mobile Development": "Mobile",
   "Internet Technology": "Internet",
 };
+
+const CATEGORY_DOT: Record<string, string> = {
+  Academic: "bg-violet-400",
+  "Mobile Development": "bg-blue-400",
+  Backend: "bg-red-400",
+  Security: "bg-emerald-400",
+  "Internet Technology": "bg-cyan-400",
+  AI: "bg-fuchsia-400",
+  "Project Management": "bg-amber-400",
+  Design: "bg-orange-400",
+};
+
+const dotColor = (category: string) => CATEGORY_DOT[category] ?? "bg-primary";
 
 export function CertificatesClient() {
   const { t, language } = useLanguage();
@@ -90,31 +102,17 @@ export function CertificatesClient() {
     [categoryFilter],
   );
 
-  const allCourses: CourseEntry[] = useMemo(() => {
-    const out: CourseEntry[] = [];
-    for (const cert of certificatesData) {
-      if (isStandaloneCourse(cert)) {
-        out.push({
-          course: { title: cert.title, image: cert.image ?? null, verifyUrl: cert.verifyUrl ?? null, date: cert.date } as Course,
-          cert,
-          isStandalone: true,
-        });
-      } else {
-        for (const course of cert.courses ?? []) {
-          out.push({ course, cert });
-        }
-      }
-    }
-    return out;
-  }, []);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
-  const filteredCourses = useMemo(
-    () =>
-      categoryFilter === "all"
-        ? allCourses
-        : allCourses.filter((c) => c.cert.category === categoryFilter),
-    [allCourses, categoryFilter],
-  );
+  const courseGroups = useMemo(() => {
+    const certs = certificatesData.filter((c) => !isStandaloneCourse(c));
+    const filtered = categoryFilter === "all" ? certs : certs.filter((c) => c.category === categoryFilter);
+    return filtered.map((cert) => ({
+      cert,
+      courses: cert.courses ?? [],
+      completed: (cert.courses ?? []).filter((c) => c.image).length,
+    }));
+  }, [categoryFilter]);
 
   const modalOpen = active !== null || activeCourse !== null;
   useEffect(() => {
@@ -316,81 +314,100 @@ export function CertificatesClient() {
         </Section>
       )}
 
-      {/* ── Courses Grid ── */}
+      {/* ── Courses Accordion ── */}
       {showCourses && (
         <Section className="pt-0 space-y-8">
           {viewMode === "all" && (
             <SectionHeader label={t("pages.certificates.filter.view_courses")} />
           )}
-          {filteredCourses.length === 0 ? (
+          {courseGroups.length === 0 ? (
             <EmptyState text={t("pages.certificates.filter.empty")} />
           ) : (
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredCourses.map(({ course, cert, isStandalone }, i) => (
-                <FadeIn key={`${cert.id}-${course.title}`} delay={Math.min(i, 12) * 0.03}>
-                  <button
-                    type="button"
-                    onClick={() => handleCourseClick(course, cert)}
-                    className="group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-border/50 bg-card/40 text-left transition-all duration-300 hover:border-primary/60 hover:bg-primary/[0.04] hover:shadow-[0_4px_20px_-8px_hsl(var(--primary)/0.35)]"
-                  >
-                    {/* Left accent bar */}
-                    <div className="absolute inset-y-0 left-0 w-[3px] origin-top scale-y-0 rounded-r-full bg-primary transition-transform duration-300 group-hover:scale-y-100" />
+            <div className="space-y-2.5">
+              {courseGroups.map(({ cert, courses, completed }, gi) => {
+                const isOpen = openAccordion === cert.id;
+                return (
+                  <FadeIn key={cert.id} delay={gi * 0.05}>
+                    <div className="overflow-hidden rounded-2xl border border-border/50 bg-card/30">
+                      {/* Accordion header */}
+                      <button
+                        type="button"
+                        onClick={() => setOpenAccordion(isOpen ? null : cert.id)}
+                        className="flex w-full items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-foreground/[0.03]"
+                      >
+                        <span className={`h-2 w-2 shrink-0 rounded-full ${dotColor(cert.category)}`} />
+                        <span className="flex-1 text-sm font-semibold text-foreground leading-snug">
+                          {cert.title}
+                        </span>
+                        <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground/60 font-medium">
+                          {completed}/{courses.length}
+                        </span>
+                        <ChevronDown
+                          size={15}
+                          className={`shrink-0 text-muted-foreground/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                        />
+                      </button>
 
-                    {/* Body */}
-                    <div className="flex flex-1 flex-col gap-2 p-4 pl-5">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md border transition-all duration-300 ${
-                            course.image
-                              ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500/20 group-hover:scale-110"
-                              : "border-border/40 bg-muted/20 text-muted-foreground/40"
-                          }`}
-                        >
-                          {course.image ? (
-                            <Check size={11} strokeWidth={2.5} />
-                          ) : (
-                            <GraduationCap size={11} />
-                          )}
-                        </div>
-                        <span
-                          className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[9px] font-black uppercase tracking-widest ${
-                            CATEGORY_COLORS[cert.category] ??
-                            "bg-primary/10 text-primary border-primary/20"
-                          }`}
-                        >
-                          {cert.category}
-                        </span>
-                      </div>
-                      <h4 className="line-clamp-3 text-sm font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
-                        {locTitle(course)}
-                      </h4>
-                      {course.date && (
-                        <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
-                          {locDate(course.date)}
-                        </div>
-                      )}
+                      {/* Animated course list */}
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            key="body"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+                            className="overflow-hidden"
+                          >
+                            <div className="border-t border-border/40 px-4 pb-4 pt-2.5 space-y-1">
+                              {courses.map((course, idx) => {
+                                const hasImage = !!course.image;
+                                return (
+                                  <button
+                                    key={course.title}
+                                    type="button"
+                                    onClick={() => hasImage ? handleCourseClick(course, cert) : undefined}
+                                    disabled={!hasImage}
+                                    className={`group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-colors ${
+                                      hasImage
+                                        ? "cursor-pointer border border-transparent hover:border-primary/30 hover:bg-primary/5"
+                                        : "cursor-default border border-dashed border-border/30 opacity-55"
+                                    }`}
+                                  >
+                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted/50 text-[10px] font-semibold tabular-nums text-muted-foreground/70">
+                                      {idx + 1}
+                                    </span>
+                                    <span className={`flex-1 truncate text-xs font-medium transition-colors ${hasImage ? "text-foreground/85 group-hover:text-primary" : "text-muted-foreground/55"}`}>
+                                      {locTitle(course)}
+                                    </span>
+                                    {course.date && (
+                                      <span className="shrink-0 text-[10px] tabular-nums text-muted-foreground/45">
+                                        {locDate(course.date)}
+                                      </span>
+                                    )}
+                                    {hasImage ? (
+                                      <>
+                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
+                                          <Check size={10} strokeWidth={3} />
+                                        </span>
+                                        <ChevronRight size={12} className="shrink-0 text-muted-foreground/40 transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
+                                      </>
+                                    ) : (
+                                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-border/40 bg-muted/30">
+                                        <Clock size={9} className="text-muted-foreground/40" />
+                                      </span>
+                                    )}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
-
-                    {/* Footer cố định */}
-                    <div className="flex items-center justify-between gap-2 border-t border-border/40 bg-background/30 px-4 py-2.5 transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/[0.06]">
-                      <span className="max-w-[160px] truncate text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/50">
-                        {isStandalone ? "—" : cert.title}
-                      </span>
-                      {course.image ? (
-                        <span className="inline-flex shrink-0 items-center gap-1 text-[9px] font-black uppercase tracking-widest text-primary transition-all duration-300 group-hover:gap-1.5">
-                          <ImageIcon size={10} />
-                          {t("pages.certificates.view_detail")}
-                          <ChevronRight size={9} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                        </span>
-                      ) : (
-                        <span className="shrink-0 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/30">
-                          {t("pages.certificates.pending")}
-                        </span>
-                      )}
-                    </div>
-                  </button>
-                </FadeIn>
-              ))}
+                  </FadeIn>
+                );
+              })}
             </div>
           )}
         </Section>
