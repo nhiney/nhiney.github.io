@@ -1,23 +1,23 @@
 1:"$Sreact.fragment"
-b:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
+b:I[68027,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
 :HL["/_next/static/chunks/0mp-vl6gun0ub.css","style"]
-:HL["/_next/static/chunks/0any~cn4vp4uj.css","style"]
+:HL["/_next/static/chunks/0x494b.ic7lm8.css","style"]
 :HL["/_next/static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T8f2,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@_tolanhy","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-18"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["","blog",""],"q":"","i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0mp-vl6gun0ub.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0any~cn4vp4uj.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0_y6ygkv0tmii.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/15l9bwyx.yo3j.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/030fvn89km8mh.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0ul2y5o67.213.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc","$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"GyN0hb5RG8yCIZ0ZCsgxc"}
-e:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
-f:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
-10:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
-11:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
-12:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
-13:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-14:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-15:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
-16:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
-1f:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:T8f2,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@_tolanhy","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-18"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["","blog",""],"q":"","i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0mp-vl6gun0ub.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0x494b.ic7lm8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0hd566~ng~r~4.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/15l9bwyx.yo3j.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0ul2y5o67.213.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/030fvn89km8mh.js","async":true,"nonce":"$undefined"}],["$","script","script-5",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc","$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"23ughr4Qja5YjVCeD_wGB"}
+e:I[31344,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
+f:I[87236,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
+10:I[31612,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
+11:I[77066,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
+12:I[92190,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
+13:I[39756,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+14:I[37457,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+15:I[7723,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
+16:I[22016,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
+1f:I[97367,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 20:"$Sreact.suspense"
-23:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
-25:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
+23:I[97367,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
+25:I[97367,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
 3:["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}]
 4:["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}]
 5:["$","link",null,{"rel":"dns-prefetch","href":"https://github.com"}]
@@ -28,9 +28,9 @@ f:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygk
 9:"$W22"
 a:["$","$1","h",{"children":[null,["$","$L23",null,{"children":"$L24"}],["$","div",null,{"hidden":true,"children":["$","$L25",null,{"children":["$","$20",null,{"name":"Next.Metadata","children":"$L26"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
 c:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0mp-vl6gun0ub.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0any~cn4vp4uj.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-27:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-28:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
+d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0x494b.ic7lm8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+27:I[58541,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+28:I[29839,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
 17:["$","$L16",null,{"href":"/mind-map","className":"group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary","children":[["$","$L27",null,{"ref":"$undefined","iconNode":[["path",{"d":"m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z","key":"cpyugq"}],["path",{"d":"M12 22v-3","key":"kmzjlo"}]],"className":"lucide-tree-pine h-3.5 w-3.5 transition-transform group-hover:scale-110"}],["$","span",null,{"className":"hidden sm:inline","children":"Mind Map"}]]}]
 18:["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}]
 19:["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]]}]
@@ -38,189 +38,153 @@ d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0any~cn4vp4uj
 1b:["$","$L28",null,{}]
 1c:["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}]
 1d:["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]
-29:I[9264,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0z6ojlzfvbk3z.js"],"BlogClient"]
-2a:T1819,
-Bài viết này là khung đầu tiên cho bài review bằng tiếng Việt về *Đắc Nhân Tâm* (*How to Win Friends and Influence People*). Mình muốn viết nó chậm hơn một chút, để phần cảm nhận sau này được đặt trên ghi chú thật, không phải trên vài câu tóm tắt nghe có vẻ đúng.
+29:I[9264,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0z6ojlzfvbk3z.js"],"BlogClient"]
+2a:T1c77,
+Có những cuốn sách rất dễ bị đọc như một danh sách mẹo. *Đắc Nhân Tâm* cũng dễ rơi vào cảm giác đó nếu tôi chỉ mở nó ra để tìm cách nói sao cho người khác thích mình hơn, hoặc làm sao để một cuộc trò chuyện đi đúng ý mình hơn.
 
-Khi chưa có trích dẫn, chương sách, hay câu chuyện cá nhân cụ thể, cách trung thực nhất là giữ bài viết ở dạng một khung rõ ràng: điều gì đã biết, điều gì cần đọc lại kỹ hơn, và điều gì chỉ nên viết khi có trải nghiệm thật để nâng đỡ.
-
----
-
-## Điểm xuất phát
-
-Trước khi viết sâu hơn, phần mở bài nên trả lời vài câu hỏi ngắn:
-
-- **Cần bổ sung:** Vì sao mình muốn viết về *Đắc Nhân Tâm* ở thời điểm này?
-- **Cần bổ sung:** Đây là lần đầu mình đọc, đọc lại, hay chỉ đang ghi lại vài điều còn nhớ?
-- **Cần bổ sung:** Có tình huống giao tiếp hoặc mối quan hệ nào khiến mình nghĩ đến cuốn sách này không?
+Nhưng tôi muốn đọc cuốn sách này theo một cách chậm hơn: như một lời nhắc về việc đối diện với người khác bằng sự tử tế, rõ ràng và đủ thành thật. Với tôi, giá trị của những bài học giao tiếp không nằm ở chỗ chúng giúp mình "thắng" trong một cuộc nói chuyện, mà ở chỗ chúng khiến mình ít vô tâm hơn trong cách lắng nghe, phản hồi và tạo ảnh hưởng.
 
 ---
 
-## Những thông tin đang có
+## Điều tôi muốn giữ lại trước tiên
 
-- Chủ đề bài viết: cuốn sách *Đắc Nhân Tâm*.
-- Hướng nội dung: ghi lại điều người viết tự rút ra về giao tiếp, các mối quan hệ, và cách tạo ảnh hưởng mà vẫn giữ sự chân thành.
-- Giọng văn: tiếng Việt tự nhiên, giống một người đang ngồi kể lại điều mình đang học.
-- Điều cần tránh: viết như tóm tắt sách, liệt kê mẹo ứng xử, hoặc thêm tác giả, mốc thời gian, trích dẫn, chương sách và câu chuyện cá nhân chưa được cung cấp.
+Điểm làm tôi chú ý không phải là chuyện phải trở thành một người nói chuyện thật khéo. Tôi quan tâm hơn đến câu hỏi phía sau: nếu biết cách giao tiếp tốt hơn, tôi sẽ dùng điều đó để làm gì?
 
----
+Một lời nói dễ nghe có thể giúp cuộc trò chuyện nhẹ đi, nhưng cũng có thể trở thành cách né tránh sự thật. Một sự quan tâm đúng lúc có thể khiến người khác thấy được lắng nghe, nhưng cũng có thể bị dùng như một công cụ để lấy thiện cảm. Vì vậy, khi nghĩ về *Đắc Nhân Tâm*, tôi không muốn tách kỹ năng khỏi ý định.
 
-## Ghi chú khi đọc
-
-Phần này chỉ nên được hoàn thiện khi có ghi chú thật từ quá trình đọc. Mỗi ý nên đi theo ba lớp: quan sát từ sách, diễn giải cá nhân, và bài học muốn thử.
-
-### Quan sát từ sách
-
-- **Cần bổ sung:** Ý, đoạn, hoặc tình huống nào trong sách làm mình nghĩ lâu nhất?
-- **Cần bổ sung:** Vì sao chi tiết đó đáng giữ lại với mình?
-- **Cần bổ sung:** Ghi lại bằng lời của mình, không chép lại hoặc diễn giải trích dẫn khi chưa có nguồn cụ thể.
-
-### Diễn giải cá nhân
-
-- **Cần bổ sung:** Điều đó khiến mình đặt lại câu hỏi gì về cách mình trò chuyện với người khác?
-- **Cần bổ sung:** Điều đó chạm vào thói quen giao tiếp nào của mình?
-- **Cần bổ sung:** Mình đồng ý hoàn toàn, đồng ý một phần, hay còn lấn cấn ở đâu?
-
-### Bài học muốn thử
-
-- **Cần bổ sung:** Sau khi đọc, mình muốn thử thay đổi điều gì trong cách trò chuyện với người khác?
-- **Cần bổ sung:** Bài học này có thể được thử trong hoàn cảnh nhỏ nào để không biến thành khẩu hiệu?
-- **Cần bổ sung:** Làm sao để thực hành điều đó mà vẫn tôn trọng cảm xúc và ranh giới của người đối diện?
+Với tôi, giao tiếp tốt bắt đầu từ một điều khá khiêm tốn: mình có thật sự xem người đối diện là một con người đầy đủ, hay chỉ xem họ là người cần được thuyết phục?
 
 ---
 
-## Một vài hướng suy nghĩ
+## Quan sát: giao tiếp không chỉ là nói cho hay
 
-Những phần dưới đây là khung để phát triển bài review sau này. Mỗi phần nên có ví dụ thật hoặc một đoạn tự vấn cụ thể trước khi đăng như bài viết hoàn chỉnh.
+Nếu chỉ nhìn giao tiếp tốt như việc nói mạch lạc, biết chọn từ và biết làm cho ý của mình nghe hợp lý, bài học sẽ bị thu hẹp quá nhiều. Những điều đó vẫn quan trọng, nhưng trong các mối quan hệ hằng ngày, nói hay chỉ là một phần rất nhỏ.
 
-### Giao tiếp không chỉ là nói cho hay
+Một cuộc trò chuyện có thể rất trơn tru mà vẫn lạnh. Một lời khuyên có thể rất đúng mà vẫn làm người nghe thấy bị đặt xuống thấp hơn. Một câu phản hồi có thể hợp lý trên giấy, nhưng lại thiếu mất sự dịu dàng cần có với người đang nghe nó.
 
-- **Cần bổ sung:** Trước đây mình thường nghĩ "giao tiếp tốt" nghĩa là gì?
-- **Cần bổ sung:** Có lúc nào mình nói đúng nhưng vẫn làm người khác thấy xa cách không?
-- **Cần bổ sung:** Điều gì giúp một cuộc trò chuyện trở nên dễ chịu hơn: thắng lý lẽ, hay thật sự hiểu người đối diện?
+Vì vậy, bài học tôi muốn giữ không phải là nói sao cho sắc hơn. Tôi muốn học cách chậm lại trước khi phản hồi, nghe kỹ hơn trước khi kết luận, và để người khác có cảm giác rằng họ không phải tự bảo vệ mình trong mọi cuộc trò chuyện.
 
-Không cần làm phần này thành lời khuyên cho tất cả mọi người. Chỉ cần viết thật về một khoảnh khắc mình nhận ra mình có thể tử tế hơn, kiên nhẫn hơn, hoặc bớt vội phán xét hơn.
+<KeyTakeaway label="Điều đọng lại" tone="sage">
 
-### Ảnh hưởng cần đi cùng sự tôn trọng
+Giao tiếp tốt không phải là làm cho mình nổi bật hơn trong cuộc trò chuyện, mà là làm cho người đối diện bớt cô đơn hơn khi được lắng nghe.
 
-Một bài viết về *Đắc Nhân Tâm* sẽ đáng tin hơn nếu không chỉ nói về việc làm người khác thích mình. Phần này nên giữ lại một chút tự vấn:
-
-- **Cần bổ sung:** Mình muốn tạo ảnh hưởng theo cách nào để vẫn tôn trọng người khác?
-- **Cần bổ sung:** Có điều gì trong việc "thu phục lòng người" khiến mình cần cảnh giác?
-- **Cần bổ sung:** Khi nào sự tinh tế trong giao tiếp có thể trượt thành việc cố làm vừa lòng hoặc điều khiển cảm xúc người khác?
-- **Cần bổ sung:** Ranh giới nào mình muốn tự nhắc mình giữ lại trong các mối quan hệ?
+</KeyTakeaway>
 
 ---
 
-## Điều mình muốn mang theo
+## Diễn giải: chân thành là phần khó nhất
 
-Khi hoàn thiện bài viết, phần này nên gói lại thành vài điều nhỏ, cụ thể, có thể làm được trong đời sống hằng ngày. Mỗi ý nên đi kèm một lý do hoặc một tình huống thật, thay vì chỉ dừng ở lời khuyên chung chung:
+Điều dễ nhất khi đọc một cuốn sách về giao tiếp là biến mọi thứ thành công thức. Gặp người khác thì làm điều này. Muốn tạo thiện cảm thì nói điều kia. Muốn cuộc trò chuyện êm hơn thì chọn cách nọ.
 
-- **Cần bổ sung:** Một thói quen giao tiếp mình muốn luyện tập.
-- **Cần bổ sung:** Một điều mình muốn nhớ khi bất đồng với ai đó.
-- **Cần bổ sung:** Một cách mình muốn đối xử với người khác tử tế hơn sau khi đọc cuốn sách này.
-- **Cần bổ sung:** Một câu tự nhắc ngắn bằng lời của mình, không cần trích dẫn từ sách.
+Công thức có thể hữu ích, nhưng nếu thiếu chân thành, điều đó thường bị nhận ra rất nhanh. Người khác thường cảm nhận được khi mình đang thật sự quan tâm và khi mình chỉ đang làm đúng một "bước" nào đó. Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ.
+
+Tôi thích nghĩ về sự chân thành như một cách giữ cho kỹ năng có đạo đức. Mình có thể học cách nói mềm hơn, nhưng không phải để che giấu điều mình thật sự nghĩ. Mình có thể học cách quan tâm đến cảm xúc của người khác, nhưng không phải để điều khiển họ. Mình có thể muốn tạo ảnh hưởng, nhưng vẫn cần tôn trọng quyền không đồng ý của người đối diện.
+
+Đó là phần khó nhất: dùng sự khéo léo để làm mối quan hệ rõ ràng và tử tế hơn, chứ không phải để mọi thứ luôn thuận theo mình.
+
+---
+
+## Bài học muốn thử trong đời sống
+
+Tôi không muốn khép lại bài đọc này với một danh sách nguyên tắc nghe rất đúng nhưng không có chỗ để thực hành. Nếu có vài điều nhỏ để mang theo, tôi muốn chúng đủ gần với đời sống hằng ngày:
+
+- **Lắng nghe lâu hơn một chút trước khi trả lời.** Không phải im lặng để chờ tới lượt mình nói, mà thật sự nghe xem người kia đang cần được hiểu ở đâu.
+- **Nói điều tốt đẹp một cách cụ thể và thật lòng.** Một lời ghi nhận chỉ có ý nghĩa khi nó không được dùng như một kỹ thuật lấy lòng.
+- **Bất đồng mà không làm người khác thấy nhỏ lại.** Có những lúc mình vẫn cần nói rõ quan điểm, nhưng không nhất thiết phải thắng bằng cách khiến người đối diện mất mặt.
+- **Giữ ranh giới giữa tinh tế và làm vừa lòng.** Giao tiếp tử tế không có nghĩa là đồng ý với tất cả, cũng không có nghĩa là tự xóa mình để cuộc trò chuyện được êm.
+
+Những điều này nghe đơn giản, nhưng càng đơn giản thì càng dễ bị bỏ qua. Có lẽ một phần của việc trưởng thành trong giao tiếp là quay lại luyện những điều rất cơ bản: nghe cho trọn, nói cho thật, và phản hồi sao cho người khác vẫn giữ được phẩm giá của họ.
+
+---
+
+## Điều tôi còn lấn cấn
+
+Tôi vẫn muốn giữ một chút cảnh giác khi đọc bất kỳ lời khuyên nào về ảnh hưởng. Ảnh hưởng là một từ đẹp nếu nó đi cùng trách nhiệm, nhưng rất nguy hiểm nếu nó chỉ còn nghĩa là làm cho người khác đi theo ý mình.
+
+Vì vậy, điều tôi tự nhắc mình là: trước khi áp dụng một bài học giao tiếp, hãy kiểm tra ý định của mình. Mình đang muốn hiểu người kia hơn, hay chỉ muốn họ phản ứng theo cách mình mong muốn? Mình đang muốn cuộc trò chuyện rõ ràng hơn, hay chỉ muốn tránh một sự khó chịu cần thiết?
+
+Nếu câu trả lời không thành thật, mọi kỹ năng đều có thể trượt thành thao túng rất nhẹ nhàng.
 
 ---
 
 ## Kết lại
 
-Kết bài nên ngắn và thật. Không cần khẳng định rằng cuốn sách đã thay đổi mọi thứ. Khi hoàn thiện, phần này nên gom lại thành một điều đáng giữ bằng lời của mình:
+Tôi không muốn xem *Đắc Nhân Tâm* như một cuốn sách dạy mình cách trở nên dễ mến hơn bằng mọi giá. Cách đọc có ích hơn với tôi là xem nó như một lời nhắc: trong mọi cuộc trò chuyện, người đối diện không phải là một vấn đề cần xử lý, mà là một con người cần được tôn trọng.
 
-- **Cần bổ sung:** Sau tất cả, điều nhỏ nhất nhưng đáng giữ lại từ cuốn sách này là gì?
-- **Cần bổ sung:** Sau khi đọc hoặc nghĩ về *Đắc Nhân Tâm*, mình muốn trở thành người trò chuyện như thế nào?
-- **Cần bổ sung:** Nếu người đọc chỉ giữ lại một điều từ bài viết này, mình muốn đó là điều gì?
-2b:T1819,
-Bài viết này là khung đầu tiên cho bài review bằng tiếng Việt về *Đắc Nhân Tâm* (*How to Win Friends and Influence People*). Mình muốn viết nó chậm hơn một chút, để phần cảm nhận sau này được đặt trên ghi chú thật, không phải trên vài câu tóm tắt nghe có vẻ đúng.
+Nếu chỉ giữ lại một điều, tôi muốn giữ điều này: sự khéo léo đáng quý nhất là sự khéo léo khiến mình tử tế hơn, không phải khéo léo khiến mình thắng nhiều hơn.
+2b:T1c77,
+Có những cuốn sách rất dễ bị đọc như một danh sách mẹo. *Đắc Nhân Tâm* cũng dễ rơi vào cảm giác đó nếu tôi chỉ mở nó ra để tìm cách nói sao cho người khác thích mình hơn, hoặc làm sao để một cuộc trò chuyện đi đúng ý mình hơn.
 
-Khi chưa có trích dẫn, chương sách, hay câu chuyện cá nhân cụ thể, cách trung thực nhất là giữ bài viết ở dạng một khung rõ ràng: điều gì đã biết, điều gì cần đọc lại kỹ hơn, và điều gì chỉ nên viết khi có trải nghiệm thật để nâng đỡ.
+Nhưng tôi muốn đọc cuốn sách này theo một cách chậm hơn: như một lời nhắc về việc đối diện với người khác bằng sự tử tế, rõ ràng và đủ thành thật. Với tôi, giá trị của những bài học giao tiếp không nằm ở chỗ chúng giúp mình "thắng" trong một cuộc nói chuyện, mà ở chỗ chúng khiến mình ít vô tâm hơn trong cách lắng nghe, phản hồi và tạo ảnh hưởng.
 
 ---
 
-## Điểm xuất phát
+## Điều tôi muốn giữ lại trước tiên
 
-Trước khi viết sâu hơn, phần mở bài nên trả lời vài câu hỏi ngắn:
+Điểm làm tôi chú ý không phải là chuyện phải trở thành một người nói chuyện thật khéo. Tôi quan tâm hơn đến câu hỏi phía sau: nếu biết cách giao tiếp tốt hơn, tôi sẽ dùng điều đó để làm gì?
 
-- **Cần bổ sung:** Vì sao mình muốn viết về *Đắc Nhân Tâm* ở thời điểm này?
-- **Cần bổ sung:** Đây là lần đầu mình đọc, đọc lại, hay chỉ đang ghi lại vài điều còn nhớ?
-- **Cần bổ sung:** Có tình huống giao tiếp hoặc mối quan hệ nào khiến mình nghĩ đến cuốn sách này không?
+Một lời nói dễ nghe có thể giúp cuộc trò chuyện nhẹ đi, nhưng cũng có thể trở thành cách né tránh sự thật. Một sự quan tâm đúng lúc có thể khiến người khác thấy được lắng nghe, nhưng cũng có thể bị dùng như một công cụ để lấy thiện cảm. Vì vậy, khi nghĩ về *Đắc Nhân Tâm*, tôi không muốn tách kỹ năng khỏi ý định.
 
----
-
-## Những thông tin đang có
-
-- Chủ đề bài viết: cuốn sách *Đắc Nhân Tâm*.
-- Hướng nội dung: ghi lại điều người viết tự rút ra về giao tiếp, các mối quan hệ, và cách tạo ảnh hưởng mà vẫn giữ sự chân thành.
-- Giọng văn: tiếng Việt tự nhiên, giống một người đang ngồi kể lại điều mình đang học.
-- Điều cần tránh: viết như tóm tắt sách, liệt kê mẹo ứng xử, hoặc thêm tác giả, mốc thời gian, trích dẫn, chương sách và câu chuyện cá nhân chưa được cung cấp.
+Với tôi, giao tiếp tốt bắt đầu từ một điều khá khiêm tốn: mình có thật sự xem người đối diện là một con người đầy đủ, hay chỉ xem họ là người cần được thuyết phục?
 
 ---
 
-## Ghi chú khi đọc
+## Quan sát: giao tiếp không chỉ là nói cho hay
 
-Phần này chỉ nên được hoàn thiện khi có ghi chú thật từ quá trình đọc. Mỗi ý nên đi theo ba lớp: quan sát từ sách, diễn giải cá nhân, và bài học muốn thử.
+Nếu chỉ nhìn giao tiếp tốt như việc nói mạch lạc, biết chọn từ và biết làm cho ý của mình nghe hợp lý, bài học sẽ bị thu hẹp quá nhiều. Những điều đó vẫn quan trọng, nhưng trong các mối quan hệ hằng ngày, nói hay chỉ là một phần rất nhỏ.
 
-### Quan sát từ sách
+Một cuộc trò chuyện có thể rất trơn tru mà vẫn lạnh. Một lời khuyên có thể rất đúng mà vẫn làm người nghe thấy bị đặt xuống thấp hơn. Một câu phản hồi có thể hợp lý trên giấy, nhưng lại thiếu mất sự dịu dàng cần có với người đang nghe nó.
 
-- **Cần bổ sung:** Ý, đoạn, hoặc tình huống nào trong sách làm mình nghĩ lâu nhất?
-- **Cần bổ sung:** Vì sao chi tiết đó đáng giữ lại với mình?
-- **Cần bổ sung:** Ghi lại bằng lời của mình, không chép lại hoặc diễn giải trích dẫn khi chưa có nguồn cụ thể.
+Vì vậy, bài học tôi muốn giữ không phải là nói sao cho sắc hơn. Tôi muốn học cách chậm lại trước khi phản hồi, nghe kỹ hơn trước khi kết luận, và để người khác có cảm giác rằng họ không phải tự bảo vệ mình trong mọi cuộc trò chuyện.
 
-### Diễn giải cá nhân
+<KeyTakeaway label="Điều đọng lại" tone="sage">
 
-- **Cần bổ sung:** Điều đó khiến mình đặt lại câu hỏi gì về cách mình trò chuyện với người khác?
-- **Cần bổ sung:** Điều đó chạm vào thói quen giao tiếp nào của mình?
-- **Cần bổ sung:** Mình đồng ý hoàn toàn, đồng ý một phần, hay còn lấn cấn ở đâu?
+Giao tiếp tốt không phải là làm cho mình nổi bật hơn trong cuộc trò chuyện, mà là làm cho người đối diện bớt cô đơn hơn khi được lắng nghe.
 
-### Bài học muốn thử
-
-- **Cần bổ sung:** Sau khi đọc, mình muốn thử thay đổi điều gì trong cách trò chuyện với người khác?
-- **Cần bổ sung:** Bài học này có thể được thử trong hoàn cảnh nhỏ nào để không biến thành khẩu hiệu?
-- **Cần bổ sung:** Làm sao để thực hành điều đó mà vẫn tôn trọng cảm xúc và ranh giới của người đối diện?
+</KeyTakeaway>
 
 ---
 
-## Một vài hướng suy nghĩ
+## Diễn giải: chân thành là phần khó nhất
 
-Những phần dưới đây là khung để phát triển bài review sau này. Mỗi phần nên có ví dụ thật hoặc một đoạn tự vấn cụ thể trước khi đăng như bài viết hoàn chỉnh.
+Điều dễ nhất khi đọc một cuốn sách về giao tiếp là biến mọi thứ thành công thức. Gặp người khác thì làm điều này. Muốn tạo thiện cảm thì nói điều kia. Muốn cuộc trò chuyện êm hơn thì chọn cách nọ.
 
-### Giao tiếp không chỉ là nói cho hay
+Công thức có thể hữu ích, nhưng nếu thiếu chân thành, điều đó thường bị nhận ra rất nhanh. Người khác thường cảm nhận được khi mình đang thật sự quan tâm và khi mình chỉ đang làm đúng một "bước" nào đó. Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ.
 
-- **Cần bổ sung:** Trước đây mình thường nghĩ "giao tiếp tốt" nghĩa là gì?
-- **Cần bổ sung:** Có lúc nào mình nói đúng nhưng vẫn làm người khác thấy xa cách không?
-- **Cần bổ sung:** Điều gì giúp một cuộc trò chuyện trở nên dễ chịu hơn: thắng lý lẽ, hay thật sự hiểu người đối diện?
+Tôi thích nghĩ về sự chân thành như một cách giữ cho kỹ năng có đạo đức. Mình có thể học cách nói mềm hơn, nhưng không phải để che giấu điều mình thật sự nghĩ. Mình có thể học cách quan tâm đến cảm xúc của người khác, nhưng không phải để điều khiển họ. Mình có thể muốn tạo ảnh hưởng, nhưng vẫn cần tôn trọng quyền không đồng ý của người đối diện.
 
-Không cần làm phần này thành lời khuyên cho tất cả mọi người. Chỉ cần viết thật về một khoảnh khắc mình nhận ra mình có thể tử tế hơn, kiên nhẫn hơn, hoặc bớt vội phán xét hơn.
-
-### Ảnh hưởng cần đi cùng sự tôn trọng
-
-Một bài viết về *Đắc Nhân Tâm* sẽ đáng tin hơn nếu không chỉ nói về việc làm người khác thích mình. Phần này nên giữ lại một chút tự vấn:
-
-- **Cần bổ sung:** Mình muốn tạo ảnh hưởng theo cách nào để vẫn tôn trọng người khác?
-- **Cần bổ sung:** Có điều gì trong việc "thu phục lòng người" khiến mình cần cảnh giác?
-- **Cần bổ sung:** Khi nào sự tinh tế trong giao tiếp có thể trượt thành việc cố làm vừa lòng hoặc điều khiển cảm xúc người khác?
-- **Cần bổ sung:** Ranh giới nào mình muốn tự nhắc mình giữ lại trong các mối quan hệ?
+Đó là phần khó nhất: dùng sự khéo léo để làm mối quan hệ rõ ràng và tử tế hơn, chứ không phải để mọi thứ luôn thuận theo mình.
 
 ---
 
-## Điều mình muốn mang theo
+## Bài học muốn thử trong đời sống
 
-Khi hoàn thiện bài viết, phần này nên gói lại thành vài điều nhỏ, cụ thể, có thể làm được trong đời sống hằng ngày. Mỗi ý nên đi kèm một lý do hoặc một tình huống thật, thay vì chỉ dừng ở lời khuyên chung chung:
+Tôi không muốn khép lại bài đọc này với một danh sách nguyên tắc nghe rất đúng nhưng không có chỗ để thực hành. Nếu có vài điều nhỏ để mang theo, tôi muốn chúng đủ gần với đời sống hằng ngày:
 
-- **Cần bổ sung:** Một thói quen giao tiếp mình muốn luyện tập.
-- **Cần bổ sung:** Một điều mình muốn nhớ khi bất đồng với ai đó.
-- **Cần bổ sung:** Một cách mình muốn đối xử với người khác tử tế hơn sau khi đọc cuốn sách này.
-- **Cần bổ sung:** Một câu tự nhắc ngắn bằng lời của mình, không cần trích dẫn từ sách.
+- **Lắng nghe lâu hơn một chút trước khi trả lời.** Không phải im lặng để chờ tới lượt mình nói, mà thật sự nghe xem người kia đang cần được hiểu ở đâu.
+- **Nói điều tốt đẹp một cách cụ thể và thật lòng.** Một lời ghi nhận chỉ có ý nghĩa khi nó không được dùng như một kỹ thuật lấy lòng.
+- **Bất đồng mà không làm người khác thấy nhỏ lại.** Có những lúc mình vẫn cần nói rõ quan điểm, nhưng không nhất thiết phải thắng bằng cách khiến người đối diện mất mặt.
+- **Giữ ranh giới giữa tinh tế và làm vừa lòng.** Giao tiếp tử tế không có nghĩa là đồng ý với tất cả, cũng không có nghĩa là tự xóa mình để cuộc trò chuyện được êm.
+
+Những điều này nghe đơn giản, nhưng càng đơn giản thì càng dễ bị bỏ qua. Có lẽ một phần của việc trưởng thành trong giao tiếp là quay lại luyện những điều rất cơ bản: nghe cho trọn, nói cho thật, và phản hồi sao cho người khác vẫn giữ được phẩm giá của họ.
+
+---
+
+## Điều tôi còn lấn cấn
+
+Tôi vẫn muốn giữ một chút cảnh giác khi đọc bất kỳ lời khuyên nào về ảnh hưởng. Ảnh hưởng là một từ đẹp nếu nó đi cùng trách nhiệm, nhưng rất nguy hiểm nếu nó chỉ còn nghĩa là làm cho người khác đi theo ý mình.
+
+Vì vậy, điều tôi tự nhắc mình là: trước khi áp dụng một bài học giao tiếp, hãy kiểm tra ý định của mình. Mình đang muốn hiểu người kia hơn, hay chỉ muốn họ phản ứng theo cách mình mong muốn? Mình đang muốn cuộc trò chuyện rõ ràng hơn, hay chỉ muốn tránh một sự khó chịu cần thiết?
+
+Nếu câu trả lời không thành thật, mọi kỹ năng đều có thể trượt thành thao túng rất nhẹ nhàng.
 
 ---
 
 ## Kết lại
 
-Kết bài nên ngắn và thật. Không cần khẳng định rằng cuốn sách đã thay đổi mọi thứ. Khi hoàn thiện, phần này nên gom lại thành một điều đáng giữ bằng lời của mình:
+Tôi không muốn xem *Đắc Nhân Tâm* như một cuốn sách dạy mình cách trở nên dễ mến hơn bằng mọi giá. Cách đọc có ích hơn với tôi là xem nó như một lời nhắc: trong mọi cuộc trò chuyện, người đối diện không phải là một vấn đề cần xử lý, mà là một con người cần được tôn trọng.
 
-- **Cần bổ sung:** Sau tất cả, điều nhỏ nhất nhưng đáng giữ lại từ cuốn sách này là gì?
-- **Cần bổ sung:** Sau khi đọc hoặc nghĩ về *Đắc Nhân Tâm*, mình muốn trở thành người trò chuyện như thế nào?
-- **Cần bổ sung:** Nếu người đọc chỉ giữ lại một điều từ bài viết này, mình muốn đó là điều gì?
+Nếu chỉ giữ lại một điều, tôi muốn giữ điều này: sự khéo léo đáng quý nhất là sự khéo léo khiến mình tử tế hơn, không phải khéo léo khiến mình thắng nhiều hơn.
 2c:Td74,
 I judged this book by its cover. Literally.
 
@@ -1001,8 +965,8 @@ Tôi gấp sách lại không phải với một chiến lược đầu tư mớ
 ---
 
 *Hãy đọc nó. Thật chậm. Với một cây bút trên tay.*
-1e:["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32","children":["$","section",null,{"className":"pt-10","children":["$","$L29",null,{"posts":[{"slug":"dac-nhan-tam-review","content":"$2a","title":"Đắc Nhân Tâm","description":"Khung bài review Đắc Nhân Tâm bằng tiếng Việt, tập trung vào giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","date":"2026-06-18","tags":["Books","Reflection","Communication"],"readingTime":"6 min read","i18n":{"en":{"title":"Đắc Nhân Tâm","description":"Khung bài review Đắc Nhân Tâm bằng tiếng Việt, tập trung vào giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","content":"$2b","readingTime":"6 min read"}}},{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$2c","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","content":"$2d","readingTime":"4 min read"},"vi":{"title":"The Boy, the Mole, the Fox and the Horse — Cuốn sách thiếu nhi khiến một người lớn khóc trên tàu","description":"Tôi suýt đã không đọc nó. Trông nó cứ như một cuốn truyện tranh cho trẻ con. Hóa ra nó lại là điều dịu dàng nhất ai đó từng nói với tôi trong nhiều năm.","content":"$2e","readingTime":"5 min read"}}},{"slug":"the-midnight-library","content":"$2f","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","content":"$30","readingTime":"4 min read"},"vi":{"title":"The Midnight Library — Về những cuộc đời tôi cứ tưởng tượng lẽ ra mình nên sống","description":"Tiểu thuyết của Matt Haig về một thư viện nằm giữa sự sống và cái chết đã lặng lẽ thay đổi cách tôi nghĩ về sự nuối tiếc, và về tất cả những phiên bản của tôi mà tôi sẽ không bao giờ trở thành.","content":"$31","readingTime":"5 min read"}}},{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$32","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read","i18n":{"en":{"title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","content":"$33","readingTime":"2 min read"},"vi":{"title":"Bạn không cần phải biết hết mọi thứ ngay từ bây giờ","description":"Một lá thư gửi mọi người trẻ đang cảm thấy mình tụt lại phía sau — bạn không hề. Con đường không cần phải thẳng tắp mới là con đường đúng.","content":"$34","readingTime":"3 min read"}}},{"slug":"the-quiet-power-of-doing-less","content":"$35","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read","i18n":{"en":{"title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","content":"$36","readingTime":"2 min read"},"vi":{"title":"Sức mạnh lặng lẽ của việc làm ít lại","description":"Trong một thế giới tôn vinh sự bận rộn, chọn sống chậm nghe có vẻ ngược đời. Nhưng đó có thể là điều hiệu quả nhất bạn từng làm.","content":"$37","readingTime":"3 min read"}}},{"slug":"what-the-psychology-of-money-taught-me","content":"$38","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read","i18n":{"en":{"title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","content":"$39","readingTime":"2 min read"},"vi":{"title":"'Tâm Lý Học Về Tiền' đã dạy tôi điều gì về cách chúng ta suy nghĩ","description":"Cuốn sách của Morgan Housel thật ra không nói về tiền. Nó nói về hành vi, cái tôi, và những câu chuyện ta tự kể mình về thành công và sự an toàn.","content":"$3a","readingTime":"3 min read"}}}]}]}]}]
+1e:["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 pb-32","children":["$","section",null,{"className":"pt-10","children":["$","$L29",null,{"posts":[{"slug":"dac-nhan-tam-review","content":"$2a","title":"Đắc Nhân Tâm","description":"Một ghi chú đọc Đắc Nhân Tâm bằng tiếng Việt, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","date":"2026-06-18","tags":["Books","Reflection","Communication"],"readingTime":"6 min read","i18n":{"en":{"title":"Đắc Nhân Tâm","description":"Một ghi chú đọc Đắc Nhân Tâm bằng tiếng Việt, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","content":"$2b","readingTime":"6 min read"}}},{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$2c","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","content":"$2d","readingTime":"4 min read"},"vi":{"title":"The Boy, the Mole, the Fox and the Horse — Cuốn sách thiếu nhi khiến một người lớn khóc trên tàu","description":"Tôi suýt đã không đọc nó. Trông nó cứ như một cuốn truyện tranh cho trẻ con. Hóa ra nó lại là điều dịu dàng nhất ai đó từng nói với tôi trong nhiều năm.","content":"$2e","readingTime":"5 min read"}}},{"slug":"the-midnight-library","content":"$2f","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","content":"$30","readingTime":"4 min read"},"vi":{"title":"The Midnight Library — Về những cuộc đời tôi cứ tưởng tượng lẽ ra mình nên sống","description":"Tiểu thuyết của Matt Haig về một thư viện nằm giữa sự sống và cái chết đã lặng lẽ thay đổi cách tôi nghĩ về sự nuối tiếc, và về tất cả những phiên bản của tôi mà tôi sẽ không bao giờ trở thành.","content":"$31","readingTime":"5 min read"}}},{"slug":"you-dont-have-to-have-it-all-figured-out","content":"$32","title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","date":"2026-05-20","tags":["Youth","Direction","Growth"],"readingTime":"2 min read","i18n":{"en":{"title":"You Don't Have to Have It All Figured Out","description":"A letter to every young person who feels like they're already behind — you're not. The path doesn't have to be straight to be right.","content":"$33","readingTime":"2 min read"},"vi":{"title":"Bạn không cần phải biết hết mọi thứ ngay từ bây giờ","description":"Một lá thư gửi mọi người trẻ đang cảm thấy mình tụt lại phía sau — bạn không hề. Con đường không cần phải thẳng tắp mới là con đường đúng.","content":"$34","readingTime":"3 min read"}}},{"slug":"the-quiet-power-of-doing-less","content":"$35","title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","date":"2026-04-10","tags":["Mindfulness","Slow Living","Reflection"],"readingTime":"2 min read","i18n":{"en":{"title":"The Quiet Power of Doing Less","description":"In a world that rewards busyness, choosing slowness feels radical. But it might be the most productive thing you ever do.","content":"$36","readingTime":"2 min read"},"vi":{"title":"Sức mạnh lặng lẽ của việc làm ít lại","description":"Trong một thế giới tôn vinh sự bận rộn, chọn sống chậm nghe có vẻ ngược đời. Nhưng đó có thể là điều hiệu quả nhất bạn từng làm.","content":"$37","readingTime":"3 min read"}}},{"slug":"what-the-psychology-of-money-taught-me","content":"$38","title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","date":"2026-03-05","tags":["Books","Money","Reflection"],"readingTime":"2 min read","i18n":{"en":{"title":"What 'The Psychology of Money' Taught Me About How We Think","description":"Morgan Housel's book isn't really about money. It's about behavior, ego, and the stories we tell ourselves about success and security.","content":"$39","readingTime":"2 min read"},"vi":{"title":"'Tâm Lý Học Về Tiền' đã dạy tôi điều gì về cách chúng ta suy nghĩ","description":"Cuốn sách của Morgan Housel thật ra không nói về tiền. Nó nói về hành vi, cái tôi, và những câu chuyện ta tự kể mình về thành công và sự an toàn.","content":"$3a","readingTime":"3 min read"}}}]}]}]}]
 24:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#F2F5FA","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0A1020","media":"(prefers-color-scheme: dark)"}]]
-3b:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0_y6ygkv0tmii.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
+3b:I[27201,["/_next/static/chunks/0hd566~ng~r~4.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15l9bwyx.yo3j.js","/_next/static/chunks/0ul2y5o67.213.js","/_next/static/chunks/030fvn89km8mh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
 21:null
 26:[["$","title","0",{"children":"Blog | Yen Nhi · Yen Nhi"}],["$","meta","1",{"name":"description","content":"Reflections on youth, slow living, society, and the books that shape how I see the world."}],["$","link","2",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","3",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","meta","4",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","5",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","6",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://startup.id.vn/"}],["$","meta","11",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","12",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","13",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","14",{"property":"og:site_name","content":"Nguyen Thi Yen Nhi Portfolio"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","17",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","18",{"property":"og:image:type","content":"image/png"}],["$","meta","19",{"property":"og:image:width","content":"1200"}],["$","meta","20",{"property":"og:image:height","content":"630"}],["$","meta","21",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Software Engineer & Flutter Developer"}],["$","meta","22",{"property":"og:type","content":"profile"}],["$","meta","23",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","24",{"name":"twitter:creator","content":"@nhiney"}],["$","meta","25",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","26",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","27",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","28",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Software Engineer"}],["$","meta","29",{"name":"twitter:image:width","content":"1200"}],["$","meta","30",{"name":"twitter:image:height","content":"630"}],["$","link","31",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","32",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L3b","34",{}]]
