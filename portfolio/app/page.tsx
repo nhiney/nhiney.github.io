@@ -19,21 +19,21 @@ export const metadata: Metadata = {
       width: 1200,
       height: 630,
       type: "image/png",
-      alt: `${SITE_CONFIG.fullName} — Software Engineer & Flutter Developer`,
+      alt: `${SITE_CONFIG.fullName} — Business Analyst & Product Owner`,
     }],
   },
   twitter: {
     card: "summary_large_image",
     images: [{
       url: SITE_CONFIG.ogImages.home,
-      alt: `${SITE_CONFIG.fullName} — Software Engineer`,
+      alt: `${SITE_CONFIG.fullName} — Business Analyst & Product Owner`,
     }],
   },
 };
 
 export default async function Home() {
-  const allProjects = await getAllPosts("projects");
-  const projects = allProjects.slice(0, 4); // Show top 4 projects
+  const allPosts = await getAllPosts("blog");
+  const latestPosts = allPosts.slice(0, 3);
 
-  return <HomeClient projects={projects} />;
+  return <HomeClient projects={[]} latestPosts={latestPosts} />;
 }

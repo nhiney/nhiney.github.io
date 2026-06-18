@@ -1,1 +1,1 @@
-export { AppleTreeMindMap } from './AppleTreeMindMap'
+export { AppleTreeMindMap } from './AppleTreeMindMap';

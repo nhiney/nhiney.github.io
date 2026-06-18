@@ -30,9 +30,9 @@ const TECH_ITEMS: TooltipItem[] = [
 ];
 
 const FEATURES = [
-  { icon: Folder,   key: "projects",     href: "/portfolio#projects" },
-  { icon: Award,    key: "certificates", href: "/certificates"       },
-  { icon: FileText, key: "resume",       href: "/resume"             },
+  { icon: Folder,   key: "projects",     href: "/portfolio#projects"                    },
+  { icon: Award,    key: "certificates", href: "/certificates"                          },
+  { icon: FileText, key: "resume",       href: "/portfolio"                             },
 ] as const;
 
 const TECH_PILLS = [
@@ -203,7 +203,7 @@ function PersonalBentoGrid() {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
-export function HomeClient({ projects: _ }: { projects: Post[] }) {
+export function HomeClient({ projects: _, latestPosts: __ }: { projects: Post[]; latestPosts: Post[] }) {
   const { t } = useLanguage();
 
   return (
@@ -228,9 +228,7 @@ export function HomeClient({ projects: _ }: { projects: Post[] }) {
             <div className="flex flex-col gap-7">
 
               <h1 className="text-4xl font-semibold leading-tight dark:text-zinc-100 md:text-5xl md:leading-[3.8rem]">
-                <span className="text-xl md:text-2xl font-medium block mb-1 text-zinc-400 dark:text-zinc-500">
-                  {t("home.hero.title_prefix")}
-                </span>
+                {t("home.hero.title_prefix")}{" "}
                 <ColourfulText text="Nguyễn Thị Yến Nhi" />
               </h1>
 

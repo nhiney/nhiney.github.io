@@ -74,12 +74,14 @@ function ImageLightbox({ slides, startIndex, onClose }: {
 
 // ── Accent per project ────────────────────────────────────────────────────────
 
-const ACCENTS = [
-  { stripe: "from-blue-500/60 to-transparent",    tag: "bg-blue-500/10 text-blue-400 border-blue-400/20",    dot: "bg-blue-400"    },
-  { stripe: "from-violet-500/60 to-transparent",  tag: "bg-violet-500/10 text-violet-400 border-violet-400/20", dot: "bg-violet-400" },
-  { stripe: "from-emerald-500/60 to-transparent", tag: "bg-emerald-500/10 text-emerald-400 border-emerald-400/20", dot: "bg-emerald-400" },
-  { stripe: "from-amber-500/60 to-transparent",   tag: "bg-amber-500/10 text-amber-400 border-amber-400/20",  dot: "bg-amber-400"  },
-] as const;
+// Single-accent system — every card shares the primary tone for a clean,
+// professional listing (no per-card rainbow rotation).
+const PRIMARY_ACCENT = {
+  stripe: "from-primary/60 to-transparent",
+  tag: "bg-primary/10 text-primary border-primary/20",
+  dot: "bg-primary",
+} as const;
+const ACCENTS = [PRIMARY_ACCENT, PRIMARY_ACCENT, PRIMARY_ACCENT, PRIMARY_ACCENT] as const;
 
 // ── Image slider (left frame) ─────────────────────────────────────────────────
 

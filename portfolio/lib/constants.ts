@@ -2,34 +2,34 @@ export const SITE_CONFIG = {
   name: "Yen Nhi",
   fullName: "Nguyen Thi Yen Nhi",
   // ≤60 chars — primary keyword first for Google ranking signal
-  title: "Nguyen Thi Yen Nhi — Software Engineer & Flutter Dev",
+  title: "Nguyen Thi Yen Nhi — Business Analyst",
   // ≤155 chars — natural keyword density, action-oriented
-  description: "Software Engineering student in Ho Chi Minh City building secure backend systems with Laravel, ASP.NET & Flutter. Open to internships & collaborations.",
+  description: "Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.",
   // startup.id.vn is the live domain — GitHub Pages redirects to here
   url: "https://startup.id.vn",
   keywords: [
     "Nguyen Thi Yen Nhi",
-    "Software Engineer Vietnam",
-    "Backend Developer Ho Chi Minh City",
-    "Flutter Developer",
-    "Laravel Developer",
-    "ASP.NET Developer",
-    "Oracle Database",
-    "Database Security",
-    "Mobile Development",
-    "Software Engineering Portfolio",
+    "Business Analyst Vietnam",
+    "Technical Business Analyst",
+    "Business Analyst Ho Chi Minh City",
+    "Business Analyst Intern",
+    "BPMN 2.0",
+    "User Stories",
+    "System Analysis",
+    "Requirements Analysis",
+    "Agile Business Analyst",
     "Nguyễn Thị Yến Nhi",
   ],
   links: {
     github: "https://github.com/nhiney",
     linkedin: "https://www.linkedin.com/in/nhi-yen-410b2a2b7/",
-    facebook: "https://www.facebook.com/profile.php?id=100025133813586",
     email: "nhiyen.engineer@gmail.com",
     wakatime: "https://wakatime.com/@_tolanhy",
     portfolio: "https://startup.id.vn",
   },
   projects: {
-    "Mei Closet": "/mei-closet",
+    // External deployment — there is no internal /mei-closet route
+    "Mei Closet": "https://mei-closet.vercel.app",
   },
   author: "Nguyen Thi Yen Nhi",
   ogImages: {
@@ -45,9 +45,9 @@ export const NAV_ITEMS = [
   // Fellowship VNNIC — hidden from global nav; page still reachable at /nguyenthiyennhi-fellowship-vnnic-hcm.
   // To re-enable, uncomment the line below.
   // { name: "Fellowship", href: "/nguyenthiyennhi-fellowship-vnnic-hcm" },
-  { name: "Projects", href: "/projects" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "Certificates", href: "/certificates" },
-  { name: "Resume", href: "/resume" },
+  { name: "Blog", href: "/blog" },
   { name: "Waitlist", href: "/waitlist" },
 ];
 
