@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,78258,t=>{"use strict";var i=t.i(41790),e=t.i(4570);t.s(["identifyUser",()=>i.identifyUser,"initPostHog",()=>i.initPostHog,"posthog",()=>e.default,"trackEvent",()=>i.trackEvent])}]);

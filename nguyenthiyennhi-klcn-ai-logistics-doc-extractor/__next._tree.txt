@@ -1,5 +1,5 @@
 :HL["/_next/static/chunks/0mp-vl6gun0ub.css","style"]
-:HL["/_next/static/chunks/0x494b.ic7lm8.css","style"]
+:HL["/_next/static/chunks/0bgzqjsrieq_l.css","style"]
 :HL["/_next/static/media/02263ebadd758ea4-s.p.0qg7j5o.yrclm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -19,4 +19,4 @@
 :HL["/_next/static/media/e532fa1b9921e1cd-s.p.0~wrfy7sm-h4g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/effe91970fc4db64-s.p.07ig5l8azj~hy.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/chunks/12bhzfnsyo6o2.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"nguyenthiyennhi-klcn-ai-logistics-doc-extractor","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"23ughr4Qja5YjVCeD_wGB"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"nguyenthiyennhi-klcn-ai-logistics-doc-extractor","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"k7EH-oktlV5_s35h9p-JO"}
