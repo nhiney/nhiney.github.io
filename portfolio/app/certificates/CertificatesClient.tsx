@@ -41,12 +41,27 @@ const CATEGORY_COLORS: Record<string, string> = {
   Design: "bg-orange-500/10 text-orange-400 border-orange-500/20",
 };
 
+// Calm single-color dots for the premium / minimal "museum plaque" captions —
+// avoids the loud filled pills everywhere while keeping category recognition.
+const CATEGORY_DOT: Record<string, string> = {
+  Academic: "bg-violet-400",
+  "Mobile Development": "bg-blue-400",
+  Backend: "bg-red-400",
+  Security: "bg-emerald-400",
+  "Internet Technology": "bg-cyan-400",
+  AI: "bg-fuchsia-400",
+  "Project Management": "bg-amber-400",
+  Design: "bg-orange-400",
+};
+
 const CATEGORY_SHORT: Record<string, string> = {
   Backend: "BE",
   "Project Management": "PM",
   "Mobile Development": "Mobile",
   "Internet Technology": "Internet",
 };
+
+const dotColor = (category: string) => CATEGORY_DOT[category] ?? "bg-primary";
 
 export function CertificatesClient() {
   const { t, language } = useLanguage();
@@ -145,13 +160,13 @@ export function CertificatesClient() {
   const showCourses = viewMode === "all" || viewMode === "courses";
 
   return (
-    <Container className="pb-20 space-y-12">
+    <Container className="pb-24 space-y-14">
       {/* ── Header ── */}
       <Section className="space-y-6 pt-12 text-center">
         <FadeIn className="space-y-5 flex flex-col items-center">
           <Badge
             variant="outline"
-            className="px-6 py-2 bg-primary/10 border-primary/20 text-primary font-bold tracking-widest uppercase text-[10px]"
+            className="px-5 py-1.5 bg-transparent border-border/60 text-muted-foreground font-medium tracking-[0.2em] uppercase text-[10px]"
           >
             {t("pages.certificates.hero.badge")}
           </Badge>
@@ -164,7 +179,7 @@ export function CertificatesClient() {
         </FadeIn>
 
         {/* Unified filter row — All dropdown (category) + view-mode pills */}
-        <FadeIn className="flex flex-wrap items-center justify-center gap-3">
+        <FadeIn className="flex flex-wrap items-center justify-center gap-2.5">
           <CategoryDropdown
             value={categoryFilter}
             onChange={setCategoryFilter}
@@ -184,10 +199,10 @@ export function CertificatesClient() {
                 type="button"
                 onClick={() => setViewMode(isActive ? "all" : key)}
                 aria-pressed={isActive}
-                className={`inline-flex items-center rounded-full border px-5 py-2.5 text-[10px] font-black uppercase tracking-widest transition-all ${
+                className={`inline-flex items-center rounded-full border px-4 py-2 text-xs font-medium tracking-wide transition-all ${
                   isActive
-                    ? "bg-primary/15 text-primary border-primary/40 ring-2 ring-offset-2 ring-offset-background ring-primary/40"
-                    : "border-border/60 bg-card/40 text-muted-foreground hover:border-foreground/40 hover:text-foreground"
+                    ? "border-primary/40 bg-primary/10 text-primary"
+                    : "border-border/60 bg-transparent text-muted-foreground hover:border-foreground/30 hover:text-foreground"
                 }`}
               >
                 {label}
@@ -197,99 +212,91 @@ export function CertificatesClient() {
         </FadeIn>
       </Section>
 
-      {/* ── Certificates Grid ── */}
+      {/* ── Certificates — Gallery Wall ── */}
       {showCerts && (
-        <Section className="pt-0 space-y-8">
+        <Section className="pt-0 space-y-6">
           {viewMode === "all" && (
             <SectionHeader label={t("pages.certificates.filter.view_certificates")} />
           )}
           {filteredCerts.length === 0 ? (
             <EmptyState text={t("pages.certificates.filter.empty")} />
           ) : (
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredCerts.map((cert, i) => {
-                const realUrl = cert.verifyUrl ?? cert.url;
-                return (
-                  <FadeIn key={cert.id} delay={i * 0.05}>
-                    <div
-                      onClick={() => setActive(cert)}
-                      role="button"
-                      tabIndex={0}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          setActive(cert);
-                        }
-                      }}
-                      className="group flex h-full w-full flex-col gap-3 cursor-pointer text-left"
-                    >
-                      {/* Card 1 — Image, border sát mép ảnh */}
-                      <div className="relative w-full overflow-hidden rounded-2xl border-2 border-zinc-900 dark:border-zinc-700 transition-all duration-500 group-hover:border-primary group-hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.6)]">
-                        {cert.image ? (
-                          <>
-                            <Image
-                              src={cert.image}
-                              alt={cert.title}
-                              width={1413}
-                              height={1000}
-                              className="block w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
-                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            />
-                            <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-black/35">
-                              <div className="flex translate-y-4 items-center gap-2 rounded-full bg-white/95 px-5 py-2.5 opacity-0 shadow-2xl transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                                <span className="text-[11px] font-black uppercase tracking-widest text-zinc-900">
-                                  {t("pages.certificates.view_certificate")}
-                                </span>
-                                <ExternalLink size={12} className="text-primary" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-border/40 bg-gradient-to-b from-muted/25 via-background to-background px-5 py-12 sm:px-10 sm:py-16">
+              {/* Soft top wash — the "wall" + gallery light */}
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_55%_at_50%_0%,hsl(var(--foreground)/0.04),transparent_70%)]" />
+              {/* Picture rail line */}
+              <div className="pointer-events-none absolute inset-x-0 top-6 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+
+              <div className="relative grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+                {filteredCerts.map((cert, i) => {
+                  const realUrl = cert.verifyUrl ?? cert.url;
+                  return (
+                    <FadeIn key={cert.id} delay={i * 0.05}>
+                      <figure
+                        onClick={() => setActive(cert)}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            setActive(cert);
+                          }
+                        }}
+                        className="group relative flex h-full cursor-pointer flex-col items-center text-center"
+                      >
+                        {/* Spotlight glow on hover */}
+                        <div className="pointer-events-none absolute -inset-x-6 -top-8 bottom-10 rounded-[2.5rem] bg-[radial-gradient(60%_50%_at_50%_0%,hsl(var(--primary)/0.14),transparent_75%)] opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+
+                        {/* Framed artwork */}
+                        <div className="relative w-full transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
+                          <div className="relative overflow-hidden rounded-[5px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[3px] shadow-[0_12px_28px_-14px_rgba(0,0,0,0.5)] ring-1 ring-black/10 transition-all duration-500 group-hover:shadow-[0_28px_55px_-18px_rgba(0,0,0,0.6)] group-hover:ring-primary/40 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10 dark:group-hover:ring-primary/50">
+                            {/* Inner bevel */}
+                            <div className="rounded-[3px] bg-gradient-to-b from-white/50 to-black/10 p-px">
+                              {/* Mat (museum matting) */}
+                              <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-3 shadow-[inset_0_1px_4px_rgba(0,0,0,0.14)] sm:p-4">
+                                {cert.image ? (
+                                  <div className="relative aspect-[1.414/1] w-full overflow-hidden bg-white ring-1 ring-black/5">
+                                    <Image
+                                      src={cert.image}
+                                      alt={cert.title}
+                                      fill
+                                      className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    />
+                                  </div>
+                                ) : (
+                                  <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-3 bg-white px-6">
+                                    <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-amber-600">
+                                      <Clock size={11} /> {t("pages.certificates.in_progress")}
+                                    </span>
+                                    <p className="text-center text-xs text-zinc-500">
+                                      {t("pages.certificates.in_progress_desc")}
+                                    </p>
+                                  </div>
+                                )}
                               </div>
                             </div>
-                          </>
-                        ) : (
-                          <div className="flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-amber-500/10 via-card to-background px-6 py-10">
-                            <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-amber-500">
-                              <Clock size={11} /> {t("pages.certificates.in_progress")}
-                            </span>
-                            <p className="text-center text-xs text-muted-foreground">
-                              {t("pages.certificates.in_progress_desc")}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Card 2 — Content */}
-                      <div className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 group-hover:border-primary/60 group-hover:bg-primary/[0.03] group-hover:shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.2)]">
-                        {/* Meta bar */}
-                        <div className="flex items-center justify-between gap-2 border-b border-border/40 px-5 py-3 transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/[0.05]">
-                          <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/60">
-                            {cert.issuer}
-                          </span>
-                          <div className="flex shrink-0 items-center gap-2">
-                            <span
-                              className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[9px] font-black uppercase tracking-widest ${
-                                CATEGORY_COLORS[cert.category] ??
-                                "bg-primary/10 text-primary border-primary/20"
-                              }`}
-                            >
-                              {CATEGORY_SHORT[cert.category] ?? cert.category}
-                            </span>
-                            <span className="text-[9px] font-semibold text-muted-foreground/50">
-                              {locDate(cert.date)}
-                            </span>
                           </div>
                         </div>
-                        <div className="flex flex-1 flex-col p-5 pt-4">
-                          <h3 className="mb-2 flex items-start justify-between gap-2 text-[15px] font-black leading-tight tracking-tight text-foreground transition-colors group-hover:text-primary">
-                            <span>{cert.title}</span>
-                            <ChevronRight
-                              size={16}
-                              className="mt-0.5 shrink-0 translate-x-0 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-                            />
+
+                        {/* Museum plaque caption */}
+                        <figcaption className="mt-5 flex w-full flex-1 flex-col items-center px-2">
+                          <div className="mb-2 flex items-center justify-center gap-2 text-[11px] text-muted-foreground">
+                            <span className={`h-1.5 w-1.5 rounded-full ${dotColor(cert.category)}`} />
+                            <span className="font-medium tracking-wide text-foreground/70">
+                              {cert.category}
+                            </span>
+                            <span className="text-muted-foreground/40">·</span>
+                            <span>{locDate(cert.date)}</span>
+                          </div>
+                          <h3 className="text-[15px] font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
+                            {cert.title}
                           </h3>
-                          <p className="flex-1 text-xs leading-relaxed text-muted-foreground line-clamp-3">
-                            {locDesc(cert)}
+                          <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground/60">
+                            {cert.issuer}
                           </p>
                           {cert.courses && cert.courses.length > 0 && (
-                            <p className="mt-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/50">
+                            <p className="mt-2 text-[11px] text-muted-foreground/70">
                               {cert.courses.length} {t("pages.certificates.courses_included")}
                             </p>
                           )}
@@ -299,98 +306,100 @@ export function CertificatesClient() {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="mt-4 inline-flex items-center gap-1.5 self-start rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-primary transition-all hover:gap-2 hover:border-primary/60 hover:bg-primary/25"
+                              className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground/70 underline-offset-4 transition-colors hover:text-primary hover:underline"
                             >
                               {t("pages.certificates.view_real")}
                               <ExternalLink size={11} />
                             </Link>
                           )}
-                        </div>
-                      </div>
-                    </div>
-                  </FadeIn>
-                );
-              })}
+                        </figcaption>
+                      </figure>
+                    </FadeIn>
+                  );
+                })}
+              </div>
             </div>
           )}
         </Section>
       )}
 
-      {/* ── Courses Grid ── */}
+      {/* ── Courses — mini framed gallery ── */}
       {showCourses && (
-        <Section className="pt-0 space-y-8">
+        <Section className="pt-0 space-y-6">
           {viewMode === "all" && (
             <SectionHeader label={t("pages.certificates.filter.view_courses")} />
           )}
           {filteredCourses.length === 0 ? (
             <EmptyState text={t("pages.certificates.filter.empty")} />
           ) : (
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredCourses.map(({ course, cert, isStandalone }, i) => (
-                <FadeIn key={`${cert.id}-${course.title}`} delay={Math.min(i, 12) * 0.03}>
-                  <button
-                    type="button"
-                    onClick={() => handleCourseClick(course, cert)}
-                    className="group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-border/50 bg-card/40 text-left transition-all duration-300 hover:border-primary/60 hover:bg-primary/[0.04] hover:shadow-[0_4px_20px_-8px_hsl(var(--primary)/0.35)]"
-                  >
-                    {/* Left accent bar */}
-                    <div className="absolute inset-y-0 left-0 w-[3px] origin-top scale-y-0 rounded-r-full bg-primary transition-transform duration-300 group-hover:scale-y-100" />
-
-                    {/* Body */}
-                    <div className="flex flex-1 flex-col gap-2 p-4 pl-5">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md border transition-all duration-300 ${
-                            course.image
-                              ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500/20 group-hover:scale-110"
-                              : "border-border/40 bg-muted/20 text-muted-foreground/40"
-                          }`}
-                        >
-                          {course.image ? (
-                            <Check size={11} strokeWidth={2.5} />
-                          ) : (
-                            <GraduationCap size={11} />
-                          )}
+            <div className="grid gap-x-6 gap-y-9 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {filteredCourses.map(({ course, cert, isStandalone }, i) => {
+                const hasImage = !!course.image;
+                return (
+                  <FadeIn key={`${cert.id}-${course.title}`} delay={Math.min(i, 12) * 0.03}>
+                    <button
+                      type="button"
+                      onClick={() => handleCourseClick(course, cert)}
+                      className="group relative flex h-full w-full flex-col text-center"
+                    >
+                      {/* Mini frame */}
+                      <div className="relative w-full transition-transform duration-400 ease-out group-hover:-translate-y-1">
+                        <div className="relative overflow-hidden rounded-[4px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[2px] shadow-[0_8px_20px_-12px_rgba(0,0,0,0.45)] ring-1 ring-black/10 transition-all duration-400 group-hover:shadow-[0_18px_36px_-16px_rgba(0,0,0,0.55)] group-hover:ring-primary/40 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10 dark:group-hover:ring-primary/50">
+                          <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-2 shadow-[inset_0_1px_3px_rgba(0,0,0,0.12)]">
+                            {hasImage ? (
+                              <div className="relative aspect-[1.414/1] w-full overflow-hidden bg-white ring-1 ring-black/5">
+                                <Image
+                                  src={course.image as string}
+                                  alt={locTitle(course)}
+                                  fill
+                                  className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                />
+                              </div>
+                            ) : (
+                              <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-2 bg-white">
+                                <GraduationCap size={22} className="text-zinc-300" />
+                                <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-400">
+                                  {t("pages.certificates.pending")}
+                                </span>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                        <span
-                          className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[9px] font-black uppercase tracking-widest ${
-                            CATEGORY_COLORS[cert.category] ??
-                            "bg-primary/10 text-primary border-primary/20"
-                          }`}
-                        >
-                          {cert.category}
-                        </span>
+                        {/* Completed badge */}
+                        {hasImage && (
+                          <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500 text-white shadow-md">
+                            <Check size={12} strokeWidth={3} />
+                          </span>
+                        )}
                       </div>
-                      <h4 className="line-clamp-3 text-sm font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
-                        {locTitle(course)}
-                      </h4>
-                      {course.date && (
-                        <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
-                          {locDate(course.date)}
-                        </div>
-                      )}
-                    </div>
 
-                    {/* Footer cố định */}
-                    <div className="flex items-center justify-between gap-2 border-t border-border/40 bg-background/30 px-4 py-2.5 transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/[0.06]">
-                      <span className="max-w-[160px] truncate text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/50">
-                        {isStandalone ? "—" : cert.title}
-                      </span>
-                      {course.image ? (
-                        <span className="inline-flex shrink-0 items-center gap-1 text-[9px] font-black uppercase tracking-widest text-primary transition-all duration-300 group-hover:gap-1.5">
-                          <ImageIcon size={10} />
-                          {t("pages.certificates.view_detail")}
-                          <ChevronRight size={9} className="transition-transform duration-300 group-hover:translate-x-0.5" />
-                        </span>
-                      ) : (
-                        <span className="shrink-0 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/30">
-                          {t("pages.certificates.pending")}
-                        </span>
-                      )}
-                    </div>
-                  </button>
-                </FadeIn>
-              ))}
+                      {/* Plaque */}
+                      <div className="mt-3.5 flex flex-1 flex-col items-center px-1">
+                        <div className="mb-1.5 flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                          <span className={`h-1.5 w-1.5 rounded-full ${dotColor(cert.category)}`} />
+                          <span className="font-medium tracking-wide text-foreground/60">
+                            {CATEGORY_SHORT[cert.category] ?? cert.category}
+                          </span>
+                        </div>
+                        <h4 className="line-clamp-2 text-[13px] font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
+                          {locTitle(course)}
+                        </h4>
+                        {course.date && (
+                          <p className="mt-1 text-[11px] text-muted-foreground/60">
+                            {locDate(course.date)}
+                          </p>
+                        )}
+                        {!isStandalone && (
+                          <p className="mt-1.5 line-clamp-1 max-w-full text-[10px] text-muted-foreground/45">
+                            {cert.title}
+                          </p>
+                        )}
+                      </div>
+                    </button>
+                  </FadeIn>
+                );
+              })}
             </div>
           )}
         </Section>
@@ -428,74 +437,77 @@ export function CertificatesClient() {
                 <X size={16} />
               </button>
 
-              {/* ─ Image side ─ */}
-              <div className="relative bg-white">
-                <div className="relative aspect-[1.414/1] w-full md:aspect-auto md:h-full md:min-h-[420px]">
-                  {active.image ? (
-                    <Image
-                      src={active.image}
-                      alt={active.title}
-                      fill
-                      className="object-contain p-3 sm:p-5 md:p-6"
-                      sizes="(max-width: 768px) 100vw, 60vw"
-                      priority
-                      quality={100}
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-amber-500/15 via-card to-background">
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2 text-[11px] font-black uppercase tracking-widest text-amber-500">
-                        <Clock size={12} /> {t("pages.certificates.in_progress")}
-                      </span>
-                      <p className="max-w-md px-6 text-center text-sm text-muted-foreground">
-                        {t("pages.certificates.in_progress_desc")}
-                      </p>
+              {/* ─ Image side (framed) ─ */}
+              <div className="flex items-center justify-center bg-gradient-to-br from-muted/40 to-background p-5 sm:p-8">
+                <div className="w-full overflow-hidden rounded-[5px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[3px] shadow-xl ring-1 ring-black/10 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10">
+                  <div className="rounded-[3px] bg-gradient-to-b from-white/50 to-black/10 p-px">
+                    <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-3 shadow-[inset_0_1px_4px_rgba(0,0,0,0.14)] sm:p-5">
+                      {active.image ? (
+                        <div className="relative aspect-[1.414/1] w-full bg-white ring-1 ring-black/5">
+                          <Image
+                            src={active.image}
+                            alt={active.title}
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 768px) 100vw, 60vw"
+                            priority
+                            quality={100}
+                          />
+                        </div>
+                      ) : (
+                        <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-4 bg-white">
+                          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2 text-[11px] font-semibold uppercase tracking-wide text-amber-600">
+                            <Clock size={12} /> {t("pages.certificates.in_progress")}
+                          </span>
+                          <p className="max-w-md px-6 text-center text-sm text-zinc-500">
+                            {t("pages.certificates.in_progress_desc")}
+                          </p>
+                        </div>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
 
               {/* ─ Details side ─ */}
               <div className="flex flex-col bg-card/90 p-6 sm:p-7 md:max-h-[92vh] md:overflow-y-auto">
                 {/* Top label */}
-                <div className="mb-4 flex flex-wrap items-center gap-2">
-                  <span
-                    className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[9px] font-black uppercase tracking-widest ${
-                      CATEGORY_COLORS[active.category] ??
-                      "bg-primary/10 text-primary border-primary/20"
-                    }`}
-                  >
+                <div className="mb-4 flex flex-wrap items-center gap-2.5 text-[11px]">
+                  <span className="inline-flex items-center gap-1.5 font-medium tracking-wide text-foreground/70">
+                    <span className={`h-1.5 w-1.5 rounded-full ${dotColor(active.category)}`} />
                     {active.category}
                   </span>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/80">
+                  <span className="text-muted-foreground/40">·</span>
+                  <span className="uppercase tracking-[0.18em] text-muted-foreground/70">
                     {t("pages.certificates.specialization")}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h2 className="mb-3 text-xl font-black leading-tight tracking-tight text-foreground sm:text-[1.6rem]">
+                <h2 className="mb-3 text-xl font-bold leading-tight tracking-tight text-foreground sm:text-[1.6rem]">
                   {active.title}
                 </h2>
 
                 {/* Description */}
-                <p className="mb-5 text-xs leading-relaxed text-muted-foreground">
+                <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
                   {locDesc(active)}
                 </p>
 
                 {/* Info grid */}
                 <div className="mb-5 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/40">
                   <div className="space-y-1.5 bg-background/50 p-4">
-                    <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-muted-foreground/70">
-                      <CalendarDays size={11} />
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-muted-foreground/70">
+                      <CalendarDays size={12} />
                       {t("pages.certificates.issued")}
                     </div>
-                    <div className="text-sm font-bold text-foreground">{locDate(active.date)}</div>
+                    <div className="text-sm font-semibold text-foreground">{locDate(active.date)}</div>
                   </div>
                   <div className="space-y-1.5 bg-background/50 p-4">
-                    <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-muted-foreground/70">
-                      <Award size={11} />
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-muted-foreground/70">
+                      <Award size={12} />
                       {t("pages.certificates.issued_by")}
                     </div>
-                    <div className="text-sm font-bold text-foreground">{active.issuer}</div>
+                    <div className="text-sm font-semibold text-foreground">{active.issuer}</div>
                   </div>
                 </div>
 
@@ -503,10 +515,10 @@ export function CertificatesClient() {
                 {active.courses && active.courses.length > 0 && (
                   <div className="mb-5 space-y-2.5">
                     <div className="flex items-center justify-between">
-                      <div className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/70">
+                      <div className="text-[11px] font-medium tracking-wide text-muted-foreground/70">
                         {t("pages.certificates.courses_included")}
                       </div>
-                      <span className="text-[10px] font-black tabular-nums text-muted-foreground/60">
+                      <span className="text-[11px] font-semibold tabular-nums text-muted-foreground/60">
                         {active.courses.filter((c) => c.image).length}/{active.courses.length}
                       </span>
                     </div>
@@ -525,10 +537,10 @@ export function CertificatesClient() {
                                 }}
                                 className="group flex w-full items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2 text-left transition-all hover:border-primary/40 hover:bg-primary/5"
                               >
-                                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-[9px] font-black tabular-nums text-primary">
+                                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-[10px] font-semibold tabular-nums text-primary">
                                   {idx + 1}
                                 </span>
-                                <span className="flex-1 truncate text-xs font-semibold text-foreground/90 transition-colors group-hover:text-primary">
+                                <span className="flex-1 truncate text-xs font-medium text-foreground/90 transition-colors group-hover:text-primary">
                                   {locTitle(course)}
                                 </span>
                                 <ChevronRight
@@ -538,10 +550,10 @@ export function CertificatesClient() {
                               </button>
                             ) : (
                               <span className="flex w-full items-center gap-3 rounded-xl border border-dashed border-border/40 bg-background/20 px-3 py-2">
-                                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted/40 text-[9px] font-black tabular-nums text-muted-foreground/60">
+                                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted/40 text-[10px] font-semibold tabular-nums text-muted-foreground/60">
                                   {idx + 1}
                                 </span>
-                                <span className="flex-1 truncate text-xs font-semibold text-muted-foreground/70">
+                                <span className="flex-1 truncate text-xs font-medium text-muted-foreground/70">
                                   {locTitle(course)}
                                 </span>
                               </span>
@@ -560,10 +572,10 @@ export function CertificatesClient() {
                       href={active.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-5 py-3 text-xs font-black uppercase tracking-widest text-primary transition-all hover:bg-primary/25"
+                      className="flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-5 py-3 text-sm font-semibold tracking-wide text-primary transition-all hover:bg-primary/25"
                     >
                       {t("pages.certificates.view_certificate")}
-                      <ExternalLink size={11} className="opacity-70" />
+                      <ExternalLink size={13} className="opacity-70" />
                     </Link>
                   )}
                   {active.verifyUrl && (
@@ -571,11 +583,11 @@ export function CertificatesClient() {
                       href={active.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-background/60 px-5 py-3 text-xs font-black uppercase tracking-widest text-foreground transition-all hover:border-primary/40 hover:text-primary"
+                      className="flex w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-background/60 px-5 py-3 text-sm font-semibold tracking-wide text-foreground transition-all hover:border-primary/40 hover:text-primary"
                     >
-                      <ShieldCheck size={13} />
+                      <ShieldCheck size={14} />
                       {t("pages.certificates.verify")}
-                      <ExternalLink size={11} className="opacity-70" />
+                      <ExternalLink size={13} className="opacity-70" />
                     </Link>
                   )}
                 </div>
@@ -617,19 +629,25 @@ export function CertificatesClient() {
                 <X size={16} />
               </button>
 
-              {/* ─ Image side ─ */}
+              {/* ─ Image side (framed) ─ */}
               {activeCourse.course.image && (
-                <div className="relative bg-white">
-                  <div className="relative aspect-[1.414/1] w-full md:aspect-auto md:h-full md:min-h-[420px]">
-                    <Image
-                      src={activeCourse.course.image}
-                      alt={locTitle(activeCourse.course)}
-                      fill
-                      className="object-contain p-3 sm:p-5 md:p-6"
-                      sizes="(max-width: 768px) 100vw, 60vw"
-                      priority
-                      quality={100}
-                    />
+                <div className="flex items-center justify-center bg-gradient-to-br from-muted/40 to-background p-5 sm:p-8">
+                  <div className="w-full overflow-hidden rounded-[5px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[3px] shadow-xl ring-1 ring-black/10 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10">
+                    <div className="rounded-[3px] bg-gradient-to-b from-white/50 to-black/10 p-px">
+                      <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-3 shadow-[inset_0_1px_4px_rgba(0,0,0,0.14)] sm:p-5">
+                        <div className="relative aspect-[1.414/1] w-full bg-white ring-1 ring-black/5">
+                          <Image
+                            src={activeCourse.course.image}
+                            alt={locTitle(activeCourse.course)}
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 768px) 100vw, 60vw"
+                            priority
+                            quality={100}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}
@@ -637,42 +655,39 @@ export function CertificatesClient() {
               {/* ─ Details side ─ */}
               <div className="flex flex-col bg-card/90 p-6 sm:p-7 md:max-h-[92vh] md:overflow-y-auto">
                 {/* Top label */}
-                <div className="mb-5 flex flex-wrap items-center gap-2">
-                  <span
-                    className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[9px] font-black uppercase tracking-widest ${
-                      CATEGORY_COLORS[activeCourse.cert.category] ??
-                      "bg-primary/10 text-primary border-primary/20"
-                    }`}
-                  >
+                <div className="mb-5 flex flex-wrap items-center gap-2.5 text-[11px]">
+                  <span className="inline-flex items-center gap-1.5 font-medium tracking-wide text-foreground/70">
+                    <span className={`h-1.5 w-1.5 rounded-full ${dotColor(activeCourse.cert.category)}`} />
                     {activeCourse.cert.category}
                   </span>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/80">
+                  <span className="text-muted-foreground/40">·</span>
+                  <span className="uppercase tracking-[0.18em] text-muted-foreground/70">
                     {t("pages.certificates.course_certificate")}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h2 className="mb-6 text-xl font-black leading-tight tracking-tight text-foreground sm:text-[1.6rem]">
+                <h2 className="mb-6 text-xl font-bold leading-tight tracking-tight text-foreground sm:text-[1.6rem]">
                   {locTitle(activeCourse.course)}
                 </h2>
 
                 {/* Info grid */}
                 <div className="mb-5 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/40">
                   <div className="space-y-1.5 bg-background/50 p-4">
-                    <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-muted-foreground/70">
-                      <CalendarDays size={11} />
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-muted-foreground/70">
+                      <CalendarDays size={12} />
                       {t("pages.certificates.issued")}
                     </div>
-                    <div className="text-sm font-bold text-foreground">
+                    <div className="text-sm font-semibold text-foreground">
                       {locDate(activeCourse.course.date)}
                     </div>
                   </div>
                   <div className="space-y-1.5 bg-background/50 p-4">
-                    <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-muted-foreground/70">
-                      <Award size={11} />
+                    <div className="flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-muted-foreground/70">
+                      <Award size={12} />
                       {t("pages.certificates.issued_by")}
                     </div>
-                    <div className="text-sm font-bold text-foreground">
+                    <div className="text-sm font-semibold text-foreground">
                       {activeCourse.cert.issuer}
                     </div>
                   </div>
@@ -696,10 +711,10 @@ export function CertificatesClient() {
                     <ImageIcon size={18} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/70">
+                    <div className="text-[11px] font-medium tracking-wide text-muted-foreground/70">
                       {t("pages.certificates.filter.part_of")}
                     </div>
-                    <div className="truncate text-sm font-black text-foreground transition-colors group-hover:text-primary">
+                    <div className="truncate text-sm font-bold text-foreground transition-colors group-hover:text-primary">
                       {activeCourse.cert.title}
                     </div>
                   </div>
@@ -716,11 +731,11 @@ export function CertificatesClient() {
                       href={activeCourse.course.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-5 py-3 text-xs font-black uppercase tracking-widest text-primary transition-all hover:bg-primary/25"
+                      className="flex w-full items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-5 py-3 text-sm font-semibold tracking-wide text-primary transition-all hover:bg-primary/25"
                     >
-                      <ShieldCheck size={13} />
+                      <ShieldCheck size={14} />
                       {t("pages.certificates.verify_course")}
-                      <ExternalLink size={11} className="opacity-70" />
+                      <ExternalLink size={13} className="opacity-70" />
                     </Link>
                   )}
                   {activeCourse.cert.verifyUrl && (
@@ -728,10 +743,10 @@ export function CertificatesClient() {
                       href={activeCourse.cert.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-background/60 px-5 py-3 text-xs font-black uppercase tracking-widest text-foreground transition-all hover:border-primary/40 hover:text-primary"
+                      className="flex w-full items-center justify-center gap-2 rounded-full border border-border/60 bg-background/60 px-5 py-3 text-sm font-semibold tracking-wide text-foreground transition-all hover:border-primary/40 hover:text-primary"
                     >
                       {t("pages.certificates.verify_specialization")}
-                      <ExternalLink size={11} className="opacity-70" />
+                      <ExternalLink size={13} className="opacity-70" />
                     </Link>
                   )}
                 </div>
@@ -776,21 +791,17 @@ function CategoryDropdown({
     };
   }, [open]);
 
-  const options: { key: string; label: string; full: string; color: string }[] = [
-    {
-      key: "all",
-      label: allLabel,
-      full: allLabel,
-      color: "bg-primary/15 text-primary border-primary/40",
-    },
+  const options: { key: string; label: string; full: string; dot: string }[] = [
+    { key: "all", label: allLabel, full: allLabel, dot: "bg-primary" },
     ...categories.map((cat) => ({
       key: cat,
       label: CATEGORY_SHORT[cat] ?? cat,
       full: cat,
-      color: CATEGORY_COLORS[cat] ?? "bg-primary/10 text-primary border-primary/30",
+      dot: CATEGORY_DOT[cat] ?? "bg-primary",
     })),
   ];
   const current = options.find((o) => o.key === value) ?? options[0];
+  const isFiltering = value !== "all";
 
   return (
     <div ref={wrapRef} className="relative">
@@ -799,8 +810,13 @@ function CategoryDropdown({
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-5 py-2.5 text-[10px] font-black uppercase tracking-widest text-primary ring-2 ring-offset-2 ring-offset-background ring-primary/40 transition-all"
+        className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium tracking-wide transition-all ${
+          isFiltering
+            ? "border-primary/40 bg-primary/10 text-primary"
+            : "border-border/60 bg-transparent text-muted-foreground hover:border-foreground/30 hover:text-foreground"
+        }`}
       >
+        <span className={`h-1.5 w-1.5 rounded-full ${current.dot}`} />
         <span>{current.label}</span>
         <ChevronDown
           size={13}
@@ -816,7 +832,7 @@ function CategoryDropdown({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.14 }}
-            className="absolute left-1/2 top-[calc(100%+8px)] z-30 w-64 -translate-x-1/2 overflow-hidden rounded-2xl border border-border/60 bg-card/95 p-1.5 shadow-2xl backdrop-blur"
+            className="absolute left-1/2 top-[calc(100%+8px)] z-30 w-60 -translate-x-1/2 overflow-hidden rounded-2xl border border-border/60 bg-card/95 p-1.5 shadow-2xl backdrop-blur"
           >
             {options.map((opt) => {
               const isActive = value === opt.key;
@@ -836,17 +852,9 @@ function CategoryDropdown({
                         : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"
                     }`}
                   >
-                    <span className="flex items-center gap-3">
-                      <span
-                        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[9px] font-black uppercase tracking-widest ${opt.color}`}
-                      >
-                        {opt.label}
-                      </span>
-                      {opt.full !== opt.label && (
-                        <span className="text-[11px] font-semibold tracking-tight">
-                          {opt.full}
-                        </span>
-                      )}
+                    <span className="flex items-center gap-2.5">
+                      <span className={`h-2 w-2 rounded-full ${opt.dot}`} />
+                      <span className="text-[13px] font-medium tracking-tight">{opt.full}</span>
                     </span>
                     {isActive && <Check size={14} className="shrink-0 text-primary" />}
                   </button>
@@ -864,7 +872,7 @@ function SectionHeader({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-3 text-muted-foreground">
       <span className="h-px flex-1 bg-border/60" />
-      <span className="text-[10px] font-black uppercase tracking-[0.3em]">{label}</span>
+      <span className="text-[11px] font-medium uppercase tracking-[0.28em]">{label}</span>
       <span className="h-px flex-1 bg-border/60" />
     </div>
   );

@@ -22,10 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticUrls = [
     { url: `${baseUrl}/`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 1.0 },
     { url: `${baseUrl}/portfolio`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 },
-    { url: `${baseUrl}/projects`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${baseUrl}/certificates`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${baseUrl}/resume`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.6 },
+    { url: `${baseUrl}/mind-map`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${baseUrl}/waitlist`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.4 },
   ];
 

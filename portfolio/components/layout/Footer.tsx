@@ -1,20 +1,18 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { FooterLanguageSelector } from "@/components/widgets/FooterLanguageSelector";
-import { GithubIcon, LinkedinIcon, FacebookIcon, MailIcon } from "@/components/widgets/Icons";
+import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/widgets/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
 import { TreePine } from "lucide-react";
 
 const SOCIAL_LINKS = [
   { href: SITE_CONFIG.links.github,            icon: GithubIcon,   label: "GitHub"   },
   { href: SITE_CONFIG.links.linkedin,          icon: LinkedinIcon, label: "LinkedIn"  },
-  { href: SITE_CONFIG.links.facebook,          icon: FacebookIcon, label: "Facebook"  },
   { href: `mailto:${SITE_CONFIG.links.email}`, icon: MailIcon,     label: "Email"    },
 ];
 
 export function Footer() {
   return (
-    <>
     <footer className="border-t border-border/50 bg-background">
       <Container className="flex items-center justify-between gap-6 py-8">
 
@@ -40,18 +38,39 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Right — projects + language + copyright */}
+        {/* Right — mind map + projects + language + copyright */}
         <div className="flex items-center gap-5">
+          {/* Mind Map — inline footer nav, always visible; icon keeps its identity */}
+          <Link
+            href="/mind-map"
+            className="group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary"
+          >
+            <TreePine className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
+            <span className="hidden sm:inline">Mind Map</span>
+          </Link>
+          <span className="hidden sm:block h-4 w-px bg-border/60" />
           <div className="hidden sm:flex items-center gap-4">
-            {Object.entries(SITE_CONFIG.projects).map(([name, url]) => (
-              <Link
-                key={name}
-                href={url}
-                className="text-xs text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {name}
-              </Link>
-            ))}
+            {Object.entries(SITE_CONFIG.projects).map(([name, url]) =>
+              url.startsWith("http") ? (
+                <a
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {name}
+                </a>
+              ) : (
+                <Link
+                  key={name}
+                  href={url}
+                  className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {name}
+                </Link>
+              )
+            )}
           </div>
           <span className="hidden sm:block h-4 w-px bg-border/60" />
           <FooterLanguageSelector />
@@ -63,17 +82,5 @@ export function Footer() {
 
       </Container>
     </footer>
-
-    {/* Mind Map Easter-egg button — sits below the footer */}
-    <div className="flex justify-center pb-5 pt-2 bg-background">
-      <Link
-        href="/mind-map"
-        className="group inline-flex items-center gap-1.5 rounded-full border border-border/40 bg-secondary/30 px-4 py-1.5 text-xs text-muted-foreground/50 transition-all hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
-      >
-        <TreePine className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
-        Mind Map
-      </Link>
-    </div>
-    </>
   );
 }

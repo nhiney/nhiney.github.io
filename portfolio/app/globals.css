@@ -12,6 +12,12 @@
    block Tailwind v4 doesn't know about the custom colors and silently
    drops the corresponding utilities. */
 @theme inline {
+  /* Literary serif (Lora) — drives the blog's "printed book" reading mode.
+     Exposed both as the Tailwind `font-serif` utility and as var(--font-serif). */
+  --font-serif: var(--font-lora), Georgia, "Times New Roman", serif;
+  /* High-contrast display serif (Playfair) — magazine title / quote moments. */
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
@@ -42,6 +48,7 @@
     --kt-branch: hsl(22 48% 24%);
     --kt-leaf:   hsl(130 45% 32%);
     --kt-leaf2:  hsl(128 50% 40%);
+    --kt-leaf3:  hsl(125 52% 52%);
     --kt-root:   hsl(22 45% 22%);
     --foreground: 220 40% 10%;             /* #0E1529 — deep slate text */
     --card: 0 0% 100%;
@@ -73,6 +80,7 @@
     --kt-branch: hsl(22 36% 15%);
     --kt-leaf:   hsl(130 32% 22%);
     --kt-leaf2:  hsl(128 36% 28%);
+    --kt-leaf3:  hsl(125 40% 38%);
     --kt-root:   hsl(22 32% 12%);
     --foreground: 210 25% 97%;         /* #F2F6FD — crisp cool white */
     --card: 225 44% 14%;               /* #131D34 — clear card elevation */
@@ -167,6 +175,15 @@
 @keyframes kt-float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-6px); }
+}
+
+@keyframes kt-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.85); }
+  50%       { opacity: 0.9; transform: scale(1.25); }
+}
+
+@keyframes kt-flow {
+  to { stroke-dashoffset: -24; }
 }
 
 @layer utilities {
@@ -353,6 +370,381 @@
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── The Book — a printed-page reading experience for the blog ────────────── */
+/* The whole article lives inside .book-page, a warm "paper on a desk" sheet.
+   Its palette is defined as CSS vars here so the cool site theme never leaks
+   into the reading column; every rule below references those vars (with a
+   site-theme fallback) so the prose stays book-toned in light and dark mode.
+   Written unlayered so it wins over the utility classes MDXComponents injects. */
+.book-page {
+  --paper:      #fbf9f4;   /* unbleached cream stock          */
+  --paper-edge: #efe9dd;   /* warmer edge for the page sheen  */
+  --ink:        #2c2a29;   /* warm graphite — body text       */
+  --ink-soft:   #6b635a;   /* faded ink — bylines & meta      */
+  --rule:       rgba(120, 113, 108, 0.32);  /* thread-thin dividers */
+  --rule-soft:  rgba(120, 113, 108, 0.16);
+  --accent-ink: #9c5a33;   /* burnt-sienna — warm emphasis colour       */
+  --marker:     rgba(214, 158, 92, 0.34);   /* amber highlighter swipe   */
+
+  /* The reading measure. Body copy sits at --measure (~42rem / 672px — the
+     classic comfortable line length); hero elements break out to --measure-wide
+     (~48rem) so quotes feel like they exhale beyond the column. */
+  --measure:       42rem;
+  --measure-break: 3rem;   /* how far the pull-quote spills past the column */
+
+  position: relative;
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule-soft);
+  border-radius: 5px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 40px 80px -50px rgba(60, 45, 30, 0.32),
+    0 12px 32px -26px rgba(60, 45, 30, 0.20);
+}
+
+.dark .book-page {
+  --paper:      #111418;   /* deep cinematic night            */
+  --paper-edge: #0c0f13;
+  --ink:        #e8e4da;   /* ivory white                     */
+  --ink-soft:   #9a948a;
+  --rule:       rgba(232, 228, 218, 0.20);
+  --rule-soft:  rgba(232, 228, 218, 0.10);
+  --accent-ink: #d4a672;   /* soft amber on night             */
+  --marker:     rgba(214, 168, 110, 0.22);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 40px 90px -50px rgba(0, 0, 0, 0.72),
+    0 12px 32px -26px rgba(0, 0, 0, 0.55);
+}
+
+/* ── Book-cover header helpers (used by the article page JSX) ────────────── */
+.book-kicker {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.book-title {
+  font-family: var(--font-display);   /* Playfair — high-contrast masthead */
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.08;
+  color: var(--ink);
+  text-wrap: balance;
+  font-optical-sizing: auto;
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+}
+/* The author signature — a high-contrast Playfair italic, set like a name
+   inked beneath a frontispiece. */
+.book-byline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  font-optical-sizing: auto;
+}
+.book-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.book-meta {
+  font-family: var(--font-inter), sans-serif;
+  letter-spacing: 0.18em;
+  color: var(--ink-soft);
+}
+.book-rule { height: 1px; background: var(--rule); }
+.book-endmark {
+  font-family: var(--font-serif);
+  color: var(--ink-soft);
+  letter-spacing: 0.55em;
+  opacity: 0.7;
+}
+
+/* ── The prose itself ─────────────────────────────────────────────────────── */
+/* The article column is held to the reading measure; the panel's padding plus
+   the gap to the column is exactly what the pull-quote breaks out into. */
+.post-content {
+  max-width: var(--measure);
+  margin-inline: auto;
+  font-family: var(--font-serif);
+  color: var(--ink, hsl(var(--muted-foreground)));
+  font-size: 1.2rem;
+  line-height: 1.82;
+  font-weight: 400;
+  /* Professional print typography: real ligatures, contextual alternates, and
+     oldstyle figures that sit on the baseline like a typeset book; optical
+     sizing tunes each glyph to its rendered size. */
+  font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-optical-sizing: auto;
+  hanging-punctuation: first last;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.post-content p {
+  font-family: var(--font-serif);
+  margin-block: 0 1.55rem;
+  color: var(--ink, hsl(var(--muted-foreground)));
+  text-wrap: pretty;
+}
+
+/* Editorial opening: an enlarged lead paragraph with a high-contrast drop cap,
+   and a first line set in small caps — the classic printed chapter-opening. */
+.post-content > p:first-of-type {
+  font-size: 1.36rem;
+  line-height: 1.62;
+}
+.post-content > p:first-of-type::first-line {
+  font-variant: small-caps;
+  font-feature-settings: "smcp" 1, "kern" 1;
+  letter-spacing: 0.02em;
+}
+
+.post-content > p:first-of-type::first-letter {
+  float: left;
+  margin: 0.04em 0.12em -0.04em 0;
+  font-family: var(--font-display);
+  font-size: 4.3em;
+  font-weight: 600;
+  line-height: 0.68;
+  color: var(--accent-ink);
+}
+
+/* ── Vertical rhythm ──────────────────────────────────────────────────────
+   A chapter head carries a generous space ABOVE it (separating sections) and a
+   tight space BELOW it (binding it to the paragraph it introduces). The ~3.3:1
+   top-to-bottom ratio is what makes the hierarchy read instantly. */
+.post-content h2 {
+  font-family: var(--font-serif);
+  margin-block: 3.6rem 1.1rem;
+  font-size: 1.72rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--ink);
+  scroll-margin-top: 7rem;
+}
+.post-content h2::after {
+  content: "";
+  display: block;
+  width: 2.2rem;
+  height: 1px;
+  margin: 0.85rem auto 0;
+  background: var(--rule);
+}
+
+.post-content h3 {
+  font-family: var(--font-serif);
+  margin-block: 2.6rem 0.7rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  scroll-margin-top: 7rem;
+}
+
+.post-content a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s;
+}
+.post-content a:hover { text-decoration-color: var(--ink); }
+
+/* Two distinct, restrained ways to emphasise — never a heavy black bold:
+   <strong> shifts to a warm accent ink, <mark> lays down a pastel highlighter
+   swipe anchored to the baseline, like a soft marker pen on paper. */
+.post-content strong {
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.post-content em { font-style: italic; }
+.post-content mark {
+  background-color: transparent;
+  background-image: linear-gradient(
+    to top,
+    var(--marker) 0,
+    var(--marker) 0.62em,
+    transparent 0.62em
+  );
+  color: inherit;
+  padding: 0 0.06em;
+  border-radius: 0.08em;
+}
+
+/* ── Lists — no soulless dots ─────────────────────────────────────────────
+   Unordered items hang a thin em-dash in the margin; ordered items hang a
+   faded italic numeral, so the list breathes like a typeset book. */
+.post-content ul,
+.post-content ol {
+  font-family: var(--font-serif);
+  margin-block: 1.7rem;
+  padding-left: 1.7rem;
+  color: var(--ink);
+  list-style: none;
+}
+.post-content li { margin-block: 0.6rem; padding-left: 0.2rem; }
+
+.post-content ul > li { position: relative; }
+.post-content ul > li::before {
+  content: "—";
+  position: absolute;
+  left: -1.7rem;
+  top: 0;
+  width: 1.2rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.post-content ol { counter-reset: ol-counter; }
+.post-content ol > li { position: relative; counter-increment: ol-counter; }
+.post-content ol > li::before {
+  content: counter(ol-counter);
+  position: absolute;
+  left: -1.9rem;
+  top: 0.04em;
+  width: 1.4rem;
+  text-align: right;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95em;
+  color: var(--ink-soft);
+  opacity: 0.75;
+}
+.post-content li > strong:first-child { /* keep "**Label** — ..." list items tidy */
+  color: var(--accent-ink);
+}
+
+/* ── Key Takeaway — a magazine pull-quote callout, not a dev alert box ─────
+   A warm tinted card with a 2px accent edge that draws the eye to the line
+   most worth keeping, without snapping the reader out of the prose. */
+.book-callout {
+  margin-block: 2.8rem;
+  padding: 1.5rem 1.8rem;
+  border: 1px solid var(--callout-border, var(--rule));
+  border-left-width: 2px;
+  border-radius: 4px;
+  background: var(--callout-bg, transparent);
+}
+.book-callout[data-tone="amber"]      { --callout-bg: rgba(214, 158, 92, 0.10);  --callout-border: rgba(176, 122, 78, 0.34); }
+.book-callout[data-tone="sage"]       { --callout-bg: rgba(120, 142, 104, 0.11); --callout-border: rgba(108, 130, 96, 0.36); }
+.book-callout[data-tone="terracotta"] { --callout-bg: rgba(192, 110, 78, 0.09);  --callout-border: rgba(182, 100, 70, 0.32); }
+.dark .book-callout[data-tone="amber"]      { --callout-bg: rgba(214, 168, 110, 0.08); --callout-border: rgba(214, 168, 110, 0.24); }
+.dark .book-callout[data-tone="sage"]       { --callout-bg: rgba(150, 178, 132, 0.07); --callout-border: rgba(150, 178, 132, 0.22); }
+.dark .book-callout[data-tone="terracotta"] { --callout-bg: rgba(214, 130, 96, 0.07);  --callout-border: rgba(214, 130, 96, 0.24); }
+.book-callout-label {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin: 0 0 0.7rem;
+}
+.book-callout-body {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.book-callout-body p { margin: 0; font-family: var(--font-serif); color: var(--ink); }
+.book-callout-body p + p { margin-top: 0.85rem; }
+
+/* ── Epic pull-quote — the article's set piece ────────────────────────────
+   Breaks out wider than the body column, set in large high-contrast Playfair
+   italic, centred, with an oversized faded quotation mark for depth and a short
+   closing rule beneath. The breakout only fires once there's room (lg+). */
+.post-content blockquote {
+  position: relative;
+  margin-block: 3.6rem;
+  margin-inline: 0;
+  padding: 2.6rem 0.5rem 0;
+  border: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.55rem, 1.05rem + 1.6vw, 1.95rem);
+  line-height: 1.36;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+@media (min-width: 1024px) {
+  .post-content blockquote {
+    margin-inline: calc(-1 * var(--measure-break));
+  }
+}
+.post-content blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.16em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 5.2rem;
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0.13;
+  pointer-events: none;
+}
+.post-content blockquote::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 1px;
+  margin: 1.4rem auto 0;
+  background: var(--accent-ink);
+  opacity: 0.5;
+}
+.post-content blockquote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* Ornamental section break for `---` — a single faded aldus leaf */
+.post-content hr {
+  margin-block: 3.6rem;
+  border: 0;
+  text-align: center;
+}
+.post-content hr::before {
+  content: "❧";
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-soft);
+  opacity: 0.6;
+}
+
+/* Inline code */
+.post-content :not(pre) > code {
+  font-family: var(--font-inter), ui-monospace, monospace;
+  background: var(--rule-soft);
+  padding: 0.12em 0.4em;
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+  color: var(--ink);
+}
+
+.post-content img {
+  border-radius: 2px;
+  border: 1px solid var(--rule-soft);
+}
 
 /* ── Floating orb animations ─────────────────────────────────────────────── */
 

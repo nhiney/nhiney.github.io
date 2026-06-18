@@ -15,38 +15,24 @@ export function useIsTouchDevice() {
 
 export type Tone = "red" | "amber" | "emerald" | "violet";
 
+// All tones resolve to the single primary accent — sections are distinguished
+// by their labels, not by colour, for a cleaner and more professional look.
+const PRIMARY_TONE = {
+  card: "bg-primary/[0.04] border-primary/20 dark:bg-primary/[0.06]",
+  icon: "bg-primary/15 text-primary",
+  bullet: "bg-primary/70",
+  glow: "from-primary/15",
+  ring: "ring-primary/40",
+} as const;
+
 export const TONE_PALETTE: Record<
   Tone,
   { card: string; icon: string; bullet: string; glow: string; ring: string }
 > = {
-  red: {
-    card: "bg-red-500/[0.04] border-red-500/20 dark:bg-red-500/[0.06]",
-    icon: "bg-red-500/15 text-red-500",
-    bullet: "bg-red-500/70",
-    glow: "from-red-500/15",
-    ring: "ring-red-500/40",
-  },
-  amber: {
-    card: "bg-amber-500/[0.04] border-amber-500/20 dark:bg-amber-500/[0.06]",
-    icon: "bg-amber-500/15 text-amber-500",
-    bullet: "bg-amber-500/70",
-    glow: "from-amber-500/15",
-    ring: "ring-amber-500/40",
-  },
-  emerald: {
-    card: "bg-emerald-500/[0.04] border-emerald-500/20 dark:bg-emerald-500/[0.06]",
-    icon: "bg-emerald-500/15 text-emerald-500",
-    bullet: "bg-emerald-500",
-    glow: "from-emerald-500/15",
-    ring: "ring-emerald-500/40",
-  },
-  violet: {
-    card: "bg-violet-500/[0.04] border-violet-500/20 dark:bg-violet-500/[0.06]",
-    icon: "bg-violet-500/15 text-violet-500",
-    bullet: "bg-violet-500/70",
-    glow: "from-violet-500/15",
-    ring: "ring-violet-500/40",
-  },
+  red: PRIMARY_TONE,
+  amber: PRIMARY_TONE,
+  emerald: PRIMARY_TONE,
+  violet: PRIMARY_TONE,
 };
 
 export type Origin = "tl" | "tr" | "bl" | "br" | "tc" | "bc" | "c";

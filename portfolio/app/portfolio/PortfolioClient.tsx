@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {
-  ArrowRight, Mail, Download, ExternalLink,
+  ArrowRight, Mail, ExternalLink,
   CheckCircle2, Code2, Wrench, BarChart2, Sparkles, Layers,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -73,6 +73,23 @@ const inViewX = (delay = 0) => ({
   transition:  { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
 });
 
+// ─── Inline highlight ─────────────────────────────────────────────────────────
+// Renders `**keyword**` markers in copy as emphasised spans so readers can scan
+// the important terms instead of wading through full paragraphs.
+
+function Highlight({ text }: { text: string }) {
+  const parts = text.split(/\*\*(.+?)\*\*/);
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1
+          ? <strong key={i} className="font-semibold text-foreground">{part}</strong>
+          : part
+      )}
+    </>
+  );
+}
+
 // ─── Skill group icon map (not translatable) ──────────────────────────────────
 
 const SKILL_ICONS = [BarChart2, Layers, Code2, Wrench] as const;
@@ -83,10 +100,12 @@ const SKILL_STYLES = [
   { wrapperCls: "from-amber-500/10 to-amber-500/5 border-amber-500/20", iconCls: "text-amber-500"  },
 ] as const;
 
-const PROJECT_HREFS = [
-  "/projects/smart-medical-booking-app",
-  "/projects/database-security-system",
-  "/projects/english-learning-app",
+// GitHub repo per featured project (same order as projects.items).
+// Empty string → the project has no public repo, so the link is hidden.
+const PROJECT_REPOS = [
+  "https://github.com/nhiney/smart-clinic-booking-app", // Smart Medical Booking App
+  "https://github.com/nhiney/web-programing",           // E-Commerce Shoe Shop System
+  "https://github.com/nhiney/english-app",              // English Vocabulary Learning App
 ] as const;
 
 const PROJECT_TAG_CLS = [
@@ -127,6 +146,7 @@ export function PortfolioClient(_props: { projects: Post[] }) {
       <ProjectsSection copy={copy} />
       <ExperienceSection copy={copy} />
       <CertificationsSection copy={copy} />
+      <ResumeSection />
       <ContactSection copy={copy} />
     </>
   );
@@ -175,9 +195,9 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.22 }}
-          className="max-w-2xl text-base sm:text-lg leading-relaxed"
+          className="max-w-2xl text-base sm:text-lg leading-relaxed text-muted-foreground"
         >
-          {hero.sub_pre}
+          <Highlight text={hero.sub_pre} />
           {hero.sub_ba && (
             <>{" "}<span className="font-semibold text-foreground">{hero.sub_ba}</span>,{" "}
             <span className="font-semibold text-foreground">{hero.sub_product}</span>,{" "}
@@ -192,17 +212,11 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           transition={{ duration: 0.6, delay: 0.33 }}
           className="flex flex-col sm:flex-row gap-3"
         >
-          <Link href="/projects">
+          <a href="#projects">
             <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-7 py-3 text-sm font-semibold transition-all hover:shadow-[0_0_32px_-8px_hsl(var(--primary))] hover:scale-[1.02] active:scale-95">
               {hero.cta_projects} <ArrowRight className="h-4 w-4" />
             </button>
-          </Link>
-          <Link href="/resume">
-            <button className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 backdrop-blur-sm px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95">
-              <Download className="h-4 w-4" />
-              {hero.cta_cv}
-            </button>
-          </Link>
+          </a>
           <Link href={`mailto:${SITE_CONFIG.links.email}`}>
             <button className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 backdrop-blur-sm px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95">
               <Mail className="h-4 w-4" />
@@ -230,10 +244,10 @@ function AboutSection({ copy }: { copy: PortfolioCopy }) {
             <h2 className="text-xl sm:text-2xl font-semibold tracking-tight leading-snug">
               {about.heading_1} {about.heading_2} {about.heading_3}
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed">
-              <p>{about.p1}</p>
-              <p>{about.p2}</p>
-              <p>{about.p3}</p>
+            <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+              <p><Highlight text={about.p1} /></p>
+              <p><Highlight text={about.p2} /></p>
+              <p><Highlight text={about.p3} /></p>
             </div>
             <div className="flex gap-2 flex-wrap">
               {about.tags.map((tag) => (
@@ -358,12 +372,16 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
                       </div>
                     </div>
                   </div>
-                  <Link
-                    href={PROJECT_HREFS[i] ?? "/projects"}
-                    className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline shrink-0 pt-1"
-                  >
-                    {projects.label_case_study} <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
+                  {PROJECT_REPOS[i] && (
+                    <a
+                      href={PROJECT_REPOS[i]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline shrink-0 pt-1"
+                    >
+                      {projects.label_case_study} <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  )}
                 </div>
 
                 {/* Divider */}
@@ -373,7 +391,7 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
                   <div className="space-y-2">
                     <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground/40">{projects.label_problem}</p>
-                    <p className="text-sm leading-relaxed text-foreground/75">{project.problem}</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground"><Highlight text={project.problem} /></p>
                   </div>
                   <div className="space-y-2">
                     <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground/40">{projects.label_actions}</p>
@@ -400,11 +418,18 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
                 </div>
 
                 {/* Mobile CTA */}
-                <div className="sm:hidden pt-1">
-                  <Link href={PROJECT_HREFS[i] ?? "/projects"} className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
-                    {projects.label_case_study} <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
+                {PROJECT_REPOS[i] && (
+                  <div className="sm:hidden pt-1">
+                    <a
+                      href={PROJECT_REPOS[i]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+                    >
+                      {projects.label_case_study} <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.article>
           ))}
@@ -497,6 +522,47 @@ function CertificationsSection({ copy }: { copy: PortfolioCopy }) {
             </motion.div>
           ))}
         </div>
+
+      </Container>
+    </section>
+  );
+}
+
+// ─── Resume ───────────────────────────────────────────────────────────────────
+
+const CV_PATH = "/NguyenThiYenNhi_CV.pdf";
+
+function ResumeSection() {
+  const { t } = useLanguage();
+  return (
+    <section className="py-16 bg-secondary/20 border-t border-border/40">
+      <Container className="space-y-10">
+
+        <motion.div {...inView()} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+          <div className="space-y-3">
+            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">
+              {t("pages.resume.hero.badge")}
+            </span>
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+              {t("pages.resume.hero.title")}
+            </h2>
+            <p className="max-w-xl text-[15px] leading-relaxed">
+              {t("pages.resume.hero.description")}
+            </p>
+          </div>
+
+          <div className="flex gap-3 shrink-0">
+            <a
+              href={CV_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 backdrop-blur-sm px-6 py-2.5 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
+            >
+              <ExternalLink className="h-4 w-4" />
+              {t("pages.resume.hero.open_tab")}
+            </a>
+          </div>
+        </motion.div>
 
       </Container>
     </section>
