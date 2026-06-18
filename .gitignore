@@ -6,6 +6,9 @@ saasfly-main/
 tasks/
 task.md
 
+# Private thesis deck — local only, never push
+portfolio/app/nguyenthiyennhi-klcn-ai-logistics-doc-extractor/
+
 # Next.js build output — deployed via gh-pages branch, never committed to main
 _next/
 _not-found/
