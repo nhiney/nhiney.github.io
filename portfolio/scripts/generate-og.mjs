@@ -48,14 +48,16 @@ function el(type, props, ...rest) {
 const PAGES = [
   {
     slug: "home",
-    role: "Software Engineer · Backend Specialist",
+    eyebrow: "Tech-savvy · IT Background",
+    role: "Business Analyst",
     description:
-      "Software Engineering student specialising in secure backend systems, database architecture, and mobile development with Flutter.",
-    pills: ["Laravel · PHP", "Flutter · Dart", "Oracle DB", "ASP.NET MVC", "Firebase"],
-    metricLabel: "Coding",
-    metricValue: "442+ hrs",
-    accent: "#3D96FF",
-    accentAlt: "#6366f1",
+      "I turn business needs into user stories, system flows, and clear specs — bridging stakeholders and engineering, backed by a Computer Science foundation.",
+    pills: ["User Stories", "BPMN 2.0", "Data Modeling", "Agile / Scrum", "SQL"],
+    tagline: "Business Analysis · Data · Product",
+    metricLabel: "Certified",
+    metricValue: "Google",
+    accent: "#2563eb",
+    accentAlt: "#7c3aed",
   },
   {
     slug: "projects",
@@ -112,13 +114,13 @@ function Pill(text, accent) {
       style: {
         display: "flex",
         alignItems: "center",
-        padding: "6px 14px",
-        borderRadius: "6px",
-        background: "#1e2d46",
-        border: "1px solid #2a3d58",
-        fontSize: "14px",
-        fontWeight: 500,
-        color: "#8faac8",
+        padding: "7px 15px",
+        borderRadius: "7px",
+        background: `${accent}10`,
+        border: `1px solid ${accent}30`,
+        fontSize: "15px",
+        fontWeight: 600,
+        color: "#3a4a63",
         whiteSpace: "nowrap",
       },
     },
@@ -128,13 +130,14 @@ function Pill(text, accent) {
 
 // ─── Card builder ─────────────────────────────────────────────────────────────
 
-function buildCard({ role, description, pills, metricLabel, metricValue, accent, accentAlt }) {
-  const BG = "#0e1623";
-  const CARD_BG = "#111d2e";
-  const BORDER = "#1e2e44";
-  const TEXT_PRIMARY = "#e8f0fc";
-  const TEXT_MUTED = "#6a85a8";
-  const TEXT_DIM = "#3d5577";
+function buildCard({ eyebrow, role, description, pills, tagline, metricLabel, metricValue, accent, accentAlt }) {
+  const BG = "#eef2f8";
+  const CARD_BG = "#ffffff";
+  const BORDER = "#e3e9f1";
+  const TEXT_PRIMARY = "#0f1b2d";
+  const TEXT_MUTED = "#516179";
+  const TEXT_DIM = "#9aa9bf";
+  const tag = tagline || "Backend · Mobile · Security";
 
   return el(
     // ── Outermost wrapper — full 1200×630, dark bg
@@ -229,7 +232,7 @@ function buildCard({ role, description, pills, metricLabel, metricValue, accent,
               gap: "8px",
               padding: "8px 16px 8px 12px",
               borderRadius: "100px",
-              background: "#162236",
+              background: "#f5f8fc",
               border: `1px solid ${BORDER}`,
             },
           },
@@ -302,12 +305,28 @@ function buildCard({ role, description, pills, metricLabel, metricValue, accent,
       el(
         "div",
         { style: { display: "flex", flexDirection: "column", gap: "14px" } },
+        // Eyebrow — accent label highlighting the differentiator
+        eyebrow &&
+          el(
+            "div",
+            {
+              style: {
+                display: "flex",
+                fontSize: "16px",
+                fontWeight: 700,
+                color: accent,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+              },
+            },
+            eyebrow
+          ),
         // Role / page title
         el(
           "div",
           {
             style: {
-              fontSize: "52px",
+              fontSize: "60px",
               fontWeight: 800,
               color: TEXT_PRIMARY,
               lineHeight: "1.08",
@@ -372,7 +391,7 @@ function buildCard({ role, description, pills, metricLabel, metricValue, accent,
           el(
             "span",
             { style: { fontSize: "15px", fontWeight: 500, color: TEXT_DIM } },
-            "Backend · Mobile · Security"
+            tag
           )
         ),
 

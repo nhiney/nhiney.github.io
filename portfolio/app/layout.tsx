@@ -67,7 +67,6 @@ const jsonLd = {
       sameAs: [
         SITE_CONFIG.links.github,
         SITE_CONFIG.links.linkedin,
-        SITE_CONFIG.links.facebook,
         SITE_CONFIG.links.wakatime,
         SITE_CONFIG.links.portfolio,
       ],

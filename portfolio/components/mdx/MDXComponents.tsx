@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { highlightCode } from "@/lib/shiki";
 import { cn } from "@/lib/utils";
+import { KeyTakeaway } from "@/components/mdx/KeyTakeaway";
 
 type LinkProps = ComponentPropsWithoutRef<"a">;
 type ImageProps = ComponentPropsWithoutRef<typeof Image>;
@@ -78,4 +79,6 @@ export const components = {
   a: CustomLink,
   Image: CustomImage,
   pre: Pre,
+  // Editorial building block authors can drop into any .mdx article.
+  KeyTakeaway,
 };

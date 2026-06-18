@@ -1,28 +1,11 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { Language } from "@/lib/i18n/dictionaries";
+import { languages, visibleLanguages } from "@/lib/i18n/languages";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-
-// All supported languages — add back to VISIBLE_CODES to re-enable
-const languages: { code: Language; label: string; flag: string }[] = [
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
-  { code: "ja", label: "日本語", flag: "🇯🇵" },
-  { code: "zh", label: "简体中文", flag: "🇨🇳" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  { code: "ko", label: "한국어", flag: "🇰🇷" },
-  { code: "ru", label: "Русский", flag: "🇷🇺" },
-  { code: "pt", label: "Português", flag: "🇵🇹" },
-];
-
-const VISIBLE_CODES: Language[] = ["en", "vi"];
-const visibleLanguages = languages.filter((l) => VISIBLE_CODES.includes(l.code));
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
