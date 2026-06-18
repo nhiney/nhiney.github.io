@@ -60,6 +60,28 @@ const CATEGORY_DOT: Record<string, string> = {
 
 const dotColor = (category: string) => CATEGORY_DOT[category] ?? "bg-primary";
 
+const CATEGORY_BAR: Record<string, string> = {
+  Academic: "bg-violet-500",
+  "Mobile Development": "bg-blue-500",
+  Backend: "bg-red-500",
+  Security: "bg-emerald-500",
+  "Internet Technology": "bg-cyan-500",
+  AI: "bg-fuchsia-500",
+  "Project Management": "bg-amber-500",
+  Design: "bg-orange-500",
+};
+
+const CATEGORY_GLOW: Record<string, string> = {
+  Academic: "shadow-violet-500/20",
+  "Mobile Development": "shadow-blue-500/20",
+  Backend: "shadow-red-500/20",
+  Security: "shadow-emerald-500/20",
+  "Internet Technology": "shadow-cyan-500/20",
+  AI: "shadow-fuchsia-500/20",
+  "Project Management": "shadow-amber-500/20",
+  Design: "shadow-orange-500/20",
+};
+
 export function CertificatesClient() {
   const { t, language } = useLanguage();
   const locTitle = (item: { title: string; title_vi?: string | null }) =>
@@ -323,29 +345,67 @@ export function CertificatesClient() {
           {courseGroups.length === 0 ? (
             <EmptyState text={t("pages.certificates.filter.empty")} />
           ) : (
-            <div className="space-y-2.5">
+            <div className="space-y-3">
               {courseGroups.map(({ cert, courses, completed }, gi) => {
                 const isOpen = openAccordion === cert.id;
+                const pct = courses.length ? Math.round((completed / courses.length) * 100) : 0;
+                const catColor = CATEGORY_COLORS[cert.category] ?? "bg-primary/10 text-primary border-primary/20";
+                const catBar = CATEGORY_BAR[cert.category] ?? "bg-primary";
+                const catGlow = CATEGORY_GLOW[cert.category] ?? "shadow-primary/20";
                 return (
-                  <FadeIn key={cert.id} delay={gi * 0.05}>
-                    <div className="overflow-hidden rounded-2xl border border-border/50 bg-card/30">
+                  <FadeIn key={cert.id} delay={gi * 0.06}>
+                    <div
+                      className={`overflow-hidden rounded-2xl border border-border/50 bg-card transition-all duration-300 ${
+                        isOpen
+                          ? `shadow-xl ${catGlow}`
+                          : "hover:border-border/80 hover:shadow-md hover:shadow-black/5"
+                      }`}
+                    >
+                      {/* Category color strip */}
+                      <div className={`h-[3px] w-full ${catBar}`} />
+
                       {/* Accordion header */}
                       <button
                         type="button"
                         onClick={() => setOpenAccordion(isOpen ? null : cert.id)}
-                        className="flex w-full items-center gap-3 px-5 py-4 text-left transition-colors hover:bg-foreground/[0.03]"
+                        className="flex w-full items-center gap-4 px-5 py-4 text-left transition-colors hover:bg-foreground/[0.02]"
                       >
-                        <span className={`h-2 w-2 shrink-0 rounded-full ${dotColor(cert.category)}`} />
-                        <span className="flex-1 text-sm font-semibold text-foreground leading-snug">
-                          {cert.title}
-                        </span>
-                        <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground/60 font-medium">
-                          {completed}/{courses.length}
-                        </span>
-                        <ChevronDown
-                          size={15}
-                          className={`shrink-0 text-muted-foreground/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                        />
+                        {/* Left: category badge + title */}
+                        <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                          <span
+                            className={`inline-flex w-fit items-center rounded-full border px-2.5 py-0.5 text-[9px] font-black uppercase tracking-widest ${catColor}`}
+                          >
+                            {cert.category}
+                          </span>
+                          <span className="truncate text-[14px] font-bold leading-snug tracking-tight text-foreground">
+                            {cert.title}
+                          </span>
+                        </div>
+
+                        {/* Right: count + progress bar + chevron */}
+                        <div className="flex shrink-0 flex-col items-end gap-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-[11px] font-semibold tabular-nums text-muted-foreground/60">
+                              {completed}/{courses.length}
+                            </span>
+                            {pct === 100 && (
+                              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-white">
+                                <Check size={9} strokeWidth={3} />
+                              </span>
+                            )}
+                            <ChevronDown
+                              size={15}
+                              className={`text-muted-foreground/50 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                            />
+                          </div>
+                          {/* Progress bar */}
+                          <div className="h-1 w-24 overflow-hidden rounded-full bg-border/50">
+                            <div
+                              className={`h-full rounded-full transition-all duration-700 ${pct === 100 ? "bg-emerald-500" : catBar}`}
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                        </div>
                       </button>
 
                       {/* Animated course list */}
@@ -353,53 +413,78 @@ export function CertificatesClient() {
                         {isOpen && (
                           <motion.div
                             key="body"
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+                            initial={{ height: 0 }}
+                            animate={{ height: "auto" }}
+                            exit={{ height: 0 }}
+                            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                             className="overflow-hidden"
                           >
-                            <div className="border-t border-border/40 px-4 pb-4 pt-2.5 space-y-1">
-                              {courses.map((course, idx) => {
-                                const hasImage = !!course.image;
-                                return (
-                                  <button
-                                    key={course.title}
-                                    type="button"
-                                    onClick={() => hasImage ? handleCourseClick(course, cert) : undefined}
-                                    disabled={!hasImage}
-                                    className={`group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-colors ${
-                                      hasImage
-                                        ? "cursor-pointer border border-transparent hover:border-primary/30 hover:bg-primary/5"
-                                        : "cursor-default border border-dashed border-border/30 opacity-55"
-                                    }`}
-                                  >
-                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted/50 text-[10px] font-semibold tabular-nums text-muted-foreground/70">
-                                      {idx + 1}
-                                    </span>
-                                    <span className={`flex-1 truncate text-xs font-medium transition-colors ${hasImage ? "text-foreground/85 group-hover:text-primary" : "text-muted-foreground/55"}`}>
-                                      {locTitle(course)}
-                                    </span>
-                                    {course.date && (
-                                      <span className="shrink-0 text-[10px] tabular-nums text-muted-foreground/45">
-                                        {locDate(course.date)}
-                                      </span>
-                                    )}
-                                    {hasImage ? (
-                                      <>
-                                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-                                          <Check size={10} strokeWidth={3} />
+                            <div className="relative border-t border-border/40 px-5 pb-5 pt-4">
+                              {/* Vertical rail */}
+                              <div
+                                className={`pointer-events-none absolute bottom-5 left-[2.35rem] top-4 w-px opacity-20 ${catBar}`}
+                              />
+
+                              <div className="space-y-1">
+                                {courses.map((course, idx) => {
+                                  const hasImage = !!course.image;
+                                  return (
+                                    <motion.div
+                                      key={course.title}
+                                      initial={{ opacity: 0, x: -8 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: idx * 0.035, duration: 0.22, ease: "easeOut" }}
+                                    >
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          hasImage ? handleCourseClick(course, cert) : undefined
+                                        }
+                                        disabled={!hasImage}
+                                        className={`group relative flex w-full items-center gap-3.5 rounded-xl py-2.5 pl-3 pr-4 text-left transition-all duration-200 ${
+                                          hasImage
+                                            ? "cursor-pointer hover:bg-primary/5 hover:shadow-sm"
+                                            : "cursor-default opacity-40"
+                                        }`}
+                                      >
+                                        {/* Step dot on rail */}
+                                        <span
+                                          className={`relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-2 ring-background transition-all duration-200 text-[10px] font-bold tabular-nums ${
+                                            hasImage
+                                              ? "bg-emerald-500 text-white group-hover:scale-110 group-hover:shadow-md group-hover:shadow-emerald-500/30"
+                                              : "border border-border/50 bg-muted/40 text-muted-foreground/40"
+                                          }`}
+                                        >
+                                          {hasImage ? <Check size={10} strokeWidth={3} /> : idx + 1}
                                         </span>
-                                        <ChevronRight size={12} className="shrink-0 text-muted-foreground/40 transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
-                                      </>
-                                    ) : (
-                                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-border/40 bg-muted/30">
-                                        <Clock size={9} className="text-muted-foreground/40" />
-                                      </span>
-                                    )}
-                                  </button>
-                                );
-                              })}
+
+                                        <span
+                                          className={`flex-1 text-[13px] font-medium leading-snug transition-colors ${
+                                            hasImage
+                                              ? "text-foreground/85 group-hover:text-primary"
+                                              : "text-muted-foreground/45"
+                                          }`}
+                                        >
+                                          {locTitle(course)}
+                                        </span>
+
+                                        {course.date && hasImage && (
+                                          <span className="shrink-0 text-[10px] tabular-nums text-muted-foreground/40">
+                                            {locDate(course.date)}
+                                          </span>
+                                        )}
+
+                                        {hasImage && (
+                                          <ChevronRight
+                                            size={13}
+                                            className="shrink-0 text-primary/30 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-primary"
+                                          />
+                                        )}
+                                      </button>
+                                    </motion.div>
+                                  );
+                                })}
+                              </div>
                             </div>
                           </motion.div>
                         )}
