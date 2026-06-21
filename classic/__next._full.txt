@@ -1,26 +1,26 @@
 1:"$Sreact.fragment"
-b:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
+b:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
 :HL["/_next/static/chunks/15_w23_.ar198.css","style"]
-:HL["/_next/static/chunks/14~w-hw9kry5v.css","style"]
+:HL["/_next/static/chunks/0g8amh2bb_ou8.css","style"]
 :HL["/_next/static/media/11cc37d7380d16b4-s.p.0ptcwqi9jx~4d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/6bd983bd58a87a3d-s.p.0h108oidc_0fm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T8f2,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@_tolanhy","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-21"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["","classic",""],"q":"","i":false,"f":[[["",{"children":["classic",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/15_w23_.ar198.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/14~w-hw9kry5v.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/10t6aisp~8lkd.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/1796v1pwe9gpx.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/026z7.gtgb754.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc","$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"CI0c5QT5dD6FWy4NIdtYa"}
-e:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
-f:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
-10:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
-11:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
-12:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
-13:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-14:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-15:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
-16:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
-1b:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:T8f2,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@_tolanhy","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-21"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["","classic",""],"q":"","i":false,"f":[[["",{"children":["classic",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/15_w23_.ar198.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0g8amh2bb_ou8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/15j6~.oxj778c.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/15fm2zl822j.q.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/026z7.gtgb754.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc","$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"1EkSBdzmstPnReUmQdUxS"}
+e:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
+f:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
+10:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
+11:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
+12:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
+13:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+14:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+15:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
+16:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
+1b:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 1c:"$Sreact.suspense"
-1f:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
-21:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
+1f:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
+21:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
 3:["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}]
 4:["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}]
 5:["$","link",null,{"rel":"dns-prefetch","href":"https://github.com"}]
@@ -31,13 +31,13 @@ f:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6ais
 9:"$W1e"
 a:["$","$1","h",{"children":[null,["$","$L1f",null,{"children":"$L20"}],["$","div",null,{"hidden":true,"children":["$","$L21",null,{"children":["$","$1c",null,{"name":"Next.Metadata","children":"$L22"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
 c:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/15_w23_.ar198.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/14~w-hw9kry5v.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-23:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-24:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
+d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0g8amh2bb_ou8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+23:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+24:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
 17:["$","rect",null,{"width":"20","height":"16","x":"2","y":"4","rx":"2"}]
 18:["$","path",null,{"d":"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"}]
 19:["$","div",null,{"className":"flex items-center gap-5","children":[["$","$L16",null,{"href":"/mind-map","className":"group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary","children":[["$","$L23",null,{"ref":"$undefined","iconNode":[["path",{"d":"m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z","key":"cpyugq"}],["path",{"d":"M12 22v-3","key":"kmzjlo"}]],"className":"lucide-tree-pine h-3.5 w-3.5 transition-transform group-hover:scale-110"}],["$","span",null,{"className":"hidden sm:inline","children":"Mind Map"}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L24",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
-25:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10x6no244vu3c.js","/_next/static/chunks/0goob0ahp2e62.js"],"HomeClient"]
+25:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10x6no244vu3c.js","/_next/static/chunks/0goob0ahp2e62.js"],"HomeClient"]
 26:T216a,
 Có những cuốn sách rất dễ bị đọc như một danh sách mẹo. *Đắc Nhân Tâm* (*How to Win Friends and Influence People*) cũng dễ rơi vào cảm giác đó nếu tôi chỉ mở nó ra để tìm cách nói sao cho người khác thích mình hơn, hoặc làm sao để một cuộc trò chuyện đi đúng ý mình hơn.
 
@@ -220,12 +220,14 @@ Nếu chỉ giữ lại một điều, tôi muốn giữ điều này: sự khé
 <AestheticNote>
   "Giao tiếp tử tế không có nghĩa là tự xóa mình để cuộc trò chuyện được êm."
 </AestheticNote>
-28:Td74,
+28:T1806,
 I judged this book by its cover. Literally.
 
 It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
 
-I bought it as a gift for someone else. Then I read it on the train home first — "just to check it" — and quietly fell apart somewhere around page forty.
+I bought it as a gift for someone else. Then I read it on the train home first - "just to check it" - and quietly fell apart somewhere around page forty.
+
+That is the strange power of *The Boy, the Mole, the Fox and the Horse*. It looks like a book you can finish between two train stops. Then it asks one small, honest question and suddenly you are staring out the window pretending the air is dusty.
 
 ---
 
@@ -233,63 +235,86 @@ I bought it as a gift for someone else. Then I read it on the train home first �
 
 Here's the thing I don't admit often: I'd been running on empty for a while.
 
-Not in a dramatic way. Just the low, grey kind of tired where you're functioning fine, ticking off tasks, answering messages, and somewhere underneath it all there's a small voice asking *are you okay?* that you keep promising to get back to later.
+Not in a dramatic way. I was still getting things done. I answered messages, met deadlines, smiled at the right times, and kept a tidy list of what had to happen next. From the outside, nothing looked wrong.
 
-I think I'd forgotten how to be kind to myself. I was good at being kind to everyone else. With me, the inner voice was a manager, not a friend.
+Inside, though, everything had become a little too loud.
 
-This little book — a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking — snuck right past all my defenses precisely *because* it was so simple. There was nothing to analyze. Only something to feel.
+Maybe you know that version of tired too. The one where you tell a friend to rest, then call yourself lazy for needing the same thing. The one where you can forgive everyone else's awkward message, late reply, or unfinished plan, but replay your own tiny mistakes like evidence in court.
+
+This little book - a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking - slipped past my defenses because it never tried to sound impressive. There was no theory to master and no complicated plot to follow. Just four gentle characters saying the kind of things we often know, but rarely let ourselves believe.
 
 ---
 
 ## The lines that stayed with me
 
-It has almost no plot. It's barely a hundred pages, half of them drawings. And yet I've underlined more of it than books five times its length.
+It has almost no plot. It is barely more than a walk, a conversation, and a handful of drawings that leave room for silence. And yet I underlined more of it than books five times its length.
 
-### "Asking for help isn't giving up"
+### Help is not a failure
 
 There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
 
-> "Asking for help isn't giving up," said the horse. "It's refusing to give up."
+> "Asking for help isn't giving up."
 
-I'd always quietly filed asking for help under *weakness*. Something to do only when I'd exhausted every other option and could no longer pretend. Reading that one line on a moving train, I realized how lonely I'd made my own life by believing it.
+I used to treat help as the emergency button behind glass: break only when every other option has failed. So I would stay quiet when I was confused at work. I would reread the same email ten times instead of asking one clear question. I would tell friends "I'm fine" because explaining the truth felt like making my problem too heavy for someone else.
+
+The book makes help feel smaller and more human. Help can be texting, "Can you sit with me for ten minutes?" It can be asking a teammate to look at a paragraph you have rewritten too many times. It can be telling someone, "I don't need advice right now, I just need not to be alone with this."
+
+That is not giving up. That is choosing not to disappear inside your own head.
 
 ### The smallest things are not small
 
 The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
 
-It sounds almost too simple to mean anything. But it landed because I've spent so long measuring myself by output — what I made, what I achieved, what I could point to. Nobody ever taught me to measure a day by how gentle I was in it.
+It sounds almost too simple to mean anything. But it landed because I have spent so long measuring myself by output: what I finished, what I achieved, what I could point to at the end of the day.
+
+Kindness is harder to display on a progress tracker. It looks ordinary. It is letting someone merge into traffic when you are already late. It is not turning one bad morning into a verdict on your whole personality. It is bringing yourself a glass of water before forcing one more hour of work out of a tired body.
+
+The book reminded me that a gentle day is not a wasted day. Sometimes the most important thing you do is refuse to become sharp just because the world was sharp with you.
+
+### Courage is quieter than I thought
+
+The fox does not arrive ready to trust. The boy does not always know where he is going. The horse is wise, but not distant. Everyone in the book is vulnerable in a different way.
+
+I liked that. It made courage feel less like a grand speech and more like a daily habit. Courage can be opening the bill you have been avoiding. It can be apologizing without defending yourself first. It can be showing up to a class, a meeting, or a conversation even though you feel behind everyone else.
+
+The book does not ask us to become fearless. It suggests something kinder: keep moving, and let someone walk beside you.
 
 ### "This storm will pass"
 
-Near the end, in the rain, the horse says the storms always pass — something I logically know and emotionally forget every single time I'm inside one.
+Near the end, in the rain, the horse says the storms always pass - something I logically know and emotionally forget every single time I'm inside one.
 
-There's a difference between knowing a thing and being reminded of it by someone who clearly means it. This book is a hundred pages of the second kind.
+That line matters because storms do not feel temporary when you are in them. A failed interview feels like a verdict. A tense conversation feels like the end of a relationship. A week of being behind feels like proof that you are not built for your own life.
+
+But most storms do pass. Not always quickly, and not always without leaving mud behind, but they pass. The book does not pretend rain is pleasant. It simply sits with you long enough for you to remember that rain is not the whole sky.
 
 ---
 
 ## What I'm carrying with me
 
-I'm not going to pretend a picture book rearranged my whole life. But it nudged a few quiet things:
+I'm not going to pretend a picture book rearranged my whole life. But it gave me a few practices I can actually use on a Tuesday afternoon:
 
-* **I'm talking to myself like I'd talk to a friend** — or at least catching it when I don't.
-* **I'm letting "kind" count as an achievement** — a gentle day is not a wasted day.
-* **I keep it on my desk, not my shelf** — some mornings I open it to one random page and that's the whole ritual.
+* **I check my inner voice.** If I would not say it to a friend, I try not to say it to myself without question.
+* **I ask for help earlier.** Not when everything is already on fire, but when the first smoke appears.
+* **I let small kindness count.** Replying gently, resting without guilt, making tea for someone, making tea for myself.
+* **I keep the book nearby.** Some mornings I open it to one random page. That is the whole ritual.
 
 ---
 
 ## A few last thoughts
 
-If you're tired in the quiet way, or you've forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or anything to "figure out" — this isn't that, and it never tries to be.
+If you are tired in the quiet way, or if you have forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or a puzzle to solve, this is not that, and it never tries to be.
+
+It is closer to sitting beside someone who does not rush you. It will not fix your life. It will not answer every hard question. But it may help you breathe a little more deeply while you face them.
 
 I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
-
-> "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
-29:Td74,
+29:T1806,
 I judged this book by its cover. Literally.
 
 It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
 
-I bought it as a gift for someone else. Then I read it on the train home first — "just to check it" — and quietly fell apart somewhere around page forty.
+I bought it as a gift for someone else. Then I read it on the train home first - "just to check it" - and quietly fell apart somewhere around page forty.
+
+That is the strange power of *The Boy, the Mole, the Fox and the Horse*. It looks like a book you can finish between two train stops. Then it asks one small, honest question and suddenly you are staring out the window pretending the air is dusty.
 
 ---
 
@@ -297,63 +322,86 @@ I bought it as a gift for someone else. Then I read it on the train home first �
 
 Here's the thing I don't admit often: I'd been running on empty for a while.
 
-Not in a dramatic way. Just the low, grey kind of tired where you're functioning fine, ticking off tasks, answering messages, and somewhere underneath it all there's a small voice asking *are you okay?* that you keep promising to get back to later.
+Not in a dramatic way. I was still getting things done. I answered messages, met deadlines, smiled at the right times, and kept a tidy list of what had to happen next. From the outside, nothing looked wrong.
 
-I think I'd forgotten how to be kind to myself. I was good at being kind to everyone else. With me, the inner voice was a manager, not a friend.
+Inside, though, everything had become a little too loud.
 
-This little book — a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking — snuck right past all my defenses precisely *because* it was so simple. There was nothing to analyze. Only something to feel.
+Maybe you know that version of tired too. The one where you tell a friend to rest, then call yourself lazy for needing the same thing. The one where you can forgive everyone else's awkward message, late reply, or unfinished plan, but replay your own tiny mistakes like evidence in court.
+
+This little book - a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking - slipped past my defenses because it never tried to sound impressive. There was no theory to master and no complicated plot to follow. Just four gentle characters saying the kind of things we often know, but rarely let ourselves believe.
 
 ---
 
 ## The lines that stayed with me
 
-It has almost no plot. It's barely a hundred pages, half of them drawings. And yet I've underlined more of it than books five times its length.
+It has almost no plot. It is barely more than a walk, a conversation, and a handful of drawings that leave room for silence. And yet I underlined more of it than books five times its length.
 
-### "Asking for help isn't giving up"
+### Help is not a failure
 
 There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
 
-> "Asking for help isn't giving up," said the horse. "It's refusing to give up."
+> "Asking for help isn't giving up."
 
-I'd always quietly filed asking for help under *weakness*. Something to do only when I'd exhausted every other option and could no longer pretend. Reading that one line on a moving train, I realized how lonely I'd made my own life by believing it.
+I used to treat help as the emergency button behind glass: break only when every other option has failed. So I would stay quiet when I was confused at work. I would reread the same email ten times instead of asking one clear question. I would tell friends "I'm fine" because explaining the truth felt like making my problem too heavy for someone else.
+
+The book makes help feel smaller and more human. Help can be texting, "Can you sit with me for ten minutes?" It can be asking a teammate to look at a paragraph you have rewritten too many times. It can be telling someone, "I don't need advice right now, I just need not to be alone with this."
+
+That is not giving up. That is choosing not to disappear inside your own head.
 
 ### The smallest things are not small
 
 The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
 
-It sounds almost too simple to mean anything. But it landed because I've spent so long measuring myself by output — what I made, what I achieved, what I could point to. Nobody ever taught me to measure a day by how gentle I was in it.
+It sounds almost too simple to mean anything. But it landed because I have spent so long measuring myself by output: what I finished, what I achieved, what I could point to at the end of the day.
+
+Kindness is harder to display on a progress tracker. It looks ordinary. It is letting someone merge into traffic when you are already late. It is not turning one bad morning into a verdict on your whole personality. It is bringing yourself a glass of water before forcing one more hour of work out of a tired body.
+
+The book reminded me that a gentle day is not a wasted day. Sometimes the most important thing you do is refuse to become sharp just because the world was sharp with you.
+
+### Courage is quieter than I thought
+
+The fox does not arrive ready to trust. The boy does not always know where he is going. The horse is wise, but not distant. Everyone in the book is vulnerable in a different way.
+
+I liked that. It made courage feel less like a grand speech and more like a daily habit. Courage can be opening the bill you have been avoiding. It can be apologizing without defending yourself first. It can be showing up to a class, a meeting, or a conversation even though you feel behind everyone else.
+
+The book does not ask us to become fearless. It suggests something kinder: keep moving, and let someone walk beside you.
 
 ### "This storm will pass"
 
-Near the end, in the rain, the horse says the storms always pass — something I logically know and emotionally forget every single time I'm inside one.
+Near the end, in the rain, the horse says the storms always pass - something I logically know and emotionally forget every single time I'm inside one.
 
-There's a difference between knowing a thing and being reminded of it by someone who clearly means it. This book is a hundred pages of the second kind.
+That line matters because storms do not feel temporary when you are in them. A failed interview feels like a verdict. A tense conversation feels like the end of a relationship. A week of being behind feels like proof that you are not built for your own life.
+
+But most storms do pass. Not always quickly, and not always without leaving mud behind, but they pass. The book does not pretend rain is pleasant. It simply sits with you long enough for you to remember that rain is not the whole sky.
 
 ---
 
 ## What I'm carrying with me
 
-I'm not going to pretend a picture book rearranged my whole life. But it nudged a few quiet things:
+I'm not going to pretend a picture book rearranged my whole life. But it gave me a few practices I can actually use on a Tuesday afternoon:
 
-* **I'm talking to myself like I'd talk to a friend** — or at least catching it when I don't.
-* **I'm letting "kind" count as an achievement** — a gentle day is not a wasted day.
-* **I keep it on my desk, not my shelf** — some mornings I open it to one random page and that's the whole ritual.
+* **I check my inner voice.** If I would not say it to a friend, I try not to say it to myself without question.
+* **I ask for help earlier.** Not when everything is already on fire, but when the first smoke appears.
+* **I let small kindness count.** Replying gently, resting without guilt, making tea for someone, making tea for myself.
+* **I keep the book nearby.** Some mornings I open it to one random page. That is the whole ritual.
 
 ---
 
 ## A few last thoughts
 
-If you're tired in the quiet way, or you've forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or anything to "figure out" — this isn't that, and it never tries to be.
+If you are tired in the quiet way, or if you have forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or a puzzle to solve, this is not that, and it never tries to be.
+
+It is closer to sitting beside someone who does not rush you. It will not fix your life. It will not answer every hard question. But it may help you breathe a little more deeply while you face them.
 
 I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
-
-> "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
-2a:T13cc,
+2a:T2226,
 Tôi đã trông mặt mà bắt hình dong cuốn sách này. Theo đúng nghĩa đen.
 
 Nó nằm đó trong một hiệu sách, toàn màu nước dịu nhẹ và một chú ngựa với đôi mắt hiền, và tôi nghĩ: *dễ thương đấy, nhưng không hợp với mình.* Tôi đôi mươi rồi. Tôi đọc Sách Nghiêm Túc không tranh ảnh, cảm ơn nhé.
 
-Tôi mua nó làm quà cho người khác. Rồi tôi đọc nó trên chuyến tàu về nhà trước — "chỉ để kiểm tra thôi mà" — và lặng lẽ vỡ òa đâu đó quanh trang bốn mươi.
+Tôi mua nó làm quà cho người khác. Rồi tôi đọc nó trên chuyến tàu về nhà trước - "chỉ để kiểm tra thôi mà" - và lặng lẽ vỡ òa đâu đó quanh trang bốn mươi.
+
+Đó là sức mạnh kỳ lạ của *The Boy, the Mole, the Fox and the Horse*. Nó trông như một cuốn sách bạn có thể đọc xong giữa hai trạm tàu. Rồi nó hỏi một câu rất nhỏ, rất thật, và tự nhiên bạn phải nhìn ra ngoài cửa sổ để giả vờ rằng mắt mình chỉ đang bị bụi bay vào.
 
 ---
 
@@ -361,57 +409,78 @@ Tôi mua nó làm quà cho người khác. Rồi tôi đọc nó trên chuyến 
 
 Có một điều tôi ít khi thừa nhận: tôi đã chạy trong tình trạng cạn kiệt một thời gian rồi.
 
-Không phải theo kiểu kịch tính. Chỉ là cái mệt mỏi xám xịt, âm thầm, khi bạn vẫn vận hành ổn, vẫn gạch đầu việc, vẫn trả lời tin nhắn, mà đâu đó bên dưới có một giọng nói nhỏ hỏi *bạn ổn không?* — cái giọng bạn cứ hứa sẽ quay lại trả lời sau.
+Không phải theo kiểu kịch tính. Tôi vẫn làm được việc, vẫn trả lời tin nhắn, vẫn đến đúng chỗ cần đến, vẫn mỉm cười vào đúng lúc. Nhìn từ bên ngoài, mọi thứ có vẻ ổn.
 
-Tôi nghĩ tôi đã quên cách tử tế với chính mình. Tôi giỏi tử tế với mọi người khác. Còn với mình, giọng nói bên trong là một ông sếp, chứ không phải một người bạn.
+Bên trong thì mọi thứ hơi ồn.
 
-Cuốn sách nhỏ này — một cậu bé, một chú chuột chũi mê bánh, một con cáo dè chừng, và một chú ngựa khôn ngoan, cùng nhau lang thang và trò chuyện — lách qua mọi hàng phòng thủ của tôi đúng *vì* nó quá đơn giản. Chẳng có gì để phân tích. Chỉ có thứ gì đó để cảm nhận.
+Có thể bạn cũng biết kiểu mệt đó. Kiểu bạn khuyên bạn bè nghỉ ngơi, rồi lại tự gọi mình là lười khi chính mình cần nghỉ. Kiểu bạn dễ dàng tha thứ cho tin nhắn vụng về, câu trả lời muộn, hay kế hoạch dang dở của người khác, nhưng lại lôi từng lỗi nhỏ của mình ra như bằng chứng trước tòa.
+
+Cuốn sách nhỏ này - một cậu bé, một chú chuột chũi mê bánh, một con cáo dè chừng, và một chú ngựa khôn ngoan, cùng nhau lang thang và trò chuyện - lách qua mọi hàng phòng thủ của tôi vì nó không cố tỏ ra sâu sắc. Không có lý thuyết nào cần nắm. Không có cốt truyện phức tạp nào cần theo. Chỉ có bốn nhân vật dịu dàng nói những điều ta thường đã biết, nhưng hiếm khi cho phép mình tin.
 
 ---
 
 ## Những dòng chữ ở lại với tôi
 
-Nó gần như không có cốt truyện. Vỏn vẹn hơn trăm trang, một nửa là tranh vẽ. Vậy mà tôi đã gạch chân nó nhiều hơn cả những cuốn dày gấp năm lần.
+Nó gần như không có cốt truyện. Chỉ như một cuộc đi dạo, một cuộc trò chuyện, và những bức vẽ chừa rất nhiều khoảng lặng. Vậy mà tôi đã gạch chân nó nhiều hơn cả những cuốn dày gấp năm lần.
 
-### "Nhờ giúp đỡ không phải là bỏ cuộc"
+### Nhờ giúp đỡ không phải là thất bại
 
 Có một khoảnh khắc khi cậu bé thừa nhận mình đang chật vật, và chú ngựa nói ra điều mà tôi đã cần ai đó nói với mình suốt nhiều năm.
 
-> "Nhờ giúp đỡ không phải là bỏ cuộc," chú ngựa nói. "Đó là từ chối bỏ cuộc."
+> "Nhờ giúp đỡ không phải là bỏ cuộc."
 
-Tôi luôn lặng lẽ xếp việc nhờ giúp đỡ vào ngăn *yếu đuối*. Một điều chỉ làm khi đã cạn mọi lựa chọn khác và không thể giả vờ thêm được nữa. Đọc dòng chữ ấy trên một con tàu đang chạy, tôi nhận ra mình đã khiến cuộc đời mình cô đơn đến mức nào chỉ vì tin vào điều đó.
+Tôi từng xem việc nhờ giúp đỡ như một nút khẩn cấp nằm sau lớp kính: chỉ được đập vỡ khi mọi lựa chọn khác đã thất bại. Vì vậy tôi im lặng khi không hiểu một việc ở chỗ làm. Tôi đọc đi đọc lại cùng một email mười lần thay vì hỏi một câu rõ ràng. Tôi nói với bạn bè "mình ổn" vì giải thích sự thật nghe như đang đặt vấn đề của mình lên vai người khác.
+
+Cuốn sách khiến việc nhờ giúp đỡ trở nên nhỏ hơn, đời thường hơn. Giúp đỡ có thể là nhắn: "Cậu ngồi với mình mười phút được không?" Có thể là nhờ đồng nghiệp xem qua một đoạn bạn đã sửa quá nhiều lần. Có thể là nói: "Bây giờ mình không cần lời khuyên, mình chỉ cần không phải ở một mình với chuyện này."
+
+Đó không phải là bỏ cuộc. Đó là chọn không biến mất trong chính suy nghĩ của mình.
 
 ### Những điều nhỏ nhất không hề nhỏ
 
 Chú chuột chũi, khi được hỏi muốn trở thành gì khi lớn lên, trả lời: *tử tế.* Không phải thành công. Không phải gây ấn tượng. Mà là tử tế.
 
-Nghe đơn giản đến mức tưởng chẳng có nghĩa gì. Nhưng nó chạm vào tôi bởi tôi đã dành quá lâu để đo lường bản thân bằng năng suất — bằng những gì tôi tạo ra, đạt được, có thể chỉ tay vào. Chẳng ai từng dạy tôi đo một ngày bằng việc mình đã dịu dàng đến đâu trong ngày đó.
+Nghe đơn giản đến mức tưởng chẳng có nghĩa gì. Nhưng nó chạm vào tôi bởi tôi đã dành quá lâu để đo lường bản thân bằng năng suất: hôm nay làm xong gì, đạt được gì, có gì để chỉ tay vào cuối ngày.
+
+Sự tử tế khó đưa lên bảng tiến độ hơn. Nó trông rất bình thường. Nó là nhường một người chen vào làn đường khi bạn cũng đang trễ. Nó là không biến một buổi sáng tệ thành bản án cho cả con người mình. Nó là tự lấy cho mình một ly nước trước khi ép cơ thể mệt mỏi làm thêm một tiếng nữa.
+
+Cuốn sách nhắc tôi rằng một ngày dịu dàng không phải là một ngày lãng phí. Đôi khi điều quan trọng nhất bạn làm là không trở nên sắc lạnh chỉ vì thế giới đã sắc lạnh với bạn.
+
+### Dũng cảm hóa ra yên lặng hơn tôi tưởng
+
+Con cáo không xuất hiện với khả năng tin tưởng ngay lập tức. Cậu bé không phải lúc nào cũng biết mình đang đi đâu. Chú ngựa khôn ngoan, nhưng không xa cách. Mỗi nhân vật đều dễ tổn thương theo một cách riêng.
+
+Tôi thích điều đó. Nó khiến sự dũng cảm bớt giống một bài diễn văn lớn lao, và giống một thói quen hằng ngày hơn. Dũng cảm có thể là mở hóa đơn bạn đã né tránh. Có thể là xin lỗi mà không vội tự bào chữa. Có thể là xuất hiện trong một lớp học, cuộc họp, hay cuộc trò chuyện dù bạn cảm thấy mình đang chậm hơn tất cả mọi người.
+
+Cuốn sách không bắt ta trở nên không biết sợ. Nó gợi ý một điều tử tế hơn: cứ đi tiếp, và để ai đó đi cạnh mình.
 
 ### "Cơn bão này rồi sẽ qua"
 
-Gần cuối sách, trong mưa, chú ngựa nói rằng những cơn bão luôn rồi sẽ qua — điều mà về lý trí tôi biết, nhưng về cảm xúc lại quên sạch mỗi lần tôi đang ở trong một cơn bão.
+Gần cuối sách, trong mưa, chú ngựa nói rằng những cơn bão luôn rồi sẽ qua - điều mà về lý trí tôi biết, nhưng về cảm xúc lại quên sạch mỗi lần tôi đang ở trong một cơn bão.
 
-Có một sự khác biệt giữa việc biết một điều và việc được nhắc lại nó bởi một người rõ ràng đang nói thật lòng. Cuốn sách này là hơn trăm trang của kiểu thứ hai.
+Câu ấy quan trọng vì khi ta đang ở trong bão, bão không hề có vẻ tạm thời. Một buổi phỏng vấn thất bại nghe như lời phán xét. Một cuộc trò chuyện căng thẳng có cảm giác như dấu chấm hết cho một mối quan hệ. Một tuần bị trễ việc dễ biến thành bằng chứng rằng mình không đủ sức sống cuộc đời của chính mình.
+
+Nhưng phần lớn những cơn bão rồi cũng đi qua. Không phải lúc nào cũng nhanh, và không phải lúc nào cũng sạch sẽ không để lại bùn đất, nhưng chúng đi qua. Cuốn sách không giả vờ rằng mưa dễ chịu. Nó chỉ ngồi cạnh bạn đủ lâu để bạn nhớ rằng mưa không phải là toàn bộ bầu trời.
 
 ---
 
 ## Điều tôi mang theo
 
-Tôi sẽ không giả vờ rằng một cuốn truyện tranh sắp xếp lại cả cuộc đời tôi. Nhưng nó đã hích nhẹ vài điều:
+Tôi sẽ không giả vờ rằng một cuốn truyện tranh sắp xếp lại cả cuộc đời tôi. Nhưng nó cho tôi vài thực hành nhỏ mà tôi thật sự có thể dùng vào một chiều thứ Ba:
 
-* **Tôi nói chuyện với chính mình như nói với một người bạn** — hoặc ít nhất là bắt được mình khi không làm vậy.
-* **Tôi cho phép "tử tế" được tính là một thành tựu** — một ngày dịu dàng không phải một ngày lãng phí.
-* **Tôi để nó trên bàn làm việc, không phải trên kệ sách** — vài buổi sáng tôi mở đại một trang, và đó là toàn bộ nghi thức.
+* **Tôi kiểm tra giọng nói bên trong.** Nếu tôi sẽ không nói câu đó với một người bạn, tôi cố không mặc nhiên nói nó với chính mình.
+* **Tôi nhờ giúp đỡ sớm hơn.** Không phải khi mọi thứ đã bốc cháy, mà khi vừa bắt đầu có khói.
+* **Tôi cho phép những tử tế nhỏ được tính.** Trả lời nhẹ nhàng, nghỉ ngơi không tội lỗi, pha trà cho ai đó, pha trà cho chính mình.
+* **Tôi để cuốn sách gần mình.** Vài buổi sáng tôi mở đại một trang. Chỉ vậy thôi cũng đủ thành một nghi thức.
 
 ---
 
 ## Có đáng đọc không?
 
-Nếu bạn đang mệt theo kiểu lặng lẽ, hoặc đã quên cách mềm mỏng với chính mình, cuốn sách này là một hành động nhân từ nho nhỏ. Còn nếu bạn muốn cốt truyện, sự phức tạp, hay điều gì đó để "giải mã" — thì đây không phải vậy, và nó cũng chẳng cố gồng để trở thành thế.
+Nếu bạn đang mệt theo kiểu lặng lẽ, hoặc đã quên cách mềm mỏng với chính mình, cuốn sách này là một hành động nhân từ nho nhỏ. Còn nếu bạn muốn cốt truyện, sự phức tạp, hay điều gì đó để "giải mã", thì đây không phải vậy, và nó cũng chẳng cố gồng để trở thành thế.
+
+Nó giống việc ngồi cạnh một người không hối bạn phải ổn ngay lập tức. Nó sẽ không sửa chữa cuộc đời bạn. Nó cũng không trả lời mọi câu hỏi khó. Nhưng có thể nó sẽ giúp bạn thở sâu hơn một chút khi đối diện với những câu hỏi đó.
 
 Cuối cùng tôi vẫn tặng cuốn của mình đi, đúng như dự định. Rồi ngày hôm sau tôi mua lại một cuốn khác cho chính mình. Chừng đó chắc đã nói lên tất cả.
-
-> "Điều dũng cảm nhất cậu từng nói là gì?" cậu bé hỏi. "Giúp với," chú ngựa đáp.
 2b:Tf13,
 It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been <mark>talking about you the whole time</mark> without ever asking permission.
 
@@ -622,8 +691,8 @@ Với tôi, thời điểm là tất cả. Có những cuốn sách không dạy
 Tôi sẽ đọc một cuốn gì đó nhẹ nhàng hơn tiếp theo. Nhưng tôi nghĩ mình sẽ tử tế hơn một chút với chính những lựa chọn của mình, trong một thời gian.
 
 > Cách duy nhất để học là sống.
-1a:["$","$L25",null,{"projects":[],"latestPosts":[{"slug":"dac-nhan-tam-review","content":"$26","title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","date":"2026-06-18","tags":["Books","Reflection","Communication"],"readingTime":"7 min read","i18n":{"en":{"title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","content":"$27","readingTime":"7 min read"}}},{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$28","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","content":"$29","readingTime":"4 min read"},"vi":{"title":"The Boy, the Mole, the Fox and the Horse — Cuốn sách thiếu nhi khiến một người lớn khóc trên tàu","description":"Tôi suýt đã không đọc nó. Trông nó cứ như một cuốn truyện tranh cho trẻ con. Hóa ra nó lại là điều dịu dàng nhất ai đó từng nói với tôi trong nhiều năm.","content":"$2a","readingTime":"5 min read"}}},{"slug":"the-midnight-library","content":"$2b","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","content":"$2c","readingTime":"4 min read"},"vi":{"title":"The Midnight Library — Về những cuộc đời tôi cứ tưởng tượng lẽ ra mình nên sống","description":"Tiểu thuyết của Matt Haig về một thư viện nằm giữa sự sống và cái chết đã lặng lẽ thay đổi cách tôi nghĩ về sự nuối tiếc, và về tất cả những phiên bản của tôi mà tôi sẽ không bao giờ trở thành.","content":"$2d","readingTime":"5 min read"}}}]}]
+1a:["$","$L25",null,{"projects":[],"latestPosts":[{"slug":"dac-nhan-tam-review","content":"$26","title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","date":"2026-06-18","tags":["Books","Reflection","Communication"],"readingTime":"7 min read","i18n":{"en":{"title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","content":"$27","readingTime":"7 min read"}}},{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$28","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"6 min read","i18n":{"en":{"title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","content":"$29","readingTime":"6 min read"},"vi":{"title":"The Boy, the Mole, the Fox and the Horse — Cuốn sách thiếu nhi khiến một người lớn khóc trên tàu","description":"Tôi suýt đã không đọc nó. Trông nó cứ như một cuốn truyện tranh cho trẻ con. Hóa ra nó lại là điều dịu dàng nhất ai đó từng nói với tôi trong nhiều năm.","content":"$2a","readingTime":"8 min read"}}},{"slug":"the-midnight-library","content":"$2b","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","content":"$2c","readingTime":"4 min read"},"vi":{"title":"The Midnight Library — Về những cuộc đời tôi cứ tưởng tượng lẽ ra mình nên sống","description":"Tiểu thuyết của Matt Haig về một thư viện nằm giữa sự sống và cái chết đã lặng lẽ thay đổi cách tôi nghĩ về sự nuối tiếc, và về tất cả những phiên bản của tôi mà tôi sẽ không bao giờ trở thành.","content":"$2d","readingTime":"5 min read"}}}]}]
 20:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
-2e:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
+2e:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/15j6~.oxj778c.js","/_next/static/chunks/15fm2zl822j.q.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
 1d:null
 22:[["$","title","0",{"children":"Classic Home · Yen Nhi"}],["$","meta","1",{"name":"description","content":"Previous homepage design."}],["$","link","2",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","3",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","meta","4",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","5",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","6",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","7",{"name":"robots","content":"noindex, nofollow"}],["$","meta","8",{"name":"category","content":"technology"}],["$","link","9",{"rel":"canonical","href":"https://startup.id.vn/classic/"}],["$","meta","10",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","11",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","12",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","13",{"property":"og:site_name","content":"Nguyen Thi Yen Nhi Portfolio"}],["$","meta","14",{"property":"og:locale","content":"en_US"}],["$","meta","15",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","16",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","17",{"property":"og:image:type","content":"image/png"}],["$","meta","18",{"property":"og:image:width","content":"1200"}],["$","meta","19",{"property":"og:image:height","content":"630"}],["$","meta","20",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Software Engineer & Flutter Developer"}],["$","meta","21",{"property":"og:type","content":"profile"}],["$","meta","22",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","23",{"name":"twitter:creator","content":"@nhiney"}],["$","meta","24",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","25",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","26",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","27",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Software Engineer"}],["$","meta","28",{"name":"twitter:image:width","content":"1200"}],["$","meta","29",{"name":"twitter:image:height","content":"630"}],["$","link","30",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","31",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","32",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L2e","33",{}]]
