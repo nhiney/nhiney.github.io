@@ -1,0 +1,629 @@
+1:"$Sreact.fragment"
+b:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
+:HL["/_next/static/chunks/15_w23_.ar198.css","style"]
+:HL["/_next/static/chunks/14~w-hw9kry5v.css","style"]
+:HL["/_next/static/media/11cc37d7380d16b4-s.p.0ptcwqi9jx~4d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/6bd983bd58a87a3d-s.p.0h108oidc_0fm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+2:T8f2,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@_tolanhy","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-21"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["","classic",""],"q":"","i":false,"f":[[["",{"children":["classic",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/15_w23_.ar198.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/14~w-hw9kry5v.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/10t6aisp~8lkd.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/1796v1pwe9gpx.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/026z7.gtgb754.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc","$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"CI0c5QT5dD6FWy4NIdtYa"}
+e:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
+f:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
+10:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
+11:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
+12:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
+13:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+14:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+15:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
+16:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
+1b:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+1c:"$Sreact.suspense"
+1f:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
+21:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
+3:["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}]
+4:["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}]
+5:["$","link",null,{"rel":"dns-prefetch","href":"https://github.com"}]
+6:["$","body",null,{"className":"inter_356d7d38-module__VP9iza__variable caveat_43e898ed-module__nXgwXW__variable sora_f0ca33ab-module__zIZe8a__variable inter_356d7d38-module__VP9iza__className min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans","children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$L10",null,{}],["$","$L11",null,{}],["$","$L12",null,{}],["$","main",null,{"className":"flex-1 relative z-10","children":["$","$L13",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L14",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10","children":["$","section",null,{"className":"flex min-h-[60vh] flex-col items-center justify-center text-center","children":["$","$L15",null,{"children":[["$","h1",null,{"className":"text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100","children":"404"}],["$","p",null,{"className":"mt-4 text-xl text-zinc-600 dark:text-zinc-400","children":"The page you are looking for does not exist."}],["$","div",null,{"className":"mt-10","children":["$","$L16",null,{"href":"/","className":"rounded-md bg-zinc-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300","children":"Go back home"}]}]]}]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-border/50 bg-background","children":["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 flex flex-col items-start gap-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-6","children":[["$","div",null,{"className":"flex items-center gap-5","children":[["$","span",null,{"className":"text-sm font-semibold text-foreground whitespace-nowrap","children":"Nguyen Thi Yen Nhi"}],["$","span",null,{"className":"h-4 w-px bg-border/60"}],["$","div",null,{"className":"flex items-center gap-2","children":[["$","a","GitHub",{"href":"https://github.com/nhiney","target":"_blank","rel":"noopener noreferrer","aria-label":"GitHub","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":[["$","path",null,{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path",null,{"d":"M9 18c-4.51 2-5-2-7-2"}]]}]}],["$","a","LinkedIn",{"href":"https://www.linkedin.com/in/nhi-yen-410b2a2b7/","target":"_blank","rel":"noopener noreferrer","aria-label":"LinkedIn","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":[["$","path",null,{"d":"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"}],["$","rect",null,{"width":"4","height":"12","x":"2","y":"9"}],["$","circle",null,{"cx":"4","cy":"4","r":"2"}]]}]}],["$","a","Email",{"href":"mailto:nhiyen.engineer@gmail.com","target":"$undefined","rel":"$undefined","aria-label":"Email","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":["$L17","$L18"]}]}]]}]]}],"$L19"]}]}]]}]}]}]
+7:["$","$1","c",{"children":[null,["$","$L13",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L14",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+8:["$","$1","c",{"children":["$L1a",[["$","script","script-0",{"src":"/_next/static/chunks/10x6no244vu3c.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0goob0ahp2e62.js","async":true,"nonce":"$undefined"}]],["$","$L1b",null,{"children":["$","$1c",null,{"name":"Next.MetadataOutlet","children":"$@1d"}]}]]}]
+1e:[]
+9:"$W1e"
+a:["$","$1","h",{"children":[null,["$","$L1f",null,{"children":"$L20"}],["$","div",null,{"hidden":true,"children":["$","$L21",null,{"children":["$","$1c",null,{"name":"Next.Metadata","children":"$L22"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+c:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/15_w23_.ar198.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/14~w-hw9kry5v.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+23:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+24:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
+17:["$","rect",null,{"width":"20","height":"16","x":"2","y":"4","rx":"2"}]
+18:["$","path",null,{"d":"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"}]
+19:["$","div",null,{"className":"flex items-center gap-5","children":[["$","$L16",null,{"href":"/mind-map","className":"group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary","children":[["$","$L23",null,{"ref":"$undefined","iconNode":[["path",{"d":"m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z","key":"cpyugq"}],["path",{"d":"M12 22v-3","key":"kmzjlo"}]],"className":"lucide-tree-pine h-3.5 w-3.5 transition-transform group-hover:scale-110"}],["$","span",null,{"className":"hidden sm:inline","children":"Mind Map"}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L24",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
+25:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10x6no244vu3c.js","/_next/static/chunks/0goob0ahp2e62.js"],"HomeClient"]
+26:T216a,
+Có những cuốn sách rất dễ bị đọc như một danh sách mẹo. *Đắc Nhân Tâm* (*How to Win Friends and Influence People*) cũng dễ rơi vào cảm giác đó nếu tôi chỉ mở nó ra để tìm cách nói sao cho người khác thích mình hơn, hoặc làm sao để một cuộc trò chuyện đi đúng ý mình hơn.
+
+Nhưng tôi muốn nhìn cuốn sách này theo một cách chậm hơn: như một lời nhắc về việc đối diện với người khác bằng sự tử tế, rõ ràng và đủ thành thật. Với tôi, giá trị của những bài học giao tiếp không nằm ở chỗ chúng giúp mình "thắng" trong một cuộc nói chuyện, mà ở chỗ chúng khiến mình ít vô tâm hơn trong cách lắng nghe, phản hồi và tạo ảnh hưởng.
+
+---
+
+## Quan sát: những điều có thể nói chắc
+
+Tôi không muốn biến bài này thành một bản tóm tắt chương hay một bộ trích dẫn rời rạc. Điều chắc nhất trong ghi chú này là tên sách và hướng đọc của tôi: *Đắc Nhân Tâm* gợi tôi nghĩ về cách con người nói chuyện, lắng nghe, tạo thiện cảm và tạo ảnh hưởng lên nhau.
+
+Với một cuốn sách có tên tiếng Anh là *How to Win Friends and Influence People*, tôi thấy mình cần đọc chậm. "Ảnh hưởng" không tự động là điều xấu, nhưng nó cần đi cùng sự tôn trọng. Nếu không, mọi lời khuyên giao tiếp rất dễ bị hiểu thành cách làm cho người khác thuận theo mình.
+
+---
+
+## Diễn giải cá nhân: tôi không muốn tách kỹ năng khỏi ý định
+
+Điểm làm tôi chú ý không phải là chuyện phải trở thành một người nói chuyện thật khéo. Tôi quan tâm hơn đến câu hỏi phía sau: nếu biết cách giao tiếp tốt hơn, tôi sẽ dùng điều đó để làm gì?
+
+Một lời nói dễ nghe có thể giúp cuộc trò chuyện nhẹ đi, nhưng cũng có thể trở thành cách né tránh sự thật. Một sự quan tâm đúng lúc có thể khiến người khác thấy được lắng nghe, nhưng cũng có thể bị dùng như một công cụ để lấy thiện cảm. Vì vậy, khi nghĩ về *Đắc Nhân Tâm*, tôi không muốn tách kỹ năng khỏi ý định.
+
+Với tôi, giao tiếp tốt bắt đầu từ một điều khá khiêm tốn: mình có thật sự xem người đối diện là một con người đầy đủ, hay chỉ xem họ là người cần được thuyết phục?
+
+<AestheticNote>
+  "Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ."
+</AestheticNote>
+
+---
+
+## Quan sát: giao tiếp không chỉ là nói cho hay
+
+Nếu chỉ nhìn giao tiếp tốt như việc nói mạch lạc, biết chọn từ và biết làm cho ý của mình nghe hợp lý, bài học sẽ bị thu hẹp quá nhiều. Những điều đó vẫn quan trọng, nhưng trong các mối quan hệ hằng ngày, nói hay chỉ là một phần rất nhỏ.
+
+Một cuộc trò chuyện có thể rất trơn tru mà vẫn lạnh. Một lời khuyên có thể rất đúng mà vẫn làm người nghe thấy bị đặt xuống thấp hơn. Một câu phản hồi có thể hợp lý trên giấy, nhưng lại thiếu mất sự dịu dàng cần có với người đang nghe nó.
+
+Vì vậy, bài học tôi muốn giữ không phải là nói sao cho sắc hơn. Tôi muốn học cách chậm lại trước khi phản hồi, nghe kỹ hơn trước khi kết luận, và để người khác có cảm giác rằng họ không phải tự bảo vệ mình trong mọi cuộc trò chuyện.
+
+<AestheticNote>
+  Giao tiếp tốt không phải là làm cho mình nổi bật hơn trong cuộc trò chuyện, mà là làm cho người đối diện bớt cô đơn hơn khi được lắng nghe.
+</AestheticNote>
+
+---
+
+## Diễn giải cá nhân: chân thành là phần khó nhất
+
+Điều dễ nhất khi đọc một cuốn sách về giao tiếp là biến mọi thứ thành công thức. Gặp người khác thì làm điều này. Muốn tạo thiện cảm thì nói điều kia. Muốn cuộc trò chuyện êm hơn thì chọn cách nọ.
+
+Công thức có thể hữu ích, nhưng nếu thiếu chân thành, điều đó thường bị nhận ra rất nhanh. Người khác thường cảm nhận được khi mình đang thật sự quan tâm và khi mình chỉ đang làm đúng một "bước" nào đó. Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ.
+
+Tôi thích nghĩ về sự chân thành như một cách giữ cho kỹ năng có đạo đức. Mình có thể học cách nói mềm hơn, nhưng không phải để che giấu điều mình thật sự nghĩ. Mình có thể học cách quan tâm đến cảm xúc của người khác, nhưng không phải để điều khiển họ. Mình có thể muốn tạo ảnh hưởng, nhưng vẫn cần tôn trọng quyền không đồng ý của người đối diện.
+
+Đó là phần khó nhất: dùng sự khéo léo để làm mối quan hệ rõ ràng và tử tế hơn, chứ không phải để mọi thứ luôn thuận theo mình.
+
+<AestheticNote>
+  "Bản chất của con người là luôn muốn được người khác coi trọng. Hãy để họ cảm thấy họ quan trọng."
+</AestheticNote>
+
+---
+
+## Bài học muốn thử trong đời sống
+
+Tôi không muốn khép lại bài đọc này với một danh sách nguyên tắc nghe rất đúng nhưng không có chỗ để thực hành. Nếu có vài điều nhỏ để mang theo, tôi muốn chúng đủ gần với đời sống hằng ngày:
+
+- **Lắng nghe lâu hơn một chút trước khi trả lời.** Không phải im lặng để chờ tới lượt mình nói, mà thật sự nghe xem người kia đang cần được hiểu ở đâu.
+- **Nói điều tốt đẹp một cách cụ thể và thật lòng.** Một lời ghi nhận chỉ có ý nghĩa khi nó không được dùng như một kỹ thuật lấy lòng.
+- **Bất đồng mà không làm người khác thấy nhỏ lại.** Có những lúc mình vẫn cần nói rõ quan điểm, nhưng không nhất thiết phải thắng bằng cách khiến người đối diện mất mặt.
+- **Giữ ranh giới giữa tinh tế và làm vừa lòng.** Giao tiếp tử tế không có nghĩa là đồng ý với tất cả, cũng không có nghĩa là tự xóa mình để cuộc trò chuyện được êm.
+
+Những điều này nghe đơn giản, nhưng càng đơn giản thì càng dễ bị bỏ qua. Có lẽ một phần của việc trưởng thành trong giao tiếp là quay lại luyện những điều rất cơ bản: nghe cho trọn, nói cho thật, và phản hồi sao cho người khác vẫn giữ được phẩm giá của họ.
+
+---
+
+## Điều tôi còn lấn cấn
+
+Tôi vẫn muốn giữ một chút cảnh giác khi đọc bất kỳ lời khuyên nào về ảnh hưởng. Ảnh hưởng là một từ đẹp nếu nó đi cùng trách nhiệm, nhưng rất nguy hiểm nếu nó chỉ còn nghĩa là làm cho người khác đi theo ý mình.
+
+Vì vậy, điều tôi tự nhắc mình là: trước khi áp dụng một bài học giao tiếp, hãy kiểm tra ý định của mình. Mình đang muốn hiểu người kia hơn, hay chỉ muốn họ phản ứng theo cách mình mong muốn? Mình đang muốn cuộc trò chuyện rõ ràng hơn, hay chỉ muốn tránh một sự khó chịu cần thiết?
+
+Nếu câu trả lời không thành thật, mọi kỹ năng đều có thể trượt thành thao túng rất nhẹ nhàng.
+
+---
+
+## Kết lại
+
+Tôi không muốn xem *Đắc Nhân Tâm* như một cuốn sách dạy mình cách trở nên dễ mến hơn bằng mọi giá. Cách đọc có ích hơn với tôi là xem nó như một lời nhắc: trong mọi cuộc trò chuyện, người đối diện không phải là một vấn đề cần xử lý, mà là một con người cần được tôn trọng.
+
+Nếu chỉ giữ lại một điều, tôi muốn giữ điều này: sự khéo léo đáng quý nhất là sự khéo léo khiến mình tử tế hơn, không phải khéo léo khiến mình thắng nhiều hơn.
+
+<AestheticNote>
+  "Giao tiếp tử tế không có nghĩa là tự xóa mình để cuộc trò chuyện được êm."
+</AestheticNote>
+27:T216a,
+Có những cuốn sách rất dễ bị đọc như một danh sách mẹo. *Đắc Nhân Tâm* (*How to Win Friends and Influence People*) cũng dễ rơi vào cảm giác đó nếu tôi chỉ mở nó ra để tìm cách nói sao cho người khác thích mình hơn, hoặc làm sao để một cuộc trò chuyện đi đúng ý mình hơn.
+
+Nhưng tôi muốn nhìn cuốn sách này theo một cách chậm hơn: như một lời nhắc về việc đối diện với người khác bằng sự tử tế, rõ ràng và đủ thành thật. Với tôi, giá trị của những bài học giao tiếp không nằm ở chỗ chúng giúp mình "thắng" trong một cuộc nói chuyện, mà ở chỗ chúng khiến mình ít vô tâm hơn trong cách lắng nghe, phản hồi và tạo ảnh hưởng.
+
+---
+
+## Quan sát: những điều có thể nói chắc
+
+Tôi không muốn biến bài này thành một bản tóm tắt chương hay một bộ trích dẫn rời rạc. Điều chắc nhất trong ghi chú này là tên sách và hướng đọc của tôi: *Đắc Nhân Tâm* gợi tôi nghĩ về cách con người nói chuyện, lắng nghe, tạo thiện cảm và tạo ảnh hưởng lên nhau.
+
+Với một cuốn sách có tên tiếng Anh là *How to Win Friends and Influence People*, tôi thấy mình cần đọc chậm. "Ảnh hưởng" không tự động là điều xấu, nhưng nó cần đi cùng sự tôn trọng. Nếu không, mọi lời khuyên giao tiếp rất dễ bị hiểu thành cách làm cho người khác thuận theo mình.
+
+---
+
+## Diễn giải cá nhân: tôi không muốn tách kỹ năng khỏi ý định
+
+Điểm làm tôi chú ý không phải là chuyện phải trở thành một người nói chuyện thật khéo. Tôi quan tâm hơn đến câu hỏi phía sau: nếu biết cách giao tiếp tốt hơn, tôi sẽ dùng điều đó để làm gì?
+
+Một lời nói dễ nghe có thể giúp cuộc trò chuyện nhẹ đi, nhưng cũng có thể trở thành cách né tránh sự thật. Một sự quan tâm đúng lúc có thể khiến người khác thấy được lắng nghe, nhưng cũng có thể bị dùng như một công cụ để lấy thiện cảm. Vì vậy, khi nghĩ về *Đắc Nhân Tâm*, tôi không muốn tách kỹ năng khỏi ý định.
+
+Với tôi, giao tiếp tốt bắt đầu từ một điều khá khiêm tốn: mình có thật sự xem người đối diện là một con người đầy đủ, hay chỉ xem họ là người cần được thuyết phục?
+
+<AestheticNote>
+  "Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ."
+</AestheticNote>
+
+---
+
+## Quan sát: giao tiếp không chỉ là nói cho hay
+
+Nếu chỉ nhìn giao tiếp tốt như việc nói mạch lạc, biết chọn từ và biết làm cho ý của mình nghe hợp lý, bài học sẽ bị thu hẹp quá nhiều. Những điều đó vẫn quan trọng, nhưng trong các mối quan hệ hằng ngày, nói hay chỉ là một phần rất nhỏ.
+
+Một cuộc trò chuyện có thể rất trơn tru mà vẫn lạnh. Một lời khuyên có thể rất đúng mà vẫn làm người nghe thấy bị đặt xuống thấp hơn. Một câu phản hồi có thể hợp lý trên giấy, nhưng lại thiếu mất sự dịu dàng cần có với người đang nghe nó.
+
+Vì vậy, bài học tôi muốn giữ không phải là nói sao cho sắc hơn. Tôi muốn học cách chậm lại trước khi phản hồi, nghe kỹ hơn trước khi kết luận, và để người khác có cảm giác rằng họ không phải tự bảo vệ mình trong mọi cuộc trò chuyện.
+
+<AestheticNote>
+  Giao tiếp tốt không phải là làm cho mình nổi bật hơn trong cuộc trò chuyện, mà là làm cho người đối diện bớt cô đơn hơn khi được lắng nghe.
+</AestheticNote>
+
+---
+
+## Diễn giải cá nhân: chân thành là phần khó nhất
+
+Điều dễ nhất khi đọc một cuốn sách về giao tiếp là biến mọi thứ thành công thức. Gặp người khác thì làm điều này. Muốn tạo thiện cảm thì nói điều kia. Muốn cuộc trò chuyện êm hơn thì chọn cách nọ.
+
+Công thức có thể hữu ích, nhưng nếu thiếu chân thành, điều đó thường bị nhận ra rất nhanh. Người khác thường cảm nhận được khi mình đang thật sự quan tâm và khi mình chỉ đang làm đúng một "bước" nào đó. Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ.
+
+Tôi thích nghĩ về sự chân thành như một cách giữ cho kỹ năng có đạo đức. Mình có thể học cách nói mềm hơn, nhưng không phải để che giấu điều mình thật sự nghĩ. Mình có thể học cách quan tâm đến cảm xúc của người khác, nhưng không phải để điều khiển họ. Mình có thể muốn tạo ảnh hưởng, nhưng vẫn cần tôn trọng quyền không đồng ý của người đối diện.
+
+Đó là phần khó nhất: dùng sự khéo léo để làm mối quan hệ rõ ràng và tử tế hơn, chứ không phải để mọi thứ luôn thuận theo mình.
+
+<AestheticNote>
+  "Bản chất của con người là luôn muốn được người khác coi trọng. Hãy để họ cảm thấy họ quan trọng."
+</AestheticNote>
+
+---
+
+## Bài học muốn thử trong đời sống
+
+Tôi không muốn khép lại bài đọc này với một danh sách nguyên tắc nghe rất đúng nhưng không có chỗ để thực hành. Nếu có vài điều nhỏ để mang theo, tôi muốn chúng đủ gần với đời sống hằng ngày:
+
+- **Lắng nghe lâu hơn một chút trước khi trả lời.** Không phải im lặng để chờ tới lượt mình nói, mà thật sự nghe xem người kia đang cần được hiểu ở đâu.
+- **Nói điều tốt đẹp một cách cụ thể và thật lòng.** Một lời ghi nhận chỉ có ý nghĩa khi nó không được dùng như một kỹ thuật lấy lòng.
+- **Bất đồng mà không làm người khác thấy nhỏ lại.** Có những lúc mình vẫn cần nói rõ quan điểm, nhưng không nhất thiết phải thắng bằng cách khiến người đối diện mất mặt.
+- **Giữ ranh giới giữa tinh tế và làm vừa lòng.** Giao tiếp tử tế không có nghĩa là đồng ý với tất cả, cũng không có nghĩa là tự xóa mình để cuộc trò chuyện được êm.
+
+Những điều này nghe đơn giản, nhưng càng đơn giản thì càng dễ bị bỏ qua. Có lẽ một phần của việc trưởng thành trong giao tiếp là quay lại luyện những điều rất cơ bản: nghe cho trọn, nói cho thật, và phản hồi sao cho người khác vẫn giữ được phẩm giá của họ.
+
+---
+
+## Điều tôi còn lấn cấn
+
+Tôi vẫn muốn giữ một chút cảnh giác khi đọc bất kỳ lời khuyên nào về ảnh hưởng. Ảnh hưởng là một từ đẹp nếu nó đi cùng trách nhiệm, nhưng rất nguy hiểm nếu nó chỉ còn nghĩa là làm cho người khác đi theo ý mình.
+
+Vì vậy, điều tôi tự nhắc mình là: trước khi áp dụng một bài học giao tiếp, hãy kiểm tra ý định của mình. Mình đang muốn hiểu người kia hơn, hay chỉ muốn họ phản ứng theo cách mình mong muốn? Mình đang muốn cuộc trò chuyện rõ ràng hơn, hay chỉ muốn tránh một sự khó chịu cần thiết?
+
+Nếu câu trả lời không thành thật, mọi kỹ năng đều có thể trượt thành thao túng rất nhẹ nhàng.
+
+---
+
+## Kết lại
+
+Tôi không muốn xem *Đắc Nhân Tâm* như một cuốn sách dạy mình cách trở nên dễ mến hơn bằng mọi giá. Cách đọc có ích hơn với tôi là xem nó như một lời nhắc: trong mọi cuộc trò chuyện, người đối diện không phải là một vấn đề cần xử lý, mà là một con người cần được tôn trọng.
+
+Nếu chỉ giữ lại một điều, tôi muốn giữ điều này: sự khéo léo đáng quý nhất là sự khéo léo khiến mình tử tế hơn, không phải khéo léo khiến mình thắng nhiều hơn.
+
+<AestheticNote>
+  "Giao tiếp tử tế không có nghĩa là tự xóa mình để cuộc trò chuyện được êm."
+</AestheticNote>
+28:Td74,
+I judged this book by its cover. Literally.
+
+It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
+
+I bought it as a gift for someone else. Then I read it on the train home first — "just to check it" — and quietly fell apart somewhere around page forty.
+
+---
+
+## Why this book found me
+
+Here's the thing I don't admit often: I'd been running on empty for a while.
+
+Not in a dramatic way. Just the low, grey kind of tired where you're functioning fine, ticking off tasks, answering messages, and somewhere underneath it all there's a small voice asking *are you okay?* that you keep promising to get back to later.
+
+I think I'd forgotten how to be kind to myself. I was good at being kind to everyone else. With me, the inner voice was a manager, not a friend.
+
+This little book — a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking — snuck right past all my defenses precisely *because* it was so simple. There was nothing to analyze. Only something to feel.
+
+---
+
+## The lines that stayed with me
+
+It has almost no plot. It's barely a hundred pages, half of them drawings. And yet I've underlined more of it than books five times its length.
+
+### "Asking for help isn't giving up"
+
+There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
+
+> "Asking for help isn't giving up," said the horse. "It's refusing to give up."
+
+I'd always quietly filed asking for help under *weakness*. Something to do only when I'd exhausted every other option and could no longer pretend. Reading that one line on a moving train, I realized how lonely I'd made my own life by believing it.
+
+### The smallest things are not small
+
+The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
+
+It sounds almost too simple to mean anything. But it landed because I've spent so long measuring myself by output — what I made, what I achieved, what I could point to. Nobody ever taught me to measure a day by how gentle I was in it.
+
+### "This storm will pass"
+
+Near the end, in the rain, the horse says the storms always pass — something I logically know and emotionally forget every single time I'm inside one.
+
+There's a difference between knowing a thing and being reminded of it by someone who clearly means it. This book is a hundred pages of the second kind.
+
+---
+
+## What I'm carrying with me
+
+I'm not going to pretend a picture book rearranged my whole life. But it nudged a few quiet things:
+
+* **I'm talking to myself like I'd talk to a friend** — or at least catching it when I don't.
+* **I'm letting "kind" count as an achievement** — a gentle day is not a wasted day.
+* **I keep it on my desk, not my shelf** — some mornings I open it to one random page and that's the whole ritual.
+
+---
+
+## A few last thoughts
+
+If you're tired in the quiet way, or you've forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or anything to "figure out" — this isn't that, and it never tries to be.
+
+I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
+
+> "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
+29:Td74,
+I judged this book by its cover. Literally.
+
+It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
+
+I bought it as a gift for someone else. Then I read it on the train home first — "just to check it" — and quietly fell apart somewhere around page forty.
+
+---
+
+## Why this book found me
+
+Here's the thing I don't admit often: I'd been running on empty for a while.
+
+Not in a dramatic way. Just the low, grey kind of tired where you're functioning fine, ticking off tasks, answering messages, and somewhere underneath it all there's a small voice asking *are you okay?* that you keep promising to get back to later.
+
+I think I'd forgotten how to be kind to myself. I was good at being kind to everyone else. With me, the inner voice was a manager, not a friend.
+
+This little book — a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking — snuck right past all my defenses precisely *because* it was so simple. There was nothing to analyze. Only something to feel.
+
+---
+
+## The lines that stayed with me
+
+It has almost no plot. It's barely a hundred pages, half of them drawings. And yet I've underlined more of it than books five times its length.
+
+### "Asking for help isn't giving up"
+
+There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
+
+> "Asking for help isn't giving up," said the horse. "It's refusing to give up."
+
+I'd always quietly filed asking for help under *weakness*. Something to do only when I'd exhausted every other option and could no longer pretend. Reading that one line on a moving train, I realized how lonely I'd made my own life by believing it.
+
+### The smallest things are not small
+
+The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
+
+It sounds almost too simple to mean anything. But it landed because I've spent so long measuring myself by output — what I made, what I achieved, what I could point to. Nobody ever taught me to measure a day by how gentle I was in it.
+
+### "This storm will pass"
+
+Near the end, in the rain, the horse says the storms always pass — something I logically know and emotionally forget every single time I'm inside one.
+
+There's a difference between knowing a thing and being reminded of it by someone who clearly means it. This book is a hundred pages of the second kind.
+
+---
+
+## What I'm carrying with me
+
+I'm not going to pretend a picture book rearranged my whole life. But it nudged a few quiet things:
+
+* **I'm talking to myself like I'd talk to a friend** — or at least catching it when I don't.
+* **I'm letting "kind" count as an achievement** — a gentle day is not a wasted day.
+* **I keep it on my desk, not my shelf** — some mornings I open it to one random page and that's the whole ritual.
+
+---
+
+## A few last thoughts
+
+If you're tired in the quiet way, or you've forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or anything to "figure out" — this isn't that, and it never tries to be.
+
+I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
+
+> "What's the bravest thing you've ever said?" asked the boy. "Help," said the horse.
+2a:T13cc,
+Tôi đã trông mặt mà bắt hình dong cuốn sách này. Theo đúng nghĩa đen.
+
+Nó nằm đó trong một hiệu sách, toàn màu nước dịu nhẹ và một chú ngựa với đôi mắt hiền, và tôi nghĩ: *dễ thương đấy, nhưng không hợp với mình.* Tôi đôi mươi rồi. Tôi đọc Sách Nghiêm Túc không tranh ảnh, cảm ơn nhé.
+
+Tôi mua nó làm quà cho người khác. Rồi tôi đọc nó trên chuyến tàu về nhà trước — "chỉ để kiểm tra thôi mà" — và lặng lẽ vỡ òa đâu đó quanh trang bốn mươi.
+
+---
+
+## Vì sao cuốn sách này tìm đến tôi
+
+Có một điều tôi ít khi thừa nhận: tôi đã chạy trong tình trạng cạn kiệt một thời gian rồi.
+
+Không phải theo kiểu kịch tính. Chỉ là cái mệt mỏi xám xịt, âm thầm, khi bạn vẫn vận hành ổn, vẫn gạch đầu việc, vẫn trả lời tin nhắn, mà đâu đó bên dưới có một giọng nói nhỏ hỏi *bạn ổn không?* — cái giọng bạn cứ hứa sẽ quay lại trả lời sau.
+
+Tôi nghĩ tôi đã quên cách tử tế với chính mình. Tôi giỏi tử tế với mọi người khác. Còn với mình, giọng nói bên trong là một ông sếp, chứ không phải một người bạn.
+
+Cuốn sách nhỏ này — một cậu bé, một chú chuột chũi mê bánh, một con cáo dè chừng, và một chú ngựa khôn ngoan, cùng nhau lang thang và trò chuyện — lách qua mọi hàng phòng thủ của tôi đúng *vì* nó quá đơn giản. Chẳng có gì để phân tích. Chỉ có thứ gì đó để cảm nhận.
+
+---
+
+## Những dòng chữ ở lại với tôi
+
+Nó gần như không có cốt truyện. Vỏn vẹn hơn trăm trang, một nửa là tranh vẽ. Vậy mà tôi đã gạch chân nó nhiều hơn cả những cuốn dày gấp năm lần.
+
+### "Nhờ giúp đỡ không phải là bỏ cuộc"
+
+Có một khoảnh khắc khi cậu bé thừa nhận mình đang chật vật, và chú ngựa nói ra điều mà tôi đã cần ai đó nói với mình suốt nhiều năm.
+
+> "Nhờ giúp đỡ không phải là bỏ cuộc," chú ngựa nói. "Đó là từ chối bỏ cuộc."
+
+Tôi luôn lặng lẽ xếp việc nhờ giúp đỡ vào ngăn *yếu đuối*. Một điều chỉ làm khi đã cạn mọi lựa chọn khác và không thể giả vờ thêm được nữa. Đọc dòng chữ ấy trên một con tàu đang chạy, tôi nhận ra mình đã khiến cuộc đời mình cô đơn đến mức nào chỉ vì tin vào điều đó.
+
+### Những điều nhỏ nhất không hề nhỏ
+
+Chú chuột chũi, khi được hỏi muốn trở thành gì khi lớn lên, trả lời: *tử tế.* Không phải thành công. Không phải gây ấn tượng. Mà là tử tế.
+
+Nghe đơn giản đến mức tưởng chẳng có nghĩa gì. Nhưng nó chạm vào tôi bởi tôi đã dành quá lâu để đo lường bản thân bằng năng suất — bằng những gì tôi tạo ra, đạt được, có thể chỉ tay vào. Chẳng ai từng dạy tôi đo một ngày bằng việc mình đã dịu dàng đến đâu trong ngày đó.
+
+### "Cơn bão này rồi sẽ qua"
+
+Gần cuối sách, trong mưa, chú ngựa nói rằng những cơn bão luôn rồi sẽ qua — điều mà về lý trí tôi biết, nhưng về cảm xúc lại quên sạch mỗi lần tôi đang ở trong một cơn bão.
+
+Có một sự khác biệt giữa việc biết một điều và việc được nhắc lại nó bởi một người rõ ràng đang nói thật lòng. Cuốn sách này là hơn trăm trang của kiểu thứ hai.
+
+---
+
+## Điều tôi mang theo
+
+Tôi sẽ không giả vờ rằng một cuốn truyện tranh sắp xếp lại cả cuộc đời tôi. Nhưng nó đã hích nhẹ vài điều:
+
+* **Tôi nói chuyện với chính mình như nói với một người bạn** — hoặc ít nhất là bắt được mình khi không làm vậy.
+* **Tôi cho phép "tử tế" được tính là một thành tựu** — một ngày dịu dàng không phải một ngày lãng phí.
+* **Tôi để nó trên bàn làm việc, không phải trên kệ sách** — vài buổi sáng tôi mở đại một trang, và đó là toàn bộ nghi thức.
+
+---
+
+## Có đáng đọc không?
+
+Nếu bạn đang mệt theo kiểu lặng lẽ, hoặc đã quên cách mềm mỏng với chính mình, cuốn sách này là một hành động nhân từ nho nhỏ. Còn nếu bạn muốn cốt truyện, sự phức tạp, hay điều gì đó để "giải mã" — thì đây không phải vậy, và nó cũng chẳng cố gồng để trở thành thế.
+
+Cuối cùng tôi vẫn tặng cuốn của mình đi, đúng như dự định. Rồi ngày hôm sau tôi mua lại một cuốn khác cho chính mình. Chừng đó chắc đã nói lên tất cả.
+
+> "Điều dũng cảm nhất cậu từng nói là gì?" cậu bé hỏi. "Giúp với," chú ngựa đáp.
+2b:Tf13,
+It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been <mark>talking about you the whole time</mark> without ever asking permission.
+
+I'd been carrying a quiet question for months: what if I'd chosen differently?
+
+---
+
+## Why this book found me
+
+I'm at the age where everyone seems to be becoming someone. Friends picking paths, posting milestones, sounding so sure. And I kept catching myself running the other timelines in my head — the major I didn't take, the city I didn't move to, the version of me who was braver, earlier.
+
+It's a quiet kind of exhausting, living next to all the lives you didn't pick.
+
+A friend left *The Midnight Library* on my desk without saying much. The premise is simple: a woman named Nora, at her lowest point, lands in a library where every book is a life she could have lived. She gets to try them on.
+
+I think my friend knew I needed to try a few on too.
+
+---
+
+## The lines that stayed with me
+
+It's not a flawless book — some of the lives feel a little neat, and it wears its message on its sleeve. But a few moments genuinely caught me.
+
+### The other lives aren't as perfect as my regret makes them look
+
+In my head, the roads I didn't take are always sunlit. Nora actually walks into hers — and finds they have their own losses, their own dull Tuesdays, their own quiet disappointments.
+
+> Every life contains many millions of decisions. Some big, some small. But every time one decision is made, the outcome could not have been otherwise.
+
+Regret had been selling me a lie. It only ever showed me the highlight reel of the lives I didn't choose, never the full weather. That reframing loosened something I'd been gripping for a long time.
+
+### I'd been treating "what if" as a fact instead of a feeling
+
+I always thought my regrets were telling me the truth — that I'd genuinely messed up, taken the wrong door. The book made me see they were mostly just **fear wearing a costume**, a story I told myself at night.
+
+Most of my "what ifs" aren't real plans. They're just a way of being unkind to myself for being human and not knowing the future.
+
+### The life I have is also one I could have only imagined
+
+There was a version of me, years ago, who would have given anything to be where I am now — the small ordinary things I walk past without noticing. The book quietly reminded me that this life, too, was once a "what if."
+
+That undid me a little. I've been so busy mourning the lives I didn't live that I forgot to actually live this one.
+
+<KeyTakeaway label="Key Takeaway" tone="sage">
+
+The life I keep walking past was once the exact "what if" an earlier version of me would have given anything to live.
+
+</KeyTakeaway>
+
+---
+
+## What I'm carrying with me
+
+Nothing dramatic changed. I didn't wake up cured of overthinking. But a few small things have shifted:
+
+* **I catch the comparison sooner** — when my mind starts running someone else's timeline, I notice it now, and I let it pass instead of moving in.
+* **I'm trying to romanticize the life I have** — the slow coffee, the walk home, the ordinary evening. The stuff a past me would have envied.
+* **I'm being gentler about old decisions** — I made them with what I knew then. That's all any of us ever do.
+
+---
+
+## A few last thoughts
+
+If you're someone who lies awake editing your past, this book will feel like it's holding your hand. If you prefer subtle, literary writing, it might feel a touch on-the-nose — and that's fair.
+
+For me, the timing was everything. Some books don't teach you anything new; they just say the thing you already half-knew, out loud, **at the moment you needed to hear it**.
+
+I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
+
+> The only way to learn is to live.
+2c:Tf13,
+It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been <mark>talking about you the whole time</mark> without ever asking permission.
+
+I'd been carrying a quiet question for months: what if I'd chosen differently?
+
+---
+
+## Why this book found me
+
+I'm at the age where everyone seems to be becoming someone. Friends picking paths, posting milestones, sounding so sure. And I kept catching myself running the other timelines in my head — the major I didn't take, the city I didn't move to, the version of me who was braver, earlier.
+
+It's a quiet kind of exhausting, living next to all the lives you didn't pick.
+
+A friend left *The Midnight Library* on my desk without saying much. The premise is simple: a woman named Nora, at her lowest point, lands in a library where every book is a life she could have lived. She gets to try them on.
+
+I think my friend knew I needed to try a few on too.
+
+---
+
+## The lines that stayed with me
+
+It's not a flawless book — some of the lives feel a little neat, and it wears its message on its sleeve. But a few moments genuinely caught me.
+
+### The other lives aren't as perfect as my regret makes them look
+
+In my head, the roads I didn't take are always sunlit. Nora actually walks into hers — and finds they have their own losses, their own dull Tuesdays, their own quiet disappointments.
+
+> Every life contains many millions of decisions. Some big, some small. But every time one decision is made, the outcome could not have been otherwise.
+
+Regret had been selling me a lie. It only ever showed me the highlight reel of the lives I didn't choose, never the full weather. That reframing loosened something I'd been gripping for a long time.
+
+### I'd been treating "what if" as a fact instead of a feeling
+
+I always thought my regrets were telling me the truth — that I'd genuinely messed up, taken the wrong door. The book made me see they were mostly just **fear wearing a costume**, a story I told myself at night.
+
+Most of my "what ifs" aren't real plans. They're just a way of being unkind to myself for being human and not knowing the future.
+
+### The life I have is also one I could have only imagined
+
+There was a version of me, years ago, who would have given anything to be where I am now — the small ordinary things I walk past without noticing. The book quietly reminded me that this life, too, was once a "what if."
+
+That undid me a little. I've been so busy mourning the lives I didn't live that I forgot to actually live this one.
+
+<KeyTakeaway label="Key Takeaway" tone="sage">
+
+The life I keep walking past was once the exact "what if" an earlier version of me would have given anything to live.
+
+</KeyTakeaway>
+
+---
+
+## What I'm carrying with me
+
+Nothing dramatic changed. I didn't wake up cured of overthinking. But a few small things have shifted:
+
+* **I catch the comparison sooner** — when my mind starts running someone else's timeline, I notice it now, and I let it pass instead of moving in.
+* **I'm trying to romanticize the life I have** — the slow coffee, the walk home, the ordinary evening. The stuff a past me would have envied.
+* **I'm being gentler about old decisions** — I made them with what I knew then. That's all any of us ever do.
+
+---
+
+## A few last thoughts
+
+If you're someone who lies awake editing your past, this book will feel like it's holding your hand. If you prefer subtle, literary writing, it might feel a touch on-the-nose — and that's fair.
+
+For me, the timing was everything. Some books don't teach you anything new; they just say the thing you already half-knew, out loud, **at the moment you needed to hear it**.
+
+I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
+
+> The only way to learn is to live.
+2d:T16ee,
+Đã gần 2 giờ sáng khi tôi đọc xong. Tôi gấp sách lại, ngồi trong bóng tối một lúc lâu, và cảm thấy cái nhói lạ lùng mà bạn có được khi một câu chuyện đã <mark>nói về chính bạn suốt từ đầu</mark> mà chẳng hề xin phép.
+
+Mấy tháng nay tôi mang theo một câu hỏi lặng lẽ: sẽ thế nào nếu tôi đã chọn khác đi?
+
+---
+
+## Vì sao cuốn sách này tìm đến tôi
+
+Tôi đang ở cái tuổi mà ai cũng dường như đang trở thành một ai đó. Bạn bè chọn lối đi, đăng những cột mốc, nói chuyện đầy chắc chắn. Còn tôi thì cứ bắt gặp mình đang chạy thử những dòng thời gian khác trong đầu — ngành học tôi đã không chọn, thành phố tôi đã không chuyển đến, phiên bản của tôi can đảm hơn, và sớm hơn.
+
+Đó là một kiểu mệt mỏi lặng lẽ: sống bên cạnh tất cả những cuộc đời mà mình đã không chọn.
+
+Một người bạn để cuốn *The Midnight Library* lên bàn tôi mà chẳng nói gì nhiều. Tiền đề rất đơn giản: một người phụ nữ tên Nora, ở thời điểm tồi tệ nhất, lạc vào một thư viện nơi mỗi cuốn sách là một cuộc đời cô đã có thể sống. Cô được thử khoác chúng lên người.
+
+Tôi nghĩ người bạn ấy biết tôi cũng cần thử khoác vài cuộc đời như thế.
+
+---
+
+## Những dòng chữ ở lại với tôi
+
+Đây không phải cuốn sách hoàn hảo — vài cuộc đời được vẽ hơi gọn gàng quá, và nó để thông điệp lộ rõ trên bề mặt. Nhưng vài khoảnh khắc đã thật sự níu lấy tôi.
+
+### Những cuộc đời khác không hoàn hảo như nỗi nuối tiếc khiến tôi tưởng
+
+Trong đầu tôi, những con đường tôi đã không chọn lúc nào cũng ngập nắng. Nora thì thật sự bước vào chúng — và phát hiện chúng cũng có những mất mát riêng, những ngày thứ Ba tẻ nhạt riêng, những nỗi thất vọng lặng lẽ riêng.
+
+> Mỗi cuộc đời chứa hàng triệu quyết định. Có cái lớn, có cái nhỏ. Nhưng mỗi lần một quyết định được đưa ra, kết quả không thể nào khác đi được.
+
+Sự nuối tiếc đã bán cho tôi một lời nói dối. Nó chỉ luôn cho tôi xem thước phim highlight của những cuộc đời tôi đã không chọn, không bao giờ cho thấy đủ cả mưa lẫn nắng. Cách nhìn lại đó đã nới lỏng một thứ tôi đã siết chặt rất lâu.
+
+### Tôi đã coi "giá như" là sự thật thay vì một cảm xúc
+
+Tôi luôn nghĩ những nuối tiếc của mình đang nói cho tôi sự thật — rằng tôi đã thật sự làm hỏng, đã chọn nhầm cánh cửa. Cuốn sách khiến tôi thấy chúng phần lớn chỉ là **nỗi sợ khoác lên một bộ trang phục**, một câu chuyện tôi tự kể mình trong đêm.
+
+Phần lớn những "giá như" của tôi không phải là kế hoạch thật. Chúng chỉ là một cách tôi tự đối xử không tử tế với bản thân vì đã làm người và đã không biết trước tương lai.
+
+### Cuộc đời tôi đang có cũng từng là điều tôi chỉ dám tưởng tượng
+
+Từng có một phiên bản của tôi, nhiều năm trước, sẵn sàng đánh đổi mọi thứ để được ở nơi tôi đang đứng bây giờ — những điều bình thường nhỏ bé mà tôi đi ngang qua chẳng buồn để ý. Cuốn sách lặng lẽ nhắc tôi rằng cuộc đời này, cũng vậy, từng là một "giá như".
+
+Điều đó làm tôi vỡ ra đôi chút. Tôi đã quá bận thương tiếc những cuộc đời mình không sống đến mức quên mất việc thật sự sống cuộc đời này.
+
+<KeyTakeaway label="Điều đọng lại" tone="sage">
+
+Cuộc đời tôi cứ đi ngang qua mỗi ngày, từng chính là cái "giá như" mà một phiên bản tôi trước kia sẵn sàng đánh đổi mọi thứ để được sống.
+
+</KeyTakeaway>
+
+---
+
+## Điều tôi mang theo
+
+Chẳng có gì kịch tính thay đổi. Tôi không thức dậy và hết hẳn bệnh suy nghĩ quá nhiều. Nhưng vài điều nhỏ đã dịch chuyển:
+
+* **Tôi bắt được sự so sánh sớm hơn** — khi tâm trí bắt đầu chạy theo dòng thời gian của người khác, giờ tôi nhận ra nó, và để nó trôi qua thay vì dọn vào ở.
+* **Tôi đang tập trân trọng cuộc đời mình đang có** — ly cà phê chậm rãi, đoạn đường về nhà, một buổi tối bình thường. Những thứ mà một phiên bản tôi trong quá khứ từng thèm khát.
+* **Tôi nhẹ nhàng hơn với những quyết định cũ** — tôi đã đưa ra chúng với những gì tôi biết khi đó. Tất cả chúng ta cũng chỉ làm được đến vậy mà thôi.
+
+---
+
+## Có đáng đọc không?
+
+Nếu bạn là người hay nằm thao thức biên tập lại quá khứ của mình, cuốn sách này sẽ giống như một bàn tay nắm lấy tay bạn. Nếu bạn thích lối viết tinh tế, hàm ẩn, nó có thể hơi lộ liễu — và điều đó cũng công bằng thôi.
+
+Với tôi, thời điểm là tất cả. Có những cuốn sách không dạy bạn điều gì mới; chúng chỉ nói thành lời cái điều bạn đã lờ mờ biết, **đúng vào khoảnh khắc bạn cần nghe nó**.
+
+Tôi sẽ đọc một cuốn gì đó nhẹ nhàng hơn tiếp theo. Nhưng tôi nghĩ mình sẽ tử tế hơn một chút với chính những lựa chọn của mình, trong một thời gian.
+
+> Cách duy nhất để học là sống.
+1a:["$","$L25",null,{"projects":[],"latestPosts":[{"slug":"dac-nhan-tam-review","content":"$26","title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","date":"2026-06-18","tags":["Books","Reflection","Communication"],"readingTime":"7 min read","i18n":{"en":{"title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","content":"$27","readingTime":"7 min read"}}},{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$28","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","content":"$29","readingTime":"4 min read"},"vi":{"title":"The Boy, the Mole, the Fox and the Horse — Cuốn sách thiếu nhi khiến một người lớn khóc trên tàu","description":"Tôi suýt đã không đọc nó. Trông nó cứ như một cuốn truyện tranh cho trẻ con. Hóa ra nó lại là điều dịu dàng nhất ai đó từng nói với tôi trong nhiều năm.","content":"$2a","readingTime":"5 min read"}}},{"slug":"the-midnight-library","content":"$2b","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","content":"$2c","readingTime":"4 min read"},"vi":{"title":"The Midnight Library — Về những cuộc đời tôi cứ tưởng tượng lẽ ra mình nên sống","description":"Tiểu thuyết của Matt Haig về một thư viện nằm giữa sự sống và cái chết đã lặng lẽ thay đổi cách tôi nghĩ về sự nuối tiếc, và về tất cả những phiên bản của tôi mà tôi sẽ không bao giờ trở thành.","content":"$2d","readingTime":"5 min read"}}}]}]
+20:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
+2e:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/10t6aisp~8lkd.js","/_next/static/chunks/1796v1pwe9gpx.js","/_next/static/chunks/026z7.gtgb754.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
+1d:null
+22:[["$","title","0",{"children":"Classic Home · Yen Nhi"}],["$","meta","1",{"name":"description","content":"Previous homepage design."}],["$","link","2",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","3",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","meta","4",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","5",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","6",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","7",{"name":"robots","content":"noindex, nofollow"}],["$","meta","8",{"name":"category","content":"technology"}],["$","link","9",{"rel":"canonical","href":"https://startup.id.vn/classic/"}],["$","meta","10",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","11",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","12",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","13",{"property":"og:site_name","content":"Nguyen Thi Yen Nhi Portfolio"}],["$","meta","14",{"property":"og:locale","content":"en_US"}],["$","meta","15",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","16",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","17",{"property":"og:image:type","content":"image/png"}],["$","meta","18",{"property":"og:image:width","content":"1200"}],["$","meta","19",{"property":"og:image:height","content":"630"}],["$","meta","20",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Software Engineer & Flutter Developer"}],["$","meta","21",{"property":"og:type","content":"profile"}],["$","meta","22",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","23",{"name":"twitter:creator","content":"@nhiney"}],["$","meta","24",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","25",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","26",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","27",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Software Engineer"}],["$","meta","28",{"name":"twitter:image:width","content":"1200"}],["$","meta","29",{"name":"twitter:image:height","content":"630"}],["$","link","30",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","31",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","32",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L2e","33",{}]]
