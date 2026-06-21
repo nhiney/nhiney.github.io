@@ -5,9 +5,7 @@ import { motion } from 'framer-motion'
 import { BookOpen, Code2, Leaf, Palette, Sprout } from 'lucide-react'
 import { KNOWLEDGE_NOTES, type KnowledgeNote } from '@/lib/knowledge-notes'
 
-// ─── Domain metadata ─────────────────────────────────────────────────────────
-// `pos` is the label's point in the SVG view-box; the stage matches that ratio
-// so the HTML label sits over the right part of the canopy.
+// Domain metadata
 type GroupKey = 'book' | 'code' | 'design' | 'life'
 
 const GROUP_META: Record<
@@ -41,112 +39,13 @@ const GROUP_META: Record<
 }
 const ORDER: GroupKey[] = ['book', 'code', 'design', 'life']
 
-// Glyph shown on each apple node, picked by the note's domain.
-const GROUP_GLYPH: Record<GroupKey, string> = {
-  book: '☰',
-  code: '</>',
-  design: '◈',
-  life: '✦',
-}
-
-// View-box framed tightly around the broad tree.
-const VB = { x: 50, y: 2, w: 460, h: 468 }
-
-// ─── Tree generation ─────────────────────────────────────────────────────────
-// A seeded PRNG keeps the result identical on server & client (no hydration
-// drift). Branches are tapered, curved, FILLED shapes; the canopy is a dense
-// broad crown, lit from the top — a real tree, not a tidy diagram.
-type Seg = { d: string; w: number }
-type Lf = { x: number; y: number; rot: number; sz: number; shade: number }
-type Blob = { x: number; y: number; r: number }
-type Pt = { x: number; y: number }
-
-function buildTree() {
-  const mulberry32 = (a: number) => () => {
-    a |= 0
-    a = (a + 0x6d2b79f5) | 0
-    let t = Math.imul(a ^ (a >>> 15), 1 | a)
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
-  const rng = mulberry32(77123)
-  const R = (d: number) => (d * Math.PI) / 180
-  const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v))
-  const sub = (a: Pt, b: Pt) => ({ x: a.x - b.x, y: a.y - b.y })
-  const add = (a: Pt, b: Pt, s = 1) => ({ x: a.x + b.x * s, y: a.y + b.y * s })
-  const unit = (v: Pt) => { const l = Math.hypot(v.x, v.y) || 1; return { x: v.x / l, y: v.y / l } }
-  const perp = (v: Pt) => ({ x: -v.y, y: v.x })
-
-  const branches: Seg[] = []
-  const leaves: Lf[] = []
-  const blobs: Blob[] = []
-
-  const taper = (B: Pt, T: Pt, wB: number, wT: number, bow: number): string => {
-    const n = perp(unit(sub(T, B)))
-    const mid = { x: (B.x + T.x) / 2, y: (B.y + T.y) / 2 }
-    const C = add(mid, n, bow)
-    const wM = (wB + wT) / 2
-    const f = (p: Pt) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`
-    return (
-      `M ${f(add(B, n, wB / 2))} Q ${f(add(C, n, wM / 2))} ${f(add(T, n, wT / 2))} ` +
-      `L ${f(add(T, n, -wT / 2))} Q ${f(add(C, n, -wM / 2))} ${f(add(B, n, -wB / 2))} Z`
-    )
-  }
-  const grow = (B: Pt, ang: number, len: number, w: number, depth: number) => {
-    const T = { x: B.x + Math.cos(ang) * len, y: B.y + Math.sin(ang) * len }
-    const wEnd = Math.max(1.2, w * 0.7)
-    const bow = (rng() - 0.5) * len * 0.2
-    branches.push({ d: taper(B, T, w, wEnd, bow), w })
-    if (depth <= 0) return
-    const kids = depth > 1 ? 2 : rng() < 0.4 ? 3 : 2
-    const spread = 20 + rng() * 16
-    for (let i = 0; i < kids; i++) {
-      const t = i / (kids - 1) - 0.5
-      const da = t * spread + (rng() - 0.5) * 11
-      let na = ang + R(da)
-      na = na * 0.9 + R(-90) * 0.1 // gentle upward bias
-      grow(T, na, len * 0.74, wEnd * 0.92, depth - 1)
-    }
-  }
-
-  const baseX = 280
-  const ground = 452
-  const trunkTop = { x: 280, y: 322 }
-  branches.push({ d: taper({ x: baseX, y: ground }, trunkTop, 42, 27, (rng() - 0.5) * 5), w: 42 })
-  for (const ra of [202, 224, 316, 338]) {
-    const dir = { x: Math.cos(R(ra)), y: Math.sin(R(ra)) }
-    const e = { x: baseX + dir.x * 44, y: ground + 10 }
-    branches.push({ d: taper({ x: baseX, y: ground - 8 }, e, 18, 3, (rng() - 0.5) * 5), w: 18 })
-  }
-  const limbs = [
-    { a: -146, l: 74 }, { a: -120, l: 92 }, { a: -98, l: 100 },
-    { a: -82, l: 100 }, { a: -60, l: 92 }, { a: -34, l: 74 },
-  ]
-  for (const L of limbs) grow(trunkTop, R(L.a), L.l, 22, 3)
-
-  // canopy — a dense broad crown, lit from the top, with an organic bumpy edge
-  const C = { x: 280, y: 162 }
-  const Rx = 208, Ry = 158
-  const ph = rng() * 6.28, ph2 = rng() * 6.28
-  const edge = (a: number) => 0.83 + 0.11 * Math.sin(a * 3 + ph) + 0.06 * Math.sin(a * 5 + ph2)
-  for (let i = 0; i < 1500; i++) {
-    const a = rng() * Math.PI * 2
-    const rr = Math.pow(rng(), 0.6) * edge(a)
-    const x = C.x + Math.cos(a) * rr * Rx
-    const y = C.y + Math.sin(a) * rr * Ry
-    const h = (C.y - y) / Ry // +1 top … −1 bottom → lights the crown from above
-    const shade = clamp(0.5 + 0.34 * h + (rng() - 0.5) * 0.55, 0, 1)
-    leaves.push({ x, y, rot: rng() * 180, sz: 0.82 + rng() * 0.5, shade })
-  }
-  for (let i = 0; i < 24; i++) {
-    const a = rng() * Math.PI * 2
-    const rr = Math.pow(rng(), 0.5) * 0.72
-    blobs.push({ x: C.x + Math.cos(a) * rr * Rx, y: C.y + Math.sin(a) * rr * Ry, r: 28 + rng() * 18 })
-  }
-  return { branches, leaves, blobs }
-}
-
-const TREE = buildTree()
+// View-box framed tightly around the broad tree. The tree illustration itself is
+// a static raster baked at build time (scripts/generate-tree.mjs) — it used to be
+// ~13,500 inline SVG nodes plus 400 infinite framer-motion animations, a 2 MB
+// document that janked badly on phones/iPads. The interactive overlay nodes below
+// are positioned in this same coordinate space, so they stay pixel-aligned with
+// the baked image (whose aspect-ratio equals this view-box).
+const VB = { x: 50, y: -20, w: 460, h: 490 }
 const px = (n: number) => `${(((n - VB.x) / VB.w) * 100).toFixed(2)}%`
 const py = (n: number) => `${(((n - VB.y) / VB.h) * 100).toFixed(2)}%`
 
@@ -171,38 +70,20 @@ export const AppleTreeMindMap = () => {
     return out
   }, [])
 
-  // Apple nodes — one per note, in canonical order, scattered across the canopy.
-  // A seeded scatter keeps server/client output identical (no hydration drift).
+  // Fruit nodes — one per insight, scattered across the canopy.
   const apples = useMemo(() => {
     const C = { x: 280, y: 162 }
-    const Rx = 168, Ry = 126
+    const Rx = 185, Ry = 145
     return KNOWLEDGE_NOTES.map((note, i) => {
       const a = (i * 2.399963) % (Math.PI * 2) // golden-angle spiral
       const rr = Math.sqrt((i + 0.5) / KNOWLEDGE_NOTES.length)
       return {
         note,
-        glyph: GROUP_GLYPH[note.sourceType as GroupKey],
         x: C.x + Math.cos(a) * rr * Rx,
         y: C.y + Math.sin(a) * rr * Ry,
       }
     })
   }, [])
-
-  const thickWood = TREE.branches.filter((b) => b.w >= 12)
-  const thinWood = TREE.branches.filter((b) => b.w < 12)
-  const leafDark = TREE.leaves.filter((l) => l.shade < 0.4)
-  const leafMid = TREE.leaves.filter((l) => l.shade >= 0.4 && l.shade < 0.72)
-  const leafLight = TREE.leaves.filter((l) => l.shade >= 0.72)
-  const leafEl = (l: Lf, i: number) => (
-    <ellipse
-      key={i}
-      cx={l.x.toFixed(1)}
-      cy={l.y.toFixed(1)}
-      rx={(4.2 * l.sz).toFixed(1)}
-      ry={(2.6 * l.sz).toFixed(1)}
-      transform={`rotate(${l.rot.toFixed(0)} ${l.x.toFixed(1)} ${l.y.toFixed(1)})`}
-    />
-  )
 
   return (
     <div className="relative w-full">
@@ -211,7 +92,7 @@ export const AppleTreeMindMap = () => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-2xl text-center"
+        className="mx-auto max-w-3xl text-center"
       >
         <p className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-secondary/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
           <Sprout className="h-3 w-3 text-primary" /> Knowledge Tree
@@ -219,9 +100,9 @@ export const AppleTreeMindMap = () => {
         <h1 className="mt-5 text-4xl font-black tracking-tight text-foreground sm:text-5xl md:text-6xl">
           Mind <span className="text-primary">Map</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
           A growing tree of ideas, books, and engineering principles. Each{' '}
-          <span className="font-semibold text-foreground">apple</span> is an insight — hover to peak,
+          <span className="font-semibold text-foreground text-primary">fruit</span> is an insight — hover to peak,
           click to read.
         </p>
         <p className="mt-4 font-mono text-[11px] tracking-wider text-muted-foreground/60">
@@ -229,74 +110,31 @@ export const AppleTreeMindMap = () => {
         </p>
       </motion.header>
 
-      {/* ── The Tree (organic illustration — frameless, sits on the page) ───── */}
+      {/* ── The Tree (baked raster illustration — frameless, sits on the page) ─ */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="relative mx-auto mt-8 w-full max-w-3xl"
+        className="relative mx-auto mt-8 w-full max-w-4xl"
       >
         <div className="relative w-full" style={{ aspectRatio: `${VB.w} / ${VB.h}` }}>
-          <svg
-            viewBox={`${VB.x} ${VB.y} ${VB.w} ${VB.h}`}
-            preserveAspectRatio="xMidYMid meet"
-            className="absolute inset-0 h-full w-full"
+          {/* Static tree image. The container's aspect-ratio equals the original
+              view-box, so the image fills it exactly and the overlay nodes below
+              (positioned via px()/py()) stay aligned. Only the theme-matched
+              image is fetched — the off-theme <div> stays display:none. */}
+          <div
             aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="kt-wood" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stopColor="var(--kt-trunk)" />
-                <stop offset="1" stopColor="var(--kt-branch)" />
-              </linearGradient>
-            </defs>
+            className="absolute inset-0 bg-center bg-no-repeat dark:hidden"
+            style={{ backgroundImage: 'url(/mind-map/tree-light.webp)', backgroundSize: '100% 100%' }}
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 hidden bg-center bg-no-repeat dark:block"
+            style={{ backgroundImage: 'url(/mind-map/tree-dark.webp)', backgroundSize: '100% 100%' }}
+          />
 
-            {/* ground line */}
-            <line
-              x1={184} y1={456} x2={376} y2={456}
-              stroke="currentColor"
-              className="text-muted-foreground/30"
-              strokeWidth={1.2}
-              strokeDasharray="2 8"
-              strokeLinecap="round"
-            />
-
-            {/* trunk + branches (wood) */}
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-            >
-              <g style={{ fill: 'var(--kt-branch)' }}>
-                {thinWood.map((b, i) => (
-                  <path key={i} d={b.d} />
-                ))}
-              </g>
-              <g style={{ fill: 'url(#kt-wood)' }}>
-                {thickWood.map((b, i) => (
-                  <path key={i} d={b.d} />
-                ))}
-              </g>
-            </motion.g>
-
-            {/* canopy */}
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-            >
-              <g style={{ fill: 'var(--kt-leaf)' }} fillOpacity={0.36}>
-                {TREE.blobs.map((b, i) => (
-                  <circle key={i} cx={b.x.toFixed(1)} cy={b.y.toFixed(1)} r={b.r.toFixed(1)} />
-                ))}
-              </g>
-              <g style={{ fill: 'var(--kt-leaf)' }} fillOpacity={0.93}>{leafDark.map(leafEl)}</g>
-              <g style={{ fill: 'var(--kt-leaf2)' }} fillOpacity={0.93}>{leafMid.map(leafEl)}</g>
-              <g style={{ fill: 'var(--kt-leaf3)' }} fillOpacity={0.93}>{leafLight.map(leafEl)}</g>
-            </motion.g>
-          </svg>
-
-          {/* apple nodes — one glyph per insight, scattered over the canopy */}
-          {apples.map(({ note, glyph, x, y }, i) => (
+          {/* realistic apple nodes — scattered over the canopy */}
+          {apples.map(({ note, x, y }, i) => (
             <motion.button
               key={note.id}
               type="button"
@@ -305,10 +143,21 @@ export const AppleTreeMindMap = () => {
               transition={{ duration: 0.4, delay: 0.6 + i * 0.03 }}
               title={note.title}
               aria-label={note.title}
-              className="group absolute z-10 flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/40 bg-card/80 font-mono text-[10px] text-primary shadow-sm backdrop-blur transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
-              style={{ left: px(x), top: py(y) }}
+              className="group absolute z-10 flex h-[22px] w-[22px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all hover:scale-125 hover:z-30 dark:shadow-[0_0_12px_rgba(239,68,68,0.4)]"
+              style={{ 
+                left: px(x), 
+                top: py(y),
+                backgroundImage: 'radial-gradient(circle at 35% 30%, #fca5a5 0%, #ef4444 35%, #991b1b 100%)',
+                boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.4), 0 3px 5px rgba(0,0,0,0.3)'
+              }}
             >
-              {glyph}
+              {/* Apple stem & tiny leaf */}
+              <svg className="absolute -top-[6px] left-1/2 w-4 h-4 -translate-x-1/2 pointer-events-none" viewBox="0 0 12 12" fill="none">
+                <path d="M5.5 5 C5.5 2.5 6.5 1 7.5 0.5" stroke="#451a03" strokeWidth="1.2" strokeLinecap="round" />
+                <path d="M6.5 2.5 C8.5 0.5 11 1.5 10.5 3.5 C9.5 5 7 4 6.5 2.5 Z" fill="#166534" stroke="#14532d" strokeWidth="0.5" />
+              </svg>
+              {/* Glossy highlight */}
+              <span className="absolute top-[3px] left-[4px] h-[5px] w-[5px] rounded-full bg-white/50 blur-[0.5px] pointer-events-none" />
             </motion.button>
           ))}
 

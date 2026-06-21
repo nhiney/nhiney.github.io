@@ -10,8 +10,8 @@ import {
   ChevronDown,
   ChevronRight,
   Clock,
+  Eye,
   ExternalLink,
-  GraduationCap,
   Image as ImageIcon,
   ShieldCheck,
   X,
@@ -27,7 +27,6 @@ import certificatesData from "@/data/certificates.json";
 
 type Certificate = (typeof certificatesData)[number];
 type Course = NonNullable<Certificate["courses"]>[number];
-type ViewMode = "all" | "certificates" | "courses";
 type CourseEntry = { course: Course; cert: Certificate; isStandalone?: boolean };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -86,7 +85,6 @@ export function CertificatesClient() {
   };
   const [active, setActive] = useState<Certificate | null>(null);
   const [activeCourse, setActiveCourse] = useState<CourseEntry | null>(null);
-  const [viewMode, setViewMode] = useState<ViewMode>("all");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
 
   const isStandaloneCourse = (c: Certificate) =>
@@ -103,32 +101,6 @@ export function CertificatesClient() {
       return categoryFilter === "all" ? certs : certs.filter((c) => c.category === categoryFilter);
     },
     [categoryFilter],
-  );
-
-  const allCourses: CourseEntry[] = useMemo(() => {
-    const out: CourseEntry[] = [];
-    for (const cert of certificatesData) {
-      if (isStandaloneCourse(cert)) {
-        out.push({
-          course: { title: cert.title, image: cert.image ?? null, verifyUrl: cert.verifyUrl ?? null, date: cert.date } as Course,
-          cert,
-          isStandalone: true,
-        });
-      } else {
-        for (const course of cert.courses ?? []) {
-          out.push({ course, cert });
-        }
-      }
-    }
-    return out;
-  }, []);
-
-  const filteredCourses = useMemo(
-    () =>
-      categoryFilter === "all"
-        ? allCourses
-        : allCourses.filter((c) => c.cert.category === categoryFilter),
-    [allCourses, categoryFilter],
   );
 
   const modalOpen = active !== null || activeCourse !== null;
@@ -148,21 +120,13 @@ export function CertificatesClient() {
     };
   }, [modalOpen]);
 
-  const handleCourseClick = (course: Course, cert: Certificate) => {
-    if (course.image) {
-      setActiveCourse({ course, cert });
-    } else {
-      setActive(cert);
-    }
-  };
-
-  const showCerts = viewMode === "all" || viewMode === "certificates";
-  const showCourses = viewMode === "all" || viewMode === "courses";
-
   return (
     <Container className="pb-24 space-y-14">
       {/* ── Header ── */}
-      <Section className="space-y-6 pt-12 text-center">
+      <Section className="relative space-y-8 pt-12 text-center">
+        {/* Ambient hero glow */}
+        <div className="pointer-events-none absolute inset-x-0 -top-12 -z-10 mx-auto h-64 max-w-3xl bg-[radial-gradient(60%_100%_at_50%_0%,hsl(var(--primary)/0.13),transparent_70%)] blur-2xl" />
+
         <FadeIn className="space-y-5 flex flex-col items-center">
           <Badge
             variant="outline"
@@ -178,232 +142,107 @@ export function CertificatesClient() {
           </p>
         </FadeIn>
 
-        {/* Unified filter row — All dropdown (category) + view-mode pills */}
-        <FadeIn className="flex flex-wrap items-center justify-center gap-2.5">
+        {/* Category filter */}
+        <FadeIn delay={0.1} className="flex flex-wrap items-center justify-center gap-2.5">
           <CategoryDropdown
             value={categoryFilter}
             onChange={setCategoryFilter}
             categories={categories}
             allLabel={t("pages.certificates.filter.all")}
           />
-          {(
-            [
-              { key: "certificates", label: t("pages.certificates.filter.view_certificates") },
-              { key: "courses", label: t("pages.certificates.filter.view_courses") },
-            ] as { key: Exclude<ViewMode, "all">; label: string }[]
-          ).map(({ key, label }) => {
-            const isActive = viewMode === key;
-            return (
-              <button
-                key={key}
-                type="button"
-                onClick={() => setViewMode(isActive ? "all" : key)}
-                aria-pressed={isActive}
-                className={`inline-flex items-center rounded-full border px-4 py-2 text-xs font-medium tracking-wide transition-all ${
-                  isActive
-                    ? "border-primary/40 bg-primary/10 text-primary"
-                    : "border-border/60 bg-transparent text-muted-foreground hover:border-foreground/30 hover:text-foreground"
-                }`}
-              >
-                {label}
-              </button>
-            );
-          })}
         </FadeIn>
       </Section>
 
-      {/* ── Certificates — Gallery Wall ── */}
-      {showCerts && (
-        <Section className="pt-0 space-y-6">
-          {viewMode === "all" && (
-            <SectionHeader label={t("pages.certificates.filter.view_certificates")} />
-          )}
-          {filteredCerts.length === 0 ? (
-            <EmptyState text={t("pages.certificates.filter.empty")} />
-          ) : (
-            <div className="relative overflow-hidden rounded-[2rem] border border-border/40 bg-gradient-to-b from-muted/25 via-background to-background px-5 py-12 sm:px-10 sm:py-16">
-              {/* Soft top wash — the "wall" + gallery light */}
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_55%_at_50%_0%,hsl(var(--foreground)/0.04),transparent_70%)]" />
-              {/* Picture rail line */}
-              <div className="pointer-events-none absolute inset-x-0 top-6 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
-
-              <div className="relative grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-                {filteredCerts.map((cert, i) => {
-                  const realUrl = cert.verifyUrl ?? cert.url;
-                  return (
-                    <FadeIn key={cert.id} delay={i * 0.05}>
-                      <figure
-                        onClick={() => setActive(cert)}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") {
-                            e.preventDefault();
-                            setActive(cert);
-                          }
-                        }}
-                        className="group relative flex h-full cursor-pointer flex-col items-center text-center"
-                      >
-                        {/* Spotlight glow on hover */}
-                        <div className="pointer-events-none absolute -inset-x-6 -top-8 bottom-10 rounded-[2.5rem] bg-[radial-gradient(60%_50%_at_50%_0%,hsl(var(--primary)/0.14),transparent_75%)] opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
-
-                        {/* Framed artwork */}
-                        <div className="relative w-full transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
-                          <div className="relative overflow-hidden rounded-[5px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[3px] shadow-[0_12px_28px_-14px_rgba(0,0,0,0.5)] ring-1 ring-black/10 transition-all duration-500 group-hover:shadow-[0_28px_55px_-18px_rgba(0,0,0,0.6)] group-hover:ring-primary/40 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10 dark:group-hover:ring-primary/50">
-                            {/* Inner bevel */}
-                            <div className="rounded-[3px] bg-gradient-to-b from-white/50 to-black/10 p-px">
-                              {/* Mat (museum matting) */}
-                              <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-3 shadow-[inset_0_1px_4px_rgba(0,0,0,0.14)] sm:p-4">
-                                {cert.image ? (
-                                  <div className="relative aspect-[1.414/1] w-full overflow-hidden bg-white ring-1 ring-black/5">
-                                    <Image
-                                      src={cert.image}
-                                      alt={cert.title}
-                                      fill
-                                      className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    />
-                                  </div>
-                                ) : (
-                                  <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-3 bg-white px-6">
-                                    <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-amber-600">
-                                      <Clock size={11} /> {t("pages.certificates.in_progress")}
-                                    </span>
-                                    <p className="text-center text-xs text-zinc-500">
-                                      {t("pages.certificates.in_progress_desc")}
-                                    </p>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Museum plaque caption */}
-                        <figcaption className="mt-5 flex w-full flex-1 flex-col items-center px-2">
-                          <div className="mb-2 flex items-center justify-center gap-2 text-[11px] text-muted-foreground">
-                            <span className={`h-1.5 w-1.5 rounded-full ${dotColor(cert.category)}`} />
-                            <span className="font-medium tracking-wide text-foreground/70">
-                              {cert.category}
-                            </span>
-                            <span className="text-muted-foreground/40">·</span>
-                            <span>{locDate(cert.date)}</span>
-                          </div>
-                          <h3 className="text-[15px] font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
-                            {cert.title}
-                          </h3>
-                          <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground/60">
-                            {cert.issuer}
-                          </p>
-                          {cert.courses && cert.courses.length > 0 && (
-                            <p className="mt-2 text-[11px] text-muted-foreground/70">
-                              {cert.courses.length} {t("pages.certificates.courses_included")}
-                            </p>
-                          )}
-                          {realUrl && (
-                            <Link
-                              href={realUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground/70 underline-offset-4 transition-colors hover:text-primary hover:underline"
-                            >
-                              {t("pages.certificates.view_real")}
-                              <ExternalLink size={11} />
-                            </Link>
-                          )}
-                        </figcaption>
-                      </figure>
-                    </FadeIn>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-        </Section>
-      )}
-
-      {/* ── Courses — mini framed gallery ── */}
-      {showCourses && (
-        <Section className="pt-0 space-y-6">
-          {viewMode === "all" && (
-            <SectionHeader label={t("pages.certificates.filter.view_courses")} />
-          )}
-          {filteredCourses.length === 0 ? (
-            <EmptyState text={t("pages.certificates.filter.empty")} />
-          ) : (
-            <div className="grid gap-x-6 gap-y-9 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filteredCourses.map(({ course, cert, isStandalone }, i) => {
-                const hasImage = !!course.image;
-                return (
-                  <FadeIn key={`${cert.id}-${course.title}`} delay={Math.min(i, 12) * 0.03}>
-                    <button
-                      type="button"
-                      onClick={() => handleCourseClick(course, cert)}
-                      className="group relative flex h-full w-full flex-col text-center"
-                    >
-                      {/* Mini frame */}
-                      <div className="relative w-full transition-transform duration-400 ease-out group-hover:-translate-y-1">
-                        <div className="relative overflow-hidden rounded-[4px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[2px] shadow-[0_8px_20px_-12px_rgba(0,0,0,0.45)] ring-1 ring-black/10 transition-all duration-400 group-hover:shadow-[0_18px_36px_-16px_rgba(0,0,0,0.55)] group-hover:ring-primary/40 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10 dark:group-hover:ring-primary/50">
-                          <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-2 shadow-[inset_0_1px_3px_rgba(0,0,0,0.12)]">
-                            {hasImage ? (
-                              <div className="relative aspect-[1.414/1] w-full overflow-hidden bg-white ring-1 ring-black/5">
-                                <Image
-                                  src={course.image as string}
-                                  alt={locTitle(course)}
-                                  fill
-                                  className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                                />
-                              </div>
-                            ) : (
-                              <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-2 bg-white">
-                                <GraduationCap size={22} className="text-zinc-300" />
-                                <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-400">
-                                  {t("pages.certificates.pending")}
-                                </span>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                        {/* Completed badge */}
-                        {hasImage && (
-                          <span className="absolute -right-1.5 -top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500 text-white shadow-md">
-                            <Check size={12} strokeWidth={3} />
+      {/* ── Certificates — credential grid ── */}
+      <Section className="pt-0 space-y-6">
+        {filteredCerts.length === 0 ? (
+          <EmptyState text={t("pages.certificates.filter.empty")} />
+        ) : (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredCerts.map((cert, i) => {
+              const realUrl = cert.verifyUrl ?? cert.url;
+              return (
+                <FadeIn key={cert.id} delay={i * 0.05} className="h-full">
+                  <article
+                    onClick={() => setActive(cert)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setActive(cert);
+                      }
+                    }}
+                    className="group flex h-full cursor-pointer flex-col"
+                  >
+                    {/* Certificate cover — the focus */}
+                    <div className="relative aspect-[1.414/1] w-full overflow-hidden rounded-xl border border-border/70 bg-gradient-to-br from-zinc-50 to-zinc-100 shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-hover:border-primary/40 group-hover:shadow-[0_28px_50px_-26px_rgba(0,0,0,0.55)] dark:from-zinc-900 dark:to-zinc-950">
+                      {cert.image ? (
+                        <Image
+                          src={cert.image}
+                          alt={cert.title}
+                          fill
+                          className="object-contain p-3 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full flex-col items-center justify-center gap-2.5 px-6 text-center">
+                          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-3.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
+                            <Clock size={11} /> {t("pages.certificates.in_progress")}
                           </span>
-                        )}
-                      </div>
+                          <p className="text-xs text-muted-foreground">
+                            {t("pages.certificates.in_progress_desc")}
+                          </p>
+                        </div>
+                      )}
 
-                      {/* Plaque */}
-                      <div className="mt-3.5 flex flex-1 flex-col items-center px-1">
-                        <div className="mb-1.5 flex items-center gap-1.5 text-[10px] text-muted-foreground">
-                          <span className={`h-1.5 w-1.5 rounded-full ${dotColor(cert.category)}`} />
-                          <span className="font-medium tracking-wide text-foreground/60">
-                            {CATEGORY_SHORT[cert.category] ?? cert.category}
+                      {/* Verified chip */}
+                      {cert.image && realUrl && (
+                        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full border border-border/60 bg-background/85 px-2 py-0.5 text-[10px] font-medium text-emerald-600 shadow-sm backdrop-blur dark:text-emerald-400">
+                          <ShieldCheck size={11} strokeWidth={2.4} />
+                          {t("pages.certificates.verified")}
+                        </span>
+                      )}
+
+                      {/* Hover reveal — professional "view" affordance */}
+                      {cert.image && (
+                        <div className="pointer-events-none absolute inset-0 flex items-end justify-center bg-gradient-to-t from-zinc-950/45 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                          <span className="mb-4 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-white/95 px-4 py-1.5 text-[11px] font-semibold text-zinc-900 shadow-lg backdrop-blur transition-transform duration-500 group-hover:translate-y-0">
+                            <Eye size={13} />
+                            {t("pages.certificates.view_certificate")}
                           </span>
                         </div>
-                        <h4 className="line-clamp-2 text-[13px] font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
-                          {locTitle(course)}
-                        </h4>
-                        {course.date && (
-                          <p className="mt-1 text-[11px] text-muted-foreground/60">
-                            {locDate(course.date)}
-                          </p>
-                        )}
-                        {!isStandalone && (
-                          <p className="mt-1.5 line-clamp-1 max-w-full text-[10px] text-muted-foreground/45">
-                            {cert.title}
-                          </p>
-                        )}
+                      )}
+                    </div>
+
+                    {/* Slim caption — cover stays the star */}
+                    <div className="flex flex-1 flex-col px-1 pt-3.5">
+                      <h3 className="text-[14px] font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
+                        {cert.title}
+                      </h3>
+                      <div className="mt-1.5 flex items-center gap-2 text-[11px] text-muted-foreground">
+                        <span className={`h-1.5 w-1.5 rounded-full ${dotColor(cert.category)}`} />
+                        <span className="font-medium text-foreground/65">{cert.issuer}</span>
+                        <span className="text-muted-foreground/40">·</span>
+                        <span>{locDate(cert.date)}</span>
                       </div>
-                    </button>
-                  </FadeIn>
-                );
-              })}
-            </div>
-          )}
-        </Section>
-      )}
+                    </div>
+                  </article>
+                </FadeIn>
+              );
+            })}
+          </div>
+        )}
+        {filteredCerts.length > 0 && (
+          <FadeIn
+            delay={0.2}
+            className="flex items-center justify-center gap-2 pt-2 text-center text-xs text-muted-foreground"
+          >
+            <ShieldCheck size={13} className="shrink-0 text-emerald-500" />
+            <span>{t("pages.certificates.trust")}</span>
+          </FadeIn>
+        )}
+      </Section>
 
       {/* ── Certificate Detail Modal ── */}
       <AnimatePresence>
@@ -437,35 +276,31 @@ export function CertificatesClient() {
                 <X size={16} />
               </button>
 
-              {/* ─ Image side (framed) ─ */}
+              {/* ─ Image side ─ */}
               <div className="flex items-center justify-center bg-gradient-to-br from-muted/40 to-background p-5 sm:p-8">
-                <div className="w-full overflow-hidden rounded-[5px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[3px] shadow-xl ring-1 ring-black/10 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10">
-                  <div className="rounded-[3px] bg-gradient-to-b from-white/50 to-black/10 p-px">
-                    <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-3 shadow-[inset_0_1px_4px_rgba(0,0,0,0.14)] sm:p-5">
-                      {active.image ? (
-                        <div className="relative aspect-[1.414/1] w-full bg-white ring-1 ring-black/5">
-                          <Image
-                            src={active.image}
-                            alt={active.title}
-                            fill
-                            className="object-contain"
-                            sizes="(max-width: 768px) 100vw, 60vw"
-                            priority
-                            quality={100}
-                          />
-                        </div>
-                      ) : (
-                        <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-4 bg-white">
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2 text-[11px] font-semibold uppercase tracking-wide text-amber-600">
-                            <Clock size={12} /> {t("pages.certificates.in_progress")}
-                          </span>
-                          <p className="max-w-md px-6 text-center text-sm text-zinc-500">
-                            {t("pages.certificates.in_progress_desc")}
-                          </p>
-                        </div>
-                      )}
+                <div className="w-full overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-zinc-50 to-zinc-100 shadow-lg dark:from-zinc-900 dark:to-zinc-950">
+                  {active.image ? (
+                    <div className="relative aspect-[1.414/1] w-full">
+                      <Image
+                        src={active.image}
+                        alt={active.title}
+                        fill
+                        className="object-contain p-4"
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        priority
+                        quality={100}
+                      />
                     </div>
-                  </div>
+                  ) : (
+                    <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-4">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2 text-[11px] font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
+                        <Clock size={12} /> {t("pages.certificates.in_progress")}
+                      </span>
+                      <p className="max-w-md px-6 text-center text-sm text-muted-foreground">
+                        {t("pages.certificates.in_progress_desc")}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -629,24 +464,20 @@ export function CertificatesClient() {
                 <X size={16} />
               </button>
 
-              {/* ─ Image side (framed) ─ */}
+              {/* ─ Image side ─ */}
               {activeCourse.course.image && (
                 <div className="flex items-center justify-center bg-gradient-to-br from-muted/40 to-background p-5 sm:p-8">
-                  <div className="w-full overflow-hidden rounded-[5px] bg-gradient-to-b from-zinc-200 to-zinc-300 p-[3px] shadow-xl ring-1 ring-black/10 dark:from-zinc-700 dark:to-zinc-800 dark:ring-white/10">
-                    <div className="rounded-[3px] bg-gradient-to-b from-white/50 to-black/10 p-px">
-                      <div className="overflow-hidden rounded-[2px] bg-[#faf9f6] p-3 shadow-[inset_0_1px_4px_rgba(0,0,0,0.14)] sm:p-5">
-                        <div className="relative aspect-[1.414/1] w-full bg-white ring-1 ring-black/5">
-                          <Image
-                            src={activeCourse.course.image}
-                            alt={locTitle(activeCourse.course)}
-                            fill
-                            className="object-contain"
-                            sizes="(max-width: 768px) 100vw, 60vw"
-                            priority
-                            quality={100}
-                          />
-                        </div>
-                      </div>
+                  <div className="w-full overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-zinc-50 to-zinc-100 shadow-lg dark:from-zinc-900 dark:to-zinc-950">
+                    <div className="relative aspect-[1.414/1] w-full">
+                      <Image
+                        src={activeCourse.course.image}
+                        alt={locTitle(activeCourse.course)}
+                        fill
+                        className="object-contain p-4"
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        priority
+                        quality={100}
+                      />
                     </div>
                   </div>
                 </div>
@@ -864,16 +695,6 @@ function CategoryDropdown({
           </motion.ul>
         )}
       </AnimatePresence>
-    </div>
-  );
-}
-
-function SectionHeader({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-3 text-muted-foreground">
-      <span className="h-px flex-1 bg-border/60" />
-      <span className="text-[11px] font-medium uppercase tracking-[0.28em]">{label}</span>
-      <span className="h-px flex-1 bg-border/60" />
     </div>
   );
 }

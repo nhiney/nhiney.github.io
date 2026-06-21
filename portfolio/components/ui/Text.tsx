@@ -1,3 +1,4 @@
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
 interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
@@ -18,10 +19,10 @@ export function Text({
     muted: "text-zinc-500 font-medium",
   };
 
-  return (
-    <Component
-      className={cn(variants[variant], className)}
-      {...props}
-    />
-  );
+  // createElement avoids the `never`-typed JSX attributes that a polymorphic
+  // `as: React.ElementType` triggers under @types/react 19.
+  return React.createElement(Component, {
+    className: cn(variants[variant], className),
+    ...props,
+  });
 }

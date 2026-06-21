@@ -66,7 +66,7 @@ export function ThemeToggle({ className }: { className?: string }) {
           {theme === "dark" ? (
             <Moon className="h-5 w-5 text-primary" fill="currentColor" fillOpacity={0.2} />
           ) : (
-            <Sun className="h-5 w-5 text-zinc-600" />
+            <Sun className="h-5 w-5 text-foreground" />
           )}
         </motion.div>
       </AnimatePresence>

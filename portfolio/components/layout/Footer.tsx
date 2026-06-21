@@ -14,7 +14,7 @@ const SOCIAL_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-background">
-      <Container className="flex items-center justify-between gap-6 py-8">
+      <Container className="flex flex-col items-start gap-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
 
         {/* Left — name + social icons */}
         <div className="flex items-center gap-5">

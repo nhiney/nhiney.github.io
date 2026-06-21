@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Caveat, Sora } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
@@ -15,6 +15,22 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
   preload: true,
+});
+
+// Hand-written marker for papercraft accents, greetings & margin notes.
+const caveat = Caveat({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-caveat",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+// Sora — geometric grotesk for headings: modern, professional, high-clarity.
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const BASE = SITE_CONFIG.url;
@@ -104,8 +120,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F2F5FA" },
-    { media: "(prefers-color-scheme: dark)",  color: "#0A1020" },
+    { media: "(prefers-color-scheme: light)", color: "#FBFEFE" },
+    { media: "(prefers-color-scheme: dark)",  color: "#0B0C0E" },
   ],
 };
 
@@ -208,6 +224,8 @@ export default function RootLayout({
       </head>
       <body className={cn(
         inter.variable,
+        caveat.variable,
+        sora.variable,
         inter.className,
         "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans"
       )}>

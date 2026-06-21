@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronRight, Menu, X } from "lucide-react";
+import { Brain, ChevronRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/widgets/ThemeToggle";
@@ -17,6 +17,8 @@ export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const desktopItems = NAV_ITEMS.filter((item) => item.name !== "Portfolio");
+  const mobileItems = NAV_ITEMS;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -76,15 +78,27 @@ export function Navbar() {
         {/* ② Right — nav links + controls (natural width, empty space in the middle) */}
         <div className="hidden items-center gap-2 md:flex shrink-0">
           <nav className="flex items-center gap-5">
-            {NAV_ITEMS.filter((item) => item.name !== "Portfolio").map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="whitespace-nowrap text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {t(`nav.${item.name.toLowerCase()}`)}
-              </Link>
-            ))}
+            {desktopItems.map((item) =>
+              item.name === "Books" ? (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-label={t("nav.books")}
+                  title={t("nav.books")}
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  <Brain size={20} />
+                </Link>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="whitespace-nowrap text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {t(`nav.${item.name.toLowerCase()}`)}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="h-6 w-[1px] bg-border/60 mx-1" />
@@ -159,7 +173,7 @@ export function Navbar() {
             >
               <Container className="py-3">
                 <ul className="flex flex-col">
-                  {NAV_ITEMS.map((item, i) => {
+                  {mobileItems.map((item, i) => {
                     const active =
                       pathname === item.href ||
                       (item.href !== "/" && pathname?.startsWith(item.href));
@@ -185,6 +199,11 @@ export function Navbar() {
                           {item.name === "Portfolio" ? (
                             <span className="animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:300%_100%] bg-clip-text text-transparent font-semibold">
                               {t("nav.portfolio")}
+                            </span>
+                          ) : item.name === "Books" ? (
+                            <span className="flex items-center gap-2">
+                              <Brain size={18} />
+                              {t("nav.books")}
                             </span>
                           ) : (
                             <span>{t(`nav.${item.name.toLowerCase()}`)}</span>

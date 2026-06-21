@@ -45,10 +45,11 @@ export const NAV_ITEMS = [
   // Fellowship VNNIC — hidden from global nav; page still reachable at /nguyenthiyennhi-fellowship-vnnic-hcm.
   // To re-enable, uncomment the line below.
   // { name: "Fellowship", href: "/nguyenthiyennhi-fellowship-vnnic-hcm" },
-  { name: "Portfolio", href: "/portfolio" },
+
   { name: "Certificates", href: "/certificates" },
   { name: "Blog", href: "/blog" },
   { name: "Waitlist", href: "/waitlist" },
+  { name: "Books", href: "/books" },
 ];
 
 export const HERO_CONTENT = {

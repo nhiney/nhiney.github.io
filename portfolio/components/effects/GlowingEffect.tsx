@@ -86,6 +86,11 @@ export const GlowingEffect = memo(
 
     useEffect(() => {
       if (disabled) return;
+      // Touch devices have no hovering cursor, so the glow never activates — but
+      // the scroll/pointermove listeners still fire on every scroll frame (and
+      // there can be several of these on one page). Skip them to keep scrolling
+      // smooth on phones/tablets; the resting border is unchanged.
+      if (typeof window !== "undefined" && !window.matchMedia("(hover: hover)").matches) return;
       const handleScroll = () => handleMove();
       const handlePointerMove = (e: PointerEvent) => handleMove(e);
       window.addEventListener("scroll", handleScroll, { passive: true });
@@ -101,11 +106,12 @@ export const GlowingEffect = memo(
       variant === "white"
         ? "repeating-conic-gradient(from 236.84deg at 50% 50%, var(--black), var(--black) calc(25% / 5))"
         : [
-            "radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%)",
-            "radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%)",
-            "radial-gradient(circle at 60% 60%, #5a922c 10%, #5a922c00 20%)",
-            "radial-gradient(circle at 40% 60%, #4c7894 10%, #4c789400 20%)",
-            "repeating-conic-gradient(from 236.84deg at 50% 50%, #dd7bbb 0%, #d79f1e calc(25%/5), #5a922c calc(50%/5), #4c7894 calc(75%/5), #dd7bbb calc(100%/5))",
+            // Blue glow — matches the site's single blue accent.
+            "radial-gradient(circle, #3b82f6 10%, #3b82f600 20%)",
+            "radial-gradient(circle at 40% 40%, #60a5fa 5%, #60a5fa00 15%)",
+            "radial-gradient(circle at 60% 60%, #93c5fd 10%, #93c5fd00 20%)",
+            "radial-gradient(circle at 40% 60%, #2563eb 10%, #2563eb00 20%)",
+            "repeating-conic-gradient(from 236.84deg at 50% 50%, #2563eb 0%, #3b82f6 calc(25%/5), #60a5fa calc(50%/5), #1d4ed8 calc(75%/5), #2563eb calc(100%/5))",
           ].join(", ");
 
     return (
