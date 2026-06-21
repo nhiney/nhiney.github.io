@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import {
   AlertCircle,
   ArrowUpRight,
@@ -33,7 +34,9 @@ function SectionBlock({
     <div className="space-y-2.5">
       <div className="flex items-center gap-2">
         <div className={cn("flex h-6 w-6 shrink-0 items-center justify-center rounded-md", accent)}>
-          <Icon size={13} />
+          {/* createElement avoids the `never`-typed JSX attributes a polymorphic
+              React.ElementType triggers under @types/react 19. */}
+          {React.createElement(Icon, { size: 13 })}
         </div>
         <h3 className="text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
           {label}

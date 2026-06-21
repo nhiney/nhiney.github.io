@@ -1,3 +1,4 @@
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
@@ -5,13 +6,11 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 export function Section({ as: Component = "section", className, ...props }: SectionProps) {
-  return (
-    <Component
-      // Default has no built-in padding — pages set their own pt/pb explicitly
-      // so spacing is predictable and the page-level Container's space-y can
-      // actually take effect without 80-128px hidden bottom padding fighting it.
-      className={cn(className)}
-      {...props}
-    />
-  );
+  // Default has no built-in padding — pages set their own pt/pb explicitly so
+  // spacing is predictable. createElement avoids the `never`-typed JSX
+  // attributes a polymorphic `as: React.ElementType` triggers under @types/react 19.
+  return React.createElement(Component, {
+    className: cn(className),
+    ...props,
+  });
 }

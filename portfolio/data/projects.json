@@ -9,7 +9,7 @@
     "technologies": ["Flutter", "Laravel", "Firebase", "MySQL", "RBAC"],
     "github": "https://github.com/nhiney",
     "demo": null,
-    "image": "/projects/clinic.png",
+    "image": "/projects/clinic.webp",
     "year": "2024",
     "category": "Mobile & Backend"
   },
@@ -23,7 +23,7 @@
     "technologies": ["Laravel", "Blade", "MySQL", "JavaScript"],
     "github": "https://github.com/nhiney",
     "demo": null,
-    "image": "/projects/sports.png",
+    "image": "/projects/sports.webp",
     "year": "2024",
     "category": "Web"
   },
@@ -37,7 +37,7 @@
     "technologies": ["Oracle DB", "PL/SQL", "Python", "Tkinter", "RBAC"],
     "github": "https://github.com/nhiney",
     "demo": null,
-    "image": "/projects/database.png",
+    "image": "/projects/database.webp",
     "year": "2024",
     "category": "Security"
   },
@@ -51,7 +51,7 @@
     "technologies": ["Flutter", "Dart", "Firebase", "Node.js"],
     "github": "https://github.com/nhiney",
     "demo": null,
-    "image": "/projects/english.png",
+    "image": "/projects/english.webp",
     "year": "2023",
     "category": "Mobile"
   }

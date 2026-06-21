@@ -9,7 +9,7 @@ interface Particle {
   vy: number;
   alpha: number;
   size: number;
-  hue: number;
+  tint: number; // 0..1 position within the theme's hue range (resolved per frame)
 }
 
 interface FloatingParticlesProps {
@@ -27,6 +27,9 @@ export function FloatingParticles({ count = 28, className }: FloatingParticlesPr
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Hover-capable devices only — skip the canvas loop on phones/tablets where
+    // it just burns battery without a real cursor (matches this file's intent).
+    if (!window.matchMedia("(hover: hover)").matches) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -55,7 +58,7 @@ export function FloatingParticles({ count = 28, className }: FloatingParticlesPr
       vy: (Math.random() - 0.5) * 0.25,
       alpha: Math.random(),
       size: 1 + Math.random() * 2,
-      hue: 210 + Math.random() * 40, // blue-cyan range
+      tint: Math.random(),
     }));
 
     const draw = () => {
@@ -73,11 +76,13 @@ export function FloatingParticles({ count = 28, className }: FloatingParticlesPr
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
-        const sat = isDark() ? "100%" : "70%";
-        const light = isDark() ? "70%" : "50%";
+        // Bright theme: fresh teal → sky dots (hue ~182–204) in both modes.
+        const dark = isDark();
+        const hue = 182 + p.tint * 22;
+        const light = dark ? "64%" : "46%";
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, ${sat}, ${light}, ${p.alpha})`;
+        ctx.fillStyle = `hsla(${hue}, 50%, ${light}, ${p.alpha})`;
         ctx.fill();
       }
 

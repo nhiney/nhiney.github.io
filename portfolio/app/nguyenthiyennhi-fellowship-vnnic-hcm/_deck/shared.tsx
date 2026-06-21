@@ -39,7 +39,7 @@ export function DeckBackground() {
     <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       {/* Ambient gradient orbs */}
       <div className="absolute -top-48 -left-32 h-[700px] w-[700px] rounded-full bg-primary/[0.07] blur-[140px] dark:bg-primary/[0.22]" />
-      <div className="absolute top-1/2 -right-24 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-primary/[0.05] blur-[120px] dark:bg-cyan-400/[0.10]" />
+      <div className="absolute top-1/2 -right-24 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-primary/[0.05] blur-[120px] dark:bg-amber-400/[0.10]" />
       <div className="absolute -bottom-32 left-1/4 h-[400px] w-[400px] rounded-full bg-primary/[0.04] blur-[100px] dark:bg-primary/[0.14]" />
       {/* Subtle grid */}
       <div
@@ -87,7 +87,7 @@ export function Slide({
           className={`relative my-auto w-full ${maxWidth}`}
         >
           {/* Outer glow layer */}
-          <div className="absolute -inset-px rounded-[2rem] bg-gradient-to-br from-primary/[0.18] via-border/15 to-border/8 blur-[1px] dark:from-primary/[0.38] dark:via-cyan-500/[0.08]" />
+          <div className="absolute -inset-px rounded-[2rem] bg-gradient-to-br from-primary/[0.18] via-border/15 to-border/8 blur-[1px] dark:from-primary/[0.38] dark:via-amber-500/[0.08]" />
           {/* Card */}
           <div className="relative overflow-hidden rounded-[2rem] border border-border/40 bg-gradient-to-b from-card/98 via-card/96 to-card/92 p-6 shadow-2xl shadow-black/20 backdrop-blur-md sm:p-10 md:p-14 dark:border-primary/[0.24] dark:shadow-black/70">
             {/* Top primary accent bar */}

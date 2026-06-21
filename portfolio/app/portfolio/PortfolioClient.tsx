@@ -90,6 +90,14 @@ function Highlight({ text }: { text: string }) {
   );
 }
 
+function SectionEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+      {children}
+    </span>
+  );
+}
+
 // ─── Skill group icon map (not translatable) ──────────────────────────────────
 
 const SKILL_ICONS = [BarChart2, Layers, Code2, Wrench] as const;
@@ -155,9 +163,9 @@ export function PortfolioClient(_props: { projects: Post[] }) {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 function HeroSection({ copy }: { copy: PortfolioCopy }) {
-  const { hero, stats } = copy;
+  const { hero } = copy;
   return (
-    <section className="relative flex items-center overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 hidden md:block">
         <BackgroundLines className="h-full w-full [&_svg]:opacity-[0.07]">
           <span />
@@ -167,23 +175,13 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
       <MouseSpotlight />
 
-      <Container className="relative z-10 flex flex-col items-center text-center gap-5 pt-10 pb-14">
-
-        <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary backdrop-blur-sm"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
-          {hero.status}
-        </motion.div>
+      <Container className="relative z-10 flex flex-col items-center gap-6 pt-14 pb-14 text-center">
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="max-w-3xl text-[1.75rem] font-bold tracking-tight leading-[1.12] sm:text-3xl md:text-[2.25rem]"
+          className="max-w-5xl text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl md:leading-[1.16]"
         >
           {hero.headline_pre}{" "}
           <span className="text-primary">{hero.headline_acc1}</span>
@@ -195,7 +193,7 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.22 }}
-          className="max-w-2xl text-base sm:text-lg leading-relaxed text-muted-foreground"
+          className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg"
         >
           <Highlight text={hero.sub_pre} />
           {hero.sub_ba && (
@@ -213,7 +211,7 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           className="flex flex-col sm:flex-row gap-3"
         >
           <a href="#projects">
-            <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-7 py-3 text-sm font-semibold transition-all hover:shadow-[0_0_32px_-8px_hsl(var(--primary))] hover:scale-[1.02] active:scale-95">
+            <button className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-3 text-sm font-semibold text-white transition-all hover:scale-[1.02] hover:bg-blue-600 hover:shadow-[0_0_32px_-8px_hsl(var(--primary))] active:scale-95">
               {hero.cta_projects} <ArrowRight className="h-4 w-4" />
             </button>
           </a>
@@ -240,9 +238,9 @@ function AboutSection({ copy }: { copy: PortfolioCopy }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 xl:gap-20 items-center">
 
           <motion.div {...inView()} className="space-y-6">
-            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{about.eyebrow}</span>
-            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight leading-snug">
-              {about.heading_1} {about.heading_2} {about.heading_3}
+            <SectionEyebrow>{about.eyebrow}</SectionEyebrow>
+            <h2 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+              {about.heading_1} <span className="text-primary">{about.heading_2}</span> {about.heading_3}
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
               <p><Highlight text={about.p1} /></p>
@@ -265,7 +263,9 @@ function AboutSection({ copy }: { copy: PortfolioCopy }) {
                 {...inView(i * 0.08)}
                 className="rounded-2xl border border-border/50 bg-card/40 p-5 space-y-2.5 hover:border-primary/30 hover:bg-card/70 transition-all group cursor-default"
               >
-                <span className="text-2xl leading-none group-hover:scale-110 inline-block transition-transform">{trait.icon}</span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 bg-background/70 text-xl leading-none transition-transform group-hover:scale-110">
+                  {trait.icon}
+                </span>
                 <h3 className="text-sm font-semibold text-foreground">{trait.title}</h3>
                 <p className="text-xs leading-relaxed">{trait.body}</p>
               </motion.div>
@@ -287,7 +287,7 @@ function SkillsSection({ copy }: { copy: PortfolioCopy }) {
       <Container className="space-y-12">
 
         <motion.div {...inView()} className="space-y-3">
-          <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{skills.eyebrow}</span>
+          <SectionEyebrow>{skills.eyebrow}</SectionEyebrow>
           <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{skills.heading}</h2>
           <p className="max-w-xl text-[15px] leading-relaxed">{skills.desc}</p>
         </motion.div>
@@ -333,7 +333,7 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
 
         <motion.div {...inView()} className="flex items-end justify-between gap-4">
           <div className="space-y-3">
-            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{projects.eyebrow}</span>
+            <SectionEyebrow>{projects.eyebrow}</SectionEyebrow>
             <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{projects.heading}</h2>
             <p className="max-w-xl text-[15px] leading-relaxed">{projects.desc}</p>
           </div>
@@ -455,7 +455,7 @@ function ExperienceSection({ copy }: { copy: PortfolioCopy }) {
       <Container className="space-y-12">
 
         <motion.div {...inView()} className="space-y-3">
-          <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{experience.eyebrow}</span>
+          <SectionEyebrow>{experience.eyebrow}</SectionEyebrow>
           <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{experience.heading}</h2>
           <p className="max-w-xl text-[15px] leading-relaxed">{experience.desc}</p>
         </motion.div>
@@ -495,7 +495,7 @@ function CertificationsSection({ copy }: { copy: PortfolioCopy }) {
 
         <motion.div {...inView()} className="flex items-end justify-between gap-4">
           <div className="space-y-3">
-            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{certifications.eyebrow}</span>
+            <SectionEyebrow>{certifications.eyebrow}</SectionEyebrow>
             <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{certifications.heading}</h2>
             <p className="max-w-xl text-[15px] leading-relaxed">{certifications.desc}</p>
           </div>
@@ -540,9 +540,7 @@ function ResumeSection() {
 
         <motion.div {...inView()} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
           <div className="space-y-3">
-            <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">
-              {t("pages.resume.hero.badge")}
-            </span>
+            <SectionEyebrow>{t("pages.resume.hero.badge")}</SectionEyebrow>
             <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
               {t("pages.resume.hero.title")}
             </h2>
@@ -581,7 +579,7 @@ function ContactSection({ copy }: { copy: PortfolioCopy }) {
           <div className="space-y-5">
             <div className="flex items-center justify-center gap-2">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span className="inline-block text-[11px] italic font-semibold text-primary bg-primary/10 px-2.5 py-0.5 rounded-sm">{contact.eyebrow}</span>
+              <SectionEyebrow>{contact.eyebrow}</SectionEyebrow>
             </div>
             <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{contact.heading}</h2>
             <p className="text-[15px] leading-relaxed max-w-lg mx-auto">{contact.desc}</p>

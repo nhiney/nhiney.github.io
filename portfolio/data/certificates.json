@@ -9,54 +9,54 @@
     "description_vi": "Chứng chỉ gồm 6 khóa học do Google cung cấp, tập trung vào Python, Git và tự động hóa hệ thống IT. Khóa học trang bị kỹ năng viết script, quản lý cấu hình, tự động hóa trên cloud và kỹ thuật debug ở quy mô lớn, nhằm chuẩn bị cho các vị trí IT Support Specialist hoặc Junior Systems Administrator.",
     "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/ERRCIOPXMF5I",
     "verifyUrl": "https://coursera.org/verify/professional-cert/ERRCIOPXMF5I",
-    "image": "/certificates/coursera-ERRCIOPXMF5I.png",
+    "image": "/certificates/coursera-ERRCIOPXMF5I.webp",
     "courses": [
       {
         "title": "Crash Course on Python",
         "title_vi": "Khóa học cấp tốc về Python",
-        "image": "/certificates/courses/crash-course-on-python.png",
+        "image": "/certificates/courses/crash-course-on-python.webp",
         "verifyUrl": "https://coursera.org/verify/PTNT6E74SATL",
         "date": "Apr 28, 2026"
       },
       {
         "title": "Using Python to Interact with the Operating System",
         "title_vi": "Sử dụng Python để tương tác với hệ điều hành",
-        "image": "/certificates/courses/using-python-to-interact-with-the-operating-system.png",
+        "image": "/certificates/courses/using-python-to-interact-with-the-operating-system.webp",
         "verifyUrl": "https://coursera.org/verify/CR00QQXJT3ZU",
         "date": "May 1, 2026"
       },
       {
         "title": "Introduction to Git and GitHub",
         "title_vi": "Giới thiệu về Git và GitHub",
-        "image": "/certificates/courses/introduction-to-git-and-github.png",
+        "image": "/certificates/courses/introduction-to-git-and-github.webp",
         "verifyUrl": "https://coursera.org/verify/MSB0HAKJ8Y9E",
         "date": "May 2, 2026"
       },
       {
         "title": "Troubleshooting and Debugging Techniques",
         "title_vi": "Kỹ thuật xử lý sự cố và gỡ lỗi",
-        "image": "/certificates/courses/troubleshooting-and-debugging-techniques.png",
+        "image": "/certificates/courses/troubleshooting-and-debugging-techniques.webp",
         "verifyUrl": "https://coursera.org/verify/PERI9NR6WH7S",
         "date": "May 3, 2026"
       },
       {
         "title": "Configuration Management and the Cloud",
         "title_vi": "Quản lý cấu hình và điện toán đám mây",
-        "image": "/certificates/courses/configuration-management-and-the-cloud.png",
+        "image": "/certificates/courses/configuration-management-and-the-cloud.webp",
         "verifyUrl": "https://coursera.org/verify/NL2RSWU8MAQ4",
         "date": "May 4, 2026"
       },
       {
         "title": "Automating Real-World Tasks with Python",
         "title_vi": "Tự động hóa các tác vụ thực tế bằng Python",
-        "image": "/certificates/courses/automating-real-world-tasks-with-python.png",
+        "image": "/certificates/courses/automating-real-world-tasks-with-python.webp",
         "verifyUrl": "https://coursera.org/verify/GRZ4R7KA69BL",
         "date": "May 4, 2026"
       },
       {
         "title": "Accelerate Your Job Search with AI",
         "title_vi": "Tăng tốc quá trình tìm kiếm việc làm với AI",
-        "image": "/certificates/courses/accelerate-your-job-search-with-ai.png",
+        "image": "/certificates/courses/accelerate-your-job-search-with-ai.webp",
         "verifyUrl": "https://coursera.org/verify/6DHE0HN2O6RB",
         "date": "May 3, 2026"
       }
@@ -72,54 +72,54 @@
     "description_vi": "Chứng chỉ chuyên nghiệp gồm 7 khóa học do Google cung cấp, tập trung vào quản lý dự án theo cả phương pháp truyền thống (waterfall) và linh hoạt (Agile). Chương trình bao gồm các kiến thức về khởi tạo dự án, lập kế hoạch, triển khai, quản lý rủi ro và giao tiếp với các bên liên quan, kèm theo các bài đánh giá dựa trên dự án thực hành.",
     "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/Y0JMYWUVVJG9",
     "verifyUrl": "https://coursera.org/verify/professional-cert/Y0JMYWUVVJG9",
-    "image": "/certificates/coursera-Y0JMYWUVVJG9.png",
+    "image": "/certificates/coursera-Y0JMYWUVVJG9.webp",
     "courses": [
       {
         "title": "Foundations of Project Management",
         "title_vi": "Cơ sở nền tảng của quản lý dự án",
-        "image": "/certificates/courses/foundations-of-project-management.png",
+        "image": "/certificates/courses/foundations-of-project-management.webp",
         "verifyUrl": "https://coursera.org/verify/JF170ZWTORO1",
         "date": "Apr 24, 2026"
       },
       {
         "title": "Project Initiation: Starting a Successful Project",
         "title_vi": "Khởi tạo dự án: Bắt đầu một dự án thành công",
-        "image": "/certificates/courses/project-initiation-starting-a-successful-project.png",
+        "image": "/certificates/courses/project-initiation-starting-a-successful-project.webp",
         "verifyUrl": "https://coursera.org/verify/PHO6O0SYGTPZ",
         "date": "Apr 29, 2026"
       },
       {
         "title": "Project Planning: Putting It All Together",
         "title_vi": "Lập kế hoạch dự án: Tổng hợp và xây dựng kế hoạch",
-        "image": "/certificates/courses/project-planning-putting-it-all-together.png",
+        "image": "/certificates/courses/project-planning-putting-it-all-together.webp",
         "verifyUrl": "https://coursera.org/verify/60X1WN8E8YJ8",
         "date": "May 1, 2026"
       },
       {
         "title": "Project Execution: Running the Project",
         "title_vi": "Thực thi dự án: Vận hành và triển khai dự án",
-        "image": "/certificates/courses/project-execution-running-the-project.png",
+        "image": "/certificates/courses/project-execution-running-the-project.webp",
         "verifyUrl": "https://coursera.org/verify/91D73ACD2N61",
         "date": "May 2, 2026"
       },
       {
         "title": "Agile Project Management",
         "title_vi": "Quản lý dự án Agile",
-        "image": "/certificates/courses/agile-project-management.png",
+        "image": "/certificates/courses/agile-project-management.webp",
         "verifyUrl": "https://coursera.org/verify/HMIY26O1EZ9X",
         "date": "May 2, 2026"
       },
       {
         "title": "Capstone: Applying Project Management in the Real World",
         "title_vi": "Dự án tốt nghiệp: Ứng dụng quản lý dự án trong thực tế",
-        "image": "/certificates/courses/capstone-applying-project-management-in-the-real-world.png",
+        "image": "/certificates/courses/capstone-applying-project-management-in-the-real-world.webp",
         "verifyUrl": "https://coursera.org/verify/1TP81UD1KL05",
         "date": "May 3, 2026"
       },
       {
         "title": "Accelerate Your Job Search with AI",
         "title_vi": "Tăng tốc quá trình tìm kiếm việc làm với AI",
-        "image": "/certificates/courses/accelerate-your-job-search-with-ai.png",
+        "image": "/certificates/courses/accelerate-your-job-search-with-ai.webp",
         "verifyUrl": "https://coursera.org/verify/6DHE0HN2O6RB",
         "date": "May 3, 2026"
       }
@@ -135,54 +135,54 @@
     "description_vi": "Chứng chỉ chuyên sâu về AI gồm 7 khóa học do Google cung cấp, tập trung vào ứng dụng trí tuệ nhân tạo trong tư duy ý tưởng, nghiên cứu, giao tiếp, sáng tạo nội dung, phân tích dữ liệu và lập trình. Chương trình bao gồm việc xây dựng portfolio với hơn 20 sản phẩm ứng dụng AI và phát triển một giải pháp AI tùy chỉnh theo hướng \"vibe coding\".",
     "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/84G1CO6ABM7P",
     "verifyUrl": "https://coursera.org/verify/professional-cert/84G1CO6ABM7P",
-    "image": "/certificates/coursera-84G1CO6ABM7P.png",
+    "image": "/certificates/coursera-84G1CO6ABM7P.webp",
     "courses": [
       {
         "title": "AI Fundamentals",
         "title_vi": "Nền tảng trí tuệ nhân tạo",
-        "image": "/certificates/courses/ai-fundamentals.png",
+        "image": "/certificates/courses/ai-fundamentals.webp",
         "verifyUrl": "https://coursera.org/verify/5M4L44MMDU0X",
         "date": "Apr 28, 2026"
       },
       {
         "title": "AI for Brainstorming and Planning",
         "title_vi": "AI cho tư duy ý tưởng và lập kế hoạch",
-        "image": "/certificates/courses/ai-for-brainstorming-and-planning.png",
+        "image": "/certificates/courses/ai-for-brainstorming-and-planning.webp",
         "verifyUrl": "https://coursera.org/verify/3ZB26IEBHCYN",
         "date": "Apr 29, 2026"
       },
       {
         "title": "AI for Research and Insights",
         "title_vi": "AI cho nghiên cứu và khai thác thông tin",
-        "image": "/certificates/courses/ai-for-research-and-insights.png",
+        "image": "/certificates/courses/ai-for-research-and-insights.webp",
         "verifyUrl": "https://coursera.org/verify/KPAT26FZ6CYZ",
         "date": "Apr 29, 2026"
       },
       {
         "title": "AI for Writing and Communicating",
         "title_vi": "AI cho viết lách và giao tiếp",
-        "image": "/certificates/courses/ai-for-writing-and-communicating.png",
+        "image": "/certificates/courses/ai-for-writing-and-communicating.webp",
         "verifyUrl": "https://coursera.org/verify/X0PRYQ9UAP77",
         "date": "Apr 29, 2026"
       },
       {
         "title": "AI for Content Creation",
         "title_vi": "AI cho sáng tạo nội dung",
-        "image": "/certificates/courses/ai-for-content-creation.png",
+        "image": "/certificates/courses/ai-for-content-creation.webp",
         "verifyUrl": "https://coursera.org/verify/QAQNZVPRWWI6",
         "date": "Apr 29, 2026"
       },
       {
         "title": "AI for Data Analysis",
         "title_vi": "AI cho phân tích dữ liệu",
-        "image": "/certificates/courses/ai-for-data-analysis.png",
+        "image": "/certificates/courses/ai-for-data-analysis.webp",
         "verifyUrl": "https://coursera.org/verify/SW452DOHOOZK",
         "date": "Apr 29, 2026"
       },
       {
         "title": "AI for App Building",
         "title_vi": "AI cho phát triển ứng dụng",
-        "image": "/certificates/courses/ai-for-app-building.png",
+        "image": "/certificates/courses/ai-for-app-building.webp",
         "verifyUrl": "https://coursera.org/verify/2QAYGALW59TM",
         "date": "Apr 29, 2026"
       }
@@ -198,40 +198,40 @@
     "description_vi": "Chứng chỉ chuyên ngành gồm 5 khóa học do Google phát triển, tập trung vào việc ứng dụng công cụ AI trong công việc thực tế. Chương trình cung cấp kỹ năng sử dụng AI để tăng năng suất, kỹ thuật viết prompt hiệu quả và nguyên tắc sử dụng AI có trách nhiệm trong các quy trình làm việc hằng ngày.",
     "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/POYFWIV2Y5VW",
     "verifyUrl": "https://coursera.org/verify/specialization/POYFWIV2Y5VW",
-    "image": "/certificates/coursera-POYFWIV2Y5VW.png",
+    "image": "/certificates/coursera-POYFWIV2Y5VW.webp",
     "courses": [
       {
         "title": "Introduction to AI",
         "title_vi": "Giới thiệu về trí tuệ nhân tạo",
-        "image": "/certificates/courses/introduction-to-ai.png",
+        "image": "/certificates/courses/introduction-to-ai.webp",
         "verifyUrl": "https://coursera.org/verify/IZ9A3OUDWLBR",
         "date": "Apr 26, 2026"
       },
       {
         "title": "Maximize Productivity With AI Tools",
         "title_vi": "Tối đa hóa năng suất với công cụ AI",
-        "image": "/certificates/courses/maximize-productivity-with-ai-tools.png",
+        "image": "/certificates/courses/maximize-productivity-with-ai-tools.webp",
         "verifyUrl": "https://coursera.org/verify/TCW9J7Z0RUWF",
         "date": "Apr 26, 2026"
       },
       {
         "title": "Discover the Art of Prompting",
         "title_vi": "Khám phá nghệ thuật viết prompt",
-        "image": "/certificates/courses/discover-the-art-of-prompting.png",
+        "image": "/certificates/courses/discover-the-art-of-prompting.webp",
         "verifyUrl": "https://coursera.org/verify/7VN2ZP0U1KON",
         "date": "Apr 26, 2026"
       },
       {
         "title": "Use AI Responsibly",
         "title_vi": "Sử dụng AI một cách có trách nhiệm",
-        "image": "/certificates/courses/use-ai-responsibly.png",
+        "image": "/certificates/courses/use-ai-responsibly.webp",
         "verifyUrl": "https://coursera.org/verify/M6KI4IY8NUD3",
         "date": "Apr 26, 2026"
       },
       {
         "title": "Stay Ahead of the AI Curve",
         "title_vi": "Nắm bắt xu hướng AI và duy trì lợi thế cạnh tranh",
-        "image": "/certificates/courses/stay-ahead-of-the-ai-curve.png",
+        "image": "/certificates/courses/stay-ahead-of-the-ai-curve.webp",
         "verifyUrl": "https://coursera.org/verify/YIZKKN7AJTXQ",
         "date": "Apr 26, 2026"
       }
@@ -247,61 +247,61 @@
     "description_vi": "Chứng chỉ chuyên ngành gồm 8 khóa học do Google cung cấp, tập trung vào quy trình thiết kế trải nghiệm người dùng (UX) từ đầu đến cuối. Chương trình bao gồm nghiên cứu người dùng, xác định vấn đề, lên ý tưởng, thiết kế wireframe, tạo prototype bằng Figma, xây dựng giao diện động, thiết kế vì mục tiêu xã hội và chuẩn bị cho các vai trò trong lĩnh vực UX/UI.",
     "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/4NPVV3FRP07M",
     "verifyUrl": "https://coursera.org/verify/professional-cert/4NPVV3FRP07M",
-    "image": "/certificates/coursera-4NPVV3FRP07M.png",
+    "image": "/certificates/coursera-4NPVV3FRP07M.webp",
     "courses": [
       {
         "title": "Foundations of User Experience (UX) Design",
         "title_vi": "Nền tảng Thiết kế Trải nghiệm Người dùng (UX)",
-        "image": "/certificates/courses/foundations-of-user-experience-ux-design.png",
+        "image": "/certificates/courses/foundations-of-user-experience-ux-design.webp",
         "verifyUrl": "https://coursera.org/verify/KTOSP3GTGHJX",
         "date": "May 8, 2026"
       },
       {
         "title": "Start the UX Design Process: Empathize, Define, and Ideate",
         "title_vi": "Bắt đầu quy trình UX: Thấu hiểu, xác định và lên ý tưởng",
-        "image": "/certificates/courses/start-the-ux-design-process-empathize-define-and-ideate.png",
+        "image": "/certificates/courses/start-the-ux-design-process-empathize-define-and-ideate.webp",
         "verifyUrl": "https://coursera.org/verify/FQWXXBFTGPHW",
         "date": "May 8, 2026"
       },
       {
         "title": "Build Wireframes and Low-Fidelity Prototypes",
         "title_vi": "Xây dựng wireframe và prototype độ phân giải thấp",
-        "image": "/certificates/courses/build-wireframes-and-low-fidelity-prototypes.png",
+        "image": "/certificates/courses/build-wireframes-and-low-fidelity-prototypes.webp",
         "verifyUrl": "https://coursera.org/verify/CRUMP8YNKXP1",
         "date": "May 9, 2026"
       },
       {
         "title": "Conduct UX Research and Test Early Concepts",
         "title_vi": "Thực hiện nghiên cứu UX và kiểm thử ý tưởng ban đầu",
-        "image": "/certificates/courses/conduct-ux-research-and-test-early-concepts.png",
+        "image": "/certificates/courses/conduct-ux-research-and-test-early-concepts.webp",
         "verifyUrl": "https://coursera.org/verify/JTOGO8F3F4C3",
         "date": "May 10, 2026"
       },
       {
         "title": "Create High-Fidelity Designs and Prototypes in Figma",
         "title_vi": "Tạo thiết kế độ phân giải cao và prototype bằng Figma",
-        "image": "/certificates/courses/create-high-fidelity-designs-and-prototypes-in-figma.png",
+        "image": "/certificates/courses/create-high-fidelity-designs-and-prototypes-in-figma.webp",
         "verifyUrl": "https://coursera.org/verify/QDJF4708OD9I",
         "date": "May 12, 2026"
       },
       {
         "title": "Build Dynamic User Interfaces (UI) for Websites",
         "title_vi": "Xây dựng giao diện người dùng (UI) động cho website",
-        "image": "/certificates/courses/build-dynamic-user-interfaces-ui-for-websites.png",
+        "image": "/certificates/courses/build-dynamic-user-interfaces-ui-for-websites.webp",
         "verifyUrl": "https://coursera.org/verify/ITF237QH47EW",
         "date": "May 14, 2026"
       },
       {
         "title": "Design a User Experience for Social Good & Prepare for Jobs",
         "title_vi": "Thiết kế UX vì mục tiêu xã hội và chuẩn bị nghề nghiệp",
-        "image": "/certificates/courses/design-a-user-experience-for-social-good-and-prepare-for-jobs.png",
+        "image": "/certificates/courses/design-a-user-experience-for-social-good-and-prepare-for-jobs.webp",
         "verifyUrl": "https://coursera.org/verify/3HASWKZ75AEN",
         "date": "May 14, 2026"
       },
       {
         "title": "Accelerate Your Job Search with AI",
         "title_vi": "Tăng tốc quá trình tìm kiếm việc làm với AI",
-        "image": "/certificates/courses/accelerate-your-job-search-with-ai.png",
+        "image": "/certificates/courses/accelerate-your-job-search-with-ai.webp",
         "verifyUrl": "https://coursera.org/verify/6DHE0HN2O6RB",
         "date": "May 3, 2026"
       }
