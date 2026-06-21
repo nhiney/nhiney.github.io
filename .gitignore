@@ -6,10 +6,10 @@ saasfly-main/
 tasks/
 task.md
 
-# Private thesis deck — local only, never push
-portfolio/app/nguyenthiyennhi-klcn-ai-logistics-doc-extractor/
+# Thesis / khóa luận — CONFIDENTIAL source scans, local only, never push
+paper/
 
-# Next.js build output — deployed via gh-pages branch, never committed to main
+# Next.js build output (root) — deployed via gh-pages branch, never committed to main
 _next/
 _not-found/
 out/
@@ -24,5 +24,18 @@ sitemap.xml
 favicon.ico
 *.txt
 *.svg
+
+# Re-include portfolio source (the *.txt / *.svg rules above would otherwise hide it)
 !portfolio/**
 !README.md
+
+# Single package manager = bun. Block stray npm / pnpm / yarn lockfiles anywhere
+# (after !portfolio/** so the rule also applies inside portfolio/).
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Private thesis deck — MUST stay ignored even after the portfolio re-include above.
+# Placed LAST so "last matching rule wins" keeps it excluded (confidential client data).
+portfolio/app/nguyenthiyennhi-klcn-ai-logistics-doc-extractor/
+portfolio/app/nguyenthiyennhi-klcn-ai-logistics-doc-extractor/**
