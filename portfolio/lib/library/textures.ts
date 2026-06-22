@@ -84,6 +84,16 @@ export function makeCoverTexture(meta: BookMeta, title: string): THREE.Texture {
   ctx.font = `italic 40px ${SERIF}`;
   ctx.fillText(meta.author, W / 2, H * 0.7 + 64);
 
+  if (meta.coverBlurb) {
+    ctx.font = `italic 32px ${SERIF}`;
+    ctx.globalAlpha = 0.86;
+    const blurbLines = wrap(ctx, meta.coverBlurb, W - 190).slice(0, 5);
+    const blurbLineHeight = 42;
+    const blurbY = H * 0.82 - ((blurbLines.length - 1) * blurbLineHeight) / 2;
+    blurbLines.forEach((line, i) => ctx.fillText(line, W / 2, blurbY + i * blurbLineHeight));
+    ctx.globalAlpha = 1;
+  }
+
   return finalize(canvas);
 }
 
