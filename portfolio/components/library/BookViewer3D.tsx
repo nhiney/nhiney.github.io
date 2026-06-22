@@ -34,8 +34,8 @@ function Env() {
 
 function StaticBook({ title, meta }: { title: string; meta: BookMeta }) {
   // Still by default — the cover faces the viewer; dragging spins it.
-  // Always show the real cover photo (like the live site); only fall back to the
-  // designed cover when a book has no photo at all.
+  // In the detail view, a localized cover hook should be part of the clickable
+  // cover itself, so prefer the designed cover whenever a hook is provided.
   return (
     <Book3D
       rotation={[0, -Math.PI / 2, 0]}
@@ -44,7 +44,7 @@ function StaticBook({ title, meta }: { title: string; meta: BookMeta }) {
       height={2.5}
       thickness={0.24}
       coverWidth={1.7}
-      showDesignedCover={!meta.cover && !!meta.coverBlurb}
+      showDesignedCover={!!meta.coverBlurb}
     />
   );
 }
