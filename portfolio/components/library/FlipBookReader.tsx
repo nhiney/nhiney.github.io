@@ -22,6 +22,10 @@ interface Props {
   tag?: string;
   date?: string;
   readingTime?: string;
+  /** Real front-cover photo — the first flippable (hard) leaf. */
+  coverSrc?: string;
+  /** Optional real back-cover photo for the closing hard leaf. */
+  coverBackSrc?: string;
   /** Link to the full review on the blog, shown on the end leaf. */
   blogHref?: string;
   hasReview: boolean;
@@ -35,6 +39,8 @@ export function FlipBookReader({
   tag,
   date,
   readingTime,
+  coverSrc,
+  coverBackSrc,
   blogHref,
   hasReview,
   onClose,
@@ -80,7 +86,9 @@ export function FlipBookReader({
         // premium paper turn.
         flippingTime: 820,
         maxShadowOpacity: 0.72,
-        showCover: false,
+        // First & last leaves are hard covers — the book opens from its real
+        // cover, and you can always flip back to it.
+        showCover: true,
         usePortrait: true,
         autoSize: true,
         mobileScrollSupport: false,
@@ -131,15 +139,32 @@ export function FlipBookReader({
     () =>
       pages.map((page, i) => {
         const side = i % 2 === 0 ? "left" : "right";
-        // Classic folio: just the page number, omitted on the title leaf.
-        const folio = i === 0 ? "" : String(i + 1);
+        const isHard = page.kind === "cover" || page.kind === "end";
+        // Folio: content leaves numbered from 1; covers carry no number.
+        const folio = isHard ? "" : String(i);
+        const useCoverPhoto = page.kind === "cover" && !!coverSrc;
+        const useBackPhoto = page.kind === "end" && !!coverBackSrc;
         return (
-          <div key={i} className="flip-page" data-side={side}>
-            <div className="flip-leaf">{renderLeaf(page, { title, author, tag, date, readingTime, blogHref, hasReview, folio, t })}</div>
+          <div key={i} className="flip-page" data-side={side} data-density={isHard ? "hard" : undefined}>
+            {useCoverPhoto ? (
+              <div className="flip-leaf flip-leaf-cover">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="leaf-cover-img" src={coverSrc} alt={title} />
+              </div>
+            ) : useBackPhoto ? (
+              <div className="flip-leaf flip-leaf-cover">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="leaf-cover-img" src={coverBackSrc} alt="" />
+              </div>
+            ) : (
+              <div className="flip-leaf">
+                {renderLeaf(page, { title, author, tag, date, readingTime, blogHref, hasReview, folio, t })}
+              </div>
+            )}
           </div>
         );
       }),
-    [pages, title, author, tag, date, readingTime, blogHref, hasReview, t]
+    [pages, title, author, tag, date, readingTime, coverSrc, coverBackSrc, blogHref, hasReview, t]
   );
 
   return (
@@ -206,7 +231,7 @@ type LeafCtx = {
 function renderLeaf(page: BookPage, ctx: LeafCtx) {
   const { title, author, tag, date, readingTime, blogHref, hasReview, folio, t } = ctx;
 
-  if (page.kind === "title") {
+  if (page.kind === "title" || page.kind === "cover") {
     return (
       <div className="flex h-full flex-col items-center justify-center text-center">
         {tag ? <p className="leaf-kicker mb-5">{tag}</p> : null}

@@ -18,7 +18,7 @@ type: "book_content"
 - **Sử dụng sự khan hiếm:** Sự hiện diện quá thường xuyên làm giảm giá trị của bạn. Hãy biết cách "biến mất" đúng lúc để người khác phải khao khát sự có mặt của bạn.
 
 **💡 Ví dụ thực tế:**
-Hãy nghĩ về những lần ra mắt sản phẩm của Apple dưới thời Steve Jobs. Họ luôn giữ bí mật tuyệt đối về thiết kế và tính năng cho đến phút chót. Không ai biết họ sẽ làm gì tiếp theo, và chính sự bí ẩn đó khiến cả thế giới phải chờ đợi và bùng nổ khi sản phẩm được công bố. 
+Hãy nghĩ về những lần ra mắt sản phẩm của Apple dưới thời Steve Jobs. Họ luôn giữ bí mật tuyệt đối về thiết kế và tính năng cho đến phút chót. Không ai biết họ sẽ làm gì tiếp theo, và chính sự bí ẩn đó khiến cả thế giới phải chờ đợi và bùng nổ khi sản phẩm được công bố.
 Trong công sở, một người điềm tĩnh, ít nói và chỉ lên tiếng khi thật sự cần thiết luôn có tiếng nói nặng ký và sự uy nghiêm hơn hẳn người luôn bô bô mọi thứ.
 
 ---
@@ -32,7 +32,7 @@ Trong công sở, một người điềm tĩnh, ít nói và chỉ lên tiếng 
 - **Tận dụng nguồn lực:** Tận dụng chất xám và thời gian của người khác để đạt mục tiêu, nhưng hãy khéo léo để họ vẫn cảm thấy được trân trọng.
 
 **💡 Ví dụ thực tế:**
-Trong một công ty, có những nhân viên rất giỏi nhưng luôn bị trù dập vì họ thích thể hiện và làm lu mờ sếp. Ngược lại, người khôn ngoan biết cách dùng tài năng của mình để giúp sếp tỏa sáng và thăng tiến, từ đó họ cũng được cất nhắc theo. 
+Trong một công ty, có những nhân viên rất giỏi nhưng luôn bị trù dập vì họ thích thể hiện và làm lu mờ sếp. Ngược lại, người khôn ngoan biết cách dùng tài năng của mình để giúp sếp tỏa sáng và thăng tiến, từ đó họ cũng được cất nhắc theo.
 Hãy trở thành "chìa khóa giải quyết vấn đề" độc quyền mà công ty không thể thiếu. Khi công ty phụ thuộc vào bạn, quyền lực tự động nằm trong tay bạn.
 
 ---

@@ -147,6 +147,8 @@ export function ReadingOverlay({
                   tag={book.tags?.[0]}
                   date={book.date}
                   readingTime={book.readingTime}
+                  coverSrc={book.meta.cover}
+                  coverBackSrc={book.meta.coverBack}
                   blogHref={`/blog/${book.blogSlug ?? book.slug}`}
                   hasReview={hasReview}
                   onClose={() => setReading(false)}
@@ -164,7 +166,7 @@ export function ReadingOverlay({
                 {/* Left — the book as a spinnable, clickable 3D object */}
                 <div className="relative h-[42vh] shrink-0 md:h-full md:w-[44%]">
                   <motion.div
-                    className="pointer-events-none absolute left-1/2 top-14 z-10 flex -translate-x-1/2 flex-col items-center gap-1 text-primary"
+                    className="pointer-events-none absolute left-1/2 top-2 z-10 flex -translate-x-1/2 flex-col items-center gap-0.5 text-primary sm:top-4 md:top-14 md:gap-1"
                     initial={{ y: -4, opacity: 0.65 }}
                     animate={{ y: 7, opacity: 1 }}
                     transition={{ repeat: Infinity, repeatType: "reverse", duration: 0.9, ease: "easeInOut" }}
