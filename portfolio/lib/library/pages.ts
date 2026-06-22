@@ -16,6 +16,11 @@ export const PAGES_PER_BOOK = 5;
  * of a long review stays on the blog (the end leaf links to it). */
 const PAGE_CHAR_BUDGET = 620;
 
+/** Curated pages are shown in full, including on narrow portrait leaves. Keep
+ * them shorter than generated excerpts because they retain headings and do not
+ * have a blog fallback for omitted text. */
+const CURATED_PAGE_CHAR_BUDGET = 430;
+
 /** Turn a raw MDX/markdown review body into clean plain-text paragraphs. */
 export function stripMarkdownToParagraphs(md: string): string[] {
   if (!md) return [];
@@ -81,6 +86,43 @@ function paginate(paragraphs: string[], maxPages: number): string[][] {
   return pages;
 }
 
+/** Split curated pages into as many leaves as they need. Paragraphs stay intact
+ * and the source heading is shown on the first leaf, then repeated with a
+ * continuation marker on following leaves so mobile readers never lose context. */
+function paginateCuratedPages(readingPages: BookReadingPage[]): BookPage[] {
+  const leaves: BookPage[] = [];
+
+  for (const page of readingPages) {
+    let current: string[] = [];
+    let count = 0;
+    let leafInSection = 0;
+
+    const pushCurrent = () => {
+      if (!current.length) return;
+      leaves.push({
+        kind: "content",
+        heading: leafInSection === 0 ? page.heading : `${page.heading} (${leafInSection + 1})`,
+        paragraphs: current,
+        opening: leaves.length === 0,
+      });
+      current = [];
+      count = 0;
+      leafInSection += 1;
+    };
+
+    for (const paragraph of page.paragraphs) {
+      const wouldOverflow = count > 0 && count + paragraph.length > CURATED_PAGE_CHAR_BUDGET;
+      if (wouldOverflow) pushCurrent();
+      current.push(paragraph);
+      count += paragraph.length;
+    }
+
+    pushCurrent();
+  }
+
+  return leaves;
+}
+
 /** Split items into `n` contiguous, front-loaded groups, preserving order.
  * e.g. spread([0,1,2,3,4], 3) → [[0,1],[2,3],[4]]. */
 function spread<T>(items: T[], n: number): T[][] {
@@ -110,12 +152,7 @@ export function buildDeck(
   // book can run as long or short as its content needs — bump or trim the
   // `readingPages` array per book to add/remove leaves.
   if (readingPages?.length) {
-    const leaves = readingPages.map((page, i): BookPage => ({
-      kind: "content",
-      heading: page.heading,
-      paragraphs: page.paragraphs,
-      opening: i === 0,
-    }));
+    const leaves = paginateCuratedPages(readingPages);
     return [{ kind: "title" }, ...leaves, { kind: "end" }];
   }
 
