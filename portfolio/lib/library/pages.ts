@@ -106,21 +106,27 @@ export function buildDeck(
   keyPoints: string[],
   readingPages?: BookReadingPage[]
 ): BookPage[] {
+  // Curated reading pages drive the WHOLE deck (title · pages · end), so each
+  // book can run as long or short as its content needs — bump or trim the
+  // `readingPages` array per book to add/remove leaves.
+  if (readingPages?.length) {
+    const leaves = readingPages.map((page, i): BookPage => ({
+      kind: "content",
+      heading: page.heading,
+      paragraphs: page.paragraphs,
+      opening: i === 0,
+    }));
+    return [{ kind: "title" }, ...leaves, { kind: "end" }];
+  }
+
+  // Otherwise normalise to a fixed PAGES_PER_BOOK so books without curated pages
+  // keep an identical spread cadence across the shelf.
   const interiorCount = Math.max(1, PAGES_PER_BOOK - 2);
   const interior: BookPage[] = [];
 
   const paragraphs = reviewBody ? stripMarkdownToParagraphs(reviewBody) : [];
 
-  if (readingPages?.length) {
-    readingPages.slice(0, interiorCount).forEach((page, i) => {
-      interior.push({
-        kind: "content",
-        heading: page.heading,
-        paragraphs: page.paragraphs,
-        opening: i === 0,
-      });
-    });
-  } else if (paragraphs.length) {
+  if (paragraphs.length) {
     const pages = paginate(paragraphs, interiorCount);
     pages.forEach((paras, i) =>
       interior.push({ kind: "content", paragraphs: paras, opening: i === 0 })
