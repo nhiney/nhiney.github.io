@@ -21,6 +21,8 @@ function Env() {
     const tex = makeStudioEnv();
     const pmrem = new THREE.PMREMGenerator(gl);
     const rt = pmrem.fromEquirectangular(tex);
+    // Three.js scene environment is intentionally imperative.
+    // eslint-disable-next-line react-hooks/immutability
     scene.environment = rt.texture;
     tex.dispose();
     pmrem.dispose();
@@ -96,7 +98,9 @@ function FloatingBook({
       }}
     >
       <group ref={inner}>
-        <Book3D title={book.title} meta={book.meta} height={1.5} thickness={0.32} coverWidth={1.04} />
+        {/* Slightly smaller than the sphere spacing so neighbours don't crowd —
+           each cover reads clearly on its own. */}
+        <Book3D title={book.title} meta={book.meta} height={1.28} thickness={0.27} coverWidth={0.88} />
       </group>
       {hot && (
         <>

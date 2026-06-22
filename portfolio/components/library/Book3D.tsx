@@ -22,6 +22,7 @@ export interface Book3DProps extends GroupProps {
   thickness?: number;
   height?: number;
   coverWidth?: number;
+  showDesignedCover?: boolean;
 }
 
 export function Book3D({
@@ -30,6 +31,7 @@ export function Book3D({
   thickness = 0.5,
   height = 2.4,
   coverWidth = 1.62,
+  showDesignedCover = false,
   ...group
 }: Book3DProps) {
   const { materials, owned } = useMemo(() => {
@@ -66,9 +68,9 @@ export function Book3D({
   // whenever provided, replacing the procedural artwork on those faces.
   useEffect(() => {
     const jobs: [string, number][] = [];
-    if (meta.cover) jobs.push([meta.cover, 0]); // +X front
-    if (meta.coverBack) jobs.push([meta.coverBack, 1]); // -X back
-    if (meta.coverSpine) jobs.push([meta.coverSpine, 4]); // +Z spine
+    if (!showDesignedCover && meta.cover) jobs.push([meta.cover, 0]); // +X front
+    if (!showDesignedCover && meta.coverBack) jobs.push([meta.coverBack, 1]); // -X back
+    if (!showDesignedCover && meta.coverSpine) jobs.push([meta.coverSpine, 4]); // +Z spine
     if (!jobs.length) return;
 
     let disposed = false;
@@ -91,7 +93,7 @@ export function Book3D({
       disposed = true;
       loaded.forEach((t) => t.dispose());
     };
-  }, [meta.cover, meta.coverBack, meta.coverSpine, materials]);
+  }, [meta.cover, meta.coverBack, meta.coverSpine, materials, showDesignedCover]);
 
   return (
     <group {...group}>

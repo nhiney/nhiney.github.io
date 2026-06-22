@@ -19,6 +19,8 @@ function Env() {
     const tex = makeStudioEnv();
     const pmrem = new THREE.PMREMGenerator(gl);
     const rt = pmrem.fromEquirectangular(tex);
+    // Three.js scene environment is intentionally imperative.
+    // eslint-disable-next-line react-hooks/immutability
     scene.environment = rt.texture;
     tex.dispose();
     pmrem.dispose();
@@ -32,7 +34,19 @@ function Env() {
 
 function StaticBook({ title, meta }: { title: string; meta: BookMeta }) {
   // Still by default — the cover faces the viewer; dragging spins it.
-  return <Book3D rotation={[0, -Math.PI / 2, 0]} title={title} meta={meta} height={2.5} thickness={0.24} coverWidth={1.7} />;
+  // Always show the real cover photo (like the live site); only fall back to the
+  // designed cover when a book has no photo at all.
+  return (
+    <Book3D
+      rotation={[0, -Math.PI / 2, 0]}
+      title={title}
+      meta={meta}
+      height={2.5}
+      thickness={0.24}
+      coverWidth={1.7}
+      showDesignedCover={!meta.cover && !!meta.coverBlurb}
+    />
+  );
 }
 
 export default function BookViewer3D({ title, meta }: { title: string; meta: BookMeta }) {
