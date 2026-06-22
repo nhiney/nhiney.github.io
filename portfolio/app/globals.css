@@ -1185,37 +1185,45 @@
 /* One readable leaf. Inherits the book palette so prose stays paper-toned in
    both themes; the inner gutter shadow fakes the binding between the spread. */
 .flip-page {
-  --paper:      #fbf9f4;
-  --paper-edge: #efe9dd;
+  --paper:      #fcf8ee;  /* warm ivory writing stock */
+  --paper-edge: #f0e8d6;
   --ink:        #2c2a29;
   --ink-soft:   #6b635a;
   --rule:       rgba(120, 113, 108, 0.32);
   --rule-soft:  rgba(120, 113, 108, 0.16);
+  --rule-line:  rgba(74, 96, 138, 0.16);   /* faint blue-grey notebook rule */
+  --margin-line: rgba(196, 110, 92, 0.30); /* soft terracotta margin */
   --accent-ink: #9c5a33;
+  /* leaf row height — text line-height AND ruled-line spacing both lock to this
+     so the writing actually sits on the lines. */
+  --leaf-row: 1.65rem;
   overflow: hidden;
   background-color: var(--paper);
   color: var(--ink);
 }
 .dark .flip-page {
-  --paper:      #141821;
-  --paper-edge: #0e1118;
+  --paper:      #171b24;  /* deep slate paper */
+  --paper-edge: #11141c;
   --ink:        #e8e4da;
   --ink-soft:   #9a948a;
   --rule:       rgba(232, 228, 218, 0.20);
   --rule-soft:  rgba(232, 228, 218, 0.10);
+  --rule-line:  rgba(150, 172, 214, 0.12);
+  --margin-line: rgba(212, 140, 110, 0.22);
   --accent-ink: #d4a672;
 }
-/* The leaf surface: a faint paper grain + a gutter shadow on the binding side. */
+/* The leaf surface: warm paper, a soft top sheen, a thin terracotta margin near
+   the binding, and a gutter shadow. Ruled lines live on the body (below). */
 .flip-leaf {
   position: relative;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: clamp(1.4rem, 3.2vw, 2.8rem) clamp(1.5rem, 3.4vw, 3rem);
+  padding: clamp(1.4rem, 3.2vw, 2.6rem) clamp(1.5rem, 3.4vw, 2.8rem);
   background-image:
-    radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.5), transparent 60%),
-    linear-gradient(to right, var(--paper-edge), var(--paper) 7%, var(--paper) 93%, var(--paper-edge));
+    radial-gradient(130% 85% at 50% 0%, rgba(255,255,255,0.55), transparent 58%),
+    linear-gradient(to right, var(--paper-edge), var(--paper) 6%, var(--paper) 94%, var(--paper-edge));
 }
 /* Gutter shadow: pages on the right of the spread are shaded on their left edge
    and vice-versa, so the open book reads as bound in the middle. */
@@ -1262,14 +1270,26 @@
 .flip-leaf .leaf-body {
   font-family: var(--font-serif);
   color: var(--ink);
-  font-size: clamp(0.92rem, 1.55vw, 1.06rem);
-  line-height: 1.72;
+  font-size: clamp(0.88rem, 1.4vw, 1rem);
+  /* line-height locked to the row so text sits ON the ruled lines */
+  line-height: var(--leaf-row);
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   flex: 1;
   min-height: 0;
+  /* Ruled notebook lines: one hairline at the bottom of every row. */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--leaf-row) - 1px),
+    var(--rule-line) calc(var(--leaf-row) - 1px),
+    var(--rule-line) var(--leaf-row)
+  );
+  background-position: 0 0.1em;
 }
-.flip-leaf .leaf-body p { margin: 0 0 0.85rem; text-wrap: pretty; }
+/* Paragraph gaps stay a whole number of rows so text never drifts off the lines. */
+.flip-leaf .leaf-body p { margin: 0 0 var(--leaf-row); text-wrap: pretty; }
+.flip-leaf .leaf-body p:last-child { margin-bottom: 0; }
 /* Drop cap on the first content leaf, echoing the blog reading mode. */
 .flip-leaf .leaf-body.is-opening p:first-of-type::first-letter {
   float: left;
@@ -1448,4 +1468,19 @@
   background: rgba(138, 79, 44, 0.16);
   color: var(--accent);
   box-shadow: inset 0 0 0 1px rgba(138, 79, 44, 0.22);
+}
+
+/* Cover / back-cover leaf — the real book photo, full-bleed, as a hard page. */
+.flip-leaf.flip-leaf-cover {
+  padding: 0;
+  background: #efe7d6;
+  overflow: hidden;
+}
+.dark .flip-leaf.flip-leaf-cover { background: #11141c; }
+.flip-leaf-cover .leaf-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }

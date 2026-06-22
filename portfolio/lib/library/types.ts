@@ -12,7 +12,7 @@ export interface LibBookView {
 /** One leaf in the flipbook reader. Built from the review (or key points) and
  * rendered in the printed-book palette by FlipBookReader. */
 export interface BookPage {
-  kind: "title" | "list" | "content" | "end";
+  kind: "cover" | "title" | "list" | "content" | "end";
   /** Small uppercase label above the leaf (e.g. tag / "Key ideas"). */
   kicker?: string;
   /** Section/chapter heading for the leaf. */

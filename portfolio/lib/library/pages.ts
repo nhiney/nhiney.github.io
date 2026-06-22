@@ -153,7 +153,7 @@ export function buildDeck(
   // `readingPages` array per book to add/remove leaves.
   if (readingPages?.length) {
     const leaves = paginateCuratedPages(readingPages);
-    return [{ kind: "title" }, ...leaves, { kind: "end" }];
+    return [{ kind: "cover" }, ...leaves, { kind: "end" }];
   }
 
   // Otherwise normalise to a fixed PAGES_PER_BOOK so books without curated pages
@@ -184,5 +184,5 @@ export function buildDeck(
   while (interior.length < interiorCount) interior.push({ kind: "content", paragraphs: [] });
   interior.length = interiorCount;
 
-  return [{ kind: "title" }, ...interior, { kind: "end" }];
+  return [{ kind: "cover" }, ...interior, { kind: "end" }];
 }
