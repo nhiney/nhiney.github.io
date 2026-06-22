@@ -189,7 +189,7 @@ export function ReadingOverlay({
                   >
                     <BookViewer3D title={title} meta={detailMeta ?? book.meta} />
                   </div>
-                  <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-foreground/10 px-3.5 py-1.5 text-xs text-foreground/80 backdrop-blur">
+                  <div className="pointer-events-none absolute bottom-4 left-1/2 hidden -translate-x-1/2 items-center gap-1.5 rounded-full bg-foreground/10 px-3.5 py-1.5 text-xs text-foreground/80 backdrop-blur md:flex">
                     <RotateCw size={13} />
                     {t("libraryPage.drag_to_spin")}
                   </div>
