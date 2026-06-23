@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,78258,t=>{"use strict";var o=t.i(41790),i=t.i(4570);t.s(["initPostHog",()=>o.initPostHog,"posthog",()=>i.default])}]);
