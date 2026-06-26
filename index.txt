@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-9:I[68027,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
+9:I[68027,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
 :HL["/_next/static/chunks/10sqmh8pah3vh.css","style"]
-:HL["/_next/static/chunks/0fqew4m5tnjkg.css","style"]
+:HL["/_next/static/chunks/0yr0xm~a2qsn9.css","style"]
 :HL["/_next/static/media/11cc37d7380d16b4-s.p.0ptcwqi9jx~4d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1b99372b3eaef0c8-s.p.0gx2haw2tmll8.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -9,21 +9,21 @@
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-26"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0fqew4m5tnjkg.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0ke2nw8q6boi7.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/00_2onveyw6s8.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"_4DZk8KFFueDuTKv3KEbT"}
-c:I[31344,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
-d:I[87236,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
-e:I[64844,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"RouteTextPalette"]
-f:I[31612,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
-10:I[77066,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
-11:I[92190,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
-12:I[39756,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-13:I[37457,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-14:I[7723,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
-15:I[22016,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
-1a:I[97367,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-26"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0yr0xm~a2qsn9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0ke2nw8q6boi7.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0wg8bdxe_liib.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"PFcIrp9OhXLs0C_bsZC0k"}
+c:I[31344,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
+d:I[87236,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
+e:I[64844,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"RouteTextPalette"]
+f:I[31612,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
+10:I[77066,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
+11:I[92190,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
+12:I[39756,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+13:I[37457,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+14:I[7723,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
+15:I[22016,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
+1a:I[97367,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 1b:"$Sreact.suspense"
-1d:I[97367,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
-1f:I[97367,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
+1d:I[97367,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
+1f:I[97367,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
 3:["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}]
 4:["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}]
 5:["$","link",null,{"rel":"dns-prefetch","href":"https://github.com"}]
@@ -31,668 +31,429 @@ f:I[31612,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4
 7:["$","$1","c",{"children":["$L19",[["$","script","script-0",{"src":"/_next/static/chunks/0k308.dc._5mp.js","async":true,"nonce":"$undefined"}]],["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]]}]
 8:["$","$1","h",{"children":[null,["$","$L1d",null,{"children":"$L1e"}],["$","div",null,{"hidden":true,"children":["$","$L1f",null,{"children":["$","$1b",null,{"name":"Next.Metadata","children":"$L20"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
 a:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0fqew4m5tnjkg.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-21:I[58541,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-22:I[29839,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
+b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0yr0xm~a2qsn9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+21:I[58541,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
+22:I[29839,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
 16:["$","rect",null,{"width":"20","height":"16","x":"2","y":"4","rx":"2"}]
 17:["$","path",null,{"d":"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"}]
 18:["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-5","children":[["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]],["$","a",null,{"href":"/cv.pdf","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground","children":[["$","$L21",null,{"ref":"$undefined","iconNode":[["path",{"d":"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z","key":"1oefj6"}],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5","key":"wfsgrz"}],["path",{"d":"M10 9H8","key":"b1mrlr"}],["path",{"d":"M16 13H8","key":"t4e002"}],["path",{"d":"M16 17H8","key":"z1uh3a"}]],"className":"lucide-file-text h-3.5 w-3.5"}],"View CV"]}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L22",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
-23:I[19635,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
-24:T216a,
-Có những cuốn sách rất dễ bị đọc như một danh sách mẹo. *Đắc Nhân Tâm* (*How to Win Friends and Influence People*) cũng dễ rơi vào cảm giác đó nếu tôi chỉ mở nó ra để tìm cách nói sao cho người khác thích mình hơn, hoặc làm sao để một cuộc trò chuyện đi đúng ý mình hơn.
+23:I[19635,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
+24:T1053,
+For over two weeks, every single day, I got to fill in a green square.
 
-Nhưng tôi muốn nhìn cuốn sách này theo một cách chậm hơn: như một lời nhắc về việc đối diện với người khác bằng sự tử tế, rõ ràng và đủ thành thật. Với tôi, giá trị của những bài học giao tiếp không nằm ở chỗ chúng giúp mình "thắng" trong một cuộc nói chuyện, mà ở chỗ chúng khiến mình ít vô tâm hơn trong cách lắng nghe, phản hồi và tạo ảnh hưởng.
+I use a habit-tracking app, and honestly, watching that chain of green squares stretch a little longer each day is a small joy I'm slightly addicted to. Woke up early: green. Ate decently: green. Studied a bit: green. Sixteen days straight, no gaps. I felt like I was becoming someone else — tidier, more trustworthy.
 
----
+Then life cut in, the way it always does. Something unhappy, a few wrung-out days, and just like that, three days in a row my app sat empty. Three cold grey squares planted right in the middle of a beautiful green stretch.
 
-## Quan sát: những điều có thể nói chắc
+I opened the app, looked at those three grey squares, and my brain delivered one curt line: "That's it. It's all ruined." Then came a thought that was sweet and dangerous: the last two weeks were for nothing, the streak's broken so why keep it up, just let it all go, it's half-finished anyway.
 
-Tôi không muốn biến bài này thành một bản tóm tắt chương hay một bộ trích dẫn rời rạc. Điều chắc nhất trong ghi chú này là tên sách và hướng đọc của tôi: *Đắc Nhân Tâm* gợi tôi nghĩ về cách con người nói chuyện, lắng nghe, tạo thiện cảm và tạo ảnh hưởng lên nhau.
-
-Với một cuốn sách có tên tiếng Anh là *How to Win Friends and Influence People*, tôi thấy mình cần đọc chậm. "Ảnh hưởng" không tự động là điều xấu, nhưng nó cần đi cùng sự tôn trọng. Nếu không, mọi lời khuyên giao tiếp rất dễ bị hiểu thành cách làm cho người khác thuận theo mình.
+And I almost listened. This wasn't the first time.
 
 ---
 
-## Diễn giải cá nhân: tôi không muốn tách kỹ năng khỏi ý định
+## The "what-the-hell" effect — when one crack shatters the whole jar
 
-Điểm làm tôi chú ý không phải là chuyện phải trở thành một người nói chuyện thật khéo. Tôi quan tâm hơn đến câu hỏi phía sau: nếu biết cách giao tiếp tốt hơn, tôi sẽ dùng điều đó để làm gì?
+There's a psychological trap researchers gave a very down-to-earth name: the "what-the-hell" effect.
 
-Một lời nói dễ nghe có thể giúp cuộc trò chuyện nhẹ đi, nhưng cũng có thể trở thành cách né tránh sự thật. Một sự quan tâm đúng lúc có thể khiến người khác thấy được lắng nghe, nhưng cũng có thể bị dùng như một công cụ để lấy thiện cảm. Vì vậy, khi nghĩ về *Đắc Nhân Tâm*, tôi không muốn tách kỹ năng khỏi ý định.
+It goes like this. You're dieting, and you slip and eat one slice of cake. One slice should be fine. But up pops the thought "well, I've eaten it, it's ruined, what the hell" — and so you finish the whole cake, then a whole tub of ice cream. What makes you eat the tub of ice cream isn't the first slice. It's the line "it's already ruined anyway."
 
-Với tôi, giao tiếp tốt bắt đầu từ một điều khá khiêm tốn: mình có thật sự xem người đối diện là một con người đầy đủ, hay chỉ xem họ là người cần được thuyết phục?
+I realized I treated my habit streak exactly the same way. I'd tied my self-worth to the perfection of a green chain. As long as the chain held, I felt disciplined, kind to myself. The moment one grey square slipped in, I instantly felt like a failure — and once I'd stuck the "failure" label on myself, why keep trying? A failure may as well play the part.
 
-<AestheticNote>
-  "Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ."
-</AestheticNote>
+The brutal truth is: three days off didn't ruin my two weeks. What nearly ruined everything was the urge to throw those two weeks away over three slipped days.
 
 ---
 
-## Quan sát: giao tiếp không chỉ là nói cho hay
+## Disciplined people don't walk a straight line. They walk a sawtooth
 
-Nếu chỉ nhìn giao tiếp tốt như việc nói mạch lạc, biết chọn từ và biết làm cho ý của mình nghe hợp lý, bài học sẽ bị thu hẹp quá nhiều. Những điều đó vẫn quan trọng, nhưng trong các mối quan hệ hằng ngày, nói hay chỉ là một phần rất nhỏ.
+I used to think a disciplined person had a dreamy graph — a straight line climbing up, every day better than the last. Believing that, the moment I dropped I felt I didn't belong in their world.
 
-Một cuộc trò chuyện có thể rất trơn tru mà vẫn lạnh. Một lời khuyên có thể rất đúng mà vẫn làm người nghe thấy bị đặt xuống thấp hơn. Một câu phản hồi có thể hợp lý trên giấy, nhưng lại thiếu mất sự dịu dàng cần có với người đang nghe nó.
+I think differently now. I believe the real graph of anyone who lasts is shaped like a sawtooth. Up a stretch, down a beat, then up again. There are terrible weeks, long slides, grey squares in a row. But step far enough back and that ugly jagged line is still inching upward. Endurance was never about not stumbling. It's about stumbling, then standing up, enough times.
 
-Vì vậy, bài học tôi muốn giữ không phải là nói sao cho sắc hơn. Tôi muốn học cách chậm lại trước khi phản hồi, nghe kỹ hơn trước khi kết luận, và để người khác có cảm giác rằng họ không phải tự bảo vệ mình trong mọi cuộc trò chuyện.
+And here's the most important thing I took away: what decides your mettle isn't whether you fall — you're going to fall regardless. It's the time you spend on the ground before you get up. One person falls and takes half a year to come back. Another falls, dusts off their knees, and goes again the next morning. The difference between them isn't the fall. It's the speed of the return.
 
-<AestheticNote>
-  Giao tiếp tốt không phải là làm cho mình nổi bật hơn trong cuộc trò chuyện, mà là làm cho người đối diện bớt cô đơn hơn khi được lắng nghe.
-</AestheticNote>
-
----
-
-## Diễn giải cá nhân: chân thành là phần khó nhất
-
-Điều dễ nhất khi đọc một cuốn sách về giao tiếp là biến mọi thứ thành công thức. Gặp người khác thì làm điều này. Muốn tạo thiện cảm thì nói điều kia. Muốn cuộc trò chuyện êm hơn thì chọn cách nọ.
-
-Công thức có thể hữu ích, nhưng nếu thiếu chân thành, điều đó thường bị nhận ra rất nhanh. Người khác thường cảm nhận được khi mình đang thật sự quan tâm và khi mình chỉ đang làm đúng một "bước" nào đó. Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ.
-
-Tôi thích nghĩ về sự chân thành như một cách giữ cho kỹ năng có đạo đức. Mình có thể học cách nói mềm hơn, nhưng không phải để che giấu điều mình thật sự nghĩ. Mình có thể học cách quan tâm đến cảm xúc của người khác, nhưng không phải để điều khiển họ. Mình có thể muốn tạo ảnh hưởng, nhưng vẫn cần tôn trọng quyền không đồng ý của người đối diện.
-
-Đó là phần khó nhất: dùng sự khéo léo để làm mối quan hệ rõ ràng và tử tế hơn, chứ không phải để mọi thứ luôn thuận theo mình.
-
-<AestheticNote>
-  "Bản chất của con người là luôn muốn được người khác coi trọng. Hãy để họ cảm thấy họ quan trọng."
-</AestheticNote>
-
----
-
-## Bài học muốn thử trong đời sống
-
-Tôi không muốn khép lại bài đọc này với một danh sách nguyên tắc nghe rất đúng nhưng không có chỗ để thực hành. Nếu có vài điều nhỏ để mang theo, tôi muốn chúng đủ gần với đời sống hằng ngày:
-
-- **Lắng nghe lâu hơn một chút trước khi trả lời.** Không phải im lặng để chờ tới lượt mình nói, mà thật sự nghe xem người kia đang cần được hiểu ở đâu.
-- **Nói điều tốt đẹp một cách cụ thể và thật lòng.** Một lời ghi nhận chỉ có ý nghĩa khi nó không được dùng như một kỹ thuật lấy lòng.
-- **Bất đồng mà không làm người khác thấy nhỏ lại.** Có những lúc mình vẫn cần nói rõ quan điểm, nhưng không nhất thiết phải thắng bằng cách khiến người đối diện mất mặt.
-- **Giữ ranh giới giữa tinh tế và làm vừa lòng.** Giao tiếp tử tế không có nghĩa là đồng ý với tất cả, cũng không có nghĩa là tự xóa mình để cuộc trò chuyện được êm.
-
-Những điều này nghe đơn giản, nhưng càng đơn giản thì càng dễ bị bỏ qua. Có lẽ một phần của việc trưởng thành trong giao tiếp là quay lại luyện những điều rất cơ bản: nghe cho trọn, nói cho thật, và phản hồi sao cho người khác vẫn giữ được phẩm giá của họ.
-
----
-
-## Điều tôi còn lấn cấn
-
-Tôi vẫn muốn giữ một chút cảnh giác khi đọc bất kỳ lời khuyên nào về ảnh hưởng. Ảnh hưởng là một từ đẹp nếu nó đi cùng trách nhiệm, nhưng rất nguy hiểm nếu nó chỉ còn nghĩa là làm cho người khác đi theo ý mình.
-
-Vì vậy, điều tôi tự nhắc mình là: trước khi áp dụng một bài học giao tiếp, hãy kiểm tra ý định của mình. Mình đang muốn hiểu người kia hơn, hay chỉ muốn họ phản ứng theo cách mình mong muốn? Mình đang muốn cuộc trò chuyện rõ ràng hơn, hay chỉ muốn tránh một sự khó chịu cần thiết?
-
-Nếu câu trả lời không thành thật, mọi kỹ năng đều có thể trượt thành thao túng rất nhẹ nhàng.
-
----
-
-## Kết lại
-
-Tôi không muốn xem *Đắc Nhân Tâm* như một cuốn sách dạy mình cách trở nên dễ mến hơn bằng mọi giá. Cách đọc có ích hơn với tôi là xem nó như một lời nhắc: trong mọi cuộc trò chuyện, người đối diện không phải là một vấn đề cần xử lý, mà là một con người cần được tôn trọng.
-
-Nếu chỉ giữ lại một điều, tôi muốn giữ điều này: sự khéo léo đáng quý nhất là sự khéo léo khiến mình tử tế hơn, không phải khéo léo khiến mình thắng nhiều hơn.
-
-<AestheticNote>
-  "Giao tiếp tử tế không có nghĩa là tự xóa mình để cuộc trò chuyện được êm."
-</AestheticNote>
-25:T216a,
-Có những cuốn sách rất dễ bị đọc như một danh sách mẹo. *Đắc Nhân Tâm* (*How to Win Friends and Influence People*) cũng dễ rơi vào cảm giác đó nếu tôi chỉ mở nó ra để tìm cách nói sao cho người khác thích mình hơn, hoặc làm sao để một cuộc trò chuyện đi đúng ý mình hơn.
-
-Nhưng tôi muốn nhìn cuốn sách này theo một cách chậm hơn: như một lời nhắc về việc đối diện với người khác bằng sự tử tế, rõ ràng và đủ thành thật. Với tôi, giá trị của những bài học giao tiếp không nằm ở chỗ chúng giúp mình "thắng" trong một cuộc nói chuyện, mà ở chỗ chúng khiến mình ít vô tâm hơn trong cách lắng nghe, phản hồi và tạo ảnh hưởng.
-
----
-
-## Quan sát: những điều có thể nói chắc
-
-Tôi không muốn biến bài này thành một bản tóm tắt chương hay một bộ trích dẫn rời rạc. Điều chắc nhất trong ghi chú này là tên sách và hướng đọc của tôi: *Đắc Nhân Tâm* gợi tôi nghĩ về cách con người nói chuyện, lắng nghe, tạo thiện cảm và tạo ảnh hưởng lên nhau.
-
-Với một cuốn sách có tên tiếng Anh là *How to Win Friends and Influence People*, tôi thấy mình cần đọc chậm. "Ảnh hưởng" không tự động là điều xấu, nhưng nó cần đi cùng sự tôn trọng. Nếu không, mọi lời khuyên giao tiếp rất dễ bị hiểu thành cách làm cho người khác thuận theo mình.
-
----
-
-## Diễn giải cá nhân: tôi không muốn tách kỹ năng khỏi ý định
-
-Điểm làm tôi chú ý không phải là chuyện phải trở thành một người nói chuyện thật khéo. Tôi quan tâm hơn đến câu hỏi phía sau: nếu biết cách giao tiếp tốt hơn, tôi sẽ dùng điều đó để làm gì?
-
-Một lời nói dễ nghe có thể giúp cuộc trò chuyện nhẹ đi, nhưng cũng có thể trở thành cách né tránh sự thật. Một sự quan tâm đúng lúc có thể khiến người khác thấy được lắng nghe, nhưng cũng có thể bị dùng như một công cụ để lấy thiện cảm. Vì vậy, khi nghĩ về *Đắc Nhân Tâm*, tôi không muốn tách kỹ năng khỏi ý định.
-
-Với tôi, giao tiếp tốt bắt đầu từ một điều khá khiêm tốn: mình có thật sự xem người đối diện là một con người đầy đủ, hay chỉ xem họ là người cần được thuyết phục?
-
-<AestheticNote>
-  "Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ."
-</AestheticNote>
-
----
-
-## Quan sát: giao tiếp không chỉ là nói cho hay
-
-Nếu chỉ nhìn giao tiếp tốt như việc nói mạch lạc, biết chọn từ và biết làm cho ý của mình nghe hợp lý, bài học sẽ bị thu hẹp quá nhiều. Những điều đó vẫn quan trọng, nhưng trong các mối quan hệ hằng ngày, nói hay chỉ là một phần rất nhỏ.
-
-Một cuộc trò chuyện có thể rất trơn tru mà vẫn lạnh. Một lời khuyên có thể rất đúng mà vẫn làm người nghe thấy bị đặt xuống thấp hơn. Một câu phản hồi có thể hợp lý trên giấy, nhưng lại thiếu mất sự dịu dàng cần có với người đang nghe nó.
-
-Vì vậy, bài học tôi muốn giữ không phải là nói sao cho sắc hơn. Tôi muốn học cách chậm lại trước khi phản hồi, nghe kỹ hơn trước khi kết luận, và để người khác có cảm giác rằng họ không phải tự bảo vệ mình trong mọi cuộc trò chuyện.
-
-<AestheticNote>
-  Giao tiếp tốt không phải là làm cho mình nổi bật hơn trong cuộc trò chuyện, mà là làm cho người đối diện bớt cô đơn hơn khi được lắng nghe.
-</AestheticNote>
-
----
-
-## Diễn giải cá nhân: chân thành là phần khó nhất
-
-Điều dễ nhất khi đọc một cuốn sách về giao tiếp là biến mọi thứ thành công thức. Gặp người khác thì làm điều này. Muốn tạo thiện cảm thì nói điều kia. Muốn cuộc trò chuyện êm hơn thì chọn cách nọ.
-
-Công thức có thể hữu ích, nhưng nếu thiếu chân thành, điều đó thường bị nhận ra rất nhanh. Người khác thường cảm nhận được khi mình đang thật sự quan tâm và khi mình chỉ đang làm đúng một "bước" nào đó. Sự tinh tế trong giao tiếp không nên là lớp sơn phủ lên một mục đích ích kỷ.
-
-Tôi thích nghĩ về sự chân thành như một cách giữ cho kỹ năng có đạo đức. Mình có thể học cách nói mềm hơn, nhưng không phải để che giấu điều mình thật sự nghĩ. Mình có thể học cách quan tâm đến cảm xúc của người khác, nhưng không phải để điều khiển họ. Mình có thể muốn tạo ảnh hưởng, nhưng vẫn cần tôn trọng quyền không đồng ý của người đối diện.
-
-Đó là phần khó nhất: dùng sự khéo léo để làm mối quan hệ rõ ràng và tử tế hơn, chứ không phải để mọi thứ luôn thuận theo mình.
-
-<AestheticNote>
-  "Bản chất của con người là luôn muốn được người khác coi trọng. Hãy để họ cảm thấy họ quan trọng."
-</AestheticNote>
-
----
-
-## Bài học muốn thử trong đời sống
-
-Tôi không muốn khép lại bài đọc này với một danh sách nguyên tắc nghe rất đúng nhưng không có chỗ để thực hành. Nếu có vài điều nhỏ để mang theo, tôi muốn chúng đủ gần với đời sống hằng ngày:
-
-- **Lắng nghe lâu hơn một chút trước khi trả lời.** Không phải im lặng để chờ tới lượt mình nói, mà thật sự nghe xem người kia đang cần được hiểu ở đâu.
-- **Nói điều tốt đẹp một cách cụ thể và thật lòng.** Một lời ghi nhận chỉ có ý nghĩa khi nó không được dùng như một kỹ thuật lấy lòng.
-- **Bất đồng mà không làm người khác thấy nhỏ lại.** Có những lúc mình vẫn cần nói rõ quan điểm, nhưng không nhất thiết phải thắng bằng cách khiến người đối diện mất mặt.
-- **Giữ ranh giới giữa tinh tế và làm vừa lòng.** Giao tiếp tử tế không có nghĩa là đồng ý với tất cả, cũng không có nghĩa là tự xóa mình để cuộc trò chuyện được êm.
-
-Những điều này nghe đơn giản, nhưng càng đơn giản thì càng dễ bị bỏ qua. Có lẽ một phần của việc trưởng thành trong giao tiếp là quay lại luyện những điều rất cơ bản: nghe cho trọn, nói cho thật, và phản hồi sao cho người khác vẫn giữ được phẩm giá của họ.
-
----
-
-## Điều tôi còn lấn cấn
-
-Tôi vẫn muốn giữ một chút cảnh giác khi đọc bất kỳ lời khuyên nào về ảnh hưởng. Ảnh hưởng là một từ đẹp nếu nó đi cùng trách nhiệm, nhưng rất nguy hiểm nếu nó chỉ còn nghĩa là làm cho người khác đi theo ý mình.
-
-Vì vậy, điều tôi tự nhắc mình là: trước khi áp dụng một bài học giao tiếp, hãy kiểm tra ý định của mình. Mình đang muốn hiểu người kia hơn, hay chỉ muốn họ phản ứng theo cách mình mong muốn? Mình đang muốn cuộc trò chuyện rõ ràng hơn, hay chỉ muốn tránh một sự khó chịu cần thiết?
-
-Nếu câu trả lời không thành thật, mọi kỹ năng đều có thể trượt thành thao túng rất nhẹ nhàng.
-
----
-
-## Kết lại
-
-Tôi không muốn xem *Đắc Nhân Tâm* như một cuốn sách dạy mình cách trở nên dễ mến hơn bằng mọi giá. Cách đọc có ích hơn với tôi là xem nó như một lời nhắc: trong mọi cuộc trò chuyện, người đối diện không phải là một vấn đề cần xử lý, mà là một con người cần được tôn trọng.
-
-Nếu chỉ giữ lại một điều, tôi muốn giữ điều này: sự khéo léo đáng quý nhất là sự khéo léo khiến mình tử tế hơn, không phải khéo léo khiến mình thắng nhiều hơn.
-
-<AestheticNote>
-  "Giao tiếp tử tế không có nghĩa là tự xóa mình để cuộc trò chuyện được êm."
-</AestheticNote>
-26:T1806,
-I judged this book by its cover. Literally.
-
-It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
-
-I bought it as a gift for someone else. Then I read it on the train home first - "just to check it" - and quietly fell apart somewhere around page forty.
-
-That is the strange power of *The Boy, the Mole, the Fox and the Horse*. It looks like a book you can finish between two train stops. Then it asks one small, honest question and suddenly you are staring out the window pretending the air is dusty.
-
----
-
-## Why this book found me
-
-Here's the thing I don't admit often: I'd been running on empty for a while.
-
-Not in a dramatic way. I was still getting things done. I answered messages, met deadlines, smiled at the right times, and kept a tidy list of what had to happen next. From the outside, nothing looked wrong.
-
-Inside, though, everything had become a little too loud.
-
-Maybe you know that version of tired too. The one where you tell a friend to rest, then call yourself lazy for needing the same thing. The one where you can forgive everyone else's awkward message, late reply, or unfinished plan, but replay your own tiny mistakes like evidence in court.
-
-This little book - a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking - slipped past my defenses because it never tried to sound impressive. There was no theory to master and no complicated plot to follow. Just four gentle characters saying the kind of things we often know, but rarely let ourselves believe.
-
----
-
-## The lines that stayed with me
-
-It has almost no plot. It is barely more than a walk, a conversation, and a handful of drawings that leave room for silence. And yet I underlined more of it than books five times its length.
-
-### Help is not a failure
-
-There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
-
-> "Asking for help isn't giving up."
-
-I used to treat help as the emergency button behind glass: break only when every other option has failed. So I would stay quiet when I was confused at work. I would reread the same email ten times instead of asking one clear question. I would tell friends "I'm fine" because explaining the truth felt like making my problem too heavy for someone else.
-
-The book makes help feel smaller and more human. Help can be texting, "Can you sit with me for ten minutes?" It can be asking a teammate to look at a paragraph you have rewritten too many times. It can be telling someone, "I don't need advice right now, I just need not to be alone with this."
-
-That is not giving up. That is choosing not to disappear inside your own head.
-
-### The smallest things are not small
-
-The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
-
-It sounds almost too simple to mean anything. But it landed because I have spent so long measuring myself by output: what I finished, what I achieved, what I could point to at the end of the day.
-
-Kindness is harder to display on a progress tracker. It looks ordinary. It is letting someone merge into traffic when you are already late. It is not turning one bad morning into a verdict on your whole personality. It is bringing yourself a glass of water before forcing one more hour of work out of a tired body.
-
-The book reminded me that a gentle day is not a wasted day. Sometimes the most important thing you do is refuse to become sharp just because the world was sharp with you.
-
-### Courage is quieter than I thought
-
-The fox does not arrive ready to trust. The boy does not always know where he is going. The horse is wise, but not distant. Everyone in the book is vulnerable in a different way.
-
-I liked that. It made courage feel less like a grand speech and more like a daily habit. Courage can be opening the bill you have been avoiding. It can be apologizing without defending yourself first. It can be showing up to a class, a meeting, or a conversation even though you feel behind everyone else.
-
-The book does not ask us to become fearless. It suggests something kinder: keep moving, and let someone walk beside you.
-
-### "This storm will pass"
-
-Near the end, in the rain, the horse says the storms always pass - something I logically know and emotionally forget every single time I'm inside one.
-
-That line matters because storms do not feel temporary when you are in them. A failed interview feels like a verdict. A tense conversation feels like the end of a relationship. A week of being behind feels like proof that you are not built for your own life.
-
-But most storms do pass. Not always quickly, and not always without leaving mud behind, but they pass. The book does not pretend rain is pleasant. It simply sits with you long enough for you to remember that rain is not the whole sky.
-
----
-
-## What I'm carrying with me
-
-I'm not going to pretend a picture book rearranged my whole life. But it gave me a few practices I can actually use on a Tuesday afternoon:
-
-* **I check my inner voice.** If I would not say it to a friend, I try not to say it to myself without question.
-* **I ask for help earlier.** Not when everything is already on fire, but when the first smoke appears.
-* **I let small kindness count.** Replying gently, resting without guilt, making tea for someone, making tea for myself.
-* **I keep the book nearby.** Some mornings I open it to one random page. That is the whole ritual.
-
----
-
-## A few last thoughts
-
-If you are tired in the quiet way, or if you have forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or a puzzle to solve, this is not that, and it never tries to be.
-
-It is closer to sitting beside someone who does not rush you. It will not fix your life. It will not answer every hard question. But it may help you breathe a little more deeply while you face them.
-
-I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
-27:T1806,
-I judged this book by its cover. Literally.
-
-It was sitting in a bookshop, all soft watercolours and a horse with kind eyes, and I thought: *cute, but not for me.* I'm in my twenties. I read Serious Books with no pictures, thank you.
-
-I bought it as a gift for someone else. Then I read it on the train home first - "just to check it" - and quietly fell apart somewhere around page forty.
-
-That is the strange power of *The Boy, the Mole, the Fox and the Horse*. It looks like a book you can finish between two train stops. Then it asks one small, honest question and suddenly you are staring out the window pretending the air is dusty.
-
----
-
-## Why this book found me
-
-Here's the thing I don't admit often: I'd been running on empty for a while.
-
-Not in a dramatic way. I was still getting things done. I answered messages, met deadlines, smiled at the right times, and kept a tidy list of what had to happen next. From the outside, nothing looked wrong.
-
-Inside, though, everything had become a little too loud.
-
-Maybe you know that version of tired too. The one where you tell a friend to rest, then call yourself lazy for needing the same thing. The one where you can forgive everyone else's awkward message, late reply, or unfinished plan, but replay your own tiny mistakes like evidence in court.
-
-This little book - a boy, a mole who loves cake, a wary fox, and a wise horse, wandering and talking - slipped past my defenses because it never tried to sound impressive. There was no theory to master and no complicated plot to follow. Just four gentle characters saying the kind of things we often know, but rarely let ourselves believe.
-
----
-
-## The lines that stayed with me
-
-It has almost no plot. It is barely more than a walk, a conversation, and a handful of drawings that leave room for silence. And yet I underlined more of it than books five times its length.
-
-### Help is not a failure
-
-There's a moment where the boy admits he's struggling, and the horse says the thing I'd needed someone to say for years.
-
-> "Asking for help isn't giving up."
-
-I used to treat help as the emergency button behind glass: break only when every other option has failed. So I would stay quiet when I was confused at work. I would reread the same email ten times instead of asking one clear question. I would tell friends "I'm fine" because explaining the truth felt like making my problem too heavy for someone else.
-
-The book makes help feel smaller and more human. Help can be texting, "Can you sit with me for ten minutes?" It can be asking a teammate to look at a paragraph you have rewritten too many times. It can be telling someone, "I don't need advice right now, I just need not to be alone with this."
-
-That is not giving up. That is choosing not to disappear inside your own head.
-
-### The smallest things are not small
-
-The mole, asked what he wants to be when he grows up, says: *kind.* Not successful. Not impressive. Kind.
-
-It sounds almost too simple to mean anything. But it landed because I have spent so long measuring myself by output: what I finished, what I achieved, what I could point to at the end of the day.
-
-Kindness is harder to display on a progress tracker. It looks ordinary. It is letting someone merge into traffic when you are already late. It is not turning one bad morning into a verdict on your whole personality. It is bringing yourself a glass of water before forcing one more hour of work out of a tired body.
-
-The book reminded me that a gentle day is not a wasted day. Sometimes the most important thing you do is refuse to become sharp just because the world was sharp with you.
-
-### Courage is quieter than I thought
-
-The fox does not arrive ready to trust. The boy does not always know where he is going. The horse is wise, but not distant. Everyone in the book is vulnerable in a different way.
-
-I liked that. It made courage feel less like a grand speech and more like a daily habit. Courage can be opening the bill you have been avoiding. It can be apologizing without defending yourself first. It can be showing up to a class, a meeting, or a conversation even though you feel behind everyone else.
-
-The book does not ask us to become fearless. It suggests something kinder: keep moving, and let someone walk beside you.
-
-### "This storm will pass"
-
-Near the end, in the rain, the horse says the storms always pass - something I logically know and emotionally forget every single time I'm inside one.
-
-That line matters because storms do not feel temporary when you are in them. A failed interview feels like a verdict. A tense conversation feels like the end of a relationship. A week of being behind feels like proof that you are not built for your own life.
-
-But most storms do pass. Not always quickly, and not always without leaving mud behind, but they pass. The book does not pretend rain is pleasant. It simply sits with you long enough for you to remember that rain is not the whole sky.
-
----
-
-## What I'm carrying with me
-
-I'm not going to pretend a picture book rearranged my whole life. But it gave me a few practices I can actually use on a Tuesday afternoon:
-
-* **I check my inner voice.** If I would not say it to a friend, I try not to say it to myself without question.
-* **I ask for help earlier.** Not when everything is already on fire, but when the first smoke appears.
-* **I let small kindness count.** Replying gently, resting without guilt, making tea for someone, making tea for myself.
-* **I keep the book nearby.** Some mornings I open it to one random page. That is the whole ritual.
-
----
-
-## A few last thoughts
-
-If you are tired in the quiet way, or if you have forgotten how to be soft with yourself, this book is a small act of mercy. If you want plot, complexity, or a puzzle to solve, this is not that, and it never tries to be.
-
-It is closer to sitting beside someone who does not rush you. It will not fix your life. It will not answer every hard question. But it may help you breathe a little more deeply while you face them.
-
-I gave my copy away in the end, like I'd planned. Then I bought another one for myself the next day. That probably tells you everything.
-28:T2226,
-Tôi đã trông mặt mà bắt hình dong cuốn sách này. Theo đúng nghĩa đen.
-
-Nó nằm đó trong một hiệu sách, toàn màu nước dịu nhẹ và một chú ngựa với đôi mắt hiền, và tôi nghĩ: *dễ thương đấy, nhưng không hợp với mình.* Tôi đôi mươi rồi. Tôi đọc Sách Nghiêm Túc không tranh ảnh, cảm ơn nhé.
-
-Tôi mua nó làm quà cho người khác. Rồi tôi đọc nó trên chuyến tàu về nhà trước - "chỉ để kiểm tra thôi mà" - và lặng lẽ vỡ òa đâu đó quanh trang bốn mươi.
-
-Đó là sức mạnh kỳ lạ của *The Boy, the Mole, the Fox and the Horse*. Nó trông như một cuốn sách bạn có thể đọc xong giữa hai trạm tàu. Rồi nó hỏi một câu rất nhỏ, rất thật, và tự nhiên bạn phải nhìn ra ngoài cửa sổ để giả vờ rằng mắt mình chỉ đang bị bụi bay vào.
-
----
-
-## Vì sao cuốn sách này tìm đến tôi
-
-Có một điều tôi ít khi thừa nhận: tôi đã chạy trong tình trạng cạn kiệt một thời gian rồi.
-
-Không phải theo kiểu kịch tính. Tôi vẫn làm được việc, vẫn trả lời tin nhắn, vẫn đến đúng chỗ cần đến, vẫn mỉm cười vào đúng lúc. Nhìn từ bên ngoài, mọi thứ có vẻ ổn.
-
-Bên trong thì mọi thứ hơi ồn.
-
-Có thể bạn cũng biết kiểu mệt đó. Kiểu bạn khuyên bạn bè nghỉ ngơi, rồi lại tự gọi mình là lười khi chính mình cần nghỉ. Kiểu bạn dễ dàng tha thứ cho tin nhắn vụng về, câu trả lời muộn, hay kế hoạch dang dở của người khác, nhưng lại lôi từng lỗi nhỏ của mình ra như bằng chứng trước tòa.
-
-Cuốn sách nhỏ này - một cậu bé, một chú chuột chũi mê bánh, một con cáo dè chừng, và một chú ngựa khôn ngoan, cùng nhau lang thang và trò chuyện - lách qua mọi hàng phòng thủ của tôi vì nó không cố tỏ ra sâu sắc. Không có lý thuyết nào cần nắm. Không có cốt truyện phức tạp nào cần theo. Chỉ có bốn nhân vật dịu dàng nói những điều ta thường đã biết, nhưng hiếm khi cho phép mình tin.
-
----
-
-## Những dòng chữ ở lại với tôi
-
-Nó gần như không có cốt truyện. Chỉ như một cuộc đi dạo, một cuộc trò chuyện, và những bức vẽ chừa rất nhiều khoảng lặng. Vậy mà tôi đã gạch chân nó nhiều hơn cả những cuốn dày gấp năm lần.
-
-### Nhờ giúp đỡ không phải là thất bại
-
-Có một khoảnh khắc khi cậu bé thừa nhận mình đang chật vật, và chú ngựa nói ra điều mà tôi đã cần ai đó nói với mình suốt nhiều năm.
-
-> "Nhờ giúp đỡ không phải là bỏ cuộc."
-
-Tôi từng xem việc nhờ giúp đỡ như một nút khẩn cấp nằm sau lớp kính: chỉ được đập vỡ khi mọi lựa chọn khác đã thất bại. Vì vậy tôi im lặng khi không hiểu một việc ở chỗ làm. Tôi đọc đi đọc lại cùng một email mười lần thay vì hỏi một câu rõ ràng. Tôi nói với bạn bè "mình ổn" vì giải thích sự thật nghe như đang đặt vấn đề của mình lên vai người khác.
-
-Cuốn sách khiến việc nhờ giúp đỡ trở nên nhỏ hơn, đời thường hơn. Giúp đỡ có thể là nhắn: "Cậu ngồi với mình mười phút được không?" Có thể là nhờ đồng nghiệp xem qua một đoạn bạn đã sửa quá nhiều lần. Có thể là nói: "Bây giờ mình không cần lời khuyên, mình chỉ cần không phải ở một mình với chuyện này."
-
-Đó không phải là bỏ cuộc. Đó là chọn không biến mất trong chính suy nghĩ của mình.
-
-### Những điều nhỏ nhất không hề nhỏ
-
-Chú chuột chũi, khi được hỏi muốn trở thành gì khi lớn lên, trả lời: *tử tế.* Không phải thành công. Không phải gây ấn tượng. Mà là tử tế.
-
-Nghe đơn giản đến mức tưởng chẳng có nghĩa gì. Nhưng nó chạm vào tôi bởi tôi đã dành quá lâu để đo lường bản thân bằng năng suất: hôm nay làm xong gì, đạt được gì, có gì để chỉ tay vào cuối ngày.
-
-Sự tử tế khó đưa lên bảng tiến độ hơn. Nó trông rất bình thường. Nó là nhường một người chen vào làn đường khi bạn cũng đang trễ. Nó là không biến một buổi sáng tệ thành bản án cho cả con người mình. Nó là tự lấy cho mình một ly nước trước khi ép cơ thể mệt mỏi làm thêm một tiếng nữa.
-
-Cuốn sách nhắc tôi rằng một ngày dịu dàng không phải là một ngày lãng phí. Đôi khi điều quan trọng nhất bạn làm là không trở nên sắc lạnh chỉ vì thế giới đã sắc lạnh với bạn.
-
-### Dũng cảm hóa ra yên lặng hơn tôi tưởng
-
-Con cáo không xuất hiện với khả năng tin tưởng ngay lập tức. Cậu bé không phải lúc nào cũng biết mình đang đi đâu. Chú ngựa khôn ngoan, nhưng không xa cách. Mỗi nhân vật đều dễ tổn thương theo một cách riêng.
-
-Tôi thích điều đó. Nó khiến sự dũng cảm bớt giống một bài diễn văn lớn lao, và giống một thói quen hằng ngày hơn. Dũng cảm có thể là mở hóa đơn bạn đã né tránh. Có thể là xin lỗi mà không vội tự bào chữa. Có thể là xuất hiện trong một lớp học, cuộc họp, hay cuộc trò chuyện dù bạn cảm thấy mình đang chậm hơn tất cả mọi người.
-
-Cuốn sách không bắt ta trở nên không biết sợ. Nó gợi ý một điều tử tế hơn: cứ đi tiếp, và để ai đó đi cạnh mình.
-
-### "Cơn bão này rồi sẽ qua"
-
-Gần cuối sách, trong mưa, chú ngựa nói rằng những cơn bão luôn rồi sẽ qua - điều mà về lý trí tôi biết, nhưng về cảm xúc lại quên sạch mỗi lần tôi đang ở trong một cơn bão.
-
-Câu ấy quan trọng vì khi ta đang ở trong bão, bão không hề có vẻ tạm thời. Một buổi phỏng vấn thất bại nghe như lời phán xét. Một cuộc trò chuyện căng thẳng có cảm giác như dấu chấm hết cho một mối quan hệ. Một tuần bị trễ việc dễ biến thành bằng chứng rằng mình không đủ sức sống cuộc đời của chính mình.
-
-Nhưng phần lớn những cơn bão rồi cũng đi qua. Không phải lúc nào cũng nhanh, và không phải lúc nào cũng sạch sẽ không để lại bùn đất, nhưng chúng đi qua. Cuốn sách không giả vờ rằng mưa dễ chịu. Nó chỉ ngồi cạnh bạn đủ lâu để bạn nhớ rằng mưa không phải là toàn bộ bầu trời.
-
----
-
-## Điều tôi mang theo
-
-Tôi sẽ không giả vờ rằng một cuốn truyện tranh sắp xếp lại cả cuộc đời tôi. Nhưng nó cho tôi vài thực hành nhỏ mà tôi thật sự có thể dùng vào một chiều thứ Ba:
-
-* **Tôi kiểm tra giọng nói bên trong.** Nếu tôi sẽ không nói câu đó với một người bạn, tôi cố không mặc nhiên nói nó với chính mình.
-* **Tôi nhờ giúp đỡ sớm hơn.** Không phải khi mọi thứ đã bốc cháy, mà khi vừa bắt đầu có khói.
-* **Tôi cho phép những tử tế nhỏ được tính.** Trả lời nhẹ nhàng, nghỉ ngơi không tội lỗi, pha trà cho ai đó, pha trà cho chính mình.
-* **Tôi để cuốn sách gần mình.** Vài buổi sáng tôi mở đại một trang. Chỉ vậy thôi cũng đủ thành một nghi thức.
-
----
-
-## Có đáng đọc không?
-
-Nếu bạn đang mệt theo kiểu lặng lẽ, hoặc đã quên cách mềm mỏng với chính mình, cuốn sách này là một hành động nhân từ nho nhỏ. Còn nếu bạn muốn cốt truyện, sự phức tạp, hay điều gì đó để "giải mã", thì đây không phải vậy, và nó cũng chẳng cố gồng để trở thành thế.
-
-Nó giống việc ngồi cạnh một người không hối bạn phải ổn ngay lập tức. Nó sẽ không sửa chữa cuộc đời bạn. Nó cũng không trả lời mọi câu hỏi khó. Nhưng có thể nó sẽ giúp bạn thở sâu hơn một chút khi đối diện với những câu hỏi đó.
-
-Cuối cùng tôi vẫn tặng cuốn của mình đi, đúng như dự định. Rồi ngày hôm sau tôi mua lại một cuốn khác cho chính mình. Chừng đó chắc đã nói lên tất cả.
-29:Tf13,
-It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been <mark>talking about you the whole time</mark> without ever asking permission.
-
-I'd been carrying a quiet question for months: what if I'd chosen differently?
-
----
-
-## Why this book found me
-
-I'm at the age where everyone seems to be becoming someone. Friends picking paths, posting milestones, sounding so sure. And I kept catching myself running the other timelines in my head — the major I didn't take, the city I didn't move to, the version of me who was braver, earlier.
-
-It's a quiet kind of exhausting, living next to all the lives you didn't pick.
-
-A friend left *The Midnight Library* on my desk without saying much. The premise is simple: a woman named Nora, at her lowest point, lands in a library where every book is a life she could have lived. She gets to try them on.
-
-I think my friend knew I needed to try a few on too.
-
----
-
-## The lines that stayed with me
-
-It's not a flawless book — some of the lives feel a little neat, and it wears its message on its sleeve. But a few moments genuinely caught me.
-
-### The other lives aren't as perfect as my regret makes them look
-
-In my head, the roads I didn't take are always sunlit. Nora actually walks into hers — and finds they have their own losses, their own dull Tuesdays, their own quiet disappointments.
-
-> Every life contains many millions of decisions. Some big, some small. But every time one decision is made, the outcome could not have been otherwise.
-
-Regret had been selling me a lie. It only ever showed me the highlight reel of the lives I didn't choose, never the full weather. That reframing loosened something I'd been gripping for a long time.
-
-### I'd been treating "what if" as a fact instead of a feeling
-
-I always thought my regrets were telling me the truth — that I'd genuinely messed up, taken the wrong door. The book made me see they were mostly just **fear wearing a costume**, a story I told myself at night.
-
-Most of my "what ifs" aren't real plans. They're just a way of being unkind to myself for being human and not knowing the future.
-
-### The life I have is also one I could have only imagined
-
-There was a version of me, years ago, who would have given anything to be where I am now — the small ordinary things I walk past without noticing. The book quietly reminded me that this life, too, was once a "what if."
-
-That undid me a little. I've been so busy mourning the lives I didn't live that I forgot to actually live this one.
-
-<KeyTakeaway label="Key Takeaway" tone="sage">
-
-The life I keep walking past was once the exact "what if" an earlier version of me would have given anything to live.
-
+<KeyTakeaway label="What I want you to remember" tone="sage">
+Don't let one bad day turn into one bad week. Missing a day is human. Quitting the whole month because you missed one day — that's the part worth regretting.
 </KeyTakeaway>
 
 ---
 
-## What I'm carrying with me
+So I forgave myself those three days. Quickly, cleanly, no drawn-out self-flogging. I didn't delete the app, didn't tear up the notebook, didn't declare "I really am a quitter." I just saw those three grey squares for what they were: three data points in a very long table. Not a verdict. Not a portrait of who I am.
 
-Nothing dramatic changed. I didn't wake up cured of overthinking. But a few small things have shifted:
+A lazy day doesn't tell you who you are. It only says that on that day you were tired, or life was a little hard. That's all. You're defined by the long-term trend, not by one or two off-beat dots.
 
-* **I catch the comparison sooner** — when my mind starts running someone else's timeline, I notice it now, and I let it pass instead of moving in.
-* **I'm trying to romanticize the life I have** — the slow coffee, the walk home, the ordinary evening. The stuff a past me would have envied.
-* **I'm being gentler about old decisions** — I made them with what I knew then. That's all any of us ever do.
+So if your app just broke a beautiful streak, I'll give you a hug. Truly. And then I'll pat your shoulder and say: tomorrow, open it back up, fill in one green square, carry on as if nothing happened. Let the old streak go. The streak that matters most — the streak of every time you chose to come back — is still growing longer every time you begin again.
+25:T1053,
+For over two weeks, every single day, I got to fill in a green square.
 
----
+I use a habit-tracking app, and honestly, watching that chain of green squares stretch a little longer each day is a small joy I'm slightly addicted to. Woke up early: green. Ate decently: green. Studied a bit: green. Sixteen days straight, no gaps. I felt like I was becoming someone else — tidier, more trustworthy.
 
-## A few last thoughts
+Then life cut in, the way it always does. Something unhappy, a few wrung-out days, and just like that, three days in a row my app sat empty. Three cold grey squares planted right in the middle of a beautiful green stretch.
 
-If you're someone who lies awake editing your past, this book will feel like it's holding your hand. If you prefer subtle, literary writing, it might feel a touch on-the-nose — and that's fair.
+I opened the app, looked at those three grey squares, and my brain delivered one curt line: "That's it. It's all ruined." Then came a thought that was sweet and dangerous: the last two weeks were for nothing, the streak's broken so why keep it up, just let it all go, it's half-finished anyway.
 
-For me, the timing was everything. Some books don't teach you anything new; they just say the thing you already half-knew, out loud, **at the moment you needed to hear it**.
-
-I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
-
-> The only way to learn is to live.
-2a:Tf13,
-It was almost 2 a.m. when I finished it. I closed the book, sat in the dark for a while, and felt that strange ache you get when a story has been <mark>talking about you the whole time</mark> without ever asking permission.
-
-I'd been carrying a quiet question for months: what if I'd chosen differently?
+And I almost listened. This wasn't the first time.
 
 ---
 
-## Why this book found me
+## The "what-the-hell" effect — when one crack shatters the whole jar
 
-I'm at the age where everyone seems to be becoming someone. Friends picking paths, posting milestones, sounding so sure. And I kept catching myself running the other timelines in my head — the major I didn't take, the city I didn't move to, the version of me who was braver, earlier.
+There's a psychological trap researchers gave a very down-to-earth name: the "what-the-hell" effect.
 
-It's a quiet kind of exhausting, living next to all the lives you didn't pick.
+It goes like this. You're dieting, and you slip and eat one slice of cake. One slice should be fine. But up pops the thought "well, I've eaten it, it's ruined, what the hell" — and so you finish the whole cake, then a whole tub of ice cream. What makes you eat the tub of ice cream isn't the first slice. It's the line "it's already ruined anyway."
 
-A friend left *The Midnight Library* on my desk without saying much. The premise is simple: a woman named Nora, at her lowest point, lands in a library where every book is a life she could have lived. She gets to try them on.
+I realized I treated my habit streak exactly the same way. I'd tied my self-worth to the perfection of a green chain. As long as the chain held, I felt disciplined, kind to myself. The moment one grey square slipped in, I instantly felt like a failure — and once I'd stuck the "failure" label on myself, why keep trying? A failure may as well play the part.
 
-I think my friend knew I needed to try a few on too.
+The brutal truth is: three days off didn't ruin my two weeks. What nearly ruined everything was the urge to throw those two weeks away over three slipped days.
 
 ---
 
-## The lines that stayed with me
+## Disciplined people don't walk a straight line. They walk a sawtooth
 
-It's not a flawless book — some of the lives feel a little neat, and it wears its message on its sleeve. But a few moments genuinely caught me.
+I used to think a disciplined person had a dreamy graph — a straight line climbing up, every day better than the last. Believing that, the moment I dropped I felt I didn't belong in their world.
 
-### The other lives aren't as perfect as my regret makes them look
+I think differently now. I believe the real graph of anyone who lasts is shaped like a sawtooth. Up a stretch, down a beat, then up again. There are terrible weeks, long slides, grey squares in a row. But step far enough back and that ugly jagged line is still inching upward. Endurance was never about not stumbling. It's about stumbling, then standing up, enough times.
 
-In my head, the roads I didn't take are always sunlit. Nora actually walks into hers — and finds they have their own losses, their own dull Tuesdays, their own quiet disappointments.
+And here's the most important thing I took away: what decides your mettle isn't whether you fall — you're going to fall regardless. It's the time you spend on the ground before you get up. One person falls and takes half a year to come back. Another falls, dusts off their knees, and goes again the next morning. The difference between them isn't the fall. It's the speed of the return.
 
-> Every life contains many millions of decisions. Some big, some small. But every time one decision is made, the outcome could not have been otherwise.
-
-Regret had been selling me a lie. It only ever showed me the highlight reel of the lives I didn't choose, never the full weather. That reframing loosened something I'd been gripping for a long time.
-
-### I'd been treating "what if" as a fact instead of a feeling
-
-I always thought my regrets were telling me the truth — that I'd genuinely messed up, taken the wrong door. The book made me see they were mostly just **fear wearing a costume**, a story I told myself at night.
-
-Most of my "what ifs" aren't real plans. They're just a way of being unkind to myself for being human and not knowing the future.
-
-### The life I have is also one I could have only imagined
-
-There was a version of me, years ago, who would have given anything to be where I am now — the small ordinary things I walk past without noticing. The book quietly reminded me that this life, too, was once a "what if."
-
-That undid me a little. I've been so busy mourning the lives I didn't live that I forgot to actually live this one.
-
-<KeyTakeaway label="Key Takeaway" tone="sage">
-
-The life I keep walking past was once the exact "what if" an earlier version of me would have given anything to live.
-
+<KeyTakeaway label="What I want you to remember" tone="sage">
+Don't let one bad day turn into one bad week. Missing a day is human. Quitting the whole month because you missed one day — that's the part worth regretting.
 </KeyTakeaway>
 
 ---
 
-## What I'm carrying with me
+So I forgave myself those three days. Quickly, cleanly, no drawn-out self-flogging. I didn't delete the app, didn't tear up the notebook, didn't declare "I really am a quitter." I just saw those three grey squares for what they were: three data points in a very long table. Not a verdict. Not a portrait of who I am.
 
-Nothing dramatic changed. I didn't wake up cured of overthinking. But a few small things have shifted:
+A lazy day doesn't tell you who you are. It only says that on that day you were tired, or life was a little hard. That's all. You're defined by the long-term trend, not by one or two off-beat dots.
 
-* **I catch the comparison sooner** — when my mind starts running someone else's timeline, I notice it now, and I let it pass instead of moving in.
-* **I'm trying to romanticize the life I have** — the slow coffee, the walk home, the ordinary evening. The stuff a past me would have envied.
-* **I'm being gentler about old decisions** — I made them with what I knew then. That's all any of us ever do.
+So if your app just broke a beautiful streak, I'll give you a hug. Truly. And then I'll pat your shoulder and say: tomorrow, open it back up, fill in one green square, carry on as if nothing happened. Let the old streak go. The streak that matters most — the streak of every time you chose to come back — is still growing longer every time you begin again.
+26:T14d5,
+Hơn hai tuần, ngày nào mình cũng được tô một ô xanh.
 
----
+Mình dùng một cái app theo dõi thói quen, và thú thật, nhìn cái chuỗi ô xanh nối nhau dài ra mỗi ngày là một niềm vui nhỏ mà mình hơi nghiện. Dậy sớm: xanh. Ăn uống tử tế: xanh. Tự học một chút: xanh. Mười sáu ngày liền không sót. Mình thấy mình đang là một người khác — gọn gàng hơn, đáng tin hơn.
 
-## A few last thoughts
+Rồi đời chen vào, như nó vẫn luôn vậy. Một chuyện không vui, vài ngày mệt rã rời, và thế là ba ngày liền cái app của mình trống trơn. Ba ô xám lạnh lẽo nằm chình ình ngay giữa một dải xanh đẹp đẽ.
 
-If you're someone who lies awake editing your past, this book will feel like it's holding your hand. If you prefer subtle, literary writing, it might feel a touch on-the-nose — and that's fair.
+Mình mở app lên, nhìn ba ô xám đó, và cái đầu mình phán đúng một câu gọn lỏn: "Thôi xong. Hỏng hết rồi." Theo sau là một ý nghĩ ngọt ngào mà nguy hiểm: hai tuần qua coi như công cốc, chuỗi đã đứt thì còn giữ làm gì, thôi buông luôn cho rồi, đằng nào cũng dở dang.
 
-For me, the timing was everything. Some books don't teach you anything new; they just say the thing you already half-knew, out loud, **at the moment you needed to hear it**.
-
-I'm reading something quieter next. But I think I'll be a little kinder to my own choices for a while.
-
-> The only way to learn is to live.
-2b:T16ee,
-Đã gần 2 giờ sáng khi tôi đọc xong. Tôi gấp sách lại, ngồi trong bóng tối một lúc lâu, và cảm thấy cái nhói lạ lùng mà bạn có được khi một câu chuyện đã <mark>nói về chính bạn suốt từ đầu</mark> mà chẳng hề xin phép.
-
-Mấy tháng nay tôi mang theo một câu hỏi lặng lẽ: sẽ thế nào nếu tôi đã chọn khác đi?
+Và mình suýt nghe theo nó. Lần này không phải lần đầu.
 
 ---
 
-## Vì sao cuốn sách này tìm đến tôi
+## Hiệu ứng "mặc kệ nó" — khi một vết nứt làm vỡ cả cái bình
 
-Tôi đang ở cái tuổi mà ai cũng dường như đang trở thành một ai đó. Bạn bè chọn lối đi, đăng những cột mốc, nói chuyện đầy chắc chắn. Còn tôi thì cứ bắt gặp mình đang chạy thử những dòng thời gian khác trong đầu — ngành học tôi đã không chọn, thành phố tôi đã không chuyển đến, phiên bản của tôi can đảm hơn, và sớm hơn.
+Có một cái bẫy tâm lý mà các nhà nghiên cứu đặt cho nó một cái tên rất đời: hiệu ứng "mặc kệ nó" (the "what-the-hell" effect).
 
-Đó là một kiểu mệt mỏi lặng lẽ: sống bên cạnh tất cả những cuộc đời mà mình đã không chọn.
+Nó thế này. Bạn đang ăn kiêng, lỡ ăn một miếng bánh. Đáng lẽ một miếng thì có sao đâu. Nhưng trong đầu bật lên ý nghĩ "ăn rồi, hỏng rồi, thôi mặc kệ" — và thế là bạn ăn nốt cả cái bánh, rồi cả hộp kem. Cái khiến bạn ăn cả hộp kem không phải là miếng bánh đầu tiên. Mà là cái câu "đằng nào cũng hỏng rồi".
 
-Một người bạn để cuốn *The Midnight Library* lên bàn tôi mà chẳng nói gì nhiều. Tiền đề rất đơn giản: một người phụ nữ tên Nora, ở thời điểm tồi tệ nhất, lạc vào một thư viện nơi mỗi cuốn sách là một cuộc đời cô đã có thể sống. Cô được thử khoác chúng lên người.
+Mình nhận ra mình đối xử với chuỗi thói quen y hệt vậy. Mình đã lỡ gắn giá trị của bản thân vào sự hoàn hảo của một dải ô xanh. Chừng nào dải đó còn liền, mình thấy mình là người kỷ luật, người tử tế với chính mình. Vừa có một ô xám chen vào, mình lập tức thấy mình là kẻ thất bại — và một khi đã dán cho mình cái nhãn "kẻ thất bại" rồi, thì cố thêm làm gì nữa? Kẻ thất bại thì cứ buông cho đúng vai.
 
-Tôi nghĩ người bạn ấy biết tôi cũng cần thử khoác vài cuộc đời như thế.
+Cái phũ phàng là: ba ngày nghỉ không phá hỏng hai tuần của mình. Cái suýt phá hỏng tất cả, là cái ý định vứt luôn hai tuần đó đi chỉ vì ba ngày trót lỡ.
 
 ---
 
-## Những dòng chữ ở lại với tôi
+## Người kỷ luật không đi một đường thẳng. Họ đi đường răng cưa
 
-Đây không phải cuốn sách hoàn hảo — vài cuộc đời được vẽ hơi gọn gàng quá, và nó để thông điệp lộ rõ trên bề mặt. Nhưng vài khoảnh khắc đã thật sự níu lấy tôi.
+Mình từng tưởng người kỷ luật là người có một đồ thị đẹp như mơ — một đường thẳng tắp đi lên, ngày nào cũng hơn ngày trước. Tưởng vậy nên hễ mình rớt xuống một cái là mình thấy mình không thuộc về thế giới của họ.
 
-### Những cuộc đời khác không hoàn hảo như nỗi nuối tiếc khiến tôi tưởng
+Giờ mình nghĩ khác. Mình tin đồ thị thật của bất kỳ ai bền bỉ đều có hình răng cưa. Lên một đoạn, rớt một nhịp, rồi lại lên. Có những tuần tệ hại, những cú trượt dài, những ô xám nối nhau. Nhưng nếu lùi ra xa mà nhìn, cái đường gấp khúc xấu xí đó vẫn đang nhích lên. Sự bền bỉ chưa bao giờ là không vấp. Nó là vấp, rồi đứng dậy, đủ nhiều lần.
 
-Trong đầu tôi, những con đường tôi đã không chọn lúc nào cũng ngập nắng. Nora thì thật sự bước vào chúng — và phát hiện chúng cũng có những mất mát riêng, những ngày thứ Ba tẻ nhạt riêng, những nỗi thất vọng lặng lẽ riêng.
+Và đây là điều quan trọng nhất mình rút ra: cái quyết định bản lĩnh của bạn không phải là chuyện bạn có trượt ngã hay không — kiểu gì bạn cũng sẽ ngã. Nó là khoảng thời gian bạn nằm dưới đất trước khi đứng dậy. Người này ngã rồi mất nửa năm mới quay lại. Người kia ngã, phủi quần, sáng mai làm tiếp. Khác biệt giữa hai người đó không nằm ở cú ngã. Nó nằm ở tốc độ quay lại.
 
-> Mỗi cuộc đời chứa hàng triệu quyết định. Có cái lớn, có cái nhỏ. Nhưng mỗi lần một quyết định được đưa ra, kết quả không thể nào khác đi được.
-
-Sự nuối tiếc đã bán cho tôi một lời nói dối. Nó chỉ luôn cho tôi xem thước phim highlight của những cuộc đời tôi đã không chọn, không bao giờ cho thấy đủ cả mưa lẫn nắng. Cách nhìn lại đó đã nới lỏng một thứ tôi đã siết chặt rất lâu.
-
-### Tôi đã coi "giá như" là sự thật thay vì một cảm xúc
-
-Tôi luôn nghĩ những nuối tiếc của mình đang nói cho tôi sự thật — rằng tôi đã thật sự làm hỏng, đã chọn nhầm cánh cửa. Cuốn sách khiến tôi thấy chúng phần lớn chỉ là **nỗi sợ khoác lên một bộ trang phục**, một câu chuyện tôi tự kể mình trong đêm.
-
-Phần lớn những "giá như" của tôi không phải là kế hoạch thật. Chúng chỉ là một cách tôi tự đối xử không tử tế với bản thân vì đã làm người và đã không biết trước tương lai.
-
-### Cuộc đời tôi đang có cũng từng là điều tôi chỉ dám tưởng tượng
-
-Từng có một phiên bản của tôi, nhiều năm trước, sẵn sàng đánh đổi mọi thứ để được ở nơi tôi đang đứng bây giờ — những điều bình thường nhỏ bé mà tôi đi ngang qua chẳng buồn để ý. Cuốn sách lặng lẽ nhắc tôi rằng cuộc đời này, cũng vậy, từng là một "giá như".
-
-Điều đó làm tôi vỡ ra đôi chút. Tôi đã quá bận thương tiếc những cuộc đời mình không sống đến mức quên mất việc thật sự sống cuộc đời này.
-
-<KeyTakeaway label="Điều đọng lại" tone="sage">
-
-Cuộc đời tôi cứ đi ngang qua mỗi ngày, từng chính là cái "giá như" mà một phiên bản tôi trước kia sẵn sàng đánh đổi mọi thứ để được sống.
-
+<KeyTakeaway label="Điều mình muốn bạn nhớ" tone="sage">
+Đừng để một ngày tồi tệ biến thành một tuần tồi tệ. Lỡ một ngày là chuyện của con người. Bỏ luôn cả tháng chỉ vì đã lỡ một ngày — đó mới là chuyện đáng tiếc.
 </KeyTakeaway>
 
 ---
 
-## Điều tôi mang theo
+Nên mình tha thứ cho mình ba ngày đó. Nhanh thôi, gọn thôi, không dằn vặt lê thê. Mình không xóa app, không xé sổ, không tuyên bố "mình đúng là đồ bỏ cuộc". Mình chỉ coi ba ô xám đó như nó vốn là: ba điểm dữ liệu trong một bảng rất dài. Không phải bản án. Không phải chân dung con người mình.
 
-Chẳng có gì kịch tính thay đổi. Tôi không thức dậy và hết hẳn bệnh suy nghĩ quá nhiều. Nhưng vài điều nhỏ đã dịch chuyển:
+Một ngày lười biếng không nói lên bạn là ai. Nó chỉ nói rằng hôm đó bạn mệt, hoặc đời hôm đó hơi khó. Vậy thôi. Con người bạn được định nghĩa bởi cái xu hướng dài hạn, chứ không phải bởi một hai cái chấm lạc nhịp.
 
-* **Tôi bắt được sự so sánh sớm hơn** — khi tâm trí bắt đầu chạy theo dòng thời gian của người khác, giờ tôi nhận ra nó, và để nó trôi qua thay vì dọn vào ở.
-* **Tôi đang tập trân trọng cuộc đời mình đang có** — ly cà phê chậm rãi, đoạn đường về nhà, một buổi tối bình thường. Những thứ mà một phiên bản tôi trong quá khứ từng thèm khát.
-* **Tôi nhẹ nhàng hơn với những quyết định cũ** — tôi đã đưa ra chúng với những gì tôi biết khi đó. Tất cả chúng ta cũng chỉ làm được đến vậy mà thôi.
+Nên nếu cái app của bạn vừa đứt một chuỗi đẹp, mình ôm bạn một cái. Thật đấy. Rồi ngay sau đó mình vỗ vai bạn và nói: ngày mai, mở nó ra, tô lại một ô xanh, làm tiếp như chưa từng có chuyện gì. Chuỗi cũ đứt thì kệ nó. Cái chuỗi quan trọng nhất — cái chuỗi của những lần bạn chịu quay lại — vẫn đang dài thêm mỗi lần bạn bắt đầu lại.
+27:T118f,
+I just flipped back through the planner I bought at the start of the month. The first three pages are beautiful — I even ruled the boxes, added color, wrote down ten goals grand enough to sound like a whole new life. Exercise an hour every morning. Read fifty pages a day. Learn a language. Wake up at five...
+
+Then on the fourth page the handwriting gets messy. The fifth is blank. From the sixth on it's pure, silent white — like a gentle reproach that somehow stings more for being gentle.
+
+I sat looking at those blank pages, and the familiar feeling rolled back in: disappointment in myself. Again. I'd made myself a real promise, and in under a week I'd quit, neatly. I started thinking maybe I just lack willpower, maybe I'm not the "can-do" type.
+
+But after a few collapses that all looked exactly the same, I finally saw it: the problem wasn't my willpower. It was how I set the goals in the first place.
 
 ---
 
-## Có đáng đọc không?
+## "All or nothing" — the trap that looks so diligent
 
-Nếu bạn là người hay nằm thao thức biên tập lại quá khứ của mình, cuốn sách này sẽ giống như một bàn tay nắm lấy tay bạn. Nếu bạn thích lối viết tinh tế, hàm ẩn, nó có thể hơi lộ liễu — và điều đó cũng công bằng thôi.
+Watch closely and you'll notice that every time I quit, I quit by the same script.
 
-Với tôi, thời điểm là tất cả. Có những cuốn sách không dạy bạn điều gì mới; chúng chỉ nói thành lời cái điều bạn đã lờ mờ biết, **đúng vào khoảnh khắc bạn cần nghe nó**.
+On a day work piles up and I can't get the full hour, I shrug: "What's the point of twenty minutes, I'll do it properly tomorrow." On a tired day when I can't finish a chapter, I close the book: "A few pages won't stick anyway, just sleep." It sounds like I'm holding a high bar, being serious. But it's actually the most cunning trap of all.
 
-Tôi sẽ đọc một cuốn gì đó nhẹ nhàng hơn tiếp theo. Nhưng tôi nghĩ mình sẽ tử tế hơn một chút với chính những lựa chọn của mình, trong một thời gian.
+"All or nothing" thinking pretends to be a high standard, but at heart it's an excuse. Because once I believe "if I can't do it fully, better not at all," then a single busy day, a single tired day, a single day life refuses to cooperate — and the whole streak of effort goes down the drain. I've handed myself a "delete everything" button that's far too easy to press.
 
-> Cách duy nhất để học là sống.
-19:["$","$L23",null,{"projects":[],"latestPosts":[{"slug":"dac-nhan-tam-review","content":"$24","title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","date":"2026-06-18","tags":["Books","Reflection","Communication"],"readingTime":"7 min read","i18n":{"en":{"title":"Đắc Nhân Tâm","description":"Một bài chia sẻ bằng tiếng Việt về Đắc Nhân Tâm, nhìn cuốn sách qua giao tiếp, sự chân thành và ranh giới khi tạo ảnh hưởng.","content":"$25","readingTime":"7 min read"}}},{"slug":"the-boy-the-mole-the-fox-and-the-horse","content":"$26","title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","date":"2026-06-14","tags":["Books","Kindness","Slow Living","Reflection"],"readingTime":"6 min read","i18n":{"en":{"title":"The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train","description":"I almost didn't read it. It looked like a children's picture book. It turned out to be the gentlest thing anyone has said to me in years.","content":"$27","readingTime":"6 min read"},"vi":{"title":"The Boy, the Mole, the Fox and the Horse — Cuốn sách thiếu nhi khiến một người lớn khóc trên tàu","description":"Tôi suýt đã không đọc nó. Trông nó cứ như một cuốn truyện tranh cho trẻ con. Hóa ra nó lại là điều dịu dàng nhất ai đó từng nói với tôi trong nhiều năm.","content":"$28","readingTime":"8 min read"}}},{"slug":"the-midnight-library","content":"$29","title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","date":"2026-06-12","tags":["Books","Regret","Letting Go","Reflection"],"readingTime":"4 min read","i18n":{"en":{"title":"The Midnight Library — On the lives I keep imagining I should be living","description":"Matt Haig's novel about a library between life and death quietly undid the way I think about regret, and about all the versions of me I'll never become.","content":"$2a","readingTime":"4 min read"},"vi":{"title":"The Midnight Library — Về những cuộc đời tôi cứ tưởng tượng lẽ ra mình nên sống","description":"Tiểu thuyết của Matt Haig về một thư viện nằm giữa sự sống và cái chết đã lặng lẽ thay đổi cách tôi nghĩ về sự nuối tiếc, và về tất cả những phiên bản của tôi mà tôi sẽ không bao giờ trở thành.","content":"$2b","readingTime":"5 min read"}}}]}]
+And I suspect what stands behind that thinking is the ego. The ego doesn't want to do the small thing, because the small thing is... not impressive. Five minutes of exercise makes no story. One sentence written is nothing to be proud of. The ego loves the image of a perfect version of me: full hour, fifty pages, iron discipline. It would rather I do nothing than do something tiny, ordinary, not worth showing off. Setting huge goals, it turns out, is the perfect recipe for sabotaging yourself — because the bigger the goal, the easier the excuse to quit.
+
+---
+
+## Lower the bar until it sounds a little ridiculous
+
+What I did next sounds backwards: instead of trying harder, I lowered the goal until it was almost... laughable.
+
+Not an hour of exercise. Put the workout clothes on and move for five minutes. Not fifty pages. One page. Not finish the piece. Open the file and type one sentence.
+
+Sounds absurd, right? What can five minutes change? But here's what I found: the five-minute goal doesn't exist to make me fitter. It exists so I don't break the thread. Five minutes of exercise is still exercise. One page is still reading. Opening the file to type one sentence still beats — by a mile — a file that never gets opened. What I'm protecting isn't today's achievement. It's my standing as "someone who's still doing it."
+
+<KeyTakeaway label="I believe this" tone="sage">
+Discipline isn't doing one great thing in a day. It's the ability to show up — day after day — even when I show up in the most half-hearted way possible.
+</KeyTakeaway>
+
+And the funny part is, almost every time I end up doing more than the minimum. Once the clothes are on, twenty more minutes is no big deal. Finish page one and I usually read page two, page three. But even on the days I genuinely do my five minutes and stop — I still count as having kept my word. The thread didn't break. And a thread that doesn't break can go on forever.
+
+---
+
+I often hear people talk about compound interest with money — put in a little, regularly, and over time it becomes a sum that surprises you. I believe life has a compound interest like that too. And it doesn't live in the blazing days when I do triple what everyone else does. It lives in the boring one-percent efforts, repeated, so small I'm almost embarrassed to mention them.
+
+So if you're staring at a blank notebook today and about to give up, I just want to say: don't write down ten grand goals again. Pick one thing, then make it tiny — so tiny it's impossible to fail.
+
+Then just do it. However silly, however small. Because one small thing done every day will, in time, quietly overtake every magnificent plan you only managed to keep for three days.
+28:T118f,
+I just flipped back through the planner I bought at the start of the month. The first three pages are beautiful — I even ruled the boxes, added color, wrote down ten goals grand enough to sound like a whole new life. Exercise an hour every morning. Read fifty pages a day. Learn a language. Wake up at five...
+
+Then on the fourth page the handwriting gets messy. The fifth is blank. From the sixth on it's pure, silent white — like a gentle reproach that somehow stings more for being gentle.
+
+I sat looking at those blank pages, and the familiar feeling rolled back in: disappointment in myself. Again. I'd made myself a real promise, and in under a week I'd quit, neatly. I started thinking maybe I just lack willpower, maybe I'm not the "can-do" type.
+
+But after a few collapses that all looked exactly the same, I finally saw it: the problem wasn't my willpower. It was how I set the goals in the first place.
+
+---
+
+## "All or nothing" — the trap that looks so diligent
+
+Watch closely and you'll notice that every time I quit, I quit by the same script.
+
+On a day work piles up and I can't get the full hour, I shrug: "What's the point of twenty minutes, I'll do it properly tomorrow." On a tired day when I can't finish a chapter, I close the book: "A few pages won't stick anyway, just sleep." It sounds like I'm holding a high bar, being serious. But it's actually the most cunning trap of all.
+
+"All or nothing" thinking pretends to be a high standard, but at heart it's an excuse. Because once I believe "if I can't do it fully, better not at all," then a single busy day, a single tired day, a single day life refuses to cooperate — and the whole streak of effort goes down the drain. I've handed myself a "delete everything" button that's far too easy to press.
+
+And I suspect what stands behind that thinking is the ego. The ego doesn't want to do the small thing, because the small thing is... not impressive. Five minutes of exercise makes no story. One sentence written is nothing to be proud of. The ego loves the image of a perfect version of me: full hour, fifty pages, iron discipline. It would rather I do nothing than do something tiny, ordinary, not worth showing off. Setting huge goals, it turns out, is the perfect recipe for sabotaging yourself — because the bigger the goal, the easier the excuse to quit.
+
+---
+
+## Lower the bar until it sounds a little ridiculous
+
+What I did next sounds backwards: instead of trying harder, I lowered the goal until it was almost... laughable.
+
+Not an hour of exercise. Put the workout clothes on and move for five minutes. Not fifty pages. One page. Not finish the piece. Open the file and type one sentence.
+
+Sounds absurd, right? What can five minutes change? But here's what I found: the five-minute goal doesn't exist to make me fitter. It exists so I don't break the thread. Five minutes of exercise is still exercise. One page is still reading. Opening the file to type one sentence still beats — by a mile — a file that never gets opened. What I'm protecting isn't today's achievement. It's my standing as "someone who's still doing it."
+
+<KeyTakeaway label="I believe this" tone="sage">
+Discipline isn't doing one great thing in a day. It's the ability to show up — day after day — even when I show up in the most half-hearted way possible.
+</KeyTakeaway>
+
+And the funny part is, almost every time I end up doing more than the minimum. Once the clothes are on, twenty more minutes is no big deal. Finish page one and I usually read page two, page three. But even on the days I genuinely do my five minutes and stop — I still count as having kept my word. The thread didn't break. And a thread that doesn't break can go on forever.
+
+---
+
+I often hear people talk about compound interest with money — put in a little, regularly, and over time it becomes a sum that surprises you. I believe life has a compound interest like that too. And it doesn't live in the blazing days when I do triple what everyone else does. It lives in the boring one-percent efforts, repeated, so small I'm almost embarrassed to mention them.
+
+So if you're staring at a blank notebook today and about to give up, I just want to say: don't write down ten grand goals again. Pick one thing, then make it tiny — so tiny it's impossible to fail.
+
+Then just do it. However silly, however small. Because one small thing done every day will, in time, quietly overtake every magnificent plan you only managed to keep for three days.
+29:T1657,
+Mình vừa lật lại cuốn sổ kế hoạch mua hồi đầu tháng. Ba trang đầu chữ đẹp ơi là đẹp — mình còn cẩn thận kẻ khung, tô màu, ghi mười mục tiêu nghe hoành tráng như sắp đổi đời. Tập thể dục một tiếng mỗi sáng. Đọc năm mươi trang sách mỗi ngày. Học ngoại ngữ. Dậy lúc năm giờ...
+
+Rồi tới trang thứ tư, chữ bắt đầu nguệch ngoạc. Trang thứ năm bỏ trống. Từ trang thứ sáu trở đi là một màu trắng tinh, im lặng, như một lời trách nhẹ nhàng mà thấm.
+
+Mình ngồi nhìn mấy trang giấy trắng đó, và cái cảm giác quen thuộc lại ùa về: thất vọng về chính mình. Lại một lần nữa. Mình đã hứa với mình hẳn hoi, vậy mà chưa đầy một tuần đã bỏ cuộc gọn gàng. Mình bắt đầu nghĩ chắc tại mình thiếu ý chí, tại mình không phải dạng người "làm được".
+
+Nhưng sau vài ba lần vỡ trận y hệt như vậy, mình mới nhận ra: vấn đề không nằm ở ý chí của mình. Nó nằm ở cách mình đặt mục tiêu ngay từ đầu.
+
+---
+
+## "Được ăn cả, ngã về không" — cái bẫy nghe rất chăm chỉ
+
+Để ý mà xem, lần nào bỏ cuộc mình cũng bỏ theo đúng một kịch bản.
+
+Hôm nào kẹt việc, không tập đủ một tiếng, mình tặc lưỡi: "Thôi, có hai mươi phút thì tập làm gì, để mai tập cho đàng hoàng." Hôm nào mệt, không đọc hết một chương, mình gấp sách: "Đọc có mấy trang thì vào đầu được gì, thôi ngủ." Nghe thì có vẻ như mình đang đòi hỏi cao, đang nghiêm túc. Nhưng thật ra đó là cái bẫy tinh vi nhất.
+
+Tư duy "được ăn cả, ngã về không" giả vờ là tiêu chuẩn cao, nhưng bản chất nó là một cái cớ. Vì khi mình tin rằng "không làm trọn vẹn thì thà đừng làm", thì chỉ cần một ngày bận, một ngày mệt, một ngày đời không như ý — là cả chuỗi cố gắng đổ sông đổ bể. Mình tự trao cho bản thân một cái nút "xóa tất cả" quá dễ bấm.
+
+Và mình ngờ rằng đứng sau cái tư duy đó là cái tôi. Cái tôi không muốn làm việc nhỏ, vì việc nhỏ thì... không oách. Tập năm phút nghe chẳng có gì để kể. Viết một câu thì có gì mà tự hào. Cái tôi thích cái hình ảnh một phiên bản mình hoàn hảo: tập một tiếng, đọc năm mươi trang, kỷ luật thép. Nó thà mình không làm gì còn hơn làm một thứ gì đó nhỏ bé, tầm thường, không đủ để khoe. Đặt mục tiêu thật to, hóa ra, là công thức hoàn hảo để tự phá mình — vì mục tiêu càng to, cái cớ để bỏ càng dễ tìm.
+
+---
+
+## Hạ tiêu chuẩn xuống mức nghe hơi buồn cười
+
+Cái mình làm sau đó nghe có vẻ ngược đời: thay vì cố gắng nhiều hơn, mình hạ mục tiêu xuống thấp đến mức gần như... mắc cười.
+
+Không phải tập một tiếng. Là mặc đồ tập vào và nhúc nhích năm phút. Không phải đọc năm mươi trang. Là đọc một trang. Không phải viết cho xong bài. Là mở file lên, gõ đúng một câu.
+
+Nghe vô lý đúng không? Năm phút thì thay đổi được gì. Nhưng mình phát hiện ra điều này: cái mục tiêu năm phút không tồn tại để mình khỏe lên. Nó tồn tại để mình không làm đứt sợi dây. Tập năm phút vẫn là tập thể dục. Đọc một trang vẫn là đọc sách. Mở file gõ một câu vẫn tốt hơn gấp vạn lần một cái file không bao giờ được mở. Cái mình đang giữ không phải là thành tích của ngày hôm nay — mà là tư cách "người vẫn đang làm".
+
+<KeyTakeaway label="Mình tin điều này" tone="sage">
+Kỷ luật không phải là làm một điều vĩ đại trong một ngày. Nó là khả năng có mặt — ngày này qua ngày khác — kể cả khi mình chỉ có mặt một cách hết sức qua loa.
+</KeyTakeaway>
+
+Và buồn cười là, gần như lần nào mình cũng làm nhiều hơn cái mức tối thiểu đó. Mặc đồ tập vào rồi thì nhúc nhích thêm hai mươi phút cũng chẳng sao. Đọc xong trang một thì thường đọc luôn trang hai, trang ba. Nhưng kể cả những hôm mình thật sự chỉ làm đúng năm phút rồi nghỉ — mình vẫn được tính là đã giữ lời. Sợi dây không đứt. Và một sợi dây không đứt thì còn kéo dài được mãi.
+
+---
+
+Mình hay nghe người ta nói về lãi kép trong tiền bạc — bỏ vào một ít, đều đặn, lâu ngày thành một khoản lớn đến bất ngờ. Cuộc đời mình tin cũng có một thứ lãi kép như vậy. Mà nó không nằm ở những ngày bùng cháy mình làm gấp ba người khác. Nó nằm ở những nỗ lực một phần trăm nhàm chán, lặp đi lặp lại, nhỏ đến mức mình suýt thấy ngại khi kể ra.
+
+Nên nếu hôm nay bạn cũng đang nhìn một cuốn sổ trắng trơn và định buông xuôi, mình chỉ muốn nói: đừng đặt lại mười mục tiêu hoành tráng nữa. Chọn một việc thôi, rồi làm nó nhỏ xíu lại, nhỏ đến mức không thể nào thất bại.
+
+Rồi cứ làm. Dù nó có vớ vẩn, vụn vặt đến đâu. Vì một việc nhỏ làm đều mỗi ngày, lâu dần, sẽ âm thầm vượt qua mọi kế hoạch vĩ đại mà bạn chỉ giữ được đúng ba ngày.
+2a:T1228,
+This morning I woke up before my alarm, and the first thing my brain did wasn't to get up — it was to start negotiating.
+
+The sky was the flat grey that means rain. My head ached a little, probably because I went to bed too late. And honestly, yesterday wore me out — skipping one day won't bring the sky down. The blanket, in that moment, was warm in the most reasonable way. In about ten seconds my brain had built five or six excuses so sensible I almost thanked it.
+
+I lay there listening to the two sides argue. One whispered: "You're not well today, make up for it tomorrow." The other said just one dry line: "How many times have you said that?"
+
+And that's when a slightly brutal truth landed: what I'd been calling "I'm not motivated yet" was really just me sitting around waiting for a feeling that never shows up on time.
+
+---
+
+## Motivation is just an emotion, and emotions are moody
+
+I used to think motivation was a kind of fuel. Wait for the tank to fill, then start the engine. Dead wrong.
+
+Motivation isn't fuel. It's weather. Sunny one day, pouring the next, soaring in the morning and crashing by afternoon — and worst of all, it never warns you. That's how emotions are: they rise and fall with your sleep, with the last text you read, with the sugar in your blood. And yet I'd set the goals of my whole life on top of that wobbly ground.
+
+Waiting on motivation to live with discipline feels exactly like handing the steering wheel to a drunk. On some stretches he's sharp, foot on the gas, and I think my life is about to take off. Then comes a curve and he slumps over the wheel. And there I am in the back seat, dazed, asking why the car is driving into a ditch.
+
+There's one more thing few people mention. Our brains are, at heart, energy-saving machines. They were programmed back when our ancestors still worried about going hungry, so anything hard — studying, writing, sitting down to think something through — gets filed under "burns calories, avoid." Anything easy with an instant reward — scrolling the phone, opening a video, eating something sweet — it grabs immediately. My mind isn't lazy because I'm a bad person. It's lazy because it's doing exactly the job it was born to do: keep me safe and unstrained. The trouble is that "safe and unstrained" has never built a single life worth living.
+
+---
+
+## Don't ask "do I want to." Ask "does this need doing."
+
+My turning point started the day I stopped treating discipline as self-punishment.
+
+Discipline, I came to think, isn't gritting your teeth and torturing yourself. It's an agreement. A promise I made to myself while my head was still clear, so that the worn-out six-a.m. version of me doesn't get to renege.
+
+And the trick — if you can call it that — is this: stop negotiating with your brain.
+
+The moment I ask "Do I want to do this?" is the moment I've already lost. Because the answer is almost always no. Nobody wants to sit down to hard work while running on empty. That question is a door left open for every excuse to pour through.
+
+So I changed the question. I no longer ask "want to or not." I ask: "Does this need doing?" It does. Then I do it. Done. No committee, no vote, no consulting my feelings.
+
+<KeyTakeaway label="What I learned" tone="terracotta">
+Action creates inspiration, not the other way around. You don't sit down because you're inspired — you get inspired because you sat down. Do the first ugly five minutes, and inspiration comes shuffling along behind.
+</KeyTakeaway>
+
+I've tested this until I'm sick of it. On my most sluggish days, I just give myself one order: open the laptop, do one small thing, it doesn't have to be good. And almost every time — ten minutes in, my head cools off, the work pulls me along, and the "motivation" I sat waiting for all morning suddenly turns up. It never arrives first. It always arrives after. Like someone who'll only join in once they see the game has already started.
+
+---
+
+So if you're lying under the blanket this morning too, listening to your brain read out a long list of very reasonable reasons to skip, let me say it plainly:
+
+You don't have to like it. You just have to do it.
+
+The people who finish aren't the ones always burning with energy — I've never met anyone like that in real life. The people who finish are the ones who sit down on exactly the day they feel the most fed up, the most tired, the least willing. They aren't healthier than you. They've just stopped asking their emotions whether they should be good to their own lives today.
+
+Throw off the blanket. Put your feet on the floor. The hardest thing you'll do all day, you just did.
+2b:T1228,
+This morning I woke up before my alarm, and the first thing my brain did wasn't to get up — it was to start negotiating.
+
+The sky was the flat grey that means rain. My head ached a little, probably because I went to bed too late. And honestly, yesterday wore me out — skipping one day won't bring the sky down. The blanket, in that moment, was warm in the most reasonable way. In about ten seconds my brain had built five or six excuses so sensible I almost thanked it.
+
+I lay there listening to the two sides argue. One whispered: "You're not well today, make up for it tomorrow." The other said just one dry line: "How many times have you said that?"
+
+And that's when a slightly brutal truth landed: what I'd been calling "I'm not motivated yet" was really just me sitting around waiting for a feeling that never shows up on time.
+
+---
+
+## Motivation is just an emotion, and emotions are moody
+
+I used to think motivation was a kind of fuel. Wait for the tank to fill, then start the engine. Dead wrong.
+
+Motivation isn't fuel. It's weather. Sunny one day, pouring the next, soaring in the morning and crashing by afternoon — and worst of all, it never warns you. That's how emotions are: they rise and fall with your sleep, with the last text you read, with the sugar in your blood. And yet I'd set the goals of my whole life on top of that wobbly ground.
+
+Waiting on motivation to live with discipline feels exactly like handing the steering wheel to a drunk. On some stretches he's sharp, foot on the gas, and I think my life is about to take off. Then comes a curve and he slumps over the wheel. And there I am in the back seat, dazed, asking why the car is driving into a ditch.
+
+There's one more thing few people mention. Our brains are, at heart, energy-saving machines. They were programmed back when our ancestors still worried about going hungry, so anything hard — studying, writing, sitting down to think something through — gets filed under "burns calories, avoid." Anything easy with an instant reward — scrolling the phone, opening a video, eating something sweet — it grabs immediately. My mind isn't lazy because I'm a bad person. It's lazy because it's doing exactly the job it was born to do: keep me safe and unstrained. The trouble is that "safe and unstrained" has never built a single life worth living.
+
+---
+
+## Don't ask "do I want to." Ask "does this need doing."
+
+My turning point started the day I stopped treating discipline as self-punishment.
+
+Discipline, I came to think, isn't gritting your teeth and torturing yourself. It's an agreement. A promise I made to myself while my head was still clear, so that the worn-out six-a.m. version of me doesn't get to renege.
+
+And the trick — if you can call it that — is this: stop negotiating with your brain.
+
+The moment I ask "Do I want to do this?" is the moment I've already lost. Because the answer is almost always no. Nobody wants to sit down to hard work while running on empty. That question is a door left open for every excuse to pour through.
+
+So I changed the question. I no longer ask "want to or not." I ask: "Does this need doing?" It does. Then I do it. Done. No committee, no vote, no consulting my feelings.
+
+<KeyTakeaway label="What I learned" tone="terracotta">
+Action creates inspiration, not the other way around. You don't sit down because you're inspired — you get inspired because you sat down. Do the first ugly five minutes, and inspiration comes shuffling along behind.
+</KeyTakeaway>
+
+I've tested this until I'm sick of it. On my most sluggish days, I just give myself one order: open the laptop, do one small thing, it doesn't have to be good. And almost every time — ten minutes in, my head cools off, the work pulls me along, and the "motivation" I sat waiting for all morning suddenly turns up. It never arrives first. It always arrives after. Like someone who'll only join in once they see the game has already started.
+
+---
+
+So if you're lying under the blanket this morning too, listening to your brain read out a long list of very reasonable reasons to skip, let me say it plainly:
+
+You don't have to like it. You just have to do it.
+
+The people who finish aren't the ones always burning with energy — I've never met anyone like that in real life. The people who finish are the ones who sit down on exactly the day they feel the most fed up, the most tired, the least willing. They aren't healthier than you. They've just stopped asking their emotions whether they should be good to their own lives today.
+
+Throw off the blanket. Put your feet on the floor. The hardest thing you'll do all day, you just did.
+2c:T165b,
+Sáng nay mình tỉnh trước khi chuông reo, và việc đầu tiên cái đầu mình làm không phải là dậy, mà là bắt đầu thương lượng.
+
+Trời âm âm như sắp mưa. Mình hơi nhức đầu, chắc tại tối qua thức hơi khuya. Mà hôm qua làm cũng đuối thật, nghỉ một bữa thì trời cũng chẳng sập. Cái chăn lúc đó ấm một cách rất có lý lẽ. Chỉ trong khoảng mười giây, bộ não mình dựng lên được năm sáu cái cớ nghe hợp tình hợp lý tới mức mình suýt gật đầu cảm ơn nó.
+
+Mình nằm im, nghe hai phía trong đầu cãi nhau. Một bên thì thầm: "Hôm nay người không khỏe, để mai làm bù." Bên kia chỉ nói đúng một câu, khô khốc: "Mày nói câu đó bao nhiêu lần rồi?"
+
+Và đó là lúc mình nhận ra một sự thật hơi phũ: cái mà bấy lâu mình gọi là "chưa có động lực", thật ra chỉ là mình đang ngồi đợi một cảm giác không bao giờ tới đúng hẹn.
+
+---
+
+## Động lực chỉ là một cảm xúc, mà cảm xúc thì hay đỏng đảnh
+
+Mình từng tưởng động lực là một loại nhiên liệu. Cứ chờ bình đầy rồi mới khởi động. Sai bét.
+
+Động lực không phải nhiên liệu. Nó là thời tiết. Hôm nắng hôm mưa, sáng hứng khởi chiều tụt dốc, và tệ nhất là nó chẳng thèm báo trước. Cảm xúc vốn vậy — nó lên xuống theo giấc ngủ, theo cái tin nhắn vừa đọc, theo lượng đường trong máu. Vậy mà mình lại đem cả mục tiêu cả đời mình đặt lên cái nền chông chênh đó.
+
+Trông chờ vào động lực để sống kỷ luật, mình thấy nó giống y như giao tay lái xe cho một gã say. Có những đoạn hắn tỉnh, đạp ga ngon lành, mình tưởng đời mình sắp bay. Rồi tới khúc cua, hắn gục xuống vô-lăng. Và mình thì đang ngồi ghế sau, ngơ ngác hỏi tại sao xe lại lao xuống ruộng.
+
+Còn một chuyện nữa ít ai nói. Bộ não của tụi mình, về bản chất, là một cỗ máy tiết kiệm năng lượng. Nó được lập trình từ thời tổ tiên còn lo cái đói, nên việc gì khó — học, viết, ngồi vào bàn nghĩ cho ra hồn — nó đều xếp vào loại "tốn calo, nên né". Việc gì dễ và cho phần thưởng tức thì — lướt điện thoại, mở một cái video, ăn một thứ gì đó ngọt — nó vồ lấy ngay. Cái đầu mình lười không phải vì mình tệ. Nó lười vì nó đang làm đúng công việc nó sinh ra để làm: giữ mình an toàn và đỡ mệt. Vấn đề là "an toàn và đỡ mệt" chưa xây nổi một cuộc đời nào ra hồn.
+
+---
+
+## Đừng hỏi "mình có muốn không". Hãy hỏi "việc này có cần không"
+
+Cái xoay chuyển của mình bắt đầu từ ngày mình thôi xem kỷ luật là chuyện ép xác.
+
+Kỷ luật, mình nghĩ lại, không phải là nghiến răng hành hạ bản thân. Nó là một thỏa thuận. Một lời mình đã hứa với chính mình từ lúc đầu óc còn tỉnh táo, để cái phiên bản mệt mỏi của mình lúc sáu giờ sáng không có quyền lật kèo.
+
+Và bí quyết — nếu gọi được là bí quyết — nằm ở chỗ: đừng thương lượng với bộ não nữa.
+
+Khoảnh khắc mình hỏi "Mình có muốn làm cái này không?" là khoảnh khắc mình đã thua. Vì câu trả lời gần như luôn là không. Chẳng ai muốn ngồi vào việc khó khi đang uể oải cả. Câu hỏi đó là cánh cửa mở sẵn cho mọi cái cớ tràn vào.
+
+Nên mình đổi câu hỏi. Mình không hỏi "muốn hay không" nữa. Mình hỏi: "Việc này có cần làm không?" Cần. Vậy thì làm. Hết. Không hội đồng, không bỏ phiếu, không xin ý kiến của cảm xúc.
+
+<KeyTakeaway label="Điều mình học được" tone="terracotta">
+Hành động tạo ra cảm hứng, chứ không phải ngược lại. Bạn không ngồi vào bàn vì có hứng — bạn có hứng vì đã ngồi vào bàn. Cứ làm năm phút đầu xấu xí đi, rồi cảm hứng mới lò dò đi theo sau.
+</KeyTakeaway>
+
+Cái này mình kiểm chứng tới phát chán. Mỗi lần ì ạch nhất, mình chỉ tự ra một mệnh lệnh: mở máy, làm đúng một việc nhỏ, không cần hay. Và gần như lần nào cũng vậy — làm được mười phút thì cái đầu nguội máy lại, dòng việc cuốn mình đi, và cái "động lực" mà mình ngồi đợi cả buổi sáng bỗng xuất hiện. Nó không bao giờ tới trước. Nó luôn tới sau. Như một đứa chỉ chịu nhập cuộc khi thấy mình đã bắt đầu chơi rồi.
+
+---
+
+Nên nếu sáng nay bạn cũng đang nằm trong chăn, nghe cái đầu đọc cho bạn một danh sách dài những lý do rất hợp lý để nghỉ, thì mình nói thẳng điều này:
+
+Bạn không cần phải thích nó. Bạn chỉ cần làm nó.
+
+Người về đích không phải là người lúc nào cũng hừng hực khí thế — mình chưa gặp ai như vậy ngoài đời thật cả. Người về đích là người vẫn ngồi vào bàn đúng cái hôm họ chán nhất, mệt nhất, ít muốn nhất. Họ không khỏe hơn bạn. Họ chỉ thôi không đi hỏi cảm xúc xem hôm nay có nên sống tử tế với đời mình hay không.
+
+Tung chăn ra. Đặt chân xuống đất. Cái khó nhất của cả ngày hôm nay, bạn vừa làm xong rồi đó.
+19:["$","$L23",null,{"projects":[],"latestPosts":[{"slug":"the-day-the-streak-broke","content":"$24","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$25","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$26","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$27","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$28","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$29","readingTime":"5 min read"}}},{"slug":"motivation-is-a-liar","content":"$2a","title":"Motivation Is a Liar","description":"Waiting on motivation feels exactly like handing the steering wheel to a drunk. I wrote this for the mornings when your brain reads you a long list of very reasonable reasons to skip — and on why stubborn discipline is the thing that actually saves you.","date":"2026-06-26","tags":["Discipline","Habits","Growth"],"readingTime":"5 min read","i18n":{"en":{"title":"Motivation Is a Liar","description":"Waiting on motivation feels exactly like handing the steering wheel to a drunk. I wrote this for the mornings when your brain reads you a long list of very reasonable reasons to skip — and on why stubborn discipline is the thing that actually saves you.","content":"$2b","readingTime":"5 min read"},"vi":{"title":"Động lực là một kẻ dối trá","description":"Trông chờ vào cảm hứng giống như giao tay lái cho một gã say. Mình viết bài này cho những buổi sáng mà cái đầu đọc cho mình cả tá lý do hợp lý để nghỉ — và vì sao kỷ luật lì lợm mới là thứ cứu mình.","content":"$2c","readingTime":"5 min read"}}}]}]
 1e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
-2c:I[27201,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/00_2onveyw6s8.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
+2d:I[27201,["/_next/static/chunks/0ke2nw8q6boi7.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
 1c:null
-20:[["$","title","0",{"children":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","1",{"name":"description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","link","2",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","3",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","meta","4",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","5",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","6",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://startup.id.vn/"}],["$","meta","11",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","12",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","13",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","14",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","15",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","16",{"property":"og:image:type","content":"image/png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","20",{"property":"og:type","content":"profile"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","23",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","24",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","25",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","link","26",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","27",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","28",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L2c","29",{}]]
+20:[["$","title","0",{"children":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","1",{"name":"description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","link","2",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","3",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","meta","4",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","5",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","6",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://startup.id.vn/"}],["$","meta","11",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","12",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","13",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","14",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","15",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","16",{"property":"og:image:type","content":"image/png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","20",{"property":"og:type","content":"profile"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","23",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","24",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","25",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","link","26",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","27",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","28",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L2d","29",{}]]
