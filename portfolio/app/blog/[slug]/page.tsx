@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, CalendarDays, ChevronRight, Clock3 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { components } from "@/components/mdx/MDXComponents";
@@ -13,6 +13,7 @@ import { Metadata } from "next";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { ViewCounter } from "@/components/blog/ViewCounter";
 import { ArticleI18n } from "@/components/blog/ArticleI18n";
+import { ArticleJsonLd } from "@/components/blog/ArticleJsonLd";
 import { LocaleText } from "@/components/blog/LocaleText";
 import { TagLabel } from "@/components/blog/TagLabel";
 import { LocalDate } from "@/components/blog/LocalDate";
@@ -44,18 +45,57 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
   if (!post) return {};
 
+  // The blog's audience is primarily Vietnamese, so lead the page metadata with
+  // the Vietnamese title/description when a translation exists. The <title> and
+  // meta description are the strongest on-page relevance signals, so this makes
+  // posts far easier to surface for Vietnamese searches — the English body still
+  // lives in the same HTML for English readers.
+  const vi = post.i18n?.vi;
+  const title = vi?.title ?? post.title;
+  const description = vi?.description ?? post.description;
+
+  // Keep the English title as a keyword alongside the post's tags so the page
+  // stays relevant for searches in either language.
+  const keywords = Array.from(
+    new Set([...(post.tags ?? []), title, post.title].filter(Boolean))
+  ) as string[];
+
+  // Every post gets a preview image: its own frontmatter image if set, else the
+  // per-post card auto-generated at build time (scripts/generate-og.mjs).
+  const ogImage = post.image || `${SITE_CONFIG.url}/og/blog/${slug}.png`;
+
   return {
-    title: post.title,
-    description: post.description,
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: `/blog/${slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.description,
+      title,
+      description,
       type: "article",
+      locale: "vi_VN",
+      alternateLocale: ["en_US"],
+      publishedTime: post.date as string,
+      authors: [SITE_CONFIG.fullName],
       url: `${SITE_CONFIG.url}/blog/${slug}`,
-      images: post.image ? [{ url: post.image }] : undefined,
+      images: [
+        {
+          url: ogImage,
+          secureUrl: ogImage,
+          width: 1200,
+          height: 630,
+          type: "image/png",
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [{ url: ogImage, alt: title }],
     },
   };
 }
@@ -66,10 +106,19 @@ export default async function BlogPostPage({ params }: PostPageProps) {
 
   if (!post) notFound();
 
+  // Surface the most topically-related articles: rank by how many tags they
+  // share with this post (strongest overlap first), keeping the date order
+  // from getAllPosts as the tie-breaker. Falls back to nothing when unrelated.
   const allPosts = await getAllPosts("blog");
   const relatedPosts = allPosts
-    .filter((p) => p.slug !== slug && p.tags?.some((t: string) => post.tags?.includes(t)))
-    .slice(0, 2);
+    .map((p) => ({
+      post: p,
+      shared: (p.tags ?? []).filter((t: string) => post.tags?.includes(t)).length,
+    }))
+    .filter(({ post: p, shared }) => p.slug !== slug && shared > 0)
+    .sort((a, b) => b.shared - a.shared)
+    .slice(0, 3)
+    .map(({ post: p }) => p);
 
   // Compile every available locale's body up front so the client can switch
   // language instantly. English ("en") is always present as the fallback.
@@ -82,122 +131,145 @@ export default async function BlogPostPage({ params }: PostPageProps) {
     ])
   );
 
+  const ogImage = post.image || `${SITE_CONFIG.url}/og/blog/${slug}.png`;
+
+  // Mirror the VI-led page metadata in the structured data so the headline Google
+  // reads matches the <title> it shows — consistent signals for VN searches.
+  const viMeta = post.i18n?.vi;
+
   return (
     <>
-      <Container className="py-12 sm:py-16 lg:py-20">
-        <div className="relative mx-auto max-w-[55rem]">
-
-          {/* Marginalia — the table of contents sits in the left gutter on wide
-              screens, like pencilled notes in the margin of a book. */}
-          <aside className="pointer-events-none absolute right-full top-0 hidden h-full pr-10 xl:block">
-            <div className="pointer-events-auto sticky top-28 w-52">
+      <ArticleJsonLd
+        slug={slug}
+        title={viMeta?.title ?? post.title}
+        description={viMeta?.description ?? post.description}
+        date={post.date as string}
+        tags={post.tags}
+        image={ogImage}
+        lang={viMeta ? "vi" : "en"}
+      />
+      <Container className="py-10 sm:py-14 lg:py-16">
+        <div className="blog-article-shell">
+          <aside className="blog-article-toc" aria-label="Mục lục bài viết">
+            <div className="blog-article-toc-inner">
               <TableOfContents />
             </div>
           </aside>
 
-          {/* Back to the shelf */}
-          <FadeIn>
-            <Link
-              href="/blog"
-              className="group mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <ArrowLeft size={15} className="transition-transform group-hover:-translate-x-0.5" />
-              <T k="blogPage.back_to_all" />
-            </Link>
-          </FadeIn>
+          <div className="blog-article-main mx-auto max-w-[48rem]">
+            <FadeIn>
+              <Link
+                href="/blog"
+                className="group mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-0.5" />
+                <T k="blogPage.back_to_all" />
+              </Link>
+            </FadeIn>
 
-          {/* The printed page — a warm paper sheet resting on the desk */}
-          <FadeIn
-            delay={0.05}
-            className="book-page px-6 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20"
-          >
-            {/* Frontispiece — centred like a book's title page */}
-            <header className="mx-auto max-w-2xl text-center">
-              {post.tags?.[0] && (
-                <p className="book-kicker mb-6">
-                  <TagLabel tag={post.tags[0]} />
+            <FadeIn delay={0.05} className="book-page">
+              <header className="border-b border-[var(--rule-soft)] pb-10 text-center sm:pb-12">
+                {post.tags?.[0] && (
+                  <p className="book-kicker mb-5">
+                    <TagLabel tag={post.tags[0]} />
+                  </p>
+                )}
+
+                <h1 className="book-title text-4xl sm:text-5xl lg:text-6xl">
+                  <LocaleText map={localeMap(post, "title")} />
+                </h1>
+
+                <p className="book-lead mx-auto mt-6 max-w-[42rem] text-balance text-[1.14rem] sm:text-[1.24rem]">
+                  <LocaleText map={localeMap(post, "description")} />
                 </p>
+
+                <div className="mx-auto mt-8 flex max-w-[42rem] flex-col items-center gap-4">
+                  <p className="book-byline text-sm leading-none">
+                    Nguyễn Thị Yến Nhi
+                  </p>
+                  <p className="book-meta flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.72rem]">
+                    <time className="inline-flex items-center gap-1.5" dateTime={post.date as string}>
+                      <CalendarDays size={14} />
+                      <LocalDate date={post.date as string} />
+                    </time>
+                    <span className="opacity-35">/</span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock3 size={14} />
+                      {post.readingTime}
+                    </span>
+                    <span className="opacity-35">/</span>
+                    <ViewCounter slug={slug} />
+                  </p>
+                </div>
+              </header>
+
+              {post.image && (
+                <div className="relative mt-10 aspect-video overflow-hidden rounded-md border border-border/50">
+                  <Image src={post.image} alt={post.title} fill className="object-cover" priority />
+                </div>
               )}
 
-              <h1 className="book-title text-[clamp(2rem,1.1rem+3vw,3rem)]">
-                <LocaleText map={localeMap(post, "title")} />
-              </h1>
-
-              <div className="mt-8 flex flex-col items-center gap-4">
-                <span className="book-rule w-12" />
-                <p className="book-byline text-[1.4rem] leading-none">
-                  Nguyễn Thị Yến Nhi
-                </p>
-                <p className="book-meta flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[0.7rem] uppercase">
-                  <time dateTime={post.date as string}>
-                    <LocalDate date={post.date as string} />
-                  </time>
-                  <span className="opacity-40">·</span>
-                  <span>{post.readingTime}</span>
-                  <span className="opacity-40">·</span>
-                  <ViewCounter slug={slug} />
-                </p>
-              </div>
-
-              <p className="book-lead mx-auto mt-8 max-w-xl text-balance text-lg">
-                <LocaleText map={localeMap(post, "description")} />
-              </p>
-            </header>
-
-            {/* A quiet flourish before the story opens */}
-            <div className="mx-auto my-12 flex max-w-2xl items-center gap-4">
-              <span className="book-rule flex-1" />
-              <span className="book-endmark text-sm">❦</span>
-              <span className="book-rule flex-1" />
-            </div>
-
-            {/* Cover plate, when the post carries one */}
-            {post.image && (
-              <div className="relative mx-auto mb-12 aspect-video max-w-2xl overflow-hidden rounded-[2px] border border-border/40">
-                <Image src={post.image} alt={post.title} fill className="object-cover" priority />
-              </div>
-            )}
-
-            {/* The article body — serif prose with drop cap & pull-quotes */}
-            <ArticleI18n bodies={bodies} />
-
-            {/* End mark — closing the book */}
-            <div className="book-endmark mt-16 text-center text-base">❦ ❦ ❦</div>
-          </FadeIn>
-
-          {/* On the same shelf — related reads, back on the desk */}
-          {relatedPosts.length > 0 && (
-            <FadeIn className="mx-auto mt-14 max-w-2xl">
-              <p className="mb-6 text-center text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground/60">
-                <T k="blogPage.more_to_read" />
-              </p>
-              <div className="grid gap-5 sm:grid-cols-2">
-                {relatedPosts.map((related) => (
-                  <Link
-                    key={related.slug}
-                    href={`/blog/${related.slug}`}
-                    className="group block rounded-lg border border-border/50 bg-card/40 p-5 transition-colors hover:border-border hover:bg-secondary/40"
-                  >
-                    {related.tags?.[0] && (
-                      <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground/60">
-                        <TagLabel tag={related.tags[0]} />
-                      </span>
-                    )}
-                    <h4 className="mt-2 font-serif text-lg font-medium leading-snug text-foreground transition-colors group-hover:text-primary">
-                      <LocaleText map={localeMap(related, "title")} />
-                    </h4>
-                    <span className="mt-3 flex items-center gap-1 text-xs text-muted-foreground/70">
-                      <LocalDate date={related.date} />
-                      <ChevronRight size={12} className="transition-transform group-hover:translate-x-0.5" />
-                    </span>
-                  </Link>
-                ))}
+              <div className="mt-12 sm:mt-14">
+                <ArticleI18n bodies={bodies} />
               </div>
             </FadeIn>
-          )}
+
+            {post.tags && post.tags.length > 0 && (
+              <FadeIn className="mt-16 border-t border-border/50 pt-8">
+                <p className="mb-3 text-[11px] font-semibold uppercase text-muted-foreground/60">
+                  <T k="blogPage.topics" />
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <Link
+                      key={tag}
+                      href={`/blog/?tag=${encodeURIComponent(tag)}`}
+                      className="rounded-full border border-border/60 px-3.5 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+                    >
+                      <TagLabel tag={tag} />
+                    </Link>
+                  ))}
+                </div>
+              </FadeIn>
+            )}
+
+            {relatedPosts.length > 0 && (
+              <FadeIn className="mt-12 border-t border-border/50 pt-8">
+                <p className="mb-2 text-[11px] font-semibold uppercase text-muted-foreground/60">
+                  <T k="blogPage.more_to_read" />
+                </p>
+                <div>
+                  {relatedPosts.map((related) => (
+                    <Link
+                      key={related.slug}
+                      href={`/blog/${related.slug}`}
+                      className="group flex items-start justify-between gap-5 border-b border-border/40 py-5 transition-colors hover:border-primary/25"
+                    >
+                      <span className="min-w-0">
+                        {related.tags?.[0] && (
+                          <span className="text-[10px] font-medium uppercase text-muted-foreground/60">
+                            <TagLabel tag={related.tags[0]} />
+                          </span>
+                        )}
+                        <span className="mt-1 block text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-primary">
+                          <LocaleText map={localeMap(related, "title")} />
+                        </span>
+                        <span className="mt-2 block text-xs text-muted-foreground/70">
+                          <LocalDate date={related.date} />
+                        </span>
+                      </span>
+                      <ChevronRight
+                        size={17}
+                        className="mt-1 shrink-0 text-muted-foreground/45 transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      />
+                    </Link>
+                  ))}
+                </div>
+              </FadeIn>
+            )}
+          </div>
         </div>
       </Container>
     </>
   );
 }
-
