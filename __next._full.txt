@@ -9,7 +9,7 @@
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-26"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0~ylxvskyt_-t.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0u_263h754por.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0wg8bdxe_liib.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"PoI9ToHCmkhE1Llf4CB2h"}
+2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-27"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0~ylxvskyt_-t.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0u_263h754por.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0wg8bdxe_liib.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"3mobiw-Eh74yVi3PFhiqH"}
 c:I[31344,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
 d:I[87236,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
 e:I[64844,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"RouteTextPalette"]
@@ -302,157 +302,151 @@ Mình hay nghe người ta nói về lãi kép trong tiền bạc — bỏ vào 
 Nên nếu hôm nay bạn cũng đang nhìn một cuốn sổ trắng trơn và định buông xuôi, mình chỉ muốn nói: đừng đặt lại mười mục tiêu hoành tráng nữa. Chọn một việc thôi, rồi làm nó nhỏ xíu lại, nhỏ đến mức không thể nào thất bại.
 
 Rồi cứ làm. Dù nó có vớ vẩn, vụn vặt đến đâu. Vì một việc nhỏ làm đều mỗi ngày, lâu dần, sẽ âm thầm vượt qua mọi kế hoạch vĩ đại mà bạn chỉ giữ được đúng ba ngày.
-2a:T1228,
-This morning I woke up before my alarm, and the first thing my brain did wasn't to get up — it was to start negotiating.
+2a:T103d,
+Two in the morning, and down on the street there were still car horns. One of them held a long note, then another answered back, like they were arguing in the dark. I lay in bed, earplugs in, pillow pressed over my head, and that sound still slipped through, lodging right in the most tired part of me.
 
-The sky was the flat grey that means rain. My head ached a little, probably because I went to bed too late. And honestly, yesterday wore me out — skipping one day won't bring the sky down. The blanket, in that moment, was warm in the most reasonable way. In about ten seconds my brain had built five or six excuses so sensible I almost thanked it.
+That night I couldn't sleep. Like so many nights before it.
 
-I lay there listening to the two sides argue. One whispered: "You're not well today, make up for it tomorrow." The other said just one dry line: "How many times have you said that?"
-
-And that's when a slightly brutal truth landed: what I'd been calling "I'm not motivated yet" was really just me sitting around waiting for a feeling that never shows up on time.
+I'd only moved to this big city a little over a year ago. And I hated it. Hated how every morning the roads were jammed solid, exhaust in my face, everyone in a rush, everyone honking as if honking would make the street widen on its own. Hated the feeling of being tiny, lost among a few million people where no one knew who I was.
 
 ---
 
-## Motivation is just an emotion, and emotions are moody
+## I used to collect reasons to hate it
 
-I used to think motivation was a kind of fuel. Wait for the tank to fill, then start the engine. Dead wrong.
+Back then I did something pretty toxic: I gathered reasons to hate this place.
 
-Motivation isn't fuel. It's weather. Sunny one day, pouring the next, soaring in the morning and crashing by afternoon — and worst of all, it never warns you. That's how emotions are: they rise and fall with your sleep, with the last text you read, with the sugar in your blood. And yet I'd set the goals of my whole life on top of that wobbly ground.
+The horns at midnight were a reason. The expensive rent was a reason. An afternoon rooted in a sea of motorbikes, sweat soaking the back of my shirt, was a reason. I'd come home, shut the door, put my headphones on loud to drown out the street, and tell myself: someday I'll leave here, go somewhere truly quiet, and then I'll be fine.
 
-Waiting on motivation to live with discipline feels exactly like handing the steering wheel to a drunk. On some stretches he's sharp, foot on the gas, and I think my life is about to take off. Then comes a curve and he slumps over the wheel. And there I am in the back seat, dazed, asking why the car is driving into a ditch.
+I lived like someone just temporarily staying inside her own life. Always waiting for another place, another time, to start feeling okay. And this loud present, I just wanted to plug my ears and get through it.
 
-There's one more thing few people mention. Our brains are, at heart, energy-saving machines. They were programmed back when our ancestors still worried about going hungry, so anything hard — studying, writing, sitting down to think something through — gets filed under "burns calories, avoid." Anything easy with an instant reward — scrolling the phone, opening a video, eating something sweet — it grabs immediately. My mind isn't lazy because I'm a bad person. It's lazy because it's doing exactly the job it was born to do: keep me safe and unstrained. The trouble is that "safe and unstrained" has never built a single life worth living.
+It's exhausting, you know. Not the body kind of tired. The tired of someone who fights the place she's standing in, every single day.
 
 ---
 
-## Don't ask "do I want to." Ask "does this need doing."
+## The night I stood at the window
 
-My turning point started the day I stopped treating discipline as self-punishment.
+Then one night, sleepless again, I gave up on the bed. I went and stood at the window.
 
-Discipline, I came to think, isn't gritting your teeth and torturing yourself. It's an agreement. A promise I made to myself while my head was still clear, so that the worn-out six-a.m. version of me doesn't get to renege.
+My floor isn't very high, just enough to see the street below. And I just stood there, looking. A late-night motorbike-taxi driver waiting for a fare under a tree, his phone glowing on his face. A small noodle stall still lit, two people eating late, probably just off a shift. A taxi pulling up, someone stepping out, holding a bouquet. The horns still sounded somewhere, but this time I didn't feel them stabbing my ears.
 
-And the trick — if you can call it that — is this: stop negotiating with your brain.
+And suddenly I understood something strange. The noise I'd hated all this time — it wasn't noise. It was the sound of a few million people living. Coming home late from work. Waiting for one more ride to earn a little extra. Eating a late meal after a long day. Returning to someone, arms full of flowers.
 
-The moment I ask "Do I want to do this?" is the moment I've already lost. Because the answer is almost always no. Nobody wants to sit down to hard work while running on empty. That question is a door left open for every excuse to pour through.
+> What I thought was noise wrecking my sleep turned out to be the heartbeat of a city that never stops breathing. And me, standing here, was one of its beats too.
 
-So I changed the question. I no longer ask "want to or not." I ask: "Does this need doing?" It does. Then I do it. Done. No committee, no vote, no consulting my feelings.
+I don't know how to put it right. It's just that in that moment, I stopped seeing myself as an outsider the city was bothering. I saw that I belonged to it. That driver, those two people eating late, and me — we were all just trying to live, at the same time, under the same sky full of lights.
 
-<KeyTakeaway label="What I learned" tone="terracotta">
-Action creates inspiration, not the other way around. You don't sit down because you're inspired — you get inspired because you sat down. Do the first ugly five minutes, and inspiration comes shuffling along behind.
+<KeyTakeaway label="What I wrote down that night" tone="sage">
+Some things you don't need to change. You only need to change where you stand to look at them. The same car horn — one night it's torture, another night it's proof you were never alone.
 </KeyTakeaway>
 
-I've tested this until I'm sick of it. On my most sluggish days, I just give myself one order: open the laptop, do one small thing, it doesn't have to be good. And almost every time — ten minutes in, my head cools off, the work pulls me along, and the "motivation" I sat waiting for all morning suddenly turns up. It never arrives first. It always arrives after. Like someone who'll only join in once they see the game has already started.
+---
+
+The next morning I still went out, still hit the traffic, still heard the horns. The city hadn't softened at all. It was exactly the same.
+
+Only I was different. I stopped counting reasons to hate it. I started noticing the café with the owner who always smiles, the row of trees on the street I take, the way late sun pours gold over the old walls. Those things had always been there. I'd just been too busy plugging my ears to hear them.
+
+I'm not telling you this to say you should love wherever you live. Maybe the place you're in really doesn't fit you, and leaving is the right thing. I get that.
+
+I'm just wondering, and I want you to ask yourself too: how many things in your life are you hating, enduring, waiting to be over — that actually, if you'd stand still one night and really look, you'd find have been living alongside you, for you, the whole time?
+
+Tonight, if some car horn drifts up, I won't plug my ears anymore. I'll lie there and listen. And know that out there, life is still running, warm and stubborn, even while I sleep.
+2b:T103d,
+Two in the morning, and down on the street there were still car horns. One of them held a long note, then another answered back, like they were arguing in the dark. I lay in bed, earplugs in, pillow pressed over my head, and that sound still slipped through, lodging right in the most tired part of me.
+
+That night I couldn't sleep. Like so many nights before it.
+
+I'd only moved to this big city a little over a year ago. And I hated it. Hated how every morning the roads were jammed solid, exhaust in my face, everyone in a rush, everyone honking as if honking would make the street widen on its own. Hated the feeling of being tiny, lost among a few million people where no one knew who I was.
 
 ---
 
-So if you're lying under the blanket this morning too, listening to your brain read out a long list of very reasonable reasons to skip, let me say it plainly:
+## I used to collect reasons to hate it
 
-You don't have to like it. You just have to do it.
+Back then I did something pretty toxic: I gathered reasons to hate this place.
 
-The people who finish aren't the ones always burning with energy — I've never met anyone like that in real life. The people who finish are the ones who sit down on exactly the day they feel the most fed up, the most tired, the least willing. They aren't healthier than you. They've just stopped asking their emotions whether they should be good to their own lives today.
+The horns at midnight were a reason. The expensive rent was a reason. An afternoon rooted in a sea of motorbikes, sweat soaking the back of my shirt, was a reason. I'd come home, shut the door, put my headphones on loud to drown out the street, and tell myself: someday I'll leave here, go somewhere truly quiet, and then I'll be fine.
 
-Throw off the blanket. Put your feet on the floor. The hardest thing you'll do all day, you just did.
-2b:T1228,
-This morning I woke up before my alarm, and the first thing my brain did wasn't to get up — it was to start negotiating.
+I lived like someone just temporarily staying inside her own life. Always waiting for another place, another time, to start feeling okay. And this loud present, I just wanted to plug my ears and get through it.
 
-The sky was the flat grey that means rain. My head ached a little, probably because I went to bed too late. And honestly, yesterday wore me out — skipping one day won't bring the sky down. The blanket, in that moment, was warm in the most reasonable way. In about ten seconds my brain had built five or six excuses so sensible I almost thanked it.
-
-I lay there listening to the two sides argue. One whispered: "You're not well today, make up for it tomorrow." The other said just one dry line: "How many times have you said that?"
-
-And that's when a slightly brutal truth landed: what I'd been calling "I'm not motivated yet" was really just me sitting around waiting for a feeling that never shows up on time.
+It's exhausting, you know. Not the body kind of tired. The tired of someone who fights the place she's standing in, every single day.
 
 ---
 
-## Motivation is just an emotion, and emotions are moody
+## The night I stood at the window
 
-I used to think motivation was a kind of fuel. Wait for the tank to fill, then start the engine. Dead wrong.
+Then one night, sleepless again, I gave up on the bed. I went and stood at the window.
 
-Motivation isn't fuel. It's weather. Sunny one day, pouring the next, soaring in the morning and crashing by afternoon — and worst of all, it never warns you. That's how emotions are: they rise and fall with your sleep, with the last text you read, with the sugar in your blood. And yet I'd set the goals of my whole life on top of that wobbly ground.
+My floor isn't very high, just enough to see the street below. And I just stood there, looking. A late-night motorbike-taxi driver waiting for a fare under a tree, his phone glowing on his face. A small noodle stall still lit, two people eating late, probably just off a shift. A taxi pulling up, someone stepping out, holding a bouquet. The horns still sounded somewhere, but this time I didn't feel them stabbing my ears.
 
-Waiting on motivation to live with discipline feels exactly like handing the steering wheel to a drunk. On some stretches he's sharp, foot on the gas, and I think my life is about to take off. Then comes a curve and he slumps over the wheel. And there I am in the back seat, dazed, asking why the car is driving into a ditch.
+And suddenly I understood something strange. The noise I'd hated all this time — it wasn't noise. It was the sound of a few million people living. Coming home late from work. Waiting for one more ride to earn a little extra. Eating a late meal after a long day. Returning to someone, arms full of flowers.
 
-There's one more thing few people mention. Our brains are, at heart, energy-saving machines. They were programmed back when our ancestors still worried about going hungry, so anything hard — studying, writing, sitting down to think something through — gets filed under "burns calories, avoid." Anything easy with an instant reward — scrolling the phone, opening a video, eating something sweet — it grabs immediately. My mind isn't lazy because I'm a bad person. It's lazy because it's doing exactly the job it was born to do: keep me safe and unstrained. The trouble is that "safe and unstrained" has never built a single life worth living.
+> What I thought was noise wrecking my sleep turned out to be the heartbeat of a city that never stops breathing. And me, standing here, was one of its beats too.
 
----
+I don't know how to put it right. It's just that in that moment, I stopped seeing myself as an outsider the city was bothering. I saw that I belonged to it. That driver, those two people eating late, and me — we were all just trying to live, at the same time, under the same sky full of lights.
 
-## Don't ask "do I want to." Ask "does this need doing."
-
-My turning point started the day I stopped treating discipline as self-punishment.
-
-Discipline, I came to think, isn't gritting your teeth and torturing yourself. It's an agreement. A promise I made to myself while my head was still clear, so that the worn-out six-a.m. version of me doesn't get to renege.
-
-And the trick — if you can call it that — is this: stop negotiating with your brain.
-
-The moment I ask "Do I want to do this?" is the moment I've already lost. Because the answer is almost always no. Nobody wants to sit down to hard work while running on empty. That question is a door left open for every excuse to pour through.
-
-So I changed the question. I no longer ask "want to or not." I ask: "Does this need doing?" It does. Then I do it. Done. No committee, no vote, no consulting my feelings.
-
-<KeyTakeaway label="What I learned" tone="terracotta">
-Action creates inspiration, not the other way around. You don't sit down because you're inspired — you get inspired because you sat down. Do the first ugly five minutes, and inspiration comes shuffling along behind.
+<KeyTakeaway label="What I wrote down that night" tone="sage">
+Some things you don't need to change. You only need to change where you stand to look at them. The same car horn — one night it's torture, another night it's proof you were never alone.
 </KeyTakeaway>
 
-I've tested this until I'm sick of it. On my most sluggish days, I just give myself one order: open the laptop, do one small thing, it doesn't have to be good. And almost every time — ten minutes in, my head cools off, the work pulls me along, and the "motivation" I sat waiting for all morning suddenly turns up. It never arrives first. It always arrives after. Like someone who'll only join in once they see the game has already started.
+---
+
+The next morning I still went out, still hit the traffic, still heard the horns. The city hadn't softened at all. It was exactly the same.
+
+Only I was different. I stopped counting reasons to hate it. I started noticing the café with the owner who always smiles, the row of trees on the street I take, the way late sun pours gold over the old walls. Those things had always been there. I'd just been too busy plugging my ears to hear them.
+
+I'm not telling you this to say you should love wherever you live. Maybe the place you're in really doesn't fit you, and leaving is the right thing. I get that.
+
+I'm just wondering, and I want you to ask yourself too: how many things in your life are you hating, enduring, waiting to be over — that actually, if you'd stand still one night and really look, you'd find have been living alongside you, for you, the whole time?
+
+Tonight, if some car horn drifts up, I won't plug my ears anymore. I'll lie there and listen. And know that out there, life is still running, warm and stubborn, even while I sleep.
+2c:T146b,
+Hai giờ sáng, và dưới đường vẫn còn tiếng còi xe. Một chiếc nào đó bấm dài một hơi, rồi một chiếc khác đáp lại, như thể tụi nó đang cãi nhau giữa đêm. Mình nằm trên giường, nhét bông vào tai, kéo gối úp lên đầu, mà cái âm thanh đó vẫn lọt vào, ghim thẳng vào đúng chỗ mệt nhất trong người.
+
+Đêm đó mình không ngủ được. Như rất nhiều đêm trước đó.
+
+Mình mới lên thành phố lớn này được hơn một năm. Và mình ghét nó. Ghét cái cách sáng nào ra đường cũng kẹt cứng, khói xe phả vào mặt, ai cũng vội, ai cũng bấm còi như thể bấm thì đường sẽ tự giãn ra. Ghét luôn cái cảm giác mình bé tí xíu, lọt thỏm giữa mấy triệu con người mà chẳng ai biết mình là ai.
 
 ---
 
-So if you're lying under the blanket this morning too, listening to your brain read out a long list of very reasonable reasons to skip, let me say it plainly:
+## Mình từng đếm từng lý do để ghét
 
-You don't have to like it. You just have to do it.
+Hồi đó mình hay làm một việc khá tiêu cực: mình thu thập lý do để ghét nơi này.
 
-The people who finish aren't the ones always burning with energy — I've never met anyone like that in real life. The people who finish are the ones who sit down on exactly the day they feel the most fed up, the most tired, the least willing. They aren't healthier than you. They've just stopped asking their emotions whether they should be good to their own lives today.
+Cái còi xe lúc nửa đêm là một lý do. Tiền trọ đắt đỏ là một lý do. Buổi chiều đứng chôn chân giữa biển xe, mồ hôi ướt lưng áo, là một lý do. Mình về phòng, đóng cửa, đeo tai nghe thật to để át đi tiếng đường phố, và tự nhủ: ngày nào đó mình sẽ rời khỏi đây, về một nơi thật yên tĩnh, rồi mình sẽ ổn.
 
-Throw off the blanket. Put your feet on the floor. The hardest thing you'll do all day, you just did.
-2c:T165b,
-Sáng nay mình tỉnh trước khi chuông reo, và việc đầu tiên cái đầu mình làm không phải là dậy, mà là bắt đầu thương lượng.
+Mình sống như một người đang tạm trú trong chính cuộc đời mình. Lúc nào cũng chờ một nơi khác, một lúc khác, để bắt đầu thấy dễ chịu. Còn cái hiện tại ồn ào này thì mình chỉ muốn bịt tai lại cho qua.
 
-Trời âm âm như sắp mưa. Mình hơi nhức đầu, chắc tại tối qua thức hơi khuya. Mà hôm qua làm cũng đuối thật, nghỉ một bữa thì trời cũng chẳng sập. Cái chăn lúc đó ấm một cách rất có lý lẽ. Chỉ trong khoảng mười giây, bộ não mình dựng lên được năm sáu cái cớ nghe hợp tình hợp lý tới mức mình suýt gật đầu cảm ơn nó.
-
-Mình nằm im, nghe hai phía trong đầu cãi nhau. Một bên thì thầm: "Hôm nay người không khỏe, để mai làm bù." Bên kia chỉ nói đúng một câu, khô khốc: "Mày nói câu đó bao nhiêu lần rồi?"
-
-Và đó là lúc mình nhận ra một sự thật hơi phũ: cái mà bấy lâu mình gọi là "chưa có động lực", thật ra chỉ là mình đang ngồi đợi một cảm giác không bao giờ tới đúng hẹn.
+Mệt lắm, bạn biết không. Không phải cái mệt của cơ thể. Mà là cái mệt của một người ngày nào cũng chống lại nơi mình đang đứng.
 
 ---
 
-## Động lực chỉ là một cảm xúc, mà cảm xúc thì hay đỏng đảnh
+## Cái đêm mình đứng ở cửa sổ
 
-Mình từng tưởng động lực là một loại nhiên liệu. Cứ chờ bình đầy rồi mới khởi động. Sai bét.
+Rồi có một đêm, cũng không ngủ được, mình bỏ cuộc với cái giường. Mình ra đứng ở cửa sổ.
 
-Động lực không phải nhiên liệu. Nó là thời tiết. Hôm nắng hôm mưa, sáng hứng khởi chiều tụt dốc, và tệ nhất là nó chẳng thèm báo trước. Cảm xúc vốn vậy — nó lên xuống theo giấc ngủ, theo cái tin nhắn vừa đọc, theo lượng đường trong máu. Vậy mà mình lại đem cả mục tiêu cả đời mình đặt lên cái nền chông chênh đó.
+Tầng mình ở không cao lắm, đủ để nhìn xuống con đường. Và mình cứ đứng đó, nhìn. Một bác chạy xe ôm đêm đang đợi khách dưới gốc cây, ánh điện thoại hắt lên mặt. Một quán hủ tiếu gõ còn sáng đèn, có hai người ngồi ăn khuya, chắc vừa tan ca. Một chiếc taxi trờ tới, ai đó bước xuống, ôm một bó hoa. Tiếng còi xe vẫn vang lên đâu đó, nhưng lần này mình không thấy nó chọc vào tai nữa.
 
-Trông chờ vào động lực để sống kỷ luật, mình thấy nó giống y như giao tay lái xe cho một gã say. Có những đoạn hắn tỉnh, đạp ga ngon lành, mình tưởng đời mình sắp bay. Rồi tới khúc cua, hắn gục xuống vô-lăng. Và mình thì đang ngồi ghế sau, ngơ ngác hỏi tại sao xe lại lao xuống ruộng.
+Tự nhiên mình hiểu ra một điều rất lạ. Cái tiếng ồn mà mình ghét bấy lâu — nó không phải tiếng ồn. Nó là tiếng của mấy triệu con người đang sống. Đang đi làm về muộn. Đang đợi một cuốc xe để kiếm thêm chút tiền. Đang ăn một bữa khuya sau một ngày dài. Đang trở về với một ai đó, tay ôm hoa.
 
-Còn một chuyện nữa ít ai nói. Bộ não của tụi mình, về bản chất, là một cỗ máy tiết kiệm năng lượng. Nó được lập trình từ thời tổ tiên còn lo cái đói, nên việc gì khó — học, viết, ngồi vào bàn nghĩ cho ra hồn — nó đều xếp vào loại "tốn calo, nên né". Việc gì dễ và cho phần thưởng tức thì — lướt điện thoại, mở một cái video, ăn một thứ gì đó ngọt — nó vồ lấy ngay. Cái đầu mình lười không phải vì mình tệ. Nó lười vì nó đang làm đúng công việc nó sinh ra để làm: giữ mình an toàn và đỡ mệt. Vấn đề là "an toàn và đỡ mệt" chưa xây nổi một cuộc đời nào ra hồn.
+> Cái thứ mình tưởng là sự ồn ào phá giấc ngủ, hóa ra là nhịp đập của một thành phố không bao giờ ngừng thở. Và mình, đứng đây, cũng là một nhịp trong đó.
 
----
+Mình không biết tả sao cho đúng. Chỉ là cái khoảnh khắc đó, mình thôi thấy mình là kẻ ngoài cuộc đang bị thành phố làm phiền. Mình thấy mình thuộc về nó. Cái bác xe ôm kia, hai người ăn khuya kia, và mình — tụi mình đều đang cố sống, cùng một lúc, dưới cùng một bầu trời đầy đèn.
 
-## Đừng hỏi "mình có muốn không". Hãy hỏi "việc này có cần không"
-
-Cái xoay chuyển của mình bắt đầu từ ngày mình thôi xem kỷ luật là chuyện ép xác.
-
-Kỷ luật, mình nghĩ lại, không phải là nghiến răng hành hạ bản thân. Nó là một thỏa thuận. Một lời mình đã hứa với chính mình từ lúc đầu óc còn tỉnh táo, để cái phiên bản mệt mỏi của mình lúc sáu giờ sáng không có quyền lật kèo.
-
-Và bí quyết — nếu gọi được là bí quyết — nằm ở chỗ: đừng thương lượng với bộ não nữa.
-
-Khoảnh khắc mình hỏi "Mình có muốn làm cái này không?" là khoảnh khắc mình đã thua. Vì câu trả lời gần như luôn là không. Chẳng ai muốn ngồi vào việc khó khi đang uể oải cả. Câu hỏi đó là cánh cửa mở sẵn cho mọi cái cớ tràn vào.
-
-Nên mình đổi câu hỏi. Mình không hỏi "muốn hay không" nữa. Mình hỏi: "Việc này có cần làm không?" Cần. Vậy thì làm. Hết. Không hội đồng, không bỏ phiếu, không xin ý kiến của cảm xúc.
-
-<KeyTakeaway label="Điều mình học được" tone="terracotta">
-Hành động tạo ra cảm hứng, chứ không phải ngược lại. Bạn không ngồi vào bàn vì có hứng — bạn có hứng vì đã ngồi vào bàn. Cứ làm năm phút đầu xấu xí đi, rồi cảm hứng mới lò dò đi theo sau.
+<KeyTakeaway label="Mình ghi lại đêm đó" tone="sage">
+Có những thứ mình không cần thay đổi. Mình chỉ cần đổi cách đứng nhìn nó. Cùng một tiếng còi xe, một đêm là sự tra tấn, một đêm khác lại là bằng chứng rằng mình không hề cô đơn.
 </KeyTakeaway>
 
-Cái này mình kiểm chứng tới phát chán. Mỗi lần ì ạch nhất, mình chỉ tự ra một mệnh lệnh: mở máy, làm đúng một việc nhỏ, không cần hay. Và gần như lần nào cũng vậy — làm được mười phút thì cái đầu nguội máy lại, dòng việc cuốn mình đi, và cái "động lực" mà mình ngồi đợi cả buổi sáng bỗng xuất hiện. Nó không bao giờ tới trước. Nó luôn tới sau. Như một đứa chỉ chịu nhập cuộc khi thấy mình đã bắt đầu chơi rồi.
-
 ---
 
-Nên nếu sáng nay bạn cũng đang nằm trong chăn, nghe cái đầu đọc cho bạn một danh sách dài những lý do rất hợp lý để nghỉ, thì mình nói thẳng điều này:
+Sáng hôm sau mình vẫn ra đường, vẫn kẹt xe, vẫn nghe còi inh ỏi. Thành phố chẳng dịu đi chút nào. Nó vẫn y nguyên như vậy.
 
-Bạn không cần phải thích nó. Bạn chỉ cần làm nó.
+Chỉ có mình là khác. Mình thôi đếm lý do để ghét. Mình bắt đầu để ý tới quán cà phê có cô chủ hay cười, tới hàng cây trên con đường mình hay đi, tới cái cách nắng chiều đổ vàng lên mấy bức tường cũ. Những thứ đó vẫn luôn ở đó. Chỉ là trước giờ mình bận bịt tai, nên không nghe thấy.
 
-Người về đích không phải là người lúc nào cũng hừng hực khí thế — mình chưa gặp ai như vậy ngoài đời thật cả. Người về đích là người vẫn ngồi vào bàn đúng cái hôm họ chán nhất, mệt nhất, ít muốn nhất. Họ không khỏe hơn bạn. Họ chỉ thôi không đi hỏi cảm xúc xem hôm nay có nên sống tử tế với đời mình hay không.
+Mình kể bạn nghe chuyện này không phải để bảo bạn hãy yêu lấy nơi mình đang sống. Có khi nơi bạn đang ở thật sự không hợp với bạn, và rời đi mới là điều đúng. Mình hiểu mà.
 
-Tung chăn ra. Đặt chân xuống đất. Cái khó nhất của cả ngày hôm nay, bạn vừa làm xong rồi đó.
-19:["$","$L23",null,{"projects":[],"latestPosts":[{"slug":"the-day-the-streak-broke","content":"$24","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$25","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$26","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$27","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$28","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$29","readingTime":"5 min read"}}},{"slug":"motivation-is-a-liar","content":"$2a","title":"Motivation Is a Liar","description":"Waiting on motivation feels exactly like handing the steering wheel to a drunk. I wrote this for the mornings when your brain reads you a long list of very reasonable reasons to skip — and on why stubborn discipline is the thing that actually saves you.","date":"2026-06-26","tags":["Discipline","Habits","Growth"],"readingTime":"5 min read","i18n":{"en":{"title":"Motivation Is a Liar","description":"Waiting on motivation feels exactly like handing the steering wheel to a drunk. I wrote this for the mornings when your brain reads you a long list of very reasonable reasons to skip — and on why stubborn discipline is the thing that actually saves you.","content":"$2b","readingTime":"5 min read"},"vi":{"title":"Động lực là một kẻ dối trá","description":"Trông chờ vào cảm hứng giống như giao tay lái cho một gã say. Mình viết bài này cho những buổi sáng mà cái đầu đọc cho mình cả tá lý do hợp lý để nghỉ — và vì sao kỷ luật lì lợm mới là thứ cứu mình.","content":"$2c","readingTime":"5 min read"}}}]}]
+Mình chỉ tự hỏi, và muốn bạn cũng thử hỏi mình một câu: có bao nhiêu thứ trong đời mà mình đang ghét, đang chịu đựng, đang chờ cho nó qua đi — mà thật ra, nếu mình chịu đứng lại một đêm và nhìn cho kỹ, mình sẽ thấy nó vốn dĩ đang sống cùng mình, vì mình, suốt từ đầu?
+
+Tối nay nếu có tiếng còi xe nào đó vọng lên, mình sẽ không bịt tai nữa. Mình sẽ nằm nghe. Và biết rằng ngoài kia, cuộc đời vẫn đang chạy, ấm áp và bền bỉ, ngay cả khi mình đang ngủ.
+19:["$","$L23",null,{"projects":[],"latestPosts":[{"slug":"the-day-the-streak-broke","content":"$24","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$25","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$26","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$27","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$28","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$29","readingTime":"5 min read"}}},{"slug":"the-noise-i-learned-to-love","content":"$2a","title":"The Night I Stopped Hating the Horns","description":"Two in the morning, the car horns down on the street still wouldn't quit, and I hated this city with everything I had. Until one night I stood at the window and looked down.","date":"2026-06-27","tags":["Slow Living","Reflection","Mindfulness"],"readingTime":"4 min read","i18n":{"en":{"title":"The Night I Stopped Hating the Horns","description":"Two in the morning, the car horns down on the street still wouldn't quit, and I hated this city with everything I had. Until one night I stood at the window and looked down.","content":"$2b","readingTime":"4 min read"},"vi":{"title":"Đêm mình thôi ghét tiếng còi xe","description":"Hai giờ sáng, tiếng còi xe dưới đường vẫn chưa chịu tắt, và mình thì ghét cay ghét đắng cái thành phố này. Cho tới một đêm mình đứng ở cửa sổ và nhìn xuống.","content":"$2c","readingTime":"5 min read"}}}]}]
 1e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
 2d:I[27201,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
 1c:null
