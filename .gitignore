@@ -3,6 +3,16 @@ node_modules/
 
 # Reference / scratch — never commit
 saasfly-main/
+
+# Local tooling / agent scratch state — keep on the machine, never push
+.agent_context/
+.agents/
+.multica/
+.iworkflow/
+.claude/
+
+# personal writing-voice guide & local notes — local only, never push
+docs/
 tasks/
 task.md
 
@@ -34,6 +44,19 @@ favicon.ico
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+# Local environment variables — keep real analytics keys out of git.
+.env
+.env.*
+portfolio/.env
+portfolio/.env.*
+!portfolio/.env.example
+
+# Build-generated assets — recreated by the prebuild scripts (generate-og.mjs,
+# generate-tree.mjs) on every build/deploy, so they never belong in git.
+# After !portfolio/** so "last matching rule wins" keeps them excluded.
+portfolio/public/og/
+portfolio/public/mind-map/tree-*.webp
 
 # Private thesis deck — MUST stay ignored even after the portfolio re-include above.
 # Placed LAST so "last matching rule wins" keeps it excluded (confidential client data).
