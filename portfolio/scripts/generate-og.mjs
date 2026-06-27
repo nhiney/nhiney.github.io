@@ -62,17 +62,17 @@ const PALETTE = {
 const PAGE_CARDS = [
   {
     slug: "home",
-    label: "Portfolio",
-    title: "Nguyen Thi Yen Nhi",
-    subtitle: "Business Analyst",
+    label: "Nguyen Thi Yen Nhi",
+    title: "Business Analyst",
+    subtitle: "Tech-savvy · IT background",
     description:
-      "Computer Science background, product thinking, and clear specs that help teams move from business need to shipped software.",
-    chips: ["Requirements", "User Stories", "System Flows", "BPMN", "SQL"],
-    panelLines: ["Business context", "Clear specs", "Shipped systems"],
+      "I turn business needs into user stories, system flows, and clear specs — bridging stakeholders and engineering, backed by a Computer Science foundation.",
+    chips: ["User Stories", "BPMN 2.0", "Data Modeling", "Agile / Scrum", "SQL"],
+    footer: "Business Analysis · Data · Product",
     statLabel: "Focus",
     statValue: "BA",
     accent: PALETTE.blue,
-    accentAlt: PALETTE.coral,
+    accentAlt: PALETTE.violet,
   },
   {
     slug: "blog",
@@ -82,21 +82,22 @@ const PAGE_CARDS = [
     description:
       "Những ghi chép về tuổi trẻ, overthinking, tự trọng, trưởng thành và những bài học mình nhặt nhạnh trên đường đi.",
     chips: ["Reflection", "Slow living", "Healing", "Growth"],
-    panelLines: ["Tuổi trẻ", "Sống chậm", "Chữa lành"],
+    footer: "Personal essays · Slow living · Books",
     statLabel: "Essays",
-    statValue: "49+",
+    statValue: "60+",
     accent: PALETTE.rose,
     accentAlt: PALETTE.amber,
+    variant: "editorial",
   },
   {
     slug: "projects",
     label: "Case Studies",
-    title: "Projects that turn requirements into working systems",
+    title: "Product Case Studies",
     subtitle: "Product + Engineering",
     description:
       "Clinic booking, sports field management, English learning, and database security projects with real flows and implementation detail.",
     chips: ["Laravel", "Flutter", "ASP.NET MVC", "Oracle", "Firebase"],
-    panelLines: ["User flows", "System specs", "Delivery proof"],
+    footer: "Product flows · System design · Delivery",
     statLabel: "Built",
     statValue: "4 apps",
     accent: PALETTE.cyan,
@@ -110,7 +111,7 @@ const PAGE_CARDS = [
     description:
       "A focused record of coursework and credentials across software engineering, mobile development, databases, and application security.",
     chips: ["Software Engineering", "Mobile Dev", "Security", "Databases"],
-    panelLines: ["Verified skills", "Focused learning", "Technical base"],
+    footer: "Software · Mobile · Security",
     statLabel: "Status",
     statValue: "Verified",
     accent: PALETTE.violet,
@@ -124,7 +125,7 @@ const PAGE_CARDS = [
     description:
       "Education, projects, and strengths at the intersection of requirements, backend systems, secure databases, and product thinking.",
     chips: ["Business Analysis", "Backend", "Database Design", "Agile"],
-    panelLines: ["Profile signal", "Project evidence", "BA readiness"],
+    footer: "CV · Projects · Technical BA",
     statLabel: "Path",
     statValue: "CS",
     accent: PALETTE.emerald,
@@ -138,7 +139,7 @@ const PAGE_CARDS = [
     description:
       "The part that does not fit on a CV: how I think, what I build, how I work with ambiguity, and what keeps me improving.",
     chips: ["Product Mindset", "Execution", "Systems", "Learning"],
-    panelLines: ["Work story", "Process", "Principles"],
+    footer: "Principles · Process · Proof",
     statLabel: "Shipped",
     statValue: "Apps",
     accent: PALETTE.coral,
@@ -147,26 +148,27 @@ const PAGE_CARDS = [
   {
     slug: "books",
     label: "Library",
-    title: "A galaxy of books, notes, and reflections",
+    title: "Reading Library",
     subtitle: "Reading library",
     description:
       "Books I have read, ideas I keep returning to, and notes that turn reading into something I can actually use.",
     chips: ["Book notes", "Reflection", "Learning", "Mind map"],
-    panelLines: ["Book notes", "Key ideas", "Personal takeaways"],
+    footer: "Book notes · Reflection · Learning",
     statLabel: "Shelf",
     statValue: "Curated",
     accent: PALETTE.amber,
     accentAlt: PALETTE.rose,
+    variant: "editorial",
   },
   {
     slug: "mind-map",
     label: "Knowledge Garden",
-    title: "Ideas mapped from books, code, design, and life",
+    title: "Knowledge Garden",
     subtitle: "Mind map",
     description:
       "A visual knowledge garden that connects lessons, principles, and questions across the things I am learning.",
     chips: ["Books", "Code", "Design", "Life"],
-    panelLines: ["Connected ideas", "Learning paths", "Reusable notes"],
+    footer: "Books · Code · Design · Life",
     statLabel: "Map",
     statValue: "Notes",
     accent: PALETTE.emerald,
@@ -238,68 +240,66 @@ function chip(text, accent) {
       style: {
         display: "flex",
         alignItems: "center",
-        padding: "8px 14px",
-        borderRadius: "999px",
-        background: `${accent}12`,
-        border: `1px solid ${accent}35`,
-        color: PALETTE.charcoal,
-        fontSize: "15px",
+        justifyContent: "center",
+        height: "36px",
+        padding: "0 16px",
+        borderRadius: "7px",
+        background: `${accent}0f`,
+        border: `1px solid ${accent}28`,
+        color: "#334155",
+        fontSize: "14px",
         fontWeight: 700,
         whiteSpace: "nowrap",
       },
     },
-    truncate(text, 22),
+    truncate(text, 24),
   );
 }
 
-function dot(color) {
+function dot(color, size = 9) {
   return el("div", {
     style: {
       display: "flex",
-      width: "9px",
-      height: "9px",
+      width: `${size}px`,
+      height: `${size}px`,
       borderRadius: "50%",
       background: color,
     },
   });
 }
 
-function textureLines() {
-  return el(
-    "div",
-    {
-      style: {
-        display: "flex",
-        position: "absolute",
-        inset: 0,
-        opacity: 0.45,
-      },
-    },
-    Array.from({ length: 12 }).map((_, i) =>
-      el("div", {
-        style: {
-          display: "flex",
-          position: "absolute",
-          left: `${70 + i * 92}px`,
-          top: 0,
-          width: "1px",
-          height: "630px",
-          background: i % 3 === 0 ? "#e2e8f0" : "#edf1f6",
-        },
-      }),
-    ),
-  );
-}
-
-function brand({ accent, label }) {
+function brandPill({ accent }) {
   return el(
     "div",
     {
       style: {
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
-        width: "100%",
+        gap: "8px",
+        height: "38px",
+        padding: "0 14px",
+        borderRadius: "999px",
+        background: "rgba(255,255,255,0.82)",
+        border: "1px solid #e4ebf5",
+        boxShadow: `0 14px 34px ${accent}18`,
+        color: "#0f172a",
+        fontSize: "16px",
+        fontWeight: 800,
+      },
+    },
+    dot(accent),
+    SITE.name,
+  );
+}
+
+function topBrand({ accent }) {
+  return el(
+    "div",
+    {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: "13px",
       },
     },
     el(
@@ -308,73 +308,26 @@ function brand({ accent, label }) {
         style: {
           display: "flex",
           alignItems: "center",
-          gap: "12px",
+          justifyContent: "center",
+          width: "44px",
+          height: "44px",
+          borderRadius: "10px",
+          background: `linear-gradient(135deg, ${accent}, ${PALETTE.violet})`,
+          color: "#ffffff",
+          fontSize: "16px",
+          fontWeight: 900,
         },
       },
-      el(
-        "div",
-        {
-          style: {
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "48px",
-            height: "48px",
-            borderRadius: "14px",
-            background: PALETTE.ink,
-            color: "#ffffff",
-            fontSize: "17px",
-            fontWeight: 800,
-          },
-        },
-        "YN",
-      ),
-      el(
-        "div",
-        { style: { display: "flex", flexDirection: "column", gap: "2px" } },
-        el(
-          "div",
-          {
-            style: {
-              display: "flex",
-              fontSize: "18px",
-              fontWeight: 800,
-              color: PALETTE.ink,
-            },
-          },
-          SITE.name,
-        ),
-        el(
-          "div",
-          {
-            style: {
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              color: PALETTE.soft,
-              fontSize: "14px",
-              fontWeight: 700,
-            },
-          },
-          dot(accent),
-          label,
-        ),
-      ),
+      "YN",
     ),
     el(
       "div",
       {
         style: {
           display: "flex",
-          alignItems: "center",
-          gap: "10px",
-          padding: "10px 16px",
-          borderRadius: "999px",
-          border: `1px solid ${PALETTE.line}`,
-          color: PALETTE.muted,
-          background: "#ffffff",
+          color: "#52617a",
           fontSize: "15px",
-          fontWeight: 700,
+          fontWeight: 600,
         },
       },
       SITE.domain,
@@ -389,24 +342,27 @@ function statBox({ label, value, accent }) {
       style: {
         display: "flex",
         flexDirection: "column",
-        gap: "4px",
+        gap: "5px",
         alignItems: "flex-end",
-        padding: "18px 20px",
-        minWidth: "150px",
-        borderRadius: "18px",
-        border: `1px solid ${accent}35`,
-        background: `${accent}12`,
+        justifyContent: "center",
+        minWidth: "114px",
+        height: "60px",
+        padding: "0 16px",
+        borderRadius: "10px",
+        border: `1px solid ${accent}30`,
+        background: `${accent}10`,
       },
     },
     el(
       "div",
       {
         style: {
-          display: "flex",
-          color: accent,
-          fontSize: "12px",
+            display: "flex",
+            color: accent,
+          fontSize: "11px",
           fontWeight: 800,
           textTransform: "uppercase",
+          letterSpacing: "0.08em",
         },
       },
       label,
@@ -415,9 +371,9 @@ function statBox({ label, value, accent }) {
       "div",
       {
         style: {
-          display: "flex",
-          color: PALETTE.ink,
-          fontSize: "30px",
+            display: "flex",
+            color: PALETTE.ink,
+          fontSize: "24px",
           lineHeight: 1,
           fontWeight: 900,
         },
@@ -427,113 +383,47 @@ function statBox({ label, value, accent }) {
   );
 }
 
-function sidePanel({ subtitle, accent, accentAlt, lines }) {
-  const panelLines = lines?.length
-    ? lines.slice(0, 3)
-    : ["Clear signal", "Share-ready", "Built for context"];
-
-  return el(
-    "div",
-    {
-      style: {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        width: "280px",
-        height: "100%",
-        borderRadius: "26px",
-        background: PALETTE.ink,
-        color: "#ffffff",
-        padding: "28px",
-        overflow: "hidden",
-        position: "relative",
-      },
-    },
+function softWash({ accent, accentAlt }) {
+  return [
     el("div", {
       style: {
         display: "flex",
         position: "absolute",
-        left: "28px",
-        right: "28px",
-        top: "96px",
-        height: "1px",
-        background: "rgba(255,255,255,0.16)",
+        left: "-110px",
+        top: "-110px",
+        width: "410px",
+        height: "300px",
+        borderRadius: "999px",
+        background: `radial-gradient(circle at center, ${accent}22 0%, ${accent}0f 36%, rgba(255,255,255,0) 70%)`,
       },
     }),
     el("div", {
       style: {
         display: "flex",
         position: "absolute",
-        right: "-84px",
-        bottom: "-72px",
-        width: "220px",
-        height: "220px",
-        borderRadius: "50%",
-        background: accentAlt,
-        opacity: 0.28,
+        right: "-115px",
+        bottom: "-120px",
+        width: "390px",
+        height: "260px",
+        borderRadius: "999px",
+        background: `radial-gradient(circle at center, ${accentAlt}18 0%, ${accentAlt}0c 38%, rgba(255,255,255,0) 72%)`,
       },
     }),
-    el(
-      "div",
-      { style: { display: "flex", flexDirection: "column", gap: "10px" } },
-      el(
-        "div",
-        {
-          style: {
-            display: "flex",
-            width: "54px",
-            height: "8px",
-            borderRadius: "999px",
-            background: accent,
-          },
-        },
-      ),
-      el(
-        "div",
-        {
-          style: {
-            display: "flex",
-            fontSize: "24px",
-            fontWeight: 900,
-            lineHeight: 1.18,
-          },
-        },
-        subtitle,
-      ),
-    ),
-    el(
-      "div",
-      {
-        style: {
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px",
-          color: "rgba(255,255,255,0.76)",
-          fontSize: "18px",
-          lineHeight: 1.45,
-          fontWeight: 700,
-        },
-      },
-      ...panelLines.map((line) =>
-        el(
-          "div",
-          {
-            style: {
-              display: "flex",
-            },
-          },
-          truncate(line, 28),
-        ),
-      ),
-    ),
-  );
+  ];
 }
 
-function buildPageCard(config) {
-  const title = truncate(config.title, 96);
-  const description = truncate(config.description, 168);
+function socialCard(config, { article = false } = {}) {
   const accent = config.accent;
   const accentAlt = config.accentAlt ?? config.accent;
+  // Editorial cards (blog + books) borrow the "printed book" look of the reading
+  // page: warm paper stock + a serif headline. Portfolio cards stay clean sans.
+  const editorial = config.variant === "editorial";
+  const title = truncate(config.title, article ? 104 : 92);
+  const description = truncate(config.description, article ? 168 : 158);
+  const meta = article
+    ? `${config.label}${config.date ? ` · ${compactDate(config.date)}` : ""}`
+    : config.subtitle;
+  const footer = `${SITE.domain} · ${config.footer ?? "Business Analysis · Data · Product"}`;
 
   return el(
     "div",
@@ -542,189 +432,43 @@ function buildPageCard(config) {
         display: "flex",
         width: "1200px",
         height: "630px",
-        background: PALETTE.page,
+        background: "#edf3f9",
         fontFamily: "'OG Sans', Arial, sans-serif",
-        padding: "34px",
+        padding: "36px",
         position: "relative",
         overflow: "hidden",
       },
     },
-    textureLines(),
-    el(
-      "div",
-      {
-        style: {
-          display: "flex",
-          flex: 1,
-          gap: "28px",
-          padding: "30px",
-          borderRadius: "34px",
-          background: PALETTE.card,
-          border: `1px solid ${PALETTE.line}`,
-          boxShadow: "0 24px 70px rgba(15, 23, 42, 0.11)",
-          position: "relative",
-        },
-      },
-      el(
-        "div",
-        {
-          style: {
-            display: "flex",
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "space-between",
-            padding: "4px 10px 2px 4px",
-          },
-        },
-        brand({ accent, label: config.label }),
-        el(
-          "div",
-          { style: { display: "flex", flexDirection: "column", gap: "18px" } },
-          el(
-            "div",
-            {
-              style: {
-                display: "flex",
-                color: accent,
-                fontSize: "17px",
-                fontWeight: 900,
-                textTransform: "uppercase",
-              },
-            },
-            config.subtitle,
-          ),
-          el(
-            "div",
-            {
-              style: {
-                display: "flex",
-                color: PALETTE.ink,
-                fontSize: `${titleSize(title, 62)}px`,
-                lineHeight: 1.08,
-                fontWeight: 900,
-                maxWidth: "740px",
-              },
-            },
-            title,
-          ),
-          el(
-            "div",
-            {
-              style: {
-                display: "flex",
-                color: PALETTE.muted,
-                fontSize: "21px",
-                lineHeight: 1.48,
-                fontWeight: 600,
-                maxWidth: "760px",
-              },
-            },
-            description,
-          ),
-        ),
-        el(
-          "div",
-          {
-            style: {
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              gap: "20px",
-            },
-          },
-          el(
-            "div",
-            {
-              style: {
-                display: "flex",
-                gap: "9px",
-                flexWrap: "wrap",
-                maxWidth: "660px",
-              },
-            },
-            ...(config.chips ?? []).slice(0, 5).map((item) => chip(item, accent)),
-          ),
-          statBox({
-            label: config.statLabel,
-            value: config.statValue,
-            accent,
-          }),
-        ),
-      ),
-      sidePanel({ subtitle: config.subtitle, accent, accentAlt, lines: config.panelLines }),
-    ),
-  );
-}
-
-function buildArticleCard(config) {
-  const accent = config.accent ?? PALETTE.rose;
-  const accentAlt = config.accentAlt ?? PALETTE.amber;
-  const title = truncate(config.title, 98);
-  const description = truncate(config.description, 162);
-
-  return el(
-    "div",
-    {
-      style: {
-        display: "flex",
-        width: "1200px",
-        height: "630px",
-        background: PALETTE.cream,
-        fontFamily: "'OG Sans', Arial, sans-serif",
-        padding: "34px",
-        position: "relative",
-        overflow: "hidden",
-      },
-    },
-    el("div", {
-      style: {
-        display: "flex",
-        position: "absolute",
-        left: "34px",
-        right: "34px",
-        top: "34px",
-        height: "8px",
-        borderRadius: "999px",
-        background: accent,
-      },
-    }),
     el(
       "div",
       {
         style: {
           display: "flex",
           flexDirection: "column",
-          flex: 1,
+          justifyContent: "space-between",
+          width: "1128px",
+          height: "558px",
+          padding: "50px 52px 44px",
           borderRadius: "28px",
-          background: "#fffaf1",
-          border: "1px solid #eadfcd",
-          boxShadow: "0 24px 70px rgba(96, 58, 24, 0.13)",
-          padding: "40px 50px 34px",
+          background: editorial ? PALETTE.cream : "#fffefe",
+          border: editorial ? "1px solid #ece1cf" : "1px solid #dce5f0",
+          boxShadow: editorial
+            ? "0 26px 70px rgba(120, 92, 44, 0.10)"
+            : "0 26px 70px rgba(37, 99, 235, 0.08)",
           position: "relative",
           overflow: "hidden",
         },
       },
+      ...softWash({ accent, accentAlt }),
       el("div", {
         style: {
           display: "flex",
           position: "absolute",
-          right: "-130px",
-          top: "70px",
-          width: "360px",
-          height: "360px",
-          borderRadius: "50%",
-          border: `38px solid ${accentAlt}30`,
-        },
-      }),
-      el("div", {
-        style: {
-          display: "flex",
-          position: "absolute",
-          left: "50px",
-          right: "50px",
-          bottom: "112px",
-          height: "1px",
-          background: "#eadfcd",
+          left: 0,
+          top: "118px",
+          width: "4px",
+          height: "390px",
+          background: `linear-gradient(180deg, ${accent}, ${accentAlt}55)`,
         },
       }),
       el(
@@ -732,38 +476,13 @@ function buildArticleCard(config) {
         {
           style: {
             display: "flex",
-            alignItems: "center",
             justifyContent: "space-between",
-            marginBottom: "34px",
+            alignItems: "center",
+            position: "relative",
           },
         },
-        el(
-          "div",
-          {
-            style: {
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              color: PALETTE.ink,
-              fontSize: "18px",
-              fontWeight: 900,
-            },
-          },
-          dot(accent),
-          "Yen Nhi Journal",
-        ),
-        el(
-          "div",
-          {
-            style: {
-              display: "flex",
-              color: PALETTE.soft,
-              fontSize: "15px",
-              fontWeight: 700,
-            },
-          },
-          SITE.domain,
-        ),
+        brandPill({ accent }),
+        topBrand({ accent }),
       ),
       el(
         "div",
@@ -771,9 +490,9 @@ function buildArticleCard(config) {
           style: {
             display: "flex",
             flexDirection: "column",
-            gap: "16px",
-            maxWidth: "850px",
-            flex: 1,
+            gap: "18px",
+            maxWidth: article ? "925px" : "900px",
+            position: "relative",
           },
         },
         el(
@@ -781,27 +500,26 @@ function buildArticleCard(config) {
           {
             style: {
               display: "flex",
-              alignItems: "center",
-              gap: "12px",
               color: accent,
               fontSize: "16px",
               fontWeight: 900,
+              letterSpacing: "0.12em",
               textTransform: "uppercase",
             },
           },
-          config.label,
-          config.date ? `· ${compactDate(config.date)}` : "",
+          meta.toUpperCase(),
         ),
         el(
           "div",
           {
             style: {
               display: "flex",
-              color: PALETTE.ink,
-              fontSize: `${titleSize(title, 61)}px`,
-              lineHeight: 1.08,
-              fontWeight: 900,
-              maxWidth: "870px",
+              fontFamily: editorial ? "'OG Serif', Georgia, serif" : "'OG Sans', Arial, sans-serif",
+              color: editorial ? "#1c1815" : "#0f172a",
+              fontSize: `${titleSize(title, article ? (editorial ? 56 : 58) : 62)}px`,
+              lineHeight: editorial ? 1.1 : 1.06,
+              fontWeight: editorial ? 700 : 900,
+              letterSpacing: editorial ? "-0.01em" : "0",
             },
           },
           title,
@@ -811,11 +529,12 @@ function buildArticleCard(config) {
           {
             style: {
               display: "flex",
-              color: PALETTE.muted,
-              fontSize: "22px",
-              lineHeight: 1.42,
-              fontWeight: 600,
-              maxWidth: "820px",
+              fontFamily: editorial ? "'OG Serif', Georgia, serif" : "'OG Sans', Arial, sans-serif",
+              color: editorial ? "#5b5048" : "#52617a",
+              fontSize: article ? (editorial ? "22px" : "21px") : "22px",
+              lineHeight: editorial ? 1.5 : 1.45,
+              fontWeight: editorial ? 400 : 500,
+              maxWidth: article ? "860px" : "890px",
             },
           },
           description,
@@ -826,9 +545,10 @@ function buildArticleCard(config) {
         {
           style: {
             display: "flex",
-            alignItems: "center",
+            alignItems: "flex-end",
             justifyContent: "space-between",
-            gap: "18px",
+            gap: "24px",
+            position: "relative",
           },
         },
         el(
@@ -836,21 +556,51 @@ function buildArticleCard(config) {
           {
             style: {
               display: "flex",
-              flexWrap: "wrap",
-              gap: "9px",
-              maxWidth: "760px",
+              flexDirection: "column",
+              gap: "68px",
             },
           },
-          ...(config.chips ?? []).slice(0, 4).map((item) => chip(item, accent)),
+          el(
+            "div",
+            {
+              style: {
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "8px",
+                maxWidth: "760px",
+              },
+            },
+            ...(config.chips ?? []).slice(0, 5).map((item) => chip(item, accent)),
+          ),
+          el(
+            "div",
+            {
+              style: {
+                display: "flex",
+                color: "#8aa0bd",
+                fontSize: "15px",
+                fontWeight: 500,
+              },
+            },
+            footer,
+          ),
         ),
         statBox({
-          label: config.statLabel ?? "Read",
-          value: config.statValue ?? "Essay",
+          label: config.statLabel ?? (article ? "Read" : "Share"),
+          value: config.statValue ?? "Page",
           accent,
         }),
       ),
     ),
   );
+}
+
+function buildPageCard(config) {
+  return socialCard(config);
+}
+
+function buildArticleCard(config) {
+  return socialCard(config, { article: true });
 }
 
 function readMatter(filePath) {
@@ -888,10 +638,12 @@ function blogConfig(slug) {
     description: String(data.description ?? ""),
     date: data.date,
     chips: tags,
+    footer: "Personal essays · Slow living · Books",
     statLabel: "Read",
     statValue: `${minutes} min`,
     accent: PALETTE.rose,
     accentAlt: PALETTE.amber,
+    variant: "editorial",
   };
 }
 
@@ -904,6 +656,7 @@ function projectConfig(slug) {
     description: String(data.description ?? ""),
     date: data.date,
     chips: tags.length ? tags : ["Case study", "System design", "Implementation"],
+    footer: "Case studies · System design · Delivery",
     statLabel: "Read",
     statValue: `${readingMinutes(content)} min`,
     accent: PALETTE.cyan,
@@ -942,10 +695,12 @@ function bookConfig(book) {
       points[0] ??
       `${book.title} by ${book.author} — reading notes and reflection.`,
     chips: [book.author, "Reading notes", "Reflection"].filter(Boolean),
+    footer: "Reading notes · Reflection · Books",
     statLabel: "Book",
     statValue: "Notes",
     accent: PALETTE.amber,
     accentAlt: PALETTE.rose,
+    variant: "editorial",
   };
 }
 
@@ -972,11 +727,32 @@ async function main() {
     "/Library/Fonts/Arial Bold.ttf",
     "/System/Library/Fonts/Supplemental/Arial.ttf",
   ]);
+  // Editorial serif (blog + book cards) — mirrors the "printed book" reading page.
+  const serif400 = loadLocalFont([
+    "/System/Library/Fonts/Supplemental/Georgia.ttf",
+    "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+  ]);
+  const serif700 = loadLocalFont([
+    "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Georgia.ttf",
+  ]);
+  // Universal glyph fallback so Vietnamese diacritics never tofu in any family.
+  const unicode = loadLocalFont([
+    "/Library/Fonts/Arial Unicode.ttf",
+    "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+  ]);
   const fonts = [
     { name: "OG Sans", data: font400, weight: 400, style: "normal" },
     { name: "OG Sans", data: font700, weight: 700, style: "normal" },
     { name: "OG Sans", data: font700, weight: 800, style: "normal" },
     { name: "OG Sans", data: font700, weight: 900, style: "normal" },
+    { name: "OG Serif", data: serif400, weight: 400, style: "normal" },
+    { name: "OG Serif", data: serif700, weight: 700, style: "normal" },
+    { name: "OG Serif", data: serif700, weight: 900, style: "normal" },
+    // Fallback entries (kept last so they only fill glyphs the primaries miss).
+    { name: "OG Sans", data: unicode, weight: 400, style: "normal" },
+    { name: "OG Serif", data: unicode, weight: 400, style: "normal" },
   ].filter((font) => font.data.byteLength > 0);
 
   console.log(fonts.length > 0 ? "   ✓ Local social-preview fonts loaded" : "   ⚠  No fonts loaded");
