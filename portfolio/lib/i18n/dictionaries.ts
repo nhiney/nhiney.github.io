@@ -68,6 +68,14 @@ export const dictionaries = {
       back_to_all: "All articles",
       more_to_read: "More to read",
       views: "views",
+      more: "More",
+      groups: {
+        self_healing: "Self & Healing",
+        growth: "Growth",
+        mindful_living: "Mindful Living",
+        relationships: "Relationships",
+        work_craft: "Work & Craft",
+      },
       tags: {
         books: "Books",
         money: "Money",
@@ -974,6 +982,14 @@ export const dictionaries = {
       back_to_all: "Tất cả bài viết",
       more_to_read: "Đọc thêm",
       views: "lượt xem",
+      more: "Khác",
+      groups: {
+        self_healing: "Bản thân & Chữa lành",
+        growth: "Trưởng thành",
+        mindful_living: "Sống tỉnh thức",
+        relationships: "Mối quan hệ",
+        work_craft: "Công việc & Nghề",
+      },
       tags: {
         books: "Sách",
         money: "Tiền bạc",

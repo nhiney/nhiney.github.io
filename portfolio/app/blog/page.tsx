@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/mdx";
+import { resolveBlogCover } from "@/lib/blog-cover";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { BlogClient } from "./BlogClient";
@@ -58,9 +59,14 @@ export const metadata: Metadata = {
 const BOOK_TAG = "Books";
 
 export default async function BlogPage() {
-  const posts = (await getAllPosts("blog")).filter(
-    (post) => !post.tags?.includes(BOOK_TAG)
-  );
+  // Attach the resolved cover (real file or null) server-side so the client
+  // listing can render an image or a themed fallback without touching the fs.
+  const posts = (await getAllPosts("blog"))
+    .filter((post) => !post.tags?.includes(BOOK_TAG))
+    .map((post) => {
+      const cover = resolveBlogCover(post.slug, post.title, post.tags, post.image);
+      return { ...post, coverImage: cover.src, coverAlt: cover.alt };
+    });
 
   return (
     <Container className="pb-32">

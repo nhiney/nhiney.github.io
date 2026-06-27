@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "generate:og": "node scripts/generate-og.mjs",
-    "generate:tree": "node scripts/generate-tree.mjs"
+    "generate:tree": "node scripts/generate-tree.mjs",
+    "generate:blog-images": "node scripts/generate-blog-images.mjs",
+    "generate:blog-covers:free": "node scripts/generate-blog-free-covers.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

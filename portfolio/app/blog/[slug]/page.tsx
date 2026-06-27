@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ArrowLeft, CalendarDays, ChevronRight, Clock3 } from "lucide-react";
@@ -14,6 +13,8 @@ import { TableOfContents } from "@/components/blog/TableOfContents";
 import { ViewCounter } from "@/components/blog/ViewCounter";
 import { ArticleI18n } from "@/components/blog/ArticleI18n";
 import { ArticleJsonLd } from "@/components/blog/ArticleJsonLd";
+import { BlogCoverImage } from "@/components/blog/BlogCoverImage";
+import { resolveBlogCover } from "@/lib/blog-cover";
 import { LocaleText } from "@/components/blog/LocaleText";
 import { TagLabel } from "@/components/blog/TagLabel";
 import { LocalDate } from "@/components/blog/LocalDate";
@@ -60,9 +61,12 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     new Set([...(post.tags ?? []), title, post.title].filter(Boolean))
   ) as string[];
 
-  // Every post gets a preview image: its own frontmatter image if set, else the
+  // Prefer a real illustration when one exists, otherwise fall back to the
   // per-post card auto-generated at build time (scripts/generate-og.mjs).
-  const ogImage = post.image || `${SITE_CONFIG.url}/og/blog/${slug}.png`;
+  const cover = resolveBlogCover(slug, post.title, post.tags ?? [], post.image);
+  const ogImage = cover.src
+    ? `${SITE_CONFIG.url}${cover.src}`
+    : `${SITE_CONFIG.url}/og/blog/${slug}.png`;
 
   return {
     title,
@@ -131,7 +135,10 @@ export default async function BlogPostPage({ params }: PostPageProps) {
     ])
   );
 
-  const ogImage = post.image || `${SITE_CONFIG.url}/og/blog/${slug}.png`;
+  const cover = resolveBlogCover(slug, post.title, post.tags ?? [], post.image);
+  const ogImage = cover.src
+    ? `${SITE_CONFIG.url}${cover.src}`
+    : `${SITE_CONFIG.url}/og/blog/${slug}.png`;
 
   // Mirror the VI-led page metadata in the structured data so the headline Google
   // reads matches the <title> it shows — consistent signals for VN searches.
@@ -203,11 +210,16 @@ export default async function BlogPostPage({ params }: PostPageProps) {
                 </div>
               </header>
 
-              {post.image && (
-                <div className="relative mt-10 aspect-video overflow-hidden rounded-md border border-border/50">
-                  <Image src={post.image} alt={post.title} fill className="object-cover" priority />
-                </div>
-              )}
+              <div className="mt-10">
+                <BlogCoverImage
+                  src={cover.src}
+                  alt={cover.alt}
+                  tags={post.tags}
+                  aspect="16/9"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 760px"
+                />
+              </div>
 
               <div className="mt-12 sm:mt-14">
                 <ArticleI18n bodies={bodies} />
