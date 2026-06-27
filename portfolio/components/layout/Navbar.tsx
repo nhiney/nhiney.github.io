@@ -6,7 +6,6 @@ import { Brain, ChevronRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { ThemeToggle } from "@/components/widgets/ThemeToggle";
-import { AnimatedGradientText } from "@/components/effects/AnimatedGradientText";
 import { useLanguage } from "@/context/LanguageContext";
 import { NAV_ITEMS } from "@/lib/constants";
 import { useState, useEffect } from "react";
@@ -25,11 +24,6 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
 
   // Close on Escape, lock body scroll when open
   useEffect(() => {
@@ -66,13 +60,15 @@ export function Navbar() {
             Nguyễn Thị Yến Nhi
           </Link>
 
+          {/* Portfolio badge — hidden for now; uncomment to restore
           <Link href="/portfolio" className="hidden md:block">
             <AnimatedGradientText className="py-1.5 px-4 text-sm cursor-pointer">
-              <span className="animate-gradient inline bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent font-semibold">
+              <span className="font-semibold text-primary">
                 {t("nav.portfolio")}
               </span>
             </AnimatedGradientText>
           </Link>
+          */}
         </div>
 
         {/* ② Right — nav links + controls (natural width, empty space in the middle) */}
@@ -197,7 +193,7 @@ export function Navbar() {
                           )}
                         >
                           {item.name === "Portfolio" ? (
-                            <span className="animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:300%_100%] bg-clip-text text-transparent font-semibold">
+                            <span className="font-semibold text-primary">
                               {t("nav.portfolio")}
                             </span>
                           ) : item.name === "Books" ? (

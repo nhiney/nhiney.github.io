@@ -2,19 +2,14 @@
 
 import { motion } from "framer-motion";
 import {
-  BookMarked,
   ExternalLink,
-  Globe,
   Heart,
-  Library,
-  ScanLine,
 } from "lucide-react";
 import {
   Eyebrow,
   HeadlineDisplay,
   PullQuote,
   Slide,
-  Subhead,
   itemVariants,
 } from "./shared";
 import { useDeckT } from "./use-deck-t";

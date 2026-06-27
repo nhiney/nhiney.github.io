@@ -9,7 +9,7 @@
 // from under React (which would throw on unmount under React 19). Leaves are
 // static content, so cloning loses nothing.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { PageFlip } from "page-flip";
 import { useLanguage } from "@/context/LanguageContext";
@@ -26,6 +26,10 @@ interface Props {
   coverSrc?: string;
   /** Optional real back-cover photo for the closing hard leaf. */
   coverBackSrc?: string;
+  /** Optional decorative paper photo used as the interior leaf background (e.g.
+   * the pink floral handmade paper for 48 Laws). When set, the SVG stickers are
+   * dropped — the paper's own pressed flowers are the decoration. */
+  leafPaperSrc?: string | null;
   /** Link to the full review on the blog, shown on the end leaf. */
   blogHref?: string;
   hasReview: boolean;
@@ -41,6 +45,7 @@ export function FlipBookReader({
   readingTime,
   coverSrc,
   coverBackSrc,
+  leafPaperSrc,
   blogHref,
   hasReview,
   onClose,
@@ -158,17 +163,23 @@ export function FlipBookReader({
               </div>
             ) : (
               <div className="flip-leaf">
+                {page.kind === "content" && !leafPaperSrc ? <LeafSticker index={i} /> : null}
                 {renderLeaf(page, { title, author, tag, date, readingTime, blogHref, hasReview, folio, t })}
               </div>
             )}
           </div>
         );
       }),
-    [pages, title, author, tag, date, readingTime, coverSrc, coverBackSrc, blogHref, hasReview, t]
+    [pages, title, author, tag, date, readingTime, coverSrc, coverBackSrc, leafPaperSrc, blogHref, hasReview, t]
   );
 
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center px-3 py-4 sm:px-6">
+    <div
+      className={`relative flex h-full w-full flex-col items-center justify-center px-3 py-4 sm:px-6${
+        leafPaperSrc ? " flipreader-paper" : ""
+      }`}
+      style={leafPaperSrc ? ({ "--leaf-paper-url": `url(${leafPaperSrc})` } as CSSProperties) : undefined}
+    >
       {/* Hidden master copy React owns; StPageFlip clones from it. */}
       <div ref={templateRef} className="hidden" aria-hidden>
         {leaves}
@@ -211,6 +222,83 @@ export function FlipBookReader({
         <X size={17} />
       </button>
     </div>
+  );
+}
+
+// Inline markup for leaf prose — ==highlight==, *italic*, **bold**. Flat (no
+// nesting): the content is authored so marks never overlap.
+function renderInline(text: string): ReactNode {
+  const re = /==([^=]+)==|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
+  const out: ReactNode[] = [];
+  let last = 0;
+  let key = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text))) {
+    if (m.index > last) out.push(text.slice(last, m.index));
+    if (m[1] != null) out.push(<mark key={key++} className="leaf-hl">{m[1]}</mark>);
+    else if (m[2] != null) out.push(<strong key={key++}>{m[2]}</strong>);
+    else out.push(<em key={key++}>{m[3]}</em>);
+    last = re.lastIndex;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
+
+// A "Câu mình muốn nhớ" / "Chốt lại" takeaway renders as a highlighted margin
+// note (label chip + italic line); every other paragraph renders inline-marked.
+function renderPara(p: string, key: number): ReactNode {
+  // Essence line at the top of each law.
+  const cv = p.match(/^Giá trị cốt lõi\s+—\s+([\s\S]+)$/);
+  if (cv) {
+    return (
+      <p key={key} className="leaf-coreval">
+        <span className="leaf-coreval-label">Giá trị cốt lõi</span>
+        <span className="leaf-coreval-text">{renderInline(cv[1])}</span>
+      </p>
+    );
+  }
+  // Takeaway at the bottom.
+  const mk = p.match(/^(Câu mình muốn nhớ|Chốt lại)\s+—\s+([\s\S]+)$/);
+  if (mk) {
+    return (
+      <p key={key} className="leaf-keynote">
+        <span className="leaf-keynote-label">{mk[1]}</span>
+        <span className="leaf-keynote-text">{renderInline(mk[2])}</span>
+      </p>
+    );
+  }
+  return <p key={key}>{renderInline(p)}</p>;
+}
+
+// Cute scrapbook stickers — one per content leaf, picked by leaf index so each
+// page feels hand-decorated. They sit BEHIND the text (see .leaf-sticker CSS).
+const STICKERS: ReactNode[] = [
+  // 0 · washi tape strip (drawn purely in CSS, no glyph)
+  null,
+  // 1 · sparkle
+  <svg key="s" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M12 2c.7 4.6 2 5.9 6.6 6.6C14 9.3 12.7 10.6 12 15c-.7-4.4-2-5.7-6.6-6.4C10 7.9 11.3 6.6 12 2z" />
+  </svg>,
+  // 2 · heart
+  <svg key="h" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M12 20.3l-1.4-1.3C5.4 14.2 2 11.1 2 7.6 2 5 4 3 6.5 3c1.7 0 3.3.9 4.1 2.3L12 7.5l1.4-2.2C14.2 3.9 15.8 3 17.5 3 20 3 22 5 22 7.6c0 3.5-3.4 6.6-8.6 11.4L12 20.3z" />
+  </svg>,
+  // 3 · little asterisk / spark doodle
+  <svg key="a" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" aria-hidden>
+    <path d="M12 4v16M4 12h16M6.3 6.3l11.4 11.4M17.7 6.3L6.3 17.7" />
+  </svg>,
+  // 4 · star outline
+  <svg key="t" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" aria-hidden>
+    <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9.7l5.9-.9z" />
+  </svg>,
+];
+
+function LeafSticker({ index }: { index: number }) {
+  const v = index % STICKERS.length;
+  return (
+    <span className={`leaf-sticker leaf-sticker-${v}`} aria-hidden>
+      {STICKERS[v]}
+    </span>
   );
 }
 
@@ -289,9 +377,7 @@ function renderLeaf(page: BookPage, ctx: LeafCtx) {
     <>
       {page.heading ? <h3 className="leaf-heading">{page.heading}</h3> : null}
       <div className={`leaf-body${page.opening ? " is-opening" : ""}`}>
-        {paras.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
+        {paras.map((p, i) => renderPara(p, i))}
       </div>
       <span className="leaf-folio">{folio}</span>
     </>

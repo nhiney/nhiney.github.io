@@ -16,10 +16,12 @@ export const PAGES_PER_BOOK = 5;
  * of a long review stays on the blog (the end leaf links to it). */
 const PAGE_CHAR_BUDGET = 620;
 
-/** Curated pages are shown in full, including on narrow portrait leaves. Keep
- * them shorter than generated excerpts because they retain headings and do not
- * have a blog fallback for omitted text. */
-const CURATED_PAGE_CHAR_BUDGET = 430;
+/** Curated pages map ONE-TO-ONE onto leaves: each curated page is a whole leaf,
+ * never split (so a law never spills onto a "(2)" continuation leaf). The budget
+ * is kept above the longest curated page so `paginateCuratedPages` never breaks
+ * one — curated content is authored to fit a single leaf (see the 48-laws deck).
+ * Bump this only if a future book's pages grow past it. */
+const CURATED_PAGE_CHAR_BUDGET = 1200;
 
 /** Turn a raw MDX/markdown review body into clean plain-text paragraphs. */
 export function stripMarkdownToParagraphs(md: string): string[] {

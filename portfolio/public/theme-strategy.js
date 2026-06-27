@@ -5,5 +5,5 @@
     if (!theme && supportDarkMode) theme = 'dark';
     if (!theme) theme = 'light';
     document.documentElement.classList.toggle('dark', theme === 'dark');
-  } catch (e) {}
+  } catch {}
 })();

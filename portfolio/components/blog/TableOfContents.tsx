@@ -12,7 +12,7 @@ interface TocItem {
 }
 
 export function TableOfContents() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [headings, setHeadings] = useState<TocItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const [progress, setProgress] = useState(0);
@@ -35,9 +35,11 @@ export function TableOfContents() {
       };
     });
 
-    setHeadings(items);
-    // next frame so the fade-in transition actually runs
-    requestAnimationFrame(() => setMounted(true));
+    // Defer state updates so React's effect stays focused on DOM sync.
+    const mountFrame = requestAnimationFrame(() => {
+      setHeadings(items);
+      setMounted(true);
+    });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,8 +51,11 @@ export function TableOfContents() {
     );
 
     elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      cancelAnimationFrame(mountFrame);
+      observer.disconnect();
+    };
+  }, [language]);
 
   // Reading progress through the page
   useEffect(() => {
@@ -77,7 +82,7 @@ export function TableOfContents() {
         mounted ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
       )}
     >
-      <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground/50">
+      <p className="mb-4 text-[11px] font-semibold uppercase text-muted-foreground/50">
         {t("blogPage.on_this_page")}
       </p>
 
@@ -109,7 +114,7 @@ export function TableOfContents() {
       {/* Reading progress + back to top */}
       <div className="mt-6 space-y-3 border-t border-border/50 pt-4">
         <div className="flex items-center justify-between text-[11px] text-muted-foreground/60">
-          <span className="uppercase tracking-[0.14em]">{t("blogPage.reading")}</span>
+          <span className="uppercase">{t("blogPage.reading")}</span>
           <span className="tabular-nums font-medium text-muted-foreground">{progress}%</span>
         </div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-border/50">

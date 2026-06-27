@@ -59,6 +59,676 @@ export interface LibraryBook extends BookMeta {
   readingPages?: Partial<Record<"en" | "vi", BookReadingPage[]>>;
 }
 
+// Law 1-focused flipbook deck for "48 Nguyên Tắc Chủ Chốt Của Quyền Lực".
+// The product brief asks for one punchy outside note and only a few interior
+// leaves so the reader can absorb the core idea without a long walkthrough.
+const LAWS_OF_POWER_PAGES: BookReadingPage[] = [
+  {
+    heading: "Trang 1 — Sự thật tàn khốc về quyền lực",
+    paragraphs: [
+      "Bạn tài năng, xuất chúng và muốn cống hiến hết mình để được công nhận? Hãy cẩn thận: đó có thể là cái bẫy nguy hiểm nhất khi đứng gần người có quyền lực.",
+      "Người ở vị trí cao luôn muốn cảm thấy an toàn, tài giỏi và khó bị thay thế. Nếu bạn phô diễn quá mạnh, bạn không làm họ ngưỡng mộ trước tiên; bạn đánh thức nỗi sợ bị lu mờ và bản năng phòng thủ của họ.",
+      "Luật 1 không bảo bạn phải nhỏ bé. Nó nhắc bạn tỏa sáng có chiến lược: để năng lực của mình làm người dẫn dắt trông vững hơn, chứ không khiến họ thấy ngai ghế của họ đang lung lay."
+    ]
+  },
+  {
+    heading: "Trang 2 — Bài học từ Nicolas Fouquet",
+    paragraphs: [
+      "Nicolas Fouquet, Bộ trưởng Tài chính của vua Louis XIV, từng tổ chức một bữa tiệc xa hoa tại lâu đài riêng để chứng minh lòng trung thành và tài năng của mình. Mọi thứ đều rực rỡ: kiến trúc, ẩm thực, nghệ thuật, sự ngưỡng mộ của khách mời.",
+      "Nhưng với nhà vua, buổi tiệc ấy không còn là lời tri ân. Nó trở thành một màn so sánh nguy hiểm: một bề tôi lại có vẻ giàu có, tinh tế và được kính nể đến mức khiến vua cảm thấy bị đe dọa.",
+      "Kết quả, Fouquet bị bắt và kết án tù chung thân. Sai lầm của ông không phải là giỏi; sai lầm là để sự giỏi ấy làm người quyền lực nhất căn phòng cảm thấy mình bị che khuất."
+    ]
+  },
+  {
+    heading: "Trang 3 — Nghệ thuật giấu mình đúng lúc",
+    paragraphs: [
+      "Ở công sở, khi dự án thành công, hãy ghi nhận vai trò của cấp trên trước khi nói về phần mình đóng góp. Khi có ý tưởng hay, đừng mở đầu bằng cách chứng minh người khác sai; hãy nối tiếp điều họ đã xây rồi thêm vào góc nhìn của bạn.",
+      "Đôi khi, một câu xin lời khuyên đúng lúc còn mạnh hơn một màn thể hiện hoàn hảo. Nó khiến người dẫn dắt cảm thấy được tôn trọng, đồng thời cho bạn không gian để đưa năng lực vào đúng chỗ.",
+      "Câu cần nhớ: thể hiện năng lực không sai. Sai là làm tổn thương lòng tự tôn của người đang nắm quyền quyết định. Hãy là người làm họ mạnh hơn, rồi chính họ sẽ muốn kéo bạn đi cùng."
+    ]
+  }
+];
+
+// "Easy to understand, easy to apply" flipbook deck for "Đắc Nhân Tâm"
+// (How to Win Friends and Influence People — Dale Carnegie). Pairs ~2 principles
+// per leaf, each kept with an everyday example + a *câu chốt* clincher so the
+// reader can bring it into real life right away. Voice: đọc để hiểu và tôn trọng
+// con người, không phải để lấy lòng hay thao túng. Shared by the book's en + vi
+// decks (Vietnamese on the public site). Sourced from the author's note
+// (De_Hieu_De_Van_Dung_Dac_Nhan_Tam); regenerate if it changes. Inline
+// ==highlight== / *italic* baked in.
+const DAC_NHAN_TAM_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — đọc để hiểu, không phải để lấy lòng",
+    "paragraphs": [
+      "*Đắc Nhân Tâm* không phải cuốn sách dạy mình *“lấy lòng”* người khác bằng vài mẹo giao tiếp. Đọc sâu hơn, nó nhắc một điều rất căn bản: ai cũng muốn được ==tôn trọng, lắng nghe và nhìn nhận như một con người có giá trị.==",
+      "Giao tiếp tốt không bắt đầu từ việc nói hay, mà từ việc mình bớt đặt cái tôi ở trung tâm, để thật sự nhìn thấy người đối diện.",
+      "Bản này giữ với mỗi nguyên tắc một ví dụ đời thường và một *câu chốt* — để mình hiểu nhanh và mang vào việc thật được ngay."
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 1 – 2",
+    "paragraphs": [
+      "==1 · Đừng chỉ trích, oán trách.== Bị chỉ trích, phản ứng đầu tiên của con người thường là tự vệ, không phải sửa sai. Thay vì nói *“bạn làm việc vô trách nhiệm quá”*, hãy nói *“phần này đang trễ, mình muốn tụi mình cùng xem lại cách chia việc cho kịp”* — vẫn góp ý mà người kia còn đủ an toàn để tiếp nhận. *Muốn người khác thay đổi, đừng làm họ cảm thấy phải chiến đấu để bảo vệ bản thân.*",
+      "==2 · Khen ngợi chân thành.== Ai cũng muốn được ghi nhận, và một lời khen thật tiếp thêm động lực hơn nhiều lời thúc ép. Khen thật là nhìn thấy điều cụ thể: *“mình thích cách bạn giải thích phần này, rất dễ hiểu”* — chứ không phải tâng bốc chung chung. *Sự ghi nhận chân thành là một cách làm người khác muốn tốt hơn.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 3 – 4",
+    "paragraphs": [
+      "==3 · Bắt đầu từ điều người khác quan tâm.== Người nghe mở lòng hơn khi thấy điều mình nói liên quan đến họ. Muốn bạn cùng nhóm làm đúng hạn, đừng chỉ nói *“mình cần”* — hãy nói *“xong sớm thì tụi mình có thêm thời gian sửa slide, đỡ áp lực trước hôm thuyết trình”*. *Người ta hành động nhanh hơn khi thấy lý do của chính họ trong lời đề nghị của mình.*",
+      "==4 · Thật lòng quan tâm đến người khác.== Sự thân thiện không nằm ở nói nhiều, mà ở việc nhớ những điều nhỏ: người kia đang bận gì, lo gì, thích được hỗ trợ thế nào. Một câu *“dạo này bạn ổn không?”* hỏi thật lòng cũng đủ làm một người thấy ấm. *Muốn người khác mở lòng, đừng để họ cảm thấy mình chỉ xuất hiện khi cần điều gì đó.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 5 – 6",
+    "paragraphs": [
+      "==5 · Mỉm cười và tạo cảm giác dễ chịu.== Một nụ cười không giải quyết tất cả, nhưng làm cánh cửa giao tiếp bớt nặng. Trong lớp học hay buổi gặp đầu tiên, một nét mặt căng cứng khiến người khác dè chừng, còn sự niềm nở vừa đủ làm cuộc trò chuyện bắt đầu nhẹ hơn. *Đôi khi sự ấm áp là cách mở đầu tốt nhất cho một cuộc trò chuyện khó.*",
+      "==6 · Nhớ tên người khác.== Tên của một người là âm thanh rất riêng với họ; gọi đúng tên khiến họ thấy mình không bị lẫn vào đám đông. Nhớ tên bạn mới, tên khách hàng, tên thầy cô — đó là cách nói thầm *“mình có chú ý đến bạn”*. *Một người được gọi đúng tên thường cảm thấy mình được tôn trọng hơn.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 7 – 8",
+    "paragraphs": [
+      "==7 · Biết lắng nghe.== Nhiều người nghe không phải để hiểu mà để chuẩn bị đáp lại. Khi ai đó kể chuyện, đừng vội chen *“mình cũng vậy”* — hãy hỏi thêm *“lúc đó bạn thấy sao?”*, *“rồi bạn xử lý thế nào?”* để câu chuyện của họ có không gian tiếp tục. *Người biết lắng nghe thường để lại cảm giác dễ chịu lâu hơn người nói rất hay.*",
+      "==8 · Nói về điều người khác hứng thú.== Mỗi người có một thế giới riêng; chịu bước vào đó thì trò chuyện tự nhiên hơn. Người thích sách thì hỏi họ đang đọc gì, người học thiết kế thì hỏi họ mê phong cách nào. *Muốn cuộc trò chuyện sống động, hãy để người kia được nói về điều làm mắt họ sáng lên.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 9 – 10",
+    "paragraphs": [
+      "==9 · Làm người khác thấy họ quan trọng.== Con người không chỉ cần được nghe, họ cần thấy sự hiện diện của mình có ý nghĩa. Một câu *“ý của bạn giúp tụi mình nhìn vấn đề rõ hơn”* làm người kia tự tin hơn; *“con cảm ơn mẹ vì bữa cơm hôm nay”* làm điều quen thuộc được trân trọng. *Đừng tiết kiệm sự trân trọng khi nó có thể làm một ngày của ai đó nhẹ hơn.*",
+      "==10 · Tránh biến tranh luận thành cuộc chiến.== Nhiều cuộc tranh luận không tìm sự thật mà tìm người thắng, và khi cái tôi bước vào thì lý lẽ đúng đến đâu cũng khó được nghe. Khi căng, hãy đổi mục tiêu từ *“mình phải thắng”* sang *“mình muốn hai bên hiểu nhau hơn”*. *Thắng một cuộc cãi vã nhưng mất một mối quan hệ đôi khi không phải là thắng.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 11 – 12",
+    "paragraphs": [
+      "==11 · Đừng nói thẳng *“bạn sai rồi”*.== Câu đó đóng cửa cuộc trò chuyện rất nhanh, vì người nghe thấy bị hạ thấp dù ý mình đúng. Mềm hơn: *“mình có thể đang hiểu khác, nhưng có một điểm cần xem lại”* hoặc *“hay mình cùng kiểm tra lại số liệu nhé”*. *Sự thật dễ được đón nhận hơn khi nó không đi kèm cảm giác bị xúc phạm.*",
+      "==12 · Nếu sai, nhận lỗi nhanh và rõ.== Nhận lỗi không làm mình nhỏ đi; né lỗi mới làm uy tín yếu đi. Một lời nhận lỗi tốt không dài dòng: *“phần này mình làm chưa kỹ, mình xin lỗi, mình sẽ sửa trước tối nay”*. *Người dám nhận lỗi thường đáng tin hơn người luôn cố tỏ ra mình đúng.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 13 – 14",
+    "paragraphs": [
+      "==13 · Bắt đầu bằng sự thân thiện.== Mở đầu một cuộc khó bằng căng thẳng thì rất dễ đi xa; thân thiện không phải yếu thế mà là giảm nhiệt để lý trí còn cơ hội xuất hiện. Thay vì *“sao bạn làm vậy?”*, hãy mở bằng *“mình muốn hiểu chuyện này rõ hơn để tụi mình xử lý tốt”*. *Mở đầu mềm không làm thông điệp yếu đi; nó giúp thông điệp có cơ hội được nghe.*",
+      "==14 · Để người khác nói *“đúng”* từ điều nhỏ.== Khi hai bên tìm được điểm đồng ý ban đầu, cuộc trò chuyện bớt đối đầu. Bắt đầu từ một mục tiêu chung — *“tụi mình đều muốn bài thuyết trình tốt hơn, đúng không?”* — rồi mới đi vào phần khác biệt. *Điểm chung nhỏ là chiếc cầu để bước qua khác biệt lớn.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 15 – 16",
+    "paragraphs": [
+      "==15 · Để người khác được nói nhiều hơn.== Nói quá nhiều, mình dễ tưởng đang thuyết phục, nhưng người kia cần nói ra suy nghĩ trước khi nghe được mình. Trong một buổi góp ý, hãy để họ giải thích trước; khi mâu thuẫn, hãy hỏi *“bạn đang nhìn chuyện này thế nào?”*. *Đôi khi cách thuyết phục tốt nhất là cho người kia đủ không gian để tự mở lòng.*",
+      "==16 · Để người khác thấy ý tưởng là của họ.== Con người yêu quý điều họ tự nghĩ ra, nên thay vì áp đặt đáp án, hãy hỏi gợi mở: *“bạn nghĩ cách nào ổn hơn?”*, *“nếu đổi hướng này thì sao?”*. Khi cùng tạo ra giải pháp, họ có trách nhiệm hơn với nó. *Ý tưởng được cùng tạo ra thường dễ được cùng thực hiện hơn.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 17 – 18",
+    "paragraphs": [
+      "==17 · Nhìn vấn đề từ góc của người kia.== Nhiều hiểu lầm đến từ việc mình chỉ nhìn bằng nỗi đau của mình; người kia có thể đang mệt, đang sợ, đang áp lực chứ không cố ý vô tâm. Trước khi phản ứng, hãy hỏi *“nếu là họ, mình có thể đang thấy gì?”*. *Thấu hiểu không phải đồng ý với mọi điều; là nhìn rộng hơn phần mình đang thấy.*",
+      "==18 · Đồng cảm với cảm xúc của người khác.== Con người dịu lại khi cảm thấy cảm xúc của mình được công nhận. Một câu *“mình hiểu vì sao bạn thấy khó chịu”* không có nghĩa là đồng ý hoàn toàn, nhưng cho người kia thấy họ không bị phủ nhận. *Một người được thấu hiểu sẽ dễ lắng nghe hơn người đang cảm thấy bị bỏ qua.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 19 – 20",
+    "paragraphs": [
+      "==19 · Gợi lên những động cơ tốt đẹp.== Con người thường muốn tin mình là người tốt, nên khi mình khơi gợi phần đó, họ dễ hành xử tốt hơn. Thay vì *“bạn đừng vô trách nhiệm nữa”*, hãy nói *“mình biết bạn cũng muốn nhóm ổn, nên mong tụi mình chốt phần này rõ hơn”*. *Hãy nói với phần tốt đẹp trong người khác, vì đôi khi chính phần đó sẽ đứng lên đáp lại.*",
+      "==20 · Biến ý tưởng thành hình ảnh sống động.== Một lời nói khô có thể đúng nhưng khó nhớ; một hình ảnh thì ở lại. Muốn khuyên ai quản lý thời gian, đừng chỉ nói *“hãy kỷ luật hơn”* — hãy nói *“một ngày như cái ly, đổ mạng xã hội vào trước thì học tập và sức khỏe không còn chỗ”*. *Điều người ta nhìn thấy trong đầu sẽ dễ nhớ hơn điều chỉ nghe bằng tai.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 21 – 22",
+    "paragraphs": [
+      "==21 · Khi cần, tạo một thử thách tích cực.== Con người có tinh thần muốn vượt lên, nên một lời thách thức đúng cách khơi dậy động lực. Trong nhóm học, thay vì trách nhau lười, hãy rủ *“tuần này mỗi người thử xong một phần trước thứ Sáu, cuối tuần mình cùng review nhé”*. *Một thử thách tốt làm người khác muốn bước lên, không làm họ muốn trốn đi.*",
+      "==22 · Góp ý thì bắt đầu bằng điều tốt.== Người nghe dễ tiếp nhận hơn khi biết mình không phủ nhận toàn bộ nỗ lực của họ. Hãy nói *“phần mở đầu rất rõ; mình nghĩ nếu ví dụ ở sau cụ thể hơn thì bài sẽ mạnh hơn”*. *Góp ý tốt không làm người khác thấy mình vô giá trị; nó giúp họ thấy mình có thể tốt hơn.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 23 – 24",
+    "paragraphs": [
+      "==23 · Góp ý gián tiếp để giữ thể diện.== Không phải lỗi nào cũng cần chỉ thẳng trước đám đông; có điều nên nói riêng, nói nhẹ, hoặc dùng câu hỏi để người kia tự nhận ra. Giữ thể diện không phải giả vờ, mà là sự tinh tế. *Đừng sửa lỗi của người khác bằng cách làm tổn thương phẩm giá của họ.*",
+      "==24 · Nói về lỗi của mình trước.== Khi mình thừa nhận mình cũng từng sai, khoảng cách giữa hai người giảm xuống. *“Hồi trước mình cũng hay quên ghi nguồn, nên hiểu phần này dễ sót; mình nghĩ tụi mình nên bổ sung cho bài chắc hơn”* — vừa thật, vừa dễ tiếp nhận. *Sự khiêm tốn làm lời góp ý bớt sắc và dễ chạm hơn.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 25 – 26",
+    "paragraphs": [
+      "==25 · Đặt câu hỏi thay vì ra lệnh.== Không ai thích bị điều khiển, nhưng nhiều người sẵn sàng hợp tác khi được tham gia vào quyết định. Thay vì *“làm phần này đi”*, hãy thử *“bạn phụ trách phần này được không, hay muốn đổi sang phần khác?”*. *Một câu hỏi tử tế thường mở ra nhiều hợp tác hơn một mệnh lệnh đúng.*",
+      "==26 · Giữ thể diện cho người khác.== Con người có thể quên mình đã nói gì, nhưng rất khó quên cảm giác bị làm bẽ mặt. Nếu ai đó sai, hãy giúp họ có đường quay lại; nếu phải từ chối, hãy từ chối rõ nhưng không hạ thấp. *Giữ thể diện cho người khác là giữ lại cây cầu cho mối quan hệ.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 27 – 28",
+    "paragraphs": [
+      "==27 · Khen ngợi từng tiến bộ nhỏ.== Thay đổi lớn thường bắt đầu từ một chút tiến bộ; chỉ nhìn vào phần chưa hoàn hảo thì người khác dễ nản. Một người mới học thuyết trình cần nghe *“hôm nay bạn nói rõ hơn lần trước”*; bạn đang sửa thói trễ deadline cần nghe *“lần này bạn gửi sớm hơn rồi”*. *Được nhìn thấy tiến bộ là một lý do rất đẹp để tiếp tục cố gắng.*",
+      "==28 · Trao một danh tiếng tốt để họ sống xứng.== Khi mình tin một người có thể tốt hơn, đôi khi họ cố gắng để không phụ niềm tin đó. *“Mình thấy bạn rất có trách nhiệm khi đã tập trung, nên phần này cần sự kỹ lưỡng của bạn”* — không ép buộc, nhưng trao một hình ảnh tốt để bước vào. *Hãy gọi tên phiên bản tốt đẹp của người khác, có khi họ sẽ muốn sống gần hơn với nó.*"
+    ]
+  },
+  {
+    "heading": "Nguyên tắc 29 – 30",
+    "paragraphs": [
+      "==29 · Khuyến khích để lỗi sai có vẻ dễ sửa.== Nếu góp ý khiến người khác thấy *“mình quá tệ rồi”*, họ dễ bỏ cuộc; giúp họ thấy lỗi sửa được từng bước thì họ dám thử. Thay vì *“bài này rối quá”*, hãy nói *“chỉ cần gom lại 3 ý chính và thêm ví dụ là bài sẽ dễ đọc hơn nhiều”*. *Góp ý tốt không chỉ chỉ ra vấn đề, mà còn mở ra lối đi.*",
+      "==30 · Làm người khác vui khi nhận lời đề nghị.== Một đề nghị dễ được chấp nhận hơn khi người kia thấy nó có ý nghĩa và được tôn trọng. Thay vì chỉ giao việc, hãy nói rõ vì sao vai trò đó hợp với họ: *“bạn viết rất mạch lạc, nên mình nghĩ phần kết luận giao cho bạn sẽ làm bài chắc hơn”*. *Khi thấy mình được trân trọng trong việc họ làm, người ta làm bằng nhiều thiện chí hơn.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — nếu chỉ giữ lại tinh thần",
+    "paragraphs": [
+      "*Đắc Nhân Tâm* không dạy mình thành người khéo miệng. Nó dạy mình thành người biết quan sát cảm xúc con người.",
+      "Nếu mỗi ngày mình chỉ cần làm ba việc — ==bớt chỉ trích, lắng nghe sâu hơn và công nhận người khác cụ thể hơn== — giao tiếp đã khác đi rất nhiều. Càng trưởng thành mình càng hiểu: có những điều đúng nhưng nói sai cách sẽ không còn đúng nữa trong lòng người nghe.",
+      "Giá trị cốt lõi — Giao tiếp đẹp không bắt đầu từ việc nói hay, mà từ chỗ mình bớt đặt cái tôi ở trung tâm để thật sự *nhìn thấy* và tôn trọng người đối diện."
+    ]
+  }
+];
+
+// "Dễ hiểu, dễ vận dụng" flipbook deck for "Tư Duy Nhanh Và Chậm" (Daniel
+// Kahneman). Replaces a terse version with one that keeps an everyday example
+// for each idea: paired ~2 ideas per leaf, each idea = giá trị cốt lõi + một
+// ví dụ đời thường ngắn + một *câu chốt* để vận dụng ngay. Voice: hiểu hai hệ
+// thống tư duy để biết khi nào nên dừng một nhịp. Shared by the book's en + vi
+// decks (Vietnamese on the public site). Sourced from the author's note
+// (De_Hieu_De_Van_Dung_Tu_Duy_Nhanh_Va_Cham); regenerate if it changes. Inline
+// ==highlight== / *italic* baked in.
+const THINKING_FAST_SLOW_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — biết khi nào nên dừng một nhịp",
+    "paragraphs": [
+      "Cuốn sách này không dễ đọc nếu đi thẳng vào thuật ngữ. Nhưng hiểu bằng đời sống hằng ngày, nó đang nói một điều rất gần: ==nhiều quyết định của mình không lý trí như mình tưởng==.",
+      "Có lúc mình mua một món chỉ vì đang sale, tin một người vì họ nói tự tin, thấy mất tiền đau hơn niềm vui khi được. Những chuyện đó không làm mình *“dở”* — chúng chỉ cho thấy bộ não có những lối tắt rất mạnh.",
+      "Kahneman gọi hai cách vận hành của tâm trí là *Hệ thống 1* (nhanh, trực giác, cảm xúc) và *Hệ thống 2* (chậm, biết phân tích, kiểm tra). Hệ thống 1 thường trả lời trước, nên muốn quyết định tốt hơn, mình không cần ghét trực giác — chỉ cần biết lúc nào nên dừng một nhịp.",
+      "Bản này giữ với mỗi ý một ví dụ đời thường và một *câu chốt* — để hiểu nhanh và mang vào việc thật được ngay."
+    ]
+  },
+  {
+    "heading": "Ý 1 – 2",
+    "paragraphs": [
+      "==1 · Không phải suy nghĩ nào cũng sâu.== Câu trả lời đến nhanh khiến mình tưởng là đúng, nhưng nhanh không đồng nghĩa với đúng. Gặp người ăn mặc chỉn chu, nói tự tin, mình dễ nghĩ họ giỏi; thấy bài nhiều lượt chia sẻ, mình dễ tin nó đáng tin — dù đó chỉ là dấu hiệu bên ngoài. *Trước một nhận định quan trọng, hãy hỏi: mình biết điều này vì có bằng chứng, hay vì nó tạo cảm giác đúng?*",
+      "==2 · Sự chú ý là tài sản có hạn.== Não có giới hạn; khi quá mệt, quá đói hay quá nhiều việc, Hệ thống 2 yếu đi và mình dễ chọn theo cảm xúc. Điều này giải thích vì sao cuối ngày mình hay mua đồ linh tinh, cáu với người khác hay đồng ý cho xong. *Đừng ra quyết định lớn khi đang kiệt sức — hãy để sáng hôm sau xem lại.*"
+    ]
+  },
+  {
+    "heading": "Ý 3 – 4",
+    "paragraphs": [
+      "==3 · Não thích câu chuyện gọn gàng.== Con người không thích sự ngẫu nhiên nên luôn muốn tìm nguyên nhân cho mọi việc. Bạn im lặng, mình nghĩ bạn giận; bài ít tương tác, mình nghĩ mình viết dở — nhưng đời sống phức tạp hơn một câu chuyện ngắn. *Khi não vội kết luận, hãy hỏi: còn cách giải thích nào khác không?*",
+      "==4 · Dễ hiểu thường bị tưởng là đúng.== Một thông tin lặp nhiều lần nghe quen hơn, một thiết kế đẹp khiến nội dung có vẻ đáng tin hơn, một câu đơn giản tạo cảm giác chắc chắn hơn phân tích phức tạp. Vì vậy mình cần cẩn thận với mạng xã hội: điều xuất hiện nhiều chưa chắc đúng, người nói trôi chảy chưa chắc hiểu sâu. *Hãy tách cảm giác dễ nghe khỏi câu hỏi “nó có bằng chứng không?”*"
+    ]
+  },
+  {
+    "heading": "Ý 5 – 6",
+    "paragraphs": [
+      "==5 · Mình chỉ thấy phần thông tin trước mắt.== Mình hay tin vào câu chuyện dựng từ những gì mình đang biết, dù phần chưa biết còn rất lớn. Thấy một người ít nói buổi đầu, mình nghĩ họ khó gần — nhưng có thể họ đang mệt, đang lạ chỗ, hoặc cần thời gian mở lòng. *Trước khi đánh giá ai, hãy thêm: “Với những gì mình đang biết hiện tại…” để khiêm tốn hơn với kết luận.*",
+      "==6 · Mỏ neo đầu tiên ảnh hưởng rất mạnh.== Con số đầu tiên thường thành cái mốc trong đầu: món đồ ghi giá gốc 2 triệu giảm còn 900 nghìn, mình thấy rẻ dù chưa chắc nó đáng. Mỏ neo cũng có thể là ấn tượng đầu, lời nhận xét đầu, tiêu chuẩn đầu. *Gặp một con số hay nhận định đầu tiên, hãy hỏi: nếu chưa nghe mốc này, mình sẽ tự đánh giá thế nào?*"
+    ]
+  },
+  {
+    "heading": "Ý 7 – 8",
+    "paragraphs": [
+      "==7 · Điều dễ nhớ bị tưởng là điều phổ biến.== Não đánh giá xác suất dựa trên điều dễ nhớ, mà điều dễ nhớ thường là điều gây cảm xúc mạnh chứ không phải điều hay xảy ra nhất. Vừa đọc nhiều tin tai nạn máy bay, mình sợ bay hơn dù máy bay vẫn rất an toàn. *Đừng chỉ hỏi “mình nhớ ví dụ nào”, hãy hỏi “dữ liệu chung nói gì?”*",
+      "==8 · Mình dễ nhìn người qua khuôn mẫu.== Nghe “một người trầm tính, thích đọc sách”, nhiều người đoán họ làm thư viện hơn là kinh doanh, dù ngoài đời người kinh doanh nhiều hơn thủ thư rất nhiều. Mình cũng hay dán nhãn: hướng ngoại thì nông, ít nói thì sâu, điểm cao thì giỏi toàn diện. *Hãy nhìn hành vi cụ thể trước khi tin vào nhãn dán.*"
+    ]
+  },
+  {
+    "heading": "Ý 9 – 10",
+    "paragraphs": [
+      "==9 · Thành công và thất bại có phần may rủi.== Mình hay nhìn người thắng rồi nghĩ mọi điều họ làm đều đúng, nhìn người thua rồi nghĩ họ sai hoàn toàn — nhưng nhiều kết quả có yếu tố may mắn, thời điểm và hoàn cảnh. Hiểu điều này giúp mình bớt thần tượng người thắng, bớt phán xét người thua, và học từ quá trình chứ không chỉ từ kết quả. *Thấy một kết quả, hãy hỏi: trong này bao nhiêu phần là kỹ năng, bao nhiêu phần là bối cảnh?*",
+      "==10 · Mình thường quá tự tin vào dự đoán.== Con người thích cảm giác chắc chắn nên hay lập kế hoạch quá đẹp rồi vỡ khi gặp đời thật: quên tính thời gian nghỉ, lỗi phát sinh, việc bất ngờ. *Khi lập kế hoạch, hãy cộng thêm phần đệm: nghĩ việc mất 2 tiếng thì để 3 tiếng, dự án cần 1 tuần thì tính thêm ngày dự phòng.*"
+    ]
+  },
+  {
+    "heading": "Ý 11 – 12",
+    "paragraphs": [
+      "==11 · Hãy dùng góc nhìn bên ngoài.== Góc nhìn bên trong là khi mình nói *“lần này khác, mình sẽ làm được”*; góc nhìn bên ngoài là khi mình hỏi *“những người từng làm việc giống mình thường mất bao lâu, thường vướng ở đâu?”*. Nó không làm mình bi quan, chỉ kéo mình khỏi ảo tưởng rằng trường hợp của mình luôn đặc biệt. *Trước việc lớn, hãy hỏi người từng làm rồi hoặc xem dữ liệu cũ — kinh nghiệm của người khác tiết kiệm cho mình rất nhiều ảo tưởng.*",
+      "==12 · Mất mát đau hơn niềm vui đạt được.== Mất 500 nghìn thường buồn hơn niềm vui khi được 500 nghìn, nên con người sợ mất hơn ham được. Vì vậy mình giữ món đồ không dùng vì tiếc tiền, ở lại một việc không hợp vì tiếc công sức, không dám thử điều mới vì sợ mất an toàn. *Khi thấy mình giữ điều gì chỉ vì tiếc, hãy hỏi: nếu hôm nay chưa từng có nó, mình có chọn nó nữa không?*"
+    ]
+  },
+  {
+    "heading": "Ý 13 – 14",
+    "paragraphs": [
+      "==13 · Cách đặt vấn đề có thể đổi quyết định.== Cùng một sự thật, cách nói khác làm mình chọn khác đi: *“tỷ lệ sống sót 90%”* nghe yên tâm hơn *“tỷ lệ tử vong 10%”*, dù hai câu cùng nghĩa. Một lời quảng cáo, một tiêu đề, một câu khảo sát đều có thể dẫn mình tới một cảm xúc nhất định. *Hãy đổi cách diễn đạt rồi xem mình còn quyết định như cũ không — nếu đổi khung mà cảm xúc đổi mạnh, có thể mình đang bị cách trình bày dẫn dắt.*",
+      "==14 · Khi sở hữu điều gì, mình dễ đánh giá nó cao hơn.== Một chiếc áo đã mua, một ý tưởng mình nghĩ ra, một kế hoạch mình xây — đều dễ trở nên *“đáng giá hơn”* chỉ vì nó là của mình. Điều này làm mình khó bỏ đồ, khó nhận góp ý, khó đổi hướng. *Hãy hỏi: nếu đây là ý tưởng của người khác, mình có đánh giá nó như vậy không?*"
+    ]
+  },
+  {
+    "heading": "Ý 15",
+    "paragraphs": [
+      "==15 · Mình có hai cái tôi: người trải nghiệm và người ghi nhớ.== Có những chuyến đi lúc đang diễn ra thì mệt, nhưng khi nhớ lại chỉ còn vài khoảnh khắc đẹp; có buổi học dài mà mình chỉ nhớ đoạn cuối. Cái tôi trải nghiệm sống qua từng phút, còn cái tôi ghi nhớ kể lại câu chuyện sau đó. Hiểu điều này giúp mình sống cân bằng: đừng chỉ thiết kế cuộc đời để sau này có câu chuyện đẹp, cũng đừng chỉ chạy theo cảm giác nhất thời mà quên ký ức dài hạn. *Trong ngày, hãy tạo vài khoảnh khắc nhỏ đáng nhớ: một bữa ăn không vội, một đoạn đi bộ, một trang sách, một cuộc trò chuyện tử tế.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — biết dừng một nhịp ở quyết định quan trọng",
+    "paragraphs": [
+      "Bộ não của mình rất thông minh, nhưng nó thích đi đường tắt. Đường tắt giúp mình sống nhanh hơn, nhưng đôi khi cũng làm mình hiểu sai, đánh giá vội và quyết định thiếu tỉnh táo.",
+      "Bài học đáng áp dụng nhất không phải là nghi ngờ mọi thứ, mà là ==biết dừng một nhịp ở những quyết định quan trọng==. Một câu hỏi nhỏ có thể thay đổi rất nhiều: *“Mình đang phản ứng nhanh, hay thật sự đã suy nghĩ đủ chậm?”*",
+      "Giá trị cốt lõi — Mình không cần ghét trực giác; mình chỉ cần biết khi nào ==để Hệ thống 2 lên tiếng==, để quyết định lớn được suy nghĩ đủ chậm trước khi mình tin là nó đúng."
+    ]
+  }
+];
+
+// "Dễ hiểu, dễ vận dụng" flipbook deck for "Atomic Habits" (James Clear).
+// Pairs ~2 ideas per leaf, each idea = giá trị cốt lõi + a short everyday
+// example + a *câu chốt* clincher. Voice: thay đổi bền bằng cách thiết kế lại
+// thói quen, không phải bằng ý chí thép. Shared by the book's en + vi decks
+// (Vietnamese on the public site). Sourced from the author's note
+// (De_Hieu_De_Van_Dung_Atomic_Habits); regenerate if it changes. Inline
+// ==highlight== / *italic* baked in.
+const ATOMIC_HABITS_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — thói quen nhỏ, đời sống nhẹ hơn",
+    "paragraphs": [
+      "Atomic Habits không bắt mình phải trở thành người có ý chí thép. Cuốn sách nói một điều dễ chịu hơn: nếu muốn thay đổi bền vững, đừng chỉ trách bản thân, hãy ==thiết kế lại== cách thói quen xuất hiện trong đời sống của mình.",
+      "Nhiều khi mình không thất bại vì lười. Mình thất bại vì thói quen tốt quá khó bắt đầu, còn thói quen xấu thì quá dễ lặp lại. Hiểu được điều đó, mình bớt tự dằn vặt và bắt đầu thay đổi *môi trường* quanh mình.",
+      "Khi đọc, mình giữ một câu hỏi đơn giản: làm sao để phiên bản tốt hơn của mình *dễ xuất hiện hơn* mỗi ngày, thay vì phải gồng lên chống lại chính mình?",
+      "Bản này giữ với mỗi ý một ví dụ đời thường và một *câu chốt* — để hiểu nhanh và mang vào việc thật được ngay."
+    ]
+  },
+  {
+    "heading": "Ý 1 – 2",
+    "paragraphs": [
+      "==1 · Thay đổi lớn bắt đầu rất nhỏ.== Một phần trăm mỗi ngày nghe không đáng kể, nhưng điều nhỏ lặp lại đủ lâu sẽ tạo ra hướng đi mới. Hôm nay chỉ đọc 2 trang sách, học 10 từ mới, đi bộ 5 phút, dọn một góc bàn — chưa đổi đời ngay, nhưng gửi cho mình tín hiệu *“mình đang quay lại chăm sóc đời sống của mình”*. *Đừng xem thường một việc nhỏ nếu nó giúp mình đi đúng hướng mỗi ngày.*",
+      "==2 · Đừng chỉ đặt mục tiêu, hãy xây hệ thống.== Mục tiêu là điều mình muốn đạt; hệ thống là cách mình sống mỗi ngày để tiến gần điều đó. Ai cũng có thể nói *“đọc nhiều hơn”, “khỏe hơn”*, nhưng nếu không có hệ thống thì chỉ là câu nói đẹp. Hệ thống là: mỗi tối đọc 10 phút sau khi đánh răng, để giày thể thao ngay cửa, học ở bàn không có điện thoại. *Mục tiêu cho mình hướng đi, nhưng hệ thống mới đưa mình tới đó.*"
+    ]
+  },
+  {
+    "heading": "Ý 3 – 4",
+    "paragraphs": [
+      "==3 · Thói quen xây nên danh tính của mình.== Mỗi hành động là một lá phiếu cho kiểu người mình muốn trở thành. Mỗi lần viết một đoạn, mình bỏ phiếu cho danh tính *“mình là người viết”*; mỗi lần giữ một lời hứa nhỏ, mình bỏ phiếu cho *“mình là người đáng tin”*. Không cần hoàn hảo ngay, chỉ cần đủ bằng chứng nhỏ để bắt đầu tin vào phiên bản mới. *Đừng hỏi mình muốn đạt gì trước; hãy hỏi mình muốn trở thành người như thế nào.*",
+      "==4 · Thói quen có một vòng lặp.== Một thói quen thường đi qua bốn bước: có tín hiệu, nảy sinh ham muốn, mình hành động, rồi nhận phần thưởng. Điện thoại sáng lên là tín hiệu, tò mò là ham muốn, cầm lên kiểm tra là hành động, cảm giác đỡ chán là phần thưởng. Hiểu vòng lặp này, mình thôi chỉ trách *“sao lại lướt nữa rồi”* mà nhìn ra cơ chế đằng sau. *Muốn đổi hành vi, hãy nhìn cả con đường dẫn mình đến hành vi đó.*"
+    ]
+  },
+  {
+    "heading": "Ý 5 – 6",
+    "paragraphs": [
+      "==5 · Muốn làm thói quen tốt, hãy làm nó rõ ràng.== Một thói quen mơ hồ rất dễ bị quên. *“Mình sẽ đọc sách nhiều hơn”* nghe hay nhưng khó làm; *“sau khi ăn tối, mình đọc 10 phút ở bàn học”* rõ hơn nhiều. Thói quen cần một vị trí trong ngày — gắn với thời gian, địa điểm hoặc một việc đã có sẵn thì nó dễ sống sót hơn. *Đừng để thói quen tốt phải tự tìm chỗ đứng; hãy đặt lịch hẹn cho nó.*",
+      "==6 · Môi trường âm thầm quyết định rất nhiều.== Bánh kẹo trước mắt thì mình dễ ăn, sách trên bàn thì dễ mở ra, điện thoại cạnh giường thì dễ lướt trước khi ngủ. Mình thường đánh giá quá cao ý chí và đánh giá thấp môi trường — người kỷ luật không hẳn mạnh hơn, họ chỉ biết làm lựa chọn tốt trở nên dễ thấy hơn. *Hãy sắp xếp không gian để phiên bản tốt hơn của mình dễ xuất hiện hơn.*"
+    ]
+  },
+  {
+    "heading": "Ý 7 – 8",
+    "paragraphs": [
+      "==7 · Muốn bỏ thói quen xấu, hãy làm nó khó nhìn thấy.== Chỉ nói *“mình phải bớt lướt mạng xã hội”* thường không đủ. Hãy xóa app khỏi màn hình chính, tắt thông báo, để điện thoại xa bàn học, hoặc đặt giới hạn thời gian. Đây không phải là yếu đuối — đây là cách mình bớt phải đánh nhau với cám dỗ cả ngày. *Đừng chỉ cố thắng cám dỗ; hãy làm cho cám dỗ khó chạm tới hơn.*",
+      "==8 · Hãy làm thói quen tốt trở nên hấp dẫn.== Não thích phần thưởng gần, nên thói quen tốt nếu chỉ toàn cảm giác *“phải cố”* thì dễ bị bỏ. Ghép việc cần làm với việc mình thích: nghe playlist nhẹ khi dọn phòng, uống một ly trà khi đọc sách, học cùng bạn, đánh dấu ngày hoàn thành lên lịch. Một chút vui giúp thói quen dễ quay lại hơn. *Thói quen bền không chỉ cần đúng, nó còn cần đủ dễ chịu để mình muốn lặp lại.*"
+    ]
+  },
+  {
+    "heading": "Ý 9 – 10",
+    "paragraphs": [
+      "==9 · Người xung quanh ảnh hưởng đến thói quen của mình.== Mình dễ làm điều được nhóm của mình xem là bình thường. Bạn bè hay đọc sách thì mình thấy đọc sách gần hơn; nhóm hay thức khuya thì mình dễ thức khuya hơn. Chọn môi trường cũng là chọn phiên bản mình dễ trở thành — không cần cắt hết quan hệ cũ, nhưng hãy chủ động đặt mình gần những người có lối sống mình muốn học. *Thói quen không chỉ là chuyện cá nhân; nó còn là chuyện mình đang sống giữa ai.*",
+      "==10 · Hãy làm thói quen dễ đến mức khó từ chối.== Một sai lầm phổ biến là bắt đầu quá lớn: muốn tập thì đặt 1 tiếng, muốn viết thì bắt 1.000 chữ, muốn thiền thì ngồi 30 phút. Hãy bắt đầu bằng phiên bản 2 phút: đọc 1 trang, viết 3 dòng, mang giày ra cửa, mở tài liệu ra. Mục tiêu ban đầu không phải làm nhiều, mà là trở thành người bắt đầu đều. *Đôi khi bước nhỏ nhất lại là bước quan trọng nhất, vì nó giúp mình bước qua sự trì hoãn.*"
+    ]
+  },
+  {
+    "heading": "Ý 11 – 12",
+    "paragraphs": [
+      "==11 · Thói quen cần cảm giác thỏa mãn.== Làm xong một việc tốt mà không thấy gì thì não không hào hứng lặp lại, nên hãy tạo phần thưởng nhỏ và lành mạnh. Đánh dấu một ngày hoàn thành, ghi một dòng *“hôm nay mình đã giữ lời”*, cho bản thân vài phút nghỉ sau khi học. Phần thưởng không cần lớn, chỉ cần khiến não nhận ra *“việc này đáng lặp lại”*. *Điều được ghi nhận sẽ dễ được lặp lại hơn.*",
+      "==12 · Đừng bỏ lỡ hai lần liên tiếp.== Ai cũng có ngày lệch nhịp; một hôm không học, một buổi không tập, một tối ngủ muộn không phá hỏng tất cả. Vấn đề là để một lần trượt biến thành một mùa bỏ cuộc. Quy tắc rất đời thường: lỡ một lần thì quay lại ngay lần sau, đừng biến sai sót thành danh tính *“mình lại thất bại rồi”*. *Một lần bỏ lỡ là sự cố; hai lần liên tiếp là lúc mình cần kéo bản thân quay lại.*"
+    ]
+  },
+  {
+    "heading": "Ý 13 – 14",
+    "paragraphs": [
+      "==13 · Theo dõi thói quen để thấy mình đang tiến bộ.== Tiến bộ nhỏ thường khó nhận ra; nếu không ghi lại, mình dễ nghĩ *“mình chẳng thay đổi gì cả”* rồi bỏ cuộc. Một bảng theo dõi đơn giản, vài dấu tick trên lịch, một ghi chú cuối ngày có thể cho mình thấy mình đang thật sự đi tiếp. Đôi khi điều mình cần không phải động lực mới, mà là bằng chứng rằng mình đã cố gắng. *Nhìn thấy tiến bộ giúp mình tin rằng nỗ lực nhỏ đang có ý nghĩa.*",
+      "==14 · Có lúc thói quen tốt chưa cho kết quả ngay.== Đây là giai đoạn dễ nản nhất: học mà chưa thấy điểm tăng, tập mà chưa thấy cơ thể đổi, viết mà chưa ai đọc. Nhưng nhiều kết quả cần thời gian tích lũy trước khi lộ ra — giống nước đá chưa tan cho đến khi nhiệt độ đủ điểm, nỗ lực của mình cũng có lúc âm thầm tích lại. *Đừng bỏ cuộc chỉ vì kết quả chưa kịp hiện ra ngoài mặt.*"
+    ]
+  },
+  {
+    "heading": "Ý 15",
+    "paragraphs": [
+      "==15 · Thói quen tốt không làm mình cứng nhắc; nó cho mình tự do hơn.== Kỷ luật nghe có vẻ gò bó, nhưng thật ra thói quen tốt giúp mình ít phải vật lộn hơn. Khi việc đọc, học, ngủ, tập, dọn dẹp đã thành nhịp, mình có thêm năng lượng cho những điều sáng tạo hơn. Thói quen không phải nhà tù — thói quen tốt là đường ray giúp mình đi xa mà không phải mỗi ngày đều bắt đầu lại từ số không. *Một đời sống có nhịp giúp mình tự do hơn trong chính năng lượng của mình.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — nếu chỉ áp dụng một điều",
+    "paragraphs": [
+      "Nếu chỉ giữ lại một điều từ Atomic Habits, hãy chọn một thói quen nhỏ đến mức mình gần như không thể từ chối, rồi gắn nó vào một thời điểm cụ thể trong ngày.",
+      "Ví dụ: sau khi đánh răng buổi tối, đọc 2 trang sách. Sau khi mở laptop, viết 3 dòng kế hoạch. Sau khi ăn trưa, đi bộ 5 phút. Không cần bắt đầu thật lớn — hãy ==bắt đầu nhỏ đến mức mình có thể giữ lời==.",
+      "Giá trị cốt lõi — Đừng cố thay đổi cuộc đời bằng một cú bứt phá thật lớn; hãy thiết kế những ==thói quen nhỏ== đến mức dễ bắt đầu, làm cho chúng *rõ ràng, hấp dẫn, dễ làm và thỏa mãn*, rồi lặp lại đủ lâu để chúng âm thầm xây nên con người mới của mình."
+    ]
+  }
+];
+
+// "Dễ hiểu, dễ vận dụng" flipbook deck for "Lối Sống Tối Giản Của Người Nhật"
+// (Goodbye, Things — Fumio Sasaki). Pairs ~2 ý mỗi leaf, mỗi ý giữ một ví dụ đời
+// thường ngắn + một *câu chốt* để mang vào việc thật được ngay. Tinh thần: tối
+// giản không phải sống thiếu, mà là giữ lại đúng nhất để điều quan trọng có chỗ
+// thở. Shared by the book's en + vi decks (Vietnamese on the public site).
+// Sourced from the author's note (De_Hieu_De_Van_Dung_Loi_Song_Toi_Gian_Cua_Nguoi_Nhat);
+// regenerate if it changes. Inline ==highlight== / *italic* baked in.
+const GOODBYE_THINGS_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — tối giản là giữ lại đúng nhất",
+    "paragraphs": [
+      "Cuốn sách này không bắt ai sống trong một căn phòng trống, cũng không phải cuộc thi xem ai có ít đồ hơn. Nó hỏi lại một câu nhẹ nhàng: ==điều gì thật sự cần ở lại trong đời mình?==",
+      "Có khi thứ làm mình mệt không chỉ là công việc hay lịch học, mà là quá nhiều đồ, quá nhiều lựa chọn, quá nhiều so sánh và quá nhiều thứ *“mình tưởng là cần”*.",
+      "Khi đọc, mình giữ một góc nhìn mềm: bớt đi những thứ không cần để những thứ quan trọng có chỗ thở — chứ không phải để khoe mình sống thanh cao.",
+      "Bản này giữ với mỗi ý một ví dụ đời thường và một *câu chốt* — để hiểu nhanh và bắt đầu dọn được ngay từ một ngăn kéo."
+    ]
+  },
+  {
+    "heading": "Ý 1 – 2",
+    "paragraphs": [
+      "==1 · Tối giản không phải là thiếu thốn.== Tinh thần của sách mềm hơn ý nghĩ “sống khổ, bỏ hết đồ đẹp”: bớt thứ không cần để thứ quan trọng có chỗ. Một căn phòng ít đồ không để khoe thanh cao, mà để mình dễ dọn, dễ nghỉ, dễ tập trung và ít bị kéo bởi những thứ không dùng. *Tối giản không phải là có ít nhất, mà là giữ lại đúng nhất.*",
+      "==2 · Đồ đạc cũng chiếm chỗ trong đầu.== Mỗi món đều cần một chút năng lượng: mua, cất, lau, tìm, sửa, tiếc, nghĩ xem có nên bỏ không. Một chiếc bàn đầy đồ khiến mình chưa học đã thấy nặng; một tủ quá nhiều lựa chọn làm buổi sáng bắt đầu bằng phân vân. *Bớt đồ không chỉ làm nhà rộng hơn, mà làm đầu mình nhẹ hơn.*"
+    ]
+  },
+  {
+    "heading": "Ý 3 – 4",
+    "paragraphs": [
+      "==3 · Mình thường giữ đồ vì cảm xúc, không vì nhu cầu.== Có món không dùng vẫn giữ vì tiếc tiền, vì “biết đâu sau này cần”, vì nó gắn với một phiên bản cũ của mình. Tối giản không bắt mình vô cảm, chỉ mời mình thành thật: món này đang phục vụ đời sống hiện tại, hay chỉ giữ mình ở lại với một cảm giác cũ? *Không phải món nào có kỷ niệm cũng cần ở lại mãi trong không gian sống.*",
+      "==4 · So sánh làm mình muốn mua nhiều hơn.== Nhìn cuộc sống người khác trên mạng, mình dễ nghĩ mình thiếu: thiếu quần áo đẹp, thiếu góc làm việc xịn, thiếu phong cách sống. Càng chạy theo hình ảnh của người khác, mình càng khó nghe nhu cầu thật của mình. *Mua để dùng thì nhẹ; mua để chứng minh mình không thua ai thì rất mệt.*"
+    ]
+  },
+  {
+    "heading": "Ý 5 – 6",
+    "paragraphs": [
+      "==5 · Bỏ đồ là học cách buông.== Vứt một món nghe đơn giản, nhưng có thể chạm vào nỗi sợ: sợ phí, sợ thiếu, sợ mất một phần ký ức, sợ mình đã chọn sai. Mỗi món được cho đi, bán lại hay tái chế là một lần mình nói: mình không cần mang tất cả mọi thứ theo nữa. *Buông một món đồ đôi khi cũng là buông một gánh nặng tinh thần.*",
+      "==6 · Bắt đầu từ những món dễ nhất.== Đừng khởi đầu bằng hộp thư tình cũ hay món quà nhiều kỷ niệm. Hãy bắt đầu từ đồ hỏng, đồ trùng lặp, đồ hết hạn, đồ lâu rồi không dùng; khi đã quen với cảm giác nhẹ đi, mình đủ bình tĩnh xử lý những món khó hơn. *Muốn thay đổi không gian sống, hãy bắt đầu từ nơi ít kháng cự nhất.*"
+    ]
+  },
+  {
+    "heading": "Ý 7 – 8",
+    "paragraphs": [
+      "==7 · Một món nên có lý do rõ ràng để ở lại.== Nếu nó hữu ích, làm mình vui thật sự hoặc mang ý nghĩa sâu sắc, nó có thể ở lại. Nhưng nếu lý do duy nhất là “lỡ mua rồi”, “chắc có ngày cần”, hãy thử một câu dễ áp dụng: *“Nếu hôm nay chưa có món này, mình có muốn mua lại nó không?”* *Đừng để quá khứ mua sắm quyết định không gian hiện tại của mình.*",
+      "==8 · Mua ít hơn là cách dọn nhà từ gốc.== Dọn đồ mà vẫn mua liên tục thì nhà đầy lại rất nhanh. Trước khi mua, hãy hỏi: mình có thật sự cần không, có chỗ để không, có dùng thường xuyên không, món này có làm đời sống tốt hơn không? *Món đồ dễ quản lý nhất là món mình không mua vì biết nó không cần thiết.*"
+    ]
+  },
+  {
+    "heading": "Ý 9 – 10",
+    "paragraphs": [
+      "==9 · Ít lựa chọn hơn giúp mình sống nhẹ hơn.== Quá nhiều lựa chọn làm mình mệt: mặc gì, dùng gì, cất ở đâu, mua thêm cái nào — mỗi quyết định nhỏ đều tiêu hao năng lượng. Khi tủ đồ gọn hơn, bàn sạch hơn, đồ có vị trí rõ hơn, ngày của mình trôi bớt rối. *Đời sống đơn giản hơn không làm mình nghèo lựa chọn, nó giúp mình bớt kiệt sức vì lựa chọn.*",
+      "==10 · Không gian trống cũng là một giá trị.== Mình thường nghĩ phải lấp đầy phòng thì mới đủ, nhưng một khoảng trống trên bàn, một góc thoáng, một chiếc kệ không quá đầy có thể đem lại bình yên. Không gian trống giống khoảng nghỉ trong một bản nhạc; thiếu khoảng nghỉ, mọi âm thanh đều thành ồn. *Khoảng trống không phải là thiếu; đôi khi đó là nơi bình yên bắt đầu.*"
+    ]
+  },
+  {
+    "heading": "Ý 11 – 12",
+    "paragraphs": [
+      "==11 · Tối giản giúp mình biết ơn hơn.== Khi có quá nhiều, mình dễ không thấy rõ giá trị của từng thứ; khi giữ lại ít hơn, mình dùng đồ kỹ hơn và biết ơn vì chúng thật sự có mặt. Một chiếc cốc mình thích, vài bộ quần áo mặc thoải mái, một bàn học gọn — đủ có thể rất đẹp khi mình thôi nhìn nó bằng cảm giác thiếu. *Biết đủ không làm đời mình nhỏ lại; nó làm những điều đang có trở nên rõ hơn.*",
+      "==12 · Tối giản không chỉ là đồ đạc.== Sau khi dọn đồ, mình có thể dọn cả lịch trình, mạng xã hội, những lời hứa quá sức, những mối quan hệ làm mình kiệt sức. Câu hỏi sâu hơn: điều gì đang lấy năng lượng của mình mà không nuôi dưỡng đời sống của mình? *Một đời sống tối giản không chỉ gọn trong nhà, mà còn nhẹ trong lòng.*"
+    ]
+  },
+  {
+    "heading": "Ý 13",
+    "paragraphs": [
+      "==13 · Đừng biến tối giản thành áp lực mới.== Có người sống tối giản với 50 món đồ; có người vẫn cần nhiều đồ hơn vì công việc, gia đình, sở thích — không sao cả. Tối giản không nên trở thành một cuộc thi đạo đức. Điều quan trọng là mình có đang sống có chủ đích hơn không: đồ đạc đang phục vụ mình, hay mình đang phục vụ đồ đạc? *Tối giản đẹp nhất khi nó làm mình tự do hơn, không phải căng thẳng hơn.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — đủ chỗ cho điều quan trọng",
+    "paragraphs": [
+      "Nếu muốn bắt đầu ngay hôm nay, hãy chọn một góc nhỏ: bàn học, ví tiền, túi xách, màn hình điện thoại hoặc một ngăn tủ. Lấy mọi thứ ra, lau sạch, rồi chỉ đặt lại những món thật sự dùng hoặc thật sự yêu quý.",
+      "Sau đó ngồi nhìn góc nhỏ ấy vài phút. Cảm giác nhẹ đi đó chính là lý do tối giản có sức hấp dẫn — và cũng là cách dễ nhất để biết mình nên giữ gì tiếp theo.",
+      "Giá trị cốt lõi — mình không cần một đời sống trống rỗng, mình cần một đời sống có ==đủ chỗ cho điều quan trọng==. Tối giản chỉ là công cụ dọn bớt tiếng ồn để nghe rõ điều ấy."
+    ]
+  },
+];
+
+// "Dễ hiểu, dễ vận dụng" flipbook deck for "Muôn Kiếp Nhân Sinh — Phần 1"
+// (Many Lives, Many Times — Nguyên Phong). Pairs ~2 ý tưởng per leaf, mỗi ý
+// giữ một ví dụ đời thường + *câu chốt* để mang vào đời sống ngay. Đọc cuốn
+// sách như tấm gương quay về hiện tại, không sa vào tranh luận đúng-sai về
+// luân hồi. Shared by the book's en + vi decks (Vietnamese on the public
+// site). Sourced from the author's note (De_Hieu_De_Van_Dung_Muon_Kiep_Nhan
+// _Sinh_Phan_1); regenerate if it changes. Inline ==highlight== / *italic*.
+const MUON_KIEP_1_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — đọc như tấm gương quay về hiện tại",
+    "paragraphs": [
+      "Với *Muôn Kiếp Nhân Sinh*, cách đọc nhẹ nhất không phải là tranh luận ngay đúng hay sai về luân hồi, tiền kiếp, nhân quả. Có thể đọc nó như một lời nhắc quay về đời sống hiện tại.",
+      "Câu hỏi mình giữ khi đọc: mình đang sống thế nào, đang ==gieo điều gì==, và những lựa chọn nhỏ của mình đang làm cuộc đời nhẹ hơn hay nặng hơn?",
+      "Đọc theo hướng đó, cuốn sách không xa vời. Nó trở thành một *tấm gương rất đời thường*.",
+      "Bản này giữ với mỗi ý một ví dụ đời thường và một *câu chốt* — để hiểu nhanh và mang vào việc thật được ngay."
+    ]
+  },
+  {
+    "heading": "Ý 1 – 2",
+    "paragraphs": [
+      "==1 · Nhân quả để sống có trách nhiệm hơn== Nhân quả không phải để sợ trừng phạt; mỗi suy nghĩ, lời nói, hành động đều để lại một dấu vết. Một câu nói vô tâm làm người khác buồn cả ngày; một việc tử tế rất nhỏ giúp ai đó có thêm niềm tin — mình không thấy hết kết quả ngay, nhưng chúng vẫn tồn tại. *Nhân quả gần nhất nằm trong cách mình làm người khác cảm thấy sau khi gặp mình.*",
+      "==2 · Không hành động nào là “nhỏ” nếu lặp lại== Một lần nóng giận chỉ là khoảnh khắc, nhưng ngày nào cũng giận thì thành tính cách; một lần giúp đỡ nhỏ, nhưng thường xuyên chọn tử tế thì thành con người mình. Hãy nhìn lại việc hằng ngày: cách trả lời tin nhắn, đối xử với người thân, giữ lời, phản ứng khi không ai nhìn thấy. *Đời sống được tạo nên từ rất nhiều lựa chọn tưởng như không đáng kể.*"
+    ]
+  },
+  {
+    "heading": "Ý 3 – 4",
+    "paragraphs": [
+      "==3 · Tham vọng cần đi cùng tỉnh thức== Tham vọng không sai, nhưng tham vọng thiếu tỉnh thức rất nguy hiểm. Mình dễ bị kéo bởi mong muốn hơn người: điểm cao hơn, đẹp hơn, giàu hơn, được chú ý hơn — nếu không tỉnh, sự phát triển thành cuộc chạy đua không điểm dừng. *Tham vọng cần đi cùng đạo đức, nếu không nó biến mình thành người rất giỏi nhưng rất lạc.*",
+      "==4 · Hiểu biết thật làm mình khiêm tốn hơn== Khoa học và tâm linh không phải hai kẻ thù; cả hai, nếu hiểu đúng, đều mở rộng nhận thức. Khoa học giúp hiểu thế giới vật chất; tâm linh theo nghĩa đẹp giúp hỏi mình sống để làm gì, điều gì làm tâm sáng hơn. *Hiểu biết thật sự không làm mình kiêu ngạo; nó làm mình biết mình còn rất nhiều điều chưa hiểu.*"
+    ]
+  },
+  {
+    "heading": "Ý 5 – 6",
+    "paragraphs": [
+      "==5 · Sụp đổ thường bắt đầu từ bên trong== Một nền văn minh có thể suy tàn không vì thiên tai mà vì lòng tham, vô cảm, bất công, kiêu ngạo và quên mất giới hạn của mình. Nhìn gần vào bản thân, nó hỏi: có phần nào trong đời mình cũng đang ==sụp== vì mình bỏ bê quá lâu không? *Điều không được chăm sóc từ bên trong sớm muộn cũng biểu hiện ra bên ngoài.*",
+      "==6 · Nghiệp còn là chuyện tập thể== Một người sống vô trách nhiệm tạo hậu quả nhỏ; nhiều người cùng vô trách nhiệm tạo hậu quả lớn — nên môi trường, bạo lực, lối sống tiêu thụ không chỉ là chuyện của ai xa xôi. Mình không sửa cả thế giới trong một ngày, nhưng có thể bớt lãng phí, bớt vô cảm, bớt thờ ơ với điều sai. *Mình không chịu trách nhiệm cho tất cả, nhưng luôn chịu trách nhiệm cho phần mình góp vào.*"
+    ]
+  },
+  {
+    "heading": "Ý 7 – 8",
+    "paragraphs": [
+      "==7 · Đời người không chỉ đo bằng thành công bên ngoài== Nhân vật trong sách có tiền bạc, địa vị, trải nghiệm rộng, nhưng vẫn phải quay về câu hỏi căn bản: bên trong mình có ==bình an== không? Mình có thể đạt điểm tốt, công việc tốt, hình ảnh tốt trên mạng mà vẫn thấy trống nếu sống xa giá trị thật của mình. *Thành công bên ngoài không thay thế được sự yên ổn bên trong.*",
+      "==8 · Cái chết làm mình nhìn lại cách sống== Sách nói nhiều về cái chết không phải để dọa, mà để nhắc đời sống có giới hạn, và chính vì hữu hạn nên từng ngày càng đáng quý. Nếu biết một ngày mình sẽ rời đi, có lẽ mình bớt trì hoãn lời xin lỗi, bớt giữ mãi oán giận, biết thương những điều đang có hơn. *Nhớ về sự hữu hạn không làm đời buồn hơn; nó làm mình sống thật hơn.*"
+    ]
+  },
+  {
+    "heading": "Ý 9 – 10",
+    "paragraphs": [
+      "==9 · Tình thương làm tâm thức sáng lên== Qua nhiều câu chuyện, điều còn lại không phải ai thắng ai, ai giàu hơn, ai quyền lực hơn, mà là tình thương và sự tỉnh thức. Tình thương không nhất thiết lớn lao: kiềm lại một lời làm đau, giúp người khác khi có thể, không lợi dụng lòng tin, biết đặt mình vào vị trí người khác. *Một đời sống có tình thương luôn để lại dấu vết nhẹ hơn trên thế giới.*",
+      "==10 · Sống tỉnh thức bắt đầu từ hiện tại== Dù sách nói về nhiều kiếp, điều mình làm được nằm ở kiếp sống này: hôm nay mình nói gì, chọn gì, sửa gì, buông gì, gieo gì. Đừng đọc nhân quả để phán xét người khác; cách đẹp hơn là quay về mình: *“mình có thể sống sao để bớt tạo thêm khổ đau?”* *Tâm linh đúng nghĩa không làm mình phán xét nhiều hơn, mà làm mình sống có trách nhiệm hơn.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — nếu chỉ giữ tinh thần phần 1",
+    "paragraphs": [
+      "Mỗi người đều đang gieo điều gì đó qua cách sống của mình. Có hạt mọc rất nhanh, có hạt cần thời gian dài mới hiện ra, nhưng không điều gì hoàn toàn biến mất.",
+      "Vì vậy, thay vì chờ một ngày thật lớn để thay đổi, mình có thể bắt đầu bằng một việc rất nhỏ hôm nay: nói tử tế hơn, tiêu dùng có ý thức hơn, nhận lỗi sớm hơn, bớt làm tổn thương người khác hơn.",
+      "Giá trị cốt lõi — Sống tốt không phải để được thưởng; sống tốt là để ==tâm mình và thế giới quanh mình bớt nặng==."
+    ]
+  }
+];
+
+// "Dễ hiểu, dễ vận dụng" flipbook deck for "Muôn Kiếp Nhân Sinh — Phần 2"
+// (Many Lives, Many Times 2 — Nguyên Phong). Pairs ~2 ý mỗi leaf, mỗi ý giữ
+// một ví dụ đời thường + một *câu chốt* — để hiểu nhanh và mang vào việc thật.
+// Voice: nghiệp là bài học chưa hoàn tất, chuyển hóa bắt đầu từ những việc rất
+// đời thường hôm nay. Shared by the book's en + vi decks (Vietnamese on the
+// public site). Sourced from the author's note
+// (De_Hieu_De_Van_Dung_Muon_Kiep_Nhan_Sinh_Phan_2). Inline ==highlight== / *italic*.
+const MUON_KIEP_2_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — đọc để hiểu và mang vào đời sống",
+    "paragraphs": [
+      "Nếu phần 1 khiến mình nghĩ nhiều về nhân quả, thì phần 2 đi sâu hơn vào ==nghiệp lực, sự chuyển hóa và hành trình học bài học của linh hồn==. Dù mình tin hay chưa tin vào những tầng nghĩa tâm linh, vẫn có thể giữ lại một điều rất thực tế.",
+      "Đó là: mỗi người đều có những *bài học lặp lại* cho đến khi mình thật sự hiểu và thay đổi. Có người cứ lặp một kiểu yêu sai, có người cứ nóng giận rồi hối hận, có người cứ tham vọng đến kiệt sức — đó cũng là “nghiệp” theo nghĩa đời thường.",
+      "Bản này giữ với mỗi ý một ví dụ đời thường và một *câu chốt* — để hiểu nhanh và mang vào việc thật được ngay."
+    ]
+  },
+  {
+    "heading": "Ý 1 – 2",
+    "paragraphs": [
+      "==1 · Nghiệp là bài học chưa hoàn tất.== Nếu hiểu nghiệp như sự trừng phạt, mình dễ sợ hoặc phán xét; hiểu nghiệp như bài học thì thấy có hy vọng hơn. Người từng làm tổn thương người khác có thể học cách biết đau và biết sửa; người từng ích kỷ có thể học cách cho đi. *Điều lặp lại trong đời mình thường đang cố dạy mình một điều chưa học xong.*",
+      "==2 · Mọi lựa chọn đều để lại một hướng đi.== Cuộc đời không chỉ là chuỗi sự kiện rời rạc; mỗi lựa chọn đẩy mình gần hơn hoặc xa hơn con người mình muốn trở thành. Một lần chọn trung thực khiến mình mạnh hơn một chút; một lần né tránh khiến vấn đề lớn hơn một chút. *Mình không chỉ chọn hành động; mình đang chọn hướng phát triển của chính mình.*"
+    ]
+  },
+  {
+    "heading": "Ý 3 – 4",
+    "paragraphs": [
+      "==3 · Cái tôi càng lớn, bài học càng đau.== Rất nhiều đau khổ đến từ cái tôi: muốn thắng, muốn hơn, muốn được công nhận. Có khi một lời góp ý nhỏ làm mình giận cả ngày, không phải vì lời đó quá nặng, mà vì nó chạm vào nỗi sợ *“mình không đủ giỏi”*. *Càng bớt cần chứng minh mình hơn người, tâm mình càng có chỗ để bình an.*",
+      "==4 · Tri thức không giống trí tuệ.== Một người có thể biết rất nhiều nhưng vẫn sống ích kỷ, nói điều sâu sắc nhưng cư xử thiếu tình thương. Biết nhân quả mà vẫn nói lời làm đau thì chưa phải hiểu; biết vô thường mà vẫn cố chấp đến cùng thì chưa phải thấm. *Điều mình hiểu chưa chắc là trí tuệ; điều mình sống được mới bắt đầu trở thành trí tuệ.*"
+    ]
+  },
+  {
+    "heading": "Ý 5 – 6",
+    "paragraphs": [
+      "==5 · Quyền lực không đạo đức tạo nghiệp rất nặng.== Quyền lực khi không đi cùng trách nhiệm sẽ gây tổn thương lớn. Trong đời sống nhỏ hơn, “quyền lực” là quyền làm cha mẹ, làm leader, làm người có tiếng nói trong nhóm — nếu dùng để áp đặt hay làm người khác sợ, mình đang gieo điều không lành. *Càng có ảnh hưởng, mình càng cần tử tế hơn trong cách dùng ảnh hưởng đó.*",
+      "==6 · Đau khổ có thể là tiếng chuông đánh thức.== Có những nỗi đau buộc mình dừng lại và nhìn thật: một quan hệ đổ vỡ khiến mình nhìn lại cách yêu, một thất bại khiến mình nhìn lại thói quen. Đau khổ không tự động làm con người tốt hơn, nhưng nếu mình chịu học từ nó thì nó thành sự thức tỉnh. *Nỗi đau không phải món quà, nhưng nó có thể mở ra một bài học nếu mình đủ can đảm nhìn vào.*"
+    ]
+  },
+  {
+    "heading": "Ý 7 – 8",
+    "paragraphs": [
+      "==7 · Chuyển hóa bắt đầu khi mình thôi đổ lỗi.== Đổ lỗi làm mình dễ chịu trong chốc lát vì đặt nguyên nhân ra ngoài mình; nhưng nếu tất cả đều là lỗi người khác, mình không còn quyền thay đổi điều gì. Hãy hỏi câu khó hơn: *“Trong chuyện này, phần nào thuộc trách nhiệm của mình?”* — không phải để tự trách, mà để lấy lại khả năng hành động. *Nhận trách nhiệm không làm mình nặng hơn; nó trả lại cho mình quyền thay đổi.*",
+      "==8 · Tâm thức tập thể được tạo từ từng tâm thức cá nhân.== Một xã hội nhiều sân hận được tạo từ rất nhiều con người sống trong sợ hãi, tham lam, chia rẽ; ngược lại, một cộng đồng tốt hơn cũng bắt đầu từ rất nhiều lựa chọn nhỏ. Một người bớt nói độc hại, bớt lan tin xấu, bớt vô cảm — tất cả đều làm môi trường sống nhẹ hơn. *Mình không thể thay đổi tất cả, nhưng mình luôn đang góp phần vào bầu không khí chung.*"
+    ]
+  },
+  {
+    "heading": "Ý 9 – 10",
+    "paragraphs": [
+      "==9 · Tha thứ không phải cho phép tổn thương tiếp diễn.== Nhiều người hiểu tha thứ như phải quên hết và để người kia bước vào đời mình như cũ. Nhưng tha thứ sâu hơn là giải phóng mình khỏi sự giam giữ của oán hận: có người mình tha thứ trong lòng nhưng vẫn cần giữ khoảng cách. *Tha thứ không xóa ranh giới; tha thứ giúp mình không sống mãi trong vết thương.*",
+      "==10 · Cho đi không chỉ là tiền bạc.== Cho đi có thể là thời gian, sự lắng nghe, một lời động viên, một sự nhường nhịn đúng lúc. Nhưng cho đi cũng cần tỉnh táo — không phải tự làm cạn mình để được xem là tốt, không phải để được khen hay được người khác mắc nợ. *Cho đi thật sự là khi lòng mình rộng ra, không phải khi cái tôi được nuôi lớn.*"
+    ]
+  },
+  {
+    "heading": "Ý 11 – 12",
+    "paragraphs": [
+      "==11 · Im lặng giúp mình nghe rõ hơn.== Khi tâm quá ồn, mình khó phân biệt đâu là trực giác, đâu là sợ hãi, đâu là cái tôi, đâu là sự thật. Im lặng có thể là vài phút không điện thoại, một buổi đi bộ, một trang nhật ký, một lần không trả lời ngay khi đang giận. *Muốn nghe được điều sâu hơn, đôi khi mình phải làm yên phần ồn nhất trong mình.*",
+      "==12 · Chuyển hóa bắt đầu từ cách sống tốt hơn hôm nay.== Dù sách nói về hành trình rất dài, phần mình chạm được luôn là hiện tại. Hôm nay mình có thể nói thật hơn, thương người hơn, bớt tham hơn, bớt nóng hơn — không cần chờ một trải nghiệm tâm linh đặc biệt mới thay đổi. *Tâm thức không nâng lên bằng lời nói sâu sắc, mà bằng cách mình sống trong những việc rất đời thường.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — bài học lặp đến khi mình học xong",
+    "paragraphs": [
+      "Có những bài học sẽ lặp lại cho đến khi mình học xong. Vì vậy, thay vì hỏi *“tại sao chuyện này cứ xảy ra với mình?”*, đôi khi hãy hỏi: ==“Mình cần trưởng thành ở điểm nào để vòng lặp này không còn điều khiển mình nữa?”==",
+      "Phần 2 nhắc mình rằng chuyển hóa không phải một khoảnh khắc huyền bí. Nó là từng lần mình chọn khác đi: bớt giận, bớt tham, bớt đổ lỗi, bớt làm đau, và sống có trách nhiệm hơn với phần mình gieo xuống.",
+      "Giá trị cốt lõi — nghiệp là bài học chưa hoàn tất, và chuyển hóa diễn ra ngay trong những việc rất đời thường của hôm nay; mỗi lần mình chọn tử tế và nhận trách nhiệm hơn một chút, vòng lặp cũ bớt điều khiển mình một chút."
+    ]
+  }
+];
+
+// "Dễ hiểu, dễ vận dụng" flipbook deck for "Muôn Kiếp Nhân Sinh — Phần 3"
+// (Many Lives, Many Times 3 — Nguyên Phong). Phần 3 mở câu chuyện nhân quả cá
+// nhân ra tới tương lai nhân loại: công nghệ, AI, lòng tham và sự thức tỉnh. Bản
+// này ghép ~2 ý mỗi leaf, mỗi ý giữ một ví dụ đời thường + một *câu chốt* để hiểu
+// nhanh và mang vào việc thật. Shared by the book's en + vi decks (Vietnamese on
+// the public site). Sourced from the author's note
+// (De_Hieu_De_Van_Dung_Muon_Kiep_Nhan_Sinh_Phan_3); regenerate if it changes.
+// Inline ==highlight== / *italic* baked in.
+const MUON_KIEP_3_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — đọc chậm để mang vào đời sống",
+    "paragraphs": [
+      "Phần 3 mở rộng câu chuyện từ nhân quả của một người sang tương lai của cả nhân loại. Sách đặt những câu hỏi lớn: công nghệ sẽ đưa con người đi đâu, trí tuệ nhân tạo thay được điều gì, lòng tham dẫn xã hội tới đâu, và mình cần thức tỉnh điều gì để không tự làm hại mình.",
+      "Nghe rất rộng, nhưng đọc chậm lại thì câu hỏi cốt lõi vẫn rất gần: ==mình đang dùng trí thông minh, thời gian, công nghệ và tự do của mình để nuôi lớn điều gì?==",
+      "Bản này giữ với mỗi ý một ví dụ đời thường và một *câu chốt* — để hiểu nhanh và áp dụng được ngay vào hôm nay."
+    ]
+  },
+  {
+    "heading": "Ý 1 – 2",
+    "paragraphs": [
+      "==1 · Tương lai không tự tốt nếu bên trong không đổi.== Công nghệ chỉ khuếch đại con người: người tham thì nó làm lòng tham mạnh hơn, người tỉnh thì nó giúp đời sống tốt hơn. Cùng một chiếc điện thoại, người này dùng để học và kết nối, người kia dùng để so sánh và nghiện lướt. *Tương lai phụ thuộc vào tâm thức của người cầm công cụ, không chỉ vào thứ con người phát minh.*",
+      "==2 · AI thông minh nhưng không thay được lương tri.== Máy xử lý dữ liệu, viết, tính toán, dự đoán rất nhanh, nhưng câu hỏi *“nên dùng điều này để làm gì”* vẫn là câu hỏi đạo đức của con người. Cùng một công cụ, người thiếu trách nhiệm có thể gây hại lớn, người tử tế lại tạo ra giá trị. *Trí tuệ không đủ nếu thiếu lương tri định hướng.*"
+    ]
+  },
+  {
+    "heading": "Ý 3 – 4",
+    "paragraphs": [
+      "==3 · Lòng tham có thể mặc áo tiến bộ.== Không phải điều gì mang tên phát triển cũng làm con người hạnh phúc hơn. Có khi gọi là tăng trưởng nhưng bên dưới là khai thác quá mức, gọi là tiện lợi nhưng bên dưới là lãng phí, gọi là thành công nhưng bên dưới là kiệt sức. Hãy tự hỏi điều mình theo đuổi làm đời sống sâu hơn hay chỉ làm cái tôi lớn hơn. *Không phải mọi sự đi lên đều là tiến hóa; có khi đó chỉ là lòng tham được trang trí đẹp hơn.*",
+      "==4 · Cho đi làm nhẹ nghiệp của cái tôi.== Cho đi không chỉ là từ thiện mà là một lối sống: biết chia sẻ, biết nhường, biết dùng điều mình có để làm điều có ích. Người cho đi để được khen vẫn còn bị cái tôi nắm tay; người cho đi vì thấy mình làm nhẹ được đời ai đó thì tâm nhẹ hơn. *Cho đi không làm mình mất đi; nó làm phần người trong mình rộng hơn.*"
+    ]
+  },
+  {
+    "heading": "Ý 5 – 6",
+    "paragraphs": [
+      "==5 · Không đổi được quá khứ, nhưng đổi được cách gieo tương lai.== Quá khứ có thể có sai lầm và tổn thương, nhưng cứ sống trong hối hận thì mình chỉ kéo quá khứ vào hiện tại. Điều mình có là hôm nay: hôm nay mình có thể xin lỗi, sửa, học, không lặp lại, chọn tử tế hơn một chút so với hôm qua. *Tương lai bắt đầu từ cách mình sống với hiện tại, không phải từ việc tiếc nuối quá khứ mãi.*",
+      "==6 · Câu hỏi “ta là ai” không xa xôi.== Nghe như triết học lớn, nhưng đời thường nó rất cụ thể: mình có phải chỉ là điểm số, công việc, tài khoản ngân hàng, số người theo dõi hay lời đánh giá của người khác? Khi đồng nhất mình với thứ bên ngoài, mình rất dễ chao đảo theo khen chê. *Biết mình không chỉ là những lớp vỏ bên ngoài giúp mình sống tự do hơn.*"
+    ]
+  },
+  {
+    "heading": "Ý 7 – 8",
+    "paragraphs": [
+      "==7 · Càng ồn bên ngoài, càng cần một nơi yên bên trong.== Thế giới hiện đại rất ồn: thông báo, tin tức, bình luận, so sánh, áp lực phải phản hồi ngay. Không có khoảng yên thì tâm dễ bị cuốn đi liên tục. Khoảng yên không cần thiền thật lâu — có thể là 10 phút không điện thoại, một buổi đi bộ, một lần hít thở trước khi trả lời lúc giận. *Người không có khoảng yên bên trong rất dễ bị thế giới bên ngoài điều khiển.*",
+      "==8 · Tâm thức cao hơn bắt đầu bằng bớt vô cảm.== Không cần điều gì huyền bí: người có tâm thức cao trước hết là người bớt vô cảm trước nỗi đau của người khác, bớt thờ ơ với thiên nhiên, bớt xem mọi thứ chỉ là công cụ cho lợi ích của mình. Khi mình biết một lời nói có thể làm đau, một lựa chọn tiêu dùng có thể tạo lãng phí, mình đã sống tỉnh hơn. *Tỉnh thức không nằm ở việc nói điều sâu, mà ở việc sống bớt vô tâm.*"
+    ]
+  },
+  {
+    "heading": "Ý 9 – 10",
+    "paragraphs": [
+      "==9 · Khoa học và tâm linh gặp nhau ở sự khiêm tốn.== Khoa học giúp con người khám phá thế giới, tâm linh hiểu đúng giúp con người khám phá chính mình; cả hai đều nguy hiểm nếu bị cái tôi dùng để chứng minh mình hơn người. Người hiểu biết thật sự càng thấy thế giới rộng và bí ẩn nên không vội phán xét, không vội phủ nhận, cũng không tin mù quáng. *Càng biết nhiều, mình càng nên mềm hơn trước điều chưa biết.*",
+      "==10 · Tình thương là năng lực không công nghệ nào thay được.== Công nghệ có thể nhanh, chính xác, tiện lợi, nhưng sự hiện diện thật lòng, ánh mắt cảm thông, một cái ôm, một lời *“mình ở đây”* vẫn rất người. Điều làm con người khác máy móc không chỉ là biết nghĩ, mà là biết yêu thương, biết đau cùng nỗi đau người khác và chọn điều thiện dù không lợi ngay cho mình. *Điều làm con người đáng quý không phải chỉ là biết nghĩ, mà là biết thương.*"
+    ]
+  },
+  {
+    "heading": "Ý 11 – 12",
+    "paragraphs": [
+      "==11 · Mỗi người có trách nhiệm với năng lượng mình lan ra.== Một bài đăng độc hại, một lời cay nghiệt, một thái độ khinh thường — hay một hành động tử tế, một lời động viên — đều tạo ảnh hưởng. Mình không cần nổi tiếng mới có tác động: trong gia đình, lớp học, nhóm bạn, nơi làm việc, mình luôn góp phần tạo bầu không khí chung. Hãy tự hỏi mình làm người khác nhẹ hơn hay nặng hơn sau khi gặp. *Đời sống của mình luôn đang phát ra một điều gì đó, dù mình có để ý hay không.*",
+      "==12 · Hy vọng không phải ngồi chờ điều tốt xảy ra.== Phần 3 có nhiều cảnh báo nhưng tinh thần cuối không tuyệt vọng: tương lai vẫn đổi được nếu con người đổi cách sống. Hy vọng đúng nghĩa thì chủ động — là hành động nhỏ nhưng đều: học để hiểu hơn, sống tử tế hơn, dùng công nghệ có trách nhiệm hơn, bớt tiêu thụ vô thức, chăm sóc tâm mình hơn. *Hy vọng là khi mình chọn gieo điều tốt dù thế giới chưa hoàn hảo.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — nếu chỉ giữ lại tinh thần Phần 3",
+    "paragraphs": [
+      "Tương lai nhân loại không chỉ được quyết định bởi AI, công nghệ hay các phát minh lớn. Nó còn được quyết định bởi chất lượng tâm thức của từng con người đang sử dụng những thứ đó.",
+      "Phần 3 để lại một câu hỏi rất đáng mang theo: ==mình đang trở thành kiểu người nào trong một thế giới ngày càng mạnh hơn, nhanh hơn và nhiều cám dỗ hơn?== Nếu câu trả lời là tử tế hơn, tỉnh thức hơn, có trách nhiệm hơn — thì đó đã là một cách góp phần vào tương lai.",
+      "Giá trị cốt lõi — Tương lai không nằm ở thứ con người phát minh mà ở ==tâm thức của người cầm nó==; mỗi ngày sống tử tế, tỉnh thức và có trách nhiệm hơn một chút chính là cách mình gieo điều tốt cho ngày mai."
+    ]
+  }
+];
+
+// Bản “dễ hiểu, dễ vận dụng” cho “Sự Im Lặng Của Bầy Cừu” (The Silence of the
+// Lambs — Thomas Harris): một deck fiction, nhẹ tay với tình tiết (spoiler-light),
+// ghép ~2 ý mỗi trang, mỗi ý kèm một ví dụ đời thường và một *câu chốt*. Voice
+// “mình”: học sự tỉnh táo, ranh giới và lòng người khi nhìn vào điều khó nhìn —
+// không thần tượng hóa cái ác. Dùng chung cho en + vi (tiếng Việt trên site công
+// khai). Sourced từ ghi chú của tác giả (De_Hieu_De_Van_Dung_Su_Im_Lang_Cua_Bay_Cuu);
+// regenerate nếu nó đổi. Inline ==highlight== / *italic* baked in.
+const SILENCE_OF_THE_LAMBS_PAGES: BookReadingPage[] = [
+  {
+    "heading": "Mở đầu — đọc một cuốn trinh thám để hiểu con người",
+    "paragraphs": [
+      "“Sự Im Lặng Của Bầy Cừu” không chỉ làm mình hồi hộp. Điều khiến nó ám ảnh hơn là cách nó đi vào vùng tối của con người: nỗi sợ, ký ức đau, sự thao túng, ranh giới và lòng can đảm.",
+      "Đọc cuốn này, mình cố không thần tượng hóa cái ác hay xem sự thông minh lạnh lùng là hấp dẫn. Điều đáng học hơn là: một người có thể rất sợ, rất tổn thương, rất bị xem nhẹ, nhưng vẫn chọn ==bước tiếp với sự tỉnh táo==.",
+      "Mình giữ vài câu hỏi khi đọc: tình tiết này nói về *tâm lý nào* của con người, mình từng gặp nó *ở đâu* trong đời sống, và mình mang được gì *vào việc thật*?",
+      "Bản này giữ với mỗi ý một ví dụ đời thường và một *câu chốt* — để hiểu nhanh và áp dụng được ngay, mà không cần kể trước cái kết."
+    ]
+  },
+  {
+    "heading": "Ý 1 – 2",
+    "paragraphs": [
+      "==1 · Can đảm không phải là không sợ.== Clarice Starling bước vào nguy hiểm trong khi tim vẫn đập nhanh: cô có áp lực, ký ức đau và cả cảm giác bị đánh giá, nhưng vẫn đi tiếp. Mình cũng vậy — không cần hết sợ mới bắt đầu, không cần hết tự ti mới nói lên ý kiến, không cần hoàn toàn sẵn sàng mới nắm một cơ hội. *Can đảm là giữ hướng đi dù nỗi sợ vẫn đang đi bên cạnh.*",
+      "==2 · Im lặng đôi khi là nơi một vết thương trú ẩn.== Im lặng không phải lúc nào cũng bình yên; có khi nó là bất lực, là điều bị chôn xuống vì chưa đủ an toàn để nói ra. Một người ít nói không có nghĩa là họ trống rỗng — có thể họ đang giữ một câu chuyện chưa biết kể với ai, và điều đó nhắc mình nhìn người khác mềm hơn. *Đừng vội xem sự im lặng là trống rỗng.*"
+    ]
+  },
+  {
+    "heading": "Ý 3 – 4",
+    "paragraphs": [
+      "==3 · Có khi mình phải tự giành lấy chỗ đứng.== Clarice còn trẻ, là phụ nữ, lại bước vào môi trường nhiều ánh nhìn nghi ngờ, nên ngoài điều tra cô còn phải liên tục chứng minh năng lực. Nhiều người trẻ cũng từng bước vào một căn phòng và thấy mình bị đánh giá trước khi kịp nói; sự công nhận không phải lúc nào cũng đến trước, có khi mình phải làm nghiêm túc đủ lâu để người khác không thể phủ nhận. *Khi người khác chưa nhìn thấy giá trị của mình, đừng vì thế mà tự quên mất nó.*",
+      "==4 · Bình tĩnh là một dạng quyền lực.== Trong nhiều cuộc đối thoại, Clarice ở thế yếu hơn — người kia nhiều kinh nghiệm hơn, biết gây áp lực hơn; nếu mất bình tĩnh, cô mất thế. Ngoài đời, khi bị khiêu khích hay xoáy vào điểm đau, mình rất muốn phản ứng ngay, nhưng phản ứng nhanh là trao quyền điều khiển cảm xúc của mình cho người khác. *Giữ được bình tĩnh không phải vì không đau, mà vì không để người khác lái mình bằng nỗi đau đó.*"
+    ]
+  },
+  {
+    "heading": "Ý 5 – 6",
+    "paragraphs": [
+      "==5 · Trí tuệ thiếu lương tri thì không đáng tin.== Hannibal Lecter đáng sợ vì ông ta thông minh, tinh tế và hiểu tâm lý con người — nhưng chính sự thông minh ấy càng nguy hiểm khi không đi cùng đạo đức. Bài học mạnh: đừng nhầm sự sắc bén với sự đáng tin, một người có thể nói hay, hiểu sâu, quan sát giỏi mà vẫn dùng điều đó để thao túng. *Cái đầu giỏi mà trái tim lệch có thể nguy hiểm hơn sự ngu dốt.*",
+      "==6 · Lịch thiệp không luôn đồng nghĩa với an toàn.== Có những người bước vào không bằng sự thô bạo mà bằng lời nói dịu, sự quan tâm có vẻ tinh tế, khả năng đọc vị cảm xúc rất nhanh — nên người khác dễ hạ cảnh giác. Mình cần phân biệt tử tế thật với vẻ ngoài lịch thiệp: tử tế thật khiến mình thấy an toàn hơn theo thời gian, lịch thiệp giả thường khiến mình thấy bị nợ hoặc bị kéo vào trò chơi không rõ luật. *Hãy nhìn cách một người tôn trọng ranh giới của bạn, không chỉ cách họ nói chuyện hay.*"
+    ]
+  },
+  {
+    "heading": "Ý 7 – 8",
+    "paragraphs": [
+      "==7 · Ranh giới giữ mình không bị nuốt vào bóng tối của người khác.== Clarice cần thông tin từ Lecter nhưng cũng phải bảo vệ chính mình: không quá ngây thơ, cũng không để sự tò mò kéo mình vào sâu đến mức mất kiểm soát. Khi lắng nghe, giúp đỡ hay yêu thương ai đó, mình cũng cần ranh giới — không phải nỗi đau nào của người khác cũng là trách nhiệm của mình. *Lòng trắc ẩn cần ranh giới để không biến thành tự đánh mất mình.*",
+      "==8 · Sự thật thường nằm trong chi tiết nhỏ.== Trinh thám dạy mình quan sát: một chi tiết bị bỏ qua có thể mở ra toàn bộ sự thật, một câu nói lạ hay một hành vi lệch đều có ý nghĩa. Ngoài đời cũng vậy — một người nói *“mình ổn”* nhưng giọng rất mệt, một nhóm nói *“không sao”* nhưng deadline cứ trễ; vấn đề lớn thường đến từ nhiều dấu hiệu nhỏ bị bỏ qua. *Người vội vàng thường bỏ lỡ sự thật đang nằm rất gần.*"
+    ]
+  },
+  {
+    "heading": "Ý 9 – 10",
+    "paragraphs": [
+      "==9 · Đừng biến nỗi đau của người khác thành sự tò mò rẻ tiền.== Tội ác và chấn thương dễ khiến người đọc tò mò, nhưng phía sau mỗi câu chuyện đáng sợ là nạn nhân, gia đình và những vết thương thật. Khi đọc tin tức hay xem một chuyện đau lòng, mình giữ sự nhân tính: đừng chia sẻ chỉ vì giật gân, đừng bàn luận như thể đó là một bộ phim khi ngoài đời có người đang chịu đau. *Sự tò mò cần được giữ lại bằng lòng trắc ẩn.*",
+      "==10 · Ký ức đau có thể đi cùng mình rất lâu.== Clarice mang trong mình những tiếng kêu của quá khứ; cô muốn cứu người khác, mà sâu bên trong cũng như đang tìm cách làm dịu một vết thương cũ. Nhiều người cũng vậy — một chuyện cũ có thể ảnh hưởng cách mình yêu, mình sợ, mình phản ứng, mình cố chứng minh bản thân; nhìn ra điều đó không làm mình yếu đi mà giúp mình hiểu mình hơn. *Đôi khi điều mình đang cố cứu bên ngoài cũng là một phần đau bên trong mình.*"
+    ]
+  },
+  {
+    "heading": "Ý 11 – 12",
+    "paragraphs": [
+      "==11 · Định kiến có thể bắt người giỏi nỗ lực gấp đôi.== Clarice không chỉ đối diện tội phạm mà còn đối diện ánh nhìn định kiến: những người như cô thường phải chứng minh năng lực trong khi người khác được mặc định là đủ khả năng. Bài học cũng dành cho người quan sát — hãy cẩn thận với định kiến của mình, đừng đánh giá ai quá nhanh chỉ vì giới tính, tuổi tác, xuất thân hay vẻ ngoài. *Một người bị xem nhẹ không hẳn vì họ thiếu năng lực, mà vì người nhìn họ thiếu công bằng.*",
+      "==12 · Cuốn sách không làm cái ác đẹp hơn; nó làm mình cảnh giác hơn.== Nhân vật phản diện có thể cuốn hút về mặt văn chương, nhưng điều đó không khiến họ đáng ngưỡng mộ — trí tuệ dùng để thao túng vẫn là bóng tối. Một lưu ý quan trọng: kẻ thủ ác hư cấu trong truyện ==không đại diện cho bất kỳ cộng đồng người thật nào==; điều nên giữ lại là khả năng nhận ra cái ác có thể tinh tế, lịch thiệp, nói đúng điểm yếu của mình. *Đừng để sự hấp dẫn của bóng tối làm mình quên tổn thương mà nó gây ra.*"
+    ]
+  },
+  {
+    "heading": "Chốt lại — giữ được lòng người khi nhìn vào điều khó nhìn",
+    "paragraphs": [
+      "Cuốn sách nhắc mình rằng con người rất phức tạp: có nỗi sợ, có vết thương, có cái ác và sự thao túng, nhưng cũng có lòng can đảm và khả năng đứng vững.",
+      "Điều đáng học nhất từ Clarice không phải là trở nên lạnh lùng, mà là giữ được sự tỉnh táo trong bóng tối, giữ ranh giới trước người nguy hiểm, và giữ lòng người khi nhìn vào những điều rất khó nhìn.",
+      "Giá trị cốt lõi — mình không cần hết sợ mới bước tiếp; điều cần giữ là ==sự tỉnh táo, ranh giới và lòng trắc ẩn== để bóng tối không kéo mình theo nó."
+    ]
+  }
+];
+
 export const LIBRARY_BOOKS: LibraryBook[] = [
   {
     slug: "dac-nhan-tam",
@@ -89,6 +759,7 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Muốn thắng tranh cãi thì hãy tránh nó, và giữ thể diện cho đối phương.",
       ],
     },
+    readingPages: { en: DAC_NHAN_TAM_PAGES, vi: DAC_NHAN_TAM_PAGES },
   },
   {
     slug: "atomic-habits",
@@ -117,6 +788,7 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Thiết kế môi trường mạnh hơn ý chí — hãy sửa không gian, đừng ép ham muốn.",
       ],
     },
+    readingPages: { en: ATOMIC_HABITS_PAGES, vi: ATOMIC_HABITS_PAGES },
   },
   {
     slug: "silence-of-the-lambs",
@@ -145,6 +817,10 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Cái ác ở đây riêng tư, thuộc về tâm lý — không hề cường điệu.",
       ],
     },
+    // Full friendly walk-through shaped for fiction (intro · five-light map · 22
+    // ideas · into-life lessons · how-not-to-misread incl. content warning ·
+    // questions · closing), shared by both decks — Vietnamese on the public site.
+    readingPages: { en: SILENCE_OF_THE_LAMBS_PAGES, vi: SILENCE_OF_THE_LAMBS_PAGES },
   },
   {
     slug: "48-laws-of-power",
@@ -159,91 +835,27 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
     foil: "#CFCFCF",
     scale: 1.12,
     coverNote: {
-      en: "Sức mạnh không đến từ sự may mắn hay tài năng thiên bẩm. Nó đến từ việc thấu hiểu luật chơi. Khám phá những bí mật cốt lõi để làm chủ cuộc sống, kiểm soát tình huống và trở thành người nắm giữ cuộc chơi.",
-      vi: "Sức mạnh không đến từ sự may mắn hay tài năng thiên bẩm. Nó đến từ việc thấu hiểu luật chơi. Khám phá những bí mật cốt lõi để làm chủ cuộc sống, kiểm soát tình huống và trở thành người nắm giữ cuộc chơi.",
+      en: "Tỏa sáng rực rỡ đôi khi lại là một cái bẫy. Khi bạn làm lu mờ người đứng đầu, bạn vô tình thắp lên ngọn lửa ghen tị có thể thiêu rụi chính mình. Hãy học cách giấu ánh hào quang để người quyền lực luôn thấy họ là mặt trời duy nhất.",
+      vi: "Tỏa sáng rực rỡ đôi khi lại là một cái bẫy. Khi bạn làm lu mờ người đứng đầu, bạn vô tình thắp lên ngọn lửa ghen tị có thể thiêu rụi chính mình. Hãy học cách giấu ánh hào quang để người quyền lực luôn thấy họ là mặt trời duy nhất.",
     },
     keyPoints: {
       en: [
-        "Nói ít hơn mức cần thiết để tạo sự tò mò, bí ẩn và tôn trọng.",
-        "Che đậy ý định để đối thủ không thể đoán trước và phòng bị.",
-        "Đừng chơi trội quan thầy; hãy làm cấp trên thấy an toàn.",
-        "Chiến thắng bằng hành động và kết quả, không bằng tranh cãi.",
-        "Biến hóa linh hoạt như nước để thích ứng với mọi hoàn cảnh.",
+        "Luôn làm người ở trên cảm thấy an toàn, được tôn trọng và không bị thay thế.",
+        "Dùng năng lực để nâng họ lên trước, rồi mới khéo léo thể hiện phần đóng góp của mình.",
+        "Đừng làm ai mất mặt trước đám đông, đặc biệt là người đang nắm quyền quyết định.",
+        "Quan sát điều cấp trên thật sự cần và giúp họ đạt được điều đó.",
+        "Giữ tài năng và tham vọng trong tầm kiểm soát; bộc lộ đúng lúc, đúng người.",
       ],
       vi: [
-        "Nói ít hơn mức cần thiết để tạo sự tò mò, bí ẩn và tôn trọng.",
-        "Che đậy ý định để đối thủ không thể đoán trước và phòng bị.",
-        "Đừng chơi trội quan thầy; hãy làm cấp trên thấy an toàn.",
-        "Chiến thắng bằng hành động và kết quả, không bằng tranh cãi.",
-        "Biến hóa linh hoạt như nước để thích ứng với mọi hoàn cảnh.",
+        "Luôn làm người ở trên cảm thấy an toàn, được tôn trọng và không bị thay thế.",
+        "Dùng năng lực để nâng họ lên trước, rồi mới khéo léo thể hiện phần đóng góp của mình.",
+        "Đừng làm ai mất mặt trước đám đông, đặc biệt là người đang nắm quyền quyết định.",
+        "Quan sát điều cấp trên thật sự cần và giúp họ đạt được điều đó.",
+        "Giữ tài năng và tham vọng trong tầm kiểm soát; bộc lộ đúng lúc, đúng người.",
       ],
     },
-    readingPages: {
-      en: [
-        {
-          heading: "Bậc Thầy Của Sự Bí Ẩn",
-          paragraphs: [
-            "Lời nói càng ít, ý nghĩa càng sâu sắc. Sự bí ẩn chính là vũ khí sắc bén nhất của quyền lực.",
-            "Nguyên lý cốt lõi: Nói ít hơn mức cần thiết. Lời nói thừa thãi dễ làm lộ điểm yếu. Im lặng tạo ra sự tò mò, bí ẩn và sự tôn trọng từ người khác.",
-            "Che đậy ý định. Đừng bao giờ lật ngửa các lá bài của mình. Khi đối thủ không đoán được bạn muốn gì, họ không thể phòng bị.",
-            "Sử dụng sự khan hiếm. Sự hiện diện quá thường xuyên làm giảm giá trị của bạn. Hãy biết cách \"biến mất\" đúng lúc để người khác phải khao khát sự có mặt của bạn.",
-            "Ví dụ thực tế: Hãy nghĩ về những lần ra mắt sản phẩm của Apple dưới thời Steve Jobs. Họ luôn giữ bí mật tuyệt đối về thiết kế và tính năng cho đến phút chót. Không ai biết họ sẽ làm gì tiếp theo, và chính sự bí ẩn đó khiến cả thế giới phải chờ đợi và bùng nổ khi sản phẩm được công bố. Trong công sở, một người điềm tĩnh, ít nói và chỉ lên tiếng khi thật sự cần thiết luôn có tiếng nói nặng ký và sự uy nghiêm hơn hẳn người luôn bô bô mọi thứ.",
-          ],
-        },
-        {
-          heading: "Nghệ Thuật Mượn Lực & Giữ Vị Thế",
-          paragraphs: [
-            "Người thông minh không tự làm mọi việc. Họ biết cách tận dụng nguồn lực xung quanh để vinh thân.",
-            "Nguyên lý cốt lõi: Đừng bao giờ chơi trội quan thầy. Hãy làm cho cấp trên cảm thấy họ giỏi giang và an toàn. Nếu bạn tỏ ra quá xuất chúng và lấn át, bạn sẽ trở thành cái gai trong mắt họ.",
-            "Làm cho người khác phụ thuộc vào mình. Hãy sở hữu một kỹ năng độc nhất mà không ai thay thế được. Khi tổ chức hoặc người khác cần bạn để tồn tại, bạn nắm quyền kiểm soát.",
-            "Tận dụng nguồn lực. Tận dụng chất xám và thời gian của người khác để đạt mục tiêu, nhưng hãy khéo léo để họ vẫn cảm thấy được trân trọng.",
-            "Ví dụ thực tế: Trong một công ty, có những nhân viên rất giỏi nhưng luôn bị trù dập vì họ thích thể hiện và làm lu mờ sếp. Ngược lại, người khôn ngoan biết cách dùng tài năng của mình để giúp sếp tỏa sáng và thăng tiến, từ đó họ cũng được cất nhắc theo. Hãy trở thành \"chìa khóa giải quyết vấn đề\" độc quyền mà công ty không thể thiếu. Khi công ty phụ thuộc vào bạn, quyền lực tự động nằm trong tay bạn.",
-          ],
-        },
-        {
-          heading: "Hành Động Quyết Đoán & Biến Hóa Khôn Lường",
-          paragraphs: [
-            "Thế giới không tưởng thưởng cho những lời giải thích. Nó tưởng thưởng cho kết quả và sự linh hoạt.",
-            "Nguyên lý cốt lõi: Chiến thắng bằng hành động, không bằng tranh cãi. Tranh luận chỉ tổn thương cái tôi của người khác và tạo ra kẻ thù. Hãy dùng kết quả thực tế để chứng minh bạn đúng.",
-            "Xuất chiêu táo bạo. Sự lưỡng lự chỉ bộc lộ điểm yếu. Một khi đã quyết định, hãy hành động với sự tự tin tuyệt đối để áp đảo tình thế.",
-            "Thiên hình vạn trạng. Đừng bao giờ đóng khung mình vào một hình tượng hay chiến thuật duy nhất. Nước không có hình dạng cố định nhưng có thể cuốn trôi mọi thứ. Hãy linh hoạt thích ứng với mọi hoàn cảnh.",
-            "Ví dụ thực tế: Thay vì cãi nhau với đồng nghiệp hay sếp rằng ý tưởng của bạn tốt hơn, hãy lẳng lặng làm một bản demo thực tế hoặc một thử nghiệm nhỏ và đưa ra kết quả. Khi đó không ai có thể chối cãi. Trong thời đại AI và công nghệ thay đổi chóng mặt, những cá nhân cố chấp với cách làm cũ sẽ bị đào thải. Những người biết linh hoạt như dòng nước, sẵn sàng học hỏi cái mới và thay đổi cách làm việc sẽ tiếp tục vươn lên và dẫn đầu.",
-          ],
-        },
-      ],
-      vi: [
-        {
-          heading: "Bậc Thầy Của Sự Bí Ẩn",
-          paragraphs: [
-            "Lời nói càng ít, ý nghĩa càng sâu sắc. Sự bí ẩn chính là vũ khí sắc bén nhất của quyền lực.",
-            "Nguyên lý cốt lõi: Nói ít hơn mức cần thiết. Lời nói thừa thãi dễ làm lộ điểm yếu. Im lặng tạo ra sự tò mò, bí ẩn và sự tôn trọng từ người khác.",
-            "Che đậy ý định. Đừng bao giờ lật ngửa các lá bài của mình. Khi đối thủ không đoán được bạn muốn gì, họ không thể phòng bị.",
-            "Sử dụng sự khan hiếm. Sự hiện diện quá thường xuyên làm giảm giá trị của bạn. Hãy biết cách \"biến mất\" đúng lúc để người khác phải khao khát sự có mặt của bạn.",
-            "Ví dụ thực tế: Hãy nghĩ về những lần ra mắt sản phẩm của Apple dưới thời Steve Jobs. Họ luôn giữ bí mật tuyệt đối về thiết kế và tính năng cho đến phút chót. Không ai biết họ sẽ làm gì tiếp theo, và chính sự bí ẩn đó khiến cả thế giới phải chờ đợi và bùng nổ khi sản phẩm được công bố. Trong công sở, một người điềm tĩnh, ít nói và chỉ lên tiếng khi thật sự cần thiết luôn có tiếng nói nặng ký và sự uy nghiêm hơn hẳn người luôn bô bô mọi thứ.",
-          ],
-        },
-        {
-          heading: "Nghệ Thuật Mượn Lực & Giữ Vị Thế",
-          paragraphs: [
-            "Người thông minh không tự làm mọi việc. Họ biết cách tận dụng nguồn lực xung quanh để vinh thân.",
-            "Nguyên lý cốt lõi: Đừng bao giờ chơi trội quan thầy. Hãy làm cho cấp trên cảm thấy họ giỏi giang và an toàn. Nếu bạn tỏ ra quá xuất chúng và lấn át, bạn sẽ trở thành cái gai trong mắt họ.",
-            "Làm cho người khác phụ thuộc vào mình. Hãy sở hữu một kỹ năng độc nhất mà không ai thay thế được. Khi tổ chức hoặc người khác cần bạn để tồn tại, bạn nắm quyền kiểm soát.",
-            "Tận dụng nguồn lực. Tận dụng chất xám và thời gian của người khác để đạt mục tiêu, nhưng hãy khéo léo để họ vẫn cảm thấy được trân trọng.",
-            "Ví dụ thực tế: Trong một công ty, có những nhân viên rất giỏi nhưng luôn bị trù dập vì họ thích thể hiện và làm lu mờ sếp. Ngược lại, người khôn ngoan biết cách dùng tài năng của mình để giúp sếp tỏa sáng và thăng tiến, từ đó họ cũng được cất nhắc theo. Hãy trở thành \"chìa khóa giải quyết vấn đề\" độc quyền mà công ty không thể thiếu. Khi công ty phụ thuộc vào bạn, quyền lực tự động nằm trong tay bạn.",
-          ],
-        },
-        {
-          heading: "Hành Động Quyết Đoán & Biến Hóa Khôn Lường",
-          paragraphs: [
-            "Thế giới không tưởng thưởng cho những lời giải thích. Nó tưởng thưởng cho kết quả và sự linh hoạt.",
-            "Nguyên lý cốt lõi: Chiến thắng bằng hành động, không bằng tranh cãi. Tranh luận chỉ tổn thương cái tôi của người khác và tạo ra kẻ thù. Hãy dùng kết quả thực tế để chứng minh bạn đúng.",
-            "Xuất chiêu táo bạo. Sự lưỡng lự chỉ bộc lộ điểm yếu. Một khi đã quyết định, hãy hành động với sự tự tin tuyệt đối để áp đảo tình thế.",
-            "Thiên hình vạn trạng. Đừng bao giờ đóng khung mình vào một hình tượng hay chiến thuật duy nhất. Nước không có hình dạng cố định nhưng có thể cuốn trôi mọi thứ. Hãy linh hoạt thích ứng với mọi hoàn cảnh.",
-            "Ví dụ thực tế: Thay vì cãi nhau với đồng nghiệp hay sếp rằng ý tưởng của bạn tốt hơn, hãy lẳng lặng làm một bản demo thực tế hoặc một thử nghiệm nhỏ và đưa ra kết quả. Khi đó không ai có thể chối cãi. Trong thời đại AI và công nghệ thay đổi chóng mặt, những cá nhân cố chấp với cách làm cũ sẽ bị đào thải. Những người biết linh hoạt như dòng nước, sẵn sàng học hỏi cái mới và thay đổi cách làm việc sẽ tiếp tục vươn lên và dẫn đầu.",
-          ],
-        },
-      ],
-    },
+    // Law 1 cover note + three concise inside leaves from the Phase 1 handoff.
+    readingPages: { en: LAWS_OF_POWER_PAGES, vi: LAWS_OF_POWER_PAGES },
   },
   {
     slug: "thinking-fast-and-slow",
@@ -272,6 +884,7 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Cái tôi ghi nhớ, chứ không phải cái tôi trải nghiệm, viết nên câu chuyện đời ta.",
       ],
     },
+    readingPages: { en: THINKING_FAST_SLOW_PAGES, vi: THINKING_FAST_SLOW_PAGES },
   },
   {
     slug: "goodbye-things",
@@ -301,6 +914,10 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Ít đồ đạc lại nhường chỗ cho lòng biết ơn, thời gian và những người ta thương.",
       ],
     },
+    // Full friendly walk-through (intro · 5 idea-layers · 55 reminders · 15 next-
+    // stage reminders · 12 changes · misreadings · closing), shared by both decks
+    // — the content is Vietnamese on the public site.
+    readingPages: { en: GOODBYE_THINGS_PAGES, vi: GOODBYE_THINGS_PAGES },
   },
   {
     slug: "muon-kiep-nhan-sinh-1",
@@ -330,6 +947,10 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Điều ta làm với người khác, rốt cuộc là đang làm với chính mình.",
       ],
     },
+    // Full friendly walk-through (intro · three-layer map · 24 core ideas ·
+    // misreadings · questions to ask oneself · closing), shared by both decks —
+    // the content is Vietnamese on the public site.
+    readingPages: { en: MUON_KIEP_1_PAGES, vi: MUON_KIEP_1_PAGES },
   },
   {
     slug: "muon-kiep-nhan-sinh-2",
@@ -359,6 +980,10 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Ta không bị trừng phạt vì hành động của mình, mà bởi chính chúng.",
       ],
     },
+    // Full friendly walk-through (intro · three-layer map · 20 core ideas · 12
+    // questions · closing), shared by both decks — the content is Vietnamese on
+    // the public site.
+    readingPages: { en: MUON_KIEP_2_PAGES, vi: MUON_KIEP_2_PAGES },
   },
   {
     slug: "muon-kiep-nhan-sinh-3",
@@ -388,5 +1013,9 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Bình an đến khi ta thôi chống lại những bài học mà cuộc đời cứ trao.",
       ],
     },
+    // Full friendly walk-through (intro · four-layer map · 22 core ideas ·
+    // everyday lessons · misreadings · 15 questions · closing), shared by both
+    // decks — the content is Vietnamese on the public site.
+    readingPages: { en: MUON_KIEP_3_PAGES, vi: MUON_KIEP_3_PAGES },
   },
 ];

@@ -18,15 +18,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const b = LIBRARY_BOOKS.find((x) => x.slug === slug);
   if (!b) return {};
   const title = `${b.title} — ${b.author}`;
+  const description = `${b.title} by ${b.author} — reading notes and reflection.`;
+  const ogImage = `${SITE_CONFIG.url}/og/books/${slug}.png`;
+
   return {
     title: b.title,
-    description: `${b.title} by ${b.author} — one of the books I've read.`,
+    description,
     alternates: { canonical: `/books/${slug}` },
     openGraph: {
       title,
+      description,
       url: `${SITE_CONFIG.url}/books/${slug}`,
       type: "book",
-      images: b.cover ? [{ url: b.cover }] : undefined,
+      images: [
+        {
+          url: ogImage,
+          secureUrl: ogImage,
+          width: 1200,
+          height: 630,
+          type: "image/png",
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [{ url: ogImage, alt: title }],
     },
   };
 }

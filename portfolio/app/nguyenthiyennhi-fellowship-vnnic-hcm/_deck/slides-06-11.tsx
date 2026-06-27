@@ -183,7 +183,7 @@ export function Slide07IntelligentSystems({ index }: { index: number }) {
       </motion.p>
 
       <div className="mt-6 grid gap-5 lg:grid-cols-2 lg:items-stretch">
-        {s.sections.map((sec, si) => (
+        {s.sections.map((sec) => (
           <motion.div key={sec.tag} variants={itemVariants} className="relative flex flex-col overflow-hidden rounded-2xl border border-border/55 bg-secondary/35 p-5 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-primary/30 hover:bg-secondary/50 hover:shadow-lg hover:shadow-primary/5">
             <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
             {/* Tag */}

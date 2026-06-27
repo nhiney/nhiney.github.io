@@ -23,7 +23,7 @@ const jsonLd = {
       isPartOf: { "@type": "WebSite", name: SITE_CONFIG.fullName, url: SITE_CONFIG.url },
       author: { "@id": `${SITE_CONFIG.url}/#person` },
       about: ["Books", "Software Engineering", "UI Design", "Personal Growth"],
-      primaryImageOfPage: SITE_CONFIG.ogImages.home,
+      primaryImageOfPage: SITE_CONFIG.ogImages.mindMap,
     },
     {
       "@type": "Person",
@@ -92,13 +92,22 @@ export const metadata: Metadata = {
     description:
       "Knowledge Garden — notes and insights collected from books, code, design and life, mapped as an interactive mind map.",
     url: PAGE_URL,
-    images: [{ url: SITE_CONFIG.ogImages.home, width: 1200, height: 630, alt: "Mind Map — Nguyen Thi Yen Nhi" }],
+    images: [
+      {
+        url: SITE_CONFIG.ogImages.mindMap,
+        secureUrl: SITE_CONFIG.ogImages.mindMap,
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "Mind Map — Nguyen Thi Yen Nhi",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mind Map — Nguyen Thi Yen Nhi",
     description: "Knowledge Garden — notes and insights collected from books, code, design and life.",
-    images: [SITE_CONFIG.ogImages.home],
+    images: [SITE_CONFIG.ogImages.mindMap],
   },
 };
 

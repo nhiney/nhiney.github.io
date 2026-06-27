@@ -2,53 +2,86 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, GitBranch, Clock, Code2, Folder, Award, FileText } from "lucide-react";
+import { ArrowRight, GitBranch, Clock, Code2, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { ColourfulText }      from "@/components/effects/ColourfulText";
 import { BackgroundLines }    from "@/components/effects/BackgroundLines";
-import { AnimatedTooltip, type TooltipItem } from "@/components/effects/AnimatedTooltip";
 import { GlowingEffect }      from "@/components/effects/GlowingEffect";
-import { QuestionSection }    from "@/components/sections/QuestionSection";
 import { CursorTrailCanvas }  from "@/components/effects/CursorTrailCanvas";
 import { MouseSpotlight }     from "@/components/effects/MouseSpotlight";
 import { Container }          from "@/components/ui/Container";
+import { PortfolioClient }    from "@/app/portfolio/PortfolioClient";
 import { useLanguage }   from "@/context/LanguageContext";
 import { SITE_CONFIG }   from "@/lib/constants";
 import { cn }            from "@/lib/utils";
 import { Post }          from "@/types";
 
+function Highlight({ text }: { text: string }) {
+  const parts = text.split(/\*\*(.+?)\*\*/);
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1
+          ? <strong key={i} className="font-semibold site-heading">{part}</strong>
+          : part
+      )}
+    </>
+  );
+}
+
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const TECH_ITEMS: TooltipItem[] = [
-  { id: 1, name: "Laravel",   role: "PHP Framework",        bg: "bg-red-500",    letter: "L",  href: "https://laravel.com" },
-  { id: 2, name: "Flutter",   role: "Mobile SDK",           bg: "bg-blue-500",   letter: "F",  href: "https://flutter.dev" },
-  { id: 3, name: "Oracle DB", role: "Database",             bg: "bg-orange-500", letter: "O" },
-  { id: 4, name: "Firebase",  role: "Backend Platform",     bg: "bg-yellow-400", letter: "🔥", href: "https://firebase.google.com" },
-  { id: 5, name: "ASP.NET",   role: ".NET Web Framework",   bg: "bg-violet-600", letter: "N",  href: "https://dotnet.microsoft.com" },
-  { id: 6, name: "Dart",      role: "Programming Language", bg: "bg-cyan-500",   letter: "D",  href: "https://dart.dev" },
-];
-
-const FEATURES = [
-  { icon: Folder,   key: "projects",     href: "/portfolio#projects"                    },
-  { icon: Award,    key: "certificates", href: "/certificates"                          },
-  { icon: FileText, key: "resume",       href: "/portfolio"                             },
-] as const;
-
 const TECH_PILLS = [
-  { label: "Laravel",   color: "bg-red-500/10    border-red-500/20    text-red-400"    },
-  { label: "Flutter",   color: "bg-blue-500/10   border-blue-500/20   text-blue-400"   },
-  { label: "Oracle DB", color: "bg-orange-500/10 border-orange-500/20 text-orange-400" },
-  { label: "Firebase",  color: "bg-yellow-500/10 border-yellow-500/20 text-yellow-400" },
-  { label: "ASP.NET",   color: "bg-violet-500/10 border-violet-500/20 text-violet-400" },
-  { label: "Dart",      color: "bg-cyan-500/10   border-cyan-500/20   text-cyan-400"   },
-  { label: "C#",        color: "bg-green-500/10  border-green-500/20  text-green-400"  },
-  { label: "PHP",       color: "bg-fuchsia-500/10 border-fuchsia-500/20 text-fuchsia-400" },
-  { label: "PL/SQL",    color: "bg-pink-500/10   border-pink-500/20   text-pink-400"   },
-  { label: "REST APIs", color: "bg-teal-500/10   border-teal-500/20   text-teal-400"   },
-  { label: "Node.js",   color: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" },
-  { label: "Git",       color: "bg-rose-500/10   border-rose-500/20   text-rose-400"   },
+  { label: "Laravel", cls: "border-rose-200/70 bg-rose-50/55 text-rose-700/85 dark:border-rose-300/15 dark:bg-rose-400/[0.045] dark:text-rose-100/85" },
+  { label: "Flutter", cls: "border-sky-200/70 bg-sky-50/55 text-sky-700/85 dark:border-sky-300/15 dark:bg-sky-400/[0.045] dark:text-sky-100/85" },
+  { label: "Oracle DB", cls: "border-red-200/70 bg-red-50/50 text-red-700/85 dark:border-red-300/15 dark:bg-red-400/[0.045] dark:text-red-100/85" },
+  { label: "Firebase", cls: "border-amber-200/80 bg-amber-50/55 text-amber-700/85 dark:border-amber-300/15 dark:bg-amber-400/[0.045] dark:text-amber-100/85" },
+  { label: "ASP.NET", cls: "border-violet-200/70 bg-violet-50/55 text-violet-700/85 dark:border-violet-300/15 dark:bg-violet-400/[0.045] dark:text-violet-100/85" },
+  { label: "Dart", cls: "border-cyan-200/70 bg-cyan-50/55 text-cyan-700/85 dark:border-cyan-300/15 dark:bg-cyan-400/[0.045] dark:text-cyan-100/85" },
+  { label: "C#", cls: "border-indigo-200/70 bg-indigo-50/55 text-indigo-700/85 dark:border-indigo-300/15 dark:bg-indigo-400/[0.045] dark:text-indigo-100/85" },
+  { label: "PHP", cls: "border-fuchsia-200/70 bg-fuchsia-50/50 text-fuchsia-700/85 dark:border-fuchsia-300/15 dark:bg-fuchsia-400/[0.045] dark:text-fuchsia-100/85" },
+  { label: "PL/SQL", cls: "border-orange-200/70 bg-orange-50/55 text-orange-700/85 dark:border-orange-300/15 dark:bg-orange-400/[0.045] dark:text-orange-100/85" },
+  { label: "REST APIs", cls: "border-emerald-200/70 bg-emerald-50/55 text-emerald-700/85 dark:border-emerald-300/15 dark:bg-emerald-400/[0.045] dark:text-emerald-100/85" },
+  { label: "Node.js", cls: "border-lime-200/70 bg-lime-50/50 text-lime-700/85 dark:border-lime-300/15 dark:bg-lime-400/[0.045] dark:text-lime-100/85" },
+  { label: "Git", cls: "border-slate-200/80 bg-slate-50/70 text-slate-700/85 dark:border-slate-300/15 dark:bg-slate-400/[0.04] dark:text-slate-100/85" },
 ];
+
+const BENTO_TONES = {
+  github: {
+    frame: "border-sky-200/55 bg-white/55 dark:border-sky-300/10 dark:bg-white/[0.025]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(239,246,255,0.32))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(56,189,248,0.035))]",
+    icon: "border-sky-200/80 bg-sky-50/65 text-sky-700/90 dark:border-sky-300/15 dark:bg-sky-400/[0.055] dark:text-sky-100/85",
+    rule: "from-sky-300/45 via-blue-300/45 to-indigo-300/40",
+  },
+  coding: {
+    frame: "border-emerald-200/55 bg-white/55 dark:border-emerald-300/10 dark:bg-white/[0.025]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(236,253,245,0.3))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(45,212,191,0.035))]",
+    icon: "border-emerald-200/80 bg-emerald-50/65 text-emerald-700/90 dark:border-emerald-300/15 dark:bg-emerald-400/[0.055] dark:text-emerald-100/85",
+    rule: "from-emerald-300/45 via-teal-300/45 to-cyan-300/40",
+  },
+  tech: {
+    frame: "border-violet-200/50 bg-white/55 dark:border-violet-300/10 dark:bg-white/[0.025]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(245,243,255,0.3))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(168,85,247,0.035))]",
+    icon: "border-violet-200/80 bg-violet-50/65 text-violet-700/90 dark:border-violet-300/15 dark:bg-violet-400/[0.055] dark:text-violet-100/85",
+    rule: "from-violet-300/42 via-fuchsia-300/35 to-amber-300/38",
+  },
+} as const;
+
+const GITHUB_STAT_BOXES = [
+  {
+    key: "github_contributions",
+    value: 186,
+    delay: 0,
+    cls: "border-blue-200/65 bg-white/72 text-blue-700/90 dark:border-blue-300/15 dark:bg-blue-400/[0.045] dark:text-blue-100/85",
+  },
+  {
+    key: "github_repos",
+    value: 8,
+    delay: 0.2,
+    cls: "border-indigo-200/65 bg-white/72 text-indigo-700/90 dark:border-indigo-300/15 dark:bg-indigo-400/[0.045] dark:text-indigo-100/85",
+  },
+] as const;
 
 // ─── Animated number counter ──────────────────────────────────────────────────
 
@@ -90,20 +123,28 @@ function AnimatedCounter({
 
 // ─── Bento card ───────────────────────────────────────────────────────────────
 
-function BentoItem({ area, icon, title, children }: {
-  area: string; icon: React.ReactNode; title: string; children: React.ReactNode;
+function BentoItem({ area, icon, title, tone, children }: {
+  area: string;
+  icon: React.ReactNode;
+  title: string;
+  tone: keyof typeof BENTO_TONES;
+  children: React.ReactNode;
 }) {
+  const styles = BENTO_TONES[tone];
+
   return (
-    <li className={cn("min-h-[14rem] list-none", area)}>
-      <div className="relative h-full rounded-3xl border border-border/40 p-2 dark:border-neutral-800">
+    <li className={cn("min-h-[12rem] list-none sm:min-h-[14rem]", area)}>
+      <div className={cn("relative h-full rounded-2xl border p-2 shadow-[0_18px_48px_-38px_hsl(var(--foreground)/0.24)] sm:rounded-3xl", styles.frame)}>
         <GlowingEffect spread={40} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
-        <div className="relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-6 dark:bg-neutral-900/40 dark:shadow-[0px_0px_27px_0px_#2D2D2D]">
-          <div className="w-fit rounded-lg border border-gray-200 dark:border-neutral-800 p-2">
+        <div className={cn("relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-5 shadow-[0_10px_28px_-26px_hsl(var(--foreground)/0.2)] sm:p-6", styles.panel)}>
+          <div className={cn("absolute inset-x-10 top-0 h-px rounded-b-full bg-gradient-to-r opacity-65", styles.rule)} />
+          <div className="pointer-events-none absolute right-8 top-8 h-px w-20 rotate-[-22deg] bg-gradient-to-r from-transparent via-current to-transparent opacity-[0.06]" />
+          <div className={cn("w-fit rounded-lg border p-2", styles.icon)}>
             {icon}
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-            <div className="text-sm text-neutral-500 dark:text-neutral-400">{children}</div>
+            <h3 className="text-xl font-semibold tracking-tight site-heading">{title}</h3>
+            <div className="text-sm site-body">{children}</div>
           </div>
         </div>
       </div>
@@ -120,22 +161,26 @@ function PersonalBentoGrid() {
 
       <BentoItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/7]"
-        icon={<GitBranch className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
+        icon={<GitBranch className="h-4 w-4" />}
         title={t("home.bento.github_title")}
+        tone="github"
       >
         <div className="grid grid-cols-2 gap-3 mt-1">
-          <div className="rounded-xl bg-primary/5 border border-primary/10 p-3 text-center">
-            <div className="text-2xl font-black text-primary">
-              <AnimatedCounter to={186} suffix="+" />
+          {GITHUB_STAT_BOXES.map((item) => (
+            <div key={item.key} className={cn("rounded-xl border p-3 text-center shadow-[0_8px_18px_-16px_currentColor]", item.cls)}>
+              <div className="text-2xl font-black">
+                <AnimatedCounter
+                  to={item.value}
+                  suffix="+"
+                  duration={item.value === 8 ? 1.0 : 1.4}
+                  delay={item.delay}
+                />
+              </div>
+              <div className="mt-1 text-[10px] font-bold uppercase tracking-wider text-current/70">
+                {t(`home.bento.${item.key}`)}
+              </div>
             </div>
-            <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">{t("home.bento.github_contributions")}</div>
-          </div>
-          <div className="rounded-xl bg-primary/5 border border-primary/10 p-3 text-center">
-            <div className="text-2xl font-black text-primary">
-              <AnimatedCounter to={8} suffix="+" duration={1.0} delay={0.2} />
-            </div>
-            <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mt-1">{t("home.bento.github_repos")}</div>
-          </div>
+          ))}
         </div>
         <Link
           href={SITE_CONFIG.links.github}
@@ -149,23 +194,24 @@ function PersonalBentoGrid() {
 
       <BentoItem
         area="md:[grid-area:1/7/2/13] xl:[grid-area:1/7/2/13]"
-        icon={<Clock className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
+        icon={<Clock className="h-4 w-4" />}
         title={t("home.bento.coding_title")}
+        tone="coding"
       >
         <div className="mt-1 space-y-3">
           <div>
-            <span className="text-3xl font-black text-foreground">
-              <AnimatedCounter to={442} suffix="+" duration={1.6} delay={0.1} />
+            <span className="text-3xl font-black text-emerald-700/90 dark:text-emerald-100/90">
+              <AnimatedCounter to={957} suffix="+" duration={1.6} delay={0.1} />
             </span>
-            <span className="ml-2 text-xs text-muted-foreground">{t("home.bento.coding_hours_unit")}</span>
+            <span className="ml-2 text-xs text-slate-600 dark:text-slate-300">{t("home.bento.coding_hours_unit")}</span>
           </div>
           <div className="space-y-1">
-            <div className="flex justify-between text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">
+            <div className="flex justify-between text-[10px] font-semibold uppercase tracking-wider text-emerald-900/60 dark:text-emerald-100/60">
               <span>{t("home.bento.coding_alltime")}</span><span>{t("home.bento.coding_days")}</span>
             </div>
-            <div className="h-1.5 w-full rounded-full bg-secondary/30 overflow-hidden">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-emerald-950/10 dark:bg-emerald-100/10">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-primary to-violet-500"
+                className="h-full rounded-full bg-gradient-to-r from-emerald-500/80 via-teal-500/75 to-sky-500/65"
                 initial={{ width: 0 }}
                 animate={{ width: "78%" }}
                 transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
@@ -173,7 +219,7 @@ function PersonalBentoGrid() {
             </div>
           </div>
           <Link
-            href="https://wakatime.com/@_tolanhy"
+            href={SITE_CONFIG.links.wakatime}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
@@ -185,13 +231,14 @@ function PersonalBentoGrid() {
 
       <BentoItem
         area="md:[grid-area:2/1/3/13] xl:[grid-area:2/1/3/13]"
-        icon={<Code2 className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />}
+        icon={<Code2 className="h-4 w-4" />}
         title={t("home.bento.tech_title")}
+        tone="tech"
       >
         <div className="flex flex-wrap gap-2 mt-1">
-          {TECH_PILLS.map((pill) => (
-            <span key={pill.label} className={cn("rounded-full border px-3 py-1 text-[10px] font-bold", pill.color)}>
-              {pill.label}
+          {TECH_PILLS.map((item) => (
+            <span key={item.label} className={cn("rounded-full border px-3 py-1 text-[10px] font-bold shadow-sm", item.cls)}>
+              {item.label}
             </span>
           ))}
         </div>
@@ -203,7 +250,8 @@ function PersonalBentoGrid() {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
-export function HomeClient({ projects: _, latestPosts: __ }: { projects: Post[]; latestPosts: Post[] }) {
+export function HomeClient(_props: { projects: Post[]; latestPosts: Post[] }) {
+  void _props;
   const { t } = useLanguage();
 
   return (
@@ -221,45 +269,40 @@ export function HomeClient({ projects: _, latestPosts: __ }: { projects: Post[];
 
         <MouseSpotlight />
 
-        <Container className="relative z-10 flex flex-col justify-center py-12 md:py-16">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 w-full xl:items-center">
+        <Container className="relative z-10 flex flex-col justify-center py-10 sm:py-12 md:py-16">
+          <div className="grid w-full grid-cols-1 gap-10 md:gap-12 xl:grid-cols-2 xl:items-center xl:gap-16">
 
             {/* ── Left: text ─────────────────────────────────────────── */}
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-col items-center gap-5 text-center xl:items-start xl:text-left">
 
-              <h1 className="text-4xl font-semibold leading-tight dark:text-zinc-100 md:text-5xl md:leading-[3.8rem]">
-                {t("home.hero.title_prefix")}{" "}
+              <p className="text-sm font-medium site-soft tracking-wide">
+                <span className="block sm:inline">{t("home.hero.title_prefix")}</span>{" "}
                 <ColourfulText text="Nguyễn Thị Yến Nhi" />
-              </h1>
-
-              <p className="text-neutral-500 dark:text-neutral-400 text-base sm:text-lg leading-relaxed max-w-lg">
-                {t("hero.description")}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/portfolio">
-                  <button className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-base px-7 h-12 font-medium transition-colors w-full sm:w-auto">
-                    {t("hero.cta_primary")}
+              <h1 className="max-w-3xl text-3xl font-bold leading-tight site-heading sm:text-4xl md:text-5xl md:leading-[1.1]">
+                {t("pages.portfolio.hero.headline_pre")}{" "}
+                <span className="site-accent-gradient">{t("pages.portfolio.hero.headline_acc1")}</span>{" "}
+                {t("pages.portfolio.hero.headline_mid")}
+              </h1>
+
+              <p className="mx-auto max-w-lg text-base leading-relaxed site-body sm:text-lg xl:mx-0">
+                <Highlight text={t("pages.portfolio.hero.sub_pre")} />
+              </p>
+
+              <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center xl:justify-start">
+                <a href="#projects" className="w-full sm:w-auto">
+                  <button className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-7 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto">
+                    {t("pages.portfolio.hero.cta_projects")}
                     <ArrowRight className="h-4 w-4" />
                   </button>
+                </a>
+<Link href={`mailto:${SITE_CONFIG.links.email}`} className="w-full sm:w-auto">
+                  <button className="inline-flex items-center justify-center gap-2 border border-border/60 bg-background/60 backdrop-blur-sm rounded-full text-base px-7 h-12 font-medium transition-all hover:border-primary/40 hover:bg-primary/5 w-full sm:w-auto">
+                    <Mail className="h-4 w-4" />
+                    {t("pages.portfolio.hero.cta_contact")}
+                  </button>
                 </Link>
-              </div>
-
-              <div className="hidden flex-col sm:flex-row items-start sm:items-center gap-5">
-                <div className="flex pl-4">
-                  <AnimatedTooltip items={TECH_ITEMS} />
-                </div>
-                <div className="flex flex-col gap-2 text-sm leading-relaxed">
-                  <span>
-                    <span className="font-semibold">6</span>
-                    <span className="text-neutral-500 dark:text-neutral-400"> {t("home.hero.tech_count_label")}</span>
-                  </span>
-                  <span>
-                    <span className="text-neutral-500 dark:text-neutral-400">{t("home.hero.shipped_prefix")} </span>
-                    <ColourfulText text="4" />
-                    <span className="text-neutral-500 dark:text-neutral-400"> {t("home.hero.shipped_suffix")}</span>
-                  </span>
-                </div>
               </div>
 
             </div>
@@ -273,31 +316,8 @@ export function HomeClient({ projects: _, latestPosts: __ }: { projects: Post[];
         </Container>
       </section>
 
-      {/* ══ FEATURES ══════════════════════════════════════════════════════════ */}
-      <Container className="pt-2 pb-12 md:pt-4 md:pb-16">
-        <div className="flex gap-4 flex-col sm:flex-row">
-          {FEATURES.map(({ icon: Icon, key, href }) => (
-            <Link key={key} href={href} className="flex-1">
-              <div className="h-full p-5 rounded-3xl border border-border/40 dark:border-neutral-800 dark:bg-neutral-900/40 hover:dark:bg-neutral-800/60 hover:border-primary/30 transition-all">
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-purple-500" />
-                    </div>
-                    <h2 className="text-base font-semibold">{t(`home.features.${key}_title`)}</h2>
-                  </div>
-                  <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                    {t(`home.features.${key}_desc`)}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Container>
-
-      {/* ══ CONTACT ═══════════════════════════════════════════════════════════ */}
-      <QuestionSection />
+      {/* ══ PORTFOLIO CONTENT ════════════════════════════════════════════════ */}
+      <PortfolioClient projects={[]} hideHero hideCerts />
     </>
   );
 }

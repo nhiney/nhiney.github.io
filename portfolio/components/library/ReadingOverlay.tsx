@@ -17,7 +17,7 @@ import type { Language } from "@/lib/i18n/dictionaries";
 import BookViewer3D from "./BookViewer3D";
 import { FlipBookReader } from "./FlipBookReader";
 import { LOCALE_LABEL, type LibBookFull } from "@/lib/library/types";
-import { bookPaperSrc } from "@/lib/library/papers";
+import { bookPaperSrc, bookLeafPaperSrc } from "@/lib/library/papers";
 
 export function ReadingOverlay({
   book,
@@ -149,6 +149,7 @@ export function ReadingOverlay({
                   readingTime={book.readingTime}
                   coverSrc={book.meta.cover}
                   coverBackSrc={book.meta.coverBack}
+                  leafPaperSrc={bookLeafPaperSrc(book.slug)}
                   blogHref={`/blog/${book.blogSlug ?? book.slug}`}
                   hasReview={hasReview}
                   onClose={() => setReading(false)}

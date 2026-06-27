@@ -13,10 +13,10 @@ export function Text({
   ...props
 }: TextProps) {
   const variants = {
-    base: "text-base text-zinc-400 md:text-lg leading-relaxed",
-    large: "text-lg text-zinc-400 md:text-xl leading-relaxed",
-    small: "text-sm text-zinc-500 font-medium tracking-tight",
-    muted: "text-zinc-500 font-medium",
+    base: "text-base site-body md:text-lg leading-relaxed",
+    large: "text-lg site-body md:text-xl leading-relaxed",
+    small: "text-sm site-body font-medium tracking-tight",
+    muted: "site-body font-medium",
   };
 
   // createElement avoids the `never`-typed JSX attributes that a polymorphic

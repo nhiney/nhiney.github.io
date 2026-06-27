@@ -5,12 +5,18 @@ import { usePathname } from "next/navigation";
 
 export function BackgroundEffects() {
   const pathname = usePathname();
-  const isRestoredPage =
-    pathname === "/" || pathname === "/portfolio" || pathname?.startsWith("/portfolio/");
+  // Pages that opt out of the full-viewport paper-grain overlay: the restored
+  // BA pages and the blog (its reading column reads cleaner on a flat sheet).
+  const hideGrain =
+    pathname === "/" ||
+    pathname === "/portfolio" ||
+    pathname?.startsWith("/portfolio/") ||
+    pathname === "/blog" ||
+    pathname?.startsWith("/blog/");
 
   return (
     <>
-      {!isRestoredPage && <div className="grain" aria-hidden="true" />}
+      {!hideGrain && <div className="grain" aria-hidden="true" />}
       <div
         className="fixed inset-0 -z-10 overflow-hidden pointer-events-none"
         aria-hidden="true"

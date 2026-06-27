@@ -47,6 +47,11 @@ const colors = [
   "#5589C5", "#5C7AAD",
 ];
 
+const lineTimings = paths.map((_, idx) => ({
+  delay: (idx * 7) % 10,
+  repeatDelay: 2 + ((idx * 5) % 10),
+}));
+
 function LinesSVG({ svgOptions }: { svgOptions?: { duration?: number } }) {
   return (
     <motion.svg
@@ -73,8 +78,8 @@ function LinesSVG({ svgOptions }: { svgOptions?: { duration?: number } }) {
             ease: "linear",
             repeat: Infinity,
             repeatType: "loop",
-            delay: Math.floor(Math.random() * 10),
-            repeatDelay: Math.floor(Math.random() * 10 + 2),
+            delay: lineTimings[idx].delay,
+            repeatDelay: lineTimings[idx].repeatDelay,
           }}
         />
       ))}
