@@ -33,30 +33,35 @@ const BOOKS_DATA = resolve(ROOT_DIR, "data/books.ts");
 mkdirSync(OUT_DIR, { recursive: true });
 
 const SITE = {
-  name: "Nguyen Thi Yen Nhi",
-  shortName: "Yen Nhi",
+  name: "Nguyễn Thị Yến Nhi",
+  shortName: "Yến Nhi",
   domain: "startup.id.vn",
 };
 
 const LOCALE_VARIANT_RE = /\.(en|vi|ja|zh|es|fr|de|ko|ru|pt)\.mdx?$/;
 
+// Mirrors the live site palette: white surfaces, navy ink, a vivid blue primary
+// (#2563EB) for portfolio pages and a teal (#0D8BA0) for the writing/library.
+// The old colour keys are remapped onto this two-tone system so the page configs
+// below keep working without edits.
 const PALETTE = {
-  ink: "#121417",
-  muted: "#4b5563",
-  soft: "#7b8493",
-  line: "#d8dee8",
-  page: "#f6f7f9",
-  card: "#fffdf9",
-  charcoal: "#20242a",
-  cream: "#fbf7ef",
-  blue: "#2563eb",
-  indigo: "#4f46e5",
-  violet: "#7c3aed",
-  emerald: "#059669",
-  amber: "#b7791f",
-  coral: "#e2553d",
-  rose: "#be3455",
-  cyan: "#0e7490",
+  ink: "#16243C",
+  muted: "#52617a",
+  soft: "#8aa0bd",
+  line: "#dbe6f3",
+  page: "#eef4fc",
+  card: "#ffffff",
+  charcoal: "#16243C",
+  cream: "#ffffff",
+  blue: "#2563EB",
+  indigo: "#2563EB",
+  violet: "#2563EB",
+  coral: "#2563EB",
+  cyan: "#2563EB",
+  teal: "#0D8BA0",
+  emerald: "#0D8BA0",
+  amber: "#0D8BA0",
+  rose: "#0D8BA0",
 };
 
 const PAGE_CARDS = [
@@ -128,7 +133,7 @@ const PAGE_CARDS = [
     footer: "CV · Projects · Technical BA",
     statLabel: "Path",
     statValue: "CS",
-    accent: PALETTE.emerald,
+    accent: PALETTE.blue,
     accentAlt: PALETTE.cyan,
   },
   {
@@ -188,6 +193,28 @@ function loadLocalFont(candidates) {
   return new ArrayBuffer(0);
 }
 
+const FONTS_DIR = resolve(__dirname, "fonts");
+
+// Satori keeps only one font per (name, weight), so subsets must each get their
+// OWN name and be listed together in the CSS fontFamily stack — that is how a
+// glyph missing in "latin" falls through to "latin-ext" and "vietnamese".
+function loadSubsetFonts(base, baseName, weights) {
+  const subsets = { latin: baseName, "latin-ext": `${baseName}X`, vietnamese: `${baseName}V` };
+  const out = [];
+  for (const weight of weights) {
+    for (const [subset, name] of Object.entries(subsets)) {
+      const filePath = resolve(FONTS_DIR, `${base}-${subset}-${weight}.woff`);
+      if (!existsSync(filePath)) continue;
+      out.push({ name, data: toArrayBuffer(readFileSync(filePath)), weight, style: "normal" });
+    }
+  }
+  return out;
+}
+
+// Full fontFamily stacks (latin → latin-ext → vietnamese → unicode fallback).
+const SANS = "'OGSans', 'OGSansX', 'OGSansV', 'OGUni'";
+const DISP = "'OGDisp', 'OGDispX', 'OGDispV', 'OGSansV', 'OGUni'";
+
 function el(type, props, ...rest) {
   const children = rest
     .flat(Infinity)
@@ -245,10 +272,11 @@ function chip(text, accent) {
         padding: "0 16px",
         borderRadius: "7px",
         background: `${accent}0f`,
-        border: `1px solid ${accent}28`,
-        color: "#334155",
+        border: `1px solid ${accent}2e`,
+        fontFamily: SANS,
+        color: "#3a4a63",
         fontSize: "14px",
-        fontWeight: 700,
+        fontWeight: 600,
         whiteSpace: "nowrap",
       },
     },
@@ -279,12 +307,13 @@ function brandPill({ accent }) {
         height: "38px",
         padding: "0 14px",
         borderRadius: "999px",
-        background: "rgba(255,255,255,0.82)",
-        border: "1px solid #e4ebf5",
+        background: "rgba(255,255,255,0.9)",
+        border: "1px solid #dbe6f3",
         boxShadow: `0 14px 34px ${accent}18`,
-        color: "#0f172a",
+        fontFamily: SANS,
+        color: "#16243C",
         fontSize: "16px",
-        fontWeight: 800,
+        fontWeight: 700,
       },
     },
     dot(accent),
@@ -299,34 +328,18 @@ function topBrand({ accent }) {
       style: {
         display: "flex",
         alignItems: "center",
-        gap: "13px",
+        gap: "10px",
       },
     },
+    dot(accent, 11),
     el(
       "div",
       {
         style: {
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "44px",
-          height: "44px",
-          borderRadius: "10px",
-          background: `linear-gradient(135deg, ${accent}, ${PALETTE.violet})`,
-          color: "#ffffff",
-          fontSize: "16px",
-          fontWeight: 900,
-        },
-      },
-      "YN",
-    ),
-    el(
-      "div",
-      {
-        style: {
-          display: "flex",
-          color: "#52617a",
-          fontSize: "15px",
+          fontFamily: SANS,
+          color: "#51617a",
+          fontSize: "17px",
           fontWeight: 600,
         },
       },
@@ -358,9 +371,10 @@ function statBox({ label, value, accent }) {
       {
         style: {
             display: "flex",
+            fontFamily: SANS,
             color: accent,
           fontSize: "11px",
-          fontWeight: 800,
+          fontWeight: 700,
           textTransform: "uppercase",
           letterSpacing: "0.08em",
         },
@@ -372,10 +386,11 @@ function statBox({ label, value, accent }) {
       {
         style: {
             display: "flex",
+            fontFamily: DISP,
             color: PALETTE.ink,
           fontSize: "24px",
           lineHeight: 1,
-          fontWeight: 900,
+          fontWeight: 800,
         },
       },
       value,
@@ -415,9 +430,6 @@ function softWash({ accent, accentAlt }) {
 function socialCard(config, { article = false } = {}) {
   const accent = config.accent;
   const accentAlt = config.accentAlt ?? config.accent;
-  // Editorial cards (blog + books) borrow the "printed book" look of the reading
-  // page: warm paper stock + a serif headline. Portfolio cards stay clean sans.
-  const editorial = config.variant === "editorial";
   const title = truncate(config.title, article ? 104 : 92);
   const description = truncate(config.description, article ? 168 : 158);
   const meta = article
@@ -432,8 +444,8 @@ function socialCard(config, { article = false } = {}) {
         display: "flex",
         width: "1200px",
         height: "630px",
-        background: "#edf3f9",
-        fontFamily: "'OG Sans', Arial, sans-serif",
+        background: "#eef4fc",
+        fontFamily: SANS,
         padding: "36px",
         position: "relative",
         overflow: "hidden",
@@ -450,11 +462,9 @@ function socialCard(config, { article = false } = {}) {
           height: "558px",
           padding: "50px 52px 44px",
           borderRadius: "28px",
-          background: editorial ? PALETTE.cream : "#fffefe",
-          border: editorial ? "1px solid #ece1cf" : "1px solid #dce5f0",
-          boxShadow: editorial
-            ? "0 26px 70px rgba(120, 92, 44, 0.10)"
-            : "0 26px 70px rgba(37, 99, 235, 0.08)",
+          background: "#ffffff",
+          border: "1px solid #dbe6f3",
+          boxShadow: "0 26px 70px rgba(37, 99, 235, 0.10)",
           position: "relative",
           overflow: "hidden",
         },
@@ -500,10 +510,11 @@ function socialCard(config, { article = false } = {}) {
           {
             style: {
               display: "flex",
+              fontFamily: SANS,
               color: accent,
-              fontSize: "16px",
-              fontWeight: 900,
-              letterSpacing: "0.12em",
+              fontSize: "15px",
+              fontWeight: 700,
+              letterSpacing: "0.13em",
               textTransform: "uppercase",
             },
           },
@@ -514,12 +525,12 @@ function socialCard(config, { article = false } = {}) {
           {
             style: {
               display: "flex",
-              fontFamily: editorial ? "'OG Serif', Georgia, serif" : "'OG Sans', Arial, sans-serif",
-              color: editorial ? "#1c1815" : "#0f172a",
-              fontSize: `${titleSize(title, article ? (editorial ? 56 : 58) : 62)}px`,
-              lineHeight: editorial ? 1.1 : 1.06,
-              fontWeight: editorial ? 700 : 900,
-              letterSpacing: editorial ? "-0.01em" : "0",
+              fontFamily: DISP,
+              color: PALETTE.ink,
+              fontSize: `${titleSize(title, article ? 56 : 62)}px`,
+              lineHeight: 1.08,
+              fontWeight: 800,
+              letterSpacing: "-0.018em",
             },
           },
           title,
@@ -529,11 +540,11 @@ function socialCard(config, { article = false } = {}) {
           {
             style: {
               display: "flex",
-              fontFamily: editorial ? "'OG Serif', Georgia, serif" : "'OG Sans', Arial, sans-serif",
-              color: editorial ? "#5b5048" : "#52617a",
-              fontSize: article ? (editorial ? "22px" : "21px") : "22px",
-              lineHeight: editorial ? 1.5 : 1.45,
-              fontWeight: editorial ? 400 : 500,
+              fontFamily: SANS,
+              color: "#51617a",
+              fontSize: article ? "21px" : "22px",
+              lineHeight: 1.5,
+              fontWeight: 400,
               maxWidth: article ? "860px" : "890px",
             },
           },
@@ -577,9 +588,10 @@ function socialCard(config, { article = false } = {}) {
             {
               style: {
                 display: "flex",
+                fontFamily: SANS,
                 color: "#8aa0bd",
                 fontSize: "15px",
-                fontWeight: 500,
+                fontWeight: 400,
               },
             },
             footer,
@@ -717,45 +729,25 @@ async function renderPng(node, outPath, fonts) {
 async function main() {
   console.log("🎨  Generating OG images…");
 
-  const font400 = loadLocalFont([
-    "/System/Library/Fonts/Supplemental/Arial.ttf",
-    "/Library/Fonts/Arial.ttf",
-    "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
-  ]);
-  const font700 = loadLocalFont([
-    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
-    "/Library/Fonts/Arial Bold.ttf",
-    "/System/Library/Fonts/Supplemental/Arial.ttf",
-  ]);
-  // Editorial serif (blog + book cards) — mirrors the "printed book" reading page.
-  const serif400 = loadLocalFont([
-    "/System/Library/Fonts/Supplemental/Georgia.ttf",
-    "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
-  ]);
-  const serif700 = loadLocalFont([
-    "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
-    "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
-    "/System/Library/Fonts/Supplemental/Georgia.ttf",
-  ]);
-  // Universal glyph fallback so Vietnamese diacritics never tofu in any family.
+  // Bundled webfonts that match the live site: Plus Jakarta Sans for display
+  // headings, Inter for body and labels. Arial Unicode is kept only as a last
+  // resort for any glyph the subsets happen to miss.
   const unicode = loadLocalFont([
     "/Library/Fonts/Arial Unicode.ttf",
     "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
   ]);
   const fonts = [
-    { name: "OG Sans", data: font400, weight: 400, style: "normal" },
-    { name: "OG Sans", data: font700, weight: 700, style: "normal" },
-    { name: "OG Sans", data: font700, weight: 800, style: "normal" },
-    { name: "OG Sans", data: font700, weight: 900, style: "normal" },
-    { name: "OG Serif", data: serif400, weight: 400, style: "normal" },
-    { name: "OG Serif", data: serif700, weight: 700, style: "normal" },
-    { name: "OG Serif", data: serif700, weight: 900, style: "normal" },
-    // Fallback entries (kept last so they only fill glyphs the primaries miss).
-    { name: "OG Sans", data: unicode, weight: 400, style: "normal" },
-    { name: "OG Serif", data: unicode, weight: 400, style: "normal" },
-  ].filter((font) => font.data.byteLength > 0);
+    ...loadSubsetFonts("inter", "OGSans", [400, 600, 700]),
+    ...loadSubsetFonts("plus-jakarta-sans", "OGDisp", [700, 800]),
+    ...(unicode.byteLength
+      ? [
+          { name: "OGUni", data: unicode, weight: 400, style: "normal" },
+          { name: "OGUni", data: unicode, weight: 700, style: "normal" },
+        ]
+      : []),
+  ].filter((font) => font.data && font.data.byteLength > 0);
 
-  console.log(fonts.length > 0 ? "   ✓ Local social-preview fonts loaded" : "   ⚠  No fonts loaded");
+  console.log(fonts.length > 0 ? `   ✓ Social-preview fonts loaded (${fonts.length})` : "   ⚠  No fonts loaded");
 
   for (const page of PAGE_CARDS) {
     await renderPng(buildPageCard(page), resolve(OUT_DIR, `${page.slug}.png`), fonts);
