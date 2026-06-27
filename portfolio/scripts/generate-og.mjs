@@ -492,7 +492,6 @@ function socialCard(config, { article = false } = {}) {
           },
         },
         brandPill({ accent }),
-        topBrand({ accent }),
       ),
       el(
         "div",
@@ -597,11 +596,6 @@ function socialCard(config, { article = false } = {}) {
             footer,
           ),
         ),
-        statBox({
-          label: config.statLabel ?? (article ? "Read" : "Share"),
-          value: config.statValue ?? "Page",
-          accent,
-        }),
       ),
     ),
   );
