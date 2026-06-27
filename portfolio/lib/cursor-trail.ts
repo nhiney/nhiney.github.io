@@ -38,7 +38,7 @@ export function cursorTrail({ ref, color }: CursorTrailOptions) {
 
     update() {
       let spring = this.spring;
-      let head = this.nodes[0];
+      const head = this.nodes[0];
       head.vx += (cursor.x - head.x) * spring;
       head.vy += (cursor.y - head.y) * spring;
       for (let i = 0; i < this.nodes.length; i++) {
@@ -59,8 +59,8 @@ export function cursorTrail({ ref, color }: CursorTrailOptions) {
     }
 
     draw() {
-      let x = this.nodes[0].x;
-      let y = this.nodes[0].y;
+      const x = this.nodes[0].x;
+      const y = this.nodes[0].y;
       ctx!.beginPath();
       ctx!.moveTo(x, y);
       for (let i = 1; i < this.nodes.length - 2; i++) {

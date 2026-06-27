@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Caveat, Sora } from "next/font/google";
+import { Inter, Caveat, Sora, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { BackgroundEffects } from "@/components/effects/BackgroundEffects";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
+import { RouteTextPalette } from "@/components/layout/RouteTextPalette";
+import { ServiceWorkerRegistration } from "@/components/pwa/ServiceWorkerRegistration";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { PostHogProvider } from "@/components/posthog/PostHogProvider";
 import "./globals.css";
@@ -31,6 +33,20 @@ const sora = Sora({
   variable: "--font-sora",
   display: "swap",
   weight: ["400", "500", "600", "700"],
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const BASE = SITE_CONFIG.url;
@@ -126,6 +142,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  applicationName: SITE_CONFIG.fullName,
   title: {
     default: SITE_CONFIG.title,        // shown on homepage
     template: `%s · Yen Nhi`,         // "Projects · Yen Nhi" — short & brandable
@@ -135,6 +152,12 @@ export const metadata: Metadata = {
   authors: [{ name: SITE_CONFIG.fullName, url: SITE_CONFIG.url }],
   creator: SITE_CONFIG.fullName,
   publisher: SITE_CONFIG.fullName,
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Yen Nhi",
+    statusBarStyle: "default",
+  },
   metadataBase: new URL(SITE_CONFIG.url),
   alternates: {
     canonical: "/",
@@ -183,11 +206,11 @@ export const metadata: Metadata = {
     },
   },
   category: "technology",
-  // Verification tokens — add after submitting to Google/Bing Search Console
-  // verification: {
-  //   google: "YOUR_GOOGLE_SITE_VERIFICATION_TOKEN",
-  //   other: { "msvalidate.01": "YOUR_BING_TOKEN" },
-  // },
+  // Verification token — set SITE_CONFIG.googleSiteVerification once you've
+  // claimed the site in Google Search Console (free). Omitted while empty.
+  ...(SITE_CONFIG.googleSiteVerification
+    ? { verification: { google: SITE_CONFIG.googleSiteVerification } }
+    : {}),
 };
 
 const themeScript = `
@@ -210,7 +233,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="h-full antialiased">
       <head>
-        {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {/* JSON-LD structured data */}
         <script
@@ -226,16 +248,20 @@ export default function RootLayout({
         inter.variable,
         caveat.variable,
         sora.variable,
+        outfit.variable,
+        plusJakarta.variable,
         inter.className,
         "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans"
       )}>
         <PostHogProvider>
           <LanguageProvider>
+            <RouteTextPalette />
             <ScrollProgress />
             <BackgroundEffects />
             <Navbar />
             <main className="flex-1 relative z-10">{children}</main>
             <Footer />
+            <ServiceWorkerRegistration />
           </LanguageProvider>
         </PostHogProvider>
       </body>

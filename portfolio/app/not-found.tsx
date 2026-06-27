@@ -8,10 +8,10 @@ export default function NotFound() {
     <Container>
       <Section className="flex min-h-[60vh] flex-col items-center justify-center text-center">
         <FadeIn>
-          <h1 className="text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          <h1 className="text-6xl font-bold tracking-tight site-heading">
             404
           </h1>
-          <p className="mt-4 text-xl text-zinc-600 dark:text-zinc-400">
+          <p className="mt-4 text-xl site-body">
             The page you are looking for does not exist.
           </p>
           <div className="mt-10">

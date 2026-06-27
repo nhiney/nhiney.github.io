@@ -44,7 +44,7 @@ export function LanguageSwitcher() {
                   }}
                   className={cn(
                     "flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-xs font-bold transition-all hover:bg-secondary/50",
-                    language === lang.code ? "text-primary bg-primary/5" : "text-zinc-400"
+                    language === lang.code ? "text-primary bg-primary/5" : "text-muted-foreground"
                   )}
                 >
                   <span className="text-base leading-none">{lang.flag}</span>

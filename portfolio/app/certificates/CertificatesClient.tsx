@@ -173,58 +173,29 @@ export function CertificatesClient() {
                         setActive(cert);
                       }
                     }}
-                    className="group flex h-full cursor-pointer flex-col"
+                    className="group flex h-full cursor-pointer flex-col rounded-[14px] border border-border/60 bg-card/70 p-2 shadow-[0_1px_2px_rgba(15,23,42,0.04),_0_10px_30px_rgba(15,23,42,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_14px_40px_rgba(15,23,42,0.11)] dark:bg-card/55 dark:shadow-[0_16px_44px_rgba(0,0,0,0.28)]"
                   >
-                    {/* Certificate cover — the focus */}
-                    <div className="relative aspect-[1.414/1] w-full overflow-hidden rounded-xl border border-border/70 bg-gradient-to-br from-zinc-50 to-zinc-100 shadow-[0_1px_3px_rgba(0,0,0,0.06)] transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-hover:border-primary/40 group-hover:shadow-[0_28px_50px_-26px_rgba(0,0,0,0.55)] dark:from-zinc-900 dark:to-zinc-950">
-                      {cert.image ? (
-                        <Image
-                          src={cert.image}
-                          alt={cert.title}
-                          fill
-                          className="object-contain p-3 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                      ) : (
-                        <div className="flex h-full w-full flex-col items-center justify-center gap-2.5 px-6 text-center">
-                          <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-3.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
-                            <Clock size={11} /> {t("pages.certificates.in_progress")}
-                          </span>
-                          <p className="text-xs text-muted-foreground">
-                            {t("pages.certificates.in_progress_desc")}
-                          </p>
-                        </div>
-                      )}
+                    <CertificateFrame
+                      image={cert.image}
+                      alt={cert.title}
+                      verified={!!(cert.image && realUrl)}
+                      verifiedLabel={t("pages.certificates.verified")}
+                      viewLabel={t("pages.certificates.view_certificate")}
+                      inProgressLabel={t("pages.certificates.in_progress")}
+                      inProgressDescription={t("pages.certificates.in_progress_desc")}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
 
-                      {/* Verified chip */}
-                      {cert.image && realUrl && (
-                        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full border border-border/60 bg-background/85 px-2 py-0.5 text-[10px] font-medium text-emerald-600 shadow-sm backdrop-blur dark:text-emerald-400">
-                          <ShieldCheck size={11} strokeWidth={2.4} />
-                          {t("pages.certificates.verified")}
-                        </span>
-                      )}
-
-                      {/* Hover reveal — professional "view" affordance */}
-                      {cert.image && (
-                        <div className="pointer-events-none absolute inset-0 flex items-end justify-center bg-gradient-to-t from-zinc-950/45 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                          <span className="mb-4 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-white/95 px-4 py-1.5 text-[11px] font-semibold text-zinc-900 shadow-lg backdrop-blur transition-transform duration-500 group-hover:translate-y-0">
-                            <Eye size={13} />
-                            {t("pages.certificates.view_certificate")}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Slim caption — cover stays the star */}
-                    <div className="flex flex-1 flex-col px-1 pt-3.5">
-                      <h3 className="text-[14px] font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
+                    {/* Caption */}
+                    <div className="flex flex-1 flex-col px-2 pb-2 pt-3.5">
+                      <h3 className="min-h-[2.45rem] text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-primary">
                         {cert.title}
                       </h3>
-                      <div className="mt-1.5 flex items-center gap-2 text-[11px] text-muted-foreground">
-                        <span className={`h-1.5 w-1.5 rounded-full ${dotColor(cert.category)}`} />
-                        <span className="font-medium text-foreground/65">{cert.issuer}</span>
-                        <span className="text-muted-foreground/40">·</span>
-                        <span>{locDate(cert.date)}</span>
+                      <div className="mt-2 flex min-w-0 items-center gap-2 text-[11px] text-muted-foreground">
+                        <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotColor(cert.category)}`} />
+                        <span className="min-w-0 truncate">{cert.issuer}</span>
+                        <span className="text-border/80">·</span>
+                        <span className="shrink-0">{locDate(cert.date)}</span>
                       </div>
                     </div>
                   </article>
@@ -264,7 +235,7 @@ export function CertificatesClient() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.98, opacity: 0, y: 8 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative grid w-full max-w-5xl grid-cols-1 rounded-3xl border border-border/60 bg-card shadow-2xl md:max-h-[92vh] md:overflow-hidden md:grid-cols-[1.25fr_1fr]"
+              className="relative grid w-full max-w-6xl grid-cols-1 rounded-3xl border border-border/60 bg-card shadow-2xl md:max-h-[92vh] md:overflow-hidden md:grid-cols-[1.35fr_0.95fr]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -277,31 +248,16 @@ export function CertificatesClient() {
               </button>
 
               {/* ─ Image side ─ */}
-              <div className="flex items-center justify-center bg-gradient-to-br from-muted/40 to-background p-5 sm:p-8">
-                <div className="w-full overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-zinc-50 to-zinc-100 shadow-lg dark:from-zinc-900 dark:to-zinc-950">
-                  {active.image ? (
-                    <div className="relative aspect-[1.414/1] w-full">
-                      <Image
-                        src={active.image}
-                        alt={active.title}
-                        fill
-                        className="object-contain p-4"
-                        sizes="(max-width: 768px) 100vw, 60vw"
-                        priority
-                        quality={100}
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex aspect-[1.414/1] w-full flex-col items-center justify-center gap-4">
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2 text-[11px] font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
-                        <Clock size={12} /> {t("pages.certificates.in_progress")}
-                      </span>
-                      <p className="max-w-md px-6 text-center text-sm text-muted-foreground">
-                        {t("pages.certificates.in_progress_desc")}
-                      </p>
-                    </div>
-                  )}
-                </div>
+              <div className="flex items-center justify-center bg-gradient-to-br from-secondary/65 via-background to-background p-4 sm:p-6 md:p-7">
+                <CertificateFrame
+                  image={active.image}
+                  alt={active.title}
+                  variant="modal"
+                  priority
+                  inProgressLabel={t("pages.certificates.in_progress")}
+                  inProgressDescription={t("pages.certificates.in_progress_desc")}
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                />
               </div>
 
               {/* ─ Details side ─ */}
@@ -357,12 +313,12 @@ export function CertificatesClient() {
                         {active.courses.filter((c) => c.image).length}/{active.courses.length}
                       </span>
                     </div>
-                    <ul className="grid gap-1.5">
+                    <ul className="grid min-w-0 gap-1.5">
                       {active.courses.map((course, idx) => {
                         const hasImage = !!course.image;
                         const cert = active;
                         return (
-                          <li key={course.title}>
+                          <li key={course.title} className="min-w-0">
                             {hasImage ? (
                               <button
                                 type="button"
@@ -370,12 +326,12 @@ export function CertificatesClient() {
                                   setActive(null);
                                   setActiveCourse({ course, cert });
                                 }}
-                                className="group flex w-full items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2 text-left transition-all hover:border-primary/40 hover:bg-primary/5"
+                                className="group flex w-full min-w-0 items-center gap-3 rounded-xl border border-border/40 bg-background/40 px-3 py-2 text-left transition-all hover:border-primary/40 hover:bg-primary/5"
                               >
                                 <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-[10px] font-semibold tabular-nums text-primary">
                                   {idx + 1}
                                 </span>
-                                <span className="flex-1 truncate text-xs font-medium text-foreground/90 transition-colors group-hover:text-primary">
+                                <span className="min-w-0 flex-1 truncate text-xs font-medium text-foreground/90 transition-colors group-hover:text-primary">
                                   {locTitle(course)}
                                 </span>
                                 <ChevronRight
@@ -384,11 +340,11 @@ export function CertificatesClient() {
                                 />
                               </button>
                             ) : (
-                              <span className="flex w-full items-center gap-3 rounded-xl border border-dashed border-border/40 bg-background/20 px-3 py-2">
+                              <span className="flex w-full min-w-0 items-center gap-3 rounded-xl border border-dashed border-border/40 bg-background/20 px-3 py-2">
                                 <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted/40 text-[10px] font-semibold tabular-nums text-muted-foreground/60">
                                   {idx + 1}
                                 </span>
-                                <span className="flex-1 truncate text-xs font-medium text-muted-foreground/70">
+                                <span className="min-w-0 flex-1 truncate text-xs font-medium text-muted-foreground/70">
                                   {locTitle(course)}
                                 </span>
                               </span>
@@ -452,7 +408,7 @@ export function CertificatesClient() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.98, opacity: 0, y: 8 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative grid w-full max-w-5xl grid-cols-1 rounded-3xl border border-border/60 bg-card shadow-2xl md:max-h-[92vh] md:overflow-hidden md:grid-cols-[1.25fr_1fr]"
+              className="relative grid w-full max-w-6xl grid-cols-1 rounded-3xl border border-border/60 bg-card shadow-2xl md:max-h-[92vh] md:overflow-hidden md:grid-cols-[1.35fr_0.95fr]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -466,20 +422,16 @@ export function CertificatesClient() {
 
               {/* ─ Image side ─ */}
               {activeCourse.course.image && (
-                <div className="flex items-center justify-center bg-gradient-to-br from-muted/40 to-background p-5 sm:p-8">
-                  <div className="w-full overflow-hidden rounded-xl border border-border/60 bg-gradient-to-br from-zinc-50 to-zinc-100 shadow-lg dark:from-zinc-900 dark:to-zinc-950">
-                    <div className="relative aspect-[1.414/1] w-full">
-                      <Image
-                        src={activeCourse.course.image}
-                        alt={locTitle(activeCourse.course)}
-                        fill
-                        className="object-contain p-4"
-                        sizes="(max-width: 768px) 100vw, 60vw"
-                        priority
-                        quality={100}
-                      />
-                    </div>
-                  </div>
+                <div className="flex items-center justify-center bg-gradient-to-br from-secondary/65 via-background to-background p-4 sm:p-6 md:p-7">
+                  <CertificateFrame
+                    image={activeCourse.course.image}
+                    alt={locTitle(activeCourse.course)}
+                    variant="modal"
+                    priority
+                    inProgressLabel={t("pages.certificates.in_progress")}
+                    inProgressDescription={t("pages.certificates.in_progress_desc")}
+                    sizes="(max-width: 768px) 100vw, 60vw"
+                  />
                 </div>
               )}
 
@@ -587,6 +539,86 @@ export function CertificatesClient() {
         )}
       </AnimatePresence>
     </Container>
+  );
+}
+
+function CertificateFrame({
+  image,
+  alt,
+  verified = false,
+  verifiedLabel,
+  viewLabel,
+  inProgressLabel,
+  inProgressDescription,
+  priority = false,
+  sizes,
+  variant = "grid",
+}: {
+  image?: string | null;
+  alt: string;
+  verified?: boolean;
+  verifiedLabel?: string;
+  viewLabel?: string;
+  inProgressLabel: string;
+  inProgressDescription: string;
+  priority?: boolean;
+  sizes: string;
+  variant?: "grid" | "modal";
+}) {
+  const isModal = variant === "modal";
+
+  return (
+    <div
+      className={`relative w-full overflow-hidden rounded-[12px] border border-border/70 bg-[linear-gradient(135deg,hsl(var(--background))_0%,hsl(var(--secondary))_100%)] shadow-[0_1px_2px_rgba(15,23,42,0.05),_0_16px_34px_rgba(15,23,42,0.08)] dark:shadow-[0_18px_40px_rgba(0,0,0,0.32)] ${
+        isModal ? "max-w-[820px] p-2.5 sm:p-3.5" : "p-2.5"
+      }`}
+    >
+      <div className="pointer-events-none absolute inset-2 rounded-[8px] border border-white/70 dark:border-white/10" />
+      <div className="pointer-events-none absolute inset-[13px] rounded-[6px] border border-border/60" />
+
+      <div
+        className={`relative overflow-hidden rounded-[8px] border border-border/70 bg-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.8),_0_1px_2px_rgba(15,23,42,0.05)] dark:bg-zinc-950 dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] ${
+          isModal ? "p-2 sm:p-2.5" : "p-2"
+        }`}
+      >
+        <div className="relative aspect-[1.414/1] w-full overflow-hidden rounded-[5px] bg-white">
+          {image ? (
+            <Image
+              src={image}
+              alt={alt}
+              fill
+              className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.018]"
+              sizes={sizes}
+              priority={priority}
+              quality={isModal ? 100 : 90}
+            />
+          ) : (
+            <div className="flex h-full w-full flex-col items-center justify-center gap-3 px-6 text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
+                <Clock size={11} /> {inProgressLabel}
+              </span>
+              <p className="max-w-sm text-xs text-muted-foreground">{inProgressDescription}</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {image && verified && (
+        <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-white/92 px-2.5 py-1 text-[10px] font-semibold text-emerald-600 shadow-sm ring-1 ring-emerald-500/25 backdrop-blur-sm dark:bg-zinc-950/90 dark:text-emerald-400 dark:ring-emerald-400/20">
+          <ShieldCheck size={10} strokeWidth={2.5} />
+          {verifiedLabel}
+        </span>
+      )}
+
+      {image && viewLabel && !isModal && (
+        <div className="pointer-events-none absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/32 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <span className="mb-4 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-white/95 px-4 py-1.5 text-[11px] font-semibold text-zinc-900 shadow-md backdrop-blur-sm transition-transform duration-300 group-hover:translate-y-0">
+            <Eye size={12} />
+            {viewLabel}
+          </span>
+        </div>
+      )}
+    </div>
   );
 }
 

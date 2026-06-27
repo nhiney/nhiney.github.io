@@ -4,49 +4,53 @@ import * as React from "react";
 import { motion } from "framer-motion";
 
 export function ColourfulText({ text }: { text: string }) {
-  const colors = [
-    "rgb(131, 179, 32)",
-    "rgb(47, 195, 106)",
-    "rgb(42, 169, 210)",
-    "rgb(4, 112, 202)",
-    "rgb(107, 10, 255)",
-    "rgb(183, 0, 218)",
-    "rgb(218, 0, 171)",
-    "rgb(230, 64, 92)",
-    "rgb(232, 98, 63)",
-    "rgb(249, 129, 47)",
-  ];
+  const tokens = React.useMemo(() => {
+    let charIndex = 0;
 
-  const [currentColors, setCurrentColors] = React.useState(colors);
-  const [count, setCount] = React.useState(0);
+    return text.split(/(\s+)/).map((part, tokenIndex) => {
+      if (/^\s+$/.test(part)) {
+        return { type: "space" as const, part, tokenIndex };
+      }
 
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentColors([...colors].sort(() => Math.random() - 0.5));
-      setCount((prev) => prev + 1);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+      const chars = part.split("").map((char) => ({
+        char,
+        charIndex: charIndex++,
+      }));
+
+      return { type: "word" as const, chars, tokenIndex };
+    });
+  }, [text]);
 
   return (
     <>
-      {text.split("").map((char, index) => (
-        <motion.span
-          key={`${char}-${count}-${index}`}
-          initial={{ y: 0 }}
-          animate={{
-            color: currentColors[index % currentColors.length],
-            y: [0, -3, 0],
-            scale: [1, 1.01, 1],
-            filter: ["blur(0px)", "blur(5px)", "blur(0px)"],
-            opacity: [1, 0.8, 1],
-          }}
-          transition={{ duration: 0.5, delay: index * 0.05 }}
-          className="inline-block whitespace-pre font-sans tracking-tight"
-        >
-          {char}
-        </motion.span>
-      ))}
+      {tokens.map((token) =>
+        token.type === "space" ? (
+          <React.Fragment key={`space-${token.tokenIndex}`}>{token.part}</React.Fragment>
+        ) : (
+          <span key={`word-${token.tokenIndex}`} className="inline-block whitespace-nowrap">
+            {token.chars.map(({ char, charIndex }) => (
+              <motion.span
+                key={`${char}-${charIndex}`}
+                initial={{ y: 0 }}
+                animate={{
+                  y: [0, -3, 0],
+                  scale: [1, 1.01, 1],
+                  opacity: [1, 0.9, 1],
+                }}
+                transition={{ duration: 0.5, delay: charIndex * 0.035 }}
+                className="inline-block whitespace-pre font-sans"
+                style={{
+                  color: `hsl(var(${
+                    ["--site-accent", "--site-accent-2", "--site-accent-3"][charIndex % 3]
+                  }, var(--primary)))`,
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
+        ),
+      )}
     </>
   );
 }

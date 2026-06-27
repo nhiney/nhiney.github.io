@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { FooterLanguageSelector } from "@/components/widgets/FooterLanguageSelector";
 import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/widgets/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
-import { TreePine } from "lucide-react";
+import { FileText } from "lucide-react";
 
 const SOCIAL_LINKS = [
   { href: SITE_CONFIG.links.github,            icon: GithubIcon,   label: "GitHub"   },
@@ -14,10 +14,10 @@ const SOCIAL_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-background">
-      <Container className="flex flex-col items-start gap-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+      <Container className="flex flex-col items-center gap-5 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left">
 
         {/* Left — name + social icons */}
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start sm:gap-5">
           <span className="text-sm font-semibold text-foreground whitespace-nowrap">
             {SITE_CONFIG.fullName}
           </span>
@@ -39,8 +39,8 @@ export function Footer() {
         </div>
 
         {/* Right — mind map + projects + language + copyright */}
-        <div className="flex items-center gap-5">
-          {/* Mind Map — inline footer nav, always visible; icon keeps its identity */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-5">
+          {/* Mind Map — hidden for now; uncomment to restore
           <Link
             href="/mind-map"
             className="group inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-primary"
@@ -49,6 +49,7 @@ export function Footer() {
             <span className="hidden sm:inline">Mind Map</span>
           </Link>
           <span className="hidden sm:block h-4 w-px bg-border/60" />
+          */}
           <div className="hidden sm:flex items-center gap-4">
             {Object.entries(SITE_CONFIG.projects).map(([name, url]) =>
               url.startsWith("http") ? (
@@ -71,6 +72,15 @@ export function Footer() {
                 </Link>
               )
             )}
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              View CV
+            </a>
           </div>
           <span className="hidden sm:block h-4 w-px bg-border/60" />
           <FooterLanguageSelector />

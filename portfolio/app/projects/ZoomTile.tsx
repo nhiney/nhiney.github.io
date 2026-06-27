@@ -3,14 +3,30 @@
 import { motion } from "framer-motion";
 import { Maximize2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+
+const TOUCH_DEVICE_QUERY = "(hover: none) and (pointer: coarse)";
+
+function subscribeToTouchDeviceChanges(callback: () => void) {
+  const mediaQuery = window.matchMedia(TOUCH_DEVICE_QUERY);
+  mediaQuery.addEventListener("change", callback);
+  return () => mediaQuery.removeEventListener("change", callback);
+}
+
+function getTouchDeviceSnapshot() {
+  return window.matchMedia(TOUCH_DEVICE_QUERY).matches;
+}
+
+function getServerTouchDeviceSnapshot() {
+  return false;
+}
 
 export function useIsTouchDevice() {
-  const [isTouch, setIsTouch] = useState(false);
-  useEffect(() => {
-    setIsTouch(window.matchMedia("(hover: none) and (pointer: coarse)").matches);
-  }, []);
-  return isTouch;
+  return useSyncExternalStore(
+    subscribeToTouchDeviceChanges,
+    getTouchDeviceSnapshot,
+    getServerTouchDeviceSnapshot
+  );
 }
 
 export type Tone = "red" | "amber" | "emerald" | "violet";

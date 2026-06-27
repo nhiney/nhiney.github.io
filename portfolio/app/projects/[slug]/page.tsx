@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) return {};
 
+  const ogImage = `${SITE_CONFIG.url}/og/projects/${slug}.png`;
+
   return {
     title: project.title,
     description: project.description,
@@ -37,6 +39,22 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       description: project.description,
       type: "article",
       url: `${SITE_CONFIG.url}/projects/${slug}`,
+      images: [
+        {
+          url: ogImage,
+          secureUrl: ogImage,
+          width: 1200,
+          height: 630,
+          type: "image/png",
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: [{ url: ogImage, alt: project.title }],
     },
   };
 }
@@ -52,10 +70,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <Section className="py-20 md:py-28">
         <FadeIn>
           <div className="mb-10 flex flex-col space-y-4">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               {project.title}
             </h1>
-            <div className="flex items-center space-x-4 text-sm text-zinc-500">
+            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
               <time dateTime={project.date as string}>{formatDate(project.date as string)}</time>
               <span>•</span>
               <span>{project.readingTime}</span>

@@ -93,7 +93,7 @@ export const ProjectProductCard = ({ project }: { project: Post }) => {
             {t("projects.problem")}
           </div>
           <p className="text-sm text-zinc-400 leading-relaxed italic">
-            "{project.problem || project.description}"
+            &ldquo;{project.problem || project.description}&rdquo;
           </p>
         </div>
 

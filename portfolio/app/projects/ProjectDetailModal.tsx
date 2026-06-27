@@ -95,7 +95,7 @@ export function ProjectDetailModal({ project, index, onClose, githubFallback }: 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[60] flex items-start sm:items-center justify-center overflow-y-auto bg-black/75 px-4 py-6 backdrop-blur-md"
+          className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/75 px-5 py-6 backdrop-blur-md sm:items-center sm:px-6"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -124,7 +124,7 @@ export function ProjectDetailModal({ project, index, onClose, githubFallback }: 
             <div className="flex flex-col md:flex-row md:min-h-[500px]">
 
               {/* Left — image panel */}
-              <div className="md:w-[44%] shrink-0 bg-black/20 border-b md:border-b-0 md:border-r border-border/40 flex flex-col justify-center">
+              <div className="flex shrink-0 flex-col justify-center border-b border-border/40 bg-secondary/35 md:w-[44%] md:border-b-0 md:border-r">
                 <ProjectImageSlider images={project.gallery} alt={project.title} />
               </div>
 
@@ -159,7 +159,7 @@ export function ProjectDetailModal({ project, index, onClose, githubFallback }: 
                   <SectionBlock
                     icon={AlertCircle}
                     label={t("pages.projects.problem_label")}
-                    accent="bg-red-500/10 text-red-500"
+                    accent="bg-primary/10 text-primary"
                   >
                     <p>{project.problem}</p>
                   </SectionBlock>
@@ -169,9 +169,9 @@ export function ProjectDetailModal({ project, index, onClose, githubFallback }: 
                   <SectionBlock
                     icon={Lightbulb}
                     label={t("pages.projects.approach_label")}
-                    accent="bg-amber-500/10 text-amber-500"
+                    accent="bg-primary/10 text-primary"
                   >
-                    <BulletList items={project.contributions.slice(0, 5)} dotClass="bg-amber-500/60" />
+                    <BulletList items={project.contributions.slice(0, 5)} dotClass="bg-primary/60" />
                   </SectionBlock>
 
                   <div className="h-px bg-border/30" />
@@ -179,9 +179,9 @@ export function ProjectDetailModal({ project, index, onClose, githubFallback }: 
                   <SectionBlock
                     icon={CheckCircle2}
                     label={t("pages.projects.results_label")}
-                    accent="bg-emerald-500/10 text-emerald-500"
+                    accent="bg-primary/10 text-primary"
                   >
-                    <BulletList items={project.results} dotClass="bg-emerald-500" />
+                    <BulletList items={project.results} dotClass="bg-primary" />
                   </SectionBlock>
 
                   <div className="h-px bg-border/30" />

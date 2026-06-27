@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {
-  ArrowRight, Mail, ExternalLink,
+  ArrowRight, Mail,
   CheckCircle2, Code2, Wrench, BarChart2, Sparkles, Layers,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -12,6 +12,7 @@ import { BackgroundLines } from "@/components/effects/BackgroundLines";
 import { Container }       from "@/components/ui/Container";
 import { useLanguage }     from "@/context/LanguageContext";
 import { SITE_CONFIG }     from "@/lib/constants";
+import { dictionaries }    from "@/lib/i18n/dictionaries";
 import { cn }              from "@/lib/utils";
 import type { Post }       from "@/types";
 
@@ -51,9 +52,9 @@ type PortfolioCopy = {
 function usePortfolioCopy(): PortfolioCopy {
   const { language } = useLanguage();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const lang = (require("@/lib/i18n/dictionaries").dictionaries[language] as any)?.pages?.portfolio;
+  const lang = (dictionaries[language] as any)?.pages?.portfolio;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const en   = (require("@/lib/i18n/dictionaries").dictionaries.en as any).pages.portfolio;
+  const en   = (dictionaries.en as any).pages.portfolio;
   return { ...en, ...(lang ?? {}) } as PortfolioCopy;
 }
 
@@ -83,7 +84,7 @@ function Highlight({ text }: { text: string }) {
     <>
       {parts.map((part, i) =>
         i % 2 === 1
-          ? <strong key={i} className="font-semibold text-foreground">{part}</strong>
+          ? <strong key={i} className="font-semibold site-heading">{part}</strong>
           : part
       )}
     </>
@@ -102,10 +103,10 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 
 const SKILL_ICONS = [BarChart2, Layers, Code2, Wrench] as const;
 const SKILL_STYLES = [
-  { wrapperCls: "from-blue-500/10 to-blue-500/5 border-blue-500/20",   iconCls: "text-blue-500"   },
-  { wrapperCls: "from-violet-500/10 to-violet-500/5 border-violet-500/20", iconCls: "text-violet-500" },
-  { wrapperCls: "from-emerald-500/10 to-emerald-500/5 border-emerald-500/20", iconCls: "text-emerald-500" },
-  { wrapperCls: "from-amber-500/10 to-amber-500/5 border-amber-500/20", iconCls: "text-amber-500"  },
+  { wrapperCls: "from-primary/10 to-secondary/35 border-primary/20", iconCls: "text-primary" },
+  { wrapperCls: "from-primary/10 to-secondary/35 border-primary/20", iconCls: "text-primary" },
+  { wrapperCls: "from-primary/10 to-secondary/35 border-primary/20", iconCls: "text-primary" },
+  { wrapperCls: "from-primary/10 to-secondary/35 border-primary/20", iconCls: "text-primary" },
 ] as const;
 
 // GitHub repo per featured project (same order as projects.items).
@@ -117,44 +118,61 @@ const PROJECT_REPOS = [
 ] as const;
 
 const PROJECT_TAG_CLS = [
-  "text-blue-400 bg-blue-400/10 border-blue-400/20",
-  "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
-  "text-amber-400 bg-amber-400/10 border-amber-400/20",
+  "text-primary bg-primary/10 border-primary/20",
+  "text-primary bg-primary/10 border-primary/20",
+  "text-primary bg-primary/10 border-primary/20",
 ] as const;
 
 const PROJECT_STRIPE = [
-  "from-blue-500/60 via-blue-400/20 to-transparent",
-  "from-emerald-500/60 via-emerald-400/20 to-transparent",
-  "from-amber-500/60 via-amber-400/20 to-transparent",
+  "from-primary/60 via-primary/20 to-transparent",
+  "from-primary/60 via-primary/20 to-transparent",
+  "from-primary/60 via-primary/20 to-transparent",
 ] as const;
 
 const PROJECT_NUM_CLS = [
-  "text-blue-500/10",
-  "text-emerald-500/10",
-  "text-amber-500/10",
+  "text-primary/10",
+  "text-primary/10",
+  "text-primary/10",
 ] as const;
 
 const CERT_CLS = [
-  "border-blue-500/30 bg-blue-500/5",
-  "border-violet-500/30 bg-violet-500/5",
-  "border-emerald-500/30 bg-emerald-500/5",
-  "border-amber-500/30 bg-amber-500/5",
+  "border-border/60 bg-card/45 hover:border-primary/30 hover:bg-card/70",
+  "border-border/60 bg-card/45 hover:border-primary/30 hover:bg-card/70",
+  "border-border/60 bg-card/45 hover:border-primary/30 hover:bg-card/70",
+  "border-border/60 bg-card/45 hover:border-primary/30 hover:bg-card/70",
+] as const;
+
+const EXPERIENCE_ACCENTS = [
+  {
+    rail: "from-blue-500 via-sky-400 to-cyan-400",
+    dot: "border-blue-500 bg-blue-50 text-blue-600 dark:bg-blue-500/12 dark:text-blue-200",
+    chip: "border-blue-200/70 bg-blue-50/70 text-blue-700 dark:border-blue-300/15 dark:bg-blue-400/[0.06] dark:text-blue-100",
+  },
+  {
+    rail: "from-cyan-500 via-teal-400 to-emerald-400",
+    dot: "border-cyan-500 bg-cyan-50 text-cyan-700 dark:bg-cyan-500/12 dark:text-cyan-200",
+    chip: "border-cyan-200/70 bg-cyan-50/70 text-cyan-700 dark:border-cyan-300/15 dark:bg-cyan-400/[0.06] dark:text-cyan-100",
+  },
+  {
+    rail: "from-violet-500 via-indigo-400 to-blue-400",
+    dot: "border-violet-500 bg-violet-50 text-violet-700 dark:bg-violet-500/12 dark:text-violet-200",
+    chip: "border-violet-200/70 bg-violet-50/70 text-violet-700 dark:border-violet-300/15 dark:bg-violet-400/[0.06] dark:text-violet-100",
+  },
 ] as const;
 
 // ─── Root ─────────────────────────────────────────────────────────────────────
 
-export function PortfolioClient(_props: { projects: Post[] }) {
+export function PortfolioClient(_props: { projects: Post[]; hideHero?: boolean; hideCerts?: boolean }) {
   const copy = usePortfolioCopy();
 
   return (
     <>
-      <HeroSection copy={copy} />
+      {!_props.hideHero && <HeroSection copy={copy} />}
       <AboutSection copy={copy} />
       <SkillsSection copy={copy} />
       <ProjectsSection copy={copy} />
       <ExperienceSection copy={copy} />
-      <CertificationsSection copy={copy} />
-      <ResumeSection />
+      {!_props.hideCerts && <CertificationsSection copy={copy} />}
       <ContactSection copy={copy} />
     </>
   );
@@ -184,9 +202,9 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           className="max-w-5xl text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl md:leading-[1.16]"
         >
           {hero.headline_pre}{" "}
-          <span className="text-primary">{hero.headline_acc1}</span>
+          <span className="site-accent-gradient">{hero.headline_acc1}</span>
           {" "}{hero.headline_mid}{" "}
-          <span className="text-primary">{hero.headline_acc2}</span>
+          <span className="site-accent-gradient">{hero.headline_acc2}</span>
         </motion.h1>
 
         <motion.p
@@ -197,9 +215,9 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
         >
           <Highlight text={hero.sub_pre} />
           {hero.sub_ba && (
-            <>{" "}<span className="font-semibold text-foreground">{hero.sub_ba}</span>,{" "}
-            <span className="font-semibold text-foreground">{hero.sub_product}</span>,{" "}
-            <span className="font-semibold text-foreground">{hero.sub_ux}</span>.{" "}</>
+            <>{" "}<span className="font-semibold site-heading">{hero.sub_ba}</span>,{" "}
+            <span className="font-semibold site-heading">{hero.sub_product}</span>,{" "}
+            <span className="font-semibold site-heading">{hero.sub_ux}</span>.{" "}</>
           )}
           {hero.sub_end}
         </motion.p>
@@ -211,7 +229,7 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           className="flex flex-col sm:flex-row gap-3"
         >
           <a href="#projects">
-            <button className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-3 text-sm font-semibold text-white transition-all hover:scale-[1.02] hover:bg-blue-600 hover:shadow-[0_0_32px_-8px_hsl(var(--primary))] active:scale-95">
+            <button className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.02] hover:bg-primary/90 hover:shadow-[0_0_32px_-8px_hsl(var(--primary))] active:scale-95">
               {hero.cta_projects} <ArrowRight className="h-4 w-4" />
             </button>
           </a>
@@ -240,7 +258,7 @@ function AboutSection({ copy }: { copy: PortfolioCopy }) {
           <motion.div {...inView()} className="space-y-6">
             <SectionEyebrow>{about.eyebrow}</SectionEyebrow>
             <h2 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-              {about.heading_1} <span className="text-primary">{about.heading_2}</span> {about.heading_3}
+              {about.heading_1} <span className="site-accent-gradient">{about.heading_2}</span> {about.heading_3}
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-muted-foreground">
               <p><Highlight text={about.p1} /></p>
@@ -451,30 +469,58 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
 function ExperienceSection({ copy }: { copy: PortfolioCopy }) {
   const { experience } = copy;
   return (
-    <section className="py-16 bg-secondary/20 border-t border-border/40">
-      <Container className="space-y-12">
+    <section className="relative overflow-hidden border-t border-border/40 bg-[linear-gradient(180deg,hsl(var(--secondary)/0.32),hsl(var(--background))_34%,hsl(var(--background)))] py-16 sm:py-20">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(60%_80%_at_18%_0%,hsl(var(--primary)/0.12),transparent_70%)]" />
+      <Container className="relative space-y-12">
 
-        <motion.div {...inView()} className="space-y-3">
-          <SectionEyebrow>{experience.eyebrow}</SectionEyebrow>
-          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{experience.heading}</h2>
-          <p className="max-w-xl text-[15px] leading-relaxed">{experience.desc}</p>
+        <motion.div {...inView()} className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
+          <div className="space-y-3">
+            <SectionEyebrow>{experience.eyebrow}</SectionEyebrow>
+            <h2 className="text-2xl font-semibold leading-tight tracking-tight site-heading sm:text-3xl">
+              {experience.heading}
+            </h2>
+          </div>
+          <p className="max-w-2xl text-[15px] leading-8 site-body lg:justify-self-end">
+            {experience.desc}
+          </p>
         </motion.div>
 
-        <div className="relative pl-7 sm:pl-10">
-          <div className="absolute left-[10px] sm:left-[13px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/50 via-border/40 to-transparent" />
-          <div className="space-y-5">
+        <div className="relative mx-auto max-w-5xl pl-[3.75rem] sm:pl-9">
+          <div className="absolute left-12 top-3 bottom-3 w-px bg-gradient-to-b from-transparent via-primary/35 to-transparent sm:left-[12px]" />
+          <div className="space-y-4 sm:space-y-5">
             {experience.items.map((item, i) => (
-              <motion.div key={item.title} {...inViewX(i * 0.06)} className="relative">
-                <div className="absolute -left-[22px] sm:-left-[25px] top-[18px] h-2.5 w-2.5 rounded-full border-2 border-primary bg-background" />
-                <div className="rounded-2xl border border-border/50 bg-card/40 p-5 sm:p-6 hover:border-primary/30 hover:bg-card/60 transition-all">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-2">
-                    <span className="text-xs font-semibold text-primary tabular-nums">{item.period}</span>
-                    <span className="hidden sm:block w-px h-3 bg-border/60" />
-                    <span className="text-xs text-muted-foreground">{item.org}</span>
-                  </div>
-                  <h3 className="font-semibold text-foreground text-sm sm:text-base mb-1">{item.title}</h3>
-                  <p className="text-sm leading-relaxed">{item.desc}</p>
+              <motion.div key={item.title} {...inViewX(i * 0.06)} className="group relative">
+                <div className={cn(
+                  "absolute -left-5 top-5 grid h-4 w-4 place-items-center rounded-full border-2 bg-background shadow-[0_0_0_5px_hsl(var(--background))] transition-transform duration-300 group-hover:scale-110 sm:-left-[33px]",
+                  EXPERIENCE_ACCENTS[i % EXPERIENCE_ACCENTS.length].dot,
+                )}>
+                  <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 </div>
+                <article className="relative overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/72 p-5 shadow-[0_18px_54px_-48px_hsl(var(--foreground)/0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-card/92 sm:p-6">
+                  <div className={cn(
+                    "absolute inset-y-0 left-0 w-1 bg-gradient-to-b opacity-75",
+                    EXPERIENCE_ACCENTS[i % EXPERIENCE_ACCENTS.length].rail,
+                  )} />
+
+                  <div className="grid gap-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
+                    <div className="space-y-2">
+                      <span className={cn(
+                        "inline-flex rounded-full border px-3 py-1 text-[11px] font-bold tabular-nums",
+                        EXPERIENCE_ACCENTS[i % EXPERIENCE_ACCENTS.length].chip,
+                      )}>
+                        {item.period}
+                      </span>
+                      <p className="text-xs leading-5 site-soft">{item.org}</p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-base font-semibold leading-snug site-heading sm:text-[1.05rem]">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 site-body">{item.desc}</p>
+                    </div>
+                  </div>
+                </article>
               </motion.div>
             ))}
           </div>
@@ -522,45 +568,6 @@ function CertificationsSection({ copy }: { copy: PortfolioCopy }) {
             </motion.div>
           ))}
         </div>
-
-      </Container>
-    </section>
-  );
-}
-
-// ─── Resume ───────────────────────────────────────────────────────────────────
-
-const CV_PATH = "/NguyenThiYenNhi_CV.pdf";
-
-function ResumeSection() {
-  const { t } = useLanguage();
-  return (
-    <section className="py-16 bg-secondary/20 border-t border-border/40">
-      <Container className="space-y-10">
-
-        <motion.div {...inView()} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
-          <div className="space-y-3">
-            <SectionEyebrow>{t("pages.resume.hero.badge")}</SectionEyebrow>
-            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
-              {t("pages.resume.hero.title")}
-            </h2>
-            <p className="max-w-xl text-[15px] leading-relaxed">
-              {t("pages.resume.hero.description")}
-            </p>
-          </div>
-
-          <div className="flex gap-3 shrink-0">
-            <a
-              href={CV_PATH}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 backdrop-blur-sm px-6 py-2.5 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
-            >
-              <ExternalLink className="h-4 w-4" />
-              {t("pages.resume.hero.open_tab")}
-            </a>
-          </div>
-        </motion.div>
 
       </Container>
     </section>

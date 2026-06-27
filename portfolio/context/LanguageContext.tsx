@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { dictionaries, Language } from "@/lib/i18n/dictionaries";
+import { dictionaries, type Language } from "@/lib/i18n/dictionaries";
 
 type LanguageContextType = {
   language: Language;
@@ -11,15 +11,27 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+function getPathValue(root: unknown, keys: string[]) {
+  return keys.reduce<unknown>((current, key) => {
+    if (typeof current !== "object" || current === null || Array.isArray(current)) {
+      return undefined;
+    }
+
+    return (current as Record<string, unknown>)[key];
+  }, root);
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  // English is always the default for first-time visitors. We only switch away
+  // from it when the visitor has previously made an explicit choice.
   const [language, setLanguage] = useState<Language>("en");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const savedLang = localStorage.getItem("language") as Language;
+    const savedLang = localStorage.getItem("language") as Language | null;
     if (savedLang && dictionaries[savedLang]) {
-      setLanguage(savedLang);
+      document.documentElement.lang = savedLang;
+      const frame = requestAnimationFrame(() => setLanguage(savedLang));
+      return () => cancelAnimationFrame(frame);
     }
   }, []);
 
@@ -31,21 +43,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (path: string): string => {
     const keys = path.split(".");
-    let current: any = dictionaries[language];
-    
-    for (const key of keys) {
-      if (current[key] === undefined) {
-        // Fallback to English if key missing in current language
-        let fallback: any = dictionaries["en"];
-        for (const fKey of keys) {
-          if (fallback[fKey] === undefined) return path;
-          fallback = fallback[fKey];
-        }
-        return fallback;
-      }
-      current = current[key];
-    }
-    return current;
+    const value = getPathValue(dictionaries[language], keys);
+    if (typeof value === "string") return value;
+
+    const fallback = getPathValue(dictionaries.en, keys);
+    return typeof fallback === "string" ? fallback : path;
   };
 
   return (

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { Suspense, useEffect, useRef } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 // posthog-js (~190 KB) is loaded lazily via dynamic import() so it never lands
 // in the initial/shared bundle. We init it once the page is idle, and capture
@@ -11,17 +11,26 @@ import { usePathname } from "next/navigation";
 /** Tracks $pageview on route change — only once PostHog has actually loaded. */
 function PageView() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const queryString = searchParams.toString();
+  const didMount = useRef(false);
+
   useEffect(() => {
+    if (!didMount.current) {
+      didMount.current = true;
+      return;
+    }
+
     let cancelled = false;
-    import("@/lib/posthog").then(({ posthog }) => {
-      if (!cancelled && posthog.__loaded) {
-        posthog.capture("$pageview", { $current_url: window.location.href });
+    import("@/lib/posthog").then(({ trackPageView }) => {
+      if (!cancelled) {
+        trackPageView({ source: "route_change" });
       }
     });
     return () => {
       cancelled = true;
     };
-  }, [pathname]);
+  }, [pathname, queryString]);
   return null;
 }
 
@@ -30,14 +39,10 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     let cancelled = false;
     const load = () =>
-      import("@/lib/posthog").then(({ initPostHog, posthog }) => {
+      import("@/lib/posthog").then(({ initPostHog, trackPageView }) => {
         if (cancelled) return;
         initPostHog();
-        // Capture the first page view here, since PageView's effect ran before
-        // PostHog finished loading.
-        if (posthog.__loaded) {
-          posthog.capture("$pageview", { $current_url: window.location.href });
-        }
+        trackPageView({ source: "initial_load" });
       });
 
     const hasIdle = typeof window.requestIdleCallback === "function";
@@ -54,7 +59,9 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <PageView />
+      <Suspense fallback={null}>
+        <PageView />
+      </Suspense>
       {children}
     </>
   );

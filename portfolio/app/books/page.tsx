@@ -13,6 +13,22 @@ export const metadata: Metadata = {
     description: "A 3D galaxy of the books I've read. Drift around, spin a book, read the reflection.",
     url: `${SITE_CONFIG.url}/books`,
     type: "website",
+    images: [
+      {
+        url: SITE_CONFIG.ogImages.books,
+        secureUrl: SITE_CONFIG.ogImages.books,
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "Books — Nguyen Thi Yen Nhi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Books — Nguyen Thi Yen Nhi",
+    description: "A 3D galaxy of the books I've read. Drift around, spin a book, read the reflection.",
+    images: [SITE_CONFIG.ogImages.books],
   },
 };
 

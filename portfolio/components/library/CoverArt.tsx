@@ -6,16 +6,19 @@
 // books without a photo look intentionally designed, not generic.
 
 import type { BookMeta } from "@/data/books";
+import Image from "next/image";
 
 const SERIF = "Georgia, 'Times New Roman', serif";
 
 export function CoverArt({ meta, title }: { meta: BookMeta; title: string }) {
   if (meta.cover) {
-    // eslint-disable-next-line @next/next/no-img-element
     return (
-      <img
+      <Image
         src={meta.cover}
         alt={title}
+        width={640}
+        height={960}
+        sizes="(min-width: 1024px) 20vw, 45vw"
         draggable={false}
         className="h-full w-full select-none object-cover"
       />

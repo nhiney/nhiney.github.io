@@ -76,8 +76,8 @@ export default function WaitlistPage() {
     try {
       await saveEmailToWaitlist(trimmed);
 
-      identifyUser(trimmed, { source: "waitlist", joined_at: new Date().toISOString() });
-      trackEvent("waitlist_signup", { email: trimmed });
+      identifyUser(trimmed, { source: "waitlist_page", joined_at: new Date().toISOString() });
+      trackEvent("waitlist_signup", { email: trimmed, source: "waitlist_page" });
 
       setStatus("done");
       showToast(t("pages.waitlist.success_toast"), "success");

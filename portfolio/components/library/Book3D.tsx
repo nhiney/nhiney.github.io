@@ -69,8 +69,8 @@ export function Book3D({
   useEffect(() => {
     const jobs: [string, number][] = [];
     if (!showDesignedCover && meta.cover) jobs.push([meta.cover, 0]); // +X front
-    if (!showDesignedCover && meta.coverBack) jobs.push([meta.coverBack, 1]); // -X back
-    if (!showDesignedCover && meta.coverSpine) jobs.push([meta.coverSpine, 4]); // +Z spine
+    if (meta.coverBack) jobs.push([meta.coverBack, 1]); // -X back
+    if (meta.coverSpine) jobs.push([meta.coverSpine, 4]); // +Z spine
     if (!jobs.length) return;
 
     let disposed = false;

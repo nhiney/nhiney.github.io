@@ -11,8 +11,8 @@ export function Card({ as: Component = "div", className, ...props }: CardProps) 
   return React.createElement(Component, {
     className: cn(
       "group relative overflow-hidden transition-all duration-500",
-      "bg-zinc-900/50 hover:bg-zinc-900",
-      "border border-zinc-800/50 hover:border-zinc-700/50",
+      "bg-card/70 hover:bg-card",
+      "border border-border/60 hover:border-primary/30",
       "p-24pt rounded-none", // Sharp but professional
       className
     ),

@@ -20,7 +20,7 @@ const CustomLink = ({ href, ...props }: LinkProps) => {
       <Link 
         href={href} 
         {...props} 
-        className="text-zinc-600 underline dark:text-zinc-400"
+        className="site-body underline transition-colors hover:text-primary"
       >
         {props.children}
       </Link>
@@ -32,7 +32,7 @@ const CustomLink = ({ href, ...props }: LinkProps) => {
       rel="noopener noreferrer" 
       href={href} 
       {...props} 
-      className="text-zinc-600 underline dark:text-zinc-400" 
+      className="site-body underline transition-colors hover:text-primary" 
     />
   );
 };
@@ -59,22 +59,22 @@ const Pre = async ({ children, ...props }: PreProps) => {
 
 export const components = {
   h1: (props: HeadingProps) => (
-    <h1 className="mb-4 mt-8 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100" {...props} />
+    <h1 className="mb-4 mt-8 text-3xl font-bold tracking-tight site-heading" {...props} />
   ),
   h2: (props: HeadingProps) => (
-    <h2 className="mb-4 mt-8 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100" {...props} />
+    <h2 className="mb-4 mt-8 text-2xl font-bold tracking-tight site-heading" {...props} />
   ),
   h3: (props: HeadingProps) => (
-    <h3 className="mb-4 mt-6 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100" {...props} />
+    <h3 className="mb-4 mt-6 text-xl font-bold tracking-tight site-heading" {...props} />
   ),
   p: (props: ParagraphProps) => (
-    <p className="mb-4 leading-7 text-zinc-700 dark:text-zinc-400" {...props} />
+    <p className="mb-4 leading-7 site-body" {...props} />
   ),
   ul: (props: ListProps) => (
-    <ul className="mb-4 ml-6 list-disc text-zinc-700 dark:text-zinc-400" {...props} />
+    <ul className="mb-4 ml-6 list-disc site-body" {...props} />
   ),
   ol: (props: ListProps) => (
-    <ol className="mb-4 ml-6 list-decimal text-zinc-700 dark:text-zinc-400" {...props} />
+    <ol className="mb-4 ml-6 list-decimal site-body" {...props} />
   ),
   li: (props: ListItemProps) => <li className="mb-1" {...props} />,
   a: CustomLink,

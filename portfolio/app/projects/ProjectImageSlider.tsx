@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ImageOff } from "lucide-react";
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -74,9 +75,12 @@ export function ProjectImageSlider({ images, alt }: Props) {
             }}
             className="flex cursor-grab items-center justify-center active:cursor-grabbing"
           >
-            <img
+            <Image
               src={slides[index].src}
               alt={`${alt} — ${slides[index].caption}`}
+              width={1600}
+              height={900}
+              sizes="(min-width: 1024px) 80vw, 100vw"
               draggable={false}
               className="max-h-[40vh] sm:max-h-[55vh] w-full object-contain"
             />

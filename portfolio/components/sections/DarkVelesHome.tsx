@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, X, Code2, ExternalLink, Mail, ChevronRight, Briefcase, Award } from "lucide-react";
+import type { HTMLAttributeAnchorTarget, MouseEvent, MouseEventHandler, ReactNode } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUpRight, X, Code2, ExternalLink, Mail, ChevronRight, Briefcase } from "lucide-react";
+import Image from "next/image";
 import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/widgets/Icons";
 import projectsData from "@/data/projects.json";
 import { SITE_CONFIG } from "@/lib/constants";
 import { useLanguage } from "@/context/LanguageContext";
-import { dictionaries } from "@/lib/i18n/dictionaries";
+import { dictionaries, type Language } from "@/lib/i18n/dictionaries";
 
 interface Project {
   slug: string; title: string; description: string; problem?: string; role?: string;
@@ -19,6 +21,51 @@ const PROJECTS = projectsData as Project[];
 const LINKS = SITE_CONFIG?.links ?? ({} as Record<string, string>);
 const EMAIL = LINKS.email ?? "hello@example.com";
 
+type PortfolioExperienceItem = {
+  period: string;
+  title: string;
+  org: string;
+  desc: string;
+};
+
+type PortfolioCertificationItem = {
+  emoji: string;
+  title: string;
+  issuer: string;
+  date: string;
+};
+
+type PortfolioCopy = {
+  experience?: {
+    heading?: string;
+    desc?: string;
+    items?: PortfolioExperienceItem[];
+  };
+  certifications?: {
+    heading?: string;
+    desc?: string;
+    items?: PortfolioCertificationItem[];
+  };
+};
+
+type MagneticAnchorButtonProps = {
+  children: ReactNode;
+  className?: string;
+  href: string;
+  target?: HTMLAttributeAnchorTarget;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+};
+
+type MagneticPlainButtonProps = {
+  children: ReactNode;
+  className?: string;
+  href?: undefined;
+  target?: never;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+};
+
+type MagneticButtonProps = MagneticAnchorButtonProps | MagneticPlainButtonProps;
+
 const SERVICES = [
   { title: "Product Strategy", desc: "Translating ambiguous business requirements into clear, actionable roadmaps and user stories." },
   { title: "Full-Stack Dev", desc: "Building scalable backend architectures and intuitive frontends using modern frameworks." },
@@ -28,7 +75,17 @@ const SERVICES = [
 function SafeImg({ src, alt, fallback }: { src: string; alt: string; fallback: string }) {
   const [broken, setBroken] = useState(false);
   if (broken) return <div className="glass-fallback"><span>{fallback}</span></div>;
-  return <img src={src} alt={alt} loading="lazy" onError={() => setBroken(true)} className="glass-img-el" />;
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={1200}
+      height={900}
+      sizes="(min-width: 1024px) 40vw, 100vw"
+      onError={() => setBroken(true)}
+      className="glass-img-el"
+    />
+  );
 }
 
 // Staggered reveal variants
@@ -45,39 +102,72 @@ const itemVariants = {
   show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { type: "spring" as const, stiffness: 80, damping: 20 } }
 };
 
-function MagneticButton({ children, className, href, onClick }: any) {
-  const ref = useRef<HTMLAnchorElement | HTMLButtonElement>(null);
+function getPortfolioCopy(language: Language): PortfolioCopy {
+  const localizedDictionaries = dictionaries as Partial<Record<Language, { pages?: { portfolio?: unknown } }>>;
+  return (localizedDictionaries[language]?.pages?.portfolio ?? dictionaries.en.pages.portfolio) as PortfolioCopy;
+}
+
+function isAnchorMagneticButton(props: MagneticButtonProps): props is MagneticAnchorButtonProps {
+  return props.href !== undefined;
+}
+
+function MagneticButton(props: MagneticButtonProps) {
+  const anchorRef = useRef<HTMLAnchorElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouse = (e: React.MouseEvent) => {
+  const handleMouse = (element: HTMLElement | null, e: MouseEvent<HTMLElement>) => {
+    if (!element) return;
     const { clientX, clientY } = e;
-    const { height, width, left, top } = ref.current!.getBoundingClientRect();
+    const { height, width, left, top } = element.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
     setPosition({ x: middleX * 0.15, y: middleY * 0.15 });
   };
 
   const reset = () => setPosition({ x: 0, y: 0 });
-  const Component = href ? 'a' : 'button';
+  const style = {
+    transform: `translate(${position.x}px, ${position.y}px)`,
+    transition: "transform 0.1s ease-out"
+  };
+
+  if (isAnchorMagneticButton(props)) {
+    return (
+      <a
+        ref={anchorRef}
+        href={props.href}
+        target={props.target}
+        rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
+        onClick={props.onClick}
+        className={props.className}
+        onMouseMove={(event) => handleMouse(anchorRef.current, event)}
+        onMouseLeave={reset}
+        style={style}
+      >
+        {props.children}
+      </a>
+    );
+  }
 
   return (
-    <Component
-      ref={ref as any} href={href} onClick={onClick} className={className}
-      onMouseMove={handleMouse} onMouseLeave={reset}
-      style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
-        transition: "transform 0.1s ease-out"
-      }}
+    <button
+      ref={buttonRef}
+      type="button"
+      onClick={props.onClick}
+      className={props.className}
+      onMouseMove={(event) => handleMouse(buttonRef.current, event)}
+      onMouseLeave={reset}
+      style={style}
     >
-      {children}
-    </Component>
+      {props.children}
+    </button>
   );
 }
 
 export function DarkVelesHome() {
   const [selected, setSelected] = useState<Project | null>(null);
   const { language } = useLanguage();
-  const portfolioCopy = (dictionaries[language as keyof typeof dictionaries] as any)?.pages?.portfolio || (dictionaries.en as any).pages.portfolio;
+  const portfolioCopy = getPortfolioCopy(language);
   const expItems = portfolioCopy.experience?.items || [];
   const certItems = portfolioCopy.certifications?.items || [];
 
@@ -91,9 +181,6 @@ export function DarkVelesHome() {
 
   return (
     <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       <style>{CSS}</style>
 
       <div className="glass-root">
@@ -238,7 +325,7 @@ export function DarkVelesHome() {
           </div>
 
           <div className="experience-grid mt-12">
-            {expItems.map((item: any, i: number) => (
+            {expItems.map((item, i) => (
               <motion.div 
                 key={i}
                 className="exp-card"
@@ -280,7 +367,7 @@ export function DarkVelesHome() {
           </div>
 
           <div className="cert-grid mt-12">
-            {certItems.map((item: any, i: number) => (
+            {certItems.map((item, i) => (
               <motion.div 
                 key={i}
                 className="cert-card"
@@ -430,7 +517,7 @@ const CSS = `
 .glass-root {
   background-color: var(--g-bg);
   color: var(--g-text);
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   min-height: 100vh;
   position: relative;
   overflow: hidden;

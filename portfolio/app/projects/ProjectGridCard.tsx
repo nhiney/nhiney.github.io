@@ -208,7 +208,7 @@ export function ProjectGridCard({ project, index, onOpen, delay = 0 }: Props) {
       <motion.div
         animate={{ opacity: contentFocused ? 0.45 : 1, scale: contentFocused ? 0.985 : 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="w-full sm:flex-1 overflow-hidden rounded-2xl border border-border/50 bg-black/25 dark:bg-black/40 min-h-[220px] sm:min-h-[320px] relative"
+        className="relative min-h-[220px] w-full overflow-hidden rounded-2xl border border-border/50 bg-card/70 sm:min-h-[320px] sm:flex-1"
       >
         <div className={cn("absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r z-10", accent.stripe)} />
         <CardSlider slides={slides} onLightbox={(i) => setLightboxIndex(i)} />
@@ -221,7 +221,7 @@ export function ProjectGridCard({ project, index, onOpen, delay = 0 }: Props) {
         onHoverEnd={() => setContentFocused(false)}
         transition={{ duration: 0.25, ease: "easeOut" }}
         onClick={onOpen}
-        className="group/content w-full sm:flex-1 flex flex-col justify-between rounded-2xl border border-border/50 bg-card px-6 py-5 cursor-pointer relative overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.2)]"
+        className="group/content relative flex w-full cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-border/50 bg-card/80 px-6 py-5 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.2)] sm:flex-1"
       >
         {/* Ambient glow on hover */}
         <div className="pointer-events-none absolute inset-0 rounded-2xl bg-primary/0 transition-all duration-500 group-hover/content:bg-primary/[0.03]" />

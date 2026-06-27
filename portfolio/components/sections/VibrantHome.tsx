@@ -102,13 +102,6 @@ export function VibrantHome() {
 
   return (
     <>
-      {/* Typography — Plus Jakarta Sans (clean grotesque). React 19 hoists to <head>. */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
       <style>{CSS}</style>
 
       <div className="vb-root">
@@ -406,7 +399,7 @@ const CSS = `
   --lime:#D2F500; --lime-ink:#0B0B0C;
   position:relative; overflow:hidden;
   background:var(--bg); color:var(--body);
-  font-family:'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family:var(--font-plus-jakarta), ui-sans-serif, system-ui, -apple-system, sans-serif;
   padding-bottom:3rem;
 }
 .vb-root *{ box-sizing:border-box; }

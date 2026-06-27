@@ -4,14 +4,13 @@ import { motion } from "framer-motion";
 import { Folder, Code2, Clock, Zap } from "lucide-react";
 import { GithubIcon } from "@/components/widgets/Icons";
 import { useLanguage } from "@/context/LanguageContext";
-import { IMPACT_METRICS } from "@/lib/constants";
 
 export const GithubStats = () => {
   const { t } = useLanguage();
   const stats = [
     { label: t("analytics.total_repos"), value: "8+", icon: Folder, color: "text-blue-400" },
     { label: t("analytics.contrib"), value: "186+", icon: Zap, color: "text-yellow-400" },
-    { label: t("analytics.hours"), value: "442+", icon: Clock, color: "text-green-400" },
+    { label: t("analytics.hours"), value: "957+", icon: Clock, color: "text-green-400" },
     { label: t("analytics.main_stack"), value: "3 languages", icon: Code2, color: "text-purple-400" },
   ];
 

@@ -12,15 +12,15 @@ export function Heading({
   ...props
 }: HeadingProps) {
   const variants = {
-    hero: "text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15]",
-    title: "text-2xl font-semibold tracking-tight sm:text-3xl",
-    subtitle: "text-base font-medium text-primary",
-    section: "text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground",
+    hero: "text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15] site-heading",
+    title: "text-2xl font-semibold tracking-tight sm:text-3xl site-heading",
+    subtitle: "text-base font-medium site-accent",
+    section: "text-[10px] font-medium uppercase tracking-[0.22em] site-soft",
   };
 
   return (
     <Component
-      className={cn(variants[variant], "text-foreground", className)}
+      className={cn(variants[variant], className)}
       {...props}
     />
   );

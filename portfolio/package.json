@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-og.mjs && node scripts/generate-tree.mjs && next build",
+    "build": "node scripts/generate-og.mjs && node scripts/generate-tree.mjs && next build && node scripts/generate-offline-manifest.mjs",
     "start": "next start",
     "lint": "eslint",
     "generate:og": "node scripts/generate-og.mjs",
