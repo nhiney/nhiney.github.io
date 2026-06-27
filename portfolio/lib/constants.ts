@@ -24,7 +24,7 @@ export const SITE_CONFIG = {
     github: "https://github.com/nhiney",
     linkedin: "https://www.linkedin.com/in/nhi-yen-410b2a2b7/",
     email: "nhiyen.engineer@gmail.com",
-    wakatime: "https://wakatime.com/@_tolanhy",
+    wakatime: "https://wakatime.com/@nhiney",
     portfolio: "https://startup.id.vn",
   },
   projects: {
@@ -32,10 +32,17 @@ export const SITE_CONFIG = {
     "Mei Closet": "https://mei-closet.vercel.app",
   },
   author: "Nguyen Thi Yen Nhi",
+  // Paste the token from Google Search Console → Settings → Ownership
+  // verification → "HTML tag" (the content="..." value). Leave "" to omit.
+  // Free, and required to get the site crawled fast + see search queries.
+  googleSiteVerification: "",
   ogImages: {
     home:         "https://startup.id.vn/og/home.png",
+    blog:         "https://startup.id.vn/og/blog.png",
+    books:        "https://startup.id.vn/og/books.png",
     projects:     "https://startup.id.vn/og/projects.png",
     certificates: "https://startup.id.vn/og/certificates.png",
+    mindMap:      "https://startup.id.vn/og/mind-map.png",
     resume:       "https://startup.id.vn/og/resume.png",
     portfolio:    "https://startup.id.vn/og/portfolio.png",
   },
@@ -93,7 +100,7 @@ export const EXTRACURRICULAR_DATA = [
   {
     year: "Passions",
     title: "Continuous Learning",
-    organization: "Wakatime: 442+ Hours",
+    organization: "Wakatime: 957+ Hours",
     description: "Maintaining a deep focus on coding efficiency and activity patterns, with a goal of 'not wasting' time in 2025.",
   }
 ];
@@ -116,7 +123,7 @@ export const APPROACH_ITEMS = [
 export const IMPACT_METRICS = [
   { label: "Repositories", value: "8+", icon: "Briefcase" },
   { label: "Contributions", value: "186+", icon: "Code" },
-  { label: "Coding Hours", value: "442+", icon: "Users" },
+  { label: "Coding Hours", value: "957+", icon: "Users" },
   { label: "Main Tech", value: "3+", icon: "Zap" },
 ];
 
