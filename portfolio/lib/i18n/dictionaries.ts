@@ -99,6 +99,7 @@ export const dictionaries = {
         family: "Family",
         love: "Love",
         rest: "Rest",
+        inspiration: "Inspiration",
       },
     },
     hero: {
@@ -1004,6 +1005,7 @@ export const dictionaries = {
         family: "Gia đình",
         love: "Tình yêu",
         rest: "Nghỉ ngơi",
+        inspiration: "Truyền cảm hứng",
       },
     },
     hero: {
