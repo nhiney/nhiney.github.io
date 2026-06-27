@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[19635,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
-e:I[97367,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0wg8bdxe_liib.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:I[19635,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/13kcewd1.275z.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
+e:I[97367,["/_next/static/chunks/0u_263h754por.js","/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/13kcewd1.275z.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 f:"$Sreact.suspense"
 3:T1053,
 For over two weeks, every single day, I got to fill in a green square.
@@ -266,151 +266,139 @@ Mình hay nghe người ta nói về lãi kép trong tiền bạc — bỏ vào 
 Nên nếu hôm nay bạn cũng đang nhìn một cuốn sổ trắng trơn và định buông xuôi, mình chỉ muốn nói: đừng đặt lại mười mục tiêu hoành tráng nữa. Chọn một việc thôi, rồi làm nó nhỏ xíu lại, nhỏ đến mức không thể nào thất bại.
 
 Rồi cứ làm. Dù nó có vớ vẩn, vụn vặt đến đâu. Vì một việc nhỏ làm đều mỗi ngày, lâu dần, sẽ âm thầm vượt qua mọi kế hoạch vĩ đại mà bạn chỉ giữ được đúng ba ngày.
-9:T103d,
-Two in the morning, and down on the street there were still car horns. One of them held a long note, then another answered back, like they were arguing in the dark. I lay in bed, earplugs in, pillow pressed over my head, and that sound still slipped through, lodging right in the most tired part of me.
+9:Te75,
+There's an image I can't shake. A man sitting motionless in a wheelchair, his whole body nearly frozen, only a few muscles in his cheek still able to move. He couldn't breathe without a machine. He couldn't speak aloud — every word he "said" came from a cursor crawling letter by letter, slow, laborious, sometimes a full minute for a single sentence.
 
-That night I couldn't sleep. Like so many nights before it.
-
-I'd only moved to this big city a little over a year ago. And I hated it. Hated how every morning the roads were jammed solid, exhaust in my face, everyone in a rush, everyone honking as if honking would make the street widen on its own. Hated the feeling of being tiny, lost among a few million people where no one knew who I was.
+And yet it was this almost motionless man who carried the human mind the furthest. All the way to the edge of black holes, where even space and time must bow their heads.
 
 ---
 
-## I used to collect reasons to hate it
+## A body imprisoned, a mind set free
 
-Back then I did something pretty toxic: I gathered reasons to hate this place.
+At twenty-one, Stephen Hawking received a sentence. The doctors said he had a disease that would slowly take away every movement of his body, and gave him about two years to live. Two years. At the age when you've only just begun to dream.
 
-The horns at midnight were a reason. The expensive rent was a reason. An afternoon rooted in a sea of motorbikes, sweat soaking the back of my shirt, was a reason. I'd come home, shut the door, put my headphones on loud to drown out the street, and tell myself: someday I'll leave here, go somewhere truly quiet, and then I'll be fine.
+He lived fifty-five more.
 
-I lived like someone just temporarily staying inside her own life. Always waiting for another place, another time, to start feeling okay. And this loud present, I just wanted to plug my ears and get through it.
+I'm not telling this so you'll marvel at a medical miracle. I'm telling it for something else, something quieter. His prison was real. Brutal, with no way out, tightening a little more each year. But instead of sitting there counting the bars closing in around him, he looked up and out. Upward. Into the vastest expanse a human being can look toward. His body was locked in a room that shrank by the day, but he let his mind wander among the galaxies.
 
-It's exhausting, you know. Not the body kind of tired. The tired of someone who fights the place she's standing in, every single day.
+He never beat the disease. He simply refused to let it decide where he was allowed to look.
 
 ---
 
-## The night I stood at the window
+## The prison we build ourselves
 
-Then one night, sleepless again, I gave up on the bed. I went and stood at the window.
+I think about this on the nights I feel inadequate.
 
-My floor isn't very high, just enough to see the street below. And I just stood there, looking. A late-night motorbike-taxi driver waiting for a fare under a tree, his phone glowing on his face. A small noodle stall still lit, two people eating late, probably just off a shift. A taxi pulling up, someone stepping out, holding a bouquet. The horns still sounded somewhere, but this time I didn't feel them stabbing my ears.
+You know the feeling. When the classmate beside you finishes the algorithm in five minutes while you sit with it all evening. When the grades go up and your number isn't pretty. When you open your phone and everyone seems smarter, faster, further along. In those moments, I'm in a prison too. Except, unlike Hawking's, my prison isn't real. I built it. Brick by brick, out of the very negative thoughts I repeat to myself.
 
-And suddenly I understood something strange. The noise I'd hated all this time — it wasn't noise. It was the sound of a few million people living. Coming home late from work. Waiting for one more ride to earn a little extra. Eating a late meal after a long day. Returning to someone, arms full of flowers.
+And I do exactly what he refused to do: I fix my eyes on the bars. I stare at my flaws so long that they blot out the rest of the entire sky.
 
-> What I thought was noise wrecking my sleep turned out to be the heartbeat of a city that never stops breathing. And me, standing here, was one of its beats too.
+> Hawking had fewer "tools" than almost anyone — a body betraying him by the day. But he had the one that matters most in abundance: the freedom to choose where to look.
 
-I don't know how to put it right. It's just that in that moment, I stopped seeing myself as an outsider the city was bothering. I saw that I belonged to it. That driver, those two people eating late, and me — we were all just trying to live, at the same time, under the same sky full of lights.
+That's where it catches me. His greatness didn't come from having more than other people. It came from this: with the little he had left, he chose to look at the universe instead of at the wheelchair. And I, with a whole body and a mind that still runs fine, keep choosing to look at exactly what I lack.
 
-<KeyTakeaway label="What I wrote down that night" tone="sage">
-Some things you don't need to change. You only need to change where you stand to look at them. The same car horn — one night it's torture, another night it's proof you were never alone.
+<KeyTakeaway label="Something I keep" tone="sage">
+Greatness isn't how many tools you hold in your hands. It's where you choose to aim your eyes — at the bars, or at the sky behind them.
 </KeyTakeaway>
 
 ---
 
-The next morning I still went out, still hit the traffic, still heard the horns. The city hadn't softened at all. It was exactly the same.
+I'm not telling you to be as strong as Hawking. That kind of comparison is just another set of bars.
 
-Only I was different. I stopped counting reasons to hate it. I started noticing the café with the owner who always smiles, the row of trees on the street I take, the way late sun pours gold over the old walls. Those things had always been there. I'd just been too busy plugging my ears to hear them.
+I only want to invite you, the next time you feel small, to try the thing he did. Don't try to break the prison by hating it. Just turn your head, change where you're looking. Look away from what you don't have, so you can see what you do. Look past today's grade, to the long stretch of life still opening up.
 
-I'm not telling you this to say you should love wherever you live. Maybe the place you're in really doesn't fit you, and leaving is the right thing. I get that.
+Standing under the night sky, every one of us is small to the point of near-meaninglessness — a speck of dust on a speck of dust drifting among billions of galaxies. Hawking understood that smallness better than anyone; he spent his life measuring it. And yet it was also he who showed me this: a human being, even locked inside a motionless body, can hold an entire universe within their soul.
 
-I'm just wondering, and I want you to ask yourself too: how many things in your life are you hating, enduring, waiting to be over — that actually, if you'd stand still one night and really look, you'd find have been living alongside you, for you, the whole time?
+Small before the stars. But vast within. I believe both of those are true at once — and that's why, today, I'm starting to write about people like him.
+a:Te75,
+There's an image I can't shake. A man sitting motionless in a wheelchair, his whole body nearly frozen, only a few muscles in his cheek still able to move. He couldn't breathe without a machine. He couldn't speak aloud — every word he "said" came from a cursor crawling letter by letter, slow, laborious, sometimes a full minute for a single sentence.
 
-Tonight, if some car horn drifts up, I won't plug my ears anymore. I'll lie there and listen. And know that out there, life is still running, warm and stubborn, even while I sleep.
-a:T103d,
-Two in the morning, and down on the street there were still car horns. One of them held a long note, then another answered back, like they were arguing in the dark. I lay in bed, earplugs in, pillow pressed over my head, and that sound still slipped through, lodging right in the most tired part of me.
-
-That night I couldn't sleep. Like so many nights before it.
-
-I'd only moved to this big city a little over a year ago. And I hated it. Hated how every morning the roads were jammed solid, exhaust in my face, everyone in a rush, everyone honking as if honking would make the street widen on its own. Hated the feeling of being tiny, lost among a few million people where no one knew who I was.
+And yet it was this almost motionless man who carried the human mind the furthest. All the way to the edge of black holes, where even space and time must bow their heads.
 
 ---
 
-## I used to collect reasons to hate it
+## A body imprisoned, a mind set free
 
-Back then I did something pretty toxic: I gathered reasons to hate this place.
+At twenty-one, Stephen Hawking received a sentence. The doctors said he had a disease that would slowly take away every movement of his body, and gave him about two years to live. Two years. At the age when you've only just begun to dream.
 
-The horns at midnight were a reason. The expensive rent was a reason. An afternoon rooted in a sea of motorbikes, sweat soaking the back of my shirt, was a reason. I'd come home, shut the door, put my headphones on loud to drown out the street, and tell myself: someday I'll leave here, go somewhere truly quiet, and then I'll be fine.
+He lived fifty-five more.
 
-I lived like someone just temporarily staying inside her own life. Always waiting for another place, another time, to start feeling okay. And this loud present, I just wanted to plug my ears and get through it.
+I'm not telling this so you'll marvel at a medical miracle. I'm telling it for something else, something quieter. His prison was real. Brutal, with no way out, tightening a little more each year. But instead of sitting there counting the bars closing in around him, he looked up and out. Upward. Into the vastest expanse a human being can look toward. His body was locked in a room that shrank by the day, but he let his mind wander among the galaxies.
 
-It's exhausting, you know. Not the body kind of tired. The tired of someone who fights the place she's standing in, every single day.
+He never beat the disease. He simply refused to let it decide where he was allowed to look.
 
 ---
 
-## The night I stood at the window
+## The prison we build ourselves
 
-Then one night, sleepless again, I gave up on the bed. I went and stood at the window.
+I think about this on the nights I feel inadequate.
 
-My floor isn't very high, just enough to see the street below. And I just stood there, looking. A late-night motorbike-taxi driver waiting for a fare under a tree, his phone glowing on his face. A small noodle stall still lit, two people eating late, probably just off a shift. A taxi pulling up, someone stepping out, holding a bouquet. The horns still sounded somewhere, but this time I didn't feel them stabbing my ears.
+You know the feeling. When the classmate beside you finishes the algorithm in five minutes while you sit with it all evening. When the grades go up and your number isn't pretty. When you open your phone and everyone seems smarter, faster, further along. In those moments, I'm in a prison too. Except, unlike Hawking's, my prison isn't real. I built it. Brick by brick, out of the very negative thoughts I repeat to myself.
 
-And suddenly I understood something strange. The noise I'd hated all this time — it wasn't noise. It was the sound of a few million people living. Coming home late from work. Waiting for one more ride to earn a little extra. Eating a late meal after a long day. Returning to someone, arms full of flowers.
+And I do exactly what he refused to do: I fix my eyes on the bars. I stare at my flaws so long that they blot out the rest of the entire sky.
 
-> What I thought was noise wrecking my sleep turned out to be the heartbeat of a city that never stops breathing. And me, standing here, was one of its beats too.
+> Hawking had fewer "tools" than almost anyone — a body betraying him by the day. But he had the one that matters most in abundance: the freedom to choose where to look.
 
-I don't know how to put it right. It's just that in that moment, I stopped seeing myself as an outsider the city was bothering. I saw that I belonged to it. That driver, those two people eating late, and me — we were all just trying to live, at the same time, under the same sky full of lights.
+That's where it catches me. His greatness didn't come from having more than other people. It came from this: with the little he had left, he chose to look at the universe instead of at the wheelchair. And I, with a whole body and a mind that still runs fine, keep choosing to look at exactly what I lack.
 
-<KeyTakeaway label="What I wrote down that night" tone="sage">
-Some things you don't need to change. You only need to change where you stand to look at them. The same car horn — one night it's torture, another night it's proof you were never alone.
+<KeyTakeaway label="Something I keep" tone="sage">
+Greatness isn't how many tools you hold in your hands. It's where you choose to aim your eyes — at the bars, or at the sky behind them.
 </KeyTakeaway>
 
 ---
 
-The next morning I still went out, still hit the traffic, still heard the horns. The city hadn't softened at all. It was exactly the same.
+I'm not telling you to be as strong as Hawking. That kind of comparison is just another set of bars.
 
-Only I was different. I stopped counting reasons to hate it. I started noticing the café with the owner who always smiles, the row of trees on the street I take, the way late sun pours gold over the old walls. Those things had always been there. I'd just been too busy plugging my ears to hear them.
+I only want to invite you, the next time you feel small, to try the thing he did. Don't try to break the prison by hating it. Just turn your head, change where you're looking. Look away from what you don't have, so you can see what you do. Look past today's grade, to the long stretch of life still opening up.
 
-I'm not telling you this to say you should love wherever you live. Maybe the place you're in really doesn't fit you, and leaving is the right thing. I get that.
+Standing under the night sky, every one of us is small to the point of near-meaninglessness — a speck of dust on a speck of dust drifting among billions of galaxies. Hawking understood that smallness better than anyone; he spent his life measuring it. And yet it was also he who showed me this: a human being, even locked inside a motionless body, can hold an entire universe within their soul.
 
-I'm just wondering, and I want you to ask yourself too: how many things in your life are you hating, enduring, waiting to be over — that actually, if you'd stand still one night and really look, you'd find have been living alongside you, for you, the whole time?
+Small before the stars. But vast within. I believe both of those are true at once — and that's why, today, I'm starting to write about people like him.
+b:T135f,
+Có một hình ảnh mình không sao quên được. Một người đàn ông ngồi bất động trong chiếc xe lăn, cả cơ thể gần như đông cứng, chỉ còn vài thớ cơ trên má là còn nhúc nhích được. Ông không tự thở nổi nếu thiếu máy. Ông không nói được thành tiếng — mỗi câu chữ ông "nói" ra là do một con trỏ dò từng chữ cái một, chậm rãi, nhọc nhằn, có khi cả phút mới xong một câu.
 
-Tonight, if some car horn drifts up, I won't plug my ears anymore. I'll lie there and listen. And know that out there, life is still running, warm and stubborn, even while I sleep.
-b:T146b,
-Hai giờ sáng, và dưới đường vẫn còn tiếng còi xe. Một chiếc nào đó bấm dài một hơi, rồi một chiếc khác đáp lại, như thể tụi nó đang cãi nhau giữa đêm. Mình nằm trên giường, nhét bông vào tai, kéo gối úp lên đầu, mà cái âm thanh đó vẫn lọt vào, ghim thẳng vào đúng chỗ mệt nhất trong người.
-
-Đêm đó mình không ngủ được. Như rất nhiều đêm trước đó.
-
-Mình mới lên thành phố lớn này được hơn một năm. Và mình ghét nó. Ghét cái cách sáng nào ra đường cũng kẹt cứng, khói xe phả vào mặt, ai cũng vội, ai cũng bấm còi như thể bấm thì đường sẽ tự giãn ra. Ghét luôn cái cảm giác mình bé tí xíu, lọt thỏm giữa mấy triệu con người mà chẳng ai biết mình là ai.
+Vậy mà chính người đàn ông gần như không cử động đó lại đưa tâm trí con người đi xa nhất. Tới tận rìa của những lỗ đen, nơi cả không gian lẫn thời gian cũng phải cúi đầu.
 
 ---
 
-## Mình từng đếm từng lý do để ghét
+## Một thân thể bị giam, một tâm trí được thả
 
-Hồi đó mình hay làm một việc khá tiêu cực: mình thu thập lý do để ghét nơi này.
+Năm hai mươi mốt tuổi, Stephen Hawking nhận một bản án. Các bác sĩ nói ông mắc một căn bệnh sẽ dần lấy đi từng chuyển động của cơ thể, và cho ông chừng hai năm để sống. Hai năm. Ở cái tuổi mà người ta vừa mới bắt đầu mơ.
 
-Cái còi xe lúc nửa đêm là một lý do. Tiền trọ đắt đỏ là một lý do. Buổi chiều đứng chôn chân giữa biển xe, mồ hôi ướt lưng áo, là một lý do. Mình về phòng, đóng cửa, đeo tai nghe thật to để át đi tiếng đường phố, và tự nhủ: ngày nào đó mình sẽ rời khỏi đây, về một nơi thật yên tĩnh, rồi mình sẽ ổn.
+Ông sống thêm năm mươi lăm năm nữa.
 
-Mình sống như một người đang tạm trú trong chính cuộc đời mình. Lúc nào cũng chờ một nơi khác, một lúc khác, để bắt đầu thấy dễ chịu. Còn cái hiện tại ồn ào này thì mình chỉ muốn bịt tai lại cho qua.
+Mình không kể chuyện này để bạn trầm trồ về một kỳ tích y học. Mình kể vì một điều khác, lặng hơn. Cái nhà tù của ông là có thật. Tàn khốc, không lối thoát, mỗi năm lại siết chặt thêm một chút. Nhưng thay vì ngồi đếm những song sắt đang khép lại quanh mình, ông ngẩng lên và nhìn ra ngoài. Lên trên. Vào cái khoảng bao la nhất mà một con người có thể nhìn tới. Cơ thể ông bị nhốt trong một căn phòng mỗi ngày một nhỏ, nhưng ông để tâm trí mình đi lang thang giữa các thiên hà.
 
-Mệt lắm, bạn biết không. Không phải cái mệt của cơ thể. Mà là cái mệt của một người ngày nào cũng chống lại nơi mình đang đứng.
+Ông không thắng được căn bệnh. Ông chỉ từ chối để nó quyết định ông được phép nhìn vào đâu.
 
 ---
 
-## Cái đêm mình đứng ở cửa sổ
+## Cái nhà tù mình tự xây
 
-Rồi có một đêm, cũng không ngủ được, mình bỏ cuộc với cái giường. Mình ra đứng ở cửa sổ.
+Mình nghĩ tới điều này vào những đêm mình thấy mình kém cỏi.
 
-Tầng mình ở không cao lắm, đủ để nhìn xuống con đường. Và mình cứ đứng đó, nhìn. Một bác chạy xe ôm đêm đang đợi khách dưới gốc cây, ánh điện thoại hắt lên mặt. Một quán hủ tiếu gõ còn sáng đèn, có hai người ngồi ăn khuya, chắc vừa tan ca. Một chiếc taxi trờ tới, ai đó bước xuống, ôm một bó hoa. Tiếng còi xe vẫn vang lên đâu đó, nhưng lần này mình không thấy nó chọc vào tai nữa.
+Bạn biết cái cảm giác đó chứ. Khi đứa bạn cùng lớp giải xong bài thuật toán trong năm phút còn mình thì ngồi cả tối. Khi bảng điểm lên và con số của mình không đẹp. Khi mình mở mạng ra và thấy ai cũng giỏi hơn, nhanh hơn, đi xa hơn. Trong những lúc đó, mình cũng đang ở trong một nhà tù. Có điều, khác với nhà tù của Hawking, cái nhà tù của mình không có thật. Mình tự xây nó. Từng viên gạch một, bằng chính những suy nghĩ tiêu cực mình lặp đi lặp lại với bản thân.
 
-Tự nhiên mình hiểu ra một điều rất lạ. Cái tiếng ồn mà mình ghét bấy lâu — nó không phải tiếng ồn. Nó là tiếng của mấy triệu con người đang sống. Đang đi làm về muộn. Đang đợi một cuốc xe để kiếm thêm chút tiền. Đang ăn một bữa khuya sau một ngày dài. Đang trở về với một ai đó, tay ôm hoa.
+Và mình làm đúng cái điều ông từ chối làm: mình dán mắt vào song sắt. Mình nhìn chằm chằm vào khiếm khuyết của mình lâu tới mức nó che mất toàn bộ phần còn lại của bầu trời.
 
-> Cái thứ mình tưởng là sự ồn ào phá giấc ngủ, hóa ra là nhịp đập của một thành phố không bao giờ ngừng thở. Và mình, đứng đây, cũng là một nhịp trong đó.
+> Hawking có ít "công cụ" hơn gần như bất kỳ ai — một cơ thể đang phản bội ông từng ngày. Nhưng ông có thừa thứ quan trọng nhất: quyền lựa chọn mình sẽ nhìn vào đâu.
 
-Mình không biết tả sao cho đúng. Chỉ là cái khoảnh khắc đó, mình thôi thấy mình là kẻ ngoài cuộc đang bị thành phố làm phiền. Mình thấy mình thuộc về nó. Cái bác xe ôm kia, hai người ăn khuya kia, và mình — tụi mình đều đang cố sống, cùng một lúc, dưới cùng một bầu trời đầy đèn.
+Đó là chỗ mình giật mình. Sự vĩ đại của ông không đến từ việc ông có nhiều hơn người khác. Nó đến từ việc, với cái ít ỏi còn lại, ông chọn nhìn vào vũ trụ thay vì nhìn vào chiếc xe lăn. Còn mình, với một cơ thể lành lặn, một cái đầu vẫn chạy tốt, lại cứ chọn nhìn vào đúng cái mình thiếu.
 
-<KeyTakeaway label="Mình ghi lại đêm đó" tone="sage">
-Có những thứ mình không cần thay đổi. Mình chỉ cần đổi cách đứng nhìn nó. Cùng một tiếng còi xe, một đêm là sự tra tấn, một đêm khác lại là bằng chứng rằng mình không hề cô đơn.
+<KeyTakeaway label="Mình giữ điều này" tone="sage">
+Vĩ đại không phải là bạn cầm trong tay bao nhiêu công cụ. Vĩ đại là bạn chọn hướng đôi mắt mình về đâu — vào cái song sắt, hay vào bầu trời phía sau nó.
 </KeyTakeaway>
 
 ---
 
-Sáng hôm sau mình vẫn ra đường, vẫn kẹt xe, vẫn nghe còi inh ỏi. Thành phố chẳng dịu đi chút nào. Nó vẫn y nguyên như vậy.
+Mình không bảo bạn hãy mạnh mẽ như Hawking. So sánh kiểu đó cũng lại là một song sắt khác mà thôi.
 
-Chỉ có mình là khác. Mình thôi đếm lý do để ghét. Mình bắt đầu để ý tới quán cà phê có cô chủ hay cười, tới hàng cây trên con đường mình hay đi, tới cái cách nắng chiều đổ vàng lên mấy bức tường cũ. Những thứ đó vẫn luôn ở đó. Chỉ là trước giờ mình bận bịt tai, nên không nghe thấy.
+Mình chỉ muốn rủ bạn, lần tới khi thấy mình bé nhỏ, hãy thử làm cái điều ông đã làm. Đừng cố phá nhà tù bằng cách căm ghét nó. Chỉ cần quay đầu, đổi hướng nhìn. Nhìn ra khỏi cái mình không có, để thấy cái mình đang có. Nhìn xa hơn con điểm hôm nay, để thấy cả một quãng đời còn dài đang mở ra.
 
-Mình kể bạn nghe chuyện này không phải để bảo bạn hãy yêu lấy nơi mình đang sống. Có khi nơi bạn đang ở thật sự không hợp với bạn, và rời đi mới là điều đúng. Mình hiểu mà.
+Đứng dưới bầu trời đêm, ai trong chúng ta cũng nhỏ bé tới mức gần như vô nghĩa — một chấm bụi trên một chấm bụi trôi giữa hàng tỉ thiên hà. Hawking hiểu sự nhỏ bé đó hơn ai hết; ông đã dành cả đời để đo nó. Vậy mà cũng chính ông cho mình thấy: một con người, dù bị giam trong một thân xác bất động, vẫn có thể chứa trong tâm hồn mình cả một vũ trụ.
 
-Mình chỉ tự hỏi, và muốn bạn cũng thử hỏi mình một câu: có bao nhiêu thứ trong đời mà mình đang ghét, đang chịu đựng, đang chờ cho nó qua đi — mà thật ra, nếu mình chịu đứng lại một đêm và nhìn cho kỹ, mình sẽ thấy nó vốn dĩ đang sống cùng mình, vì mình, suốt từ đầu?
-
-Tối nay nếu có tiếng còi xe nào đó vọng lên, mình sẽ không bịt tai nữa. Mình sẽ nằm nghe. Và biết rằng ngoài kia, cuộc đời vẫn đang chạy, ấm áp và bền bỉ, ngay cả khi mình đang ngủ.
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"projects":[],"latestPosts":[{"slug":"the-day-the-streak-broke","content":"$3","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$4","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$5","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$6","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$7","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$8","readingTime":"5 min read"}}},{"slug":"the-noise-i-learned-to-love","content":"$9","title":"The Night I Stopped Hating the Horns","description":"Two in the morning, the car horns down on the street still wouldn't quit, and I hated this city with everything I had. Until one night I stood at the window and looked down.","date":"2026-06-27","tags":["Slow Living","Reflection","Mindfulness"],"readingTime":"4 min read","i18n":{"en":{"title":"The Night I Stopped Hating the Horns","description":"Two in the morning, the car horns down on the street still wouldn't quit, and I hated this city with everything I had. Until one night I stood at the window and looked down.","content":"$a","readingTime":"4 min read"},"vi":{"title":"Đêm mình thôi ghét tiếng còi xe","description":"Hai giờ sáng, tiếng còi xe dưới đường vẫn chưa chịu tắt, và mình thì ghét cay ghét đắng cái thành phố này. Cho tới một đêm mình đứng ở cửa sổ và nhìn xuống.","content":"$b","readingTime":"5 min read"}}}]}],["$Lc"],"$Ld"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"3mobiw-Eh74yVi3PFhiqH"}
+Nhỏ bé trước những vì sao. Nhưng mênh mông ở bên trong. Mình tin cả hai điều đó đều đúng, cùng một lúc — và đó là lý do hôm nay mình bắt đầu viết về những con người như ông.
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"projects":[],"latestPosts":[{"slug":"the-day-the-streak-broke","content":"$3","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$4","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$5","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$6","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$7","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$8","readingTime":"5 min read"}}},{"slug":"stephen-hawking-where-you-choose-to-look","content":"$9","title":"Stephen Hawking and Where You Choose to Look","description":"A man imprisoned in a wheelchair, unable to utter a word, and yet his mind travelled to the edge of black holes. The first piece for the nights you feel far too small.","date":"2026-06-27","tags":["Inspiration","Resilience","Self Worth"],"readingTime":"4 min read","i18n":{"en":{"title":"Stephen Hawking and Where You Choose to Look","description":"A man imprisoned in a wheelchair, unable to utter a word, and yet his mind travelled to the edge of black holes. The first piece for the nights you feel far too small.","content":"$a","readingTime":"4 min read"},"vi":{"title":"Stephen Hawking và chuyện mình chọn nhìn vào đâu","description":"Một người đàn ông bị giam trong chiếc xe lăn, không thốt nổi một lời, vậy mà tâm trí ông đi tới tận rìa những lỗ đen. Bài đầu tiên cho những đêm bạn thấy mình quá nhỏ bé.","content":"$b","readingTime":"5 min read"}}}]}],["$Lc"],"$Ld"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"NNT46B7WYreafmRyFK38A"}
 c:["$","script","script-0",{"src":"/_next/static/chunks/0k308.dc._5mp.js","async":true}]
 d:["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]
 10:null
