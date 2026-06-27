@@ -1,0 +1,632 @@
+[
+  {
+    "title": "A Date With Myself",
+    "slug": "a-date-with-myself",
+    "coverImage": "/images/blog/a-date-with-myself.webp",
+    "imageAlt": "A young woman eating alone at a small evening hotpot table, phone face-down, an empty chair across from her.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young woman dining alone at a small local hotpot eatery in the evening, seen from the side and slightly behind so her face is not identifiable, set in a modest Vietnamese restaurant with plastic stools, a gently steaming pot and warm string lights, representing the quiet confidence of enjoying your own company. The scene includes her relaxed posture as she lifts food with chopsticks, a phone left face-down beside a single bowl, a half-finished glass of iced tea and canvas tote bag hung on the empty chair across from her. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh tự đi ăn một mình thật thoải mái, ghế đối diện bỏ trống — đúng tinh thần \"hẹn hò với chính mình\", tận hưởng sự cô độc.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "A Sunday Spent Clearing My Desk, and Some Quiet",
+    "slug": "a-messy-desk-and-some-quiet",
+    "coverImage": "/images/blog/a-messy-desk-and-some-quiet.webp",
+    "imageAlt": "A person sitting on the floor sorting old papers and keepsakes into stacks on a sunlit Sunday afternoon.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting cross-legged on the floor of a small apartment on a slow Sunday afternoon, sorting a pile of old papers and keepsakes into neat stacks, seen from above and behind so the face is hidden, set in a sunlit rented room with a half-cleared desk behind them, representing the calm of tidying a space and quietly clearing a cluttered mind. The scene includes their hands holding an old ticket stub, a half-folded blanket nearby, a glass of water on the floor and small cardboard box of things to keep. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ngồi sàn dọn đồ cũ một chiều chủ nhật — dọn không gian cũng là dọn lại những suy nghĩ ngổn ngang, đúng thông điệp bài.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "A Love So Quiet There's Nothing to Tell",
+    "slug": "a-quiet-love-with-no-drama",
+    "coverImage": "/images/blog/a-quiet-love-with-no-drama.webp",
+    "imageAlt": "Late at night in a small kitchen, one person brings warm water and medicine to a partner wrapped in a blanket.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a couple in a small home kitchen late at night, one person filling a glass of warm water and setting out a strip of cold medicine while the other sits at the table wrapped in a blanket, both seen from the side with faces turned away, set in a modest apartment kitchen under a single warm overhead light, representing a quiet undramatic love that simply shows up when you are unwell. The scene includes a thermometer on the table, a half-peeled orange, worn slippers on the tile floor and phone left face-down beside the bowl. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Tình yêu không drama hiện qua việc lặng lẽ chăm nhau lúc ốm nửa đêm — cảm giác \"an toàn sâu sắc\" như bài viết.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Đắc Nhân Tâm",
+    "slug": "dac-nhan-tam-review",
+    "coverImage": "/images/blog/dac-nhan-tam-review.webp",
+    "imageAlt": "A young person reading a worn paperback on an afternoon city bus, a pen ready to underline a line.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person reading a worn paperback copy of a self-help classic on a city bus in the late afternoon, seen over the shoulder so the face is not visible, set in a Vietnamese public bus with warm low sun through the window and other passengers blurred behind, representing a slow and sincere reading about treating people with genuine kindness. The scene includes a thumb pressing the soft creased pages, a pen tucked between fingers ready to underline, a canvas bag resting on the lap and paper bus ticket used as a bookmark. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đọc cuốn sách cũ trên xe buýt chiều, gạch chân từng dòng — đọc chậm và chân thành về cách đối nhân xử thế.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Do It Badly, but Don't Stop",
+    "slug": "do-it-badly-but-do-it",
+    "coverImage": "/images/blog/do-it-badly-but-do-it.webp",
+    "imageAlt": "A sleepy person tying worn running shoes in a dim doorway at dawn before a short morning run.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a sleepy young person crouched in the doorway of a dim apartment at dawn, tying the laces of well-worn running shoes before a short morning run, seen from the side with the face lowered and hidden, set in a small entryway with shoes by the door and grey early light spilling from the stairwell, representing showing up to do a small thing imperfectly but consistently. The scene includes half-tied laces, a wrinkled t-shirt, earphones tangled on the floor and half-drunk glass of water on the shoe cabinet. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Dậy sớm buộc dây giày chạy bộ dù còn ngái ngủ — chịu khó làm việc nhỏ đều đặn dù chưa hoàn hảo.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "In Praise of a Messy Life",
+    "slug": "in-praise-of-a-messy-life",
+    "coverImage": "/images/blog/in-praise-of-a-messy-life.webp",
+    "imageAlt": "A person relaxing barefoot on an unmade bed in a pleasantly messy, lived-in room in the afternoon.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person lounging barefoot on an unmade bed in a pleasantly messy rented room on a lazy afternoon, seen from the side with the face hidden behind a raised arm, set in a real lived-in apartment with clothes draped over a chair and warm sunlight through a half-open curtain, representing the warmth and honesty of an imperfect, un-curated life. The scene includes mismatched socks, a plate with instant-noodle leftovers, a small stack of toppled books and phone face-down on the rumpled sheets. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Căn phòng đời thật hơi bừa nhưng ấm áp — tôn vinh sự lộn xộn chân thực thay vì hoàn hảo kiểu \"sống ảo\".",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Học cách nói 'Tôi không biết' giữa một thế giới rất thích tỏ ra thông thái",
+    "slug": "learning-to-say-i-dont-know",
+    "coverImage": "/images/blog/learning-to-say-i-dont-know.webp",
+    "imageAlt": "A young person sitting back and listening at a busy study table while others lean in talking.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting slightly back from a crowded study table in a small classroom while a few others lean in talking and gesturing, seen from behind so the face is hidden, the person calmly listening rather than performing knowledge, set in a plain room with fluorescent light softened by a side window, representing the quiet humility of being able to say you do not know. The scene includes an open notebook with only a few honest notes, a chewed pen resting on the page, a paper cup of tea and backpack slumped against the chair leg. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ngồi lùi lại lắng nghe giữa nhóm đang sôi nổi \"tỏ ra biết\" — sự khiêm tốn dám nói \"tôi không biết\".",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Lắng nghe không gian, thay vì nghe tiếng ồn",
+    "slug": "listening-to-space-not-noise",
+    "coverImage": "/images/blog/listening-to-space-not-noise.webp",
+    "imageAlt": "A person under a shop awning in light rain, phone held down at their side, watching the wet street.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person standing under a shop awning during a light rain, holding a phone loosely at their side without looking at it while watching the wet street, seen from behind and to the side so the face is not visible, set in a quiet Vietnamese street with reflections of yellow shop lights on the wet asphalt, representing the choice to listen to the space and stillness instead of the noise. The scene includes a damp jacket, rain dripping from the awning edge, a parked motorbike beside them and closed umbrella hanging from their wrist. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đứng trú mưa, cầm điện thoại nhưng không nhìn màn hình mà ngắm phố — lắng nghe không gian thay vì tiếng ồn.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Nghệ thuật tối giản trong tư duy",
+    "slug": "minimalism-of-the-mind",
+    "coverImage": "/images/blog/minimalism-of-the-mind.webp",
+    "imageAlt": "A hand writing a single line in a notebook on a desk being cleared, a closed laptop and face-down phone pushed aside in afternoon light.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young woman clearing her cluttered desk down to a single open notebook, her hand writing one short line, set in a small apartment room in late afternoon, representing the relief of stripping a busy mind down to one clear thought. The scene includes her shoulders loosening as she pushes other objects aside and closed laptop, a phone turned face-down, a half-finished glass of water and a small pile of papers moved to the edge. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh dọn bàn xuống còn đúng một cuốn sổ và viết một dòng thể hiện việc tối giản tư duy — gạt bớt cái rối để giữ lại một điều rõ ràng.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Motivation Is a Liar",
+    "slug": "motivation-is-a-liar",
+    "coverImage": "/images/blog/motivation-is-a-liar.webp",
+    "imageAlt": "Bare feet stepping off an unmade bed toward running shoes at dawn, a phone with a dismissed alarm glowing on the sheets.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of bare feet stepping from an unmade bed onto a cold floor toward a pair of running shoes at dawn, set in a dim small bedroom in early grey morning, representing the quiet decision to begin even with no motivation at all. The scene includes a body half-leaning up out of warm blankets and a tangled duvet and running shoes waiting by the bed, a phone glowing face-down with a dismissed alarm, and pale dawn light leaking through thin curtains. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Khoảnh khắc bước chân xuống sàn lạnh để dậy sớm khi chẳng có chút động lực nào, đúng thông điệp kỷ luật quan trọng hơn cảm hứng.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Nobody Else's Eyes Pay Your Bills",
+    "slug": "nobody-elses-eyes-pay-your-bills",
+    "coverImage": "/images/blog/nobody-elses-eyes-pay-your-bills.webp",
+    "imageAlt": "A person walking home alone down a narrow alley at night, tote bag on shoulder, lit windows of other apartments glowing above.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person walking home alone late at night down a narrow Vietnamese alley while the lit windows of other apartments glow above, set in a quiet residential lane after midnight, representing quietly continuing your own effort while ignoring everyone else's watching eyes. The scene includes a slightly tired slumped walk with a canvas tote bag on one shoulder and dusty worn shoes, a warm yellow streetlamp overhead and softly blurred lit windows of strangers in the background. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đi bộ một mình về khuya dưới ánh đèn, mặc kệ ô cửa sáng của người khác — ánh nhìn của thiên hạ không trả hóa đơn, chỉ có mình tự bước tiếp.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Our Parents Were Never Superheroes",
+    "slug": "our-parents-were-never-superheroes",
+    "coverImage": "/images/blog/our-parents-were-never-superheroes.webp",
+    "imageAlt": "A young adult watching an ageing parent's worn hands wash a bowl in a small kitchen, a simple dinner cooling nearby in evening light.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young adult quietly watching an ageing parent's weathered hands washing a bowl at the sink, set in a small worn Vietnamese family kitchen in warm evening light, representing the tender moment of realising your parents were never superheroes, only tired humans who loved imperfectly. The scene includes the parent's slightly stooped back and a single grey strand of hair and the adult child's softened, lingering gaze, a simple modest dinner cooling on a small table, and faint steam rising near an old rice cooker. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người trẻ lặng nhìn đôi tay nhăn nheo và sợi tóc bạc của ba mẹ trong gian bếp cũ — nhận ra cha mẹ chưa từng là siêu nhân, chỉ là người yêu thương vụng về.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Nobody Can Read Your Mind",
+    "slug": "say-it-out-loud",
+    "coverImage": "/images/blog/say-it-out-loud.webp",
+    "imageAlt": "Two people on a small sofa, one reaching to touch the other's arm to speak honestly, a phone set face-down between them.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of two young people sitting on a small sofa, one turning to finally say something honest while a phone is set face-down on the cushion between them, set in a modest apartment living room under soft lamplight, representing choosing to speak a need out loud instead of sulking in silence. The scene includes one hand reaching gently to rest on the other's arm across a slight gap between them and a phone placed face-down, two mismatched mugs on the low table and a rumpled throw blanket. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Một người chạm tay, mở lời thẳng thắn thay vì im lặng giận dỗi, điện thoại úp xuống — đúng thông điệp đừng bắt người khác đoán ý, hãy nói ra.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "In Someone's Story, You're the Villain",
+    "slug": "someone-is-always-the-villain",
+    "coverImage": "/images/blog/someone-is-always-the-villain.webp",
+    "imageAlt": "A person walking calmly away down a golden-hour street with earphones in, blurred passers-by behind them.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person walking calmly away alone down a busy late-afternoon street, unbothered while blurred passers-by glance from behind, set in a Vietnamese city sidewalk at golden hour, representing the freedom of accepting that some people will dislike you once you live your own life. The scene includes a relaxed unhurried stride with earphones in and a canvas tote on one shoulder and a light denim jacket, warm low golden light along the street and softly out-of-focus strangers behind. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người trẻ thản nhiên bước đi giữa những ánh nhìn mờ phía sau — chấp nhận có người ghét mình là dấu hiệu đã bắt đầu sống cuộc đời riêng.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Stephen Hawking and Where You Choose to Look",
+    "slug": "stephen-hawking-where-you-choose-to-look",
+    "coverImage": "/images/blog/stephen-hawking-where-you-choose-to-look.webp",
+    "imageAlt": "A person in a wheelchair by a tall dark window at night, a blanket over their legs, gazing up at faint stars and city lights.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a person in a wheelchair sitting alone by a tall window at night, gazing up at a sky of faint stars and distant city lights, set in a quiet dim room with one small lamp, representing a body held still by limits while the mind travels all the way to the edge of the universe. The scene includes a still hand resting on the armrest and a knitted blanket over the legs, the wheelchair in soft silhouette, a single warm lamp and wide dark window full of scattered light. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người ngồi xe lăn lặng lẽ ngước nhìn bầu trời đêm qua cửa sổ — thân thể bị giam nhưng tâm trí chọn nhìn ra cả vũ trụ, đúng tinh thần Hawking.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "And Then What?",
+    "slug": "stop-postponing-your-life",
+    "coverImage": "/images/blog/stop-postponing-your-life.webp",
+    "imageAlt": "Hands resting over a steaming bowl of noodles at a sidewalk stall, a phone turned face-down beside a glass of iced tea.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person pausing to actually savour a simple bowl of noodles at a small sidewalk eatery at midday, phone left face-down, set in a modest Vietnamese street food stall with low plastic stools, representing the choice to be present in an ordinary in-between moment instead of always postponing life for the next goal. The scene includes hands holding chopsticks resting still for a breath over the steaming bowl, a phone turned face-down on the metal table, a glass of iced tea sweating and worn plastic stool nearby. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Dừng lại thật sự thưởng thức một tô mì lề đường, điện thoại úp xuống — sống trọn khoảnh khắc lưng chừng thay vì cứ trì hoãn đời mình.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Tại sao mình nên ngừng tìm kiếm đam mê?",
+    "slug": "stop-searching-for-passion",
+    "coverImage": "/images/blog/stop-searching-for-passion.webp",
+    "imageAlt": "Clay-covered hands shaping a bowl on a pottery wheel in a small evening ceramics workshop.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young woman in her twenties leaning over a spinning pottery wheel at an evening community workshop, fully absorbed in shaping wet clay with both hands, set in a small cluttered ceramics studio with concrete floors and shelves of unfinished bowls, representing the idea that passion is discovered through doing rather than endlessly searching for it. The scene includes her clay-smeared hands and forward-leaning focused posture and a wet half-formed bowl rising under her fingers and a canvas apron dusted with dry clay, a chipped mug of water for wetting the clay, and other students blurred at their own wheels behind her. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh đôi tay lấm lem say sưa nặn gốm cho thấy đam mê nảy ra từ việc bắt tay vào làm, đúng thông điệp 'ngừng tìm, hãy làm' của bài.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Cảm ơn phiên bản tồi tệ của chính mình",
+    "slug": "thank-you-worst-version-of-me",
+    "coverImage": "/images/blog/thank-you-worst-version-of-me.webp",
+    "imageAlt": "Hands unfolding an old handwritten note beside a shoebox of photos on a bedroom floor in afternoon light.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting cross-legged on a bedroom floor beside an open shoebox of old keepsakes, holding a folded handwritten note from years ago with a faint forgiving smile, set in a small rented bedroom corner in late afternoon light, representing making peace with and thanking an earlier, more broken version of oneself. The scene includes their softened downward gaze and gently relaxed shoulders as they unfold the worn paper and scattered old photographs and ticket stubs around the box, a faded diary with a cracked spine, and dust motes drifting in the warm slanted light. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Khoảnh khắc cầm lá thư/tờ giấy cũ với nét mặt dịu lại thể hiện sự tha thứ và biết ơn phiên bản tồi tệ ngày xưa của mình.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Months of Learning UX, and Nothing to Show Off",
+    "slug": "the-beauty-of-boring-repetition",
+    "coverImage": "/images/blog/the-beauty-of-boring-repetition.webp",
+    "imageAlt": "A hand redrawing the same small shape again and again on a tablet, repeated sketches scattered around.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young designer redrawing the same small interface button over and over on a graphics tablet late at night, a fan of nearly identical sketches spread beside the screen, set in a cramped home studio lit only by a desk lamp, representing the quiet unglamorous craft of repeating one small thing until it becomes skill. The scene includes the stylus poised mid-stroke and a slightly tired but steady hand, dozens of repeated button shapes on scattered paper, a cold half-finished cup of tea pushed aside and wrist resting on the edge of the tablet. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Bàn tay vẽ đi vẽ lại cùng một nút bấm hàng chục lần nói lên sức mạnh của sự lặp lại nhàm chán mà bền bỉ trong bài.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Boy, the Mole, the Fox and the Horse — The kids' book that made a grown adult cry on the train",
+    "slug": "the-boy-the-mole-the-fox-and-the-horse",
+    "coverImage": "/images/blog/the-boy-the-mole-the-fox-and-the-horse.webp",
+    "imageAlt": "A person reading a small illustrated book on an evening train, eyes glistening, city lights blurred outside.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young adult on an evening commuter train holding a small illustrated hardcover book open in their lap, eyes glistening with quiet tears as they read, set in a half-empty train carriage with blurred city lights streaking past the window, representing a tender, unexpected emotional release sparked by a gentle children's book. The scene includes one finger pressed to keep the page and a slight tremble in the hand, a canvas tote bag resting against their knee, the warm reflection of passing lights on the window glass and coat folded on the seat beside them. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh đọc cuốn sách nhỏ và rưng rưng trên chuyến tàu tối tái hiện đúng khoảnh khắc một người lớn bật khóc vì cuốn sách thiếu nhi.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "A Coat That's Too Big",
+    "slug": "the-coat-that-is-too-big",
+    "coverImage": "/images/blog/the-coat-that-is-too-big.webp",
+    "imageAlt": "A young woman in an oversized blazer with sleeves past her hands, tugging a cuff before a bedroom mirror.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young woman trying on an oversized blazer several sizes too large in front of a leaning bedroom mirror, sleeves swallowing her hands as she tugs at a cuff with an uncertain look, seen from the side so her face stays unclear, set in a small bedroom with morning light through thin curtains, representing the insecurity of forcing yourself to fit a role that is still too big for you. The scene includes her hesitant body language and one hand lost inside a too-long sleeve, a dangling price tag, a pile of tried-on clothes on the unmade bed and phone face-down on the dresser. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Hình ảnh mặc chiếc áo quá rộng trước gương là ẩn dụ trực tiếp của bài về sự tự ti khi ép mình vào vai trò còn quá khổ.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Cost of Being Everyone's Favorite",
+    "slug": "the-cost-of-being-everyones-favorite",
+    "coverImage": "/images/blog/the-cost-of-being-everyones-favorite.webp",
+    "imageAlt": "A tired young person forcing a smile at the edge of a crowded café table, phone full of messages in hand.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting at the edge of a lively gathering, holding a phone crowded with unanswered messages while forcing a small polite smile and looking away from the group, set in a busy warmly lit café with friends blurred around the table, representing the quiet exhaustion of always saying yes to be everyone's favorite. The scene includes their slumped shoulders and weary downcast eyes, an untouched glass of iced drink sweating on the table, a phone screen full of message bubbles and coat still on because they want to leave. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Nụ cười gượng và vai chùng giữa đám đông thể hiện cái giá kiệt sức của việc luôn làm hài lòng mọi người trong bài.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Day I Unfollowed My Idol",
+    "slug": "the-day-i-unfollowed-my-idol",
+    "coverImage": "/images/blog/the-day-i-unfollowed-my-idol.webp",
+    "imageAlt": "A person on a bed lowering a glowing phone onto their chest in a dim, lamp-lit bedroom.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person lying back on a bed scrolling a glossy social-media feed on their phone, thumb paused over a profile just before setting the phone face-down on their chest with a quiet exhale, set in a dim bedroom in the evening with a single warm lamp, representing the small disillusionment of letting go of an online idol. The scene includes the soft phone glow on a face kept indistinct and the loosened grip of the hand, a rumpled blanket, a half-drunk glass of water on the nightstand, and earphones tangled nearby. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Khoảnh khắc lướt mạng rồi buông điện thoại xuống ngực diễn tả việc nhẹ nhõm bỏ theo dõi thần tượng, ngừng kỳ vọng vào đời người khác.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Day the Streak Broke",
+    "slug": "the-day-the-streak-broke",
+    "coverImage": "/images/blog/the-day-the-streak-broke.webp",
+    "imageAlt": "A hand marking a wall calendar after two blank days in a long streak, running shoes by the door.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person standing at a kitchen wall calendar, pen in hand, marking today after a couple of blank untouched days in a long run of daily marks, with a calm forgiving expression, set in a small apartment kitchen in soft morning light, representing the gentle decision to simply begin again after a broken streak. The scene includes their steady hand reaching up to the calendar and relaxed shoulders, a wall calendar showing a long streak interrupted by two empty squares, a worn pair of running shoes by the door and glass of water on the counter. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh đánh dấu lại lịch sau vài ô trống thể hiện sự bao dung khi chuỗi thói quen bị đứt và lặng lẽ bắt đầu lại.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Rejected Ten Times, and It Took the Eleventh to Understand",
+    "slug": "the-design-they-rejected-ten-times",
+    "coverImage": "/images/blog/the-design-they-rejected-ten-times.webp",
+    "imageAlt": "A young designer revising a printed mockup marked with red corrections, rejected drafts scattered around a dim desk.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young designer hunched over a cluttered desk reviewing a printed UI mockup covered in red-pen corrections, set in a small dim home studio at night, representing the humbling moment of setting ego aside to finally listen to the feedback. The scene includes a hand hovering with a pen ready to revise yet again, slightly slumped tired shoulders, several rejected printouts with red circles scattered and one crumpled into a ball, a stylus on a tablet and cold cup of tea pushed to the edge. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Bàn đầy bản in bị gạch đỏ và một tay đang sửa lại lần nữa thể hiện việc nuốt cái tôi để lắng nghe — đúng bài học của bài.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Diary I Abandoned",
+    "slug": "the-diary-i-abandoned",
+    "coverImage": "/images/blog/the-diary-i-abandoned.webp",
+    "imageAlt": "Hands turning the worn pages of an old diary on a bed, a pressed flower and faded ticket tucked inside.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a pair of hands gently turning the worn pages of an old teenage diary while sitting cross-legged on a bed, set in a quiet bedroom in soft late-afternoon light, representing the tender forgiveness and love for one's younger self. The scene includes fingers pausing on a page of faded handwriting, a pressed dried flower and a faded movie ticket tucked between the pages, the snapped rubber band that once held the diary closed lying on a crumpled blanket and mug of tea cooling on the nightstand. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Tay lật cuốn nhật ký cũ với hoa ép và vé phim kẹp bên trong gợi sự thương yêu, làm hoà với phiên bản mình ngày xưa.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Cảm giác trống rỗng sau khi đạt được một mục tiêu lớn",
+    "slug": "the-emptiness-after-achievement",
+    "coverImage": "/images/blog/the-emptiness-after-achievement.webp",
+    "imageAlt": "A young person sitting slumped after an achievement, a certificate leaning face-down and a deflating balloon nearby.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting slumped back in a chair after finishing a big goal, gaze drifting blankly past the camera, set in a quiet apartment room in fading evening light, representing the hollow emptiness that arrives right after a long-awaited achievement. The scene includes a framed certificate leaning face-down against the wall, a cold half-finished cup of coffee, a single deflating balloon sagging in the corner and phone lying silent and dark on the desk. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Giấy khen úp mặt và quả bóng xẹp cạnh người ngồi thừ ra nói đúng cảm giác trống rỗng sau khi đạt được mục tiêu lớn.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Envy You Don't Want to Admit",
+    "slug": "the-envy-you-dont-want-to-admit",
+    "coverImage": "/images/blog/the-envy-you-dont-want-to-admit.webp",
+    "imageAlt": "A person lying on a couch at night, phone glow on their hands as a faint smile fades, snack and water on the floor.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person lying back on a couch at night scrolling a phone, the screen glow lighting their chin and hands while their faint smile slowly fades, set in a dim small apartment living room, representing the quiet, guilty envy of seeing a friend's success online. The scene includes a thumb paused mid-scroll and a half-eaten snack and a glass of water on the floor beside the couch, a rumpled blanket kicked aside, and one slipper fallen off a foot. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ánh điện thoại hắt lên gương mặt đang chùng xuống lúc lướt mạng thể hiện sự ghen tị thầm lặng mà ta ngại thừa nhận.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Nỗi sợ bị lãng quên",
+    "slug": "the-fear-of-being-ordinary",
+    "coverImage": "/images/blog/the-fear-of-being-ordinary.webp",
+    "imageAlt": "One person standing still amid a blurred evening crowd at a Vietnamese city crosswalk, a tote bag on their shoulder.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a single young person standing completely still amid a blurred stream of motorbikes and pedestrians at a busy crosswalk, set in a Vietnamese city at dusk with neon and streetlight bokeh, representing the fear of being invisible and forgotten in the ordinary crowd. The scene includes the person seen from slightly behind with a canvas tote bag on one shoulder and earphones in, hands still at their sides while everyone around them moves in motion blur, the wet asphalt reflecting warm street lights and faint long shadow. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Một người đứng yên giữa dòng người và xe nhoè chuyển động gợi nỗi sợ trở nên vô hình, bị lãng quên trong sự bình thường.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Anger Is a Fire, and the Ashes Stay for a Long Time",
+    "slug": "the-fire-and-the-ashes",
+    "coverImage": "/images/blog/the-fire-and-the-ashes.webp",
+    "imageAlt": "Two people sitting apart in silence after an argument, a tipped cup and a cold untouched bowl on the table.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of two people sitting apart in heavy silence after an argument, backs half-turned to each other in a small apartment living room in dim warm evening light, set in a small apartment living room in dim warm evening light after an argument, representing the wreckage and lingering ashes that remain long after anger has burned out. The scene includes one hand slowly unclenching on a knee, a tipped-over cup with a small spill, a bowl of food gone cold and untouched on the table and phone lying face-down between them. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Khoảng lặng nặng nề sau cãi vã với tách đổ và bữa ăn nguội ngắt chính là \"tro tàn\" mà cơn giận để lại.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Fish That Stopped Climbing Trees",
+    "slug": "the-fish-that-stopped-climbing-trees",
+    "coverImage": "/images/blog/the-fish-that-stopped-climbing-trees.webp",
+    "imageAlt": "A young designer calmly sketching interface wireframes by hand, colored markers and a tablet on the table.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young creative absorbed in sketching interface wireframes by hand, relaxed and quietly content at last, set in a bright small room or cafe corner in soft daylight, representing the relief of leaving the wrong path and finding the work that truly fits. The scene includes a hand drawing neat boxes and arrows on a paper wireframe, a row of colored markers and a tablet showing a simple app screen, a small potted plant by the window and half-finished iced drink sweating on the table. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người trẻ thư thái vẽ giao diện bằng tay thể hiện sự nhẹ nhõm khi rời con đường sai để về đúng thế mạnh của mình.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Friendships You Outgrow",
+    "slug": "the-friendships-you-outgrow",
+    "coverImage": "/images/blog/the-friendships-you-outgrow.webp",
+    "imageAlt": "A person sitting alone at a cafe table for two, the opposite chair empty and one cup untouched.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting alone at a cafe table set for two, the chair across from them empty, gently looking at an old photo on their phone, set in a quiet cafe in soft afternoon light, representing the tender act of letting an old friendship drift apart. The scene includes a slightly turned-away posture and a wistful stillness, two cups where one sits untouched and full, an empty chair with no one in it and paper napkin folded and unfolded by restless fingers. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Bàn cà phê hai chỗ nhưng một ghế trống và một tách chưa đụng tới gợi sự xa dần lặng lẽ của một tình bạn đã hết hợp.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Tư duy của một người làm vườn trong công nghệ",
+    "slug": "the-gardener-mindset-in-tech",
+    "coverImage": "/images/blog/the-gardener-mindset-in-tech.webp",
+    "imageAlt": "A young person watering a small potted plant on a city apartment balcony at golden hour, a closed laptop on a stool nearby.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person crouching to water a small potted plant on the cluttered balcony of a cramped Asian apartment at golden hour, set in a narrow city balcony with drying laundry and rooftops blurred behind, representing the patience of nurturing something that grows slowly instead of chasing instant results. The scene includes a hand tipping water from a reused plastic bottle and a sleeve pushed up to the elbow and damp dark soil, a closed laptop resting on a plastic stool, a small notebook of sketches, and warm light catching the leaves. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh tưới cây trên ban công với laptop đã đóng phía sau gợi sự kiên nhẫn nuôi dưỡng, hợp với tư duy \"người làm vườn\" trong công nghệ.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Guilt of a Morning Spent Doing Nothing",
+    "slug": "the-guilt-of-resting",
+    "coverImage": "/images/blog/the-guilt-of-resting.webp",
+    "imageAlt": "A young woman resting across an unmade bed on a weekend morning, phone face-down on her chest, soft light through thin curtains.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young woman lying back across a slightly unmade bed on a slow weekend morning, her phone resting face-down on her chest as she stares at nothing, set in a small rented bedroom with thin curtains softening the daylight, representing the quiet guilt of doing nothing and the permission to finally rest. The scene includes one arm draped over her forehead and a sock half slipped off and rumpled blanket, a half-finished glass of water on the floor, a closed laptop set aside, and a paperback left face-down. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Nằm nghỉ giữa buổi sáng với điện thoại úp trên ngực, đồ đạc bừa nhẹ — diễn tả cảm giác tội lỗi khi nghỉ ngơi của bài.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Healing You Can Put on a Card",
+    "slug": "the-healing-you-can-buy",
+    "coverImage": "/images/blog/the-healing-you-can-buy.webp",
+    "imageAlt": "A young person sitting on the floor at home among a few shopping bags, looking deflated, a crumpled receipt nearby.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting on the floor of a small apartment just back from shopping, surrounded by a couple of paper shopping bags, looking quietly deflated rather than delighted, set in the entryway of a rented apartment under warm evening lamp light, representing the hollow comfort of buying healing that fades by the next morning. The scene includes shoulders sunk and a hand resting limply on a bag, and kicked-off shoes, a crumpled receipt on the floor, a new item half pulled from tissue paper and phone turned face-down. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Vừa mua sắm về nhưng ngồi thừ giữa mấy túi đồ và hoá đơn nhàu — đúng thông điệp \"chữa lành quẹt thẻ\" rỗng tuếch.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Joy of Being a Little Out of the Loop",
+    "slug": "the-joy-of-missing-out",
+    "coverImage": "/images/blog/the-joy-of-missing-out.webp",
+    "imageAlt": "A person pouring tea by a kitchen window in late afternoon, phone turned face-down on the table.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a person pouring tea into a cup by a small kitchen window in the late afternoon, their phone deliberately turned face-down on the table, content to be out of the loop, set in a modest Asian apartment kitchen with an open window letting in soft light, representing the quiet joy of disconnecting from the noise. The scene includes a relaxed hand on the warm kettle and a slight unhurried lean, and rising steam, the phone lying face-down, a worn cardigan and plate with a half-eaten snack. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Pha trà bên cửa bếp, điện thoại chủ động úp xuống — gợi niềm vui bình yên của JOMO, tắt khỏi ồn ào.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Judge in Your Head",
+    "slug": "the-judge-in-your-head",
+    "coverImage": "/images/blog/the-judge-in-your-head.webp",
+    "imageAlt": "A young person sitting hunched on the edge of a bed in a dim room at night, a congratulatory card half-ignored on the desk.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting on the edge of the bed in a dim bedroom late at night just after some small success, shoulders hunched as they quietly replay one tiny mistake, set in a small apartment room lit only by a phone and a sliver of streetlight, representing the harsh inner judge that steals joy after an achievement. The scene includes a lowered head and hands clasped between the knees and congratulatory card left half-ignored on the desk, a phone glowing face-up on the sheets, a jacket still on, and a glass of water nearby. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ngồi thu mình bên mép giường đêm khuya sau một thành tựu nhỏ, tự dằn vặt — hình ảnh của \"vị thẩm phán trong đầu\".",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Farmer Who Lost His Horse",
+    "slug": "the-magic-of-broken-plans",
+    "coverImage": "/images/blog/the-magic-of-broken-plans.webp",
+    "imageAlt": "A person standing calmly at a rain-streaked window after a plan fell through, a closed planner on the sill, a packed bag by the door.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person standing calmly at a rain-streaked apartment window after a careful plan has just fallen apart, holding a cooling cup and watching the wet street below, set in a small apartment by a window in the evening after rain, representing the strange grace of a loss that may turn out to be a blessing. The scene includes a still posture and a loosened grip on the cup and rain beading on the glass, a closed planner left on the sill, a packed bag set down by the door, and blurred yellow streetlights reflecting on the wet road. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đứng lặng bên cửa sổ mưa sau khi kế hoạch đổ vỡ, vali đã xếp bị bỏ lại — tinh thần \"Tái ông thất mã\", buông điều ngoài tầm kiểm soát.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Midnight Library — On the lives I keep imagining I should be living",
+    "slug": "the-midnight-library",
+    "coverImage": "/images/blog/the-midnight-library.webp",
+    "imageAlt": "A person reaching to pull one book from a tall home bookshelf late at night under a single warm lamp.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a person standing before a tall home bookshelf late at night, reaching up to ease a single book slightly out from the rows, set in a quiet living room lit by one warm reading lamp, representing the ache of wondering about all the lives we imagine we should be living. The scene includes a stretched arm and bare feet on the floor and a slight backward lean and small wooden stepstool, a mug left forgotten on a shelf, slippers kicked aside, and books leaning at uneven angles. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đứng trước kệ sách lúc khuya rút một cuốn ra — gợi những cuộc đời lẽ ra mình đã sống, đúng tinh thần The Midnight Library.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Night the Screen Turned Red",
+    "slug": "the-night-the-screen-turned-red",
+    "coverImage": "/images/blog/the-night-the-screen-turned-red.webp",
+    "imageAlt": "A tired young developer at a cramped desk at midnight, a red error glow from the laptop, one hand pressed to the forehead.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young developer late at night at a cramped home desk, the laptop screen casting a faint red error glow across their tired face and one hand pressed to the forehead, set in a small bedroom office around midnight, representing the wave of imposter syndrome when a build breaks and you wonder if you belong in this field. The scene includes a slumped posture and an elbow propped on the desk and cold mug of coffee, a phone turned face-down, a tangle of charger cables, a hoodie pulled on, and a curling sticky note on the monitor edge. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đêm khuya trước laptop sáng đỏ báo lỗi, tay ôm trán — diễn tả hội chứng kẻ mạo danh khi hệ thống sập.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Night I Stopped Hating the Horns",
+    "slug": "the-noise-i-learned-to-love",
+    "coverImage": "/images/blog/the-noise-i-learned-to-love.webp",
+    "imageAlt": "A person on a small balcony at night looking down at a street full of motorbike lights.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person leaning on the railing of a small apartment balcony late at night, seen from behind and slightly to the side, looking down at a busy Vietnamese street full of moving motorbike headlights, set in a narrow high-floor balcony of an ordinary urban apartment block, representing learning to hear city noise as proof of ordinary life moving around you. The scene includes relaxed shoulders and one hand loosely holding a glass of water and laundry clipped on a line above, a potted plant in a recycled tin, blurred yellow streetlights and a haze of traffic far below. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người đứng ban công đêm nhìn xuống dòng xe ồn ào dưới phố thể hiện khoảnh khắc thôi ghét tiếng còi và nhận ra đó là nhịp đập của sự sống.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The 2 A.M. Brain That Won't Power Down",
+    "slug": "the-overthinking-brain-at-2am",
+    "coverImage": "/images/blog/the-overthinking-brain-at-2am.webp",
+    "imageAlt": "A person lying awake in a dim bedroom at 2am, laptop closed and phone face-down on the sheets.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person lying awake on their side in bed at 2am with eyes open in the dark, set in a small dim bedroom with thin curtains glowing faintly from street lights outside, representing the private restlessness of an overthinking mind that cannot switch off at night. The scene includes a hand resting near the pillow and a slightly tense posture and a closed laptop pushed to the foot of the bed, a phone face-down on the rumpled sheet, a half-drunk glass of water on the floor and a tangle of blanket. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh nằm thao thức 2 giờ sáng với laptop đã gập và điện thoại úp xuống diễn tả cái đầu overthinking không chịu tắt máy.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Power of a Terrible First Draft",
+    "slug": "the-power-of-a-terrible-first-draft",
+    "coverImage": "/images/blog/the-power-of-a-terrible-first-draft.webp",
+    "imageAlt": "A hand sketching a rough wireframe in pencil beside crumpled, crossed-out drafts.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person's hand sketching a rough, imperfect interface wireframe in pencil, captured mid-stroke, set in a slightly cluttered home desk by daylight, representing the courage to begin with something rough instead of waiting for perfection. The scene includes a relaxed gripping hand with graphite-smudged fingers and several crumpled and crossed-out paper drafts pushed aside, an eraser with shavings, a tablet showing a messy unfinished layout and a cooling cup of tea. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Bàn tay đang phác thảo nguệch ngoạc giữa đống bản nháp gạch xoá thể hiện sức mạnh của việc dám tạo ra một bản nháp tồi tệ đầu tiên.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Smile, Nod, and... Do Absolutely Nothing",
+    "slug": "the-quiet-art-of-not-caring",
+    "coverImage": "/images/blog/the-quiet-art-of-not-caring.webp",
+    "imageAlt": "A person sitting calmly at a cafe, unbothered, while someone talks at the next table.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young woman sitting calmly alone at a small cafe table, gaze drifting away with a faint unbothered half-smile while a blurred person gestures and talks at the next table, set in a cozy Vietnamese street-side cafe in the afternoon, representing protecting inner peace by refusing to absorb every careless opinion. The scene includes loose relaxed shoulders and a hand resting around a glass of iced tea and a tote bag hooked on the chair, a phone left face-down on the table, condensation rings on the metal table and a plastic stool. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ngồi thản nhiên ở quán cà phê mặc một người đang nói cạnh bên diễn tả nghệ thuật phớt lờ có chọn lọc, bảo vệ sự bình yên của mình.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Quiet Power of Doing Less",
+    "slug": "the-quiet-power-of-doing-less",
+    "coverImage": "/images/blog/the-quiet-power-of-doing-less.webp",
+    "imageAlt": "A person leaning back from a closed laptop, eyes closed, in a calm sunlit room.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person pausing from work, leaning back in a chair with hands behind the head and eyes closed, breathing, set in a calm sunlit room in late afternoon, representing finding strength in doing less, pausing, and choosing only what matters. The scene includes an unhurried loosened posture and a closed laptop, a mostly empty paper planner with very few items, a glass of water and soft curtains barely moving in a breeze. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Khoảnh khắc ngả lưng dừng tay, thở, bên cuốn lịch gần như trống thể hiện sức mạnh lặng lẽ của việc làm ít lại.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Rain That Soaked My Plans",
+    "slug": "the-rain-that-soaked-my-plans",
+    "coverImage": "/images/blog/the-rain-that-soaked-my-plans.webp",
+    "imageAlt": "A soaked person sheltering under an awning in a downpour, hugging a bag, with a wry smile.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sheltering under a shop awning during a sudden heavy downpour, soaked, with a wry tired smile, set in a wet Vietnamese street where rain hammers the pavement and yellow light reflects off the road, representing accepting the sudden collapse of a plan without losing yourself. The scene includes a slightly hunched dripping posture hugging a bag to the chest and a damp canvas backpack protecting a laptop, water-soaked shoes, droplets running off the awning edge and a blurred motorbike splashing past. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người ướt sũng trú mưa dưới hiên, ôm túi đựng laptop, cười khổ thể hiện việc buông bỏ những thứ ngoài tầm kiểm soát khi kế hoạch bị một cơn mưa xoá sạch.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Rejection That Saved Me",
+    "slug": "the-rejection-that-saved-me",
+    "coverImage": "/images/blog/the-rejection-that-saved-me.webp",
+    "imageAlt": "A person on the edge of a bed lowering a phone after reading a rejection, in soft afternoon light.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting on the edge of their bed holding a phone showing a just-read rejection, shoulders dropping for a moment, set in a small quiet bedroom with soft afternoon light, representing the quiet relief of realizing a rejection may have protected your path. The scene includes a loosened hand letting the phone rest on the knee and a calm exhale and a half-packed tote bag by the door, a cup of tea gone cold on the nightstand, a creased notebook and a window letting in returning light. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đọc xong tin từ chối rồi buông điện thoại xuống, thở ra nhẹ nhõm thể hiện lời từ chối hoá ra lại là sự bảo vệ, dẫn mình về đúng nơi thuộc về.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Right to Change Your Mind",
+    "slug": "the-right-to-change-your-mind",
+    "coverImage": "/images/blog/the-right-to-change-your-mind.webp",
+    "imageAlt": "A person on the floor smiling while scrolling old posts, an old diary open beside them.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting cross-legged on the floor by the bed, smiling faintly while scrolling far back through old posts on a phone, set in a lived-in bedroom in warm evening lamplight, representing making peace with an older self and allowing your views to grow. The scene includes a softened amused posture and a hand half-covering a smile and an old worn diary open beside them, a mug of tea, a small stack of past notebooks and a string of warm fairy lights. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ngồi đọc lại status và cuốn sổ cũ của chính mình rồi mỉm cười thể hiện quyền được thay đổi quan điểm và làm hoà với phiên bản cũ.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Sự lãng mạn của những thất bại không ai hay biết",
+    "slug": "the-romance-of-private-failures",
+    "coverImage": "/images/blog/the-romance-of-private-failures.webp",
+    "imageAlt": "A tired young woman resting on a dim apartment stairwell at night, still holding a worn planner.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a tired young woman sitting alone on the concrete steps of an apartment-block stairwell late at night, seen from the side and slightly behind so her face stays unclear, set in a dim Vietnamese walk-up building with a single flickering fluorescent light overhead, representing the quiet dignity of the failures no one else ever sees. The scene includes her shoulders sagging against the wall while she still grips a worn planner notebook and honest details — scuffed sneakers, a canvas tote bag slumped on the step beside her, a half-finished bottle of water, house keys still in her hand. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ngồi nghỉ trên cầu thang chung cư khuya mà vẫn ôm cuốn sổ kế hoạch — những lần thất bại âm thầm không ai thấy nhưng vẫn không bỏ cuộc.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Perfectionism Isn't a High Standard — It's a Shield",
+    "slug": "the-shield-we-call-perfectionism",
+    "coverImage": "/images/blog/the-shield-we-call-perfectionism.webp",
+    "imageAlt": "A young designer hunched over a laptop late at night, endlessly nudging one tiny detail.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young designer hunched over a laptop very late at night, photographed from just behind her shoulder so her face is hidden, set in a small dim bedroom-office lit only by the cold glow of the screen and one warm desk lamp, representing the exhaustion hidden behind perfectionism. The scene includes her hand frozen on the trackpad nudging a single tiny detail back and forth and honest details — a cold, barely-touched cup of tea, crumpled sticky notes, a hoodie draped over the chair, a slumped late-night posture. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Thức khuya chỉnh đi chỉnh lại một chi tiết nhỏ đến kiệt sức — cầu toàn là tấm khiên che nỗi sợ, không phải tiêu chuẩn cao.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Stranger on the Afternoon Bus",
+    "slug": "the-stranger-on-the-bus",
+    "coverImage": "/images/blog/the-stranger-on-the-bus.webp",
+    "imageAlt": "Two strangers, one young and one elderly, talking gently on a city bus in warm afternoon light.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of two strangers sitting side by side on a late-afternoon city bus — a young commuter and an elderly passenger mid-conversation, both in soft profile and partial silhouette so faces are not identifiable, set in a worn Vietnamese public bus with warm street light and neon shopfronts smearing past the window, representing an unexpected moment of human warmth in an ordinary commute. The scene includes the older person's weathered hand gesturing gently while the younger one leans in to listen and grounding details — a canvas tote on a lap, a paper ticket, worn handrails, condensation on the glass, blurred motorbikes outside. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Hai người lạ trò chuyện trên chuyến xe buýt chiều — thế giới vẫn còn tình người ấm áp giữa nhịp sống vội.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Don't Let Sadness Become Your Whole Name",
+    "slug": "the-trap-of-romanticizing-sadness",
+    "coverImage": "/images/blog/the-trap-of-romanticizing-sadness.webp",
+    "imageAlt": "A young woman at a small bathroom sink in soft morning light, just after washing her face.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young woman standing at a small bathroom sink in early morning light, just after washing her face, seen from behind toward a fogged, only half-clear mirror so her reflection stays soft and unidentifiable, set in a modest tiled Vietnamese bathroom, representing the decision not to let sadness become your whole identity. The scene includes water still dripping from her chin as one hand reaches for a towel and honest details — a damp face towel, droplets sliding down the mirror, a tube of skincare on the ledge, soft warm light through a frosted window. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Sáng hôm sau rửa mặt trước gương — chọn bước tiếp thay vì để nỗi buồn trở thành toàn bộ con người mình.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "The Worst One in a Room Full of Brilliant People",
+    "slug": "the-worst-one-in-the-room",
+    "coverImage": "/images/blog/the-worst-one-in-the-room.webp",
+    "imageAlt": "A young student sitting at the back of a crowded auditorium as someone presents on the bright stage.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young student sitting alone in the back row of a crowded innovation-hub auditorium, viewed from behind over rows of heads so no face is identifiable, while a confident presenter stands blurred at the bright stage far ahead, set in the back row of a crowded innovation-hub auditorium with a bright stage far ahead, representing the quiet ache of feeling like the least capable person in a room full of brilliant people. The scene includes the student's slightly hunched shoulders and a hand resting on a plain notebook of beginner course modules and grounding details — a backpack between the feet, a lanyard, a half-finished water bottle, warm stage light glowing in the distance. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ngồi hàng ghế cuối nhìn người khác tự tin thuyết trình — cảm giác kém nhất trong căn phòng giỏi, nhưng vẫn ở lại cố gắng.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Twenty-One Is Not a Deadline",
+    "slug": "twenty-one-is-not-a-deadline",
+    "coverImage": "/images/blog/twenty-one-is-not-a-deadline.webp",
+    "imageAlt": "A young person sitting on the floor of a small room at night with a laptop, just after sending an application.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a twenty-one-year-old sitting on the floor of a small rented room at night, back against the side of the bed with a laptop balanced on the knees just after sending an internship application, seen from the side so the face stays unclear, set in a cramped Vietnamese student room, representing the wobbly in-between of being young and unsure that twenty-one is not a deadline. The scene includes a slow exhale in the slumped posture and a hand fallen away from the keyboard and — a printed CV marked up with pen, an unmade bed, a small desk fan, a half-finished instant-noodle bowl, faint fairy lights on the wall. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Bấm gửi đơn thực tập rồi ngồi thở dài trong phòng trọ nhỏ — tuổi 21 chênh vênh nhưng chưa phải hạn chót.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "What 'The Psychology of Money' Taught Me About How We Think",
+    "slug": "what-the-psychology-of-money-taught-me",
+    "coverImage": "/images/blog/what-the-psychology-of-money-taught-me.webp",
+    "imageAlt": "A young person at a small kitchen table at night, reviewing a handwritten spending notebook beside a paperback.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person at a small kitchen dining table on a quiet end-of-month evening, going over a handwritten spending notebook beside a dog-eared paperback, seen from the side with the face lowered and out of focus, set in a modest Vietnamese apartment kitchen under warm overhead light, representing a grounded, behavior-first way of thinking about money. The scene includes a hand resting on the open ledger page in a paused, thoughtful posture and — a few coins and folded receipts, a small calculator, a glass of water, a rice cooker softly steaming in the background. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Xem lại sổ chi tiêu cuối tháng bên cuốn sách — cách nghĩ về tiền dựa trên hành vi và sự trưởng thành, đúng tinh thần cuốn sách.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Khi sự tử tế của bạn bị lợi dụng",
+    "slug": "when-kindness-gets-used",
+    "coverImage": "/images/blog/when-kindness-gets-used.webp",
+    "imageAlt": "A tired young worker alone at a desk in a dim, nearly empty office late at night.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young office worker alone at a desk in a half-empty office late in the evening, quietly taking on a stack of someone else's work, seen from behind and to the side so the face is not identifiable, set in a dim Vietnamese open-plan office where most of the lights are already switched off, representing kindness slowly being taken advantage of and the need for boundaries. The scene includes weary shoulders and a hand rubbing the back of the neck while a phone on the desk lights up with yet another request and — two used coffee cups, a tote bag still hanging on the chair, a coat draped over the seat, blurred city lights through the window. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Ở lại làm hộ việc trong văn phòng tối muộn — sự tử tế bị lợi dụng và nhu cầu đặt ra ranh giới.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "When the Machine Is Faster Than You",
+    "slug": "when-the-machine-is-faster-than-you",
+    "coverImage": "/images/blog/when-the-machine-is-faster-than-you.webp",
+    "imageAlt": "A young designer leaning back from a glowing laptop at night, hand-drawn wireframes pushed aside on the desk.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young designer leaning back from a glowing laptop late at night, a freshly generated app interface on the screen, set in a small dim home-studio corner of a Vietnamese apartment lit by a single desk lamp, representing the quiet awe and faint sting of watching a machine do in seconds what took you months to learn. The scene includes one hand still resting on the trackpad and a half-turned posture caught between admiration and self-doubt and paper notebook of hand-sketched wireframes pushed aside, a cold mug, a phone lying face-down, and crooked sticky notes on the wall. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người trẻ ngồi trước màn hình AI vẽ ra giao diện trong khi bản nháp tay bị đẩy sang bên — vừa nể vừa chạnh lòng, đúng tinh thần bài về việc cố gắng khi máy nhanh hơn mình.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "You Can't Learn to Swim From the Shore",
+    "slug": "you-cant-learn-to-swim-from-the-shore",
+    "coverImage": "/images/blog/you-cant-learn-to-swim-from-the-shore.webp",
+    "imageAlt": "A young person sitting on the edge of a pool at dusk, feet in the water, hesitating before jumping in.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting on the wet tiled edge of a quiet public swimming pool at dusk, feet dipped in the water just before pushing off, set in a modest local pool with fading evening light on the surface, representing the moment of stopping all the over-planning and finally daring to begin. The scene includes shoulders hunched forward in hesitation and a hand gripping the pool edge and folded towel beside them, droplets running down the calves, an untouched water bottle, and soft ripples spreading across the lane. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Cảnh do dự bên mép hồ trước khi nhảy xuống nước thể hiện thông điệp: không thể học bơi bằng cách đứng trên bờ — phải bắt tay vào làm.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "You Don't Have to Be the Sun",
+    "slug": "you-dont-have-to-be-the-sun",
+    "coverImage": "/images/blog/you-dont-have-to-be-the-sun.webp",
+    "imageAlt": "A young person eating a simple bowl of noodles at a small kitchen table at night, content and unhurried.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person eating a simple bowl of instant noodles with a fried egg at a small kitchen table late in the evening, relaxed and quietly content, set in a tiny apartment kitchen with warm light and a soft city glow through the window, representing the peace of an ordinary life that is not a failure. The scene includes chopsticks paused mid-bite and a loose, unhurried posture and half-drunk glass of water, a phone lying face-down on the table, worn house slippers on the tiled floor, and a small potted plant on the sill. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Bữa tối giản dị một mình, bình yên, phố lên đèn ngoài cửa — đúng thông điệp bình phàm không phải thất bại, không cần làm mặt trời.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "You Don't Have to Have It All Figured Out",
+    "slug": "you-dont-have-to-have-it-all-figured-out",
+    "coverImage": "/images/blog/you-dont-have-to-have-it-all-figured-out.webp",
+    "imageAlt": "A young person with a backpack standing at a city crossroads at dusk, watching the motorbike traffic go by.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person standing alone at a busy city intersection at dusk, backpack hanging off one shoulder, looking out at the streaming motorbike traffic and unsure which way to go, set in a Vietnamese urban crossroads wrapped in golden-hour haze, representing the honest uncertainty of being young and not having it all figured out. The scene includes a slightly slumped, searching posture and a head turned toward the passing flow and backpack strap clutched in one hand, a phone held but not looked at, a canvas tote bag, and blurred scooter headlights and traffic lights behind. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Người trẻ đứng ở ngã tư chiều nhìn dòng xe, chưa biết rẽ đâu — hình ảnh đời thường của việc còn mơ hồ định hướng nhưng vẫn ổn.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "You Don't Owe Anyone a Filter",
+    "slug": "you-dont-owe-anyone-a-filter",
+    "coverImage": "/images/blog/you-dont-owe-anyone-a-filter.webp",
+    "imageAlt": "A young person lowering their phone mid-selfie in a bedroom in soft morning light, bare unretouched skin.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person sitting on the floor of a bedroom holding a phone up to the front camera in plain morning light, lowering it mid-selfie and choosing not to retouch their face, set in an ordinary bedroom with soft daylight from a curtained window, representing the quiet decision to stop apologizing for a real, unfiltered appearance. The scene includes a relaxed, slightly self-amused expression and natural untouched skin texture, and an unmade bed behind, a hair tie around the wrist, slightly messy hair and glass of water on the floor, the phone screen kept dim and blank. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Khoảnh khắc hạ điện thoại xuống, không chỉnh filter, để da mộc trong ánh sáng thật — đúng thông điệp ngừng xin lỗi vì vẻ ngoài nguyên bản.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "Your Own Timezone of Success",
+    "slug": "your-own-timezone-of-success",
+    "coverImage": "/images/blog/your-own-timezone-of-success.webp",
+    "imageAlt": "A young person setting their phone face-down on the sofa and turning back to a notebook under a warm lamp.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person on a sofa lowering their phone after scrolling past a friend's good news, then turning back to a small task resting in their lap, set in a small apartment living room under a warm evening lamp, representing the choice to live on your own timeline instead of comparing it to everyone else's. The scene includes a calm, resolved posture and eyes drifting from the screen back to the work in hand and phone laid face-down on the cushion, a notebook open to a half-written page, a mug within reach, and socked feet tucked up under a soft blanket. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đặt điện thoại xuống sau khi thấy thành tựu của bạn bè rồi quay lại việc nhỏ của mình — hình ảnh sống theo múi giờ riêng, ngừng so timeline.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  },
+  {
+    "title": "You're Not Running Late",
+    "slug": "youre-not-running-late",
+    "coverImage": "/images/blog/youre-not-running-late.webp",
+    "imageAlt": "A young person at a night bus stop calmly watching a bus pull away, a paper cup of tea in hand.",
+    "imagePrompt": "Ultra realistic candid documentary lifestyle photography of a young person standing alone at an evening bus stop watching a bus pull away down the street, calm rather than panicked, hands in their pockets, set in a Vietnamese city street under warm streetlight with faint reflections on the wet road, representing the quiet realization that you are not actually running late on your own life. The scene includes a steady, unhurried stance and a soft gaze following the departing bus and canvas tote bag on one shoulder, a paper cup of tea in one hand, the red tail-lights of the bus glowing in the distance, and a faint mist of breath in the cool air. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.",
+    "imageConcept": "Đứng ở trạm xe buýt tối nhìn chuyến vừa rời một cách bình thản — đúng tinh thần Time Anxiety: bạn không hề trễ chuyến nào của đời mình.",
+    "imageStyle": "Ultra realistic candid documentary lifestyle photography, warm natural light, cinematic realism, Vietnamese/Asian urban life atmosphere when suitable, subtle film grain, emotionally honest human moment, no text, no logo, no watermark.",
+    "needsRegeneration": true
+  }
+]

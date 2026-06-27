@@ -24,6 +24,10 @@ export interface Post extends PostFrontmatter {
   readingTime: string;
   /** Per-locale variants (keyed by language code, always includes "en"). */
   i18n?: Record<string, PostTranslation>;
+  /** Resolved cover src (server-side); null when no image file exists yet. */
+  coverImage?: string | null;
+  /** Alt text for the cover illustration. */
+  coverAlt?: string;
 }
 
 export interface ProjectFrontmatter extends PostFrontmatter {
