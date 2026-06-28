@@ -9,7 +9,7 @@
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-27"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0n2cuigw46z45.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0sjhn400j-vv7.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0ufs31-i2quci.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"2yPkc-Iec_UbxUcgj-iGL"}
+2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-28"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0n2cuigw46z45.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0sjhn400j-vv7.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0ufs31-i2quci.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"F1V_YrkyPJ9yc4OymuyDf"}
 c:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0sjhn400j-vv7.js","/_next/static/chunks/0ufs31-i2quci.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
 d:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0sjhn400j-vv7.js","/_next/static/chunks/0ufs31-i2quci.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
 e:I[64844,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0sjhn400j-vv7.js","/_next/static/chunks/0ufs31-i2quci.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"RouteTextPalette"]
@@ -40,7 +40,163 @@ b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0n2cuigw46z45
 18:["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-5","children":[["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]],["$","a",null,{"href":"/cv.pdf","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground","children":[["$","$L22",null,{"ref":"$undefined","iconNode":[["path",{"d":"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z","key":"1oefj6"}],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5","key":"wfsgrz"}],["path",{"d":"M10 9H8","key":"b1mrlr"}],["path",{"d":"M16 13H8","key":"t4e002"}],["path",{"d":"M16 17H8","key":"z1uh3a"}]],"className":"lucide-file-text h-3.5 w-3.5"}],"View CV"]}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L23",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
 19:["$","$L24",null,{}]
 25:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0sjhn400j-vv7.js","/_next/static/chunks/0ufs31-i2quci.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
-26:T1053,
+26:T1270,
+Eleven at night, I sat in front of my phone, my thumb stopped on a name. A number I'd once known so well I could dial it without looking. I held the delete button. A little dialog asked, *"Are you sure?"*, and I sat there a long time, as if the phone were asking a much bigger question.
+
+A few small things were still scattered on my desk. An old movie ticket. A folded note. Things that a few months ago I'd handled like proof of something very real. Now, looking at them, I just felt empty. Not sad. Empty. Like a room someone has just moved out of, leaving pale rectangles on the wall where a picture used to hang.
+
+---
+
+## When the storm first hit
+
+I still remember the moment everything broke. It wasn't gentle. It came like a real storm — a cruel sentence, a silence stretched so long it became the answer, a door closing before I'd even understood why.
+
+And I did exactly what everyone does: I clung. I sent one more text, then one more. I apologized for things I wasn't even sure were my fault. I replayed the most frightening question in my head a hundred times: *"Why would they treat me like this?"* I dug through every old memory looking for a clue, as if understanding the reason would let me patch the whole thing back together.
+
+I panicked. Because back then I believed the person walking out the door was carrying off an important piece of me.
+
+---
+
+## The "but I've put in so much" trap
+
+It took me a long while to name the thing that had kept me there. In economics they call it *sunk cost* — the way you force yourself to finish a bad movie just because you've already given it an hour, even though finishing only costs you another one. Relationships fall for the exact same trap.
+
+I held onto something that had rotted from the inside, not because it still gave me anything, but because I'd poured so much into it. So much time, so many old promises, so many versions of myself who'd believed *this is the one who stays.* Letting go meant admitting all those years were meaningless — and that hurt too much, so I picked the easier story: *just try a little harder.*
+
+I patched. I braced. I shrank myself to fit the shape that was comfortable for the other person. I turned one-sided conversations into something normal, turned exhaustion into the price of closeness. And I called all of it love.
+
+<KeyTakeaway label="A note to myself" tone="sage">
+The time I gave someone was a gift I once chose to give, not a chain that keeps me here. Once it's given, it's given — I don't need to torment myself to claw it back.
+</KeyTakeaway>
+
+Maybe because I was so good at lying to myself, the universe had to send a storm. A breakage big enough, cruel enough, to tear me out of the shape I'd willingly folded myself into. The me of that time wasn't brave enough to walk out alone. So some hand pushed the door open for me instead.
+
+---
+
+## The space after the storm
+
+Then the wind stopped. The tears dried. And one ordinary morning I woke up and my chest no longer felt heavy.
+
+Looking back calmly, I realized something that startled me: that storm didn't take a wonderful person from me. It only swept away a mask. The one I'd painted onto them with all my own hope, so I wouldn't have to look straight at the truth underneath.
+
+What actually got swept off were the calls I was always the first to make. The habit of reading someone's mood before I dared to be myself. The quiet using, wrapped in cellophane so thin I'd chosen not to see it. The evenings I came home drained, wondering how I could feel so alone beside someone so close.
+
+When a person who no longer fits walks away, they don't steal your space. They give it back. A clean stretch of air to breathe in. And that emptiness, it turns out, isn't nearly as lonely as I feared — it's room for the people who fit better to walk in.
+
+> Some people enter your life to travel one stretch of it with you, then turn down a different road. You don't have to keep them forever to prove that stretch was beautiful.
+
+---
+
+That night, I finally tapped "Delete." No fanfare. No long message to explain — because I owe my own peace more than I owe an explanation to someone who's only waiting to judge.
+
+I don't hate them. I don't even ache anymore. I keep the good memories, and I honestly hope that person is okay — just from a little further away. Those two things, it turns out, can live side by side.
+
+If your thumb is hovering somewhere tonight too, I just want to say: if someone chooses to leave in the middle of a storm, open the door and let them go. Don't chase to hold them. And maybe, one day, you'll find yourself grateful for that storm — for clearing away the things, and the people, that were never really yours to begin with.
+27:T1270,
+Eleven at night, I sat in front of my phone, my thumb stopped on a name. A number I'd once known so well I could dial it without looking. I held the delete button. A little dialog asked, *"Are you sure?"*, and I sat there a long time, as if the phone were asking a much bigger question.
+
+A few small things were still scattered on my desk. An old movie ticket. A folded note. Things that a few months ago I'd handled like proof of something very real. Now, looking at them, I just felt empty. Not sad. Empty. Like a room someone has just moved out of, leaving pale rectangles on the wall where a picture used to hang.
+
+---
+
+## When the storm first hit
+
+I still remember the moment everything broke. It wasn't gentle. It came like a real storm — a cruel sentence, a silence stretched so long it became the answer, a door closing before I'd even understood why.
+
+And I did exactly what everyone does: I clung. I sent one more text, then one more. I apologized for things I wasn't even sure were my fault. I replayed the most frightening question in my head a hundred times: *"Why would they treat me like this?"* I dug through every old memory looking for a clue, as if understanding the reason would let me patch the whole thing back together.
+
+I panicked. Because back then I believed the person walking out the door was carrying off an important piece of me.
+
+---
+
+## The "but I've put in so much" trap
+
+It took me a long while to name the thing that had kept me there. In economics they call it *sunk cost* — the way you force yourself to finish a bad movie just because you've already given it an hour, even though finishing only costs you another one. Relationships fall for the exact same trap.
+
+I held onto something that had rotted from the inside, not because it still gave me anything, but because I'd poured so much into it. So much time, so many old promises, so many versions of myself who'd believed *this is the one who stays.* Letting go meant admitting all those years were meaningless — and that hurt too much, so I picked the easier story: *just try a little harder.*
+
+I patched. I braced. I shrank myself to fit the shape that was comfortable for the other person. I turned one-sided conversations into something normal, turned exhaustion into the price of closeness. And I called all of it love.
+
+<KeyTakeaway label="A note to myself" tone="sage">
+The time I gave someone was a gift I once chose to give, not a chain that keeps me here. Once it's given, it's given — I don't need to torment myself to claw it back.
+</KeyTakeaway>
+
+Maybe because I was so good at lying to myself, the universe had to send a storm. A breakage big enough, cruel enough, to tear me out of the shape I'd willingly folded myself into. The me of that time wasn't brave enough to walk out alone. So some hand pushed the door open for me instead.
+
+---
+
+## The space after the storm
+
+Then the wind stopped. The tears dried. And one ordinary morning I woke up and my chest no longer felt heavy.
+
+Looking back calmly, I realized something that startled me: that storm didn't take a wonderful person from me. It only swept away a mask. The one I'd painted onto them with all my own hope, so I wouldn't have to look straight at the truth underneath.
+
+What actually got swept off were the calls I was always the first to make. The habit of reading someone's mood before I dared to be myself. The quiet using, wrapped in cellophane so thin I'd chosen not to see it. The evenings I came home drained, wondering how I could feel so alone beside someone so close.
+
+When a person who no longer fits walks away, they don't steal your space. They give it back. A clean stretch of air to breathe in. And that emptiness, it turns out, isn't nearly as lonely as I feared — it's room for the people who fit better to walk in.
+
+> Some people enter your life to travel one stretch of it with you, then turn down a different road. You don't have to keep them forever to prove that stretch was beautiful.
+
+---
+
+That night, I finally tapped "Delete." No fanfare. No long message to explain — because I owe my own peace more than I owe an explanation to someone who's only waiting to judge.
+
+I don't hate them. I don't even ache anymore. I keep the good memories, and I honestly hope that person is okay — just from a little further away. Those two things, it turns out, can live side by side.
+
+If your thumb is hovering somewhere tonight too, I just want to say: if someone chooses to leave in the middle of a storm, open the door and let them go. Don't chase to hold them. And maybe, one day, you'll find yourself grateful for that storm — for clearing away the things, and the people, that were never really yours to begin with.
+28:T1935,
+Mười một giờ đêm, mình ngồi trước màn hình điện thoại, ngón tay dừng lại ở một cái tên. Một số mình từng thuộc lòng đến mức không cần nhìn cũng bấm đúng. Mình giữ nút xoá. Cái hộp thoại nhỏ hiện lên hỏi "Bạn có chắc không?", và mình ngồi đó, thật lâu, như thể cái máy đang hỏi một câu lớn hơn nhiều.
+
+Trên bàn vẫn còn vài món lặt vặt. Một tấm vé xem phim cũ. Một mẩu giấy nhắn. Những thứ mà mấy tháng trước mình còn nâng niu như bằng chứng cho một điều gì đó rất thật. Giờ nhìn lại, mình chỉ thấy trống. Không phải buồn. Trống. Như một căn phòng vừa có người dọn đồ đi mất, để lại những vệt sáng hình chữ nhật trên tường nơi từng treo một bức ảnh.
+
+---
+
+## Khi cơn bão vừa ập tới
+
+Mình vẫn nhớ cái khoảnh khắc mọi thứ đổ vỡ. Nó không nhẹ nhàng. Nó ập tới như một cơn bão thật — một câu nói tàn nhẫn, một sự im lặng kéo dài đến mức thành câu trả lời, một cánh cửa đóng lại mà mình còn chưa kịp hiểu vì sao.
+
+Và mình đã làm đúng cái điều mà ai cũng làm: mình níu. Mình nhắn thêm một tin nữa, rồi một tin nữa. Mình xin lỗi cho những thứ mình còn không chắc là lỗi của mình. Mình tua lại trong đầu cả trăm lần cái câu hỏi đáng sợ nhất: *"Tại sao họ lại đối xử với mình như vậy?"* Mình lục từng kỷ niệm cũ để tìm một dấu hiệu, như thể nếu hiểu được lý do, mình sẽ vá lại được mọi thứ.
+
+Mình hoảng loạn. Vì lúc đó mình tin rằng người vừa bước ra khỏi cửa đang mang theo một mảnh ghép quan trọng của mình.
+
+---
+
+## Cái bẫy "tiếc công"
+
+Phải khá lâu sau mình mới gọi được tên thứ đã giữ mình ở lại lâu đến thế. Trong kinh tế người ta gọi nó là *chi phí chìm* — kiểu bạn cố ngồi xem hết một bộ phim dở chỉ vì đã lỡ bỏ ra một tiếng đồng hồ, dù xem tiếp chỉ tốn thêm một tiếng nữa. Mối quan hệ dính y hệt cái bẫy đó.
+
+Mình bám vào một thứ đã mục từ bên trong, không phải vì nó còn cho mình điều gì, mà vì mình đã đổ vào đó quá nhiều. Quá nhiều thời gian, quá nhiều lời hứa cũ, quá nhiều phiên bản của mình từng tin rằng "người này là người ở lại". Buông tay nghĩa là thừa nhận tất cả những năm tháng ấy là vô nghĩa — mà điều đó thì đau quá, nên mình chọn cách dễ hơn: tự nói với mình rằng "chỉ cần cố thêm chút nữa thôi".
+
+Mình vá. Mình gồng. Mình thu nhỏ bản thân lại cho vừa cái khuôn mà người kia thấy dễ chịu. Mình biến những cuộc trò chuyện một chiều thành điều bình thường, biến sự mệt mỏi thành cái giá phải trả của tình thân. Và mình gọi tất cả những thứ đó là yêu thương.
+
+<KeyTakeaway label="Mình tự nhắc mình" tone="sage">
+Thời gian mình đã trao cho một người là món quà mình từng chọn để tặng, không phải sợi xích buộc mình phải ở lại. Đã tặng là tặng rồi — mình không cần giày vò bản thân để đòi nó về.
+</KeyTakeaway>
+
+Có lẽ vì mình giỏi tự lừa đến thế, nên vũ trụ mới phải dùng đến một cơn bão. Một sự đổ vỡ đủ lớn, đủ tàn nhẫn, để bứt mình ra khỏi cái khuôn mà mình tự nguyện chui vào. Mình của lúc đó không đủ can đảm để tự bước ra. Nên có một bàn tay nào đó đã thay mình đẩy cánh cửa.
+
+---
+
+## Khoảng trống sau bão
+
+Rồi gió cũng ngừng thổi. Nước mắt cũng khô. Và một buổi sáng nào đó, mình tỉnh dậy mà ngực không còn nặng nữa.
+
+Khi bình tĩnh nhìn lại, mình mới giật mình nhận ra một điều: cơn bão đó không cuốn đi của mình một người tuyệt vời. Nó chỉ cuốn trôi một lớp mặt nạ. Cái lớp mà mình đã tự sơn lên người kia bằng tất cả hy vọng của mình, để khỏi phải nhìn thẳng vào sự thật bên dưới.
+
+Thứ thực sự bị cuốn đi là những cuộc gọi mình luôn là người bấm trước. Là cái cảm giác phải dò xét tâm trạng người khác trước khi dám là chính mình. Là sự lợi dụng được gói trong lớp giấy bóng của tình thân, mỏng đến mức mình cố tình không nhìn. Là những buổi tối mình về nhà mà thấy cạn kiệt, tự hỏi sao ở cạnh một người thân thiết mà mình lại cô đơn đến vậy.
+
+Khi một người không còn phù hợp rời đi, họ không lấy mất không gian của mình. Họ trả nó lại. Một khoảng không trong lành để mình được thở. Và khoảng trống đó, hoá ra, chẳng hề cô độc như mình tưởng — nó là chỗ cho những người xứng đáng hơn bước vào.
+
+> Có những người đi vào đời bạn để cùng đi một đoạn, rồi rẽ sang một con đường khác. Bạn không cần giữ họ mãi mãi để chứng minh đoạn đường ấy từng đẹp.
+
+---
+
+Tối đó, cuối cùng mình cũng bấm "Xoá". Không kèn trống. Không một dòng tin nhắn dài để giải thích — vì mình nợ sự bình yên của chính mình nhiều hơn là nợ một lời giải thích cho người vốn chỉ đang chờ để phán xét.
+
+Mình không hận. Cũng không còn tiếc. Mình giữ lại những kỷ niệm đẹp, và thật lòng mong người đó ổn — chỉ là mong từ một khoảng cách xa hơn một chút. Hai điều đó, hoá ra, có thể sống cạnh nhau.
+
+Nếu tối nay ngón tay bạn cũng đang lưỡng lự đâu đó, mình chỉ muốn nói: nếu có ai chọn rời đi giữa cơn bão, cứ mở cửa cho họ đi. Đừng đuổi theo để giữ. Và biết đâu, một ngày nào đó, bạn cũng sẽ thấy biết ơn cơn bão ấy — vì nó đã dọn sạch giúp bạn những điều, và những người, vốn dĩ chưa từng thuộc về bạn.
+29:T1053,
 For over two weeks, every single day, I got to fill in a green square.
 
 I use a habit-tracking app, and honestly, watching that chain of green squares stretch a little longer each day is a small joy I'm slightly addicted to. Woke up early: green. Ate decently: green. Studied a bit: green. Sixteen days straight, no gaps. I felt like I was becoming someone else — tidier, more trustworthy.
@@ -84,7 +240,7 @@ So I forgave myself those three days. Quickly, cleanly, no drawn-out self-floggi
 A lazy day doesn't tell you who you are. It only says that on that day you were tired, or life was a little hard. That's all. You're defined by the long-term trend, not by one or two off-beat dots.
 
 So if your app just broke a beautiful streak, I'll give you a hug. Truly. And then I'll pat your shoulder and say: tomorrow, open it back up, fill in one green square, carry on as if nothing happened. Let the old streak go. The streak that matters most — the streak of every time you chose to come back — is still growing longer every time you begin again.
-27:T1053,
+2a:T1053,
 For over two weeks, every single day, I got to fill in a green square.
 
 I use a habit-tracking app, and honestly, watching that chain of green squares stretch a little longer each day is a small joy I'm slightly addicted to. Woke up early: green. Ate decently: green. Studied a bit: green. Sixteen days straight, no gaps. I felt like I was becoming someone else — tidier, more trustworthy.
@@ -128,7 +284,7 @@ So I forgave myself those three days. Quickly, cleanly, no drawn-out self-floggi
 A lazy day doesn't tell you who you are. It only says that on that day you were tired, or life was a little hard. That's all. You're defined by the long-term trend, not by one or two off-beat dots.
 
 So if your app just broke a beautiful streak, I'll give you a hug. Truly. And then I'll pat your shoulder and say: tomorrow, open it back up, fill in one green square, carry on as if nothing happened. Let the old streak go. The streak that matters most — the streak of every time you chose to come back — is still growing longer every time you begin again.
-28:T14d5,
+2b:T14d5,
 Hơn hai tuần, ngày nào mình cũng được tô một ô xanh.
 
 Mình dùng một cái app theo dõi thói quen, và thú thật, nhìn cái chuỗi ô xanh nối nhau dài ra mỗi ngày là một niềm vui nhỏ mà mình hơi nghiện. Dậy sớm: xanh. Ăn uống tử tế: xanh. Tự học một chút: xanh. Mười sáu ngày liền không sót. Mình thấy mình đang là một người khác — gọn gàng hơn, đáng tin hơn.
@@ -172,7 +328,7 @@ Nên mình tha thứ cho mình ba ngày đó. Nhanh thôi, gọn thôi, không d
 Một ngày lười biếng không nói lên bạn là ai. Nó chỉ nói rằng hôm đó bạn mệt, hoặc đời hôm đó hơi khó. Vậy thôi. Con người bạn được định nghĩa bởi cái xu hướng dài hạn, chứ không phải bởi một hai cái chấm lạc nhịp.
 
 Nên nếu cái app của bạn vừa đứt một chuỗi đẹp, mình ôm bạn một cái. Thật đấy. Rồi ngay sau đó mình vỗ vai bạn và nói: ngày mai, mở nó ra, tô lại một ô xanh, làm tiếp như chưa từng có chuyện gì. Chuỗi cũ đứt thì kệ nó. Cái chuỗi quan trọng nhất — cái chuỗi của những lần bạn chịu quay lại — vẫn đang dài thêm mỗi lần bạn bắt đầu lại.
-29:T118f,
+2c:T118f,
 I just flipped back through the planner I bought at the start of the month. The first three pages are beautiful — I even ruled the boxes, added color, wrote down ten goals grand enough to sound like a whole new life. Exercise an hour every morning. Read fifty pages a day. Learn a language. Wake up at five...
 
 Then on the fourth page the handwriting gets messy. The fifth is blank. From the sixth on it's pure, silent white — like a gentle reproach that somehow stings more for being gentle.
@@ -216,7 +372,7 @@ I often hear people talk about compound interest with money — put in a little,
 So if you're staring at a blank notebook today and about to give up, I just want to say: don't write down ten grand goals again. Pick one thing, then make it tiny — so tiny it's impossible to fail.
 
 Then just do it. However silly, however small. Because one small thing done every day will, in time, quietly overtake every magnificent plan you only managed to keep for three days.
-2a:T118f,
+2d:T118f,
 I just flipped back through the planner I bought at the start of the month. The first three pages are beautiful — I even ruled the boxes, added color, wrote down ten goals grand enough to sound like a whole new life. Exercise an hour every morning. Read fifty pages a day. Learn a language. Wake up at five...
 
 Then on the fourth page the handwriting gets messy. The fifth is blank. From the sixth on it's pure, silent white — like a gentle reproach that somehow stings more for being gentle.
@@ -260,7 +416,7 @@ I often hear people talk about compound interest with money — put in a little,
 So if you're staring at a blank notebook today and about to give up, I just want to say: don't write down ten grand goals again. Pick one thing, then make it tiny — so tiny it's impossible to fail.
 
 Then just do it. However silly, however small. Because one small thing done every day will, in time, quietly overtake every magnificent plan you only managed to keep for three days.
-2b:T1657,
+2e:T1657,
 Mình vừa lật lại cuốn sổ kế hoạch mua hồi đầu tháng. Ba trang đầu chữ đẹp ơi là đẹp — mình còn cẩn thận kẻ khung, tô màu, ghi mười mục tiêu nghe hoành tráng như sắp đổi đời. Tập thể dục một tiếng mỗi sáng. Đọc năm mươi trang sách mỗi ngày. Học ngoại ngữ. Dậy lúc năm giờ...
 
 Rồi tới trang thứ tư, chữ bắt đầu nguệch ngoạc. Trang thứ năm bỏ trống. Từ trang thứ sáu trở đi là một màu trắng tinh, im lặng, như một lời trách nhẹ nhàng mà thấm.
@@ -304,104 +460,8 @@ Mình hay nghe người ta nói về lãi kép trong tiền bạc — bỏ vào 
 Nên nếu hôm nay bạn cũng đang nhìn một cuốn sổ trắng trơn và định buông xuôi, mình chỉ muốn nói: đừng đặt lại mười mục tiêu hoành tráng nữa. Chọn một việc thôi, rồi làm nó nhỏ xíu lại, nhỏ đến mức không thể nào thất bại.
 
 Rồi cứ làm. Dù nó có vớ vẩn, vụn vặt đến đâu. Vì một việc nhỏ làm đều mỗi ngày, lâu dần, sẽ âm thầm vượt qua mọi kế hoạch vĩ đại mà bạn chỉ giữ được đúng ba ngày.
-2c:T17eb,
-Màn hình Google Meet sáng xanh. Một câu hỏi vừa rơi xuống, nhẹ thôi, nhưng đủ làm tim mình hụt một nhịp. Người ta hỏi về một khái niệm kỹ thuật mình từng nghe qua, từng lướt qua, từng tự tin rằng "à cái này chắc mình biết sơ sơ". Nhưng đúng lúc cần nói thành lời, trong đầu mình chỉ còn một khoảng trắng rất sạch.
-
-Mình nhớ mình đã cười. Cái kiểu cười xã giao để mua thêm ba giây suy nghĩ. Ba giây đó dài kinh khủng. Trong đầu có hai người đang đánh nhau. Một người bảo: nói đại đi, nói vài thuật ngữ nghe có vẻ đúng, ai kiểm tra đâu. Người còn lại thì nhỏ hơn, nhưng khó chịu hơn: đừng diễn nữa, mày không biết thật mà.
-
-Cuối cùng mình nói: "Phần này hiện tại mình chưa nắm chắc. Để mình đọc lại rồi trả lời kỹ hơn."
-
-Căn phòng không nổ tung. Không ai đứng dậy chỉ tay vào mặt mình. Không có cái ghế nào bị kéo ra để đuổi mình khỏi ngành công nghệ. Chỉ có một cái gật đầu rất bình thường, rồi cuộc họp đi tiếp.
-
-Lạ là sau đó mình lại thấy nhẹ. Không phải nhẹ kiểu chiến thắng. Nhẹ kiểu vừa đặt xuống một cái ba lô mà mình đã đeo quá lâu: cái ba lô của việc phải luôn có vẻ như mình biết.
-
----
-
-## Cái sĩ diện rất chăm chỉ của người trẻ
-
-Ở tuổi hai mươi mốt, mình thấy xung quanh ai cũng có vẻ đang chạy rất nhanh. LinkedIn đầy chứng chỉ. Facebook đầy thành tích. Người ta nói về AI, cloud, product, data, startup bằng giọng như thể sinh ra đã hiểu mấy thứ đó. Nếu mình chậm một nhịp, mình lập tức thấy mình giống một đứa lạc lớp.
-
-Và vì sợ bị phát hiện là lạc lớp, mình bắt đầu học một kỹ năng rất nguy hiểm: giả vờ hiểu.
-
-Gật đầu khi nghe một thuật ngữ mới. Cười nhẹ khi người khác đùa về một công nghệ mình chưa từng dùng. Lưu một bài viết lại rồi không đọc, nhưng vẫn thấy yên tâm vì mình đã "biết nó tồn tại". Nhiều lúc mình không học thật. Mình chỉ đang thu thập đạo cụ để trông giống một người đang học.
-
-Cái này không hoàn toàn là lỗi của riêng mình. Môi trường hiện đại thưởng cho sự nhanh nhạy bề mặt. Ai trả lời nhanh nghe có vẻ giỏi. Ai nói "mình chưa biết" nghe có vẻ yếu. Thế là tụi mình học cách nói cho tròn, cho bóng, cho qua.
-
-Nhưng kiến thức không quan tâm mình diễn hay cỡ nào. Nó vẫn nằm đó, lạnh lùng. Không biết thì là không biết. Mình có phủ lên nó bao nhiêu lớp thuật ngữ, cái lỗ vẫn còn nguyên.
-
----
-
-## "Tôi không biết" không phải là dấu chấm hết
-
-Mình từng nghĩ nói "tôi không biết" giống như tự khai mình kém. Sau này mới thấy nó giống một cái cửa hơn. Chừng nào mình còn giả vờ biết, mình không thể học được. Vì muốn học, trước hết phải có một chỗ trống. Mà người đang bận trang trí cái trống rỗng của mình thành sự thông thái thì làm gì còn chỗ để đặt câu hỏi.
-
-Có lần mình ngồi đọc tài liệu về một framework mới. Đọc ba đoạn đầu đã muốn gập máy. Chữ nào cũng quen, câu nào cũng lạ. Nếu là mình trước đây, mình sẽ tự mắng: sao cái này người ta hiểu được mà mình không hiểu. Rồi mình sẽ lướt qua cho nhanh, đánh dấu "đã đọc" trong đầu, và tự cho phép mình sống tiếp với một sự hiểu biết rỗng.
-
-Hôm đó mình làm khác. Mình mở một trang note và viết dòng đầu tiên: "Mình không hiểu lifecycle của phần này." Viết ra nghe quê thật. Nhưng chính cái quê đó cứu mình. Từ một câu không biết rất cụ thể, mình tìm được câu hỏi cụ thể. Từ câu hỏi cụ thể, mình tìm được ví dụ cụ thể. Tới cuối buổi, mình vẫn chưa giỏi. Nhưng ít nhất mình không còn mơ hồ một cách sang chảnh nữa.
-
-> Có những câu "tôi không biết" làm mình nhỏ đi trong mắt cái tôi, nhưng làm mình lớn lên trong năng lực thật.
-
-Sự thành thật với lỗ hổng kiến thức không làm mình ngu hơn. Nó chỉ tước đi cái quyền được ảo tưởng. Mà đau nhất thường không phải là việc mình chưa biết, mà là việc mình không còn được giả vờ rằng mình đã biết.
-
-<KeyTakeaway label="Mình giữ lại điều này" tone="sage">
-Can đảm không phải lúc nào cũng là nói một câu thật sắc. Đôi khi can đảm chỉ là dám để một khoảng trống hiện ra, rồi kiên nhẫn lấp nó bằng học hỏi thật.
-</KeyTakeaway>
-
-Mình vẫn còn nhiều thứ không biết. Có ngày mình thấy chuyện đó đáng sợ. Có ngày mình thấy nó gần như buồn cười. Nhưng càng đi tiếp, mình càng tin rằng người đáng nể không phải người chưa bao giờ bí. Người đáng nể là người không biến cái bí của mình thành một màn trình diễn.
-
-Mình muốn trở thành kiểu người đó. Một người có thể nói "mình chưa biết" mà không thấy mình sụp đổ. Một người không dùng sự tự tin để che sự lười học. Một người đủ bình tĩnh để bắt đầu từ câu hỏi nhỏ nhất.
-
-Vì học thật thường bắt đầu rất xấu xí. Nó bắt đầu bằng mặt nóng lên, bằng lòng tự ái bị chạm, bằng cảm giác mình bé lại. Nhưng nếu mình chịu đứng yên ở chỗ bé đó đủ lâu, mình sẽ thấy một điều khá dịu dàng: không biết không phải là tội. Không chịu biết mình không biết mới là cái bẫy.
-2d:T17eb,
-Màn hình Google Meet sáng xanh. Một câu hỏi vừa rơi xuống, nhẹ thôi, nhưng đủ làm tim mình hụt một nhịp. Người ta hỏi về một khái niệm kỹ thuật mình từng nghe qua, từng lướt qua, từng tự tin rằng "à cái này chắc mình biết sơ sơ". Nhưng đúng lúc cần nói thành lời, trong đầu mình chỉ còn một khoảng trắng rất sạch.
-
-Mình nhớ mình đã cười. Cái kiểu cười xã giao để mua thêm ba giây suy nghĩ. Ba giây đó dài kinh khủng. Trong đầu có hai người đang đánh nhau. Một người bảo: nói đại đi, nói vài thuật ngữ nghe có vẻ đúng, ai kiểm tra đâu. Người còn lại thì nhỏ hơn, nhưng khó chịu hơn: đừng diễn nữa, mày không biết thật mà.
-
-Cuối cùng mình nói: "Phần này hiện tại mình chưa nắm chắc. Để mình đọc lại rồi trả lời kỹ hơn."
-
-Căn phòng không nổ tung. Không ai đứng dậy chỉ tay vào mặt mình. Không có cái ghế nào bị kéo ra để đuổi mình khỏi ngành công nghệ. Chỉ có một cái gật đầu rất bình thường, rồi cuộc họp đi tiếp.
-
-Lạ là sau đó mình lại thấy nhẹ. Không phải nhẹ kiểu chiến thắng. Nhẹ kiểu vừa đặt xuống một cái ba lô mà mình đã đeo quá lâu: cái ba lô của việc phải luôn có vẻ như mình biết.
-
----
-
-## Cái sĩ diện rất chăm chỉ của người trẻ
-
-Ở tuổi hai mươi mốt, mình thấy xung quanh ai cũng có vẻ đang chạy rất nhanh. LinkedIn đầy chứng chỉ. Facebook đầy thành tích. Người ta nói về AI, cloud, product, data, startup bằng giọng như thể sinh ra đã hiểu mấy thứ đó. Nếu mình chậm một nhịp, mình lập tức thấy mình giống một đứa lạc lớp.
-
-Và vì sợ bị phát hiện là lạc lớp, mình bắt đầu học một kỹ năng rất nguy hiểm: giả vờ hiểu.
-
-Gật đầu khi nghe một thuật ngữ mới. Cười nhẹ khi người khác đùa về một công nghệ mình chưa từng dùng. Lưu một bài viết lại rồi không đọc, nhưng vẫn thấy yên tâm vì mình đã "biết nó tồn tại". Nhiều lúc mình không học thật. Mình chỉ đang thu thập đạo cụ để trông giống một người đang học.
-
-Cái này không hoàn toàn là lỗi của riêng mình. Môi trường hiện đại thưởng cho sự nhanh nhạy bề mặt. Ai trả lời nhanh nghe có vẻ giỏi. Ai nói "mình chưa biết" nghe có vẻ yếu. Thế là tụi mình học cách nói cho tròn, cho bóng, cho qua.
-
-Nhưng kiến thức không quan tâm mình diễn hay cỡ nào. Nó vẫn nằm đó, lạnh lùng. Không biết thì là không biết. Mình có phủ lên nó bao nhiêu lớp thuật ngữ, cái lỗ vẫn còn nguyên.
-
----
-
-## "Tôi không biết" không phải là dấu chấm hết
-
-Mình từng nghĩ nói "tôi không biết" giống như tự khai mình kém. Sau này mới thấy nó giống một cái cửa hơn. Chừng nào mình còn giả vờ biết, mình không thể học được. Vì muốn học, trước hết phải có một chỗ trống. Mà người đang bận trang trí cái trống rỗng của mình thành sự thông thái thì làm gì còn chỗ để đặt câu hỏi.
-
-Có lần mình ngồi đọc tài liệu về một framework mới. Đọc ba đoạn đầu đã muốn gập máy. Chữ nào cũng quen, câu nào cũng lạ. Nếu là mình trước đây, mình sẽ tự mắng: sao cái này người ta hiểu được mà mình không hiểu. Rồi mình sẽ lướt qua cho nhanh, đánh dấu "đã đọc" trong đầu, và tự cho phép mình sống tiếp với một sự hiểu biết rỗng.
-
-Hôm đó mình làm khác. Mình mở một trang note và viết dòng đầu tiên: "Mình không hiểu lifecycle của phần này." Viết ra nghe quê thật. Nhưng chính cái quê đó cứu mình. Từ một câu không biết rất cụ thể, mình tìm được câu hỏi cụ thể. Từ câu hỏi cụ thể, mình tìm được ví dụ cụ thể. Tới cuối buổi, mình vẫn chưa giỏi. Nhưng ít nhất mình không còn mơ hồ một cách sang chảnh nữa.
-
-> Có những câu "tôi không biết" làm mình nhỏ đi trong mắt cái tôi, nhưng làm mình lớn lên trong năng lực thật.
-
-Sự thành thật với lỗ hổng kiến thức không làm mình ngu hơn. Nó chỉ tước đi cái quyền được ảo tưởng. Mà đau nhất thường không phải là việc mình chưa biết, mà là việc mình không còn được giả vờ rằng mình đã biết.
-
-<KeyTakeaway label="Mình giữ lại điều này" tone="sage">
-Can đảm không phải lúc nào cũng là nói một câu thật sắc. Đôi khi can đảm chỉ là dám để một khoảng trống hiện ra, rồi kiên nhẫn lấp nó bằng học hỏi thật.
-</KeyTakeaway>
-
-Mình vẫn còn nhiều thứ không biết. Có ngày mình thấy chuyện đó đáng sợ. Có ngày mình thấy nó gần như buồn cười. Nhưng càng đi tiếp, mình càng tin rằng người đáng nể không phải người chưa bao giờ bí. Người đáng nể là người không biến cái bí của mình thành một màn trình diễn.
-
-Mình muốn trở thành kiểu người đó. Một người có thể nói "mình chưa biết" mà không thấy mình sụp đổ. Một người không dùng sự tự tin để che sự lười học. Một người đủ bình tĩnh để bắt đầu từ câu hỏi nhỏ nhất.
-
-Vì học thật thường bắt đầu rất xấu xí. Nó bắt đầu bằng mặt nóng lên, bằng lòng tự ái bị chạm, bằng cảm giác mình bé lại. Nhưng nếu mình chịu đứng yên ở chỗ bé đó đủ lâu, mình sẽ thấy một điều khá dịu dàng: không biết không phải là tội. Không chịu biết mình không biết mới là cái bẫy.
-1a:["$","$L25",null,{"projects":[],"latestPosts":[{"slug":"the-day-the-streak-broke","content":"$26","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$27","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$28","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$29","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$2a","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$2b","readingTime":"5 min read"}}},{"slug":"learning-to-say-i-dont-know","content":"$2c","title":"Học cách nói 'Tôi không biết' giữa một thế giới rất thích tỏ ra thông thái","description":"Có những lúc câu thật nhất mình có thể nói không phải là một câu trả lời, mà là một khoảng trống được thừa nhận đàng hoàng.","date":"2026-06-27","tags":["Reflection","Learning","Humility"],"readingTime":"5 min read","i18n":{"en":{"title":"Học cách nói 'Tôi không biết' giữa một thế giới rất thích tỏ ra thông thái","description":"Có những lúc câu thật nhất mình có thể nói không phải là một câu trả lời, mà là một khoảng trống được thừa nhận đàng hoàng.","content":"$2d","readingTime":"5 min read"}}}]}]
+1a:["$","$L25",null,{"projects":[],"latestPosts":[{"slug":"not-every-storm-comes-to-wreck-you","content":"$26","title":"Not Every Storm Comes to Wreck Your Life","description":"About the night I sat deleting a number I once knew by heart. About how a storm of an ending didn't take a wonderful person from me — it only swept away a mask.","date":"2026-06-28","tags":["Relationships","Letting Go","Healing"],"readingTime":"5 min read","i18n":{"en":{"title":"Not Every Storm Comes to Wreck Your Life","description":"About the night I sat deleting a number I once knew by heart. About how a storm of an ending didn't take a wonderful person from me — it only swept away a mask.","content":"$27","readingTime":"5 min read"},"vi":{"title":"Không phải cơn bão nào cũng đến để phá đời bạn","description":"Về buổi tối mình ngồi xoá một số điện thoại từng thuộc lòng. Về cách một cơn bão đổ vỡ, hoá ra, không cướp đi của mình một người tuyệt vời — nó chỉ cuốn trôi một lớp mặt nạ.","content":"$28","readingTime":"6 min read"}}},{"slug":"the-day-the-streak-broke","content":"$29","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$2a","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$2b","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$2c","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$2d","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$2e","readingTime":"5 min read"}}}]}]
 1f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
-2e:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0sjhn400j-vv7.js","/_next/static/chunks/0ufs31-i2quci.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
+2f:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0sjhn400j-vv7.js","/_next/static/chunks/0ufs31-i2quci.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
 1d:null
-21:[["$","title","0",{"children":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","1",{"name":"description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","2",{"name":"application-name","content":"Nguyen Thi Yen Nhi"}],["$","link","3",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","4",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","link","5",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","7",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","8",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"category","content":"technology"}],["$","link","12",{"rel":"canonical","href":"https://startup.id.vn/"}],["$","meta","13",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","14",{"name":"apple-mobile-web-app-title","content":"Yen Nhi"}],["$","meta","15",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","16",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","17",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","18",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","19",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","20",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","21",{"property":"og:image:type","content":"image/png"}],["$","meta","22",{"property":"og:image:width","content":"1200"}],["$","meta","23",{"property":"og:image:height","content":"630"}],["$","meta","24",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","25",{"property":"og:type","content":"profile"}],["$","meta","26",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","27",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","28",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","29",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","30",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","link","31",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","32",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L2e","34",{}]]
+21:[["$","title","0",{"children":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","1",{"name":"description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","2",{"name":"application-name","content":"Nguyen Thi Yen Nhi"}],["$","link","3",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","4",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","link","5",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","7",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","8",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"category","content":"technology"}],["$","link","12",{"rel":"canonical","href":"https://startup.id.vn/"}],["$","meta","13",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","14",{"name":"apple-mobile-web-app-title","content":"Yen Nhi"}],["$","meta","15",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","16",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","17",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","18",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","19",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","20",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","21",{"property":"og:image:type","content":"image/png"}],["$","meta","22",{"property":"og:image:width","content":"1200"}],["$","meta","23",{"property":"og:image:height","content":"630"}],["$","meta","24",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","25",{"property":"og:type","content":"profile"}],["$","meta","26",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","27",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","28",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","29",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","30",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","link","31",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","32",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L2f","34",{}]]
