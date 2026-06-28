@@ -43,4 +43,10 @@ export const COVERS = {
     imageConcept: `Đứng ở trạm xe buýt tối nhìn chuyến vừa rời một cách bình thản — đúng tinh thần Time Anxiety: bạn không hề trễ chuyến nào của đời mình.`,
     needsRegeneration: true,
   },
+  "not-every-storm-comes-to-wreck-you": {
+    imagePrompt: `Ultra realistic candid documentary lifestyle photography of a young person sitting alone at a desk late at night, thumb resting on a phone screen mid-decision while a few small keepsakes lie scattered nearby, set in a quiet bedroom lit only by a small lamp, representing the quiet moment of letting go of a relationship that no longer fits. The scene includes a still hand hovering over the phone and a calm, tired but unburdened expression, and an old movie ticket and a folded handwritten note on the desk, a cold half-finished mug of tea pushed to the edge, a window with rain-streaked glass behind reflecting the lamp, and a single picture frame turned face-down. Warm natural light, cinematic realism, 35mm photography, shallow depth of field, natural skin texture, subtle film grain, imperfect real-life composition, emotionally quiet but deeply human. No text, no logo, no watermark, no brand names, no celebrity, no recognizable face, no corporate stock photo, no cartoon, no 3D render.`,
+    imageAlt: `A young person at a lamplit desk late at night, thumb resting on a phone, an old ticket and folded note beside a cold mug.`,
+    imageConcept: `Tay dừng trên màn hình điện thoại lúc khuya với vé phim cũ, mẩu giấy nhắn và khung ảnh úp mặt — khoảnh khắc buông một người không còn phù hợp sau cơn bão.`,
+    needsRegeneration: true,
+  },
 };
