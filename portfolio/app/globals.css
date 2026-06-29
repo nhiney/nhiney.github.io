@@ -631,7 +631,10 @@ body.site-text-palette .text-gradient {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
   margin-block: 0 1.45rem;
   color: var(--ink, hsl(var(--muted-foreground)));
+  text-align: justify;
+  text-justify: inter-word;
   text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 .post-content > p:first-of-type {
@@ -698,6 +701,7 @@ body.site-text-palette .text-gradient {
   font-size: 1.22rem;
   font-weight: 700;
   letter-spacing: 0;
+  text-align: left;
   color: var(--ink);
   scroll-margin-top: 7rem;
 }
@@ -739,7 +743,13 @@ body.site-text-palette .text-gradient {
   color: var(--ink);
   list-style: none;
 }
-.post-content li { margin-block: 0.72rem; padding-left: 0.28rem; }
+.post-content li {
+  margin-block: 0.72rem;
+  padding-left: 0.28rem;
+  text-align: justify;
+  text-justify: inter-word;
+  overflow-wrap: break-word;
+}
 
 .post-content ul > li { position: relative; }
 .post-content ul > li::before {

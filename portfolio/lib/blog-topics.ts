@@ -73,7 +73,7 @@ export const TOPIC_GROUPS: TopicGroup[] = [
     slug: "relationships",
     labelKey: "blogPage.groups.relationships",
     label: "Relationships",
-    tags: ["Boundaries", "Kindness", "Love", "Friendship", "Communication", "Family"],
+    tags: ["Relationships", "Boundaries", "Kindness", "Love", "Friendship", "Communication", "Family"],
   },
   {
     slug: "work-craft",

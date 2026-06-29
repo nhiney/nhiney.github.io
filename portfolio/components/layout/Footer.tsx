@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { FooterLanguageSelector } from "@/components/widgets/FooterLanguageSelector";
 import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/widgets/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
+import { T } from "@/components/i18n/T";
 import { FileText } from "lucide-react";
 
 const SOCIAL_LINKS = [
@@ -79,7 +80,7 @@ export function Footer() {
               className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
               <FileText className="h-3.5 w-3.5" />
-              View CV
+              <T k="footer.view_cv" />
             </a>
           </div>
           <span className="hidden sm:block h-4 w-px bg-border/60" />

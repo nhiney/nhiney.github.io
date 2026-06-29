@@ -73,7 +73,7 @@ interface ViewCounterProps {
 }
 
 export function ViewCounter({ slug, readOnly = false, showLabel = true }: ViewCounterProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [views, setViews] = useState<number | null>(null);
   const started = useRef(false);
 
@@ -142,9 +142,11 @@ export function ViewCounter({ slug, readOnly = false, showLabel = true }: ViewCo
   }, [slug, readOnly]);
 
   return (
-    <span className="inline-flex items-center gap-1.5" title="Page views">
+    <span className="inline-flex items-center gap-1.5" title={t("blogPage.page_views")}>
       <Eye size={14} className="shrink-0" />
-      <span className="tabular-nums">{views === null ? "—" : views.toLocaleString()}</span>
+      <span className="tabular-nums">
+        {views === null ? "—" : views.toLocaleString(language === "vi" ? "vi-VN" : undefined)}
+      </span>
       {showLabel && <span className="text-muted-foreground/50">{t("blogPage.views")}</span>}
     </span>
   );
