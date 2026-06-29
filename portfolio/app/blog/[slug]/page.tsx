@@ -18,6 +18,7 @@ import { resolveBlogCover } from "@/lib/blog-cover";
 import { LocaleText } from "@/components/blog/LocaleText";
 import { TagLabel } from "@/components/blog/TagLabel";
 import { LocalDate } from "@/components/blog/LocalDate";
+import { ReadingTimeLabel } from "@/components/blog/ReadingTimeLabel";
 import { T } from "@/components/i18n/T";
 
 // Build per-locale string maps for a post's title / description, English first.
@@ -202,7 +203,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
                     <span className="opacity-35">/</span>
                     <span className="inline-flex items-center gap-1.5">
                       <Clock3 size={14} />
-                      {post.readingTime}
+                      <ReadingTimeLabel readingTime={post.readingTime} i18n={post.i18n} />
                     </span>
                     <span className="opacity-35">/</span>
                     <ViewCounter slug={slug} />

@@ -8,6 +8,7 @@ import { LocalDate } from "@/components/blog/LocalDate";
 import { translateTag } from "@/components/blog/TagLabel";
 import { ViewCounter } from "@/components/blog/ViewCounter";
 import { BlogCoverImage } from "@/components/blog/BlogCoverImage";
+import { ReadingTimeLabel } from "@/components/blog/ReadingTimeLabel";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
 import {
@@ -60,7 +61,7 @@ function Meta({ post, className }: { post: Post; className?: string }) {
         <LocalDate date={post.date} />
       </time>
       <span className="text-muted-foreground/25">·</span>
-      <span>{post.readingTime}</span>
+      <span><ReadingTimeLabel readingTime={post.readingTime} i18n={post.i18n} /></span>
       <span className="text-muted-foreground/25">·</span>
       <ViewCounter slug={post.slug} readOnly showLabel={false} />
     </div>
@@ -135,7 +136,7 @@ function ArticleRow({ post }: { post: Post }) {
             <LocalDate date={post.date} />
           </time>
           <span className="mt-1 flex items-center gap-2 text-muted-foreground/50">
-            {post.readingTime}
+            <ReadingTimeLabel readingTime={post.readingTime} i18n={post.i18n} />
             <span className="text-muted-foreground/25">·</span>
             <ViewCounter slug={post.slug} readOnly showLabel={false} />
           </span>
