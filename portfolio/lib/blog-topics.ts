@@ -32,6 +32,7 @@ export const TOPIC_GROUPS: TopicGroup[] = [
       "Imposter Syndrome",
       "Comparison",
       "Freedom",
+      "Self-care",
     ],
   },
   {
@@ -50,6 +51,8 @@ export const TOPIC_GROUPS: TopicGroup[] = [
       "Humility",
       "Perseverance",
       "Resilience",
+      "Beginners",
+      "UX/UI",
     ],
   },
   {
@@ -67,6 +70,8 @@ export const TOPIC_GROUPS: TopicGroup[] = [
       "Clarity",
       "Ordinary Life",
       "Observation",
+      "Happiness",
+      "Life",
     ],
   },
   {
