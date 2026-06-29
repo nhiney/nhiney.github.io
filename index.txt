@@ -9,7 +9,7 @@
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-29"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/11q-nroo08zqh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/04bmhz1bs85_6.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/157ef.7y5jfeh.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"jisKn_Vb0ZfMO4OrhcMuA"}
+2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-06-29"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/11q-nroo08zqh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/04bmhz1bs85_6.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/157ef.7y5jfeh.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"dI5AUX2q8mLI1XEJzOcxa"}
 c:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/04bmhz1bs85_6.js","/_next/static/chunks/157ef.7y5jfeh.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
 d:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/04bmhz1bs85_6.js","/_next/static/chunks/157ef.7y5jfeh.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
 e:I[64844,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/04bmhz1bs85_6.js","/_next/static/chunks/157ef.7y5jfeh.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"RouteTextPalette"]
@@ -41,427 +41,613 @@ b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/11q-nroo08zqh
 18:["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-5","children":[["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]],["$","a",null,{"href":"/cv.pdf","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground","children":[["$","$L22",null,{"ref":"$undefined","iconNode":[["path",{"d":"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z","key":"1oefj6"}],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5","key":"wfsgrz"}],["path",{"d":"M10 9H8","key":"b1mrlr"}],["path",{"d":"M16 13H8","key":"t4e002"}],["path",{"d":"M16 17H8","key":"z1uh3a"}]],"className":"lucide-file-text h-3.5 w-3.5"}],["$","$L23",null,{"k":"footer.view_cv"}]]}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L24",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
 19:["$","$L25",null,{}]
 26:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/04bmhz1bs85_6.js","/_next/static/chunks/157ef.7y5jfeh.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
-27:T1270,
-Eleven at night, I sat in front of my phone, my thumb stopped on a name. A number I'd once known so well I could dial it without looking. I held the delete button. A little dialog asked, *"Are you sure?"*, and I sat there a long time, as if the phone were asking a much bigger question.
+27:T1060,
+This morning I woke up before my alarm.
 
-A few small things were still scattered on my desk. An old movie ticket. A folded note. Things that a few months ago I'd handled like proof of something very real. Now, looking at them, I just felt empty. Not sad. Empty. Like a room someone has just moved out of, leaving pale rectangles on the wall where a picture used to hang.
+Not from anxiety. Not because of a deadline. My eyes just opened on their own, and my first reflex wasn't to reach for my phone.
 
----
+I lay still for a few seconds. Listened to the wind outside the window. Then I got up and made a glass of warm water — nothing fancy, just warm water with a thin slice of lemon — sat down, and took a long, slow breath.
 
-## When the storm first hit
+In that moment I thought: today will be okay.
 
-I still remember the moment everything broke. It wasn't gentle. It came like a real storm — a cruel sentence, a silence stretched so long it became the answer, a door closing before I'd even understood why.
-
-And I did exactly what everyone does: I clung. I sent one more text, then one more. I apologized for things I wasn't even sure were my fault. I replayed the most frightening question in my head a hundred times: *"Why would they treat me like this?"* I dug through every old memory looking for a clue, as if understanding the reason would let me patch the whole thing back together.
-
-I panicked. Because back then I believed the person walking out the door was carrying off an important piece of me.
+And right there, for me, that was already a win.
 
 ---
 
-## The "but I've put in so much" trap
+## "Winning" — who gets to define that?
 
-It took me a long while to name the thing that had kept me there. In economics they call it *sunk cost* — the way you force yourself to finish a bad movie just because you've already given it an hour, even though finishing only costs you another one. Relationships fall for the exact same trap.
+Society likes wins that are big, clear, and measurable.
 
-I held onto something that had rotted from the inside, not because it still gave me anything, but because I'd poured so much into it. So much time, so many old promises, so many versions of myself who'd believed *this is the one who stays.* Letting go meant admitting all those years were meaningless — and that hurt too much, so I picked the easier story: *just try a little harder.*
+Getting through the interview round. Scoring an A. Getting praised in front of the whole room. Finally buying something you've been saving up for. Those milestones aren't without value — they're real, and the feeling of reaching them is genuinely good.
 
-I patched. I braced. I shrank myself to fit the shape that was comfortable for the other person. I turned one-sided conversations into something normal, turned exhaustion into the price of closeness. And I called all of it love.
+But if you only allow yourself to be happy when those moments arrive... the space between them gets very long and very empty.
 
-<KeyTakeaway label="A note to myself" tone="sage">
-The time I gave someone was a gift I once chose to give, not a chain that keeps me here. Once it's given, it's given — I don't need to torment myself to claw it back.
-</KeyTakeaway>
+I used to live that way. Set a big goal, promise myself "once I get there, I'll relax, I'll celebrate, I'll finally rest." But the "once I get there" kept moving. Reach one thing, and something else appears further down the road. Life isn't a finish line — it's a long road with no endpoint.
 
-Maybe because I was so good at lying to myself, the universe had to send a storm. A breakage big enough, cruel enough, to tear me out of the shape I'd willingly folded myself into. The me of that time wasn't brave enough to walk out alone. So some hand pushed the door open for me instead.
+Then I picked up a concept that sounds a little odd: **micro-wins** — tiny victories.
 
----
+Simply put: the small things you managed to do today, which deserve to be noticed.
 
-## The space after the storm
+Today you didn't skip breakfast — win.
+Drank enough water — win.
+Made your bed before leaving the room — win.
+Smiled at the familiar face at the bread cart — win.
+Opened a study resource and read for fifteen minutes before your phone pinged — win.
 
-Then the wind stopped. The tears dried. And one ordinary morning I woke up and my chest no longer felt heavy.
-
-Looking back calmly, I realized something that startled me: that storm didn't take a wonderful person from me. It only swept away a mask. The one I'd painted onto them with all my own hope, so I wouldn't have to look straight at the truth underneath.
-
-What actually got swept off were the calls I was always the first to make. The habit of reading someone's mood before I dared to be myself. The quiet using, wrapped in cellophane so thin I'd chosen not to see it. The evenings I came home drained, wondering how I could feel so alone beside someone so close.
-
-When a person who no longer fits walks away, they don't steal your space. They give it back. A clean stretch of air to breathe in. And that emptiness, it turns out, isn't nearly as lonely as I feared — it's room for the people who fit better to walk in.
-
-> Some people enter your life to travel one stretch of it with you, then turn down a different road. You don't have to keep them forever to prove that stretch was beautiful.
+Sounds a bit silly? It's real though.
 
 ---
 
-That night, I finally tapped "Delete." No fanfare. No long message to explain — because I owe my own peace more than I owe an explanation to someone who's only waiting to judge.
+## When ordinary life becomes a film
 
-I don't hate them. I don't even ache anymore. I keep the good memories, and I honestly hope that person is okay — just from a little further away. Those two things, it turns out, can live side by side.
+There's a concept I've grown fond of: **main character energy**.
 
-If your thumb is hovering somewhere tonight too, I just want to say: if someone chooses to leave in the middle of a storm, open the door and let them go. Don't chase to hold them. And maybe, one day, you'll find yourself grateful for that storm — for clearing away the things, and the people, that were never really yours to begin with.
-28:T1270,
-Eleven at night, I sat in front of my phone, my thumb stopped on a name. A number I'd once known so well I could dial it without looking. I held the delete button. A little dialog asked, *"Are you sure?"*, and I sat there a long time, as if the phone were asking a much bigger question.
+Not the Hollywood kind — always in the thick of drama with a spotlight aimed at your face. I mean something much quieter: knowing that you are living your own life, not playing a supporting role in someone else's.
 
-A few small things were still scattered on my desk. An old movie ticket. A folded note. Things that a few months ago I'd handled like proof of something very real. Now, looking at them, I just felt empty. Not sad. Empty. Like a room someone has just moved out of, leaving pale rectangles on the wall where a picture used to hang.
+When you learn to collect and celebrate small things, life naturally shifts into a different rhythm. You walk outside thinking "the weather is so nice today, I'm living a beautiful day." You eat a plain home-cooked meal and feel grateful — because someone made it, or because you made it yourself. You finish a small task from your to-do list and quietly tell yourself, "done, good job."
 
----
+No drama. No audience. Happiness turns out to be surprisingly affordable once you know where to look for it.
 
-## When the storm first hit
+I picked up a small habit last year: every evening before bed, I write down three good things from the day. Nothing has to be impressive. Some evenings I write "had a really nice cup of tea," "a friend texted at exactly the right moment," "finally finished that task I'd been dreading all day." There hasn't been a single evening I couldn't find three things.
 
-I still remember the moment everything broke. It wasn't gentle. It came like a real storm — a cruel sentence, a silence stretched so long it became the answer, a door closing before I'd even understood why.
-
-And I did exactly what everyone does: I clung. I sent one more text, then one more. I apologized for things I wasn't even sure were my fault. I replayed the most frightening question in my head a hundred times: *"Why would they treat me like this?"* I dug through every old memory looking for a clue, as if understanding the reason would let me patch the whole thing back together.
-
-I panicked. Because back then I believed the person walking out the door was carrying off an important piece of me.
+Because life always offers enough to be grateful for — if you're willing to look in the right direction.
 
 ---
 
-## The "but I've put in so much" trap
+## Giving yourself a pat on the back — without waiting for anyone else to do it
 
-It took me a long while to name the thing that had kept me there. In economics they call it *sunk cost* — the way you force yourself to finish a bad movie just because you've already given it an hour, even though finishing only costs you another one. Relationships fall for the exact same trap.
+One of the things I think my generation is genuinely missing is the **ability to acknowledge ourselves**.
 
-I held onto something that had rotted from the inside, not because it still gave me anything, but because I'd poured so much into it. So much time, so many old promises, so many versions of myself who'd believed *this is the one who stays.* Letting go meant admitting all those years were meaningless — and that hurt too much, so I picked the easier story: *just try a little harder.*
+Not arrogance, not ignoring areas for growth — but knowing how to say "today I did what I could, and that is enough."
 
-I patched. I braced. I shrank myself to fit the shape that was comfortable for the other person. I turned one-sided conversations into something normal, turned exhaustion into the price of closeness. And I called all of it love.
+You don't need someone's praise to be allowed to feel proud. You don't need to hit a certain benchmark before you're allowed to feel satisfied. The feeling of "today I'm okay" doesn't need external confirmation.
 
-<KeyTakeaway label="A note to myself" tone="sage">
-The time I gave someone was a gift I once chose to give, not a chain that keeps me here. Once it's given, it's given — I don't need to torment myself to claw it back.
-</KeyTakeaway>
+Giving yourself a quiet pat on the back — that gesture that sounds almost silly — is actually one of the healthiest forms of self-care. When you know how to recognize yourself, you stop depending on other people's recognition to feel worthwhile.
 
-Maybe because I was so good at lying to myself, the universe had to send a storm. A breakage big enough, cruel enough, to tear me out of the shape I'd willingly folded myself into. The me of that time wasn't brave enough to walk out alone. So some hand pushed the door open for me instead.
+And strangely, when you no longer need that recognition as something urgent, you start living with a lot more ease.
 
 ---
 
-## The space after the storm
+So — what did you win today?
 
-Then the wind stopped. The tears dried. And one ordinary morning I woke up and my chest no longer felt heavy.
+Maybe you woke up on time. Maybe you called your parents. Maybe you read this piece all the way to the end — I'd count that as a small victory too.
 
-Looking back calmly, I realized something that startled me: that storm didn't take a wonderful person from me. It only swept away a mask. The one I'd painted onto them with all my own hope, so I wouldn't have to look straight at the truth underneath.
+Go ahead and give yourself a pat on the back. You've earned it.
+28:T1060,
+This morning I woke up before my alarm.
 
-What actually got swept off were the calls I was always the first to make. The habit of reading someone's mood before I dared to be myself. The quiet using, wrapped in cellophane so thin I'd chosen not to see it. The evenings I came home drained, wondering how I could feel so alone beside someone so close.
+Not from anxiety. Not because of a deadline. My eyes just opened on their own, and my first reflex wasn't to reach for my phone.
 
-When a person who no longer fits walks away, they don't steal your space. They give it back. A clean stretch of air to breathe in. And that emptiness, it turns out, isn't nearly as lonely as I feared — it's room for the people who fit better to walk in.
+I lay still for a few seconds. Listened to the wind outside the window. Then I got up and made a glass of warm water — nothing fancy, just warm water with a thin slice of lemon — sat down, and took a long, slow breath.
 
-> Some people enter your life to travel one stretch of it with you, then turn down a different road. You don't have to keep them forever to prove that stretch was beautiful.
+In that moment I thought: today will be okay.
 
----
-
-That night, I finally tapped "Delete." No fanfare. No long message to explain — because I owe my own peace more than I owe an explanation to someone who's only waiting to judge.
-
-I don't hate them. I don't even ache anymore. I keep the good memories, and I honestly hope that person is okay — just from a little further away. Those two things, it turns out, can live side by side.
-
-If your thumb is hovering somewhere tonight too, I just want to say: if someone chooses to leave in the middle of a storm, open the door and let them go. Don't chase to hold them. And maybe, one day, you'll find yourself grateful for that storm — for clearing away the things, and the people, that were never really yours to begin with.
-29:T1935,
-Mười một giờ đêm, mình ngồi trước màn hình điện thoại, ngón tay dừng lại ở một cái tên. Một số mình từng thuộc lòng đến mức không cần nhìn cũng bấm đúng. Mình giữ nút xoá. Cái hộp thoại nhỏ hiện lên hỏi "Bạn có chắc không?", và mình ngồi đó, thật lâu, như thể cái máy đang hỏi một câu lớn hơn nhiều.
-
-Trên bàn vẫn còn vài món lặt vặt. Một tấm vé xem phim cũ. Một mẩu giấy nhắn. Những thứ mà mấy tháng trước mình còn nâng niu như bằng chứng cho một điều gì đó rất thật. Giờ nhìn lại, mình chỉ thấy trống. Không phải buồn. Trống. Như một căn phòng vừa có người dọn đồ đi mất, để lại những vệt sáng hình chữ nhật trên tường nơi từng treo một bức ảnh.
+And right there, for me, that was already a win.
 
 ---
 
-## Khi cơn bão vừa ập tới
+## "Winning" — who gets to define that?
 
-Mình vẫn nhớ cái khoảnh khắc mọi thứ đổ vỡ. Nó không nhẹ nhàng. Nó ập tới như một cơn bão thật — một câu nói tàn nhẫn, một sự im lặng kéo dài đến mức thành câu trả lời, một cánh cửa đóng lại mà mình còn chưa kịp hiểu vì sao.
+Society likes wins that are big, clear, and measurable.
 
-Và mình đã làm đúng cái điều mà ai cũng làm: mình níu. Mình nhắn thêm một tin nữa, rồi một tin nữa. Mình xin lỗi cho những thứ mình còn không chắc là lỗi của mình. Mình tua lại trong đầu cả trăm lần cái câu hỏi đáng sợ nhất: *"Tại sao họ lại đối xử với mình như vậy?"* Mình lục từng kỷ niệm cũ để tìm một dấu hiệu, như thể nếu hiểu được lý do, mình sẽ vá lại được mọi thứ.
+Getting through the interview round. Scoring an A. Getting praised in front of the whole room. Finally buying something you've been saving up for. Those milestones aren't without value — they're real, and the feeling of reaching them is genuinely good.
 
-Mình hoảng loạn. Vì lúc đó mình tin rằng người vừa bước ra khỏi cửa đang mang theo một mảnh ghép quan trọng của mình.
+But if you only allow yourself to be happy when those moments arrive... the space between them gets very long and very empty.
 
----
+I used to live that way. Set a big goal, promise myself "once I get there, I'll relax, I'll celebrate, I'll finally rest." But the "once I get there" kept moving. Reach one thing, and something else appears further down the road. Life isn't a finish line — it's a long road with no endpoint.
 
-## Cái bẫy "tiếc công"
+Then I picked up a concept that sounds a little odd: **micro-wins** — tiny victories.
 
-Phải khá lâu sau mình mới gọi được tên thứ đã giữ mình ở lại lâu đến thế. Trong kinh tế người ta gọi nó là *chi phí chìm* — kiểu bạn cố ngồi xem hết một bộ phim dở chỉ vì đã lỡ bỏ ra một tiếng đồng hồ, dù xem tiếp chỉ tốn thêm một tiếng nữa. Mối quan hệ dính y hệt cái bẫy đó.
+Simply put: the small things you managed to do today, which deserve to be noticed.
 
-Mình bám vào một thứ đã mục từ bên trong, không phải vì nó còn cho mình điều gì, mà vì mình đã đổ vào đó quá nhiều. Quá nhiều thời gian, quá nhiều lời hứa cũ, quá nhiều phiên bản của mình từng tin rằng "người này là người ở lại". Buông tay nghĩa là thừa nhận tất cả những năm tháng ấy là vô nghĩa — mà điều đó thì đau quá, nên mình chọn cách dễ hơn: tự nói với mình rằng "chỉ cần cố thêm chút nữa thôi".
+Today you didn't skip breakfast — win.
+Drank enough water — win.
+Made your bed before leaving the room — win.
+Smiled at the familiar face at the bread cart — win.
+Opened a study resource and read for fifteen minutes before your phone pinged — win.
 
-Mình vá. Mình gồng. Mình thu nhỏ bản thân lại cho vừa cái khuôn mà người kia thấy dễ chịu. Mình biến những cuộc trò chuyện một chiều thành điều bình thường, biến sự mệt mỏi thành cái giá phải trả của tình thân. Và mình gọi tất cả những thứ đó là yêu thương.
-
-<KeyTakeaway label="Mình tự nhắc mình" tone="sage">
-Thời gian mình đã trao cho một người là món quà mình từng chọn để tặng, không phải sợi xích buộc mình phải ở lại. Đã tặng là tặng rồi — mình không cần giày vò bản thân để đòi nó về.
-</KeyTakeaway>
-
-Có lẽ vì mình giỏi tự lừa đến thế, nên vũ trụ mới phải dùng đến một cơn bão. Một sự đổ vỡ đủ lớn, đủ tàn nhẫn, để bứt mình ra khỏi cái khuôn mà mình tự nguyện chui vào. Mình của lúc đó không đủ can đảm để tự bước ra. Nên có một bàn tay nào đó đã thay mình đẩy cánh cửa.
+Sounds a bit silly? It's real though.
 
 ---
 
-## Khoảng trống sau bão
+## When ordinary life becomes a film
 
-Rồi gió cũng ngừng thổi. Nước mắt cũng khô. Và một buổi sáng nào đó, mình tỉnh dậy mà ngực không còn nặng nữa.
+There's a concept I've grown fond of: **main character energy**.
 
-Khi bình tĩnh nhìn lại, mình mới giật mình nhận ra một điều: cơn bão đó không cuốn đi của mình một người tuyệt vời. Nó chỉ cuốn trôi một lớp mặt nạ. Cái lớp mà mình đã tự sơn lên người kia bằng tất cả hy vọng của mình, để khỏi phải nhìn thẳng vào sự thật bên dưới.
+Not the Hollywood kind — always in the thick of drama with a spotlight aimed at your face. I mean something much quieter: knowing that you are living your own life, not playing a supporting role in someone else's.
 
-Thứ thực sự bị cuốn đi là những cuộc gọi mình luôn là người bấm trước. Là cái cảm giác phải dò xét tâm trạng người khác trước khi dám là chính mình. Là sự lợi dụng được gói trong lớp giấy bóng của tình thân, mỏng đến mức mình cố tình không nhìn. Là những buổi tối mình về nhà mà thấy cạn kiệt, tự hỏi sao ở cạnh một người thân thiết mà mình lại cô đơn đến vậy.
+When you learn to collect and celebrate small things, life naturally shifts into a different rhythm. You walk outside thinking "the weather is so nice today, I'm living a beautiful day." You eat a plain home-cooked meal and feel grateful — because someone made it, or because you made it yourself. You finish a small task from your to-do list and quietly tell yourself, "done, good job."
 
-Khi một người không còn phù hợp rời đi, họ không lấy mất không gian của mình. Họ trả nó lại. Một khoảng không trong lành để mình được thở. Và khoảng trống đó, hoá ra, chẳng hề cô độc như mình tưởng — nó là chỗ cho những người xứng đáng hơn bước vào.
+No drama. No audience. Happiness turns out to be surprisingly affordable once you know where to look for it.
 
-> Có những người đi vào đời bạn để cùng đi một đoạn, rồi rẽ sang một con đường khác. Bạn không cần giữ họ mãi mãi để chứng minh đoạn đường ấy từng đẹp.
+I picked up a small habit last year: every evening before bed, I write down three good things from the day. Nothing has to be impressive. Some evenings I write "had a really nice cup of tea," "a friend texted at exactly the right moment," "finally finished that task I'd been dreading all day." There hasn't been a single evening I couldn't find three things.
 
----
-
-Tối đó, cuối cùng mình cũng bấm "Xoá". Không kèn trống. Không một dòng tin nhắn dài để giải thích — vì mình nợ sự bình yên của chính mình nhiều hơn là nợ một lời giải thích cho người vốn chỉ đang chờ để phán xét.
-
-Mình không hận. Cũng không còn tiếc. Mình giữ lại những kỷ niệm đẹp, và thật lòng mong người đó ổn — chỉ là mong từ một khoảng cách xa hơn một chút. Hai điều đó, hoá ra, có thể sống cạnh nhau.
-
-Nếu tối nay ngón tay bạn cũng đang lưỡng lự đâu đó, mình chỉ muốn nói: nếu có ai chọn rời đi giữa cơn bão, cứ mở cửa cho họ đi. Đừng đuổi theo để giữ. Và biết đâu, một ngày nào đó, bạn cũng sẽ thấy biết ơn cơn bão ấy — vì nó đã dọn sạch giúp bạn những điều, và những người, vốn dĩ chưa từng thuộc về bạn.
-2a:T1053,
-For over two weeks, every single day, I got to fill in a green square.
-
-I use a habit-tracking app, and honestly, watching that chain of green squares stretch a little longer each day is a small joy I'm slightly addicted to. Woke up early: green. Ate decently: green. Studied a bit: green. Sixteen days straight, no gaps. I felt like I was becoming someone else — tidier, more trustworthy.
-
-Then life cut in, the way it always does. Something unhappy, a few wrung-out days, and just like that, three days in a row my app sat empty. Three cold grey squares planted right in the middle of a beautiful green stretch.
-
-I opened the app, looked at those three grey squares, and my brain delivered one curt line: "That's it. It's all ruined." Then came a thought that was sweet and dangerous: the last two weeks were for nothing, the streak's broken so why keep it up, just let it all go, it's half-finished anyway.
-
-And I almost listened. This wasn't the first time.
+Because life always offers enough to be grateful for — if you're willing to look in the right direction.
 
 ---
 
-## The "what-the-hell" effect — when one crack shatters the whole jar
+## Giving yourself a pat on the back — without waiting for anyone else to do it
 
-There's a psychological trap researchers gave a very down-to-earth name: the "what-the-hell" effect.
+One of the things I think my generation is genuinely missing is the **ability to acknowledge ourselves**.
 
-It goes like this. You're dieting, and you slip and eat one slice of cake. One slice should be fine. But up pops the thought "well, I've eaten it, it's ruined, what the hell" — and so you finish the whole cake, then a whole tub of ice cream. What makes you eat the tub of ice cream isn't the first slice. It's the line "it's already ruined anyway."
+Not arrogance, not ignoring areas for growth — but knowing how to say "today I did what I could, and that is enough."
 
-I realized I treated my habit streak exactly the same way. I'd tied my self-worth to the perfection of a green chain. As long as the chain held, I felt disciplined, kind to myself. The moment one grey square slipped in, I instantly felt like a failure — and once I'd stuck the "failure" label on myself, why keep trying? A failure may as well play the part.
+You don't need someone's praise to be allowed to feel proud. You don't need to hit a certain benchmark before you're allowed to feel satisfied. The feeling of "today I'm okay" doesn't need external confirmation.
 
-The brutal truth is: three days off didn't ruin my two weeks. What nearly ruined everything was the urge to throw those two weeks away over three slipped days.
+Giving yourself a quiet pat on the back — that gesture that sounds almost silly — is actually one of the healthiest forms of self-care. When you know how to recognize yourself, you stop depending on other people's recognition to feel worthwhile.
 
----
-
-## Disciplined people don't walk a straight line. They walk a sawtooth
-
-I used to think a disciplined person had a dreamy graph — a straight line climbing up, every day better than the last. Believing that, the moment I dropped I felt I didn't belong in their world.
-
-I think differently now. I believe the real graph of anyone who lasts is shaped like a sawtooth. Up a stretch, down a beat, then up again. There are terrible weeks, long slides, grey squares in a row. But step far enough back and that ugly jagged line is still inching upward. Endurance was never about not stumbling. It's about stumbling, then standing up, enough times.
-
-And here's the most important thing I took away: what decides your mettle isn't whether you fall — you're going to fall regardless. It's the time you spend on the ground before you get up. One person falls and takes half a year to come back. Another falls, dusts off their knees, and goes again the next morning. The difference between them isn't the fall. It's the speed of the return.
-
-<KeyTakeaway label="What I want you to remember" tone="sage">
-Don't let one bad day turn into one bad week. Missing a day is human. Quitting the whole month because you missed one day — that's the part worth regretting.
-</KeyTakeaway>
+And strangely, when you no longer need that recognition as something urgent, you start living with a lot more ease.
 
 ---
 
-So I forgave myself those three days. Quickly, cleanly, no drawn-out self-flogging. I didn't delete the app, didn't tear up the notebook, didn't declare "I really am a quitter." I just saw those three grey squares for what they were: three data points in a very long table. Not a verdict. Not a portrait of who I am.
+So — what did you win today?
 
-A lazy day doesn't tell you who you are. It only says that on that day you were tired, or life was a little hard. That's all. You're defined by the long-term trend, not by one or two off-beat dots.
+Maybe you woke up on time. Maybe you called your parents. Maybe you read this piece all the way to the end — I'd count that as a small victory too.
 
-So if your app just broke a beautiful streak, I'll give you a hug. Truly. And then I'll pat your shoulder and say: tomorrow, open it back up, fill in one green square, carry on as if nothing happened. Let the old streak go. The streak that matters most — the streak of every time you chose to come back — is still growing longer every time you begin again.
-2b:T1053,
-For over two weeks, every single day, I got to fill in a green square.
+Go ahead and give yourself a pat on the back. You've earned it.
+29:T1547,
+Sáng nay mình thức dậy trước khi chuông báo thức reo.
 
-I use a habit-tracking app, and honestly, watching that chain of green squares stretch a little longer each day is a small joy I'm slightly addicted to. Woke up early: green. Ate decently: green. Studied a bit: green. Sixteen days straight, no gaps. I felt like I was becoming someone else — tidier, more trustworthy.
+Không phải vì lo lắng về điều gì. Không phải vì deadline. Chỉ đơn giản là mắt tự nhiên mở ra, và cái phản xạ đầu tiên không phải là vớ điện thoại lên.
 
-Then life cut in, the way it always does. Something unhappy, a few wrung-out days, and just like that, three days in a row my app sat empty. Three cold grey squares planted right in the middle of a beautiful green stretch.
+Mình nằm yên vài giây. Nghe tiếng gió ngoài cửa sổ. Rồi đứng dậy pha một ly nước ấm — không phải cà phê, không phải gì cao siêu, chỉ là nước ấm với một lát chanh mỏng — rồi ngồi xuống, hít vào một hơi thật sâu.
 
-I opened the app, looked at those three grey squares, and my brain delivered one curt line: "That's it. It's all ruined." Then came a thought that was sweet and dangerous: the last two weeks were for nothing, the streak's broken so why keep it up, just let it all go, it's half-finished anyway.
+Lúc đó mình nghĩ: ừ, hôm nay sẽ ổn.
 
-And I almost listened. This wasn't the first time.
-
----
-
-## The "what-the-hell" effect — when one crack shatters the whole jar
-
-There's a psychological trap researchers gave a very down-to-earth name: the "what-the-hell" effect.
-
-It goes like this. You're dieting, and you slip and eat one slice of cake. One slice should be fine. But up pops the thought "well, I've eaten it, it's ruined, what the hell" — and so you finish the whole cake, then a whole tub of ice cream. What makes you eat the tub of ice cream isn't the first slice. It's the line "it's already ruined anyway."
-
-I realized I treated my habit streak exactly the same way. I'd tied my self-worth to the perfection of a green chain. As long as the chain held, I felt disciplined, kind to myself. The moment one grey square slipped in, I instantly felt like a failure — and once I'd stuck the "failure" label on myself, why keep trying? A failure may as well play the part.
-
-The brutal truth is: three days off didn't ruin my two weeks. What nearly ruined everything was the urge to throw those two weeks away over three slipped days.
+Và ngay khoảnh khắc đó, với mình, đã là một chiến thắng rồi.
 
 ---
 
-## Disciplined people don't walk a straight line. They walk a sawtooth
+## "Chiến thắng" — ai định nghĩa cái đó vậy?
 
-I used to think a disciplined person had a dreamy graph — a straight line climbing up, every day better than the last. Believing that, the moment I dropped I felt I didn't belong in their world.
+Xã hội thích những chiến thắng to lớn, rõ ràng và đo được.
 
-I think differently now. I believe the real graph of anyone who lasts is shaped like a sawtooth. Up a stretch, down a beat, then up again. There are terrible weeks, long slides, grey squares in a row. But step far enough back and that ugly jagged line is still inching upward. Endurance was never about not stumbling. It's about stumbling, then standing up, enough times.
+Đậu vòng phỏng vấn. Điểm A. Được sếp khen trước cả phòng. Mua được thứ mình thích sau bao lâu để dành. Những cột mốc ấy không phải không có giá trị — chúng là thật, và cảm giác đạt được chúng rất tốt.
 
-And here's the most important thing I took away: what decides your mettle isn't whether you fall — you're going to fall regardless. It's the time you spend on the ground before you get up. One person falls and takes half a year to come back. Another falls, dusts off their knees, and goes again the next morning. The difference between them isn't the fall. It's the speed of the return.
+Nhưng nếu chỉ đợi những khoảnh khắc đó mới cho phép mình được hạnh phúc... thì khoảng trống giữa chúng sẽ rất dài và rất trống.
 
-<KeyTakeaway label="What I want you to remember" tone="sage">
-Don't let one bad day turn into one bad week. Missing a day is human. Quitting the whole month because you missed one day — that's the part worth regretting.
-</KeyTakeaway>
+Mình từng sống như vậy. Đặt ra mục tiêu lớn, rồi tự hứa "khi nào đạt được thì mình sẽ thư giãn, sẽ vui, sẽ nghỉ ngơi xứng đáng". Nhưng cái "khi nào" đó cứ trôi xa mãi. Đạt xong cái này, lại có cái khác phía trước. Cuộc sống không phải một vạch đích — nó là một con đường dài không có điểm kết.
 
----
+Rồi mình học được một khái niệm nghe có vẻ lạ: **micro-wins** — chiến thắng vi mô.
 
-So I forgave myself those three days. Quickly, cleanly, no drawn-out self-flogging. I didn't delete the app, didn't tear up the notebook, didn't declare "I really am a quitter." I just saw those three grey squares for what they were: three data points in a very long table. Not a verdict. Not a portrait of who I am.
+Hiểu đơn giản là những điều nhỏ xíu trong ngày mà bạn đã làm được, và chúng xứng đáng được ghi nhận.
 
-A lazy day doesn't tell you who you are. It only says that on that day you were tired, or life was a little hard. That's all. You're defined by the long-term trend, not by one or two off-beat dots.
+Hôm nay bạn không bỏ bữa sáng — chiến thắng.
+Uống đủ nước — chiến thắng.
+Gấp chăn gọn gàng trước khi ra khỏi phòng — chiến thắng.
+Mỉm cười với người bán bánh mì quen — chiến thắng.
+Mở bài học và đọc được mười lăm phút trước khi phone ping — chiến thắng.
 
-So if your app just broke a beautiful streak, I'll give you a hug. Truly. And then I'll pat your shoulder and say: tomorrow, open it back up, fill in one green square, carry on as if nothing happened. Let the old streak go. The streak that matters most — the streak of every time you chose to come back — is still growing longer every time you begin again.
-2c:T14d5,
-Hơn hai tuần, ngày nào mình cũng được tô một ô xanh.
-
-Mình dùng một cái app theo dõi thói quen, và thú thật, nhìn cái chuỗi ô xanh nối nhau dài ra mỗi ngày là một niềm vui nhỏ mà mình hơi nghiện. Dậy sớm: xanh. Ăn uống tử tế: xanh. Tự học một chút: xanh. Mười sáu ngày liền không sót. Mình thấy mình đang là một người khác — gọn gàng hơn, đáng tin hơn.
-
-Rồi đời chen vào, như nó vẫn luôn vậy. Một chuyện không vui, vài ngày mệt rã rời, và thế là ba ngày liền cái app của mình trống trơn. Ba ô xám lạnh lẽo nằm chình ình ngay giữa một dải xanh đẹp đẽ.
-
-Mình mở app lên, nhìn ba ô xám đó, và cái đầu mình phán đúng một câu gọn lỏn: "Thôi xong. Hỏng hết rồi." Theo sau là một ý nghĩ ngọt ngào mà nguy hiểm: hai tuần qua coi như công cốc, chuỗi đã đứt thì còn giữ làm gì, thôi buông luôn cho rồi, đằng nào cũng dở dang.
-
-Và mình suýt nghe theo nó. Lần này không phải lần đầu.
+Nghe buồn cười không? Nhưng mà thật đấy.
 
 ---
 
-## Hiệu ứng "mặc kệ nó" — khi một vết nứt làm vỡ cả cái bình
+## Khi đời thường trở thành phim
 
-Có một cái bẫy tâm lý mà các nhà nghiên cứu đặt cho nó một cái tên rất đời: hiệu ứng "mặc kệ nó" (the "what-the-hell" effect).
+Có một khái niệm mình rất thích: **main character energy** — năng lượng của nhân vật chính.
 
-Nó thế này. Bạn đang ăn kiêng, lỡ ăn một miếng bánh. Đáng lẽ một miếng thì có sao đâu. Nhưng trong đầu bật lên ý nghĩ "ăn rồi, hỏng rồi, thôi mặc kệ" — và thế là bạn ăn nốt cả cái bánh, rồi cả hộp kem. Cái khiến bạn ăn cả hộp kem không phải là miếng bánh đầu tiên. Mà là cái câu "đằng nào cũng hỏng rồi".
+Không phải kiểu nhân vật chính Hollywood, lúc nào cũng có kịch tính và spotlight chiếu thẳng vào mặt. Mình nói về cái năng lượng đơn giản hơn rất nhiều: bạn biết rằng bạn đang sống cuộc đời của mình — không phải đóng phụ trong cuộc đời của ai khác.
 
-Mình nhận ra mình đối xử với chuỗi thói quen y hệt vậy. Mình đã lỡ gắn giá trị của bản thân vào sự hoàn hảo của một dải ô xanh. Chừng nào dải đó còn liền, mình thấy mình là người kỷ luật, người tử tế với chính mình. Vừa có một ô xám chen vào, mình lập tức thấy mình là kẻ thất bại — và một khi đã dán cho mình cái nhãn "kẻ thất bại" rồi, thì cố thêm làm gì nữa? Kẻ thất bại thì cứ buông cho đúng vai.
+Khi bạn biết cách nhặt nhạnh và ăn mừng những điều nhỏ bé, cuộc sống tự nhiên có một cái nhịp khác. Bạn ra đường mà trong đầu nghĩ "hôm nay trời đẹp ghê, mình đang sống một ngày rất đẹp". Bạn ăn một bữa cơm bình thường mà cảm thấy biết ơn — vì có người nấu, hoặc vì tự nấu được. Bạn làm xong một task nhỏ trong danh sách rồi tự nhủ "ừ, xong rồi, tốt lắm".
 
-Cái phũ phàng là: ba ngày nghỉ không phá hỏng hai tuần của mình. Cái suýt phá hỏng tất cả, là cái ý định vứt luôn hai tuần đó đi chỉ vì ba ngày trót lỡ.
+Không cần drama. Không cần ai công nhận. Hạnh phúc thực ra rẻ một cách kinh ngạc khi bạn biết nó nằm ở đâu.
 
----
+Mình có một thói quen nhỏ từ hồi năm ngoái: mỗi tối trước khi ngủ, mình viết ra ba điều tốt của ngày hôm đó. Không cần to tát. Có hôm mình viết "uống được một ly trà ngon", "bạn nhắn tin đúng lúc mình cần", "làm xong cái task từ sáng đến giờ cứ sợ không xong". Chưa có hôm nào mình viết mà tìm không ra ba điều.
 
-## Người kỷ luật không đi một đường thẳng. Họ đi đường răng cưa
-
-Mình từng tưởng người kỷ luật là người có một đồ thị đẹp như mơ — một đường thẳng tắp đi lên, ngày nào cũng hơn ngày trước. Tưởng vậy nên hễ mình rớt xuống một cái là mình thấy mình không thuộc về thế giới của họ.
-
-Giờ mình nghĩ khác. Mình tin đồ thị thật của bất kỳ ai bền bỉ đều có hình răng cưa. Lên một đoạn, rớt một nhịp, rồi lại lên. Có những tuần tệ hại, những cú trượt dài, những ô xám nối nhau. Nhưng nếu lùi ra xa mà nhìn, cái đường gấp khúc xấu xí đó vẫn đang nhích lên. Sự bền bỉ chưa bao giờ là không vấp. Nó là vấp, rồi đứng dậy, đủ nhiều lần.
-
-Và đây là điều quan trọng nhất mình rút ra: cái quyết định bản lĩnh của bạn không phải là chuyện bạn có trượt ngã hay không — kiểu gì bạn cũng sẽ ngã. Nó là khoảng thời gian bạn nằm dưới đất trước khi đứng dậy. Người này ngã rồi mất nửa năm mới quay lại. Người kia ngã, phủi quần, sáng mai làm tiếp. Khác biệt giữa hai người đó không nằm ở cú ngã. Nó nằm ở tốc độ quay lại.
-
-<KeyTakeaway label="Điều mình muốn bạn nhớ" tone="sage">
-Đừng để một ngày tồi tệ biến thành một tuần tồi tệ. Lỡ một ngày là chuyện của con người. Bỏ luôn cả tháng chỉ vì đã lỡ một ngày — đó mới là chuyện đáng tiếc.
-</KeyTakeaway>
+Vì bao giờ cuộc sống cũng cho mình đủ để biết ơn, nếu mình chịu nhìn vào đúng chỗ.
 
 ---
 
-Nên mình tha thứ cho mình ba ngày đó. Nhanh thôi, gọn thôi, không dằn vặt lê thê. Mình không xóa app, không xé sổ, không tuyên bố "mình đúng là đồ bỏ cuộc". Mình chỉ coi ba ô xám đó như nó vốn là: ba điểm dữ liệu trong một bảng rất dài. Không phải bản án. Không phải chân dung con người mình.
+## Tự vỗ vai chính mình — không cần ai khác làm điều đó
 
-Một ngày lười biếng không nói lên bạn là ai. Nó chỉ nói rằng hôm đó bạn mệt, hoặc đời hôm đó hơi khó. Vậy thôi. Con người bạn được định nghĩa bởi cái xu hướng dài hạn, chứ không phải bởi một hai cái chấm lạc nhịp.
+Một trong những thứ mình nghĩ thế hệ mình thiếu nhiều nhất là **kỹ năng tự công nhận bản thân**.
 
-Nên nếu cái app của bạn vừa đứt một chuỗi đẹp, mình ôm bạn một cái. Thật đấy. Rồi ngay sau đó mình vỗ vai bạn và nói: ngày mai, mở nó ra, tô lại một ô xanh, làm tiếp như chưa từng có chuyện gì. Chuỗi cũ đứt thì kệ nó. Cái chuỗi quan trọng nhất — cái chuỗi của những lần bạn chịu quay lại — vẫn đang dài thêm mỗi lần bạn bắt đầu lại.
-2d:T118f,
-I just flipped back through the planner I bought at the start of the month. The first three pages are beautiful — I even ruled the boxes, added color, wrote down ten goals grand enough to sound like a whole new life. Exercise an hour every morning. Read fifty pages a day. Learn a language. Wake up at five...
+Không phải tự cao, không phải bỏ qua chỗ cần cải thiện — mà là biết nhìn nhận "hôm nay mình đã cố gắng theo cách mình có thể, và điều đó là đủ".
 
-Then on the fourth page the handwriting gets messy. The fifth is blank. From the sixth on it's pure, silent white — like a gentle reproach that somehow stings more for being gentle.
+Bạn không cần ai khen mới được phép tự hào. Bạn không cần đạt đến một tiêu chuẩn nào đó mới được phép cảm thấy hài lòng. Cái cảm giác "hôm nay mình ổn" không cần phải được ai xác nhận.
 
-I sat looking at those blank pages, and the familiar feeling rolled back in: disappointment in myself. Again. I'd made myself a real promise, and in under a week I'd quit, neatly. I started thinking maybe I just lack willpower, maybe I'm not the "can-do" type.
+Tự vỗ vai mình — cử chỉ nghe có vẻ ngớ ngẩn ấy — thật ra là một trong những hành động chăm sóc bản thân lành mạnh nhất. Khi bạn biết ghi nhận chính mình, bạn không cần phụ thuộc vào sự công nhận của người khác để cảm thấy mình có giá trị.
 
-But after a few collapses that all looked exactly the same, I finally saw it: the problem wasn't my willpower. It was how I set the goals in the first place.
+Và kỳ lạ thay, khi bạn không còn cần sự công nhận đó như một thứ cấp bách nữa, bạn bắt đầu sống thảnh thơi hơn rất nhiều.
 
 ---
 
-## "All or nothing" — the trap that looks so diligent
+Vậy hôm nay bạn thắng gì rồi?
 
-Watch closely and you'll notice that every time I quit, I quit by the same script.
+Có thể là bạn thức dậy đúng giờ. Có thể là bạn gọi điện hỏi thăm ba mẹ. Có thể là bạn đọc bài này đến tận đây — mình tính đó cũng là một chiến thắng nho nhỏ đó nha.
 
-On a day work piles up and I can't get the full hour, I shrug: "What's the point of twenty minutes, I'll do it properly tomorrow." On a tired day when I can't finish a chapter, I close the book: "A few pages won't stick anyway, just sleep." It sounds like I'm holding a high bar, being serious. But it's actually the most cunning trap of all.
+Tự vỗ vai cái đi — bạn xứng đáng mà.
+2a:T1398,
+Yesterday I spent almost an hour making a set of icons — four tiny drawings that any seasoned designer could finish in fifteen minutes.
 
-"All or nothing" thinking pretends to be a high standard, but at heart it's an excuse. Because once I believe "if I can't do it fully, better not at all," then a single busy day, a single tired day, a single day life refuses to cooperate — and the whole streak of effort goes down the drain. I've handed myself a "delete everything" button that's far too easy to press.
+But when the last icon clicked into place, when the colors sat just right and the lines came out cleaner than I expected — I sat very still, stared at the screen, and had to actively stop myself from cheering out loud.
 
-And I suspect what stands behind that thinking is the ego. The ego doesn't want to do the small thing, because the small thing is... not impressive. Five minutes of exercise makes no story. One sentence written is nothing to be proud of. The ego loves the image of a perfect version of me: full hour, fifty pages, iron discipline. It would rather I do nothing than do something tiny, ordinary, not worth showing off. Setting huge goals, it turns out, is the perfect recipe for sabotaging yourself — because the bigger the goal, the easier the excuse to quit.
+The feeling was a little goofy. But it was real. Like I'd just invented the lightbulb.
 
----
+To a professional, my icons would probably earn a polite "not bad." But to me, they represented an entire evening of fumbling: try, delete, try again, hunt through tutorials, ask the silliest questions — why does this border-radius not look round? Is this font sans-serif or am I wrong? — until something finally clicked that I actually liked.
 
-## Lower the bar until it sounds a little ridiculous
-
-What I did next sounds backwards: instead of trying harder, I lowered the goal until it was almost... laughable.
-
-Not an hour of exercise. Put the workout clothes on and move for five minutes. Not fifty pages. One page. Not finish the piece. Open the file and type one sentence.
-
-Sounds absurd, right? What can five minutes change? But here's what I found: the five-minute goal doesn't exist to make me fitter. It exists so I don't break the thread. Five minutes of exercise is still exercise. One page is still reading. Opening the file to type one sentence still beats — by a mile — a file that never gets opened. What I'm protecting isn't today's achievement. It's my standing as "someone who's still doing it."
-
-<KeyTakeaway label="I believe this" tone="sage">
-Discipline isn't doing one great thing in a day. It's the ability to show up — day after day — even when I show up in the most half-hearted way possible.
-</KeyTakeaway>
-
-And the funny part is, almost every time I end up doing more than the minimum. Once the clothes are on, twenty more minutes is no big deal. Finish page one and I usually read page two, page three. But even on the days I genuinely do my five minutes and stop — I still count as having kept my word. The thread didn't break. And a thread that doesn't break can go on forever.
+That thrill, I'm convinced, belongs only to beginners. And I want to hold onto it for as long as I can.
 
 ---
 
-I often hear people talk about compound interest with money — put in a little, regularly, and over time it becomes a sum that surprises you. I believe life has a compound interest like that too. And it doesn't live in the blazing days when I do triple what everyone else does. It lives in the boring one-percent efforts, repeated, so small I'm almost embarrassed to mention them.
+## The trap of "be good immediately"
 
-So if you're staring at a blank notebook today and about to give up, I just want to say: don't write down ten grand goals again. Pick one thing, then make it tiny — so tiny it's impossible to fail.
+There's a quiet but heavy pressure most young people carry: the pressure to become proficient as fast as possible.
 
-Then just do it. However silly, however small. Because one small thing done every day will, in time, quietly overtake every magnificent plan you only managed to keep for three days.
-2e:T118f,
-I just flipped back through the planner I bought at the start of the month. The first three pages are beautiful — I even ruled the boxes, added color, wrote down ten goals grand enough to sound like a whole new life. Exercise an hour every morning. Read fifty pages a day. Learn a language. Wake up at five...
+I was caught in it too. I'd open a design app for the first time and before doing anything, I'd be comparing myself to jaw-dropping portfolios on Behance. I'd be halfway through a tutorial and already thinking "people my age have made a hundred things by now." That mindset made me study without actually learning, sit at my desk while my mind was somewhere else entirely.
 
-Then on the fourth page the handwriting gets messy. The fifth is blank. From the sixth on it's pure, silent white — like a gentle reproach that somehow stings more for being gentle.
+Then I noticed something: **the most beautiful phase of any skill is when you know nothing about it**.
 
-I sat looking at those blank pages, and the familiar feeling rolled back in: disappointment in myself. Again. I'd made myself a real promise, and in under a week I'd quit, neatly. I started thinking maybe I just lack willpower, maybe I'm not the "can-do" type.
+Sounds strange, right? But think about it.
 
-But after a few collapses that all looked exactly the same, I finally saw it: the problem wasn't my willpower. It was how I set the goals in the first place.
+When you know nothing, you have no preconceptions. No "correct" way you're forced to follow. No tedium of repetition. Everything is fresh. An accidental color combination looks wonderfully odd. An off-grid layout creates an unexpected effect. You're free to try anything — not because you don't know the rules, but because you don't know them *yet*.
 
----
+This is the **beginner's mind**. In Zen Buddhism, Suzuki Roshi wrote: *"In the beginner's mind there are many possibilities, but in the expert's mind there are few."* I read that line once, then had to read it again. Because it felt too true.
 
-## "All or nothing" — the trap that looks so diligent
-
-Watch closely and you'll notice that every time I quit, I quit by the same script.
-
-On a day work piles up and I can't get the full hour, I shrug: "What's the point of twenty minutes, I'll do it properly tomorrow." On a tired day when I can't finish a chapter, I close the book: "A few pages won't stick anyway, just sleep." It sounds like I'm holding a high bar, being serious. But it's actually the most cunning trap of all.
-
-"All or nothing" thinking pretends to be a high standard, but at heart it's an excuse. Because once I believe "if I can't do it fully, better not at all," then a single busy day, a single tired day, a single day life refuses to cooperate — and the whole streak of effort goes down the drain. I've handed myself a "delete everything" button that's far too easy to press.
-
-And I suspect what stands behind that thinking is the ego. The ego doesn't want to do the small thing, because the small thing is... not impressive. Five minutes of exercise makes no story. One sentence written is nothing to be proud of. The ego loves the image of a perfect version of me: full hour, fifty pages, iron discipline. It would rather I do nothing than do something tiny, ordinary, not worth showing off. Setting huge goals, it turns out, is the perfect recipe for sabotaging yourself — because the bigger the goal, the easier the excuse to quit.
+Experts sometimes have to work hard to reclaim that uncluttered way of seeing. Me? I have it naturally, for free, right now.
 
 ---
 
-## Lower the bar until it sounds a little ridiculous
+## Celebrating my own slowness
 
-What I did next sounds backwards: instead of trying harder, I lowered the goal until it was almost... laughable.
+I'm not the kind of person who picks things up quickly. Where someone else watches a tutorial once and gets it, I usually need to watch three times — pausing, asking "but why does it work that way?", opening extra tabs, circling back.
 
-Not an hour of exercise. Put the workout clothes on and move for five minutes. Not fifty pages. One page. Not finish the piece. Open the file and type one sentence.
+I used to scold myself for this. Now I think it's actually kind of great.
 
-Sounds absurd, right? What can five minutes change? But here's what I found: the five-minute goal doesn't exist to make me fitter. It exists so I don't break the thread. Five minutes of exercise is still exercise. One page is still reading. Opening the file to type one sentence still beats — by a mile — a file that never gets opened. What I'm protecting isn't today's achievement. It's my standing as "someone who's still doing it."
+When I go slowly, I **notice things fast-movers walk right past**. I catch why one button looks "more professional" than another just because the padding is slightly different. I notice that one app's click sound feels better than another's. I wonder why this gray looks warmer than that gray, and I go find out — oh, warm gray and cool gray have different undertones.
 
-<KeyTakeaway label="I believe this" tone="sage">
-Discipline isn't doing one great thing in a day. It's the ability to show up — day after day — even when I show up in the most half-hearted way possible.
-</KeyTakeaway>
+Small things. But those small things are exactly what builds a sensitive design eye — and I have them because I'm willing to go slowly, because I didn't rush for the finish line.
 
-And the funny part is, almost every time I end up doing more than the minimum. Once the clothes are on, twenty more minutes is no big deal. Finish page one and I usually read page two, page three. But even on the days I genuinely do my five minutes and stop — I still count as having kept my word. The thread didn't break. And a thread that doesn't break can go on forever.
+Honestly, I've started **celebrating my own slowness** in the most literal sense. Not because I want to glorify procrastination, but because I've learned: learning isn't a race. There's no prize for understanding fastest. The only prize is genuinely understanding — in a way you discovered for yourself.
 
----
-
-I often hear people talk about compound interest with money — put in a little, regularly, and over time it becomes a sum that surprises you. I believe life has a compound interest like that too. And it doesn't live in the blazing days when I do triple what everyone else does. It lives in the boring one-percent efforts, repeated, so small I'm almost embarrassed to mention them.
-
-So if you're staring at a blank notebook today and about to give up, I just want to say: don't write down ten grand goals again. Pick one thing, then make it tiny — so tiny it's impossible to fail.
-
-Then just do it. However silly, however small. Because one small thing done every day will, in time, quietly overtake every magnificent plan you only managed to keep for three days.
-2f:T1657,
-Mình vừa lật lại cuốn sổ kế hoạch mua hồi đầu tháng. Ba trang đầu chữ đẹp ơi là đẹp — mình còn cẩn thận kẻ khung, tô màu, ghi mười mục tiêu nghe hoành tráng như sắp đổi đời. Tập thể dục một tiếng mỗi sáng. Đọc năm mươi trang sách mỗi ngày. Học ngoại ngữ. Dậy lúc năm giờ...
-
-Rồi tới trang thứ tư, chữ bắt đầu nguệch ngoạc. Trang thứ năm bỏ trống. Từ trang thứ sáu trở đi là một màu trắng tinh, im lặng, như một lời trách nhẹ nhàng mà thấm.
-
-Mình ngồi nhìn mấy trang giấy trắng đó, và cái cảm giác quen thuộc lại ùa về: thất vọng về chính mình. Lại một lần nữa. Mình đã hứa với mình hẳn hoi, vậy mà chưa đầy một tuần đã bỏ cuộc gọn gàng. Mình bắt đầu nghĩ chắc tại mình thiếu ý chí, tại mình không phải dạng người "làm được".
-
-Nhưng sau vài ba lần vỡ trận y hệt như vậy, mình mới nhận ra: vấn đề không nằm ở ý chí của mình. Nó nằm ở cách mình đặt mục tiêu ngay từ đầu.
+Every time I wrestle with a concept and finally get it, that "oh, I see it now" feeling is so much richer than copying a tutorial and checking off a task. That, I think, is what learning is actually supposed to feel like.
 
 ---
 
-## "Được ăn cả, ngã về không" — cái bẫy nghe rất chăm chỉ
+## Stay curious. Stay gloriously clueless.
 
-Để ý mà xem, lần nào bỏ cuộc mình cũng bỏ theo đúng một kịch bản.
+If you're at the start of any journey — UX/UI, code, photography, ceramics, writing, anything — and you're feeling too slow, too inexperienced, too "behind everyone else":
 
-Hôm nào kẹt việc, không tập đủ một tiếng, mình tặc lưỡi: "Thôi, có hai mươi phút thì tập làm gì, để mai tập cho đàng hoàng." Hôm nào mệt, không đọc hết một chương, mình gấp sách: "Đọc có mấy trang thì vào đầu được gì, thôi ngủ." Nghe thì có vẻ như mình đang đòi hỏi cao, đang nghiêm túc. Nhưng thật ra đó là cái bẫy tinh vi nhất.
+Take a breath.
 
-Tư duy "được ăn cả, ngã về không" giả vờ là tiêu chuẩn cao, nhưng bản chất nó là một cái cớ. Vì khi mình tin rằng "không làm trọn vẹn thì thà đừng làm", thì chỉ cần một ngày bận, một ngày mệt, một ngày đời không như ý — là cả chuỗi cố gắng đổ sông đổ bể. Mình tự trao cho bản thân một cái nút "xóa tất cả" quá dễ bấm.
+You have something people further along have lost. Curiosity unencumbered by habit. The sense that anything could be magic. The rare privilege of asking the world's silliest questions without worrying about looking unprofessional.
 
-Và mình ngờ rằng đứng sau cái tư duy đó là cái tôi. Cái tôi không muốn làm việc nhỏ, vì việc nhỏ thì... không oách. Tập năm phút nghe chẳng có gì để kể. Viết một câu thì có gì mà tự hào. Cái tôi thích cái hình ảnh một phiên bản mình hoàn hảo: tập một tiếng, đọc năm mươi trang, kỷ luật thép. Nó thà mình không làm gì còn hơn làm một thứ gì đó nhỏ bé, tầm thường, không đủ để khoe. Đặt mục tiêu thật to, hóa ra, là công thức hoàn hảo để tự phá mình — vì mục tiêu càng to, cái cớ để bỏ càng dễ tìm.
+**Go ahead and ask the silly questions**. "Why is this white and not cream?" or "What's the difference between padding and margin — in terms of, like, *feeling*?" Those questions aren't silly. They're the mark of someone who's actually paying attention.
 
----
+One day you'll have enough experience that the basics feel obvious. And you'll have to work hard to see them clearly again.
 
-## Hạ tiêu chuẩn xuống mức nghe hơi buồn cười
+Don't rush toward that day. Stay excited. Stay wonderfully unfinished. Enjoy the privilege of being a beginner for a little while longer.
 
-Cái mình làm sau đó nghe có vẻ ngược đời: thay vì cố gắng nhiều hơn, mình hạ mục tiêu xuống thấp đến mức gần như... mắc cười.
-
-Không phải tập một tiếng. Là mặc đồ tập vào và nhúc nhích năm phút. Không phải đọc năm mươi trang. Là đọc một trang. Không phải viết cho xong bài. Là mở file lên, gõ đúng một câu.
-
-Nghe vô lý đúng không? Năm phút thì thay đổi được gì. Nhưng mình phát hiện ra điều này: cái mục tiêu năm phút không tồn tại để mình khỏe lên. Nó tồn tại để mình không làm đứt sợi dây. Tập năm phút vẫn là tập thể dục. Đọc một trang vẫn là đọc sách. Mở file gõ một câu vẫn tốt hơn gấp vạn lần một cái file không bao giờ được mở. Cái mình đang giữ không phải là thành tích của ngày hôm nay — mà là tư cách "người vẫn đang làm".
-
-<KeyTakeaway label="Mình tin điều này" tone="sage">
-Kỷ luật không phải là làm một điều vĩ đại trong một ngày. Nó là khả năng có mặt — ngày này qua ngày khác — kể cả khi mình chỉ có mặt một cách hết sức qua loa.
-</KeyTakeaway>
-
-Và buồn cười là, gần như lần nào mình cũng làm nhiều hơn cái mức tối thiểu đó. Mặc đồ tập vào rồi thì nhúc nhích thêm hai mươi phút cũng chẳng sao. Đọc xong trang một thì thường đọc luôn trang hai, trang ba. Nhưng kể cả những hôm mình thật sự chỉ làm đúng năm phút rồi nghỉ — mình vẫn được tính là đã giữ lời. Sợi dây không đứt. Và một sợi dây không đứt thì còn kéo dài được mãi.
+You're in the most beautiful part of the journey. Don't skip it just to reach the destination sooner.
 
 ---
 
-Mình hay nghe người ta nói về lãi kép trong tiền bạc — bỏ vào một ít, đều đặn, lâu ngày thành một khoản lớn đến bất ngờ. Cuộc đời mình tin cũng có một thứ lãi kép như vậy. Mà nó không nằm ở những ngày bùng cháy mình làm gấp ba người khác. Nó nằm ở những nỗ lực một phần trăm nhàm chán, lặp đi lặp lại, nhỏ đến mức mình suýt thấy ngại khi kể ra.
+What are you learning right now? And what excites you most about not knowing yet?
 
-Nên nếu hôm nay bạn cũng đang nhìn một cuốn sổ trắng trơn và định buông xuôi, mình chỉ muốn nói: đừng đặt lại mười mục tiêu hoành tráng nữa. Chọn một việc thôi, rồi làm nó nhỏ xíu lại, nhỏ đến mức không thể nào thất bại.
+I'd genuinely love to hear — nothing is more contagious than a beginner's enthusiasm.
+2b:T1398,
+Yesterday I spent almost an hour making a set of icons — four tiny drawings that any seasoned designer could finish in fifteen minutes.
 
-Rồi cứ làm. Dù nó có vớ vẩn, vụn vặt đến đâu. Vì một việc nhỏ làm đều mỗi ngày, lâu dần, sẽ âm thầm vượt qua mọi kế hoạch vĩ đại mà bạn chỉ giữ được đúng ba ngày.
-1a:["$","$L26",null,{"projects":[],"latestPosts":[{"slug":"not-every-storm-comes-to-wreck-you","content":"$27","title":"Not Every Storm Comes to Wreck Your Life","description":"About the night I sat deleting a number I once knew by heart. About how a storm of an ending didn't take a wonderful person from me — it only swept away a mask.","date":"2026-06-28","tags":["Relationships","Letting Go","Healing"],"readingTime":"5 min read","i18n":{"en":{"title":"Not Every Storm Comes to Wreck Your Life","description":"About the night I sat deleting a number I once knew by heart. About how a storm of an ending didn't take a wonderful person from me — it only swept away a mask.","content":"$28","readingTime":"5 min read"},"vi":{"title":"Không phải cơn bão nào cũng đến để phá đời bạn","description":"Về buổi tối mình ngồi xoá một số điện thoại từng thuộc lòng. Về cách một cơn bão đổ vỡ, hoá ra, không cướp đi của mình một người tuyệt vời — nó chỉ cuốn trôi một lớp mặt nạ.","content":"$29","readingTime":"6 min read"}}},{"slug":"the-day-the-streak-broke","content":"$2a","title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","date":"2026-06-28","tags":["Self Compassion","Discipline","Resilience"],"readingTime":"4 min read","i18n":{"en":{"title":"The Day the Streak Broke","description":"After two weeks of green check-ins, one bad patch broke my streak for three days, and my brain instantly screamed: 'that's it, throw it all away.' This is about the 'what-the-hell' effect, and why the time it takes you to get back on track is the real measure of your mettle.","content":"$2b","readingTime":"4 min read"},"vi":{"title":"Cái ngày chuỗi ngày bị đứt","description":"Sau hai tuần check-in xanh mướt, một biến cố làm mình đứt chuỗi ba ngày, và cái đầu lập tức gào lên: 'thôi xong, vứt hết đi'. Bài này về hiệu ứng 'mặc kệ nó', và vì sao thời gian bạn quay lại đường đua mới là thứ đo bản lĩnh.","content":"$2c","readingTime":"5 min read"}}},{"slug":"do-it-badly-but-do-it","content":"$2d","title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","date":"2026-06-27","tags":["Habits","Discipline","Consistency"],"readingTime":"5 min read","i18n":{"en":{"title":"Do It Badly, but Don't Stop","description":"I used to buy a fresh notebook, write down ten grand goals, then fall apart by the fourth day. This is about why 'all or nothing' thinking quietly sabotages you — and the strange power of doing everything in a sloppy but steady way.","content":"$2e","readingTime":"5 min read"},"vi":{"title":"Cứ làm cho dở, miễn là đừng nghỉ","description":"Mình từng mua sổ mới, ghi mười mục tiêu hoành tráng, rồi vỡ trận vào đúng ngày mùng 4. Bài này về lý do tư duy 'được ăn cả, ngã về không' đang âm thầm phá mình — và sức mạnh kỳ lạ của việc làm mọi thứ một cách vớ vẩn nhưng đều đặn.","content":"$2f","readingTime":"5 min read"}}}]}]
+But when the last icon clicked into place, when the colors sat just right and the lines came out cleaner than I expected — I sat very still, stared at the screen, and had to actively stop myself from cheering out loud.
+
+The feeling was a little goofy. But it was real. Like I'd just invented the lightbulb.
+
+To a professional, my icons would probably earn a polite "not bad." But to me, they represented an entire evening of fumbling: try, delete, try again, hunt through tutorials, ask the silliest questions — why does this border-radius not look round? Is this font sans-serif or am I wrong? — until something finally clicked that I actually liked.
+
+That thrill, I'm convinced, belongs only to beginners. And I want to hold onto it for as long as I can.
+
+---
+
+## The trap of "be good immediately"
+
+There's a quiet but heavy pressure most young people carry: the pressure to become proficient as fast as possible.
+
+I was caught in it too. I'd open a design app for the first time and before doing anything, I'd be comparing myself to jaw-dropping portfolios on Behance. I'd be halfway through a tutorial and already thinking "people my age have made a hundred things by now." That mindset made me study without actually learning, sit at my desk while my mind was somewhere else entirely.
+
+Then I noticed something: **the most beautiful phase of any skill is when you know nothing about it**.
+
+Sounds strange, right? But think about it.
+
+When you know nothing, you have no preconceptions. No "correct" way you're forced to follow. No tedium of repetition. Everything is fresh. An accidental color combination looks wonderfully odd. An off-grid layout creates an unexpected effect. You're free to try anything — not because you don't know the rules, but because you don't know them *yet*.
+
+This is the **beginner's mind**. In Zen Buddhism, Suzuki Roshi wrote: *"In the beginner's mind there are many possibilities, but in the expert's mind there are few."* I read that line once, then had to read it again. Because it felt too true.
+
+Experts sometimes have to work hard to reclaim that uncluttered way of seeing. Me? I have it naturally, for free, right now.
+
+---
+
+## Celebrating my own slowness
+
+I'm not the kind of person who picks things up quickly. Where someone else watches a tutorial once and gets it, I usually need to watch three times — pausing, asking "but why does it work that way?", opening extra tabs, circling back.
+
+I used to scold myself for this. Now I think it's actually kind of great.
+
+When I go slowly, I **notice things fast-movers walk right past**. I catch why one button looks "more professional" than another just because the padding is slightly different. I notice that one app's click sound feels better than another's. I wonder why this gray looks warmer than that gray, and I go find out — oh, warm gray and cool gray have different undertones.
+
+Small things. But those small things are exactly what builds a sensitive design eye — and I have them because I'm willing to go slowly, because I didn't rush for the finish line.
+
+Honestly, I've started **celebrating my own slowness** in the most literal sense. Not because I want to glorify procrastination, but because I've learned: learning isn't a race. There's no prize for understanding fastest. The only prize is genuinely understanding — in a way you discovered for yourself.
+
+Every time I wrestle with a concept and finally get it, that "oh, I see it now" feeling is so much richer than copying a tutorial and checking off a task. That, I think, is what learning is actually supposed to feel like.
+
+---
+
+## Stay curious. Stay gloriously clueless.
+
+If you're at the start of any journey — UX/UI, code, photography, ceramics, writing, anything — and you're feeling too slow, too inexperienced, too "behind everyone else":
+
+Take a breath.
+
+You have something people further along have lost. Curiosity unencumbered by habit. The sense that anything could be magic. The rare privilege of asking the world's silliest questions without worrying about looking unprofessional.
+
+**Go ahead and ask the silly questions**. "Why is this white and not cream?" or "What's the difference between padding and margin — in terms of, like, *feeling*?" Those questions aren't silly. They're the mark of someone who's actually paying attention.
+
+One day you'll have enough experience that the basics feel obvious. And you'll have to work hard to see them clearly again.
+
+Don't rush toward that day. Stay excited. Stay wonderfully unfinished. Enjoy the privilege of being a beginner for a little while longer.
+
+You're in the most beautiful part of the journey. Don't skip it just to reach the destination sooner.
+
+---
+
+What are you learning right now? And what excites you most about not knowing yet?
+
+I'd genuinely love to hear — nothing is more contagious than a beginner's enthusiasm.
+2c:T1a0f,
+Hôm qua mình mất gần một tiếng đồng hồ chỉ để tạo ra một bộ icon — bốn cái hình vẽ bé xíu, đơn giản đến mức bất kỳ designer kỳ cựu nào cũng làm xong trong mười lăm phút.
+
+Nhưng khi cái icon cuối cùng click vào đúng vị trí, khi màu sắc hài hòa với nhau và những đường nét gọn gàng hơn mình tưởng — mình ngồi yên một lúc, nhìn chằm chằm vào màn hình, rồi... phải cố lắm mới không hét to lên.
+
+Cảm giác đó hơi ngờ nghệch nhưng thật sự. Như thể mình vừa phát minh ra bóng đèn.
+
+Với dân chuyên thì bộ icon của mình có lẽ chỉ đáng để "ừ nhỉ, tạm được". Nhưng với mình, nó là kết quả của cả một buổi tối loay hoay, thử rồi xóa, xóa rồi thử, đọc đủ thứ tutorial, đặt ra đủ thứ câu hỏi ngớ ngẩn — tại sao border-radius này trông không tròn? font chữ này có phải sans-serif không, hay mình đang nhầm? — rồi cuối cùng ra được thứ gì đó mình thích.
+
+Cái hưng phấn đó, mình nghĩ, chỉ người mới bắt đầu mới được hưởng. Và mình muốn giữ nó thật lâu.
+
+---
+
+## Cái bẫy của "phải giỏi ngay"
+
+Có một áp lực rất thầm lặng nhưng rất nặng mà hầu hết người trẻ đều đang đeo: áp lực phải thành thạo càng nhanh càng tốt.
+
+Mình cũng từng bị kẹt trong đó. Mở một app thiết kế lần đầu, chưa kịp làm gì đã vội so sánh bản thân với những portfolio đẹp đến choáng ngợp trên Behance. Xem một tutorial chưa xong đã nghĩ "người ta ở tuổi này đã làm được cả trăm thứ, còn mình?". Cái tâm lý đó làm mình học mà không học, ngồi mà tâm trí cứ đi xa.
+
+Rồi mình nhận ra một điều: **giai đoạn đẹp nhất của bất kỳ công việc nào chính là lúc ta chưa biết gì về nó**.
+
+Nghe có vẻ lạ không? Nhưng nghĩ lại mà xem.
+
+Khi chưa biết gì, ta không có định kiến. Không có cách "đúng" mà ta bị ép phải theo. Không có sự nhàm chán của sự lặp lại. Mọi thứ đều mới mẻ. Một màu sắc tình cờ trông đẹp lạ thường. Một layout lệch chuẩn lại tạo ra hiệu ứng hay không ngờ. Ta tự do thử mọi thứ — không phải vì ta không biết quy tắc, mà vì ta chưa biết.
+
+Đó là **tâm thế của người mới bắt đầu**. Zen Buddhism gọi nó là "beginner's mind". Suzuki Roshi từng viết: *"Trong tâm thế của người mới bắt đầu, có vô số khả năng. Trong tâm thế của chuyên gia, chỉ còn vài khả năng."* Mình đọc câu đó lần đầu, phải đọc lại lần hai. Vì nó đúng quá.
+
+Người chuyên nghiệp đôi khi phải cố công lắm mới lấy lại được cái nhìn trong trẻo ấy. Còn mình? Mình đang có nó một cách hoàn toàn tự nhiên.
+
+---
+
+## Ăn mừng việc mình... chậm hơn người khác
+
+Mình không phải kiểu người nắm bắt nhanh. Người ta xem một tutorial một lần rồi hiểu, mình thường phải xem ít nhất ba lần, cộng thêm vài lần dừng lại tự hỏi "ừ nhưng tại sao lại như vậy?" rồi mở thêm tab tra Google, rồi lại quay lại video...
+
+Trước đây mình tự mắng bản thân vì chuyện này. Giờ thì mình thấy đó thực ra là một thứ khá hay.
+
+Khi mình đi chậm, mình **nhìn được những thứ người đi nhanh bỏ qua**. Mình để ý tại sao một cái button trông "chuyên nghiệp" hơn cái kia chỉ vì khoảng cách padding khác nhau. Mình để ý âm thanh click của app này dễ chịu hơn app kia. Mình tò mò tại sao màu xám này trông ấm hơn màu xám kia, rồi đi tìm hiểu ra "à thì ra là warm grey và cool grey khác nhau ở undertone".
+
+Những điều nhỏ xíu đó. Nhưng chính chúng mới là nền tảng tạo nên một con mắt nhạy cảm với thiết kế — và mình có được nhờ chịu đi chậm, nhờ không vội chạy về đích.
+
+Thành thật mà nói, mình bắt đầu **ăn mừng sự chậm chạp của mình** theo đúng nghĩa đen. Không phải vì muốn ca ngợi sự trì hoãn, mà vì mình học được rằng: học tập không phải cuộc đua. Không có phần thưởng cho người hiểu nhanh nhất. Phần thưởng duy nhất là mình thật sự hiểu — theo cách mình tự thấy, tự khám phá ra.
+
+Mỗi lần mình loay hoay với một khái niệm rồi cuối cùng hiểu ra, cảm giác "à, mình hiểu rồi!" đó nồng nàn hơn rất nhiều so với việc copy nguyên một tutorial rồi chạy xong task. Mình nghĩ đó mới là niềm vui thật sự của việc học.
+
+---
+
+## Hãy cứ háo hức, hãy cứ ngớ ngẩn
+
+Nếu bạn đang ở đầu một hành trình nào đó — UX/UI, code, nhiếp ảnh, làm gốm, viết lách, hay bất cứ điều gì — và đang cảm thấy mình quá chậm, quá ít biết, quá "tệ so với người ta":
+
+Hãy bình tĩnh một chút.
+
+Bạn đang có thứ mà người đi trước đã mất. Sự tò mò không vướng bận định kiến. Cảm giác mọi thứ đều có thể là ma thuật. Cái đặc quyền đặt những câu hỏi ngớ ngẩn nhất thế giới mà không ai dám hỏi vì sợ trông không chuyên.
+
+**Hãy cứ đặt câu hỏi ngớ ngẩn đó đi**. "Tại sao cái này lại màu trắng chứ không phải màu kem?" hay "Sự khác biệt giữa padding và margin là gì, về mặt... cảm giác?" — những câu hỏi đó không ngớ ngẩn. Chúng là dấu hiệu của một người đang thật sự chú ý.
+
+Rồi đến một ngày bạn sẽ trở thành người có đủ kinh nghiệm. Và bạn sẽ phải cố công lắm để tìm lại được cái nhìn trong veo như hồi mới bắt đầu.
+
+Đừng vội đến ngày đó. Cứ háo hức. Cứ ngớ nghệch. Cứ tận hưởng đặc quyền được làm "tấm chiếu mới" thêm một thời gian nữa.
+
+Bạn đang ở giai đoạn đẹp nhất của hành trình. Đừng bỏ qua nó chỉ để chạy về đích sớm hơn.
+
+---
+
+Hôm nay bạn đang học thứ gì? Và điều gì làm bạn hưng phấn nhất trong cái "chưa biết gì" đó?
+
+Mình rất muốn nghe — không có gì dễ lây hơn cái háo hức của người mới bắt đầu.
+2d:Tfe8,
+I have a confession.
+
+Today I spent exactly three hours doing absolutely nothing.
+
+Wait — that's not quite right. I did plenty of things. I sat and watched clouds. I drew a fat cat that looked nothing like a cat in the corner of my notebook, next to an unnamed tree and two circles I couldn't explain. I walked to the end of the alley, bought a milk tea of uncertain flavor, sat down on a front step, and watched people pass by for an hour straight.
+
+No deadline. No Figma. No tutorial. No "next step in the learning roadmap."
+
+And I felt... wonderful.
+
+---
+
+## Why are we so obsessed with productivity?
+
+I'm not sure when exactly "doing nothing" became something to be ashamed of.
+
+But it seems like it's been that way for a while. Friends ask each other "what did you do this weekend?" and the ideal answer is something busy and useful: "I finished a new course," "I built a side project," "I got through that productivity series." But if you say "I stayed home and let my mind wander" — you usually get a polite smile and a look that edges toward pity.
+
+We're taught early that time is a non-renewable resource, to be used efficiently. That youth is our only real capital, to be invested immediately and constantly. That if you're not grinding today, someone else will grind past you.
+
+Not entirely wrong. But not entirely right, either.
+
+Because in that relentless cycle, people tend to forget: **the most "useless" things are often the secret ingredients of creativity**.
+
+The afternoon I spent watching clouds — I learned nothing from it. But I figured out a way to present information I'd been stuck on all week. The meaningless fat cat in my notebook — it serves no project. But after drawing it, my head felt significantly lighter. The aimless walk — produced no output. But I came home with something that can't be measured in numbers: the feeling of being alive, not just completing tasks.
+
+People who've worked creatively for years will tell you — good ideas don't come when you're actively trying to have good ideas. They come in the shower, on walks, staring out the window. The brain needs rest to process. And "wasting time" is exactly how I give mine that rest.
+
+---
+
+## Memories are the one thing nobody can take from you
+
+I ask myself something sometimes: if I look back at my twenties when I'm thirty, what do I want to see?
+
+A long list of certifications and milestones? Maybe. Those matter, I won't pretend otherwise.
+
+But I also want to see that afternoon on the front step with a milk tea watching people pass by. The aimless walk that ended with discovering a little bakery I became a regular at. The evening I spent an entire hour coloring in a children's coloring book because I spotted it in a bookstore and couldn't resist.
+
+**Money and achievements can be earned again**. But the recklessness, the health, and the freedom of your twenties — that only happens once.
+
+Don't let thirty-year-old you look back at these years and find only computer screens, deadlines, and exhaustion. Youth isn't a KPI sheet. It's an experience — and experiences need space to actually happen.
+
+The "useless" moments aren't wasted time. They're the necessary rests in a piece of music. Without the rests, there's no rhythm. Without rhythm, there's only noise.
+
+---
+
+## Now, go outside
+
+I know you're reading this, probably sitting in front of a screen with a to-do list waiting.
+
+I'm not going to say "drop everything, yolo." I'll just say this:
+
+Pick one afternoon this week. Close the laptop. Go outside. Buy whatever you like to drink — milk tea, ice cream, a coffee to go, anything. Then walk without needing a destination. Look at things you usually pass by without actually seeing.
+
+Don't take pictures to post. Don't listen to a productivity podcast. Just be there.
+
+I promise you — that afternoon won't be wasted. It will give you back something no course can teach: the feeling of living your own life, not running through someone else's.
+
+Your youth is here. Right now.
+
+Don't let it pass by while you're busy preparing to live it.
+2e:Tfe8,
+I have a confession.
+
+Today I spent exactly three hours doing absolutely nothing.
+
+Wait — that's not quite right. I did plenty of things. I sat and watched clouds. I drew a fat cat that looked nothing like a cat in the corner of my notebook, next to an unnamed tree and two circles I couldn't explain. I walked to the end of the alley, bought a milk tea of uncertain flavor, sat down on a front step, and watched people pass by for an hour straight.
+
+No deadline. No Figma. No tutorial. No "next step in the learning roadmap."
+
+And I felt... wonderful.
+
+---
+
+## Why are we so obsessed with productivity?
+
+I'm not sure when exactly "doing nothing" became something to be ashamed of.
+
+But it seems like it's been that way for a while. Friends ask each other "what did you do this weekend?" and the ideal answer is something busy and useful: "I finished a new course," "I built a side project," "I got through that productivity series." But if you say "I stayed home and let my mind wander" — you usually get a polite smile and a look that edges toward pity.
+
+We're taught early that time is a non-renewable resource, to be used efficiently. That youth is our only real capital, to be invested immediately and constantly. That if you're not grinding today, someone else will grind past you.
+
+Not entirely wrong. But not entirely right, either.
+
+Because in that relentless cycle, people tend to forget: **the most "useless" things are often the secret ingredients of creativity**.
+
+The afternoon I spent watching clouds — I learned nothing from it. But I figured out a way to present information I'd been stuck on all week. The meaningless fat cat in my notebook — it serves no project. But after drawing it, my head felt significantly lighter. The aimless walk — produced no output. But I came home with something that can't be measured in numbers: the feeling of being alive, not just completing tasks.
+
+People who've worked creatively for years will tell you — good ideas don't come when you're actively trying to have good ideas. They come in the shower, on walks, staring out the window. The brain needs rest to process. And "wasting time" is exactly how I give mine that rest.
+
+---
+
+## Memories are the one thing nobody can take from you
+
+I ask myself something sometimes: if I look back at my twenties when I'm thirty, what do I want to see?
+
+A long list of certifications and milestones? Maybe. Those matter, I won't pretend otherwise.
+
+But I also want to see that afternoon on the front step with a milk tea watching people pass by. The aimless walk that ended with discovering a little bakery I became a regular at. The evening I spent an entire hour coloring in a children's coloring book because I spotted it in a bookstore and couldn't resist.
+
+**Money and achievements can be earned again**. But the recklessness, the health, and the freedom of your twenties — that only happens once.
+
+Don't let thirty-year-old you look back at these years and find only computer screens, deadlines, and exhaustion. Youth isn't a KPI sheet. It's an experience — and experiences need space to actually happen.
+
+The "useless" moments aren't wasted time. They're the necessary rests in a piece of music. Without the rests, there's no rhythm. Without rhythm, there's only noise.
+
+---
+
+## Now, go outside
+
+I know you're reading this, probably sitting in front of a screen with a to-do list waiting.
+
+I'm not going to say "drop everything, yolo." I'll just say this:
+
+Pick one afternoon this week. Close the laptop. Go outside. Buy whatever you like to drink — milk tea, ice cream, a coffee to go, anything. Then walk without needing a destination. Look at things you usually pass by without actually seeing.
+
+Don't take pictures to post. Don't listen to a productivity podcast. Just be there.
+
+I promise you — that afternoon won't be wasted. It will give you back something no course can teach: the feeling of living your own life, not running through someone else's.
+
+Your youth is here. Right now.
+
+Don't let it pass by while you're busy preparing to live it.
+2f:T152d,
+Mình phải thú nhận một tội.
+
+Hôm nay, mình đã dành đúng ba tiếng đồng hồ để không làm gì cả.
+
+Không — nói vậy chưa đúng lắm. Mình đã làm rất nhiều thứ. Mình đã ngồi nhìn mây. Mình đã vẽ một con mèo béo không giống mèo lên góc sổ tay, cạnh đó là một cái cây vô danh và hai cái hình tròn mà mình cũng không biết là gì. Mình đã đi bộ ra đầu hẻm, mua một ly trà sữa không biết vị gì, rồi ngồi xuống một cái bậc thềm và nhìn người đi qua đi lại trong một tiếng đồng hồ.
+
+Không deadline. Không Figma. Không tutorial. Không "bước tiếp theo trong lộ trình học".
+
+Và mình cảm thấy... tuyệt vời.
+
+---
+
+## Sao chúng ta cứ bị ám ảnh bởi từ "năng suất"?
+
+Mình không chắc từ bao giờ, cụm từ "không làm gì" trở thành một điều đáng xấu hổ.
+
+Nhưng có vẻ như nó đã vậy từ khá lâu rồi. Bạn bè hỏi nhau "cuối tuần làm gì?", và câu trả lời lý tưởng phải là gì đó bận rộn và có ích: "mình học thêm khoá này", "mình làm được mấy cái side project", "mình xem xong bộ series về productivity". Còn nếu bạn nói "mình ở nhà nằm nghĩ ngợi linh tinh" — thường sẽ có một nụ cười lịch sự và cái nhìn hơi thương.
+
+Chúng ta bị dạy từ sớm rằng thời gian là tài nguyên không tái tạo, phải sử dụng cho hiệu quả. Rằng tuổi trẻ là vốn liếng duy nhất, phải đầu tư ngay và luôn. Rằng nếu hôm nay bạn không cày, ngày mai ai đó sẽ cày thay bạn và vượt qua bạn.
+
+Nói không sai. Nhưng cũng không hoàn toàn đúng.
+
+Vì trong cái vòng quay cày không ngừng đó, người ta quên mất một điều: **những thứ "vô dụng" nhất lại thường là nguyên liệu bí mật của sự sáng tạo**.
+
+Buổi chiều mình ngồi nhìn mây — mình không học được gì từ đó. Nhưng mình nghĩ ra được một cách trình bày thông tin mà hôm trước mình cứ bí. Con mèo béo vô nghĩa trong sổ tay — nó chẳng phục vụ dự án nào. Nhưng tay mình vẽ xong thì đầu mình nhẹ hơn rất nhiều. Bước chân lang thang không đích — không tạo ra output nào. Nhưng mình về nhà với một thứ không đo được bằng số: cảm giác mình đang sống, không phải đang hoàn thành task.
+
+Mấy người làm sáng tạo lâu năm hay nói rằng ý tưởng hay không đến khi họ đang cố nghĩ ra ý tưởng hay. Chúng đến khi tắm, khi đi bộ, khi nhìn ra cửa sổ. Cái não cần được nghỉ để xử lý. Và "lãng phí thời gian" chính là cách mình cho não mình được nghỉ.
+
+---
+
+## Kỷ niệm là thứ duy nhất không ai lấy đi được
+
+Có một câu hỏi mình hay tự hỏi: nếu mình 30 tuổi nhìn lại những năm 20 này, mình muốn thấy gì?
+
+Một danh sách dài các chứng chỉ và milestone? Có thể. Chúng quan trọng, mình không phủ nhận.
+
+Nhưng mình cũng muốn thấy cái buổi chiều ngồi ở bậc thềm uống trà sữa nhìn người đi qua. Cái chuyến đi bộ lang thang kết thúc bằng việc phát hiện ra một tiệm bánh nhỏ mà mình trở thành khách quen. Cái lần mình ngồi cả tiếng đồng hồ tô màu một cuốn sách tô màu cho trẻ em vì mình thấy nó trong hiệu sách và không cưỡng lại được.
+
+**Tiền bạc và thành tích có thể kiếm lại được**. Nhưng sự ngông cuồng, sức khỏe và tự do của tuổi đôi mươi — thứ đó chỉ có một lần.
+
+Đừng để đến năm 30 tuổi, nhìn lại thanh xuân chỉ thấy toàn màn hình máy tính, deadline và sự mệt mỏi. Thanh xuân không phải là một bản KPI. Nó là một trải nghiệm — và trải nghiệm đó cần không gian để xảy ra.
+
+Những khoảnh khắc "vô tri" không phải thời gian lãng phí. Chúng là những khoảng trắng cần thiết trong một bản nhạc. Không có khoảng trắng thì không có nhịp. Không có nhịp thì chỉ còn lại tiếng ồn.
+
+---
+
+## Bây giờ, hãy ra ngoài đi
+
+Mình biết bạn đang đọc bài này, có thể đang ngồi trước màn hình với một danh sách to-do đang chờ.
+
+Mình sẽ không nói "bỏ hết đi, yolo". Mình sẽ chỉ nói:
+
+Chọn lấy một buổi chiều trong tuần này. Gấp máy tính lại. Ra đường. Mua thứ bạn thích uống — trà sữa, kem, cà phê mang đi, hay gì cũng được. Rồi đi lang thang không cần đích đến. Nhìn vào những thứ bạn thường đi qua nhưng không bao giờ thật sự nhìn.
+
+Đừng chụp ảnh để đăng. Đừng nghe podcast "năng suất". Chỉ cần ở đó.
+
+Mình hứa với bạn, cái buổi chiều đó sẽ không lãng phí. Nó sẽ trả lại cho bạn thứ mà không một khoá học nào có thể dạy: cảm giác bạn đang sống một cuộc đời của mình, không phải đang chạy trong cuộc đời của người khác.
+
+Thanh xuân đang ở đây. Ngay lúc này.
+
+Đừng để nó trôi qua trong khi bạn đang bận chuẩn bị để sống nó.
+1a:["$","$L26",null,{"projects":[],"latestPosts":[{"slug":"micro-wins","content":"$27","title":"Today I Won — With the Smallest Things","description":"Don't wait until you've changed the world to allow yourself to be happy.","date":"2026-06-29","tags":["Mindfulness","Happiness","Self-care","Slow Living"],"readingTime":"4 min read","i18n":{"en":{"title":"Today I Won — With the Smallest Things","description":"Don't wait until you've changed the world to allow yourself to be happy.","content":"$28","readingTime":"4 min read"},"vi":{"title":"Hôm nay mình thắng rồi — bằng những thứ rất nhỏ bé","description":"Đừng đợi đến khi thay đổi thế giới mới cho phép bản thân được hạnh phúc.","content":"$29","readingTime":"5 min read"}}},{"slug":"the-joy-of-being-a-beginner","content":"$2a","title":"Knowing Nothing — And That's the Best Thing I've Ever Had","description":"Stop pressuring yourself to become an expert. Enjoy the privilege of being curious and wonderfully clueless.","date":"2026-06-29","tags":["Learning","Beginners","UX/UI","Growth"],"readingTime":"5 min read","i18n":{"en":{"title":"Knowing Nothing — And That's the Best Thing I've Ever Had","description":"Stop pressuring yourself to become an expert. Enjoy the privilege of being curious and wonderfully clueless.","content":"$2b","readingTime":"5 min read"},"vi":{"title":"Chưa biết gì — và đó lại là điều tuyệt nhất mình từng có","description":"Ngừng áp lực phải trở thành chuyên gia. Hãy tận hưởng đặc quyền được tò mò và ngốc nghếch.","content":"$2c","readingTime":"6 min read"}}},{"slug":"wasting-time-beautifully","content":"$2d","title":"Today I Wasted a Whole Afternoon — And I Don't Regret a Single Minute","description":"Youth is for experiencing, not for completing a KPI sheet.","date":"2026-06-29","tags":["Youth","Freedom","Life","Slow Living"],"readingTime":"4 min read","i18n":{"en":{"title":"Today I Wasted a Whole Afternoon — And I Don't Regret a Single Minute","description":"Youth is for experiencing, not for completing a KPI sheet.","content":"$2e","readingTime":"4 min read"},"vi":{"title":"Hôm nay mình đã lãng phí trọn một buổi chiều — và không hối hận một giây nào","description":"Thanh xuân là để trải nghiệm, không phải là một bản KPI để hoàn thành.","content":"$2f","readingTime":"5 min read"}}}]}]
 1f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
 30:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/04bmhz1bs85_6.js","/_next/static/chunks/157ef.7y5jfeh.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
 1d:null
