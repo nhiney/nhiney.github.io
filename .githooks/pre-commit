@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Enforce the project's immutable commit-identity rule (see AGENTS.md).
+# Every commit in this repo MUST be authored AND committed by:
+#   Nguyễn Thị Yến Nhi <nhiyen.engineer@gmail.com>
+# Do not weaken or remove this hook.
+set -euo pipefail
+
+EXPECTED_EMAIL="nhiyen.engineer@gmail.com"
+EXPECTED_NAME="Nguyễn Thị Yến Nhi"
+
+extract_email() { sed -n 's/.*<\(.*\)>.*/\1/p'; }
+author_email=$(git var GIT_AUTHOR_IDENT | extract_email)
+committer_email=$(git var GIT_COMMITTER_IDENT | extract_email)
+
+fail=0
+if [ "$author_email" != "$EXPECTED_EMAIL" ]; then
+  echo "✗ commit blocked: author email is '$author_email', must be '$EXPECTED_EMAIL'" >&2
+  fail=1
+fi
+if [ "$committer_email" != "$EXPECTED_EMAIL" ]; then
+  echo "✗ commit blocked: committer email is '$committer_email', must be '$EXPECTED_EMAIL'" >&2
+  fail=1
+fi
+
+if [ "$fail" -ne 0 ]; then
+  echo "" >&2
+  echo "This repo requires all commits to be authored by $EXPECTED_NAME <$EXPECTED_EMAIL>." >&2
+  echo "Fix with: git config user.name \"$EXPECTED_NAME\" && git config user.email \"$EXPECTED_EMAIL\"" >&2
+  exit 1
+fi
