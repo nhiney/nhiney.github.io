@@ -9,12 +9,23 @@ EXPECTED_EMAIL="nhiyen.engineer@gmail.com"
 EXPECTED_NAME="Nguyễn Thị Yến Nhi"
 
 extract_email() { sed -n 's/.*<\(.*\)>.*/\1/p'; }
+extract_name() { sed -n 's/^\(.*\) <.*>.*/\1/p'; }
+author_name=$(git var GIT_AUTHOR_IDENT | extract_name)
 author_email=$(git var GIT_AUTHOR_IDENT | extract_email)
+committer_name=$(git var GIT_COMMITTER_IDENT | extract_name)
 committer_email=$(git var GIT_COMMITTER_IDENT | extract_email)
 
 fail=0
+if [ "$author_name" != "$EXPECTED_NAME" ]; then
+  echo "✗ commit blocked: author name is '$author_name', must be '$EXPECTED_NAME'" >&2
+  fail=1
+fi
 if [ "$author_email" != "$EXPECTED_EMAIL" ]; then
   echo "✗ commit blocked: author email is '$author_email', must be '$EXPECTED_EMAIL'" >&2
+  fail=1
+fi
+if [ "$committer_name" != "$EXPECTED_NAME" ]; then
+  echo "✗ commit blocked: committer name is '$committer_name', must be '$EXPECTED_NAME'" >&2
   fail=1
 fi
 if [ "$committer_email" != "$EXPECTED_EMAIL" ]; then

@@ -9,6 +9,7 @@ import { translateTag } from "@/components/blog/TagLabel";
 import { ViewCounter } from "@/components/blog/ViewCounter";
 import { BlogCoverImage } from "@/components/blog/BlogCoverImage";
 import { ReadingTimeLabel } from "@/components/blog/ReadingTimeLabel";
+import { BlogIndexQuickNav } from "@/components/blog/BlogQuickNav";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
 import {
@@ -263,87 +264,91 @@ export function BlogClient({ posts }: BlogClientProps) {
   };
 
   return (
-    <div className="mx-auto max-w-4xl space-y-7">
-      <div className="flex flex-col gap-4 border-b border-border/40 pb-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="relative w-full sm:max-w-xs">
-          <Search
-            className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-muted-foreground/40"
-            size={16}
-          />
-          <input
-            type="text"
-            placeholder={t("blogPage.search_placeholder")}
-            value={searchQuery}
-            onChange={(event) => setSearchQuery(event.target.value)}
-            className="h-10 w-full border-0 border-b border-transparent bg-transparent pl-7 pr-7 text-sm outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-border"
-          />
-          {searchQuery && (
-            <button
-              type="button"
-              aria-label={t("blogPage.clear_filters")}
-              onClick={() => setSearchQuery("")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground/50 transition-colors hover:text-foreground"
-            >
-              <X size={15} />
-            </button>
-          )}
+    <>
+      <div className="blog-quick-nav-content mx-auto max-w-4xl space-y-7">
+        <div className="flex flex-col gap-4 border-b border-border/40 pb-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="relative w-full sm:max-w-xs">
+            <Search
+              className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-muted-foreground/40"
+              size={16}
+            />
+            <input
+              id="blog-search"
+              type="text"
+              placeholder={t("blogPage.search_placeholder")}
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              className="h-10 w-full border-0 border-b border-transparent bg-transparent pl-7 pr-7 text-sm outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-border"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                aria-label={t("blogPage.clear_filters")}
+                onClick={() => setSearchQuery("")}
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground/50 transition-colors hover:text-foreground"
+              >
+                <X size={15} />
+              </button>
+            )}
+          </div>
+
+          <p className="text-xs site-soft">
+            {filteredPosts.length}{" "}
+            {t(filteredPosts.length === 1 ? "blogPage.article_one" : "blogPage.article_other")}
+          </p>
         </div>
 
-        <p className="text-xs site-soft">
-          {filteredPosts.length}{" "}
-          {t(filteredPosts.length === 1 ? "blogPage.article_one" : "blogPage.article_other")}
-        </p>
-      </div>
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-12">
+          <TopicSidebar
+            t={t}
+            totalCount={posts.length}
+            groupCounts={groupCounts}
+            moreTags={moreTags}
+            tagCounts={tagCounts}
+            selectedTopic={selectedTopic}
+            selectedTag={selectedTag}
+            onSelectAll={selectAll}
+            onSelectTopic={selectTopic}
+            onSelectTag={selectTag}
+          />
 
-      <div className="flex flex-col gap-8 lg:flex-row lg:gap-12">
-        <TopicSidebar
-          t={t}
-          totalCount={posts.length}
-          groupCounts={groupCounts}
-          moreTags={moreTags}
-          tagCounts={tagCounts}
-          selectedTopic={selectedTopic}
-          selectedTag={selectedTag}
-          onSelectAll={selectAll}
-          onSelectTopic={selectTopic}
-          onSelectTag={selectTag}
-        />
-
-        <main className="min-w-0 flex-1">
-        {filteredPosts.length === 0 ? (
-          <FadeIn>
-            <div className="flex flex-col items-center justify-center gap-3 py-28 text-center">
-              <p className="text-sm site-body">{t("blogPage.no_results")}</p>
-              {isFiltering && (
-                <button
-                  type="button"
-                  onClick={clearFilters}
-                  className="text-sm font-medium text-primary hover:underline"
-                >
-                  {t("blogPage.clear_filters")}
-                </button>
-              )}
-            </div>
-          </FadeIn>
-        ) : (
-          <div>
-            {featuredPost && (
+          <main id="blog-posts" className="min-w-0 flex-1 scroll-mt-24">
+            {filteredPosts.length === 0 ? (
               <FadeIn>
-                <div className="mb-2">
-                  <FeaturedArticle post={featuredPost} />
+                <div className="flex flex-col items-center justify-center gap-3 py-28 text-center">
+                  <p className="text-sm site-body">{t("blogPage.no_results")}</p>
+                  {isFiltering && (
+                    <button
+                      type="button"
+                      onClick={clearFilters}
+                      className="text-sm font-medium text-primary hover:underline"
+                    >
+                      {t("blogPage.clear_filters")}
+                    </button>
+                  )}
                 </div>
               </FadeIn>
+            ) : (
+              <div>
+                {featuredPost && (
+                  <FadeIn>
+                    <div className="mb-2">
+                      <FeaturedArticle post={featuredPost} />
+                    </div>
+                  </FadeIn>
+                )}
+                {listPosts.map((post, index) => (
+                  <FadeIn key={post.slug} delay={index * 0.05}>
+                    <ArticleRow post={post} />
+                  </FadeIn>
+                ))}
+              </div>
             )}
-            {listPosts.map((post, index) => (
-              <FadeIn key={post.slug} delay={index * 0.05}>
-                <ArticleRow post={post} />
-              </FadeIn>
-            ))}
-          </div>
-        )}
-      </main>
+          </main>
+        </div>
       </div>
-    </div>
+      <BlogIndexQuickNav postsTargetId="blog-posts" searchTargetId="blog-search" />
+    </>
   );
 }
 

@@ -508,7 +508,17 @@ body.site-text-palette .text-gradient {
   display: none;
 }
 
+@media (max-width: 1023px) {
+  .blog-quick-nav-content {
+    padding-right: calc(3.25rem + env(safe-area-inset-right));
+  }
+}
+
 @media (min-width: 1600px) {
+  .blog-article-floating-nav {
+    display: none;
+  }
+
   .blog-article-shell {
     display: grid;
     grid-template-columns: 12rem 7rem minmax(0, 48rem);

@@ -25,9 +25,9 @@ git config user.email "nhiyen.engineer@gmail.com"
 
 Enforcement:
 - The repo-local `user.name` / `user.email` are set to the identity above.
-- A versioned `pre-commit` hook (`.githooks/pre-commit`, wired via
-  `core.hooksPath`) blocks any commit whose author or committer email is not
-  `nhiyen.engineer@gmail.com`.
+- Versioned Git hooks (`.githooks/pre-commit` and `.githooks/pre-push`, wired
+  via `core.hooksPath`) block commits and pushed commits whose author or
+  committer identity is not `Nguyễn Thị Yến Nhi <nhiyen.engineer@gmail.com>`.
 
 Do not weaken, bypass (`--no-verify`), or remove this hook, and do not change
 this rule.

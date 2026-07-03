@@ -20,6 +20,7 @@ import { TagLabel } from "@/components/blog/TagLabel";
 import { LocalDate } from "@/components/blog/LocalDate";
 import { ReadingTimeLabel } from "@/components/blog/ReadingTimeLabel";
 import { T } from "@/components/i18n/T";
+import { ArticleQuickNav } from "@/components/blog/BlogQuickNav";
 
 // Build per-locale string maps for a post's title / description, English first.
 function localeMap(post: Post, field: "title" | "description"): Record<string, string> {
@@ -164,7 +165,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
             </div>
           </aside>
 
-          <div className="blog-article-main mx-auto max-w-[48rem]">
+          <div className="blog-article-main blog-quick-nav-content mx-auto max-w-[48rem]">
             <FadeIn>
               <Link
                 href="/blog"
@@ -283,6 +284,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
           </div>
         </div>
       </Container>
+      <ArticleQuickNav />
     </>
   );
 }

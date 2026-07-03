@@ -55,7 +55,7 @@ export const NAV_ITEMS = [
 
   { name: "Certificates", href: "/certificates" },
   { name: "Blog", href: "/blog" },
-  { name: "Waitlist", href: "/waitlist" },
+  { name: "Contact", href: "/waitlist" },
   { name: "Books", href: "/books" },
 ];
 

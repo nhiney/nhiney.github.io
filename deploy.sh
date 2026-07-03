@@ -43,8 +43,12 @@ if git diff --cached --quiet; then
 fi
 
 COMMIT_MSG="deploy: $(date '+%Y-%m-%d %H:%M:%S')"
-git commit -m "$COMMIT_MSG"
-git push origin "$BRANCH"
+git \
+  -c "core.hooksPath=$REPO_ROOT/.githooks" \
+  -c "user.name=Nguyễn Thị Yến Nhi" \
+  -c "user.email=nhiyen.engineer@gmail.com" \
+  commit -m "$COMMIT_MSG"
+git -c "core.hooksPath=$REPO_ROOT/.githooks" push origin "$BRANCH"
 
 echo ""
 echo "Deployed to branch '$BRANCH'."

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Enforce the project's immutable commit-identity rule before publishing.
+set -euo pipefail
+
+EXPECTED_EMAIL="nhiyen.engineer@gmail.com"
+EXPECTED_NAME="Nguyễn Thị Yến Nhi"
+ZERO_SHA="0000000000000000000000000000000000000000"
+
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+  if [ "$local_sha" = "$ZERO_SHA" ]; then
+    continue
+  fi
+
+  if [ "$remote_sha" = "$ZERO_SHA" ]; then
+    commits=$(git rev-list "$local_sha" --not --remotes)
+  else
+    commits=$(git rev-list "$remote_sha..$local_sha")
+  fi
+
+  for commit in $commits; do
+    info=$(git show -s --format='%an%x09%ae%x09%cn%x09%ce%x09%h' "$commit")
+    IFS=$'\t' read -r author_name author_email committer_name committer_email short_sha <<<"$info"
+
+    if [ "$author_name" != "$EXPECTED_NAME" ] || [ "$author_email" != "$EXPECTED_EMAIL" ] ||
+      [ "$committer_name" != "$EXPECTED_NAME" ] || [ "$committer_email" != "$EXPECTED_EMAIL" ]; then
+      cat >&2 <<EOF
+Push blocked by immutable identity rule.
+
+Commit: $short_sha
+Expected author/committer: $EXPECTED_NAME <$EXPECTED_EMAIL>
+Actual author: $author_name <$author_email>
+Actual committer: $committer_name <$committer_email>
+EOF
+      exit 1
+    fi
+  done
+done
