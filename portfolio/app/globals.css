@@ -510,7 +510,18 @@ body.site-text-palette .text-gradient {
 
 @media (max-width: 1023px) {
   .blog-quick-nav-content {
-    padding-right: calc(3.25rem + env(safe-area-inset-right));
+    padding-right: calc(2.75rem + env(safe-area-inset-right));
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-article-main.blog-quick-nav-content {
+    padding-right: calc(2.6rem + env(safe-area-inset-right));
+  }
+
+  .blog-article-floating-nav :is(a, button) {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -649,38 +660,57 @@ body.site-text-palette .text-gradient {
 
 .post-content > p:first-of-type {
   position: relative;
-  margin: 0 0 2.2rem;
-  padding: 1.25rem 0 1.25rem 1.35rem;
-  border-left: 3px solid var(--accent-ink);
+  margin: 0 0 2rem;
+  padding: 0.7rem 0 0.75rem 1rem;
+  border-left: 2px solid color-mix(in srgb, var(--accent-ink) 74%, transparent);
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--accent-ink) 9%, transparent), transparent 72%);
-  font-size: 1.22rem;
-  line-height: 1.72;
+    linear-gradient(90deg, color-mix(in srgb, var(--accent-ink) 4%, transparent), transparent 78%);
+  font-size: 1.16rem;
+  line-height: 1.78;
   color: var(--ink);
 }
 
 .post-content > p:first-of-type::first-letter {
   float: left;
-  margin: 0.08em 0.16em -0.02em 0;
+  margin: 0.12em 0.14em 0 0;
   font-family: var(--font-plus-jakarta), var(--font-sora), var(--font-inter), sans-serif;
-  font-size: 3.4em;
+  font-size: 2.55em;
   font-weight: 800;
-  line-height: 0.72;
+  line-height: 0.82;
   color: var(--accent-ink);
+}
+
+.post-content.no-initial-dropcap > p:first-of-type {
+  padding-left: 0;
+  border-left: 0;
+  background: none;
+  font-size: 1.14rem;
+  line-height: 1.8;
+}
+
+.post-content.no-initial-dropcap > p:first-of-type::first-letter {
+  float: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 .post-content h2 {
   counter-increment: article-section;
   font-family: var(--font-plus-jakarta), var(--font-sora), var(--font-inter), sans-serif;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-block: 3.8rem 1.25rem;
-  padding-bottom: 0.95rem;
+  display: grid;
+  grid-template-columns: 2.05rem minmax(0, 1fr);
+  column-gap: 0.75rem;
+  align-items: baseline;
+  margin-block: 3.6rem 1.25rem;
+  padding-bottom: 0.85rem;
   border-bottom: 1px solid var(--rule-soft);
   font-size: 1.55rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.34;
   letter-spacing: 0;
   text-align: left;
   color: var(--ink);
@@ -688,21 +718,14 @@ body.site-text-palette .text-gradient {
 }
 .post-content h2::before {
   content: counter(article-section, decimal-leading-zero);
-  flex: 0 0 auto;
-  margin-top: 0.16rem;
   font-family: var(--font-plus-jakarta), var(--font-sora), var(--font-inter), sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.2;
   color: var(--accent-ink);
 }
 .post-content h2::after {
-  content: "";
-  flex: 1 1 auto;
-  height: 1px;
-  min-width: 2rem;
-  margin-top: 1rem;
-  background: var(--rule);
+  content: none;
 }
 
 .post-content h3 {
@@ -825,6 +848,22 @@ body.site-text-palette .text-gradient {
 }
 .book-callout-body p { margin: 0; font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; color: var(--ink); }
 .book-callout-body p + p { margin-top: 0.85rem; }
+
+.post-content .aesthetic-note {
+  border: 1px solid var(--rule-soft);
+  background: color-mix(in srgb, var(--accent-ink) 7%, transparent);
+}
+
+.post-content .aesthetic-note p {
+  margin: 0;
+  color: inherit;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.post-content .aesthetic-note p + p {
+  margin-top: 0.8rem;
+}
 
 .post-content blockquote {
   position: relative;

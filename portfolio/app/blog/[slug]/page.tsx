@@ -31,6 +31,31 @@ function localeMap(post: Post, field: "title" | "description"): Record<string, s
   return map;
 }
 
+function firstParagraphNeedsPlainOpening(content: string): boolean {
+  const blocks = content
+    .replace(/^\uFEFF/, "")
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  for (const block of blocks) {
+    if (
+      block === "---" ||
+      block.startsWith("import ") ||
+      block.startsWith("export ") ||
+      block.startsWith("<!--") ||
+      /^(#{1,6}\s|>|[-*+]\s|\d+\.\s|<[^>]+>)/.test(block)
+    ) {
+      continue;
+    }
+
+    const firstWord = block.replace(/^[\s"'([{]*/, "").split(/\s+/)[0] ?? "";
+    return /^\d/.test(firstWord) || /[^\x00-\x7F]/.test(firstWord);
+  }
+
+  return false;
+}
+
 interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -136,6 +161,12 @@ export default async function BlogPostPage({ params }: PostPageProps) {
       <MDXRemote key={lang} source={v.content} components={components} />,
     ])
   );
+  const bodyClassNames = Object.fromEntries(
+    Object.entries(variants).map(([lang, v]) => [
+      lang,
+      firstParagraphNeedsPlainOpening(v.content) ? "no-initial-dropcap" : "",
+    ])
+  );
 
   const cover = resolveBlogCover(slug, post.title, post.tags ?? [], post.image);
   const ogImage = cover.src
@@ -224,7 +255,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
               </div>
 
               <div className="mt-12 sm:mt-14">
-                <ArticleI18n bodies={bodies} />
+                <ArticleI18n bodies={bodies} bodyClassNames={bodyClassNames} />
               </div>
             </FadeIn>
 
