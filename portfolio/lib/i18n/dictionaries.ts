@@ -905,7 +905,7 @@ export const dictionaries = {
         hero: {
           badge: "Credentials",
           title: "Resume",
-          description: "My engineering background in a single document — backend systems, database architecture, and secure software design.",
+          description: "My Business Analyst profile in a single document — requirements analysis, user stories, system flows, and product delivery.",
           download: "Download PDF",
           open_tab: "Open in new tab",
         },

@@ -6,7 +6,6 @@ import { ArrowRight, ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { LocalDate } from "@/components/blog/LocalDate";
 import { translateTag } from "@/components/blog/TagLabel";
-import { ViewCounter } from "@/components/blog/ViewCounter";
 import { BlogCoverImage } from "@/components/blog/BlogCoverImage";
 import { ReadingTimeLabel } from "@/components/blog/ReadingTimeLabel";
 import { BlogIndexQuickNav } from "@/components/blog/BlogQuickNav";
@@ -63,8 +62,6 @@ function Meta({ post, className }: { post: Post; className?: string }) {
       </time>
       <span className="text-muted-foreground/25">·</span>
       <span><ReadingTimeLabel readingTime={post.readingTime} i18n={post.i18n} /></span>
-      <span className="text-muted-foreground/25">·</span>
-      <ViewCounter slug={post.slug} readOnly showLabel={false} />
     </div>
   );
 }
@@ -138,8 +135,6 @@ function ArticleRow({ post }: { post: Post }) {
           </time>
           <span className="mt-1 flex items-center gap-2 text-muted-foreground/50">
             <ReadingTimeLabel readingTime={post.readingTime} i18n={post.i18n} />
-            <span className="text-muted-foreground/25">·</span>
-            <ViewCounter slug={post.slug} readOnly showLabel={false} />
           </span>
         </div>
 
