@@ -6,32 +6,31 @@ import { BlogClient } from "./BlogClient";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Metadata } from "next";
 
-// Audience is primarily Vietnamese — lead the listing metadata in Vietnamese so
-// it surfaces for Vietnamese searches. The title is wrapped by the layout's
-// "%s · Yen Nhi" template, so we intentionally omit the brand here.
+// The route is not locale-prefixed, so the canonical metadata stays English.
+// Client-side language switching still exposes Vietnamese content in the page.
 export const metadata: Metadata = {
-  title: "Blog — Nhật ký tuổi trẻ, sống chậm & chữa lành",
+  title: "Blog - Reflections on youth, slow living, and learning",
   description:
-    "Những ghi chép về tuổi trẻ, sống chậm, xã hội và những bài học mình nhặt nhạnh trên đường đi — viết bằng giọng \"mình – bạn\", chân thật và gần gũi.",
+    "Reflections on youth, slow living, society, and the lessons I pick up along the way.",
   keywords: [
-    "blog tiếng Việt",
-    "blog tuổi trẻ",
-    "sống chậm",
-    "chữa lành",
+    "personal blog",
+    "youth reflections",
+    "slow living",
+    "self healing",
     "overthinking",
-    "cầu toàn",
-    "tự ti",
-    "bền bỉ",
-    "Nguyễn Thị Yến Nhi",
+    "perfectionism",
+    "self worth",
+    SITE_CONFIG.fullName,
   ],
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog — Nhật ký tuổi trẻ, sống chậm & chữa lành",
+    title: "Blog - Reflections on youth, slow living, and learning",
     description:
-      "Những ghi chép về tuổi trẻ, sống chậm, overthinking, tự trọng và những bài học mình nhặt nhạnh trên đường đi.",
+      "Reflections on youth, slow living, society, and the lessons I pick up along the way.",
     url: `${SITE_CONFIG.url}/blog`,
     type: "website",
-    locale: "vi_VN",
+    locale: "en_US",
+    alternateLocale: ["vi_VN"],
     images: [
       {
         url: SITE_CONFIG.ogImages.blog,
@@ -39,15 +38,15 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/png",
-        alt: "Blog — Nhật ký tuổi trẻ, sống chậm & chữa lành",
+        alt: "Blog - reflections on youth, slow living, and learning",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog — Nhật ký tuổi trẻ, sống chậm & chữa lành",
+    title: "Blog - Reflections on youth, slow living, and learning",
     description:
-      "Những ghi chép về tuổi trẻ, sống chậm, overthinking, tự trọng và những bài học mình nhặt nhạnh trên đường đi.",
+      "Reflections on youth, slow living, society, and the lessons I pick up along the way.",
     images: [SITE_CONFIG.ogImages.blog],
   },
 };

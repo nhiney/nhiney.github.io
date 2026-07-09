@@ -9,7 +9,7 @@ import { getPostBySlug, getSlugs, getAllPosts, Post } from "@/lib/mdx";
 import type { PostTranslation } from "@/types";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Metadata } from "next";
-import { TableOfContents } from "@/components/blog/TableOfContents";
+import { ArticleTocAside } from "@/components/blog/TableOfContents";
 import { ViewCounter } from "@/components/blog/ViewCounter";
 import { ArticleI18n } from "@/components/blog/ArticleI18n";
 import { ArticleJsonLd } from "@/components/blog/ArticleJsonLd";
@@ -73,19 +73,15 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
   if (!post) return {};
 
-  // The blog's audience is primarily Vietnamese, so lead the page metadata with
-  // the Vietnamese title/description when a translation exists. The <title> and
-  // meta description are the strongest on-page relevance signals, so this makes
-  // posts far easier to surface for Vietnamese searches — the English body still
-  // lives in the same HTML for English readers.
-  const vi = post.i18n?.vi;
-  const title = vi?.title ?? post.title;
-  const description = vi?.description ?? post.description;
+  // This route is canonical English. Vietnamese content is available for
+  // client-side language switching, so expose it as an alternate locale instead
+  // of leading static metadata with Vietnamese copy.
+  const title = post.title;
+  const description = post.description;
+  const hasVi = Boolean(post.i18n?.vi);
 
-  // Keep the English title as a keyword alongside the post's tags so the page
-  // stays relevant for searches in either language.
   const keywords = Array.from(
-    new Set([...(post.tags ?? []), title, post.title].filter(Boolean))
+    new Set([...(post.tags ?? []), title].filter(Boolean))
   ) as string[];
 
   // Prefer a real illustration when one exists, otherwise fall back to the
@@ -106,8 +102,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       title,
       description,
       type: "article",
-      locale: "vi_VN",
-      alternateLocale: ["en_US"],
+      locale: "en_US",
+      ...(hasVi ? { alternateLocale: ["vi_VN"] } : {}),
       publishedTime: post.date as string,
       authors: [SITE_CONFIG.fullName],
       url: `${SITE_CONFIG.url}/blog/${slug}`,
@@ -173,30 +169,25 @@ export default async function BlogPostPage({ params }: PostPageProps) {
     ? `${SITE_CONFIG.url}${cover.src}`
     : `${SITE_CONFIG.url}/og/blog/${slug}.png`;
 
-  // Mirror the VI-led page metadata in the structured data so the headline Google
-  // reads matches the <title> it shows — consistent signals for VN searches.
-  const viMeta = post.i18n?.vi;
-
   return (
     <>
       <ArticleJsonLd
         slug={slug}
-        title={viMeta?.title ?? post.title}
-        description={viMeta?.description ?? post.description}
+        title={post.title}
+        description={post.description}
         date={post.date as string}
         tags={post.tags}
         image={ogImage}
-        lang={viMeta ? "vi" : "en"}
+        lang="en"
       />
       <Container className="py-10 sm:py-14 lg:py-16">
         <div className="blog-article-shell">
-          <aside className="blog-article-toc" aria-label="Mục lục bài viết">
-            <div className="blog-article-toc-inner">
-              <TableOfContents />
-            </div>
-          </aside>
+          <ArticleTocAside />
+          <div className="blog-article-rail">
+            <ArticleQuickNav />
+          </div>
 
-          <div className="blog-article-main blog-quick-nav-content mx-auto max-w-[48rem]">
+          <div className="blog-article-main mx-auto max-w-[48rem]">
             <FadeIn>
               <Link
                 href="/blog"
@@ -315,7 +306,6 @@ export default async function BlogPostPage({ params }: PostPageProps) {
           </div>
         </div>
       </Container>
-      <ArticleQuickNav />
     </>
   );
 }

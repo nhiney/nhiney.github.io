@@ -1,5 +1,75 @@
 [
   {
+    "id": "coursera-PFT5WAG2FEDT",
+    "title": "Google Digital Marketing & E-commerce",
+    "issuer": "Google · Coursera",
+    "date": "Jul 4, 2026",
+    "category": "Marketing",
+    "description": "An 8-course professional certificate by Google covering the full digital marketing and e-commerce funnel — from foundational concepts to attracting and engaging customers, email marketing, marketing analytics, and building and running an online store, with a focus on developing long-term customer loyalty.",
+    "description_vi": "Chứng chỉ chuyên nghiệp gồm 8 khóa học do Google cung cấp, bao quát toàn bộ phễu marketing số và thương mại điện tử — từ kiến thức nền tảng đến thu hút và tương tác khách hàng, email marketing, phân tích marketing, và xây dựng, vận hành cửa hàng trực tuyến, với trọng tâm phát triển lòng trung thành khách hàng lâu dài.",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/PFT5WAG2FEDT",
+    "verifyUrl": "https://coursera.org/verify/professional-cert/PFT5WAG2FEDT",
+    "image": "/certificates/coursera-PFT5WAG2FEDT.webp",
+    "courses": [
+      {
+        "title": "Foundations of Digital Marketing and E-commerce",
+        "title_vi": "Nền tảng Marketing số và Thương mại điện tử",
+        "image": "/certificates/courses/foundations-of-digital-marketing-and-e-commerce.webp",
+        "verifyUrl": "https://coursera.org/verify/F2WON2WUSCWB",
+        "date": "Jun 22, 2026"
+      },
+      {
+        "title": "Attract and Engage Customers with Digital Marketing",
+        "title_vi": "Thu hút và tương tác khách hàng bằng Marketing số",
+        "image": "/certificates/courses/attract-and-engage-customers-with-digital-marketing.webp",
+        "verifyUrl": "https://coursera.org/verify/YKXGUH3TNG9O",
+        "date": "Jun 29, 2026"
+      },
+      {
+        "title": "From Likes to Leads: Interact with Customers Online",
+        "title_vi": "Từ lượt thích đến khách hàng tiềm năng: Tương tác trực tuyến",
+        "image": "/certificates/courses/from-likes-to-leads-interact-with-customers-online.webp",
+        "verifyUrl": "https://coursera.org/verify/FE2SY8FV7M9S",
+        "date": "Jun 30, 2026"
+      },
+      {
+        "title": "Think Outside the Inbox: Email Marketing",
+        "title_vi": "Tư duy khác biệt: Email Marketing",
+        "image": "/certificates/courses/think-outside-the-inbox-email-marketing.webp",
+        "verifyUrl": "https://coursera.org/verify/CZNDXTZP9IYZ",
+        "date": "Jul 1, 2026"
+      },
+      {
+        "title": "Assess for Success: Marketing Analytics and Measurement",
+        "title_vi": "Đánh giá để thành công: Phân tích và đo lường Marketing",
+        "image": "/certificates/courses/assess-for-success-marketing-analytics-and-measurement.webp",
+        "verifyUrl": "https://coursera.org/verify/9IC8AUDHHZ57",
+        "date": "Jul 3, 2026"
+      },
+      {
+        "title": "Make the Sale: Build, Launch, and Manage E-commerce Stores",
+        "title_vi": "Chốt đơn hàng: Xây dựng, ra mắt và vận hành cửa hàng thương mại điện tử",
+        "image": "/certificates/courses/make-the-sale-build-launch-and-manage-e-commerce-stores.webp",
+        "verifyUrl": "https://coursera.org/verify/AD0V3NT8RQ4X",
+        "date": "Jul 3, 2026"
+      },
+      {
+        "title": "Satisfaction Guaranteed: Develop Customer Loyalty Online",
+        "title_vi": "Đảm bảo sự hài lòng: Phát triển lòng trung thành khách hàng trực tuyến",
+        "image": "/certificates/courses/satisfaction-guaranteed-develop-customer-loyalty-online.webp",
+        "verifyUrl": "https://coursera.org/verify/MQNO1TO5CYQT",
+        "date": "Jul 4, 2026"
+      },
+      {
+        "title": "Accelerate Your Job Search with AI",
+        "title_vi": "Tăng tốc quá trình tìm kiếm việc làm với AI",
+        "image": "/certificates/courses/accelerate-your-job-search-with-ai.webp",
+        "verifyUrl": "https://coursera.org/verify/6DHE0HN2O6RB",
+        "date": "May 3, 2026"
+      }
+    ]
+  },
+  {
     "id": "coursera-ERRCIOPXMF5I",
     "title": "Google IT Automation with Python",
     "issuer": "Google · Coursera",

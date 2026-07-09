@@ -8,9 +8,8 @@ function minutesFrom(readingTime: string) {
   return match?.[0] ?? readingTime;
 }
 
-export function formatReadingTime(readingTime: string, language: string) {
-  if (language === "vi") return `${minutesFrom(readingTime)} phút đọc`;
-  return readingTime;
+export function formatReadingTime(readingTime: string, template: string) {
+  return template.replace("{minutes}", minutesFrom(readingTime));
 }
 
 export function ReadingTimeLabel({
@@ -20,7 +19,7 @@ export function ReadingTimeLabel({
   readingTime: string;
   i18n?: Record<string, PostTranslation>;
 }) {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const localizedReadingTime = i18n?.[language]?.readingTime ?? readingTime;
-  return <>{formatReadingTime(localizedReadingTime, language)}</>;
+  return <>{formatReadingTime(localizedReadingTime, t("blogPage.minute_read"))}</>;
 }

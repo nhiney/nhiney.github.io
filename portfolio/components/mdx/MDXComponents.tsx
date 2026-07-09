@@ -5,6 +5,11 @@ import { highlightCode } from "@/lib/shiki";
 import { cn } from "@/lib/utils";
 import { KeyTakeaway } from "@/components/mdx/KeyTakeaway";
 import { AestheticNote } from "@/components/mdx/AestheticNote";
+import {
+  EditorialArticle,
+  EditorialHighlightBox,
+  EditorialQuoteBox,
+} from "@/components/mdx/EditorialMinimalism";
 
 type LinkProps = ComponentPropsWithoutRef<"a">;
 type ImageProps = ComponentPropsWithoutRef<typeof Image>;
@@ -83,4 +88,7 @@ export const components = {
   // Editorial building block authors can drop into any .mdx article.
   KeyTakeaway,
   AestheticNote,
+  EditorialArticle,
+  EditorialHighlightBox,
+  EditorialQuoteBox,
 };

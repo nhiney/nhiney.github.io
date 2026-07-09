@@ -61,6 +61,7 @@ export function TableOfContents() {
             <a
               key={item.id}
               href={`#${item.id}`}
+              aria-current={active ? "location" : undefined}
               className={cn(
                 "-ml-px border-l py-1.5 text-sm leading-snug transition-colors duration-200",
                 item.level === 3 ? "pl-7" : "pl-4",
@@ -123,5 +124,22 @@ export function TableOfContents() {
         </div>
       </div>
     </div>
+  );
+}
+
+export function ArticleTocAside() {
+  const { t } = useLanguage();
+
+  return (
+    <aside
+      id="article-toc-aside"
+      tabIndex={-1}
+      className="blog-article-toc"
+      aria-label={t("blogPage.toc_aria")}
+    >
+      <div className="blog-article-toc-inner">
+        <TableOfContents />
+      </div>
+    </aside>
   );
 }

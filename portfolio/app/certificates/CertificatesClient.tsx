@@ -38,6 +38,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   AI: "bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20",
   "Project Management": "bg-amber-500/10 text-amber-400 border-amber-500/20",
   Design: "bg-orange-500/10 text-orange-400 border-orange-500/20",
+  Marketing: "bg-pink-500/10 text-pink-400 border-pink-500/20",
 };
 
 // Calm single-color dots for the premium / minimal "museum plaque" captions —
@@ -51,6 +52,7 @@ const CATEGORY_DOT: Record<string, string> = {
   AI: "bg-fuchsia-400",
   "Project Management": "bg-amber-400",
   Design: "bg-orange-400",
+  Marketing: "bg-pink-400",
 };
 
 const CATEGORY_SHORT: Record<string, string> = {
