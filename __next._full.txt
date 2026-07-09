@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-9:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
+9:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"default",1]
 :HL["/_next/static/chunks/10sqmh8pah3vh.css","style"]
-:HL["/_next/static/chunks/03ua64j0liyp8.css","style"]
+:HL["/_next/static/chunks/02svtkk111321.css","style"]
 :HL["/_next/static/media/11cc37d7380d16b4-s.p.0ptcwqi9jx~4d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1b99372b3eaef0c8-s.p.0gx2haw2tmll8.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -9,21 +9,21 @@
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-07-08"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/03ua64j0liyp8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0tta4oqe.h3jo.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0qh-~.c9.yyqx.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"UKnQoxC2OsfYwG7iDefRa"}
-c:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
-d:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
-e:I[64844,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"RouteTextPalette"]
-f:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
-10:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
-11:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
-12:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-13:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-14:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
-15:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0it83kqv7-025.js"],""]
-1b:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:T8f0,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Software Engineer","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Backend Development","Flutter Mobile Development","Laravel PHP Framework","ASP.NET MVC","Oracle Database","Database Security","Role-Based Access Control","REST API Design","Firebase","Software Engineering"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Software Engineering Certificate"},{"@type":"EducationalOccupationalCredential","name":"Mobile Development Certification"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Software Engineer Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-07-09"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/02svtkk111321.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0heb1hu0trevp.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/146yp4zw7o3eu.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{},null,false,null]},null,false,null],"$L8",false]],"m":"$undefined","G":["$9",["$La","$Lb"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"B4jOOqzvWfq6hnw9sO0hM"}
+c:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"PostHogProvider"]
+d:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"LanguageProvider"]
+e:I[64844,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"RouteTextPalette"]
+f:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"ScrollProgress"]
+10:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"BackgroundEffects"]
+11:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"Navbar"]
+12:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"default"]
+13:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"default"]
+14:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js","/_next/static/chunks/0it83kqv7-025.js"],"FadeIn"]
+15:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js","/_next/static/chunks/0it83kqv7-025.js"],""]
+1b:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"OutletBoundary"]
 1c:"$Sreact.suspense"
-1e:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
-20:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
+1e:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"ViewportBoundary"]
+20:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"MetadataBoundary"]
 3:["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}]
 4:["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}]
 5:["$","link",null,{"rel":"dns-prefetch","href":"https://github.com"}]
@@ -31,17 +31,275 @@ f:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oq
 7:["$","$1","c",{"children":["$L1a",[["$","script","script-0",{"src":"/_next/static/chunks/0k308.dc._5mp.js","async":true,"nonce":"$undefined"}]],["$","$L1b",null,{"children":["$","$1c",null,{"name":"Next.MetadataOutlet","children":"$@1d"}]}]]}]
 8:["$","$1","h",{"children":[null,["$","$L1e",null,{"children":"$L1f"}],["$","div",null,{"hidden":true,"children":["$","$L20",null,{"children":["$","$1c",null,{"name":"Next.Metadata","children":"$L21"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
 a:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/03ua64j0liyp8.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-22:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-23:I[29826,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"T"]
-24:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
-25:I[92513,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ServiceWorkerRegistration"]
+b:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/02svtkk111321.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+22:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"default"]
+23:I[29826,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"T"]
+24:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"FooterLanguageSelector"]
+25:I[92513,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"ServiceWorkerRegistration"]
 16:["$","rect",null,{"width":"20","height":"16","x":"2","y":"4","rx":"2"}]
 17:["$","path",null,{"d":"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"}]
 18:["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-5","children":[["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]],["$","a",null,{"href":"/cv.pdf","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground","children":[["$","$L22",null,{"ref":"$undefined","iconNode":[["path",{"d":"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z","key":"1oefj6"}],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5","key":"wfsgrz"}],["path",{"d":"M10 9H8","key":"b1mrlr"}],["path",{"d":"M16 13H8","key":"t4e002"}],["path",{"d":"M16 17H8","key":"z1uh3a"}]],"className":"lucide-file-text h-3.5 w-3.5"}],["$","$L23",null,{"k":"footer.view_cv"}]]}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L24",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
 19:["$","$L25",null,{}]
-26:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
-27:T244e,
+26:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js","/_next/static/chunks/0k308.dc._5mp.js"],"HomeClient"]
+27:T1dff,
+Some requests sound very short, very light, as if I should simply start right away.
+
+"Write me an article."
+
+"Make this screen look better."
+
+"Optimize this workflow so it is cleaner."
+
+In the past, I easily treated those sentences as enough to begin. I thought moving fast was useful. Make a draft first, revise later. Anything unclear would reveal itself while I was working.
+
+But the more I learn about product work, UX/UI, Business Analysis, and working with AI, the more I see the opposite: a short request is not necessarily a clear request.
+
+Sometimes it is only hiding many assumptions inside.
+
+Who is this article for? What does "better-looking" mean, by whose taste, and for which user behavior? Does "cleaner" mean fewer steps for users, fewer operations for the team, or less complexity in the code?
+
+If I rush straight into execution, I may work very hard. But hard work cannot rescue a problem statement I misunderstood from the beginning.
+
+---
+
+## Going faster can just mean being wrong faster
+
+AI makes this even clearer.
+
+With one short prompt, AI can return a very smooth draft. An article with an opening, body, and conclusion. A list of user stories that sound reasonable. A screen with a clean layout. An email more polite than the one I would write while tired.
+
+Looking at that output, I can easily feel the work is already halfway done.
+
+But if the original request is vague, that smoothness can trick me. A fluent answer can still miss the point. A design that looks fine can still solve the wrong problem. A professional-sounding brief can still lack the most important thing: what are we doing this for?
+
+AI does not automatically know my real context. A teammate cannot guess everything I did not say. Even I can fool myself, if I do not pause to write things down more clearly, into thinking I understand a request just because it sounds familiar.
+
+I am beginning to realize that speed only matters when the direction is reasonably right.
+
+If I do not know where I am going, moving faster may only take me farther away from where I needed to be.
+
+---
+
+## A clear brief does not have to be long
+
+I used to think a clear brief meant a very long document with many sections, many terms, and a slightly "grown-up" look. But a good brief does not have to be complicated.
+
+It only needs enough anchors so the person doing the work does not have to guess too much.
+
+Right now, when I meet a loose request, I usually ask five basic questions:
+
+1. **What is the real goal?** Are we trying to create awareness, persuade, explain, sell, save time, or reduce mistakes?
+2. **Who is the reader or user?** What do they already know, what do they need, what are they afraid of, and when will they use the result?
+3. **What is the current context?** Is this a new thing, an improvement to something existing, or a fix for a pain point?
+4. **Are there constraints?** Voice, deadline, required data, publishing platform, technical limits, or topics that must not be mentioned?
+5. **What counts as done or good?** When we look at the final result, what signs show it has met the need?
+
+These five questions sound simple, but every time I answer them seriously, the request becomes much less foggy.
+
+For example, "write an article about AI" is very broad. But if it becomes: "write a personal blog post in a warm voice for young people studying technology, about how to use AI to learn faster while keeping independent thinking," the work immediately has a better chance of going in the right direction.
+
+It still does not need to be perfect. But now it has a goal, audience, angle, voice, and boundary.
+
+For me, that is the difference between a casual ask and a brief someone can actually execute.
+
+<KeyTakeaway label="Reminder to myself" tone="sage">
+A good request does not have to be long to prove it is professional. It needs to be clear enough for the person doing the work to understand the goal, context, constraints, and definition of done.
+</KeyTakeaway>
+
+---
+
+## Asking again is not making things difficult
+
+For a while, I felt awkward asking follow-up questions.
+
+I was afraid people would think I was slow to understand. Afraid of making the conversation longer. Afraid my questions sounded too basic. Afraid that if I asked too much, the person assigning the work would think I was not capable enough.
+
+But later I saw that asking again is not resisting the request. Asking again is a way of caring for the outcome.
+
+When I ask, "Who is this article for?", I am not making things hard for the requester. I am trying not to write a grammatically correct article for the wrong reader.
+
+When I ask, "Do you want this screen to feel more minimal, friendly, or professional?", I am not nitpicking the word "better." I am helping both sides avoid repeated revisions because each person imagined a different direction.
+
+When I ask, "If we could keep only one message, what should the reader remember?", I am not slowing the article down. I am looking for the axis that keeps it from wandering.
+
+The right question can save more time than immediate action.
+
+Because fixing a wrong assumption at the beginning is usually lighter than fixing a nearly finished product.
+
+---
+
+## Using AI as someone that helps me think more clearly
+
+What I like about AI is not only that it can write quickly. What I find more useful is that it can help me see what is still unclear.
+
+Instead of starting with a prompt like "do this for me," I am practicing prompts like:
+
+- "Ask me the missing questions needed to clarify this request."
+- "Point out the vague assumptions in this brief."
+- "If you were a BA or Product Designer, what would you ask before doing this?"
+- "Turn these messy notes into a clear brief, but do not invent missing data."
+
+That way of asking makes AI a companion in the thinking part, not just a machine that generates drafts.
+
+It also forces me to be more honest with myself. If I do not know who the reader is, I have to admit I do not know yet. If I do not have a real example, I have to mark that as something to add. If I am using broad words like "better," "cooler," or "optimized," I have to bring them down to earth with more specific criteria.
+
+This skill feels very close to Business Analysis.
+
+A BA does not only record requirements. A BA helps requirements become understandable, discussable, testable, and executable. Product thinking is similar: before rushing into a solution, I need to understand the problem, the user, the context, and how we will know whether we solved the right thing.
+
+AI can strongly support expression, synthesis, and structure. But the responsibility for the question still belongs to me.
+
+---
+
+## A clear brief is a small gift
+
+I do not think every piece of work needs a heavy process. Some small tasks only need a few lines. Some conversations become clear after one extra question.
+
+But I want to stop treating vagueness as something we simply have to endure.
+
+A clearer request is a small gift to the person doing the work, because they do not have to guess so much.
+
+It is a gift to the person receiving the result, because what they receive is closer to what they really need.
+
+And it is also a gift to my future self, because when I look back, I understand why I chose one direction, left another out, and called something finished.
+
+I am still learning to ask better questions. Sometimes I still miss things. Sometimes I still rush. Sometimes a request feels so familiar that I assume I understand it.
+
+But at least now, before beginning, I often stop for one breath and ask myself:
+
+"Do I actually have a clear request, or only a sentence that sounds easy?"
+
+Often, that one pause makes the work more honest.
+28:T1dff,
+Some requests sound very short, very light, as if I should simply start right away.
+
+"Write me an article."
+
+"Make this screen look better."
+
+"Optimize this workflow so it is cleaner."
+
+In the past, I easily treated those sentences as enough to begin. I thought moving fast was useful. Make a draft first, revise later. Anything unclear would reveal itself while I was working.
+
+But the more I learn about product work, UX/UI, Business Analysis, and working with AI, the more I see the opposite: a short request is not necessarily a clear request.
+
+Sometimes it is only hiding many assumptions inside.
+
+Who is this article for? What does "better-looking" mean, by whose taste, and for which user behavior? Does "cleaner" mean fewer steps for users, fewer operations for the team, or less complexity in the code?
+
+If I rush straight into execution, I may work very hard. But hard work cannot rescue a problem statement I misunderstood from the beginning.
+
+---
+
+## Going faster can just mean being wrong faster
+
+AI makes this even clearer.
+
+With one short prompt, AI can return a very smooth draft. An article with an opening, body, and conclusion. A list of user stories that sound reasonable. A screen with a clean layout. An email more polite than the one I would write while tired.
+
+Looking at that output, I can easily feel the work is already halfway done.
+
+But if the original request is vague, that smoothness can trick me. A fluent answer can still miss the point. A design that looks fine can still solve the wrong problem. A professional-sounding brief can still lack the most important thing: what are we doing this for?
+
+AI does not automatically know my real context. A teammate cannot guess everything I did not say. Even I can fool myself, if I do not pause to write things down more clearly, into thinking I understand a request just because it sounds familiar.
+
+I am beginning to realize that speed only matters when the direction is reasonably right.
+
+If I do not know where I am going, moving faster may only take me farther away from where I needed to be.
+
+---
+
+## A clear brief does not have to be long
+
+I used to think a clear brief meant a very long document with many sections, many terms, and a slightly "grown-up" look. But a good brief does not have to be complicated.
+
+It only needs enough anchors so the person doing the work does not have to guess too much.
+
+Right now, when I meet a loose request, I usually ask five basic questions:
+
+1. **What is the real goal?** Are we trying to create awareness, persuade, explain, sell, save time, or reduce mistakes?
+2. **Who is the reader or user?** What do they already know, what do they need, what are they afraid of, and when will they use the result?
+3. **What is the current context?** Is this a new thing, an improvement to something existing, or a fix for a pain point?
+4. **Are there constraints?** Voice, deadline, required data, publishing platform, technical limits, or topics that must not be mentioned?
+5. **What counts as done or good?** When we look at the final result, what signs show it has met the need?
+
+These five questions sound simple, but every time I answer them seriously, the request becomes much less foggy.
+
+For example, "write an article about AI" is very broad. But if it becomes: "write a personal blog post in a warm voice for young people studying technology, about how to use AI to learn faster while keeping independent thinking," the work immediately has a better chance of going in the right direction.
+
+It still does not need to be perfect. But now it has a goal, audience, angle, voice, and boundary.
+
+For me, that is the difference between a casual ask and a brief someone can actually execute.
+
+<KeyTakeaway label="Reminder to myself" tone="sage">
+A good request does not have to be long to prove it is professional. It needs to be clear enough for the person doing the work to understand the goal, context, constraints, and definition of done.
+</KeyTakeaway>
+
+---
+
+## Asking again is not making things difficult
+
+For a while, I felt awkward asking follow-up questions.
+
+I was afraid people would think I was slow to understand. Afraid of making the conversation longer. Afraid my questions sounded too basic. Afraid that if I asked too much, the person assigning the work would think I was not capable enough.
+
+But later I saw that asking again is not resisting the request. Asking again is a way of caring for the outcome.
+
+When I ask, "Who is this article for?", I am not making things hard for the requester. I am trying not to write a grammatically correct article for the wrong reader.
+
+When I ask, "Do you want this screen to feel more minimal, friendly, or professional?", I am not nitpicking the word "better." I am helping both sides avoid repeated revisions because each person imagined a different direction.
+
+When I ask, "If we could keep only one message, what should the reader remember?", I am not slowing the article down. I am looking for the axis that keeps it from wandering.
+
+The right question can save more time than immediate action.
+
+Because fixing a wrong assumption at the beginning is usually lighter than fixing a nearly finished product.
+
+---
+
+## Using AI as someone that helps me think more clearly
+
+What I like about AI is not only that it can write quickly. What I find more useful is that it can help me see what is still unclear.
+
+Instead of starting with a prompt like "do this for me," I am practicing prompts like:
+
+- "Ask me the missing questions needed to clarify this request."
+- "Point out the vague assumptions in this brief."
+- "If you were a BA or Product Designer, what would you ask before doing this?"
+- "Turn these messy notes into a clear brief, but do not invent missing data."
+
+That way of asking makes AI a companion in the thinking part, not just a machine that generates drafts.
+
+It also forces me to be more honest with myself. If I do not know who the reader is, I have to admit I do not know yet. If I do not have a real example, I have to mark that as something to add. If I am using broad words like "better," "cooler," or "optimized," I have to bring them down to earth with more specific criteria.
+
+This skill feels very close to Business Analysis.
+
+A BA does not only record requirements. A BA helps requirements become understandable, discussable, testable, and executable. Product thinking is similar: before rushing into a solution, I need to understand the problem, the user, the context, and how we will know whether we solved the right thing.
+
+AI can strongly support expression, synthesis, and structure. But the responsibility for the question still belongs to me.
+
+---
+
+## A clear brief is a small gift
+
+I do not think every piece of work needs a heavy process. Some small tasks only need a few lines. Some conversations become clear after one extra question.
+
+But I want to stop treating vagueness as something we simply have to endure.
+
+A clearer request is a small gift to the person doing the work, because they do not have to guess so much.
+
+It is a gift to the person receiving the result, because what they receive is closer to what they really need.
+
+And it is also a gift to my future self, because when I look back, I understand why I chose one direction, left another out, and called something finished.
+
+I am still learning to ask better questions. Sometimes I still miss things. Sometimes I still rush. Sometimes a request feels so familiar that I assume I understand it.
+
+But at least now, before beginning, I often stop for one breath and ask myself:
+
+"Do I actually have a clear request, or only a sentence that sounds easy?"
+
+Often, that one pause makes the work more honest.
+29:T244e,
 Có những yêu cầu nghe rất ngắn, rất nhẹ, tưởng như chỉ cần bắt tay vào làm ngay.
 
 "Viết giúp mình một bài."
@@ -170,136 +428,319 @@ Nhưng ít nhất bây giờ, trước khi bắt đầu làm, mình thường d�
 "Mình đang có một yêu cầu thật sự rõ, hay chỉ có một câu nghe có vẻ dễ?"
 
 Nhiều khi, chính một nhịp dừng đó làm công việc tử tế hơn.
-28:T244e,
-Có những yêu cầu nghe rất ngắn, rất nhẹ, tưởng như chỉ cần bắt tay vào làm ngay.
+2a:T1b19,
+Some days, what tires me is not exactly what happened.
 
-"Viết giúp mình một bài."
+It is the feeling that I have to understand it immediately.
 
-"Làm màn hình này đẹp hơn."
+A conversation ends awkwardly. A plan shifts. A class passes while my mind keeps drifting somewhere else. An afternoon disappears into my phone, and then I feel a little disappointed in myself.
 
-"Tối ưu workflow này cho gọn lại."
+The thing that happened has not even cooled down, but my mind already starts asking: "What did I learn from this? How should I optimize next time? Is there a positive message here?"
 
-Trước đây, mình dễ thấy những câu như vậy là đủ để bắt đầu. Mình nghĩ nhanh một chút cũng tốt. Có bản nháp trước rồi sửa sau. Có gì chưa rõ thì trong lúc làm sẽ tự lộ ra.
+It sounds mature. But sometimes that question is exactly what exhausts me.
 
-Nhưng càng học về sản phẩm, UX/UI, Business Analysis và cách làm việc với AI, mình càng thấy một điều ngược lại: yêu cầu càng ngắn không có nghĩa là yêu cầu càng rõ.
-
-Đôi khi nó chỉ đang giấu rất nhiều giả định bên trong.
-
-Người viết bài này cho ai? "Đẹp hơn" là đẹp theo gu nào, phục vụ hành vi nào? "Gọn lại" là bớt bước cho người dùng, bớt thao tác cho team vận hành, hay bớt phức tạp trong code?
-
-Nếu mình vội làm ngay, mình có thể làm rất chăm chỉ. Nhưng chăm chỉ không cứu được một đề bài bị hiểu sai từ đầu.
+Because not everything in life needs to become a lesson right away. Some things first need to be felt all the way through.
 
 ---
 
-## Nhanh quá đôi khi chỉ làm sai nhanh hơn
+## When life becomes a constant analysis exercise
 
-AI làm chuyện này càng rõ hơn.
+I think reflection is a good thing.
 
-Chỉ cần một prompt ngắn, AI có thể trả về một bản nháp rất mượt. Một bài viết có mở bài, thân bài, kết luận. Một danh sách user stories nghe khá hợp lý. Một màn hình có layout sạch sẽ. Một email lịch sự hơn bản mình tự viết lúc đang mệt.
+Reflection, simply put, is looking back at what happened so I can understand myself and do better next time. Without it, I can easily repeat the same mistake, get carried by the same emotions, or live through days without really knowing what is going on inside me.
 
-Nhìn vào đó, mình dễ có cảm giác công việc đã đi được nửa đường.
+But there is a thin line between reflection and turning life into a continuous analysis assignment.
 
-Nhưng nếu đề bài ban đầu mơ hồ, sự mượt mà đó có thể đánh lừa mình. Một câu trả lời trôi chảy vẫn có thể sai trọng tâm. Một bản thiết kế nhìn ổn vẫn có thể không giải quyết đúng vấn đề. Một brief nghe chuyên nghiệp vẫn có thể thiếu điều quan trọng nhất: mình đang làm việc này để đạt mục tiêu gì?
+If I feel sad, I have to name the cause.
 
-AI không tự biết bối cảnh thật của mình. Teammate cũng không thể đoán hết điều mình chưa nói ra. Ngay cả chính mình, nếu không dừng lại để viết rõ hơn, cũng có thể tưởng rằng mình hiểu yêu cầu chỉ vì nó quen tai.
+If I fail once, I have to turn it into a growth story.
 
-Mình bắt đầu nhận ra tốc độ chỉ có ý nghĩa khi hướng đi đã tương đối đúng.
+If I rest for an afternoon, I have to prove that it will make me more productive.
 
-Nếu chưa biết đang đi đâu, đi nhanh hơn đôi khi chỉ làm mình xa điểm cần đến hơn.
+If a relationship changes, I have to immediately extract "a lesson about boundaries."
+
+Even an ordinary day gets pulled into the same system of questions: was anything meaningful today, did I develop, what can I take away?
+
+I do not deny the value of learning from experience. But if every moment is forced to have meaning, I begin to stop living inside the moment. I only stand outside it with a red pen, trying to turn it into a neat note.
+
+And life is not always neat.
+
+Some emotions are messy. Some days do not have a beautiful conclusion. Some things happen not because they were sent to teach me a profound lesson, but simply because life falls out of rhythm, people are clumsy, and I am not okay for a while.
 
 ---
 
-## Một brief rõ không cần dài
+## Some emotions need to sit still before they are named
 
-Mình từng nghĩ brief rõ là một tài liệu rất dài, nhiều mục, nhiều thuật ngữ và nhìn hơi "người lớn". Nhưng thật ra, một brief tốt không nhất thiết phải phức tạp.
+I used to be very impatient with my emotions.
 
-Nó chỉ cần có đủ điểm tựa để người làm không phải đoán quá nhiều.
+As soon as I felt sad, I wanted to know why. As soon as I felt disappointed, I wanted to move past it. As soon as I felt jealous, I wanted to turn it into motivation. As soon as I made a mistake, I wanted to learn from it quickly so I would not have to stay with the shame.
 
-Hiện tại, khi gặp một yêu cầu còn lỏng, mình thường tự hỏi năm câu rất cơ bản:
+But emotion is not a pop-up window that disappears once I click "understood."
 
-1. **Mục tiêu thật sự là gì?** Mình đang cần tạo nhận thức, thuyết phục, giải thích, bán hàng, tiết kiệm thời gian, hay giảm lỗi?
-2. **Người đọc hoặc người dùng là ai?** Họ đã biết gì, đang cần gì, đang sợ gì, và sẽ dùng kết quả này trong tình huống nào?
-3. **Bối cảnh hiện tại ra sao?** Đây là việc mới hoàn toàn, cải thiện một thứ đã có, hay sửa một vấn đề đang gây khó chịu?
-4. **Có ràng buộc nào không?** Giọng văn, deadline, dữ liệu bắt buộc, nền tảng xuất bản, giới hạn kỹ thuật, điều không được nhắc tới?
-5. **Thế nào là xong hoặc tốt?** Khi nhìn kết quả cuối, dấu hiệu nào cho thấy nó đã đạt yêu cầu?
+Often, it is more like a person who has just walked a long road, still out of breath, not yet able to explain anything clearly. If I immediately interrogate it with "what is the lesson, what is the message, what is the improvement plan," it only becomes more tangled.
 
-Năm câu này nghe đơn giản, nhưng mỗi lần trả lời nghiêm túc, mình thấy đề bài bớt mờ đi rất nhiều.
+Sometimes the kindest thing I can do for myself is say: "Yes, this hurts. I do not need to turn it into something prettier right now."
 
-Ví dụ, "viết giúp mình một bài về AI" là một yêu cầu rất rộng. Nhưng nếu đổi thành: "viết một bài blog cá nhân bằng giọng gần gũi, cho các bạn trẻ đang học công nghệ, nói về cách dùng AI để học nhanh hơn mà vẫn giữ tư duy độc lập", công việc lập tức dễ đi đúng hướng hơn.
+A sadness is allowed to be sadness.
 
-Nó chưa cần hoàn hảo. Nhưng nó đã có mục tiêu, người đọc, góc nhìn, giọng văn và ranh giới.
+A disappointment is allowed to be disappointment.
 
-Với mình, đó là khác biệt giữa một câu nhờ vả và một brief có thể thực hiện.
+A slow day is allowed to be a slow day.
 
-<KeyTakeaway label="Mình tự nhắc" tone="sage">
-Một yêu cầu tốt không cần dài để chứng minh sự chuyên nghiệp. Nó cần đủ rõ để người thực hiện hiểu mục tiêu, bối cảnh, ràng buộc và tiêu chí hoàn thành.
+Not because I want to stay stuck there forever. But because if I have never honestly acknowledged the feeling that is present, any "lesson" I draw afterward may only be decoration.
+
+<KeyTakeaway label="Reminder to myself" tone="sage">
+Not every emotion needs to be fixed immediately. Sometimes the first step of maturity is allowing myself to tell the truth: this hurts, this is tiring, this does not have a conclusion yet.
 </KeyTakeaway>
 
 ---
 
-## Hỏi lại không phải làm khó
+## Learning is different from interrogating myself
 
-Có một thời gian mình hơi ngại hỏi lại.
+I find there is a simple way to tell the difference.
 
-Mình sợ người khác nghĩ mình chậm hiểu. Sợ làm cuộc trò chuyện dài hơn. Sợ câu hỏi của mình nghe quá cơ bản. Sợ nếu mình hỏi nhiều, người giao việc sẽ thấy mình chưa đủ năng lực.
+Learning from experience is when I look back because I want to understand more clearly.
 
-Nhưng sau này mình thấy hỏi lại không phải là chống đối yêu cầu. Hỏi lại là một cách chăm sóc kết quả.
+Interrogating myself is when I look back to find more reasons to convict myself.
 
-Khi mình hỏi: "Bài này viết cho ai đọc?", mình không làm khó người nhờ. Mình đang cố không viết một bài đúng ngữ pháp nhưng sai người đọc.
+They can use similar questions, but they leave very different feelings behind.
 
-Khi mình hỏi: "Bạn muốn màn hình này đẹp hơn theo hướng tối giản, thân thiện, hay chuyên nghiệp hơn?", mình không bắt bẻ chữ "đẹp". Mình đang giúp cả hai bên tránh sửa qua sửa lại vì mỗi người tưởng tượng một kiểu khác nhau.
+Learning asks:
 
-Khi mình hỏi: "Nếu chỉ được giữ một thông điệp chính, bạn muốn người đọc nhớ điều gì?", mình không làm chậm bài viết. Mình đang tìm trục để bài viết không bị lan man.
+- What really happened?
+- Which part was within my control?
+- Which part was not?
+- What small step could I try differently next time?
 
-Hỏi đúng câu đôi khi tiết kiệm nhiều thời gian hơn làm ngay.
+Interrogation asks:
 
-Vì sửa một giả định sai ở đầu thường nhẹ hơn sửa một sản phẩm đã đi gần xong.
+- Why am I so bad at this?
+- Why can other people do it and I cannot?
+- Why did I not know earlier?
+- Why am I still not good enough?
+
+One helps me stand up. The other makes me smaller.
+
+I do not want to use reflection like a whip. If something already hurt, I do not need to make it hurt more by turning every detail into evidence against myself.
+
+Some mistakes need to be fixed, of course. Some apologies need to be said. Some moments require me to be honest that I was careless, impatient, or not brave enough. But responsibility does not have to come with humiliating myself in my head.
+
+I can say, "I did not handle this well."
+
+Without adding, "So I am a failure."
+
+I can say, "Next time I will prepare more carefully."
+
+Without adding, "Why am I so stupid?"
+
+The first sentence gives me a path. The second only digs a deeper hole.
 
 ---
 
-## Dùng AI như người giúp mình nghĩ rõ hơn
+## Allowing a day to produce no conclusion
 
-Điều mình thích ở AI không chỉ là nó có thể viết nhanh. Điều mình thấy hữu ích hơn là nó có thể giúp mình nhìn ra chỗ mình chưa rõ.
+One small thing I am practicing is letting some things end temporarily with a comma, not an exclamation point.
 
-Thay vì bắt đầu bằng prompt: "Làm giúp mình", mình đang tập bắt đầu bằng những câu như:
+Not everything needs a beautiful conclusion on the same day.
 
-- "Hãy hỏi mình những câu còn thiếu để làm rõ yêu cầu này."
-- "Hãy chỉ ra các giả định mơ hồ trong brief này."
-- "Nếu bạn là BA/Product Designer, bạn cần hỏi thêm gì trước khi thực hiện?"
-- "Hãy biến ghi chú lộn xộn này thành một brief rõ, nhưng đừng tự bịa dữ liệu còn thiếu."
+If my heart feels heavy today, I can write only three lines:
 
-Cách hỏi này làm AI trở thành một người đồng hành trong phần suy nghĩ, không chỉ là một máy tạo bản nháp.
+- What happened?
+- What am I feeling?
+- What do I need right now to get through this evening more gently?
 
-Nó cũng buộc mình thành thật hơn với chính mình. Nếu mình không biết người đọc là ai, mình phải thừa nhận là mình chưa biết. Nếu mình chưa có ví dụ thật, mình phải ghi rõ đó là phần cần bổ sung. Nếu mình đang dùng từ rất chung như "hay hơn", "xịn hơn", "tối ưu hơn", mình phải kéo nó xuống mặt đất bằng tiêu chí cụ thể hơn.
+That is all.
 
-Mình thấy kỹ năng này rất gần với Business Analysis.
+No need to force it into "5 things I learned." No need to rush meaning. No need to become a wiser version of myself immediately.
 
-BA không chỉ ghi lại yêu cầu. BA giúp yêu cầu trở nên có thể hiểu, có thể trao đổi, có thể kiểm tra và có thể thực hiện. Product thinking cũng vậy: trước khi lao vào giải pháp, mình cần hiểu vấn đề, người dùng, bối cảnh và cách biết mình đã giải quyết đúng.
+Tomorrow, when the emotion is softer, maybe I will see something. Maybe I will understand why I reacted so strongly. Maybe I will know whether to apologize, set a boundary, try again, let go, or simply sleep earlier.
 
-AI có thể hỗ trợ mạnh ở phần diễn đạt, tổng hợp và gợi ý cấu trúc. Nhưng phần chịu trách nhiệm với câu hỏi vẫn là của mình.
+But maybe there is no big lesson at all.
+
+Maybe it was only a difficult day. A conversation slightly out of rhythm. A plan that did not work. An emotion that passed through and left a few wrinkles inside me.
+
+And that is okay too.
+
+Not everything that passes through my life has to pay rent by becoming a lesson.
 
 ---
 
-## Brief rõ là một món quà nhỏ
+I still want to live more consciously. I still want to learn from what happens. I still want to become someone who can take responsibility, adjust, and grow from the times that were not okay.
 
-Mình không nghĩ lúc nào cũng cần một quy trình thật nặng. Có những việc nhỏ chỉ cần vài dòng là đủ. Có những cuộc trò chuyện chỉ cần hỏi thêm một câu là sáng ra.
+But I also want to remember that growing up is not always turning pain into philosophy as quickly as possible.
 
-Nhưng mình muốn bớt xem sự mơ hồ là chuyện bình thường phải chịu.
+Sometimes growing up is slowing down before an emotion. Not naming it too fast. Not retelling it prettily too fast. Not framing it as "this is why everything happened" too fast.
 
-Một yêu cầu rõ hơn là món quà nhỏ cho người thực hiện, vì họ không phải đoán quá nhiều.
+Sometimes growing up is letting an afternoon be only an afternoon.
 
-Nó là món quà cho người nhận kết quả, vì thứ họ nhận được gần hơn với điều họ thật sự cần.
+Letting one sadness be only one sadness.
 
-Và nó cũng là món quà cho chính mình sau này, vì khi nhìn lại, mình hiểu vì sao mình đã chọn hướng đó, đã bỏ qua hướng kia, và thế nào là hoàn thành.
+Letting a day when I do not understand myself still count as a day I lived honestly.
 
-Mình vẫn đang học cách hỏi rõ hơn. Có lúc vẫn hỏi thiếu. Có lúc vẫn vội. Có lúc vẫn thấy một yêu cầu quen quá nên tưởng mình đã hiểu.
+If today you are also trying to force something unhealed into a lesson, I hope you soften a little. If the lesson is real, it will not disappear because you gave yourself more time.
 
-Nhưng ít nhất bây giờ, trước khi bắt đầu làm, mình thường dừng lại một nhịp và tự hỏi:
+Breathe first.
 
-"Mình đang có một yêu cầu thật sự rõ, hay chỉ có một câu nghe có vẻ dễ?"
+Let things stay without conclusion a little longer.
 
-Nhiều khi, chính một nhịp dừng đó làm công việc tử tế hơn.
-29:T2374,
+I do not need to understand my whole life today to deserve peace.
+2b:T1b19,
+Some days, what tires me is not exactly what happened.
+
+It is the feeling that I have to understand it immediately.
+
+A conversation ends awkwardly. A plan shifts. A class passes while my mind keeps drifting somewhere else. An afternoon disappears into my phone, and then I feel a little disappointed in myself.
+
+The thing that happened has not even cooled down, but my mind already starts asking: "What did I learn from this? How should I optimize next time? Is there a positive message here?"
+
+It sounds mature. But sometimes that question is exactly what exhausts me.
+
+Because not everything in life needs to become a lesson right away. Some things first need to be felt all the way through.
+
+---
+
+## When life becomes a constant analysis exercise
+
+I think reflection is a good thing.
+
+Reflection, simply put, is looking back at what happened so I can understand myself and do better next time. Without it, I can easily repeat the same mistake, get carried by the same emotions, or live through days without really knowing what is going on inside me.
+
+But there is a thin line between reflection and turning life into a continuous analysis assignment.
+
+If I feel sad, I have to name the cause.
+
+If I fail once, I have to turn it into a growth story.
+
+If I rest for an afternoon, I have to prove that it will make me more productive.
+
+If a relationship changes, I have to immediately extract "a lesson about boundaries."
+
+Even an ordinary day gets pulled into the same system of questions: was anything meaningful today, did I develop, what can I take away?
+
+I do not deny the value of learning from experience. But if every moment is forced to have meaning, I begin to stop living inside the moment. I only stand outside it with a red pen, trying to turn it into a neat note.
+
+And life is not always neat.
+
+Some emotions are messy. Some days do not have a beautiful conclusion. Some things happen not because they were sent to teach me a profound lesson, but simply because life falls out of rhythm, people are clumsy, and I am not okay for a while.
+
+---
+
+## Some emotions need to sit still before they are named
+
+I used to be very impatient with my emotions.
+
+As soon as I felt sad, I wanted to know why. As soon as I felt disappointed, I wanted to move past it. As soon as I felt jealous, I wanted to turn it into motivation. As soon as I made a mistake, I wanted to learn from it quickly so I would not have to stay with the shame.
+
+But emotion is not a pop-up window that disappears once I click "understood."
+
+Often, it is more like a person who has just walked a long road, still out of breath, not yet able to explain anything clearly. If I immediately interrogate it with "what is the lesson, what is the message, what is the improvement plan," it only becomes more tangled.
+
+Sometimes the kindest thing I can do for myself is say: "Yes, this hurts. I do not need to turn it into something prettier right now."
+
+A sadness is allowed to be sadness.
+
+A disappointment is allowed to be disappointment.
+
+A slow day is allowed to be a slow day.
+
+Not because I want to stay stuck there forever. But because if I have never honestly acknowledged the feeling that is present, any "lesson" I draw afterward may only be decoration.
+
+<KeyTakeaway label="Reminder to myself" tone="sage">
+Not every emotion needs to be fixed immediately. Sometimes the first step of maturity is allowing myself to tell the truth: this hurts, this is tiring, this does not have a conclusion yet.
+</KeyTakeaway>
+
+---
+
+## Learning is different from interrogating myself
+
+I find there is a simple way to tell the difference.
+
+Learning from experience is when I look back because I want to understand more clearly.
+
+Interrogating myself is when I look back to find more reasons to convict myself.
+
+They can use similar questions, but they leave very different feelings behind.
+
+Learning asks:
+
+- What really happened?
+- Which part was within my control?
+- Which part was not?
+- What small step could I try differently next time?
+
+Interrogation asks:
+
+- Why am I so bad at this?
+- Why can other people do it and I cannot?
+- Why did I not know earlier?
+- Why am I still not good enough?
+
+One helps me stand up. The other makes me smaller.
+
+I do not want to use reflection like a whip. If something already hurt, I do not need to make it hurt more by turning every detail into evidence against myself.
+
+Some mistakes need to be fixed, of course. Some apologies need to be said. Some moments require me to be honest that I was careless, impatient, or not brave enough. But responsibility does not have to come with humiliating myself in my head.
+
+I can say, "I did not handle this well."
+
+Without adding, "So I am a failure."
+
+I can say, "Next time I will prepare more carefully."
+
+Without adding, "Why am I so stupid?"
+
+The first sentence gives me a path. The second only digs a deeper hole.
+
+---
+
+## Allowing a day to produce no conclusion
+
+One small thing I am practicing is letting some things end temporarily with a comma, not an exclamation point.
+
+Not everything needs a beautiful conclusion on the same day.
+
+If my heart feels heavy today, I can write only three lines:
+
+- What happened?
+- What am I feeling?
+- What do I need right now to get through this evening more gently?
+
+That is all.
+
+No need to force it into "5 things I learned." No need to rush meaning. No need to become a wiser version of myself immediately.
+
+Tomorrow, when the emotion is softer, maybe I will see something. Maybe I will understand why I reacted so strongly. Maybe I will know whether to apologize, set a boundary, try again, let go, or simply sleep earlier.
+
+But maybe there is no big lesson at all.
+
+Maybe it was only a difficult day. A conversation slightly out of rhythm. A plan that did not work. An emotion that passed through and left a few wrinkles inside me.
+
+And that is okay too.
+
+Not everything that passes through my life has to pay rent by becoming a lesson.
+
+---
+
+I still want to live more consciously. I still want to learn from what happens. I still want to become someone who can take responsibility, adjust, and grow from the times that were not okay.
+
+But I also want to remember that growing up is not always turning pain into philosophy as quickly as possible.
+
+Sometimes growing up is slowing down before an emotion. Not naming it too fast. Not retelling it prettily too fast. Not framing it as "this is why everything happened" too fast.
+
+Sometimes growing up is letting an afternoon be only an afternoon.
+
+Letting one sadness be only one sadness.
+
+Letting a day when I do not understand myself still count as a day I lived honestly.
+
+If today you are also trying to force something unhealed into a lesson, I hope you soften a little. If the lesson is real, it will not disappear because you gave yourself more time.
+
+Breathe first.
+
+Let things stay without conclusion a little longer.
+
+I do not need to understand my whole life today to deserve peace.
+2c:T2374,
 Có những ngày điều làm mình mệt không hẳn là chuyện đã xảy ra.
 
 Mà là cảm giác mình phải hiểu nó ngay.
@@ -455,163 +896,95 @@ Cứ thở trước đã.
 Cứ để mọi thứ chưa có kết luận thêm một lúc.
 
 Mình không cần hiểu hết cuộc đời mình ngay trong hôm nay mới xứng đáng được bình yên.
-2a:T2374,
-Có những ngày điều làm mình mệt không hẳn là chuyện đã xảy ra.
+2d:T8c9,
+<EditorialArticle>
 
-Mà là cảm giác mình phải hiểu nó ngay.
+This book did not only teach me how to do things better. It made me look at myself more deeply. For me, *Atomic Habits* made one idea very clear: lasting change has to begin with identity. "What kind of person do I want to become?"
 
-Một cuộc trò chuyện kết thúc không như ý. Một kế hoạch bị lệch. Một buổi học mà mình ngồi đó nhưng đầu óc cứ trôi đi đâu mất. Một buổi chiều mình không làm được gì nhiều ngoài việc nhìn điện thoại, rồi thấy hơi chán chính mình.
+What I want to keep from *Atomic Habits* is not the pressure to change quickly. It is a gentler way of seeing change: every small action is helping me answer the question of who I believe I am.
 
-Chuyện vừa qua chưa kịp nguội, cái đầu đã bắt đầu hỏi: "Mình học được gì từ chuyện này? Lần sau phải tối ưu thế nào? Có thông điệp tích cực nào ở đây không?"
+<EditorialQuoteBox>
+  "Tiny habits do not only change what we do. They change the person we believe we are."
+</EditorialQuoteBox>
 
-Nghe thì rất trưởng thành. Nhưng đôi khi, chính câu hỏi đó lại làm mình kiệt sức.
+## Three levels of change
 
-Vì không phải chuyện gì trong đời cũng cần lập tức trở thành bài học. Có những chuyện trước hết chỉ cần được cảm nhận cho xong.
+The book helped me see change through three levels: **outcomes** are "what I get," **processes** are "what I do each day," and **identity** is "who I want to become."
 
----
+<ol className="atomic-steps">
+  <li><strong>Outcomes</strong> -> What I get.</li>
+  <li><strong>Processes</strong> -> What I do each day.</li>
+  <li><strong>Identity</strong> -> Who I want to become.</li>
+</ol>
 
-## Khi đời sống bị biến thành một bài tập phân tích
+For me, the most important point sits at the identity level. When I only focus on outcomes, change can feel like a destination far away. But when I return to the question "What kind of person do I want to become?", the small action in front of me feels closer, more honest, and more possible.
 
-Mình nghĩ phản tư là một điều tốt.
+<EditorialHighlightBox title="Identity votes">
+  <p>A small repeated action is a quiet vote for the person I am becoming.</p>
+  <ul>
+    <li>Writing every day -> A consistent person.</li>
+    <li>Choosing healthier food -> A person who cares for herself.</li>
+  </ul>
+</EditorialHighlightBox>
 
-Phản tư, hiểu đơn giản, là nhìn lại điều đã xảy ra để hiểu mình hơn và làm tốt hơn ở lần sau. Nếu không có nó, mình rất dễ lặp lại cùng một lỗi, bị cuốn theo cùng một cảm xúc, hoặc sống qua ngày mà chẳng thật sự biết điều gì đang diễn ra bên trong mình.
+## One small place to begin
 
-Nhưng có một ranh giới khá mảnh giữa phản tư và tự biến cuộc đời thành bài tập phân tích liên tục.
+I like this way of understanding habits because it does not force me to become a perfect version of myself overnight. It simply asks me to notice the small choices I repeat every day.
 
-Buồn một chút thì phải gọi tên nguyên nhân.
+If I want change to last, maybe the first question is not only "What do I want to achieve?" but also "What kind of person am I quietly voting for?"
 
-Thất bại một lần thì phải biến nó thành câu chuyện trưởng thành.
+<div className="atomic-final-note">
 
-Nghỉ ngơi một buổi thì phải chứng minh rằng nó giúp mình năng suất hơn.
+For me, that is the part of *Atomic Habits* worth keeping: change does not always begin with a dramatic breakthrough. Sometimes it begins with one small action, repeated steadily enough that I slowly learn to believe in a new version of myself.
 
-Một mối quan hệ không còn như cũ thì phải tìm ngay "bài học về ranh giới".
+</div>
 
-Ngay cả một ngày bình thường cũng bị kéo vào cùng một hệ thống câu hỏi: hôm nay có gì đáng kể không, có gì phát triển không, có gì để rút ra không?
+</EditorialArticle>
+2e:T8c9,
+<EditorialArticle>
 
-Mình không phủ nhận giá trị của việc học từ trải nghiệm. Nhưng nếu mọi khoảnh khắc đều bị ép phải có ý nghĩa, mình sẽ bắt đầu không còn sống trong khoảnh khắc đó nữa. Mình chỉ đứng ngoài nó, cầm bút đỏ, cố biến nó thành một đoạn ghi chú gọn gàng.
+This book did not only teach me how to do things better. It made me look at myself more deeply. For me, *Atomic Habits* made one idea very clear: lasting change has to begin with identity. "What kind of person do I want to become?"
 
-Và đời sống thì đâu phải lúc nào cũng gọn.
+What I want to keep from *Atomic Habits* is not the pressure to change quickly. It is a gentler way of seeing change: every small action is helping me answer the question of who I believe I am.
 
-Có những cảm xúc rất lộn xộn. Có những ngày không có kết luận đẹp. Có những chuyện xảy ra không phải để dạy mình điều gì cao siêu, mà chỉ đơn giản là vì đời có lúc lệch nhịp, con người có lúc vụng về, và mình có lúc không ổn.
+<EditorialQuoteBox>
+  "Tiny habits do not only change what we do. They change the person we believe we are."
+</EditorialQuoteBox>
 
----
+## Three levels of change
 
-## Có những cảm xúc cần được ở yên trước khi được gọi tên
+The book helped me see change through three levels: **outcomes** are "what I get," **processes** are "what I do each day," and **identity** is "who I want to become."
 
-Mình từng rất vội vàng với cảm xúc của mình.
+<ol className="atomic-steps">
+  <li><strong>Outcomes</strong> -> What I get.</li>
+  <li><strong>Processes</strong> -> What I do each day.</li>
+  <li><strong>Identity</strong> -> Who I want to become.</li>
+</ol>
 
-Vừa buồn đã muốn hiểu vì sao. Vừa thất vọng đã muốn tìm cách vượt qua. Vừa thấy ghen tị đã muốn biến nó thành động lực. Vừa mắc lỗi đã muốn rút kinh nghiệm thật nhanh để khỏi phải ở lại với cảm giác xấu hổ.
+For me, the most important point sits at the identity level. When I only focus on outcomes, change can feel like a destination far away. But when I return to the question "What kind of person do I want to become?", the small action in front of me feels closer, more honest, and more possible.
 
-Nhưng cảm xúc không phải một cửa sổ pop-up chỉ cần bấm "đã hiểu" là biến mất.
+<EditorialHighlightBox title="Identity votes">
+  <p>A small repeated action is a quiet vote for the person I am becoming.</p>
+  <ul>
+    <li>Writing every day -> A consistent person.</li>
+    <li>Choosing healthier food -> A person who cares for herself.</li>
+  </ul>
+</EditorialHighlightBox>
 
-Nhiều khi, nó giống một người vừa đi một quãng đường xa về, còn thở dốc, còn chưa nói rõ được gì. Nếu mình lập tức hỏi dồn "bài học là gì, thông điệp là gì, kế hoạch sửa sai là gì", nó chỉ càng rối hơn.
+## One small place to begin
 
-Có những lúc điều tử tế nhất mình có thể làm với bản thân là nói: "Ừ, chuyện này đang làm mình buồn. Mình chưa cần biến nó thành điều gì đẹp hơn ngay bây giờ."
+I like this way of understanding habits because it does not force me to become a perfect version of myself overnight. It simply asks me to notice the small choices I repeat every day.
 
-Một nỗi buồn được phép là nỗi buồn.
+If I want change to last, maybe the first question is not only "What do I want to achieve?" but also "What kind of person am I quietly voting for?"
 
-Một cơn thất vọng được phép là cơn thất vọng.
+<div className="atomic-final-note">
 
-Một ngày chậm được phép là một ngày chậm.
+For me, that is the part of *Atomic Habits* worth keeping: change does not always begin with a dramatic breakthrough. Sometimes it begins with one small action, repeated steadily enough that I slowly learn to believe in a new version of myself.
 
-Không phải vì mình muốn mắc kẹt trong đó mãi. Mà vì nếu mình chưa từng thật sự thừa nhận cảm xúc đang có mặt, mọi "bài học" rút ra sau đó rất dễ chỉ là một lớp trang trí.
+</div>
 
-<KeyTakeaway label="Mình tự nhắc" tone="sage">
-Không phải cảm xúc nào cũng cần được sửa ngay. Đôi khi bước đầu tiên của trưởng thành là cho phép mình nói thật: chuyện này đau, chuyện này mệt, chuyện này chưa có kết luận.
-</KeyTakeaway>
-
----
-
-## Rút kinh nghiệm khác với tự tra khảo
-
-Mình thấy có một cách khá đơn giản để phân biệt.
-
-Rút kinh nghiệm là khi mình nhìn lại một chuyện với mong muốn hiểu rõ hơn.
-
-Tự tra khảo là khi mình nhìn lại một chuyện để tìm thêm lý do kết tội bản thân.
-
-Hai việc này có thể dùng cùng một câu hỏi, nhưng cảm giác để lại rất khác.
-
-Rút kinh nghiệm hỏi:
-
-- Chuyện gì thật sự đã xảy ra?
-- Phần nào nằm trong khả năng của mình?
-- Phần nào không?
-- Lần sau mình có thể thử một bước nhỏ nào khác?
-
-Tự tra khảo hỏi:
-
-- Sao mình lại tệ như vậy?
-- Sao người khác làm được còn mình thì không?
-- Sao mình không biết trước?
-- Sao mình cứ mãi chưa đủ tốt?
-
-Một bên giúp mình đứng dậy. Một bên làm mình nhỏ lại.
-
-Mình không muốn dùng sự phản tư như một cái roi. Nếu một việc đã đau rồi, mình không cần làm nó đau thêm bằng cách biến từng chi tiết thành bằng chứng chống lại mình.
-
-Có những lỗi cần sửa, chắc chắn rồi. Có những lời xin lỗi cần nói. Có những lần mình phải thành thật rằng mình đã thiếu cẩn thận, thiếu kiên nhẫn, hoặc thiếu can đảm. Nhưng nhận trách nhiệm không nhất thiết phải đi kèm với việc tự làm nhục mình trong đầu.
-
-Mình có thể nói: "Phần này mình làm chưa tốt."
-
-Mà không cần thêm: "Nên mình là một người thất bại."
-
-Mình có thể nói: "Lần sau mình sẽ chuẩn bị kỹ hơn."
-
-Mà không cần thêm: "Sao mình ngu vậy?"
-
-Câu đầu cho mình đường đi. Câu sau chỉ đào thêm một cái hố.
-
----
-
-## Cho phép một ngày không sinh ra kết luận nào
-
-Một điều nhỏ mình đang tập là để vài chuyện được kết thúc tạm thời bằng dấu phẩy, không phải dấu chấm than.
-
-Không phải chuyện gì cũng cần một kết luận thật hay ngay trong ngày.
-
-Nếu hôm nay mình thấy lòng nặng, mình có thể chỉ viết ba dòng:
-
-- Chuyện đã xảy ra là gì?
-- Mình đang cảm thấy gì?
-- Hiện tại mình cần gì để qua buổi tối này tử tế hơn?
-
-Chỉ vậy thôi.
-
-Không cần ép nó thành "5 điều mình học được". Không cần gấp gáp tìm ý nghĩa. Không cần biến mình thành phiên bản sáng suốt hơn ngay lập tức.
-
-Ngày mai, khi cảm xúc dịu hơn, có thể mình sẽ nhìn ra một điều gì đó. Có thể mình sẽ hiểu vì sao mình phản ứng mạnh như vậy. Có thể mình sẽ biết nên xin lỗi, nên đặt ranh giới, nên thử lại, nên buông xuống, hoặc đơn giản là nên ngủ sớm hơn.
-
-Nhưng cũng có thể chẳng có bài học lớn nào cả.
-
-Có thể đó chỉ là một ngày hơi khó. Một cuộc trò chuyện hơi lệch. Một kế hoạch không thành. Một cảm xúc đi ngang qua rồi để lại vài vết nhăn trong lòng.
-
-Và như vậy cũng được.
-
-Không phải mọi thứ đi qua đời mình đều phải trả tiền thuê nhà bằng một bài học.
-
----
-
-Mình vẫn muốn sống có ý thức hơn. Vẫn muốn học từ những gì xảy ra. Vẫn muốn trở thành một người biết nhận trách nhiệm, biết điều chỉnh, biết lớn lên từ những lần chưa ổn.
-
-Nhưng mình cũng muốn nhớ rằng lớn lên không phải lúc nào cũng là biến đau thành triết lý thật nhanh.
-
-Đôi khi lớn lên là biết chậm lại trước một cảm xúc. Không vội đặt tên. Không vội kể lại cho đẹp. Không vội đóng khung nó thành "đây là lý do mọi chuyện xảy ra".
-
-Đôi khi lớn lên là để một buổi chiều chỉ là một buổi chiều.
-
-Để một lần buồn chỉ là một lần buồn.
-
-Để một ngày chưa hiểu được chính mình vẫn được tính là một ngày mình đã sống thật.
-
-Nếu hôm nay bạn cũng đang cố ép một chuyện chưa lành thành bài học, mình mong bạn dịu lại một chút. Bài học, nếu thật sự có, sẽ không biến mất chỉ vì bạn cho mình thêm thời gian.
-
-Cứ thở trước đã.
-
-Cứ để mọi thứ chưa có kết luận thêm một lúc.
-
-Mình không cần hiểu hết cuộc đời mình ngay trong hôm nay mới xứng đáng được bình yên.
-2b:Tab6,
+</EditorialArticle>
+2f:Tab6,
 <EditorialArticle>
 
 Sách không chỉ dạy cách làm tốt hơn, mà khiến nhìn lại chính mình sâu hơn. Với mình, cuốn sách giúp nhận ra sự thay đổi bền vững phải bắt đầu từ căn tính: “Mình muốn trở thành kiểu người như thế nào?”.
@@ -655,52 +1028,8 @@ Với mình, đó là phần rất đáng giữ lại từ *Atomic Habits*: thay
 </div>
 
 </EditorialArticle>
-2c:Tab6,
-<EditorialArticle>
-
-Sách không chỉ dạy cách làm tốt hơn, mà khiến nhìn lại chính mình sâu hơn. Với mình, cuốn sách giúp nhận ra sự thay đổi bền vững phải bắt đầu từ căn tính: “Mình muốn trở thành kiểu người như thế nào?”.
-
-Điều mình muốn giữ lại từ *Atomic Habits* không phải là cảm giác phải thay đổi thật nhanh, mà là một cách nhìn dịu hơn: mỗi hành động nhỏ đều đang góp phần trả lời câu hỏi mình tin mình là ai.
-
-<EditorialQuoteBox>
-  “Thói quen nhỏ không chỉ thay đổi điều ta làm, mà còn thay đổi con người ta tin mình là.”
-</EditorialQuoteBox>
-
-## 3 cấp độ thay đổi
-
-Cuốn sách khiến mình nhìn việc thay đổi qua 3 cấp độ: **Kết quả** là “đạt được gì”, **Quy trình** là “hành động mỗi ngày”, và **Căn tính** là “tôi muốn trở thành ai”.
-
-<ol className="atomic-steps">
-  <li><strong>Kết quả</strong> → Đạt được gì.</li>
-  <li><strong>Quy trình</strong> → Hành động mỗi ngày.</li>
-  <li><strong>Căn tính</strong> → Tôi muốn trở thành ai.</li>
-</ol>
-
-Với mình, điểm quan trọng nhất nằm ở cấp độ căn tính. Khi mình chỉ tập trung vào kết quả, thay đổi dễ trở thành một mục tiêu ở rất xa. Nhưng khi quay về câu hỏi “Mình muốn trở thành kiểu người như thế nào?”, hành động nhỏ hôm nay có cảm giác gần hơn và thật hơn.
-
-<EditorialHighlightBox title="Phiếu bầu căn tính">
-  <p>Hành động nhỏ lặp lại là phiếu bầu âm thầm cho con người mới.</p>
-  <ul>
-    <li>Viết mỗi ngày → Người kiên trì.</li>
-    <li>Chọn ăn uống lành mạnh → Người biết chăm sóc bản thân.</li>
-  </ul>
-</EditorialHighlightBox>
-
-## Một bước nhỏ để bắt đầu
-
-Mình thích cách hiểu này vì nó không bắt mình phải trở thành một phiên bản hoàn hảo ngay lập tức. Nó chỉ nhắc mình quan sát những lựa chọn nhỏ đang lặp lại mỗi ngày.
-
-Nếu muốn thay đổi bền vững, có lẽ câu hỏi đầu tiên không chỉ là “mình muốn đạt được điều gì?”, mà còn là “mình đang âm thầm bỏ phiếu cho kiểu người nào?”.
-
-<div className="atomic-final-note">
-
-Với mình, đó là phần rất đáng giữ lại từ *Atomic Habits*: thay đổi không nhất thiết bắt đầu bằng một cú bứt phá lớn. Đôi khi, nó bắt đầu từ một hành động nhỏ đủ đều đặn để mình dần tin vào một con người mới.
-
-</div>
-
-</EditorialArticle>
-1a:["$","$L26",null,{"projects":[],"latestPosts":[{"slug":"khi-yeu-cau-con-mo-ho-minh-hoc-cach-hoi-ro-hon","content":"$27","title":"Khi yêu cầu còn mơ hồ, mình học cách hỏi rõ hơn","description":"Một yêu cầu mơ hồ không phải lúc nào cũng cần câu trả lời ngay. Đôi khi điều tử tế nhất mình có thể làm cho công việc là hỏi rõ hơn trước khi bắt đầu.","date":"2026-07-07","tags":["Product Thinking","Business Analysis","AI","Reflection"],"readingTime":"8 min read","i18n":{"en":{"title":"Khi yêu cầu còn mơ hồ, mình học cách hỏi rõ hơn","description":"Một yêu cầu mơ hồ không phải lúc nào cũng cần câu trả lời ngay. Đôi khi điều tử tế nhất mình có thể làm cho công việc là hỏi rõ hơn trước khi bắt đầu.","content":"$28","readingTime":"8 min read"}}},{"slug":"not-everything-needs-to-be-a-lesson","content":"$29","title":"Không phải điều gì cũng cần biến thành bài học","description":"Có những ngày mình chỉ cần để một chuyện buồn được là chuyện buồn, một buổi chiều trôi qua được là buổi chiều trôi qua, thay vì ép mọi thứ phải trở thành phiên bản nâng cấp của bản thân.","date":"2026-07-04","tags":["Mindfulness","Self Compassion","Reflection"],"readingTime":"8 min read","i18n":{"en":{"title":"Không phải điều gì cũng cần biến thành bài học","description":"Có những ngày mình chỉ cần để một chuyện buồn được là chuyện buồn, một buổi chiều trôi qua được là buổi chiều trôi qua, thay vì ép mọi thứ phải trở thành phiên bản nâng cấp của bản thân.","content":"$2a","readingTime":"8 min read"}}},{"slug":"atomic-habits","content":"$2b","title":"ATOMIC HABITS – Thay đổi thói quen bắt đầu từ việc thay đổi con người mà ta tin mình là.","description":"Sách không chỉ dạy cách làm tốt hơn, mà khiến nhìn lại chính mình sâu hơn.","date":"2026-07-03","tags":["Books","Reflection","Habits","Identity"],"image":"/books/atomic-habits.webp","readingTime":"2 min read","i18n":{"en":{"title":"ATOMIC HABITS – Thay đổi thói quen bắt đầu từ việc thay đổi con người mà ta tin mình là.","description":"Sách không chỉ dạy cách làm tốt hơn, mà khiến nhìn lại chính mình sâu hơn.","content":"$2c","readingTime":"2 min read"}}}]}]
+1a:["$","$L26",null,{"projects":[],"latestPosts":[{"slug":"khi-yeu-cau-con-mo-ho-minh-hoc-cach-hoi-ro-hon","content":"$27","title":"When the Request Is Vague, I Am Learning to Ask Better Questions","description":"A vague request does not always need an immediate answer. Sometimes the kindest thing I can do for the work is ask more clearly before I begin.","date":"2026-07-07","tags":["Product Thinking","Business Analysis","AI","Reflection"],"readingTime":"7 min read","i18n":{"en":{"title":"When the Request Is Vague, I Am Learning to Ask Better Questions","description":"A vague request does not always need an immediate answer. Sometimes the kindest thing I can do for the work is ask more clearly before I begin.","content":"$28","readingTime":"7 min read"},"vi":{"title":"Khi yêu cầu còn mơ hồ, mình học cách hỏi rõ hơn","description":"Một yêu cầu mơ hồ không phải lúc nào cũng cần câu trả lời ngay. Đôi khi điều tử tế nhất mình có thể làm cho công việc là hỏi rõ hơn trước khi bắt đầu.","content":"$29","readingTime":"8 min read"}}},{"slug":"not-everything-needs-to-be-a-lesson","content":"$2a","title":"Not Everything Needs to Become a Lesson","description":"Some days I only need to let sadness be sadness and an afternoon be an afternoon, instead of forcing everything to become an upgraded version of myself.","date":"2026-07-04","tags":["Mindfulness","Self Compassion","Reflection"],"readingTime":"7 min read","i18n":{"en":{"title":"Not Everything Needs to Become a Lesson","description":"Some days I only need to let sadness be sadness and an afternoon be an afternoon, instead of forcing everything to become an upgraded version of myself.","content":"$2b","readingTime":"7 min read"},"vi":{"title":"Không phải điều gì cũng cần biến thành bài học","description":"Có những ngày mình chỉ cần để một chuyện buồn được là chuyện buồn, một buổi chiều trôi qua được là buổi chiều trôi qua, thay vì ép mọi thứ phải trở thành phiên bản nâng cấp của bản thân.","content":"$2c","readingTime":"8 min read"}}},{"slug":"atomic-habits","content":"$2d","title":"Atomic Habits - changing habits starts with changing who we believe we are","description":"A book that did not only teach me how to do better, but made me look more honestly at who I am becoming.","date":"2026-07-03","tags":["Books","Reflection","Habits","Identity"],"image":"/books/atomic-habits.webp","readingTime":"2 min read","i18n":{"en":{"title":"Atomic Habits - changing habits starts with changing who we believe we are","description":"A book that did not only teach me how to do better, but made me look more honestly at who I am becoming.","content":"$2e","readingTime":"2 min read"},"vi":{"title":"ATOMIC HABITS – Thay đổi thói quen bắt đầu từ việc thay đổi con người mà ta tin mình là.","description":"Sách không chỉ dạy cách làm tốt hơn, mà khiến nhìn lại chính mình sâu hơn.","content":"$2f","readingTime":"2 min read"}}}]}]
 1f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
-2d:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0tta4oqe.h3jo.js","/_next/static/chunks/0qh-~.c9.yyqx.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
+30:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0heb1hu0trevp.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/146yp4zw7o3eu.js"],"IconMark"]
 1d:null
-21:[["$","title","0",{"children":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","1",{"name":"description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","2",{"name":"application-name","content":"Nguyen Thi Yen Nhi"}],["$","link","3",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","4",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","link","5",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","7",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","8",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"category","content":"technology"}],["$","link","12",{"rel":"canonical","href":"https://startup.id.vn/"}],["$","meta","13",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","14",{"name":"apple-mobile-web-app-title","content":"Yen Nhi"}],["$","meta","15",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","16",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","17",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","18",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","19",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","20",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","21",{"property":"og:image:type","content":"image/png"}],["$","meta","22",{"property":"og:image:width","content":"1200"}],["$","meta","23",{"property":"og:image:height","content":"630"}],["$","meta","24",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","25",{"property":"og:type","content":"profile"}],["$","meta","26",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","27",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","28",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","29",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","30",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","link","31",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","32",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L2d","34",{}]]
+21:[["$","title","0",{"children":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","1",{"name":"description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","2",{"name":"application-name","content":"Nguyen Thi Yen Nhi"}],["$","link","3",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","4",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","link","5",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","7",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","8",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"category","content":"technology"}],["$","link","12",{"rel":"canonical","href":"https://startup.id.vn/"}],["$","meta","13",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","14",{"name":"apple-mobile-web-app-title","content":"Yen Nhi"}],["$","meta","15",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","16",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","17",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","18",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","19",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","20",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","21",{"property":"og:image:type","content":"image/png"}],["$","meta","22",{"property":"og:image:width","content":"1200"}],["$","meta","23",{"property":"og:image:height","content":"630"}],["$","meta","24",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","25",{"property":"og:type","content":"profile"}],["$","meta","26",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","27",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","28",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","29",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","30",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","link","31",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","32",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","33",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L30","34",{}]]
