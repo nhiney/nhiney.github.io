@@ -21,6 +21,9 @@ import { LocalDate } from "@/components/blog/LocalDate";
 import { ReadingTimeLabel } from "@/components/blog/ReadingTimeLabel";
 import { T } from "@/components/i18n/T";
 import { ArticleQuickNav } from "@/components/blog/BlogQuickNav";
+import { ArticleLanguageToggle } from "@/components/blog/ArticleLanguageToggle";
+
+const BOOK_TAG = "Books";
 
 // Build per-locale string maps for a post's title / description, English first.
 function localeMap(post: Post, field: "title" | "description"): Record<string, string> {
@@ -137,7 +140,9 @@ export default async function BlogPostPage({ params }: PostPageProps) {
   // share with this post (strongest overlap first), keeping the date order
   // from getAllPosts as the tie-breaker. Falls back to nothing when unrelated.
   const allPosts = await getAllPosts("blog");
+  const currentPostIsBook = post.tags?.includes(BOOK_TAG) ?? false;
   const relatedPosts = allPosts
+    .filter((p) => currentPostIsBook || !p.tags?.includes(BOOK_TAG))
     .map((p) => ({
       post: p,
       shared: (p.tags ?? []).filter((t: string) => post.tags?.includes(t)).length,
@@ -151,6 +156,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
   // language instantly. English ("en") is always present as the fallback.
   const variants: Record<string, { content: string }> =
     post.i18n && post.i18n.en ? post.i18n : { en: { content: post.content } };
+  const hasVietnamese = Boolean(variants.vi);
   const bodies = Object.fromEntries(
     Object.entries(variants).map(([lang, v]) => [
       lang,
@@ -231,6 +237,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
                     <span className="opacity-35">/</span>
                     <ViewCounter slug={slug} />
                   </p>
+                  <ArticleLanguageToggle hasVietnamese={hasVietnamese} />
                 </div>
               </header>
 

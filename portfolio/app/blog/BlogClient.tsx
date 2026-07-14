@@ -377,26 +377,32 @@ function TopicSidebar({
   return (
     <aside className="lg:w-52 lg:shrink-0">
       {/* Mobile: horizontal scroll of chips */}
-      <div className="no-scrollbar flex gap-2 overflow-x-auto pb-1 lg:hidden">
-        <TagChip label={t("blogPage.all")} count={totalCount} active={allActive} onClick={onSelectAll} />
-        {TOPIC_GROUPS.map((group) => (
-          <TagChip
-            key={group.slug}
-            label={topicLabel(t, group)}
-            count={groupCounts[group.slug] ?? 0}
-            active={selectedTopic === group.slug}
-            onClick={() => onSelectTopic(group.slug)}
-          />
-        ))}
-        {moreTags.map((tag) => (
-          <TagChip
-            key={tag}
-            label={translateTag(t, tag)}
-            count={tagCounts[tag]}
-            active={selectedTag === tag}
-            onClick={() => onSelectTag(selectedTag === tag ? null : tag)}
-          />
-        ))}
+      <div className="relative lg:hidden">
+        <div className="no-scrollbar flex gap-2 overflow-x-auto pb-1 pr-10">
+          <TagChip label={t("blogPage.all")} count={totalCount} active={allActive} onClick={onSelectAll} />
+          {TOPIC_GROUPS.map((group) => (
+            <TagChip
+              key={group.slug}
+              label={topicLabel(t, group)}
+              count={groupCounts[group.slug] ?? 0}
+              active={selectedTopic === group.slug}
+              onClick={() => onSelectTopic(group.slug)}
+            />
+          ))}
+          {moreTags.map((tag) => (
+            <TagChip
+              key={tag}
+              label={translateTag(t, tag)}
+              count={tagCounts[tag]}
+              active={selectedTag === tag}
+              onClick={() => onSelectTag(selectedTag === tag ? null : tag)}
+            />
+          ))}
+        </div>
+        <span
+          className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background to-transparent"
+          aria-hidden="true"
+        />
       </div>
 
       {/* Desktop: vertical sidebar */}

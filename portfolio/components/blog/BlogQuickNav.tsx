@@ -3,8 +3,6 @@
 import Link from "next/link";
 import {
   useEffect,
-  useMemo,
-  useRef,
   useState,
   type CSSProperties,
   type ReactNode,
@@ -13,10 +11,6 @@ import {
   ArrowDown,
   ArrowLeft,
   ArrowUp,
-  Check,
-  ChevronDown,
-  ChevronUp,
-  Clipboard,
   List,
   Rows3,
   Search,
@@ -152,33 +146,6 @@ function ArticleRailLink({
   );
 }
 
-async function copyToClipboard(value: string) {
-  try {
-    if (navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(value);
-      return true;
-    }
-  } catch {
-    // Fall back to the local selection-based copy path below.
-  }
-
-  const textarea = document.createElement("textarea");
-  textarea.value = value;
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "fixed";
-  textarea.style.left = "-9999px";
-  document.body.appendChild(textarea);
-  textarea.select();
-
-  try {
-    return document.execCommand("copy");
-  } catch {
-    return false;
-  } finally {
-    document.body.removeChild(textarea);
-  }
-}
-
 export function BlogIndexQuickNav({
   postsTargetId,
   searchTargetId,
@@ -187,6 +154,27 @@ export function BlogIndexQuickNav({
   searchTargetId: string;
 }) {
   const { t } = useLanguage();
+  const [showRail, setShowRail] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 1023px)");
+
+    const updateVisibility = () => {
+      const threshold = Math.min(window.innerHeight * 0.45, 420);
+      setShowRail(!media.matches || window.scrollY > threshold);
+    };
+
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility);
+    media.addEventListener("change", updateVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+      media.removeEventListener("change", updateVisibility);
+    };
+  }, []);
 
   const scrollToPosts = () => {
     document.getElementById(postsTargetId)?.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
@@ -199,7 +187,10 @@ export function BlogIndexQuickNav({
   };
 
   return (
-    <QuickNavShell ariaLabel={t("blogPage.quick_nav")}>
+    <QuickNavShell
+      ariaLabel={t("blogPage.quick_nav")}
+      className={cn("blog-index-quick-nav", !showRail && "blog-index-quick-nav--hidden")}
+    >
       <QuickNavButton label={t("blogPage.quick_nav_top")} onClick={scrollToDocumentTop}>
         <ArrowUp size={16} aria-hidden="true" />
       </QuickNavButton>
@@ -220,30 +211,16 @@ export function ArticleQuickNav() {
   const { t, language } = useLanguage();
   const nav = useArticleNavigation(language);
   const [panelOpen, setPanelOpen] = useState(false);
-  const [panelMode, setPanelMode] = useState<"list" | "search">("list");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [copied, setCopied] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
+  const [showRail, setShowRail] = useState(false);
   const panelId = "article-quick-nav-panel";
+  const panelTitleId = `${panelId}-title`;
 
   const hasHeadings = nav.headings.length > 0;
   const progressScale = Math.max(0, Math.min(1, nav.progress / 100)).toString();
-  const filteredHeadings = useMemo(() => {
-    const query = searchQuery.trim().toLocaleLowerCase();
-    if (!query) return nav.headings;
-    return nav.headings.filter((heading) => heading.text.toLocaleLowerCase().includes(query));
-  }, [nav.headings, searchQuery]);
 
   const closePanel = () => {
     setPanelOpen(false);
-    setSearchQuery("");
   };
-
-  useEffect(() => {
-    if (!panelOpen || panelMode !== "search") return;
-    const frame = requestAnimationFrame(() => searchInputRef.current?.focus());
-    return () => cancelAnimationFrame(frame);
-  }, [panelMode, panelOpen]);
 
   useEffect(() => {
     if (!panelOpen) return;
@@ -251,7 +228,6 @@ export function ArticleQuickNav() {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setPanelOpen(false);
-        setSearchQuery("");
       }
     };
 
@@ -260,14 +236,28 @@ export function ArticleQuickNav() {
   }, [panelOpen]);
 
   useEffect(() => {
-    if (!copied) return;
-    const timer = window.setTimeout(() => setCopied(false), 1800);
-    return () => window.clearTimeout(timer);
-  }, [copied]);
+    const media = window.matchMedia("(max-width: 767px)");
+
+    const updateVisibility = () => {
+      const threshold = Math.min(window.innerHeight * 0.46, 420);
+      setShowRail(!media.matches || window.scrollY > threshold);
+    };
+
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility);
+    media.addEventListener("change", updateVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+      media.removeEventListener("change", updateVisibility);
+    };
+  }, []);
 
   const focusDesktopToc = () => {
     const toc = document.getElementById("article-toc-aside");
-    if (!toc || !window.matchMedia("(min-width: 1600px)").matches) return false;
+    if (!toc || !window.matchMedia("(min-width: 1280px)").matches) return false;
 
     closePanel();
     toc.focus({ preventScroll: true });
@@ -277,23 +267,12 @@ export function ArticleQuickNav() {
   const toggleSectionList = () => {
     if (!hasHeadings || focusDesktopToc()) return;
 
-    if (panelOpen && panelMode === "list") {
+    if (panelOpen) {
       closePanel();
       return;
     }
 
-    setPanelMode("list");
     setPanelOpen(true);
-  };
-
-  const openSectionSearch = () => {
-    if (!hasHeadings) return;
-    setPanelMode("search");
-    setPanelOpen(true);
-  };
-
-  const copyArticleLink = async () => {
-    if (await copyToClipboard(window.location.href)) setCopied(true);
   };
 
   if (!nav.mounted) return null;
@@ -302,7 +281,7 @@ export function ArticleQuickNav() {
     <div className="blog-article-rail-inner">
       <nav
         aria-label={t("blogPage.quick_nav")}
-        className="article-quick-nav"
+        className={cn("article-quick-nav", !showRail && "article-quick-nav--hidden")}
         style={{ "--article-progress": progressScale } as CSSProperties}
       >
         <span className="sr-only">
@@ -316,50 +295,19 @@ export function ArticleQuickNav() {
             <ArrowUp size={17} aria-hidden="true" />
           </ArticleRailButton>
           <ArticleRailButton
-            label={t("blogPage.quick_nav_previous_section")}
-            onClick={nav.scrollToPreviousHeading}
-            disabled={!nav.hasPreviousHeading}
-          >
-            <ChevronUp size={18} aria-hidden="true" />
-          </ArticleRailButton>
-          <ArticleRailButton
-            label={t("blogPage.quick_nav_search_sections")}
-            onClick={openSectionSearch}
-            disabled={!hasHeadings}
-            active={panelOpen && panelMode === "search"}
-            ariaControls={panelId}
-            ariaExpanded={panelOpen && panelMode === "search"}
-          >
-            <Search size={16} aria-hidden="true" />
-          </ArticleRailButton>
-          <ArticleRailButton
             label={t("blogPage.quick_nav_sections")}
             onClick={toggleSectionList}
             disabled={!hasHeadings}
-            active={panelOpen && panelMode === "list"}
+            active={panelOpen}
             ariaControls={panelId}
-            ariaExpanded={panelOpen && panelMode === "list"}
+            ariaExpanded={panelOpen}
           >
             <List size={17} aria-hidden="true" />
-          </ArticleRailButton>
-          <ArticleRailButton
-            label={t("blogPage.quick_nav_next_section")}
-            onClick={nav.scrollToNextHeading}
-            disabled={!nav.hasNextHeading}
-          >
-            <ChevronDown size={18} aria-hidden="true" />
           </ArticleRailButton>
           <ArticleRailButton label={t("blogPage.quick_nav_bottom")} onClick={nav.scrollToEnd}>
             <ArrowDown size={17} aria-hidden="true" />
           </ArticleRailButton>
           <span className="article-quick-nav-divider" aria-hidden="true" />
-          <ArticleRailButton
-            label={copied ? t("blogPage.quick_nav_link_copied") : t("blogPage.quick_nav_copy_link")}
-            onClick={copyArticleLink}
-            active={copied}
-          >
-            {copied ? <Check size={16} aria-hidden="true" /> : <Clipboard size={16} aria-hidden="true" />}
-          </ArticleRailButton>
           <ArticleRailLink label={t("blogPage.quick_nav_all_articles")} href="/blog">
             <ArrowLeft size={16} aria-hidden="true" />
           </ArticleRailLink>
@@ -369,12 +317,12 @@ export function ArticleQuickNav() {
       {panelOpen && (
         <section
           id={panelId}
-          role="dialog"
-          aria-label={t("blogPage.quick_nav_section_list")}
+          role="region"
+          aria-labelledby={panelTitleId}
           className="article-quick-nav-panel rounded-lg border border-border/70 bg-background/95 p-3 shadow-[0_18px_50px_hsl(var(--foreground)/0.14)] backdrop-blur-md"
         >
           <div className="flex items-center justify-between gap-3">
-            <p className="text-xs font-semibold uppercase text-muted-foreground/60">
+            <p id={panelTitleId} className="text-xs font-semibold uppercase text-muted-foreground/60">
               {t("blogPage.quick_nav_section_list")}
             </p>
             <button
@@ -388,25 +336,9 @@ export function ArticleQuickNav() {
             </button>
           </div>
 
-          <div className="relative mt-2">
-            <Search
-              size={14}
-              aria-hidden="true"
-              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground/60"
-            />
-            <input
-              ref={searchInputRef}
-              type="search"
-              value={searchQuery}
-              onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder={t("blogPage.quick_nav_section_search")}
-              className="h-9 w-full rounded-md border border-border/60 bg-background pl-8 pr-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/55 focus:border-primary/45 focus:ring-2 focus:ring-primary/20"
-            />
-          </div>
-
           <div className="mt-2 max-h-72 overflow-y-auto pr-1">
-            {filteredHeadings.length > 0 ? (
-              filteredHeadings.map((heading) => {
+            {nav.headings.length > 0 ? (
+              nav.headings.map((heading) => {
                 const active = nav.activeId === heading.id;
                 return (
                   <button

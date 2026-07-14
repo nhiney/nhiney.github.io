@@ -432,7 +432,7 @@ body.site-text-palette {
 
   --site-heading: 224 52% 13%;
   --site-body: 217 27% 37%;
-  --site-soft: 218 20% 49%;
+  --site-soft: 217 24% 42%;
   --site-accent: 221 83% 54%;
   --site-accent-2: 195 88% 43%;
   --site-accent-3: 265 75% 58%;
@@ -449,7 +449,7 @@ body.site-text-palette {
 
   --site-heading: 214 34% 94%;
   --site-body: 215 17% 72%;
-  --site-soft: 215 12% 62%;
+  --site-soft: 215 14% 68%;
   --site-accent: 214 95% 67%;
   --site-accent-2: 187 82% 60%;
   --site-accent-3: 267 86% 76%;
@@ -520,6 +520,7 @@ body.site-text-palette .text-gradient {
   z-index: 40;
   display: flex;
   align-items: center;
+  width: max-content;
   max-width: 31rem;
   margin-inline: auto;
   overflow-x: auto;
@@ -573,6 +574,11 @@ body.site-text-palette .text-gradient {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .article-quick-nav,
+  .blog-index-quick-nav {
+    transition: none;
+  }
+
   .article-quick-nav-progress > span {
     transition: none;
   }
@@ -599,9 +605,45 @@ body.site-text-palette .text-gradient {
     padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
   }
 
+  .article-quick-nav,
+  .blog-index-quick-nav {
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  .article-quick-nav--hidden {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(calc(100% + 1rem));
+  }
+
+  .blog-index-quick-nav--hidden {
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(120%, -50%);
+  }
+
   .article-quick-nav-button {
     width: 2.25rem;
     height: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .blog-index-quick-nav {
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  .blog-index-quick-nav--hidden {
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(120%, -50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-quick-nav,
+  .blog-index-quick-nav {
+    transition: none;
   }
 }
 
@@ -681,7 +723,7 @@ body.site-text-palette .text-gradient {
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1280px) {
   .blog-article-shell {
     grid-template-columns: 12rem minmax(0, 48rem) 3.25rem;
     column-gap: 3.5rem;
@@ -937,6 +979,14 @@ body.site-text-palette .text-gradient {
   text-align: justify;
   text-justify: inter-word;
   overflow-wrap: break-word;
+}
+
+@media (max-width: 640px) {
+  .post-content p,
+  .post-content li {
+    text-align: left;
+    text-justify: auto;
+  }
 }
 
 .post-content ul > li { position: relative; }
