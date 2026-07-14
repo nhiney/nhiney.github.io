@@ -6,12 +6,16 @@ import { BlogClient } from "./BlogClient";
 import { SITE_CONFIG } from "@/lib/constants";
 import type { Metadata } from "next";
 
+const BLOG_LISTING_TITLE = "Blog";
+const BLOG_METADATA_TITLE = `${BLOG_LISTING_TITLE} - Reflections on youth, slow living, and learning`;
+const BLOG_DESCRIPTION =
+  "Reflections on youth, slow living, society, and the lessons I pick up along the way.";
+
 // The route is not locale-prefixed, so the canonical metadata stays English.
 // Client-side language switching still exposes Vietnamese content in the page.
 export const metadata: Metadata = {
-  title: "Blog - Reflections on youth, slow living, and learning",
-  description:
-    "Reflections on youth, slow living, society, and the lessons I pick up along the way.",
+  title: BLOG_METADATA_TITLE,
+  description: BLOG_DESCRIPTION,
   keywords: [
     "personal blog",
     "youth reflections",
@@ -24,9 +28,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog - Reflections on youth, slow living, and learning",
-    description:
-      "Reflections on youth, slow living, society, and the lessons I pick up along the way.",
+    title: BLOG_METADATA_TITLE,
+    description: BLOG_DESCRIPTION,
     url: `${SITE_CONFIG.url}/blog`,
     type: "website",
     locale: "en_US",
@@ -44,9 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog - Reflections on youth, slow living, and learning",
-    description:
-      "Reflections on youth, slow living, society, and the lessons I pick up along the way.",
+    title: BLOG_METADATA_TITLE,
+    description: BLOG_DESCRIPTION,
     images: [SITE_CONFIG.ogImages.blog],
   },
 };
@@ -70,6 +72,7 @@ export default async function BlogPage() {
   return (
     <Container className="pb-32">
       <Section className="pt-10">
+        <h1 className="sr-only">{BLOG_LISTING_TITLE}</h1>
         <BlogClient posts={posts} />
       </Section>
     </Container>
