@@ -1,0 +1,111 @@
+%-------------------------------------------------------------------------------
+%  Nguyễn Thị Yến Nhi — Business Analyst — TIẾNG VIỆT
+%
+%  Bản này để BẠN ĐỌC / đối chiếu nội dung. Bản đăng lên web vẫn là cv-en.pdf.
+%  Build:  tectonic -X compile cv-vi.tex     (hoặc Overleaf → Compiler: XeLaTeX)
+%
+%  Layout nằm ở cv-style.tex — dùng chung với cv-en.tex, nên hai bản luôn giống
+%  hệt nhau về hình thức. Sửa bố cục thì sửa ở đó, đừng sửa trong file này.
+%
+%  ─── NGUYÊN TẮC NỘI DUNG (giữ đúng như bản tiếng Anh) ──────────────────────
+%  GPA 3.40/4.0 · LogiUP = khóa luận tốt nghiệp (KHÔNG phải đi làm — đừng ám chỉ)
+%  Mọi con số đều có thật: 3 nhóm người dùng · nhóm 4 người · 100+ kịch bản test.
+%  Không có phần trăm hay bội số bịa ra.
+%  Tên công ty phía sau LogiUP là thông tin mật — tuyệt đối không nêu ở đây.
+%-------------------------------------------------------------------------------
+
+% extarticle (từ gói extsizes) để dùng được cỡ 10pt với lượng nội dung này.
+% Nếu sau này thêm nội dung mà tràn sang trang 2 thì hạ xuống 9pt.
+\documentclass[a4paper,9pt]{extarticle}
+\input{cv-style}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+  {\Huge\scshape Nguyễn Thị Yến Nhi}\\ \vspace{3pt}
+  {\large\scshape Business Analyst}\\ \vspace{5pt}
+  \small
+  \faicon{phone}\, (+84) 326-583-876 $|$
+  \href{mailto:nhiyen.engineer@gmail.com}{\faicon{envelope}\, nhiyen.engineer@gmail.com} $|$
+  \href{https://linkedin.com/in/nhi-yen-0906}{\faicon{linkedin}\, nhi-yen-0906} $|$
+  \href{https://github.com/nhiney}{\faicon{github}\, nhiney} $|$
+  \href{https://startup.id.vn/}{\faicon{globe}\, startup.id.vn}
+\end{center}
+
+%----------GIỚI THIỆU----------
+\section{Giới thiệu}
+\begin{cvPlain}
+  \item \textbf{Business Analyst tự tay xây dựng thứ mình đặc tả.} Sinh viên Công nghệ Thông tin (\textbf{GPA 3.40/4.0}, dự kiến tốt nghiệp 2027), trưởng nhóm ở các dự án liên tiếp. Tôi phụ trách yêu cầu từ đầu đến cuối — xác định các nhóm người dùng và quyền truy cập theo vai trò, vẽ luồng nghiệp vụ as-is / to-be, chuyển quy tắc nghiệp vụ thành hành vi hệ thống, dựng wireframe trên Figma — rồi trực tiếp lập trình để hiện thực hóa chúng.
+  \item Tôi không dừng lại ở bản đặc tả. Cơ chế \textbf{Firebase Transaction} khiến việc đặt trùng lịch trở nên bất khả thi, và \textbf{nền tảng trích xuất OCR + LLM} trong khóa luận — một hệ SaaS logistics đa tenant tôi tự thiết kế và xây dựng trọn vẹn — đều là code của tôi. Yêu cầu tôi viết ra là thứ làm được, bởi chính tôi là người làm ra chúng. Đã có chứng chỉ Google về \textbf{Quản lý Dự án} và \textbf{UX Design}.
+\end{cvPlain}
+
+%----------KỸ NĂNG----------
+\section{Kỹ năng \& Công cụ}
+\begin{cvPlain}
+  \item \textbf{Phân tích nghiệp vụ}{: Phân tích yêu cầu, Xác định actor \& phân quyền, Viết User Story, Vẽ luồng nghiệp vụ (as-is / to-be), Phân rã chức năng, Đặc tả quy tắc nghiệp vụ, Thiết kế kịch bản kiểm thử}
+  \item \textbf{Sản phẩm \& Triển khai}{: Figma (wireframe, user flow), Whimsical, Nghiên cứu người dùng, Xây dựng persona, Agile/Scrum, Lập kế hoạch sprint, Giao tiếp với stakeholder, Dẫn dắt nhóm (3--4 người)}
+  \item \textbf{Lập trình \& AI}{: Flutter/Dart, Firebase/Firestore (kể cả transaction), SQL Server (truy vấn, trigger, stored procedure), .NET MVC (C\#), Python, REST API, Git/GitHub, Pipeline OCR/LLM, Prompt Engineering}
+\end{cvPlain}
+
+%----------DỰ ÁN----------
+\section{Dự án}
+
+\cvHeading
+  {LogiUP — Nền tảng tự động hóa chứng từ logistics}
+  {07/2026 -- Hiện tại}
+  {Business Analyst \& Lập trình viên · Tự làm toàn bộ · Khóa luận tốt nghiệp}
+
+\cvProblem{Vấn đề: Đội xuất nhập khẩu phải nhập tay dữ liệu từ các chứng từ vận chuyển rời rạc vào tờ khai hải quan và mẫu Chứng nhận Xuất xứ (C/O) — chậm, lặp đi lặp lại, và rất dễ sai ngay tại khâu chép dữ liệu.}
+
+\begin{cvBullets}
+  \item Vẽ lại \textbf{luồng thủ công hiện tại (as-is)} — tiếp nhận chứng từ $\rightarrow$ đọc tay $\rightarrow$ nhập lại $\rightarrow$ đối chiếu — và định nghĩa \textbf{luồng mục tiêu (to-be)}: OCR trích xuất trường dữ liệu, LLM chuẩn hóa thành cấu trúc tờ khai, và vẫn \textbf{giữ một chốt kiểm duyệt của con người} trước khi nộp.
+  \item Phân tích nền tảng SaaS logistics nhiều dịch vụ, bao gồm \textbf{tiếp nhận chứng từ, trích xuất OCR/AI, gợi ý mã HS, dựng tờ khai, luồng xuất dữ liệu, quản lý tenant và vận hành backoffice}; làm rõ trách nhiệm của từng khối Portal, Platform, Engine và Backoffice.
+  \item Xác định các vai trò và nhu cầu phân quyền của \textbf{người dùng tenant, nhân viên vận hành, quản trị backoffice và quản trị hệ thống} để phục vụ phân tích \textbf{RBAC}; tài liệu hóa các quy tắc nghiệp vụ đằng sau \textbf{định tuyến đa tenant, vòng đời trạng thái chứng từ, kiểm tra hạn mức, nhật ký kiểm toán và feature flag}.
+  \item \textbf{Tự thiết kế và lập trình toàn bộ nền tảng} — tiếp nhận chứng từ, pipeline trích xuất OCR/LLM, dựng tờ khai, portal cho tenant và khu vực backoffice — nên mọi yêu cầu tôi viết ra đều là thứ chính tôi phải làm cho chạy được.
+  \item Viết \textbf{tài liệu tổng quan dự án và bảng thuật ngữ} bằng tiếng Việt, chuyển kiến trúc kỹ thuật phức tạp thành tài liệu mà BA đọc được, giúp các bên liên quan nắm việc nhanh hơn.
+\end{cvBullets}
+
+\vspace{4pt}
+
+\cvHeading
+  {Ứng dụng Đặt lịch khám Thông minh}
+  {02/2026 -- 05/2026}
+  {Trưởng nhóm · Business Analyst \& Lập trình viên chính · nhóm 4 người}
+
+\cvProblem{Vấn đề: Việc đặt lịch khám thiếu cơ chế chống trùng theo thời gian thực và khó dùng với người lớn tuổi — dẫn tới đặt trùng lịch và tỷ lệ tự phục vụ thấp.}
+
+\begin{cvBullets}
+  \item \textbf{Khảo sát người dùng} về hành trình đặt lịch, rồi chuyển kết quả thành \textbf{wireframe và user flow trên Figma} để cả nhóm dựa vào đó xây dựng; phát hiện tương tác bằng giọng nói là nhu cầu tiếp cận thực sự, từ đó đề xuất tính năng \textbf{đặt lịch bằng giọng nói}.
+  \item Xác định \textbf{ba nhóm người dùng — Bệnh nhân, Bác sĩ, Quản trị viên} — mỗi nhóm có phạm vi quyền và luồng sử dụng riêng, chốt quy tắc truy cập \textit{trước khi} lập trình thay vì vá lại về sau.
+  \item Nhận diện \textbf{đặt trùng lịch} là quy tắc nghiệp vụ then chốt (hai bệnh nhân không bao giờ được giữ cùng một khung giờ), đặc tả quy tắc đó, rồi \textbf{trực tiếp lập trình} cơ chế ràng buộc bằng \textbf{Firebase Transaction} nguyên tử trên bản ghi khung giờ.
+  \item \textbf{Viết phần lớn codebase} với vai trò lập trình viên chính: ứng dụng Flutter/Dart kết nối Firestore, phân quyền cho ba nhóm người dùng, luồng đặt lịch bằng giọng nói và tìm phòng khám qua Google Maps.
+  \item Dẫn dắt \textbf{nhóm 4 người} — phân rã tính năng thành task theo sprint và theo dõi tiến độ — sau đó \textbf{tự viết và thực thi hơn 100 kịch bản kiểm thử thủ công} trên thiết bị thật để kiểm chứng luồng đặt lịch, xếp lịch và phân quyền.
+\end{cvBullets}
+
+\cvMeta{Công nghệ}{Flutter · Dart · Firebase (Firestore, Auth) · Google Maps API · Figma}
+
+%----------HỌC VẤN----------
+\section{Học vấn}
+
+\cvSchool
+  {Trường Đại học Công Thương TP. Hồ Chí Minh}
+  {TP. Hồ Chí Minh, Việt Nam}
+  {Cử nhân Công nghệ Thông tin · GPA 3.40 / 4.0}
+  {Dự kiến 2027}
+
+\begin{cvBullets}
+  \item Liên tục được giao vai trò \textbf{trưởng nhóm}; điều phối bàn giao xuyên suốt các khâu phân tích, thiết kế, phát triển và kiểm thử.
+\end{cvBullets}
+
+%----------CHỨNG CHỈ----------
+\section{Chứng chỉ \& Thành tích}
+\begin{cvPlain}
+  \item {\itshape Toàn bộ là chứng chỉ Google Professional — Coursera, 04--05/2026.}
+  \item \textbf{Quản lý Dự án} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/Y0JMYWUVVJG9}{\itshape (chứng chỉ)} \; Vòng đời dự án theo Agile và Waterfall, lập kế hoạch, quản trị rủi ro, giao tiếp với stakeholder.
+  \item \textbf{UX Design} \href{https://coursera.org/verify/professional-cert/4NPVV3FRP07M}{\itshape (chứng chỉ)} \; Nghiên cứu người dùng, wireframe, prototype, kiểm thử khả dụng, Figma.
+  \item \textbf{AI} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/84G1CO6ABM7P}{\itshape (chứng chỉ)} · \textbf{AI Essentials} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/POYFWIV2Y5VW}{\itshape (chứng chỉ)} · \textbf{IT Automation with Python} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/ERRCIOPXMF5I}{\itshape (chứng chỉ)} \; Ứng dụng AI, prompt engineering; Python, Git.
+  \item \textbf{Cuộc thi Nghiên cứu Khoa học, ĐH Công Thương} {\itshape (03/2026)} \; Đồng tác giả đề tài về mạng xã hội tích hợp AI cho sinh viên; lên ý tưởng kiến trúc hệ thống và thiết kế các tương tác cốt lõi.
+\end{cvPlain}
+
+\end{document}

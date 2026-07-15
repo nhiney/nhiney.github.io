@@ -1,0 +1,118 @@
+%-------------------------------------------------------------------------------
+%  Nguyen Thi Yen Nhi — Business Analyst — ENGLISH
+%  This is the version published on the website (portfolio/public/cv.pdf).
+%
+%  Build:  tectonic -X compile cv-en.tex        (or Overleaf → Compiler: XeLaTeX)
+%  Layout lives in cv-style.tex — shared with cv-vi.tex so both stay identical.
+%
+%  ─── FACTS ─────────────────────────────────────────────────────────────────
+%  GPA 3.40/4.0 · LogiUP = graduation thesis (NOT paid work — never imply it is)
+%  Every number is real: 3 actors · 4-member team · 100+ test scenarios.
+%  No invented percentages or multipliers.
+%
+%  ─── DELIBERATELY OMITTED (your call — recorded so nobody "fixes" it back) ──
+%  * E-Commerce Shoe Shop System (Dec 2025, team lead, ASP.NET MVC / SQL Server,
+%    inventory business rule enforced via SQL Triggers + Stored Procedures).
+%    A real project and a good BA story — cut only to hold one page. Restore it
+%    from git history if you ever move to two pages.
+%  * English Vocabulary App (Tkinter coursework) — weakest item.
+%  * IELTS/TOEIC, VNNIC Fellowship, Google Digital Marketing certificate.
+%  * "BPMN 2.0" — no artifact exists yet. Add it the day you draw one.
+%  * The client/company behind LogiUP is confidential — never name it here.
+%-------------------------------------------------------------------------------
+
+% extarticle (from extsizes) is used because it allows 10pt on a body this dense.
+% Drop to 9pt if you ever add content and it spills to a second page.
+\documentclass[a4paper,9pt]{extarticle}
+\input{cv-style}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+  {\Huge\scshape Nguyen Thi Yen Nhi}\\ \vspace{3pt}
+  {\large\scshape Business Analyst}\\ \vspace{5pt}
+  \small
+  \faicon{phone}\, (+84) 326-583-876 $|$
+  \href{mailto:nhiyen.engineer@gmail.com}{\faicon{envelope}\, nhiyen.engineer@gmail.com} $|$
+  \href{https://linkedin.com/in/nhi-yen-0906}{\faicon{linkedin}\, nhi-yen-0906} $|$
+  \href{https://github.com/nhiney}{\faicon{github}\, nhiney} $|$
+  \href{https://startup.id.vn/}{\faicon{globe}\, startup.id.vn}
+\end{center}
+
+%----------SUMMARY----------
+\section{Summary}
+\begin{cvPlain}
+  \item \textbf{Business Analyst who builds what she specifies.} Information Technology undergraduate (\textbf{GPA 3.40/4.0}, expected 2027) and team lead on consecutive projects. I own requirements end to end — defining actors and role-based access, mapping as-is / to-be workflows, translating business rules into system behaviour and wireframing in Figma — and then implement them in code.
+  \item I do not hand off at the spec. The \textbf{Firebase transaction} that makes double-booking impossible, and the \textbf{OCR + LLM extraction platform} behind my graduation thesis — a multi-tenant logistics SaaS I designed and built end to end — are my own code. Requirements I write are implementable because I am the one who implements them. Google-certified in \textbf{Project Management} and \textbf{UX Design}.
+\end{cvPlain}
+
+%----------SKILLS----------
+\section{Skills \& Tools}
+\begin{cvPlain}
+  \item \textbf{Business Analysis}{: Requirement Analysis, Actor \& Role Definition, User Story Writing, Workflow Mapping (as-is / to-be), Functional Decomposition, Business-Rule Specification, Test Scenario Design}
+  \item \textbf{Product \& Delivery}{: Figma (wireframing, user flows), Whimsical, User Research, Persona Definition, Agile/Scrum, Sprint Planning, Stakeholder Communication, Team Leadership (3--4 members)}
+  \item \textbf{Development \& AI}{: Flutter/Dart, Firebase/Firestore (incl. transactions), SQL Server (queries, triggers, stored procedures), .NET MVC (C\#), Python, REST APIs, Git/GitHub, OCR/LLM Document Pipelines, Prompt Engineering}
+\end{cvPlain}
+
+%----------PROJECTS----------
+\section{Projects}
+
+\cvHeading
+  {LogiUP — Logistics Document Automation Platform}
+  {Jul 2026 -- Present}
+  {Business Analyst \& Developer · Sole author · Graduation Thesis}
+
+\cvProblem{Problem: Import/export teams manually re-key data from fragmented shipping documents into customs declarations and Certificate of Origin (C/O) forms — slow, repetitive, and error-prone at the point of transcription.}
+
+\begin{cvBullets}
+  \item Mapped the \textbf{as-is manual workflow} (document intake $\rightarrow$ manual reading $\rightarrow$ re-keying $\rightarrow$ cross-checking) and defined the \textbf{to-be flow}: OCR extracts fields, an LLM normalises them into a structured declaration payload, and a \textbf{human review checkpoint} is retained before submission.
+  \item Analysed a multi-service logistics SaaS platform spanning \textbf{document ingestion, OCR/AI extraction, HS code assistance, declaration assembly, export workflows, tenant management and backoffice operations}; clarified system responsibilities across Portal, Platform, Engine and Backoffice.
+  \item Identified roles and permission needs across \textbf{tenant users, logistics operators, backoffice admins and system administrators} for \textbf{RBAC} analysis; documented the business rules behind \textbf{multi-tenant routing, document status lifecycle, quota checks, audit logs and feature flags}.
+  \item \textbf{Designed and built the platform single-handedly} — document ingestion, the OCR/LLM extraction pipeline, declaration assembly, the tenant portal and the backoffice — so every requirement I wrote was one I then had to make work.
+  \item Wrote a Vietnamese \textbf{project overview and glossary} turning the technical architecture into BA-readable documentation for faster stakeholder onboarding.
+\end{cvBullets}
+
+\vspace{4pt}
+
+\cvHeading
+  {Smart Medical Booking App}
+  {Feb 2026 -- May 2026}
+  {Team Lead · Business Analyst \& Core Developer · 4-member team}
+
+\cvProblem{Problem: Appointment scheduling lacks real-time conflict prevention and is hard to use for elderly patients — causing double-bookings and low self-service adoption.}
+
+\begin{cvBullets}
+  \item Ran \textbf{user research} on the booking journey and turned the findings into \textbf{Figma wireframes and user flows} the team built from; surfaced voice interaction as an accessibility need, driving a \textbf{voice-assisted booking} feature.
+  \item Defined \textbf{three actors — Patient, Doctor, Administrator} — each with a distinct permission scope and flow, settling access rules before implementation rather than patching them afterwards.
+  \item Identified \textbf{double-booking} as the critical business rule (two patients must never hold the same slot), specified the rule, then \textbf{implemented} its enforcement as an atomic \textbf{Firebase Transaction} on the slot record.
+  \item \textbf{Wrote the majority of the codebase} as core developer: the Flutter/Dart client against Firestore, role-based access for the three actors, the voice-assisted booking flow and Google Maps clinic search.
+  \item Led the \textbf{4-member team} — decomposed features into sprint tasks and tracked delivery — then \textbf{authored and executed 100+ manual test scenarios} on physical devices to validate the booking, scheduling and permission flows.
+\end{cvBullets}
+
+\cvMeta{Key Tech}{Flutter · Dart · Firebase (Firestore, Auth) · Google Maps API · Figma}
+
+%----------EDUCATION----------
+\section{Education}
+
+\cvSchool
+  {Ho Chi Minh City University of Industry and Trade}
+  {Ho Chi Minh City, Vietnam}
+  {Bachelor of Information Technology · GPA 3.40 / 4.0}
+  {Expected 2027}
+
+\begin{cvBullets}
+  \item Consistently appointed as \textbf{team lead}; coordinated cross-functional delivery across analysis, design, development and QA.
+\end{cvBullets}
+
+%----------CERTIFICATIONS----------
+\section{Certifications \& Honours}
+\begin{cvPlain}
+  \item {\itshape All Google Professional Certificates — Coursera, Apr--May 2026.}
+  \item \textbf{Project Management} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/Y0JMYWUVVJG9}{\itshape (cert)} \; Agile and Waterfall lifecycles, planning, risk management, stakeholder communication.
+  \item \textbf{UX Design} \href{https://coursera.org/verify/professional-cert/4NPVV3FRP07M}{\itshape (cert)} \; User research, wireframing, prototyping, usability testing, Figma.
+  \item \textbf{AI} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/84G1CO6ABM7P}{\itshape (cert)} · \textbf{AI Essentials} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/POYFWIV2Y5VW}{\itshape (cert)} · \textbf{IT Automation with Python} \href{https://www.coursera.org/account/accomplishments/specialization/certificate/ERRCIOPXMF5I}{\itshape (cert)} \; Applied AI, prompt engineering; Python, Git.
+  \item \textbf{Scientific Research Competition, HUIT} {\itshape (Mar 2026)} \; Co-authored a study on an AI-integrated social network for students; conceptualised the system architecture and designed the core user interactions.
+\end{cvPlain}
+
+\end{document}

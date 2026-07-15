@@ -1,0 +1,132 @@
+%-------------------------------------------------------------------------------
+%  Shared preamble for cv-en.tex and cv-vi.tex
+%  Edit the layout HERE, never in the content files — this is what keeps the
+%  English and Vietnamese versions looking identical.
+%
+%  ENGINE: XeLaTeX (Overleaf: Menu → Compiler → XeLaTeX) or Tectonic.
+%  NOT pdfLaTeX — fontspec needs a Unicode engine, and cv-vi.tex needs one for
+%  the Vietnamese diacritics anyway.
+%
+%  LOOK: modelled on the Jake Gutierrez resume template Nhi supplied —
+%  black and white, small-caps section headings over a full-width rule,
+%  skills as "Label: values" lines, bold project title left / date right.
+%
+%  TYPOGRAPHY
+%  * Body is TeX Gyre Termes (a Times cut): the classic CV serif, familiar to
+%    every recruiter, and far sturdier than Computer Modern (the LaTeX default),
+%    whose thin strokes and small x-height are punishing at small sizes.
+%  * DO NOT swap in another font without checking Vietnamese first. XCharter was
+%    tried here and silently dropped 48 Vietnamese glyphs — ả, ẩ, ủ, ộ, ể and
+%    friends just vanished from cv-vi.pdf while the build still reported success.
+%    To verify a candidate font, the build log must show zero hits for:
+%      grep -c "Missing character" <build log>      # must be 0
+%  * Fonts are loaded BY FILENAME, not family name. Loading "TeX Gyre Termes" by
+%    name fails on Tectonic (no system font database); the .otf filename resolves
+%    on Overleaf, TeX Live and Tectonic alike.
+%-------------------------------------------------------------------------------
+
+\usepackage[
+  a4paper,
+  top=1.1cm, bottom=1.1cm, left=1.4cm, right=1.4cm,
+  footskip=0.4cm
+]{geometry}
+
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+% ─── Fonts ──────────────────────────────────────────────────────────────────
+\setmainfont{texgyretermes-regular.otf}[
+  BoldFont       = texgyretermes-bold.otf,
+  ItalicFont     = texgyretermes-italic.otf,
+  BoldItalicFont = texgyretermes-bolditalic.otf,
+  Ligatures      = TeX,
+]
+
+% ─── Colour: black on white, like the original. Links only are blue. ────────
+\definecolor{link}{HTML}{0B3D91}
+
+\hypersetup{colorlinks=true, urlcolor=link}
+\urlstyle{same}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0in}
+\linespread{1.02}
+\raggedright
+\raggedbottom
+
+% ─── Sections: small caps over a full-width rule (the Jake look) ────────────
+\titleformat{\section}
+  {\scshape\large}
+  {}{0em}{}
+  [\vspace{-6pt}\rule{\linewidth}{0.8pt}\vspace{-3pt}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% ─── Entry macros ───────────────────────────────────────────────────────────
+% \cvHeading{Title}{Right-aligned date}{Role / subtitle}
+\newcommand{\cvHeading}[3]{%
+  \vspace{3pt}
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textit{#2} \\
+  \end{tabular*}%
+  \vspace{-2pt}\\
+  {\small\itshape #3}%
+  \vspace{1pt}
+}
+
+% \cvSchool{School}{Location}{Degree line}{Dates}
+\newcommand{\cvSchool}[4]{%
+  \vspace{3pt}
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textit{#2} \\
+  \end{tabular*}%
+  \vspace{-2pt}\\
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    {\small\itshape #3} & {\small\itshape #4} \\
+  \end{tabular*}%
+  \vspace{-6pt}
+}
+
+% The italic "Problem:" line that opens each project.
+% \noindent is required — \justifying restores \parindent, which would otherwise
+% indent the first line and break the left edge of the column.
+\newcommand{\cvProblem}[1]{%
+  \vspace{2pt}
+  {\small\itshape\justifying\noindent #1\par}%
+  \vspace{1pt}
+}
+
+% Trailing "Key Tech / Công nghệ" line.
+\newcommand{\cvMeta}[2]{%
+  \vspace{2pt}
+  {\small\textit{#1:} #2\par}%
+}
+
+% Project bullets.
+\newenvironment{cvBullets}
+  {\begin{itemize}[
+     leftmargin = 1.3em,
+     topsep     = 2pt,
+     itemsep    = 1.5pt,
+     parsep     = 0pt,
+     label      = $\bullet$,
+   ]\small}
+  {\end{itemize}\vspace{1pt}}
+
+% Flat, label-less list — used for Summary, Skills and Certifications, matching
+% the original template's "\textbf{Label}{: values}" style.
+\newenvironment{cvPlain}
+  {\begin{itemize}[leftmargin=0pt, topsep=2pt, itemsep=3pt, parsep=0pt, label={}]\small}
+  {\end{itemize}}
