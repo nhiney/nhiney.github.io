@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, GitBranch, Clock, Code2, Mail } from "lucide-react";
-import { motion } from "framer-motion";
 
 import { ColourfulText }      from "@/components/effects/ColourfulText";
 import { BackgroundLines }    from "@/components/effects/BackgroundLines";
@@ -14,6 +13,7 @@ import { Container }          from "@/components/ui/Container";
 import { PortfolioClient }    from "@/app/portfolio/PortfolioClient";
 import { useLanguage }   from "@/context/LanguageContext";
 import { SITE_CONFIG }   from "@/lib/constants";
+import wakatimeTotal     from "@/data/wakatime.json";
 import { cn }            from "@/lib/utils";
 import { Post }          from "@/types";
 
@@ -55,10 +55,10 @@ const BENTO_TONES = {
     rule: "from-sky-300/45 via-blue-300/45 to-indigo-300/40",
   },
   coding: {
-    frame: "border-emerald-200/55 bg-white/55 dark:border-emerald-300/10 dark:bg-white/[0.025]",
-    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(236,253,245,0.3))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(45,212,191,0.035))]",
-    icon: "border-emerald-200/80 bg-emerald-50/65 text-emerald-700/90 dark:border-emerald-300/15 dark:bg-emerald-400/[0.055] dark:text-emerald-100/85",
-    rule: "from-emerald-300/45 via-teal-300/45 to-cyan-300/40",
+    frame: "border-indigo-200/55 bg-white/55 dark:border-indigo-300/10 dark:bg-white/[0.025]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(238,242,255,0.32))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(99,102,241,0.035))]",
+    icon: "border-indigo-200/80 bg-indigo-50/65 text-indigo-700/90 dark:border-indigo-300/15 dark:bg-indigo-400/[0.055] dark:text-indigo-100/85",
+    rule: "from-blue-300/45 via-indigo-300/45 to-violet-300/40",
   },
   tech: {
     frame: "border-violet-200/50 bg-white/55 dark:border-violet-300/10 dark:bg-white/[0.025]",
@@ -90,15 +90,22 @@ function AnimatedCounter({
   duration = 1.4,
   suffix = "",
   delay = 0,
+  formatter,
 }: {
   to: number;
   duration?: number;
   suffix?: string;
   delay?: number;
+  formatter?: Intl.NumberFormat;
 }) {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const reducedMotionFrame = requestAnimationFrame(() => setValue(to));
+      return () => cancelAnimationFrame(reducedMotionFrame);
+    }
+
     let raf = 0;
     let startTs: number | null = null;
     const startDelay = window.setTimeout(() => {
@@ -118,7 +125,7 @@ function AnimatedCounter({
     };
   }, [to, duration, delay]);
 
-  return <>{value}{suffix}</>;
+  return <>{formatter ? formatter.format(value) : value}{suffix}</>;
 }
 
 // ─── Bento card ───────────────────────────────────────────────────────────────
@@ -155,7 +162,17 @@ function BentoItem({ area, icon, title, tone, children }: {
 // ─── Right-side bento grid ────────────────────────────────────────────────────
 
 function PersonalBentoGrid() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const hoursLocale = language === "vi" ? "vi-VN" : "en-US";
+  const hoursFormatter = new Intl.NumberFormat(hoursLocale);
+  const formattedHours = hoursFormatter.format(wakatimeTotal.hours);
+  const codingTimeLabel = [
+    formattedHours,
+    t("home.bento.coding_hours_unit"),
+    wakatimeTotal.minutes,
+    t("home.bento.coding_minutes_unit"),
+  ].join(" ");
+
   return (
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-2 xl:max-h-[34rem] xl:grid-rows-2">
 
@@ -198,31 +215,48 @@ function PersonalBentoGrid() {
         title={t("home.bento.coding_title")}
         tone="coding"
       >
-        <div className="mt-1 space-y-3">
-          <div>
-            <span className="text-3xl font-black text-emerald-700/90 dark:text-emerald-100/90">
-              <AnimatedCounter to={957} suffix="+" duration={1.6} delay={0.1} />
+        <div className="mt-1">
+          <div className="coding-time-lockup">
+            <span className="sr-only">{codingTimeLabel}</span>
+            <span
+              className="coding-time-stat coding-time-stat-hours"
+              aria-hidden="true"
+            >
+              <span className="coding-time-number">
+                <AnimatedCounter
+                  to={wakatimeTotal.hours}
+                  duration={1.6}
+                  delay={0.1}
+                  formatter={hoursFormatter}
+                />
+              </span>
+              <span className="coding-time-unit">
+                {t("home.bento.coding_hours_unit")}
+              </span>
             </span>
-            <span className="ml-2 text-xs text-slate-600 dark:text-slate-300">{t("home.bento.coding_hours_unit")}</span>
-          </div>
-          <div className="space-y-1">
-            <div className="flex justify-between text-[10px] font-semibold uppercase tracking-wider text-emerald-900/60 dark:text-emerald-100/60">
-              <span>{t("home.bento.coding_alltime")}</span><span>{t("home.bento.coding_days")}</span>
-            </div>
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-emerald-950/10 dark:bg-emerald-100/10">
-              <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-emerald-500/80 via-teal-500/75 to-sky-500/65"
-                initial={{ width: 0 }}
-                animate={{ width: "78%" }}
-                transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
-              />
-            </div>
+            <span className="coding-time-divider" aria-hidden="true" />
+            <span
+              className="coding-time-stat coding-time-stat-minutes"
+              aria-hidden="true"
+            >
+              <span className="coding-time-minutes-number">
+                <AnimatedCounter
+                  to={wakatimeTotal.minutes}
+                  duration={1.15}
+                  delay={0.25}
+                />
+              </span>
+              <span className="coding-time-unit">
+                {t("home.bento.coding_minutes_unit")}
+              </span>
+            </span>
           </div>
           <Link
             href={SITE_CONFIG.links.wakatime}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+            aria-label={`${t("home.bento.coding_cta")}: ${codingTimeLabel}`}
+            className="mt-3 flex w-fit items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-primary/80 hover:underline [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5"
           >
             {t("home.bento.coding_cta")} <ArrowRight size={11} />
           </Link>

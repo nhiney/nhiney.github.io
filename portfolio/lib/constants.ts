@@ -100,7 +100,7 @@ export const EXTRACURRICULAR_DATA = [
   {
     year: "Passions",
     title: "Continuous Learning",
-    organization: "Wakatime: 957+ Hours",
+    organization: "WakaTime-tracked Activity",
     description: "Maintaining a deep focus on coding efficiency and activity patterns, with a goal of 'not wasting' time in 2025.",
   }
 ];
@@ -123,7 +123,6 @@ export const APPROACH_ITEMS = [
 export const IMPACT_METRICS = [
   { label: "Repositories", value: "8+", icon: "Briefcase" },
   { label: "Contributions", value: "186+", icon: "Code" },
-  { label: "Coding Hours", value: "957+", icon: "Users" },
   { label: "Main Tech", value: "3+", icon: "Zap" },
 ];
 

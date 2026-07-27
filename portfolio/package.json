@@ -7,6 +7,8 @@
     "build": "node scripts/generate-og.mjs && node scripts/generate-tree.mjs && next build && node scripts/generate-offline-manifest.mjs",
     "start": "next start",
     "lint": "eslint",
+    "sync:wakatime": "node scripts/sync-wakatime.mjs",
+    "test:wakatime": "node --test scripts/sync-wakatime.test.mjs",
     "audit:blog-i18n": "node scripts/audit-blog-i18n.mjs",
     "generate:og": "node scripts/generate-og.mjs",
     "generate:tree": "node scripts/generate-tree.mjs",

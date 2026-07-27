@@ -14,6 +14,10 @@ trap cleanup EXIT
 
 echo "Building portfolio..."
 cd "$REPO_ROOT/portfolio"
+if [ "${SKIP_WAKATIME_SYNC:-0}" != "1" ]; then
+  echo "Syncing WakaTime total..."
+  bun run sync:wakatime
+fi
 bun run build
 
 echo "Preparing gh-pages branch..."

@@ -484,6 +484,133 @@ body.site-text-palette {
   -webkit-text-fill-color: transparent;
 }
 
+.coding-time-lockup {
+  display: flex;
+  min-height: 4.75rem;
+  min-width: 0;
+  align-items: flex-end;
+  gap: 0.875rem;
+  padding: 0;
+  container-type: inline-size;
+  isolation: isolate;
+}
+
+.coding-time-stat {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.3rem;
+}
+
+.coding-time-stat-hours {
+  flex: 0 1 auto;
+}
+
+.coding-time-stat-minutes {
+  flex: 0 0 auto;
+}
+
+.coding-time-number {
+  color: hsl(var(--primary));
+  font-family: var(--font-plus-jakarta), var(--font-inter), sans-serif;
+  font-size: clamp(3rem, 22cqw, 3.25rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  background-image: linear-gradient(
+    105deg,
+    hsl(221 83% 56%) 0%,
+    hsl(238 78% 59%) 52%,
+    hsl(258 72% 59%) 100%
+  );
+  background-size: 100% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: none;
+}
+
+.coding-time-minutes-number {
+  color: hsl(252 72% 56%);
+  font-family: var(--font-plus-jakarta), var(--font-inter), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.coding-time-unit {
+  color: hsl(var(--muted-foreground));
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.coding-time-stat-hours .coding-time-unit {
+  color: hsl(221 78% 57%);
+}
+
+.coding-time-stat-minutes .coding-time-unit {
+  color: hsl(252 67% 58%);
+}
+
+.coding-time-divider {
+  width: 1px;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  align-self: center;
+  background: hsl(var(--border) / 0.82);
+}
+
+.dark .coding-time-number {
+  background-image: linear-gradient(
+    105deg,
+    hsl(213 94% 68%) 0%,
+    hsl(235 88% 72%) 52%,
+    hsl(263 82% 73%) 100%
+  );
+}
+
+.dark .coding-time-minutes-number {
+  color: hsl(263 82% 73%);
+}
+
+.dark .coding-time-stat-hours .coding-time-unit {
+  color: hsl(213 84% 72%);
+}
+
+.dark .coding-time-stat-minutes .coding-time-unit {
+  color: hsl(263 72% 76%);
+}
+
+@container (max-width: 14rem) {
+  .coding-time-lockup {
+    gap: 0.7rem;
+  }
+
+  .coding-time-number {
+    font-size: clamp(2.75rem, 22cqw, 3.125rem);
+  }
+}
+
+@media (forced-colors: active) {
+  .coding-time-number {
+    color: CanvasText;
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+    filter: none;
+  }
+}
+
 body.site-text-palette .text-gradient {
   background:
     linear-gradient(

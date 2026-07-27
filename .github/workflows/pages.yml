@@ -1,0 +1,118 @@
+name: Build and deploy Pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the main branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Fetch the verified WakaTime total
+        run: node portfolio/scripts/sync-wakatime.mjs
+
+      - name: Decide whether a deployment is needed
+        id: wakatime
+        shell: bash
+        run: |
+          if git diff --quiet -- portfolio/data/wakatime.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] &&
+             git diff --quiet -- portfolio/data/wakatime.json; then
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Bun
+        if: steps.wakatime.outputs.should_deploy == 'true'
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        if: steps.wakatime.outputs.should_deploy == 'true'
+        run: bun install --frozen-lockfile
+
+      - name: Build and publish the gh-pages branch
+        if: steps.wakatime.outputs.should_deploy == 'true'
+        env:
+          SKIP_WAKATIME_SYNC: "1"
+        run: bash deploy.sh
+
+      - name: Request the Pages build explicitly
+        if: steps.wakatime.outputs.should_deploy == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/pages/builds" \
+            --silent
+
+      - name: Wait for the Pages build
+        if: steps.wakatime.outputs.should_deploy == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          for attempt in {1..30}; do
+            status=$(
+              gh api \
+                "repos/${GITHUB_REPOSITORY}/pages/builds/latest" \
+                --jq '.status'
+            )
+            case "$status" in
+              built)
+                echo "GitHub Pages build completed."
+                exit 0
+                ;;
+              errored)
+                echo "GitHub Pages build failed." >&2
+                exit 1
+                ;;
+              *)
+                echo "GitHub Pages status: $status"
+                sleep 10
+                ;;
+            esac
+          done
+
+          echo "Timed out waiting for the GitHub Pages build." >&2
+          exit 1
+
+      - name: Record the deployed WakaTime total
+        if: steps.wakatime.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "Nguyễn Thị Yến Nhi"
+          git config user.email "nhiyen.engineer@gmail.com"
+          git config core.hooksPath .githooks
+          git add portfolio/data/wakatime.json
+          git commit -m "chore: sync WakaTime total"
+
+          if ! git push origin HEAD:main; then
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
