@@ -38,6 +38,8 @@ export function ResumeClient() {
               <a
                 href={CV_PATH}
                 download={CV_FILENAME}
+                data-analytics-event="cv_downloaded"
+                data-analytics-label="resume_page"
                 className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-9 py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_hsl(var(--primary))] active:scale-95"
               >
                 <Download size={16} className="transition-transform group-hover:-translate-y-0.5" />
@@ -47,6 +49,8 @@ export function ResumeClient() {
                 href={CV_PATH}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-analytics-event="cv_opened"
+                data-analytics-label="resume_page"
                 className="group inline-flex items-center justify-center gap-3 rounded-full border border-border/60 px-9 py-4 text-sm font-black uppercase tracking-widest transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
               >
                 <ExternalLink size={15} className="transition-transform group-hover:translate-x-0.5" />
@@ -83,6 +87,8 @@ export function ResumeClient() {
                     href={CV_PATH}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-analytics-event="cv_opened"
+                    data-analytics-label="resume_fallback"
                     className="group inline-flex items-center justify-center gap-3 rounded-full bg-primary px-9 py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-105 active:scale-95"
                   >
                     <ExternalLink size={15} />

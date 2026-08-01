@@ -228,12 +228,20 @@ function HeroSection({ copy }: { copy: PortfolioCopy }) {
           transition={{ duration: 0.6, delay: 0.33 }}
           className="flex flex-col sm:flex-row gap-3"
         >
-          <a href="#projects">
+          <a
+            href="#projects"
+            data-analytics-event="portfolio_cta_clicked"
+            data-analytics-label="projects"
+          >
             <button className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-all hover:scale-[1.02] hover:bg-primary/90 hover:shadow-[0_0_32px_-8px_hsl(var(--primary))] active:scale-95">
               {hero.cta_projects} <ArrowRight className="h-4 w-4" />
             </button>
           </a>
-          <Link href={`mailto:${SITE_CONFIG.links.email}`}>
+          <Link
+            href={`mailto:${SITE_CONFIG.links.email}`}
+            data-analytics-event="portfolio_cta_clicked"
+            data-analytics-label="email"
+          >
             <button className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 backdrop-blur-sm px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95">
               <Mail className="h-4 w-4" />
               {hero.cta_contact}
@@ -595,6 +603,8 @@ function ContactSection({ copy }: { copy: PortfolioCopy }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href={`mailto:${SITE_CONFIG.links.email}`}
+              data-analytics-event="contact_channel_clicked"
+              data-analytics-label="email"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white transition-all hover:scale-[1.01] active:scale-95"
             >
               <Mail className="h-4 w-4" />
@@ -602,6 +612,8 @@ function ContactSection({ copy }: { copy: PortfolioCopy }) {
             </Link>
             <Link
               href={SITE_CONFIG.links.github}
+              data-analytics-event="contact_channel_clicked"
+              data-analytics-label="github"
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
             >
@@ -609,6 +621,8 @@ function ContactSection({ copy }: { copy: PortfolioCopy }) {
             </Link>
             <Link
               href={SITE_CONFIG.links.linkedin}
+              data-analytics-event="contact_channel_clicked"
+              data-analytics-label="linkedin"
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-7 py-3 text-sm font-semibold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
             >

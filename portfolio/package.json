@@ -9,6 +9,7 @@
     "lint": "eslint",
     "sync:wakatime": "node scripts/sync-wakatime.mjs",
     "test:wakatime": "node --test scripts/sync-wakatime.test.mjs",
+    "verify:posthog-env": "node scripts/verify-posthog-env.mjs",
     "audit:blog-i18n": "node scripts/audit-blog-i18n.mjs",
     "generate:og": "node scripts/generate-og.mjs",
     "generate:tree": "node scripts/generate-tree.mjs",

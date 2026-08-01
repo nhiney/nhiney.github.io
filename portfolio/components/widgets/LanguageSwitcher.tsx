@@ -38,6 +38,8 @@ export function LanguageSwitcher() {
               {visibleLanguages.map((lang) => (
                 <button
                   key={lang.code}
+                  data-analytics-event="language_changed"
+                  data-analytics-label={lang.code}
                   onClick={() => {
                     setLanguage(lang.code);
                     setIsOpen(false);

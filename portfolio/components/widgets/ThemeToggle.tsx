@@ -49,6 +49,8 @@ export function ThemeToggle({ className }: { className?: string }) {
   return (
     <motion.button
       onClick={toggleTheme}
+      data-analytics-event="theme_changed"
+      data-analytics-label={theme === "light" ? "dark" : "light"}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={cn(

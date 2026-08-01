@@ -50,6 +50,8 @@ export function FooterLanguageSelector() {
                     type="button"
                     role="option"
                     aria-selected={active}
+                    data-analytics-event="language_changed"
+                    data-analytics-label={lang.code}
                     onClick={() => {
                       setLanguage(lang.code);
                       setIsOpen(false);

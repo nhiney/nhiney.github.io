@@ -125,6 +125,8 @@ export const ProjectProductCard = ({ project }: { project: Post }) => {
             {project.github && (
               <Link
                 href={project.github}
+                data-analytics-event="project_source_opened"
+                data-analytics-label={project.slug}
                 target="_blank"
                 className="p-3 rounded-full bg-background/50 text-foreground border border-border hover:text-primary hover:border-primary/50 transition-all"
               >
@@ -134,6 +136,8 @@ export const ProjectProductCard = ({ project }: { project: Post }) => {
             {project.demo && project.demo !== "#" && (
               <Link
                 href={project.demo}
+                data-analytics-event="project_demo_opened"
+                data-analytics-label={project.slug}
                 target="_blank"
                 className="p-3 rounded-full bg-background/50 text-foreground border border-border hover:text-primary hover:border-primary/50 transition-all"
               >
@@ -144,6 +148,8 @@ export const ProjectProductCard = ({ project }: { project: Post }) => {
           
           <Link
             href={`/projects/${project.slug}`}
+            data-analytics-event="project_case_study_opened"
+            data-analytics-label={project.slug}
             className="text-xs font-black uppercase tracking-[0.2em] text-zinc-500 hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1"
           >
             {t("projects.study_case")}

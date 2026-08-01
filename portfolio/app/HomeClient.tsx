@@ -325,13 +325,23 @@ export function HomeClient(_props: { projects: Post[]; latestPosts: Post[] }) {
               </p>
 
               <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center xl:justify-start">
-                <a href="#projects" className="w-full sm:w-auto">
+                <a
+                  href="#projects"
+                  data-analytics-event="hero_cta_clicked"
+                  data-analytics-label="projects"
+                  className="w-full sm:w-auto"
+                >
                   <button className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-7 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:w-auto">
                     {t("pages.portfolio.hero.cta_projects")}
                     <ArrowRight className="h-4 w-4" />
                   </button>
                 </a>
-<Link href={`mailto:${SITE_CONFIG.links.email}`} className="w-full sm:w-auto">
+                <Link
+                  href={`mailto:${SITE_CONFIG.links.email}`}
+                  data-analytics-event="hero_cta_clicked"
+                  data-analytics-label="email"
+                  className="w-full sm:w-auto"
+                >
                   <button className="inline-flex items-center justify-center gap-2 border border-border/60 bg-background/60 backdrop-blur-sm rounded-full text-base px-7 h-12 font-medium transition-all hover:border-primary/40 hover:bg-primary/5 w-full sm:w-auto">
                     <Mail className="h-4 w-4" />
                     {t("pages.portfolio.hero.cta_contact")}

@@ -32,6 +32,8 @@ export function ArticleLanguageToggle({ hasVietnamese }: { hasVietnamese: boolea
             type="button"
             aria-label={`${t("footer.language")}: ${locale.name}`}
             aria-pressed={active}
+            data-analytics-event="article_language_changed"
+            data-analytics-label={locale.code}
             onClick={() => setLanguage(locale.code as Language)}
             className={cn(
               "rounded-full px-2.5 py-1 font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-ink)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--paper)]",

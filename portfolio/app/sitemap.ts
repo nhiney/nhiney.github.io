@@ -43,6 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/certificates`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/mind-map`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${baseUrl}/waitlist`, lastModified: now, changeFrequency: "yearly" as const, priority: 0.4 },
+    { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly" as const, priority: 0.2 },
   ];
 
   return [...staticUrls, ...projectUrls, ...blogUrls, ...bookUrls];

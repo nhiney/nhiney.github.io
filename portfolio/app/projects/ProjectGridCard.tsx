@@ -221,6 +221,8 @@ export function ProjectGridCard({ project, index, onOpen, delay = 0 }: Props) {
         onHoverEnd={() => setContentFocused(false)}
         transition={{ duration: 0.25, ease: "easeOut" }}
         onClick={onOpen}
+        data-analytics-event="project_details_opened"
+        data-analytics-label={project.title}
         className="group/content relative flex w-full cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-border/50 bg-card/80 px-6 py-5 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_8px_32px_-8px_hsl(var(--primary)/0.2)] sm:flex-1"
       >
         {/* Ambient glow on hover */}

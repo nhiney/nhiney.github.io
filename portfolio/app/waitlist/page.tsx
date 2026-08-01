@@ -60,6 +60,8 @@ export default function WaitlistPage() {
           >
             <Link
               href={mailHref}
+              data-analytics-event="contact_channel_clicked"
+              data-analytics-label="email"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-black uppercase tracking-widest text-white transition-all hover:scale-[1.01] hover:shadow-[0_0_30px_-8px_hsl(var(--primary))] active:scale-95"
             >
               <Mail size={16} />
@@ -68,6 +70,8 @@ export default function WaitlistPage() {
             </Link>
             <Link
               href={SITE_CONFIG.links.linkedin}
+              data-analytics-event="contact_channel_clicked"
+              data-analytics-label="linkedin"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 bg-card/50 px-8 py-4 text-sm font-bold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"
@@ -77,6 +81,8 @@ export default function WaitlistPage() {
             </Link>
             <Link
               href={SITE_CONFIG.links.github}
+              data-analytics-event="contact_channel_clicked"
+              data-analytics-label="github"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 bg-card/50 px-8 py-4 text-sm font-bold transition-all hover:border-primary/40 hover:bg-primary/5 active:scale-95"

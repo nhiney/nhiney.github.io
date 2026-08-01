@@ -10,6 +10,7 @@ import { RouteTextPalette } from "@/components/layout/RouteTextPalette";
 import { ServiceWorkerRegistration } from "@/components/pwa/ServiceWorkerRegistration";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { PostHogProvider } from "@/components/posthog/PostHogProvider";
+import { AnalyticsConsentBanner } from "@/components/privacy/AnalyticsConsentBanner";
 import "./globals.css";
 
 const inter = Inter({
@@ -253,8 +254,8 @@ export default function RootLayout({
         inter.className,
         "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans"
       )}>
-        <PostHogProvider>
-          <LanguageProvider>
+        <LanguageProvider>
+          <PostHogProvider>
             <RouteTextPalette />
             <ScrollProgress />
             <BackgroundEffects />
@@ -262,8 +263,9 @@ export default function RootLayout({
             <main className="flex-1 relative z-10">{children}</main>
             <Footer />
             <ServiceWorkerRegistration />
-          </LanguageProvider>
-        </PostHogProvider>
+            <AnalyticsConsentBanner />
+          </PostHogProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

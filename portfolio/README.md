@@ -18,6 +18,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## PostHog analytics
+
+Analytics is optional and remains disabled until a visitor explicitly accepts it.
+The site stores that choice in localStorage, sanitizes URLs before capture, disables
+automatic DOM capture and Session Replay, and exposes the controls again at
+`/privacy`.
+
+For local development, copy `.env.example` to `.env.local` and provide the public
+PostHog project key and ingestion host. GitHub Pages builds require same-named
+Actions repository variables:
+
+- `NEXT_PUBLIC_POSTHOG_KEY`
+- `NEXT_PUBLIC_POSTHOG_HOST`
+
+Validate `.env.local` without printing its values:
+
+```bash
+npm run verify:posthog-env
+```
+
+The Pages workflow fails before deployment when either build-time value is missing
+or malformed, preventing a silent analytics-disabled production bundle.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More

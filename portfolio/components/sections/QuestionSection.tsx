@@ -62,11 +62,10 @@ export const QuestionSection = () => {
 
     try {
       const { identifyUser, trackEvent } = await import("@/lib/posthog");
-      identifyUser(trimmedEmail, { name: trimmedName, source: "homepage_contact_form" });
+      void identifyUser(trimmedEmail, { source: "homepage_contact_form" });
       trackEvent("contact_form_submit", {
         source: "homepage_contact_form",
-        email: trimmedEmail,
-        name: trimmedName,
+        has_name: Boolean(trimmedName),
         message_length: trimmedMessage.length,
       });
     } catch {}
@@ -92,8 +91,8 @@ export const QuestionSection = () => {
       localStorage.setItem("waitlist_email", trimmedEmail);
       try {
         const { identifyUser, trackEvent } = await import("@/lib/posthog");
-        identifyUser(trimmedEmail, { source: "homepage_waitlist_tab" });
-        trackEvent("waitlist_signup", { email: trimmedEmail, source: "homepage_waitlist_tab" });
+        void identifyUser(trimmedEmail, { source: "homepage_waitlist_tab" });
+        trackEvent("waitlist_signup", { source: "homepage_waitlist_tab" });
       } catch {}
     } else {
       await new Promise((resolve) => setTimeout(resolve, 800));

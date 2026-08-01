@@ -46,6 +46,13 @@ jobs:
             echo "should_deploy=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Validate PostHog build configuration
+        if: steps.wakatime.outputs.should_deploy == 'true'
+        env:
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ vars.NEXT_PUBLIC_POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ vars.NEXT_PUBLIC_POSTHOG_HOST }}
+        run: node portfolio/scripts/verify-posthog-env.mjs
+
       - name: Set up Bun
         if: steps.wakatime.outputs.should_deploy == 'true'
         uses: oven-sh/setup-bun@v2
@@ -57,6 +64,8 @@ jobs:
       - name: Build and publish the gh-pages branch
         if: steps.wakatime.outputs.should_deploy == 'true'
         env:
+          NEXT_PUBLIC_POSTHOG_KEY: ${{ vars.NEXT_PUBLIC_POSTHOG_KEY }}
+          NEXT_PUBLIC_POSTHOG_HOST: ${{ vars.NEXT_PUBLIC_POSTHOG_HOST }}
           SKIP_WAKATIME_SYNC: "1"
         run: bash deploy.sh
 

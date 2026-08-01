@@ -5,6 +5,7 @@ import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/widgets/Icons";
 import { SITE_CONFIG } from "@/lib/constants";
 import { T } from "@/components/i18n/T";
 import { FileText } from "lucide-react";
+import { PrivacyFooterLink } from "@/components/privacy/PrivacyFooterLink";
 
 const SOCIAL_LINKS = [
   { href: SITE_CONFIG.links.github,            icon: GithubIcon,   label: "GitHub"   },
@@ -83,6 +84,8 @@ export function Footer() {
               <T k="footer.view_cv" />
             </a>
           </div>
+          <span className="hidden sm:block h-4 w-px bg-border/60" />
+          <PrivacyFooterLink />
           <span className="hidden sm:block h-4 w-px bg-border/60" />
           <FooterLanguageSelector />
           <span className="hidden md:block h-4 w-px bg-border/60" />
