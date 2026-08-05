@@ -1,0 +1,787 @@
+.lab {
+  --stage: #20272a;
+  --stage-ink: #f4f1ea;
+  --stage-muted: #aeb8b6;
+  --paper-a: rgba(246, 241, 232, 0.97);
+  --paper-b: rgba(229, 235, 233, 0.97);
+  --ink: #1d2b38;
+  --muted: #596873;
+  --smoke: #667f91;
+  --terracotta: #a76550;
+  --brass: #b59a62;
+  --sage: #819182;
+  --danger: #a34f49;
+  --rule: rgba(29, 43, 56, 0.2);
+  min-height: 100vh;
+  padding: clamp(5.75rem, 8vw, 7rem) clamp(1rem, 4vw, 4rem) 3.5rem;
+  background-color: var(--stage);
+  color: var(--stage-ink);
+  font-family: var(--font-breathing-sans), var(--font-plus-jakarta), sans-serif;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.lab[data-preview-mode="light"] {
+  --stage: #e4ebe9;
+  --stage-ink: #1d2b38;
+  --stage-muted: #5b6a72;
+}
+
+.lab[data-preview-mode="dark"] {
+  --paper-a: rgba(21, 36, 44, 0.97);
+  --paper-b: rgba(27, 43, 51, 0.97);
+  --ink: #f4eee3;
+  --muted: #c5d0ce;
+  --smoke: #93adbd;
+  --terracotta: #d08b73;
+  --brass: #d2b878;
+  --sage: #a9bba8;
+  --danger: #e19791;
+  --rule: rgba(244, 238, 227, 0.22);
+}
+
+.labHeader,
+.optionTabs,
+.stage,
+.previewFooter {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.labHeader {
+  display: flex;
+  margin-bottom: 1.25rem;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.labHeader > div:first-child {
+  max-width: 48rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.42rem;
+  color: var(--brass);
+  font-size: 0.73rem;
+  font-weight: 720;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.labHeader h1 {
+  margin: 0;
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.labHeader > div:first-child > p:last-child {
+  max-width: 43rem;
+  margin: 0.65rem 0 0;
+  color: var(--stage-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.modeSwitch {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  flex: none;
+  border: 1px solid color-mix(in srgb, var(--stage-muted) 38%, transparent);
+}
+
+.modeSwitch button {
+  min-width: 4.2rem;
+  padding: 0.58rem 0.8rem;
+  border: 0;
+  background: transparent;
+  color: var(--stage-muted);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modeSwitch button + button {
+  border-left: 1px solid color-mix(in srgb, var(--stage-muted) 38%, transparent);
+}
+
+.modeSwitch button[aria-pressed="true"] {
+  background-color: var(--brass);
+  color: #17242b;
+}
+
+.optionTabs {
+  display: grid;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid color-mix(in srgb, var(--stage-muted) 32%, transparent);
+}
+
+.optionTabs button {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 2.35rem minmax(0, 1fr);
+  gap: 0.08rem 0.65rem;
+  padding: 0.88rem 1rem 0.8rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--stage-muted);
+  text-align: left;
+  cursor: pointer;
+}
+
+.optionTabs button + button {
+  border-left: 1px solid color-mix(in srgb, var(--stage-muted) 24%, transparent);
+}
+
+.optionTabs button > span {
+  grid-row: 1 / 3;
+  color: var(--terracotta);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.optionTabs strong {
+  overflow: hidden;
+  color: var(--stage-ink);
+  font-size: 0.8rem;
+  font-weight: 730;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.optionTabs small {
+  overflow: hidden;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.optionTabs button[aria-selected="true"] {
+  border-bottom-color: var(--brass);
+  background-color: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.modeSwitch button:focus-visible,
+.optionTabs button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  min-height: 40rem;
+  padding: clamp(0.6rem, 2vw, 1.35rem);
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--stage-muted) 27%, transparent);
+  background-color: color-mix(in srgb, var(--stage) 82%, #000 18%);
+}
+
+.spread {
+  position: relative;
+  display: grid;
+  width: min(1120px, 100%);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  isolation: isolate;
+  box-shadow: 0 30px 65px -34px rgba(0, 0, 0, 0.72);
+}
+
+.leaf {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  aspect-ratio: 460 / 640;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ink) 17%, transparent);
+  background-color: var(--paper-a);
+  color: var(--ink);
+  container-type: inline-size;
+}
+
+.leaf::before {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  inset: 0;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  content: "";
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.leaf:last-of-type::before {
+  background-position: right center;
+}
+
+.optionOne .leaf::before {
+  background-image: url("/books/muon-kiep-nhan-sinh-2/design-preview/option-1-thread-ripple.png");
+  opacity: 0.34;
+}
+
+.optionTwo .leaf::before {
+  background-image: url("/books/muon-kiep-nhan-sinh-2/design-preview/option-2-loop-weave.png");
+}
+
+.optionThree .leaf::before {
+  background-image: url("/books/muon-kiep-nhan-sinh-2/design-preview/option-3-crack-gates.png");
+  opacity: 0.36;
+}
+
+.lab[data-preview-mode="dark"] .leaf::before {
+  filter: brightness(1.5) saturate(0.76);
+  opacity: 0.3;
+}
+
+.leaf:last-of-type {
+  border-left: 0;
+  background-color: var(--paper-b);
+  box-shadow: inset 20px 0 24px -26px rgba(0, 0, 0, 0.78);
+}
+
+.leafScroll {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: color-mix(in srgb, var(--smoke) 58%, transparent) transparent;
+  scrollbar-width: thin;
+  padding: clamp(1.35rem, 5.5cqi, 2.9rem) clamp(1.25rem, 5.8cqi, 3.05rem) clamp(2.7rem, 7.2cqi, 3.8rem);
+}
+
+.leaf:first-of-type .leafScroll {
+  padding-right: clamp(1.6rem, 6.9cqi, 3.6rem);
+}
+
+.leaf:last-of-type .leafScroll {
+  padding-left: clamp(1.6rem, 6.9cqi, 3.6rem);
+}
+
+.folio {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: clamp(0.85rem, 3.5cqi, 1.35rem);
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.58rem, 1.65cqi, 0.72rem);
+}
+
+.pageHeading {
+  position: relative;
+  padding-bottom: clamp(0.85rem, 3.5cqi, 1.45rem);
+  border-bottom: 1px solid var(--rule);
+}
+
+.pageHeading::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: clamp(2.2rem, 10cqi, 4.5rem);
+  border-bottom: 2px solid var(--terracotta);
+  content: "";
+}
+
+.pageHeading > span {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: var(--terracotta);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(1rem, 3.9cqi, 1.65rem);
+  line-height: 1;
+}
+
+.pageHeading h2,
+.overviewHeading h2 {
+  margin: 0;
+  font-family: var(--font-breathing-serif), Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.pageHeading h2 {
+  max-width: 27rem;
+  font-size: clamp(1.18rem, 4.8cqi, 2.05rem);
+  line-height: 1.1;
+}
+
+.proseLead,
+.proseTail {
+  position: relative;
+  max-width: 39rem;
+  color: var(--ink);
+  font-size: clamp(0.72rem, 2.3cqi, 0.94rem);
+  line-height: 1.7;
+}
+
+.proseLead {
+  margin-top: clamp(0.9rem, 3.8cqi, 1.65rem);
+}
+
+.proseTail {
+  margin-top: clamp(0.85rem, 3.4cqi, 1.45rem);
+}
+
+.proseLead p,
+.proseTail p {
+  margin: 0 0 0.72em;
+}
+
+.pageHighlight {
+  position: relative;
+  max-width: 34rem;
+  margin: clamp(0.9rem, 3.5cqi, 1.55rem) 0 0;
+  padding: clamp(0.7rem, 2.9cqi, 1.15rem) 0 clamp(0.7rem, 2.9cqi, 1.15rem) clamp(0.85rem, 3.5cqi, 1.4rem);
+  border-left: 2px solid var(--brass);
+  background-color: color-mix(in srgb, var(--brass) 11%, transparent);
+  color: var(--ink);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.74rem, 2.35cqi, 0.96rem);
+  font-style: italic;
+  line-height: 1.62;
+}
+
+/* Option 1: open circle and ripples. */
+.overviewHeading {
+  position: relative;
+  max-width: 29rem;
+  padding-bottom: clamp(0.8rem, 3.5cqi, 1.3rem);
+}
+
+.overviewHeading > p {
+  margin: 0 0 0.38rem;
+  color: var(--terracotta);
+  font-size: clamp(0.62rem, 1.8cqi, 0.74rem);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.overviewHeading h2 {
+  font-size: clamp(1.32rem, 5.3cqi, 2.3rem);
+  line-height: 1.03;
+}
+
+.overviewHeading blockquote {
+  margin: clamp(0.65rem, 2.8cqi, 1.1rem) 0 0;
+  color: var(--muted);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.7rem, 2.1cqi, 0.88rem);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.overviewRing {
+  display: grid;
+  margin: clamp(1rem, 4.5cqi, 2rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.overviewRing li {
+  display: grid;
+  grid-template-columns: clamp(1.8rem, 7cqi, 2.8rem) minmax(0, 1fr);
+  gap: clamp(0.6rem, 2.7cqi, 1.05rem);
+  padding: clamp(0.48rem, 2.1cqi, 0.82rem) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.overviewRing li:nth-child(even) {
+  margin-left: clamp(0.6rem, 5cqi, 2.25rem);
+}
+
+.overviewRing li:last-child {
+  border-bottom: 0;
+}
+
+.overviewRing span {
+  color: var(--brass);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.84rem, 3cqi, 1.15rem);
+}
+
+.overviewRing p {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(0.64rem, 1.9cqi, 0.78rem);
+  line-height: 1.55;
+}
+
+.rippleLeaf .proseLead {
+  max-width: 31rem;
+}
+
+.rippleSequence {
+  display: grid;
+  margin: clamp(1rem, 4.2cqi, 1.9rem) 0 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background-color: var(--rule);
+  list-style: none;
+}
+
+.rippleSequence li {
+  min-height: clamp(3.35rem, 12cqi, 5rem);
+  padding: clamp(0.65rem, 2.8cqi, 1.05rem);
+  background-color: color-mix(in srgb, var(--paper-b) 91%, transparent);
+  color: var(--ink);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.67rem, 2.1cqi, 0.86rem);
+  line-height: 1.38;
+}
+
+.rippleSequence li:last-child {
+  grid-column: 1 / -1;
+  color: var(--terracotta);
+  text-align: center;
+}
+
+/* Option 2: a visible interruption and a woven culture. */
+.loopDiagram {
+  position: relative;
+  display: grid;
+  min-height: clamp(17rem, 64cqi, 25rem);
+  margin: clamp(0.6rem, 2.6cqi, 1.1rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.loopDiagram li {
+  position: absolute;
+  width: clamp(6rem, 27cqi, 9.8rem);
+  padding: 0.35rem 0.5rem;
+  background-color: color-mix(in srgb, var(--paper-a) 86%, transparent);
+  text-align: center;
+}
+
+.loopDiagram li:nth-child(1) { top: 4%; left: 34%; }
+.loopDiagram li:nth-child(2) { top: 28%; right: 1%; }
+.loopDiagram li:nth-child(3) { right: 7%; bottom: 10%; }
+.loopDiagram li:nth-child(4) { bottom: 6%; left: 5%; }
+.loopDiagram li:nth-child(5) { top: 28%; left: 0; }
+
+.loopDiagram li > span {
+  display: block;
+  margin-bottom: 0.12rem;
+  color: var(--terracotta);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.82rem, 2.8cqi, 1.1rem);
+}
+
+.loopDiagram strong {
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.62rem, 1.95cqi, 0.8rem);
+  line-height: 1.35;
+}
+
+.loopDiagram .breakPoint {
+  bottom: 0;
+  left: 39%;
+  color: var(--terracotta);
+}
+
+.loopLeaf .proseTail {
+  margin-top: 0;
+}
+
+.weaveLeaf .proseLead {
+  max-width: 34rem;
+}
+
+.weaveFormula {
+  display: grid;
+  margin: clamp(10.5rem, 40cqi, 16.5rem) 0 0;
+  grid-template-columns: repeat(7, auto);
+  align-items: baseline;
+  gap: clamp(0.25rem, 1.4cqi, 0.6rem);
+  color: var(--muted);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.58rem, 1.75cqi, 0.75rem);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.weaveFormula i {
+  color: var(--terracotta);
+  font-style: normal;
+}
+
+.weaveFormula strong {
+  color: var(--ink);
+}
+
+/* Option 3: repair stages and a gate that can remain closed. */
+.repairLeaf .proseLead {
+  max-width: 32rem;
+}
+
+.repairSteps {
+  display: grid;
+  margin: clamp(1rem, 4.2cqi, 1.8rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repairSteps li {
+  display: grid;
+  min-height: clamp(3.15rem, 11.5cqi, 4.7rem);
+  grid-template-columns: clamp(2.2rem, 8cqi, 3.3rem) minmax(0, 1fr);
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+}
+
+.repairSteps li:nth-child(n + 3) {
+  border-bottom-color: color-mix(in srgb, var(--brass) 50%, transparent);
+}
+
+.repairSteps span {
+  color: var(--sage);
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.8rem, 2.8cqi, 1.08rem);
+}
+
+.repairSteps li:nth-child(n + 3) span {
+  color: var(--brass);
+}
+
+.repairSteps strong {
+  font-family: var(--font-breathing-serif), Georgia, serif;
+  font-size: clamp(0.7rem, 2.2cqi, 0.9rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.gateLeaf .proseLead {
+  max-width: 34rem;
+}
+
+.boundaryList {
+  display: grid;
+  margin: clamp(12.5rem, 46cqi, 18rem) 0 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1rem, 4.5cqi, 1.9rem);
+  list-style: none;
+}
+
+.boundaryList li {
+  position: relative;
+  padding: clamp(0.48rem, 2cqi, 0.78rem) 0 clamp(0.48rem, 2cqi, 0.78rem) 1rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: clamp(0.65rem, 1.95cqi, 0.8rem);
+  line-height: 1.45;
+}
+
+.boundaryList li::before {
+  position: absolute;
+  top: 1.05em;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background-color: var(--sage);
+  content: "";
+}
+
+.safetyLine {
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--danger);
+  color: var(--danger);
+  font-weight: 650;
+}
+
+.previewFooter {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--stage-muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.previewFooter p {
+  margin: 0;
+}
+
+.previewFooter strong {
+  color: var(--stage-ink);
+  font-weight: 700;
+}
+
+.mobileHint {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .lab {
+    padding-inline: clamp(0.65rem, 3vw, 1.3rem);
+  }
+
+  .labHeader {
+    align-items: start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .optionTabs {
+    overflow-x: auto;
+    grid-template-columns: repeat(3, minmax(13.5rem, 1fr));
+    scroll-snap-type: x mandatory;
+  }
+
+  .optionTabs button {
+    scroll-snap-align: start;
+  }
+
+  .stage {
+    display: flex;
+    min-height: 0;
+    padding: clamp(0.45rem, 2vw, 0.75rem);
+    overflow-x: auto;
+    place-items: initial;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .spread {
+    display: contents;
+  }
+
+  .leaf {
+    width: min(100%, 35rem);
+    min-width: min(100%, 35rem);
+    flex: 0 0 min(100%, 35rem);
+    scroll-snap-align: center;
+  }
+
+  .leaf:last-of-type {
+    border-left: 1px solid color-mix(in srgb, var(--ink) 17%, transparent);
+    box-shadow: none;
+  }
+
+  .leaf + .leaf {
+    margin-left: 0.65rem;
+  }
+
+  .previewFooter {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .desktopHint {
+    display: none;
+  }
+
+  .mobileHint {
+    display: inline;
+  }
+
+  .loopDiagram {
+    min-height: 20rem;
+  }
+
+  .weaveFormula,
+  .gateLeaf .boundaryList {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .lab {
+    padding-top: 5.25rem;
+  }
+
+  .labHeader h1 {
+    font-size: 1.75rem;
+  }
+
+  .modeSwitch {
+    width: 100%;
+  }
+
+  .modeSwitch button {
+    width: 100%;
+  }
+
+  .stage {
+    margin-inline: calc(clamp(0.65rem, 3vw, 1.3rem) * -1);
+    width: calc(100% + 2 * clamp(0.65rem, 3vw, 1.3rem));
+    border-inline: 0;
+  }
+
+  .leaf {
+    min-width: calc(100vw - 0.9rem);
+    flex-basis: calc(100vw - 0.9rem);
+  }
+
+  .leafScroll {
+    padding: 1.2rem 1.15rem 2.8rem;
+  }
+
+  .pageHeading h2 {
+    font-size: clamp(1.05rem, 5.2vw, 1.4rem);
+  }
+
+  .proseLead,
+  .proseTail,
+  .pageHighlight {
+    font-size: clamp(0.72rem, 3.5vw, 0.88rem);
+  }
+
+  .boundaryList,
+  .rippleSequence {
+    grid-template-columns: 1fr;
+  }
+
+  .rippleSequence li:last-child {
+    grid-column: auto;
+  }
+
+  .weaveFormula {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab,
+  .modeSwitch button,
+  .optionTabs button {
+    transition: none;
+  }
+
+  .stage {
+    scroll-behavior: auto;
+  }
+}
+
+@media (forced-colors: active) {
+  .leaf,
+  .modeSwitch,
+  .optionTabs,
+  .stage {
+    border: 1px solid CanvasText;
+  }
+
+  .leaf::before {
+    display: none;
+  }
+}

@@ -15,7 +15,7 @@ import type { LibBookFull, LibBookView } from "@/lib/library/types";
 const BookGalaxy = dynamic(() => import("@/components/library/BookGalaxy"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full w-full items-center justify-center bg-[#eceef2] text-foreground/50 dark:bg-[#07080f]">
+    <div className="flex h-full w-full items-center justify-center bg-[#eff2fb] text-muted-foreground dark:bg-[#080d18]">
       <Loader2 className="mr-2 animate-spin" size={18} />
       <span className="text-sm">Entering the galaxy…</span>
     </div>
@@ -76,9 +76,10 @@ export function LibraryClient({
   );
 
   return (
-    <section className="relative h-[calc(100dvh-4rem)] w-full overflow-hidden bg-[radial-gradient(125%_95%_at_50%_22%,#ffffff,#eaedf4_55%,#d7dcec_100%)] dark:bg-[#07080f]">
-      {/* Light-mode atmosphere — a soft rose glow behind the (transparent) canvas */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_62%_52%_at_50%_38%,hsl(var(--primary)/0.14),transparent_70%)] dark:hidden" />
+    <section className="relative h-[calc(100dvh-4rem)] w-full overflow-hidden bg-[radial-gradient(125%_95%_at_50%_22%,#ffffff,#eff2fb_54%,#dde5f2_100%)] dark:bg-[#080d18]">
+      {/* Light-mode atmosphere — indigo and cyan glows behind the transparent canvas. */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_62%_52%_at_42%_34%,hsl(var(--primary)/0.16),transparent_70%)] dark:hidden" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_44%_42%_at_76%_62%,rgba(29,149,165,0.12),transparent_72%)] dark:hidden" />
 
       <BookGalaxy books={view} onSelect={openBook} paused={!!selectedSlug} isDark={isDark} />
 

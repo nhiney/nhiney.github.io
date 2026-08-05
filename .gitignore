@@ -62,3 +62,9 @@ portfolio/public/mind-map/tree-*.webp
 # Placed LAST so "last matching rule wins" keeps it excluded (confidential client data).
 portfolio/app/nguyenthiyennhi-klcn-ai-logistics-doc-extractor/
 portfolio/app/nguyenthiyennhi-klcn-ai-logistics-doc-extractor/**
+
+# Local visual QA evidence can contain machine-specific paths and screenshots.
+# Keep these rules after !portfolio/** so nested audit artifacts stay private.
+/design-qa.md
+/portfolio/design-qa.md
+/portfolio/.agent_context/

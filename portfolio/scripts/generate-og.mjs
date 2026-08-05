@@ -682,7 +682,12 @@ function loadLibraryBooks() {
   const sandbox = {
     module: { exports: {} },
     exports: {},
-    require,
+    // The OG cards only consume shelf metadata. Curated reading-page modules
+    // are TypeScript source files and are intentionally not evaluated inside
+    // this small VM loader; provide their exported data shape instead.
+    require: (specifier) => specifier.startsWith("./reading/")
+      ? { LAWS_OF_POWER_PAGES: [] }
+      : require(specifier),
   };
   sandbox.exports = sandbox.module.exports;
   vm.runInNewContext(output, sandbox, { filename: BOOKS_DATA });

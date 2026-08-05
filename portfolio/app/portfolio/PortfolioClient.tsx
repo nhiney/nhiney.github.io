@@ -4,8 +4,9 @@ import Link from "next/link";
 import {
   ArrowRight, Mail,
   CheckCircle2, Code2, Wrench, BarChart2, Sparkles, Layers,
+  BadgeCheck, Microscope, UsersRound,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { MouseSpotlight }  from "@/components/effects/MouseSpotlight";
 import { BackgroundLines } from "@/components/effects/BackgroundLines";
@@ -22,7 +23,15 @@ type Stat        = { value: string; label: string };
 type Trait       = { icon: string; title: string; body: string };
 type SkillGroup  = { category: string; items: string[] };
 type ProjectItem = { tag: string; title: string; role: string; period: string; problem: string; actions?: string[]; impact: string[] };
-type TimelineItem= { period: string; title: string; org: string; desc: string };
+type TimelineKind = "leadership" | "research" | "learning";
+type TimelineItem= {
+  kind: TimelineKind;
+  period: string;
+  title: string;
+  org: string;
+  desc: string;
+  evidence: string[];
+};
 type CertItem    = { emoji: string; title: string; issuer: string; date: string };
 
 type PortfolioCopy = {
@@ -142,23 +151,29 @@ const CERT_CLS = [
   "border-border/60 bg-card/45 hover:border-primary/30 hover:bg-card/70",
 ] as const;
 
-const EXPERIENCE_ACCENTS = [
-  {
-    rail: "from-blue-500 via-sky-400 to-cyan-400",
-    dot: "border-blue-500 bg-blue-50 text-blue-600 dark:bg-blue-500/12 dark:text-blue-200",
-    chip: "border-blue-200/70 bg-blue-50/70 text-blue-700 dark:border-blue-300/15 dark:bg-blue-400/[0.06] dark:text-blue-100",
+const EXPERIENCE_ICONS = {
+  leadership: UsersRound,
+  research: Microscope,
+  learning: BadgeCheck,
+} as const;
+
+const EXPERIENCE_ACCENTS = {
+  leadership: {
+    node: "border-blue-200/80 bg-blue-50 text-blue-600 shadow-blue-500/10 dark:border-blue-300/20 dark:bg-blue-400/10 dark:text-blue-200",
+    date: "border-blue-200/70 bg-blue-50/70 text-blue-700 dark:border-blue-300/15 dark:bg-blue-400/[0.06] dark:text-blue-100",
+    evidence: "text-blue-700/80 dark:text-blue-100/80",
   },
-  {
-    rail: "from-cyan-500 via-teal-400 to-emerald-400",
-    dot: "border-cyan-500 bg-cyan-50 text-cyan-700 dark:bg-cyan-500/12 dark:text-cyan-200",
-    chip: "border-cyan-200/70 bg-cyan-50/70 text-cyan-700 dark:border-cyan-300/15 dark:bg-cyan-400/[0.06] dark:text-cyan-100",
+  research: {
+    node: "border-cyan-200/80 bg-cyan-50 text-cyan-700 shadow-cyan-500/10 dark:border-cyan-300/20 dark:bg-cyan-400/10 dark:text-cyan-200",
+    date: "border-cyan-200/70 bg-cyan-50/70 text-cyan-700 dark:border-cyan-300/15 dark:bg-cyan-400/[0.06] dark:text-cyan-100",
+    evidence: "text-cyan-700/80 dark:text-cyan-100/80",
   },
-  {
-    rail: "from-violet-500 via-indigo-400 to-blue-400",
-    dot: "border-violet-500 bg-violet-50 text-violet-700 dark:bg-violet-500/12 dark:text-violet-200",
-    chip: "border-violet-200/70 bg-violet-50/70 text-violet-700 dark:border-violet-300/15 dark:bg-violet-400/[0.06] dark:text-violet-100",
+  learning: {
+    node: "border-violet-200/80 bg-violet-50 text-violet-700 shadow-violet-500/10 dark:border-violet-300/20 dark:bg-violet-400/10 dark:text-violet-200",
+    date: "border-violet-200/70 bg-violet-50/70 text-violet-700 dark:border-violet-300/15 dark:bg-violet-400/[0.06] dark:text-violet-100",
+    evidence: "text-violet-700/80 dark:text-violet-100/80",
   },
-] as const;
+} as const;
 
 // ─── Root ─────────────────────────────────────────────────────────────────────
 
@@ -476,62 +491,100 @@ function ProjectsSection({ copy }: { copy: PortfolioCopy }) {
 
 function ExperienceSection({ copy }: { copy: PortfolioCopy }) {
   const { experience } = copy;
-  return (
-    <section className="relative overflow-hidden border-t border-border/40 bg-[linear-gradient(180deg,hsl(var(--secondary)/0.32),hsl(var(--background))_34%,hsl(var(--background)))] py-16 sm:py-20">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(60%_80%_at_18%_0%,hsl(var(--primary)/0.12),transparent_70%)]" />
-      <Container className="relative space-y-12">
+  const shouldReduceMotion = useReducedMotion();
 
-        <motion.div {...inView()} className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
+  return (
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      className="relative overflow-hidden border-t border-border/40 bg-[linear-gradient(180deg,hsl(var(--secondary)/0.2),hsl(var(--background))_42%)] py-12 sm:py-14"
+    >
+      <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-0 h-52 w-52 rounded-full bg-primary/[0.055] blur-3xl" />
+      <Container className="relative space-y-8 px-4 sm:space-y-10 sm:px-6 md:px-10">
+
+        <motion.div {...(shouldReduceMotion ? {} : inView())} className="max-w-3xl space-y-3">
           <div className="space-y-3">
             <SectionEyebrow>{experience.eyebrow}</SectionEyebrow>
-            <h2 className="text-2xl font-semibold leading-tight tracking-tight site-heading sm:text-3xl">
+            <h2 id="experience-heading" className="text-xl font-semibold leading-tight tracking-tight site-heading sm:text-2xl">
               {experience.heading}
             </h2>
           </div>
-          <p className="max-w-2xl text-[15px] leading-8 site-body lg:justify-self-end">
+          <p className="max-w-2xl text-sm leading-6 site-body">
             {experience.desc}
           </p>
         </motion.div>
 
-        <div className="relative mx-auto max-w-5xl pl-[3.75rem] sm:pl-9">
-          <div className="absolute left-12 top-3 bottom-3 w-px bg-gradient-to-b from-transparent via-primary/35 to-transparent sm:left-[12px]" />
-          <div className="space-y-4 sm:space-y-5">
-            {experience.items.map((item, i) => (
-              <motion.div key={item.title} {...inViewX(i * 0.06)} className="group relative">
-                <div className={cn(
-                  "absolute -left-5 top-5 grid h-4 w-4 place-items-center rounded-full border-2 bg-background shadow-[0_0_0_5px_hsl(var(--background))] transition-transform duration-300 group-hover:scale-110 sm:-left-[33px]",
-                  EXPERIENCE_ACCENTS[i % EXPERIENCE_ACCENTS.length].dot,
-                )}>
-                  <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                </div>
-                <article className="relative overflow-hidden rounded-[1.35rem] border border-border/60 bg-card/72 p-5 shadow-[0_18px_54px_-48px_hsl(var(--foreground)/0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-card/92 sm:p-6">
+        <div className="relative max-w-5xl">
+          <ol className="space-y-3 sm:space-y-4">
+            {experience.items.map((item, i) => {
+              const accent = EXPERIENCE_ACCENTS[item.kind];
+              const Icon = EXPERIENCE_ICONS[item.kind];
+              const itemHeadingId = `experience-item-${i + 1}`;
+
+              return (
+                <motion.li
+                  key={item.title}
+                  {...(shouldReduceMotion ? {} : inViewX(i * 0.08))}
+                  className="relative pl-11 sm:pl-12"
+                >
+                  {i < experience.items.length - 1 && (
+                    <div
+                      aria-hidden="true"
+                      className="absolute -bottom-7 left-4 top-4 w-px bg-gradient-to-b from-primary/25 via-primary/30 to-primary/15 sm:-bottom-8"
+                    />
+                  )}
                   <div className={cn(
-                    "absolute inset-y-0 left-0 w-1 bg-gradient-to-b opacity-75",
-                    EXPERIENCE_ACCENTS[i % EXPERIENCE_ACCENTS.length].rail,
-                  )} />
-
-                  <div className="grid gap-4 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
-                    <div className="space-y-2">
-                      <span className={cn(
-                        "inline-flex rounded-full border px-3 py-1 text-[11px] font-bold tabular-nums",
-                        EXPERIENCE_ACCENTS[i % EXPERIENCE_ACCENTS.length].chip,
-                      )}>
-                        {item.period}
-                      </span>
-                      <p className="text-xs leading-5 site-soft">{item.org}</p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-base font-semibold leading-snug site-heading sm:text-[1.05rem]">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-7 site-body">{item.desc}</p>
-                    </div>
+                    "absolute left-0 top-4 z-10 grid h-8 w-8 place-items-center rounded-xl border bg-background shadow-[0_7px_18px_-10px_currentColor] ring-4 ring-background",
+                    accent.node,
+                  )} aria-hidden="true">
+                    <Icon className="h-3.5 w-3.5" aria-hidden="true" focusable="false" strokeWidth={1.9} />
                   </div>
-                </article>
-              </motion.div>
-            ))}
-          </div>
+
+                  <article
+                    className="rounded-2xl border border-border/55 bg-card/65 p-3.5 shadow-[0_14px_38px_-34px_hsl(var(--foreground)/0.42)] backdrop-blur-sm sm:p-5"
+                    aria-labelledby={itemHeadingId}
+                  >
+                    <div className="grid gap-3 sm:grid-cols-[8.75rem_minmax(0,1fr)] sm:gap-5">
+                      <div className="space-y-1.5">
+                        <span className={cn(
+                          "inline-flex rounded-full border px-2.5 py-1 text-[11px] font-bold tabular-nums",
+                          accent.date,
+                        )}>
+                          {item.period}
+                        </span>
+                        <p className="max-w-[9rem] text-xs font-medium leading-4 site-soft">{item.org}</p>
+                      </div>
+
+                      <div className="min-w-0">
+                        <h3
+                          id={itemHeadingId}
+                          className="text-base font-semibold leading-snug tracking-tight site-heading sm:text-lg"
+                        >
+                          {item.title}
+                        </h3>
+                        <p className="mt-1.5 max-w-3xl text-sm leading-6 site-body">
+                          {item.desc}
+                        </p>
+                        <ul className="mt-2.5 flex flex-wrap gap-x-3 gap-y-1.5">
+                          {item.evidence.map((evidence) => (
+                            <li
+                              key={evidence}
+                              className={cn(
+                                "border-l border-border/70 pl-3 text-[11px] font-semibold leading-4 first:border-l-0 first:pl-0",
+                                accent.evidence,
+                              )}
+                            >
+                              {evidence}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </article>
+                </motion.li>
+              );
+            })}
+          </ol>
         </div>
 
       </Container>

@@ -1,12 +1,19 @@
+import { LAWS_OF_POWER_PAGES } from "./reading/lawsOfPower.vi";
+import { SILENCE_OF_THE_LAMBS_PAGES } from "./reading/silenceOfTheLambs.vi";
+import { GOODBYE_THINGS_PAGES } from "./reading/goodbyeThings.vi";
+import { MUON_KIEP_NHAN_SINH_1_PAGES } from "./reading/muonKiepNhanSinh1.vi";
+import { MUON_KIEP_NHAN_SINH_2_PAGES } from "./reading/muonKiepNhanSinh2.vi";
+import { MUON_KIEP_NHAN_SINH_3_PAGES } from "./reading/muonKiepNhanSinh3.vi";
+
 // The curated shelf — the books the user has actually read. This is the single
 // source of truth for the /books galaxy (NOT the blog). Each book shows a real
-// cover photo from /public/books; books without a photo fall back to a clean
-// designed cover painted from the palette. A book may link to a blog review via
+// published cover from /public/books/rendered; books without one fall back to a
+// clean designed cover painted from the palette. A book may link to a blog review via
 // `blogSlug` (then reading mode shows the full write-up); books without one show
 // just the cover + author.
 //
-// To add a book: drop a cover at /public/books/<slug>.jpg and add an entry here.
-// To swap a cover: replace that file (same path).
+// To add a book: normalize its cover into /public/books/rendered, record the
+// source in rendered/SOURCES.md, then add its path and aspect ratio here.
 
 export interface BookMeta {
   /** Author printed on the cover / shown in captions. */
@@ -21,6 +28,8 @@ export interface BookMeta {
   scale?: number;
   /** Real cover image served from /public (overrides the designed front cover). */
   cover?: string;
+  /** Width / height of the published front cover, used by the 3D book mesh. */
+  coverAspect?: number;
   /** Optional real back-cover image (maps onto the book's back face). */
   coverBack?: string;
   /** Optional real spine image (maps onto the book's spine face). */
@@ -38,6 +47,102 @@ export type LocalizedBookText = { en: string } & Partial<Record<"vi", string>>;
 export interface BookReadingPage {
   heading: string;
   paragraphs: string[];
+  /** Optional authored layout for a book-specific editorial page. */
+  design?: GoodbyeThingsPageDesign;
+  /** Optional authored layout for the “Bản đồ nhiều lớp thời gian” edition. */
+  timeMapDesign?: LayeredTimeMapPageDesign;
+  /** Optional authored layout for the “Xưởng phục hồi những vòng lặp” edition. */
+  loopDesign?: LoopRestorationPageDesign;
+  /** Optional authored layout for the “Phòng thí nghiệm của tương lai” edition. */
+  futureLabDesign?: FutureLabPageDesign;
+}
+
+export type BookReadingLayout = "sectioned" | "continuous";
+export type GoodbyeThingsPageDesign =
+  | "morning-table"
+  | "invisible-receipt"
+  | "inventory-table"
+  | "five-doors"
+  | "shared-home"
+  | "memory-box"
+  | "purchase-waitlist"
+  | "future-fitting-room"
+  | "paid-receipt"
+  | "space-exchange"
+  | "two-valid-rooms"
+  | "farewell-postcard"
+  | "enough-compass"
+  | "seven-day-sunpath";
+export type LayeredTimeMapPageDesign =
+  | "two-lenses"
+  | "thomas-desk"
+  | "karma-flow"
+  | "responsibility-balance"
+  | "ripple"
+  | "atlantis-map"
+  | "transparent-power"
+  | "love-control"
+  | "knowledge-core"
+  | "money-hands"
+  | "four-seasons"
+  | "evidence-layers"
+  | "today-compass"
+  | "reflection-notes";
+export type LoopRestorationPageDesign =
+  | "ripple-butterfly"
+  | "loop-break"
+  | "culture-weave"
+  | "responsibility-rings"
+  | "fear-wall"
+  | "achievement-mountain"
+  | "love-control-knot"
+  | "sound-memory-wave"
+  | "threshold-today"
+  | "repair-stages"
+  | "forgiveness-gate"
+  | "storm-checks"
+  | "accountable-repair"
+  | "seven-day-thread";
+export type FutureLabPageDesign =
+  | "amplification-chain"
+  | "two-sided-price"
+  | "gift-without-debt"
+  | "unequal-choice-rooms"
+  | "three-drawers"
+  | "six-safety-switches"
+  | "speed-and-compass"
+  | "recurring-pattern"
+  | "three-questions"
+  | "paths-can-part"
+  | "four-point-compass"
+  | "human-machine-collaboration"
+  | "default-switch-chain"
+  | "personal-constitution";
+export type BookReadingTheme =
+  | "conversation-atelier"
+  | "habit-field-guide"
+  | "thinking-dossier"
+  | "power-board"
+  | "silence-casefile"
+  | "breathing-house"
+  | "layered-time-map"
+  | "loop-restoration-workshop"
+  | "future-ethics-lab";
+
+export interface BookOutsideSummary {
+  /** Optional italic lead shown between the author and the section heading. */
+  tagline?: string;
+  heading: string;
+  introduction: string[];
+  /** Optional label separating the introduction from the key lessons. */
+  lessonsHeading?: string;
+  /** Show lesson markers as an ordered sequence instead of editorial bullets. */
+  numbered?: boolean;
+  lessons: Array<{
+    heading: string;
+    paragraph?: string;
+  }>;
+  conclusion: string[];
 }
 
 export interface LibraryBook extends BookMeta {
@@ -55,282 +160,295 @@ export interface LibraryBook extends BookMeta {
   keyPoints?: BookKeyPoints;
   /** Short, punchy note shown on the outside/detail cover sheet. */
   coverNote?: LocalizedBookText;
+  /** Optional long-form summary shown on the outside/detail sheet in place of
+   * the short cover note and key-point list. */
+  outsideSummary?: Partial<Record<"en" | "vi", BookOutsideSummary>>;
   /** Curated short-form pages for the flipbook, preferred over blog excerpts.
    * A Vietnamese-only deck is intentional: English then falls back to the
    * linked English review, or to the English key points when no review exists. */
   readingPages?: Partial<Record<"en" | "vi", BookReadingPage[]>>;
+  /** Optional authored-flow mode. Continuous layout may begin the next section
+   * in the remaining space on a leaf instead of forcing a hard page break. */
+  readingLayout?: BookReadingLayout;
+  /** Optional denser print rhythm for long sectioned books. */
+  readingDensity?: "compact";
+  /** Optional visual language applied to every interior leaf of this book. */
+  readingTheme?: BookReadingTheme;
 }
 
-// A critical reading of power: the tactics are treated as material to examine,
-// not instructions to manipulate people or erase one's own contribution.
-const LAWS_OF_POWER_PAGES: BookReadingPage[] = [
-  {
-    heading: "Lăng kính 1 — Bản đồ, không phải la bàn",
-    paragraphs: [
-      "*48 Nguyên Tắc Chủ Chốt Của Quyền Lực* mô tả những cách con người giành, giữ và mất ảnh hưởng. Điểm hữu ích của cuốn sách là làm lộ ra các trò chơi vốn thường diễn ra trong im lặng: cạnh tranh vị thế, kiểm soát thông tin, tạo liên minh và bảo vệ hình ảnh.",
-      "Nhưng một bản đồ cho biết địa hình không tự quyết định con đường nên đi. Nếu xem mọi nguyên tắc là mệnh lệnh, người đọc rất dễ biến đồng nghiệp, bạn bè và người thân thành quân cờ.",
-      "Cách đọc phù hợp hơn là tách hai câu hỏi: ==chiến thuật này vận hành thế nào, và mình có chấp nhận cái giá đạo đức của nó không?=="
-    ]
-  },
-  {
-    heading: "Lăng kính 2 — Đọc lại Luật 1",
-    paragraphs: [
-      "Ở Luật 1, Robert Greene dùng câu chuyện Nicolas Fouquet và Louis XIV để minh họa nguy cơ làm người ở vị trí cao cảm thấy bị lu mờ. Đó là cách tác giả dựng lập luận, không phải bằng chứng rằng một bữa tiệc là nguyên nhân chắc chắn khiến Fouquet bị bắt.",
-      "Một kết cục lịch sử không nên bị thu gọn vào một cảnh kể duy nhất. Phần có thể mang về hiện tại là lời nhắc phải đọc bối cảnh, hiểu sự bất an trong hệ thống phân cấp và chọn cách trình bày năng lực phù hợp.",
-      "Điều cần tránh là biến bài học ấy thành lời khuyên phải tự làm mình nhỏ đi hoặc luôn chiều lòng người có quyền."
-    ]
-  },
-  {
-    heading: "Lăng kính 3 — Khéo léo mà không tự xóa mình",
-    paragraphs: [
-      "Trong công việc, sự khéo léo có thể rất cụ thể: ghi nhận đúng người đóng góp, kết nối đề xuất mới với mục tiêu chung, nêu bất đồng bằng dữ liệu và chọn thời điểm để phản biện.",
-      "Ranh giới đạo đức cũng cần rõ: tôn trọng vai trò không phải tâng bốc; giữ thể diện cho người khác không phải che giấu sự thật; chia sẻ công lao không có nghĩa từ bỏ quyền được ghi nhận.",
-      "Một phép thử hữu ích: sau cách ứng xử này, ==cả nhóm hiểu vấn đề rõ hơn hay chỉ một người cảm thấy quyền lực hơn?=="
-    ]
-  },
-  {
-    heading: "Lăng kính 4 — Dùng cuốn sách để tự vệ",
-    paragraphs: [
-      "Một số nguyên tắc đề cao việc che giấu ý định, tạo sự phụ thuộc hoặc triệt hạ đối thủ. Áp dụng máy móc những ý ấy có thể làm xói mòn lòng tin và hợp thức hóa tổn hại.",
-      "Giá trị khác của chúng là giúp nhận diện dấu hiệu nguy hiểm: người giữ thông tin để thao túng quyết định, cô lập thành viên khỏi nguồn hỗ trợ, nhận công lao của người khác hoặc khiến ai đó sợ rời đi.",
-      "Hiểu một chiến thuật không buộc mình phải sử dụng nó. ==Khả năng nhìn thấy trò chơi cũng là khả năng từ chối tham gia và bảo vệ người đang ở thế yếu.=="
-    ]
-  },
-  {
-    heading: "Lăng kính 5 — Ba bộ lọc trước khi hành động",
-    paragraphs: [
-      "Trước một chiến thuật quyền lực, có thể đặt ba câu hỏi: nó có dựa trên sự thật không; nó có tôn trọng quyền lựa chọn của người khác không; và cái giá dài hạn sẽ rơi vào ai?",
-      "Quyền lực không chỉ dùng để thắng. Nó còn có thể mở đường cho người ít tiếng nói, bảo vệ ranh giới, phân bổ công lao công bằng và tạo điều kiện để người khác làm tốt hơn.",
-      "Cuốn sách đáng đọc nhất khi nó làm tăng sự tỉnh táo mà không bào mòn lòng trắc ẩn. ==Ảnh hưởng bền vững không chỉ nằm ở điều mình có thể khiến người khác làm, mà còn ở cách mình chọn không lạm dụng khả năng ấy.=="
-    ]
-  },
-  {
-    heading: "Lăng kính 6 — Danh tiếng và năng lực thật",
-    paragraphs: [
-      "Cuốn sách dành nhiều sự chú ý cho hình ảnh, danh tiếng và cách người khác diễn giải hành động của mình. Điều đó có cơ sở thực tế: khi thông tin không đầy đủ, con người thường dựa vào dấu hiệu dễ thấy để quyết định nên tin ai.",
-      "Nhưng chăm sóc danh tiếng khác với dựng một phiên bản giả. Cách bền hơn là làm rõ cam kết, nói trước giới hạn, lưu lại đóng góp và để hành vi lặp lại tạo thành bằng chứng theo thời gian.",
-      "Một hình ảnh có thể mở cửa; chỉ năng lực và cách đối xử với người khác mới quyết định cánh cửa ấy còn mở bao lâu. ==Uy tín tốt là khoảng cách giữa điều mình nói và điều mình làm ngày càng nhỏ.=="
-    ]
-  },
-  {
-    heading: "Lăng kính 7 — Không phải căn phòng nào cũng là bàn cờ",
-    paragraphs: [
-      "Khi đọc liên tục về chiến lược, mình có thể bắt đầu nhìn mọi im lặng như âm mưu và mọi quan hệ như cuộc mặc cả. Lăng kính ấy hữu ích trong môi trường cạnh tranh, nhưng trở nên méo mó nếu mang nguyên vẹn vào tình bạn, gia đình hoặc một nhóm đang cần sự tin cậy.",
-      "Có những tình huống cần tính toán vị thế; cũng có những lúc điều mạnh nhất là hỏi thẳng, chia sẻ điều mình chưa biết và cho người khác cơ hội sửa một hiểu lầm.",
-      "Trưởng thành về quyền lực không chỉ là biết chơi. Đó còn là ==nhận ra lúc nào trò chơi không tồn tại, hoặc lúc nào mình có thể cùng người khác thay đổi luật chơi==."
-    ]
-  },
-  {
-    heading: "Cách mình đọc 48 nguyên tắc mà không nuốt trọn chúng",
-    paragraphs: [
-      "Có một điều mình phải tự nhắc suốt lúc đọc: một câu chuyện hay chưa chắc là một bằng chứng đủ. Greene kể lịch sử rất cuốn, mỗi nguyên tắc đều có người thắng, kẻ thua và một khoảnh khắc khiến mọi thứ như được giải thích gọn ghẽ.",
-      "Nhưng đời thật hiếm khi gọn như vậy. Một người thành công sau khi dùng một chiến thuật không có nghĩa chiến thuật đó luôn đúng; cùng một cách làm đặt vào một căn phòng khác có thể tạo kết quả hoàn toàn khác.",
-      "Vì thế mình không đọc 48 điều như 48 mệnh lệnh. Mình đọc chúng như 48 khả năng để soi: *nó đúng trong điều kiện nào, ai được lợi, ai trả giá, và mình có muốn trở thành người dùng nó hay không?*"
-    ]
-  },
-  {
-    heading: "Có năng lực thôi đôi khi vẫn chưa đủ",
-    paragraphs: [
-      "Nhiều nguyên tắc làm mình nghĩ đến một sự thật hơi khó chịu: năng lực và cách năng lực được nhìn thấy là hai chuyện khác nhau. Mình có thể làm tốt nhưng trình bày vụng, có thể nói đúng nhưng chạm vào sự bất an của người có quyền, và rồi kết quả không đi theo điều mình tưởng là công bằng.",
-      "Điều mình giữ lại không phải là học cách diễn. Nó là biết nói rõ mình đã làm gì, ghi nhận đúng người, giữ lời đủ lâu để danh tiếng có dữ kiện đứng phía sau. Mình không muốn tạo vẻ bí ẩn bằng cách giấu công sức, càng không muốn trông giỏi hơn nhờ phần việc của người khác.",
-      "Hình ảnh có thể giúp một cánh cửa mở sớm hơn. Nhưng nếu bên trong không có năng lực và cách đối xử tử tế, cánh cửa đó sớm muộn cũng đóng. ==Uy tín mình muốn có là khoảng cách giữa điều mình nói và điều mình làm ngày càng nhỏ.=="
-    ]
-  },
-  {
-    heading: "Im lặng có thể là khôn ngoan, cũng có thể là thao túng",
-    paragraphs: [
-      "Có những đoạn Greene khuyên nói ít, giấu ý định và quan sát nhiều hơn. Mình hiểu sức mạnh của việc không kể mọi kế hoạch khi chúng còn non, của việc biết giữ dữ liệu nhạy cảm, và của một khoảng im lặng trước khi phản hồi lúc đang nóng.",
-      "Nhưng mình cũng thấy ranh giới ở đây rất mỏng. Không nói vì mình cần thời gian suy nghĩ khác hoàn toàn với không nói để người kia không có đủ thông tin mà lựa chọn. Một bên là thận trọng; bên kia là lấy sự mù mờ làm lợi thế.",
-      "Mình muốn giữ câu hỏi này: *thông tin mình đang giấu có làm người khác mất quyền tự bảo vệ hoặc quyền đồng ý thật sự không?* Nếu có, sự khôn ngoan đã trượt sang thao túng rồi."
-    ]
-  },
-  {
-    heading: "Mình muốn được cần đến, nhưng không muốn ai bị mắc kẹt",
-    paragraphs: [
-      "Cuốn sách nhắc rất nhiều đến việc trở nên khó thay thế. Mình hiểu cảm giác đó: ai cũng muốn năng lực của mình có giá trị, muốn khi mình có mặt thì công việc tốt hơn một chút.",
-      "Nhưng mình không muốn biến giá trị thành chiếc khóa giữ người khác ở lại. Với mình, được cần vì mình làm tốt khác với được cần vì mình cố tình giữ thông tin, cô lập một người hoặc khiến cả hệ thống không thể chạy nếu thiếu mình.",
-      "Một mối quan hệ lành mạnh vẫn có sự nương tựa, nhưng không ai phải sợ mất tất cả nếu rời đi. ==Giá trị bền không nằm ở việc người khác không thể sống thiếu mình; nó nằm ở điều tốt mình tạo ra ngay cả khi họ vẫn có quyền lựa chọn.=="
-    ]
-  },
-  {
-    heading: "Không phải bất đồng nào cũng cần một người thua",
-    paragraphs: [
-      "Những phần nói về đối thủ là nơi mình dè chừng nhất. Có nguyên tắc rất sắc trong việc nhìn nguồn gốc xung đột, nhưng cũng có lời khuyên đẩy mọi bất đồng thành cuộc chiến phải thắng đến cùng.",
-      "Mình nghĩ đến những cuộc tranh luận mà sau cùng chẳng ai còn nhớ vấn đề ban đầu là gì, chỉ nhớ cảm giác bị xúc phạm. Thắng một câu nói nhưng làm hỏng cả mối quan hệ đôi khi là một kiểu thua rất đắt.",
-      "Điều mình rút ra là trước khi đối đầu, phải biết mình muốn bảo vệ gì, khi nào có thể dừng và hậu quả sẽ còn ở lại với ai. Có những việc cần dứt khoát. Nhưng làm nhục hay trả đũa hiếm khi là dấu hiệu của một người thật sự mạnh."
-    ]
-  },
-  {
-    heading: "Đi hết một quyết định trong đầu trước khi bước",
-    paragraphs: [
-      "Mình hay bị hấp dẫn bởi bước đầu của một kế hoạch: ý tưởng mới, cảm giác bắt đầu, viễn cảnh mọi thứ chạy đúng. Cuốn sách kéo mình đi xa hơn một chút, đến câu hỏi khó chịu hơn: *nếu việc này thành công, chuyện gì xảy ra tiếp theo?*",
-      "Tập trung, chọn thời điểm và nghĩ tới điểm kết thúc là những ý mình thấy thật sự hữu ích. Chúng nhắc mình viết rõ điều muốn đạt, cái giá chấp nhận được và dấu hiệu phải dừng, thay vì lao đi chỉ vì đã lỡ bước đầu tiên.",
-      "Táo bạo không phải nhắm mắt rồi nhảy. Với mình, nó là nhìn đủ rủi ro mà vẫn quyết định bước — và cũng đủ bình tĩnh để chưa bước khi dữ kiện chưa tới."
-    ]
-  },
-  {
-    heading: "Đám đông thường chạm vào phần cô đơn trong mình",
-    paragraphs: [
-      "Có những lúc mình tin một điều nhanh hơn chỉ vì xung quanh ai cũng đang tin. Không hẳn vì mình thiếu suy nghĩ, mà vì cảm giác được thuộc về một nhóm rất dễ chịu — nhất là khi nhóm đó cho mình một câu trả lời đơn giản và một người để cùng phản đối.",
-      "Cuốn sách nhìn khá rõ sức mạnh của cảm xúc, hình ảnh và lời hứa đối với đám đông. Phần này khiến mình không chỉ để ý người đang nói, mà để ý cả phần nào trong mình đang muốn được trấn an, được công nhận hoặc được đứng về một phía.",
-      "Ảnh hưởng tử tế không dùng nỗi sợ và sự cô đơn để khóa suy nghĩ của người khác. Nếu một nhóm chỉ cho phép mình thuộc về khi mình ngừng đặt câu hỏi, cái giá của sự thuộc về đó có lẽ quá cao."
-    ]
-  },
-  {
-    heading: "Mềm dẻo không có nghĩa là không có xương sống",
-    paragraphs: [
-      "Mình từng nghĩ nhất quán nghĩa là phải giữ nguyên cách làm. Nhưng có lúc bám vào một phiên bản cũ của mình chỉ vì sợ bị gọi là thay đổi còn nguy hiểm hơn việc thừa nhận: cách này không còn phù hợp nữa.",
-      "Greene đề cao khả năng biến đổi, biết dừng sau chiến thắng và không để mình trở nên quá dễ đoán. Mình thích ý linh hoạt đó, miễn là thứ thay đổi là phương pháp chứ không phải mọi giá trị mình từng nói là quan trọng.",
-      "Mình muốn có vài điều đủ vững để không bán rẻ, và đủ nhiều cách để bảo vệ chúng. ==Mềm dẻo không phải không có xương sống; nó là không bắt xương sống phải mang một hình dạng duy nhất.=="
-    ]
-  },
-  {
-    heading: "Điều mình thật sự mang ra khỏi 48 luật",
-    paragraphs: [
-      "Sau rất nhiều câu chuyện và chiến thuật, mình chỉ muốn mang theo bốn câu hỏi: ai đang kiểm soát hình ảnh, ai giữ thông tin, ai đang bị làm cho phụ thuộc, và cảm xúc nào khiến cả căn phòng bớt tỉnh táo?",
-      "Nhìn ra trò chơi không có nghĩa mình phải chơi giống họ. Mình vẫn có thể hỏi cho rõ, ghi lại quyết định, mời thêm tiếng nói, chia nhỏ quyền lực hoặc rời khỏi nơi cứ bắt mình đánh đổi phẩm giá để tồn tại.",
-      "Có lẽ giá trị lớn nhất của cuốn sách với mình không phải là trở nên cao tay hơn. Nó là bớt ngây thơ mà không cần trở nên cay nghiệt — nhìn thấy quyền lực, nhưng không để quyền lực quyết định toàn bộ cách mình nhìn con người."
-    ]
-  },
-  {
-    heading: "Phía sau nhu cầu kiểm soát thường là một nỗi sợ",
-    paragraphs: [
-      "Đọc nhiều về quyền lực, mình bắt đầu tự hỏi vì sao con người cần kiểm soát nhau đến vậy. Có khi phía sau tham vọng không chỉ là muốn nhiều hơn, mà là sợ bị xem thường, sợ mất chỗ đứng, sợ một ngày mình không còn quan trọng.",
-      "Nhìn thấy nỗi sợ không làm hành vi gây hại trở nên đúng. Nhưng nó giúp mình hiểu quyền lực không phải lúc nào cũng đi ra từ sự tự tin; đôi khi nó là một lớp áo rất cứng khoác lên phần bên trong đang bất an.",
-      "Điều đó cũng quay lại với mình. Mỗi khi muốn nắm hết thông tin, thắng cho bằng được hoặc khiến người khác phản ứng theo ý mình, có lẽ mình nên hỏi: *mình đang bảo vệ điều gì, và có cách nào bảo vệ nó mà không phải làm ai nhỏ đi không?*"
-    ]
-  },
-  {
-    heading: "Quyền lực khó nhất là không để mình bị quyền lực đổi thành người khác",
-    paragraphs: [
-      "Khi chưa có quyền, mình rất dễ nghĩ rằng nếu một ngày được quyết định, mình chắc chắn sẽ công bằng hơn những người trước. Nhưng quyền lực không chỉ bộc lộ tính cách; nó còn âm thầm sửa lại cách một người giải thích hành vi của chính mình.",
-      "Mình có thể gọi kiểm soát là trách nhiệm, gọi im lặng của người khác là đồng thuận, gọi đặc quyền là phần thưởng xứng đáng. Càng ít người dám phản biện, câu chuyện mình kể về bản thân càng dễ trở nên đẹp một cách nguy hiểm.",
-      "Vì vậy, điều mình muốn chuẩn bị trước không chỉ là cách có thêm ảnh hưởng. Nó là những người được quyền nói thật với mình, những quyết định phải giải thích được và một nguyên tắc mình vẫn giữ ngay cả khi chẳng ai đủ sức bắt mình giữ."
-    ]
-  },
-  {
-    heading: "Một trang giấy cho những lúc mình thấy lép vế",
-    paragraphs: [
-      "Sau một tình huống khiến mình khó chịu, có thể ghi bốn dòng: ai có quyền quyết định, ai nắm thông tin, ai chịu rủi ro và tiếng nói nào đang vắng mặt. Bản ghi này giúp tách cấu trúc thật khỏi cảm giác bị đe dọa nhất thời.",
-      "Tiếp theo, chọn một hành động ít gây hại nhưng tăng độ rõ: hỏi tiêu chí quyết định, xác nhận thỏa thuận bằng văn bản, mời thêm góc nhìn hoặc nói rõ ranh giới mình không muốn vượt qua.",
-      "Đây là cách mình muốn khép cuốn sách: không ngây thơ trước quyền lực, cũng không để quyền lực trở thành ngôn ngữ duy nhất. ==Tỉnh táo để tự bảo vệ; tử tế để không biến mình thành điều mình từng phải đề phòng.=="
-    ]
-  }
-];
+// The Vietnamese critical-reading manuscript is split into focused data files
+// so its 19 lenses, 48 moves and seven-day practice remain auditable.
 
-// Vietnamese reflection on communication as respect rather than a catalogue of
-// techniques. English reading mode uses the linked English review.
 const DAC_NHAN_TAM_PAGES: BookReadingPage[] = [
   {
     heading: "Lăng kính — kỹ năng phải đi cùng ý định",
     paragraphs: [
-      "Trong *Đắc Nhân Tâm*, Dale Carnegie đặt nhiều gợi ý giao tiếp quanh việc bớt chỉ trích, biết ghi nhận và nhìn sự việc từ phía người khác. Còn cách đọc mình chọn cho trang này là: ==học ảnh hưởng để tôn trọng con người hơn==, không phải để khiến ai cũng thích mình.",
-      "Điểm phân biệt nằm ở ý định. Một câu nói mềm vẫn có thể là thao túng nếu mục tiêu chỉ là dẫn bạn đến câu trả lời mình muốn; một cuộc trò chuyện vụng về vẫn có thể tử tế nếu mình thật sự nghe và chừa chỗ cho bạn không đồng ý.",
-      "Vì vậy, trước mọi “kỹ thuật”, mình giữ một câu hỏi: *mình đang muốn hiểu người này, hay chỉ muốn điều khiển kết quả?*"
+      "Trong *Đắc Nhân Tâm*, Dale Carnegie đưa ra nhiều nguyên tắc giúp mình giao tiếp tốt hơn: bớt chỉ trích, biết lắng nghe, ghi nhận chân thành và nhìn sự việc từ góc của người khác.",
+      "Mạch chính của cuốn sách đi qua bốn vùng rất thực tế: **giao tiếp mà không tạo phòng vệ, tạo thiện cảm bằng sự quan tâm thật, thuyết phục bằng hợp tác và lãnh đạo mà vẫn giữ thể diện cho người khác**. Mười bốn trang sau kết nối bốn vùng ấy với những tình huống mình có thể gặp ngay trong gia đình và nơi làm việc.",
+      "Nhưng cùng một cách nói có thể tạo ra hai kết quả rất khác nhau.",
+      "Một lời khen có thể khiến ai đó cảm thấy được trân trọng. Nó cũng có thể trở thành bước mở đầu cho một lời nhờ vả. Một câu hỏi có thể xuất phát từ tò mò thật sự, nhưng cũng có thể được dùng để dẫn người nghe đến câu trả lời mình muốn.",
+      "==Điểm khác biệt không chỉ nằm ở câu chữ, mà còn ở ý định phía sau.==",
+      "Trước một cuộc trò chuyện quan trọng, hãy nhìn qua bốn lăng kính:",
+      "- **Ý định:** Mình muốn hiểu hay chỉ muốn thắng?",
+      "- **Sự chú ý:** Mình đang nghe người này hay chuẩn bị câu trả lời?",
+      "- **Phẩm giá:** Mình đang nói về vấn đề hay phán xét con người?",
+      "- **Quyền lựa chọn:** Người kia có thật sự được nói không?",
+      "Một câu hỏi nhỏ có thể giúp mình nhận ra rất nhiều:",
+      "> Nếu người này không đồng ý, mình còn giữ được sự tôn trọng dành cho họ không?",
+      "==Kỹ năng giao tiếp chỉ thật sự có giá trị khi nó giúp hai người nhìn thấy nhau rõ hơn, không phải khi một người dùng nó để điều khiển người còn lại.==",
+      "[[kind-conversation-mindmap]]",
     ]
   },
   {
     heading: "Trước khi nói — đổi phán xét lấy tò mò",
     paragraphs: [
-      "Carnegie khuyên tránh mở đầu bằng chỉ trích, vì khi thấy bị kết tội, người nghe dễ chuyển sang bảo vệ mình. Thay vì gắn nhãn *“bạn vô trách nhiệm”*, mình có thể chỉ vào việc cụ thể: *“phần này đang trễ; mình cùng xem lại cách chia việc nhé”*.",
-      "Rồi mình nghe thêm một nhịp: hỏi điều bạn đang vướng, nhắc lại ý mình vừa hiểu và để bạn nói hết trước khi phản hồi. Sự quan tâm nằm ở chất lượng chú ý, không nằm ở số câu hỏi.",
-      "Lắng nghe không đồng nghĩa với đồng ý. Mình vẫn có thể nói rõ sự thật và ranh giới; điều thay đổi là bạn không phải bị làm nhỏ đi để vấn đề được nhìn thấy."
+      "Khi thấy một phần việc bị trễ, phản ứng đầu tiên của mình có thể là:",
+      "> [before] “Bạn lúc nào cũng thiếu trách nhiệm.”",
+      "Câu nói này không chỉ nhắc đến công việc. Nó gắn một chiếc nhãn lên cả con người, khiến người nghe dễ chuyển sang bảo vệ bản thân.",
+      "Thay vào đó, hãy tách điều mình nhìn thấy khỏi điều mình đang suy diễn:",
+      "> [after] “Phần việc này đang chậm hai ngày nên lịch chung cũng bị lùi. Bạn đang gặp vướng mắc gì?”",
+      "Cách nói này vẫn rõ vấn đề nhưng mở ra cơ hội để mình biết thêm thông tin. Có thể người kia đã quên, cũng có thể họ đang chờ dữ liệu hoặc chưa hiểu yêu cầu.",
+      "Sau khi nghe, mình vẫn có thể nói rõ điều cần thiết:",
+      "> [next] “Mình cần bản hoàn chỉnh trước 3 giờ chiều mai. Nếu thời gian đó không khả thi, bạn báo mình sớm để cả hai tìm cách xử lý.”",
+      "Tò mò không có nghĩa là bỏ qua trách nhiệm. Nó chỉ giúp mình hiểu trước khi kết luận.",
+      "### Trước khi góp ý, thử đi qua ba bước",
+      "1. **Nói điều mình quan sát được:** Chuyện gì đã xảy ra?",
+      "2. **Hỏi thêm một câu:** Người kia đang gặp điều gì?",
+      "3. **Nói rõ nhu cầu:** Việc gì cần thay đổi và vào lúc nào?",
+      "==Rõ ràng và tử tế không đối lập nhau. Mình có thể giữ cả hai trong cùng một câu nói.==",
+      "[[dac-illustration:deadline]]",
     ]
   },
   {
     heading: "Khi ghi nhận — cụ thể hơn lời khen chung chung",
     paragraphs: [
-      "Một trọng tâm của Carnegie là sự ghi nhận chân thành. Lời khen có trọng lượng khi nó gọi đúng điều mình đã quan sát: *“cách bạn giải thích làm phần khó dễ hiểu hơn”* rõ hơn nhiều so với *“bạn giỏi quá”*.",
-      "Ghi nhận cụ thể cũng giúp người nghe thấy nỗ lực nào đáng tiếp tục. Nó không cần phóng đại, càng không cần xuất hiện như phần mở đầu bắt buộc trước một lời nhờ vả.",
-      "Giới hạn mình muốn giữ: lời khen không phải đồng tiền đổi lấy thiện chí. Nếu mình chỉ khen để bạn dễ thuận theo, kỹ năng đã rời khỏi sự chân thành mà cuốn sách nhấn mạnh."
+      "“Bạn giỏi quá” nghe vui, nhưng người nghe có thể không biết mình đang đánh giá cao điều gì.",
+      "Một lời ghi nhận có trọng lượng thường gồm ba phần:",
+      "[[recognition-formula]]",
+      "Ví dụ:",
+      "> “Bạn đã tóm tắt ba phương án trước cuộc họp, nhờ vậy cả nhóm quyết định nhanh hơn. Mình rất trân trọng sự chuẩn bị đó.”",
+      "Hoặc trong gia đình:",
+      "> “Hôm nay bạn chủ động rửa bát khi thấy mình đang bận. Việc đó giúp mình nhẹ đi rất nhiều.”",
+      "Sự cụ thể cho người nghe biết hành động nào có ý nghĩa và đáng được tiếp tục.",
+      "Tuy nhiên, lời khen sẽ mất đi sự chân thành nếu vừa nói xong mình lập tức thêm:",
+      "> [before] “Nhân tiện, bạn làm giúp mình việc này nhé.”",
+      "Đừng biến sự ghi nhận thành khoản tiền đặt cọc để đổi lấy thiện chí. Nếu có lời nhờ, hãy nói nó thành một lời nhờ riêng và cho người kia quyền từ chối.",
+      "### Thử viết một lời ghi nhận",
+      "- **Điều mình thấy:** ........................................",
+      "- **Ảnh hưởng của nó:** ........................................",
+      "- **Điều mình trân trọng:** ........................................",
+      "==Không cần phóng đại. Một lời ghi nhận đúng và thật thường chạm đến người nghe hơn một lời khen thật lớn nhưng mơ hồ.==",
+      "[[dac-illustration:child-recognition]]",
     ]
   },
   {
     heading: "Khi bất đồng — rõ việc, giữ người",
     paragraphs: [
-      "Những gợi ý như tránh câu *“bạn sai rồi”*, nhận lỗi của mình sớm và bắt đầu từ điểm chung giúp cuộc trao đổi bớt thành cuộc đấu thắng–thua. Mục tiêu không phải làm ý kiến khác biến mất, mà tạo đủ an toàn để cả hai còn kiểm tra được điều gì đúng.",
-      "Khi góp ý, mình có thể nói riêng, mô tả phần cần sửa và mở một lối đi cụ thể. Giữ thể diện ở đây không phải che lỗi; đó là không biến một lỗi thành phán quyết về giá trị của bạn.",
-      "Sự mềm mỏng cũng có giới hạn. Với hành vi gây hại hoặc ranh giới bị vượt qua, nói rõ và dứt khoát vẫn cần thiết; tử tế không buộc mình phải làm vừa lòng tất cả."
+      "Bất đồng dễ biến thành một cuộc đấu xem ai đúng hơn. Khi ấy, mình không còn nghe để hiểu mà chỉ tìm lỗ hổng trong lời của người kia.",
+      "Thay vì bắt đầu bằng “bạn sai rồi”, hãy thử tìm phần cả hai đang cùng quan tâm:",
+      "> “Mình nghĩ cả hai đều muốn dự án hoàn thành đúng hạn. Chỗ mình đang nhìn khác là cách phân chia thời gian.”",
+      "Sau đó, mô tả điểm khác biệt và mời người kia nói rõ hơn:",
+      "> “Mình lo phương án này không đủ thời gian kiểm tra. Bạn đang dựa vào dữ liệu nào để thấy nó khả thi?”",
+      "Nếu nhận ra mình sai, hãy thừa nhận sớm:",
+      "> “Chỗ này mình đã hiểu thiếu thông tin. Mình xin sửa lại.”",
+      "Một lời nhận sai rõ ràng thường giúp cuộc trò chuyện đi tiếp nhanh hơn nhiều so với việc cố bảo vệ hình ảnh của mình.",
+      "### Bốn bước khi bất đồng",
+      "1. Tìm mục tiêu chung.",
+      "2. Nói rõ điểm mình nhìn khác.",
+      "3. Hỏi cách người kia đang suy nghĩ.",
+      "4. Nêu quan điểm hoặc ranh giới của mình.",
+      "==Giữ thể diện cho người khác không có nghĩa là che giấu vấn đề. Nó có nghĩa là không biến một ý kiến sai hay một lỗi làm việc thành phán quyết về giá trị của họ.==",
+      "[[dac-illustration:money-disagreement]]",
     ]
   },
   {
     heading: "Thử ngay — nghe thêm một câu",
     paragraphs: [
-      "Bài thực hành mình rút từ cuốn sách rất nhỏ: trong cuộc trò chuyện tiếp theo, trước khi đưa lời khuyên, hãy hỏi thêm một câu như *“ý bạn là… đúng không?”* hoặc *“điều bạn đang cần nhất là gì?”*.",
-      "Sau đó tự kiểm tra ba điểm: mình có nghe câu trả lời thật không; lời ghi nhận có cụ thể không; và người kia có quyền không đồng ý không. Ba điểm này giữ kỹ năng giao tiếp ở phía tôn trọng thay vì thao túng.",
-      "Điều mình muốn mang theo từ Dale Carnegie không phải một bộ câu nói thuộc lòng, mà là thói quen bớt đặt cái tôi ở trung tâm để nhìn thấy người đối diện rõ hơn."
+      "Trong một cuộc trò chuyện, mình thường muốn giúp thật nhanh. Người kia vừa kể khó khăn, mình đã đưa lời khuyên hoặc kể lại một trải nghiệm tương tự của bản thân.",
+      "Nhưng đôi khi điều họ cần trước tiên chỉ là được kể hết.",
+      "Lần tới, trước khi khuyên, hãy nghe thêm một câu bằng cách hỏi:",
+      "- “Điều gì trong chuyện này làm bạn mệt nhất?”",
+      "- “Sau đó chuyện gì xảy ra?”",
+      "- “Bạn đã thử những cách nào rồi?”",
+      "- “Bạn muốn mình lắng nghe hay cùng bạn tìm giải pháp?”",
+      "Câu hỏi cuối đặc biệt hữu ích. Nó giúp mình biết người kia đang cần sự đồng hành hay một góc nhìn mới.",
+      "Khi họ trả lời, thử nhắc lại điều mình hiểu:",
+      "> “Có phải bạn không chỉ mệt vì công việc nhiều, mà còn vì cảm thấy nỗ lực của mình không được nhìn thấy?”",
+      "Nếu hiểu chưa đúng, họ có thể sửa lại. Nếu hiểu đúng, họ sẽ biết mình thật sự đang theo dõi câu chuyện.",
+      "### Bài tập hai phút",
+      "- Không ngắt lời trong hai phút.",
+      "- Hỏi thêm một câu mở.",
+      "- Nhắc lại điều mình đã hiểu.",
+      "- Không vội biến câu chuyện thành trải nghiệm của mình.",
+      "==Lắng nghe không phải chờ im lặng để tới lượt nói. Đó là tạm đặt cái tôi sang một bên để người trước mặt có đủ chỗ xuất hiện.==",
+      "[[dac-illustration:friend-resignation]]",
     ]
   },
   {
     heading: "Nhớ một người — chú ý thay vì biểu diễn",
     paragraphs: [
-      "Nhớ tên, sở thích hoặc điều một người từng kể có thể khiến họ cảm thấy được nhìn thấy. Nhưng giá trị không nằm ở trí nhớ như một màn trình diễn; nó nằm ở việc thông tin ấy được dùng để tiếp nối sự quan tâm, không phải để tạo cảm giác thân thiết giả.",
-      "Nếu không nhớ, hỏi lại một cách thành thật vẫn tốt hơn giả vờ. Một câu *“mình nhớ bạn từng nói về việc này, nhưng không chắc mình nhớ đúng”* vừa thể hiện chú ý vừa chừa chỗ để người kia sửa.",
-      "Sự quan tâm đáng tin thường rất bình thường: gọi đúng tên, không ngắt lời, giữ điều đã hứa và nhớ hỏi lại chuyện quan trọng. ==Con người không cần được gây ấn tượng nhiều bằng được hiện diện cùng.=="
+      "Gọi đúng tên, nhớ sở thích hoặc hỏi lại một câu chuyện cũ có thể khiến một người cảm thấy mình đã thật sự chú ý đến họ.",
+      "Ví dụ:",
+      "> “Tuần trước bạn nói mẹ đang phẫu thuật. Bây giờ bác ổn hơn chưa?”",
+      "Giá trị không nằm ở việc mình có trí nhớ gây ấn tượng. Nó nằm ở việc điều quan trọng với người kia vẫn được mình quan tâm sau khi cuộc trò chuyện kết thúc.",
+      "Nếu không chắc, hỏi lại chân thành vẫn tốt hơn giả vờ:",
+      "> “Mình nhớ bạn từng kể về chuyện này, nhưng không chắc mình nhớ đúng. Bạn nhắc lại giúp mình nhé?”",
+      "### Ba điều đáng nhớ sau một cuộc gặp",
+      "- Tên và cách phát âm đúng.",
+      "- Một điều họ thật sự quan tâm.",
+      "- Một việc mình đã hứa sẽ phản hồi.",
+      "Không cần ghi lại những thông tin riêng tư chỉ để tỏ ra thân thiết. Sự chú ý cũng cần đi cùng tôn trọng.",
+      "Và nhớ tên không thể bù cho việc liên tục ngắt lời, thất hứa hoặc phớt lờ ranh giới của người khác.",
+      "==Con người không cần được mình gây ấn tượng nhiều bằng việc được mình hiện diện cùng. Đôi khi một cuộc trò chuyện đáng nhớ chỉ cần mình cất điện thoại, gọi đúng tên và hỏi lại điều từng quan trọng với họ.==",
+      "[[dac-illustration:remember-detail]]",
     ]
   },
   {
-    heading: "Khi muốn thuyết phục — trả lại quyền lựa chọn",
+    heading: "Khi muốn thuyết phục — làm lựa chọn sáng rõ hơn",
     paragraphs: [
-      "Nhìn từ góc của người khác giúp một đề nghị rõ hơn: họ đang cần gì, sợ mất gì và phải bỏ ra điều gì để đồng ý. Tuy vậy, thấu hiểu không nên trở thành công cụ tìm đúng điểm yếu để ép một cái gật đầu.",
-      "Một lời đề nghị tử tế nêu đủ lợi ích, chi phí, giới hạn và cho phép câu trả lời là *không*. Nếu quyết định chỉ xuất hiện vì người kia thiếu thông tin, thấy tội lỗi hoặc sợ quan hệ rạn nứt, đó chưa phải đồng thuận thật sự.",
-      "Mình có thể muốn một kết quả mà vẫn tôn trọng quyền tự quyết của người đối diện. ==Thuyết phục tốt làm lựa chọn sáng rõ hơn; thao túng làm những lựa chọn khác khó được nhìn thấy.=="
+      "Nhìn sự việc từ góc của người khác giúp lời đề nghị trở nên rõ ràng hơn. Nhưng sự thấu hiểu không nên trở thành công cụ tìm đúng điểm yếu để ép họ đồng ý.",
+      "[[ethical-persuasion-table]]",
+      "Ví dụ, thay vì:",
+      "> [before] “Mọi người đều làm cuối tuần, bạn đừng làm khó cả nhóm.”",
+      "Hãy nói:",
+      "> [after] “Nhóm đang cần thêm người hỗ trợ sáng thứ Bảy. Công việc khoảng ba giờ và sẽ được nghỉ bù vào thứ Hai. Bạn có thể từ chối nếu lịch cá nhân không phù hợp.”",
+      "Một lời đề nghị tử tế cần có lợi ích, chi phí, giới hạn và quyền từ chối.",
+      "### Biến thuyết phục thành đồng thiết kế",
+      "Giả sử mình muốn cả nhóm dành một buổi chiều mỗi tuần để xử lý công việc tồn đọng. Thay vì mang đến một kế hoạch đã khóa sẵn rồi tìm cách khiến mọi người gật đầu, mình có thể nói: “Mục tiêu là giảm việc gấp vào cuối tuần. Điều gì khiến phương án chiều thứ Sáu khó thực hiện, và nhóm muốn thử cách nào trong hai tuần?”",
+      "Khi người bị ảnh hưởng được bổ sung dữ kiện, sửa phương án và nhìn thấy dấu vết ý kiến của mình trong quyết định cuối, sự hợp tác không còn đến từ áp lực. Ý tưởng cũng thường tốt hơn vì đã đi qua nhiều kinh nghiệm thật.",
+      "Đừng chỉ kể lợi ích bằng lời. Một bản thử nhỏ, hình ảnh trước–sau hoặc ví dụ cụ thể có thể giúp tác động trở nên dễ hình dung hơn — miễn là minh họa làm sự thật rõ hơn, không che phần chi phí hay rủi ro.",
+      "==Thuyết phục tốt không làm mọi lựa chọn khác biến mất. Nó giúp người nghe nhìn rõ lựa chọn trước mặt và đưa ra quyết định mà họ có thể chịu trách nhiệm.==",
+      "[[dac-illustration:course-sale]]",
     ]
   },
   {
     heading: "Sáu điều nhỏ khiến một người cảm thấy được nhìn thấy",
     paragraphs: [
-      "Phần đầu của sách có sáu gợi ý rất quen: quan tâm thật, mỉm cười, nhớ tên, biết nghe, nói về điều người kia quan tâm và giúp họ cảm thấy mình có giá trị. Đọc liền một lượt, mình thấy chúng đều quay về cùng một việc: bớt để cái tôi chiếm hết căn phòng.",
-      "Nhưng mình cũng nghĩ những điều nhỏ này chỉ có ý nghĩa khi chúng thật. Nhớ tên một người mà quên ranh giới của họ, hỏi chuyện rồi không nghe câu trả lời, hay làm họ thấy quan trọng chỉ để lát nữa nhờ vả — tất cả vẫn là một cuộc trao đổi được bọc bằng vẻ tử tế.",
-      "Trước một cuộc gặp, có lẽ mình không cần học thêm câu nói hay. Mình chỉ cần tự hỏi: *người này đang mang điều gì vào căn phòng, và mình đã đủ yên để nhìn thấy chưa?*"
+      "Nhiều nguyên tắc trong *Đắc Nhân Tâm* quay về những hành động rất nhỏ. Chúng không cần được thực hiện như một màn trình diễn hoàn hảo.",
+      "**1. Quan tâm thật**",
+      "Hỏi về điều người kia đang quan tâm, không chỉ hỏi để chờ cơ hội kể về mình.",
+      "**2. Chào đón họ bằng sự ấm áp**",
+      "Một nụ cười tự nhiên, ánh mắt thân thiện hoặc lời chào đúng lúc đều có thể khiến khoảng cách nhỏ lại.",
+      "**3. Gọi đúng tên**",
+      "Nếu chưa biết cách phát âm, hãy hỏi. Sự cẩn thận thường đáng quý hơn việc cố đoán.",
+      "**4. Để họ nói hết ý**",
+      "Đừng hoàn thành câu thay họ hoặc vội đưa lời khuyên khi câu chuyện còn chưa rõ.",
+      "**5. Nói về điều có ý nghĩa với họ**",
+      "Khi trình bày một đề nghị, hãy giải thích nó liên quan thế nào đến nhu cầu và mục tiêu của người nghe.",
+      "**6. Ghi nhận điều cụ thể**",
+      "Cho họ biết hành động nào đã tạo ra ảnh hưởng tốt, thay vì chỉ nói “bạn tuyệt vời”.",
+      "Những điều này chỉ có ý nghĩa khi chúng thật. Nhớ tên nhưng quên ranh giới, hỏi chuyện nhưng không nghe câu trả lời hay khen ngợi chỉ để nhờ vả đều khiến sự tử tế trở nên rỗng.",
+      "Trước một cuộc gặp, hãy hỏi:",
+      "> Người này đang mang điều gì vào căn phòng, và mình đã dành đủ chỗ để nhìn thấy chưa?",
     ]
   },
   {
     heading: "Đồng thuận không nhất thiết phải bắt đầu bằng tranh thắng",
     paragraphs: [
-      "Mười hai nguyên tắc về thuyết phục nghe khá nhiều, nhưng điều ở lại với mình lại rất đơn giản: đừng biến cuộc trò chuyện thành nơi chỉ có một người được quyền đúng. Nhận sai sớm, bắt đầu mềm hơn, để người kia nói hết và thử nhìn vấn đề từ chỗ họ đang đứng.",
-      "Sách còn nói về cách làm ý tưởng sinh động, chạm vào một động cơ đẹp hoặc tạo cảm giác cùng xây lời giải. Những cách đó có thể hữu ích, nhưng mình không muốn dùng một phần trình bày hay để che một đề nghị thiếu công bằng.",
-      "Đồng thuận mà mình muốn không phải cái gật đầu vì người kia mệt quá nên thôi. Nó là lúc cả hai hiểu mình đang chọn gì, được góp phần vào lời giải và vẫn còn quyền nói: *mình chưa đồng ý*."
+      "Một cái gật đầu chưa chắc đã là đồng thuận. Người ta có thể nói “được” vì hiểu và thật sự muốn hợp tác. Họ cũng có thể đồng ý vì sợ làm người khác thất vọng, sợ mất cơ hội hoặc chưa thấy mình được phép từ chối.",
+      "### Đèn tín hiệu của sự đồng thuận",
+      "[[consent-traffic-light-table]]",
+      "Ba câu hỏi giúp kiểm tra:",
+      "- “Bạn còn điều gì chưa thoải mái với phương án này không?”",
+      "- “Bạn cần thêm thông tin hay thời gian suy nghĩ không?”",
+      "- “Nếu không phù hợp, bạn có thể nói thẳng với mình.”",
+      "Mục tiêu không phải khiến người kia nói “vâng” thật nhanh. Mục tiêu là để cả hai hiểu mình đang đồng ý với điều gì, có trách nhiệm nào và giới hạn ra sao.",
+      "==Một sự đồng thuận có giá trị là khi người tham gia vẫn được giữ tiếng nói của mình.==",
+      "[[dac-illustration:hesitant-overtime]]",
     ]
   },
   {
     heading: "Lãnh đạo mà không làm người khác nhỏ đi",
     paragraphs: [
-      "Phần lãnh đạo khiến mình nghĩ nhiều về cách một lời góp ý có thể sửa được việc nhưng làm hỏng một con người. Carnegie gợi ý bắt đầu bằng ghi nhận, hỏi thay vì ra lệnh, thừa nhận lỗi của mình và giữ thể diện cho người đang cần sửa.",
-      "Mình thích sự mềm đó, nhưng mềm không có nghĩa mơ hồ. Một người quản lý vẫn cần nói rõ kỳ vọng, đưa phản hồi đúng lúc, chia nguồn lực công bằng và dám quyết định khi có vấn đề. Lời khen không thể bù cho một hệ thống khiến người khác kiệt sức.",
-      "Người lãnh đạo mình muốn học theo không chỉ làm mọi người vui vẻ làm việc. Họ tạo một nơi người khác hiểu việc mình làm, có điều kiện làm tốt và đủ an toàn để nói: *ở đây đang có chuyện không ổn*."
+      "Một lời góp ý có thể giúp người khác tiến bộ. Nó cũng có thể khiến họ chỉ học được cách che giấu lỗi.",
+      "Một cuộc trao đổi tốt cần **rõ việc, giữ người và mở lối**.",
+      "Thay vì:",
+      "> [before] “Bạn lúc nào cũng cẩu thả.”",
+      "Hãy thử:",
+      "> [after] “Bản báo cáo này còn thiếu ba số liệu nên nhóm chưa thể gửi đi. Trước đây mình cũng từng bỏ sót khi làm quá nhanh. Bạn đang gặp vướng ở bước nào? Chúng ta cần hoàn thiện trước 4 giờ chiều.”",
+      "Cách nói này gồm năm phần:",
+      "1. Mô tả việc đã xảy ra.",
+      "2. Nêu ảnh hưởng cụ thể.",
+      "3. Thừa nhận góc nhìn hoặc sai sót của mình khi phù hợp.",
+      "4. Hỏi người kia đang gặp điều gì.",
+      "5. Thống nhất bước tiếp theo và sự hỗ trợ cần thiết.",
+      "### Trao một kỳ vọng người khác có thể bước tới",
+      "Một lời góp ý tốt không chỉ nói điều gì chưa đạt; nó còn chỉ ra vì sao người nghe có khả năng sửa. Ví dụ: “Ba báo cáo trước bạn kiểm tra số liệu rất chắc. Lần này còn thiếu ba ô đối chiếu. Bạn muốn tự rà lại theo bảng kiểm hay cần mình xem cùng mười phút đầu?”",
+      "Câu nói ấy dùng bằng chứng thật để nhắc lại năng lực, đặt tiêu chuẩn rõ và trao quyền chọn cách sửa. Nó khác với gắn một nhãn đẹp để buộc người kia phải chứng minh mình xứng đáng.",
+      "Khi lỗi có thể sửa, góp ý riêng và công nhận tiến bộ sớm thường hữu ích hơn làm người khác xấu hổ trước nhóm. Nhưng nếu vấn đề liên quan an toàn, gian lận hoặc gây hại lặp lại, lãnh đạo vẫn phải dùng quy trình rõ và chịu trách nhiệm cho quyết định.",
+      "Giữ thể diện không có nghĩa là nói mơ hồ. Một người quản lý vẫn cần nêu rõ tiêu chuẩn, phân chia nguồn lực công bằng và đưa ra quyết định khi có vấn đề.",
+      "Lời khen cũng không thể bù cho một hệ thống khiến mọi người kiệt sức. Lãnh đạo tử tế không chỉ nói dễ nghe. Họ tạo điều kiện để người khác hiểu việc mình làm, có cơ hội sửa sai và đủ an toàn để báo vấn đề trước khi nó trở nên nghiêm trọng.",
+      "[[dac-illustration:invoice-mistake]]",
     ]
   },
   {
     heading: "Có những lúc tử tế không phải là tiếp tục mỉm cười",
     paragraphs: [
-      "Có lúc đọc mình phải dừng lại và nhớ rằng cuốn sách ra đời trong một bối cảnh rất khác. Không phải lời khuyên nào về mỉm cười, nhường lời hay làm người khác thoải mái cũng nên được mang nguyên vẹn vào nơi có chênh lệch quyền lực lớn.",
-      "Một người đang bị quấy rối hay đối xử bất công không có nghĩa vụ phải khéo hơn để xứng đáng được tôn trọng. Có những lúc điều đúng không phải là tạo thiện cảm, mà là lưu lại bằng chứng, nói *không*, tìm người hỗ trợ và dùng một kênh chính thức.",
-      "Điều bền nhất mình giữ từ *Đắc Nhân Tâm* vẫn là nhìn con người trước khi nhìn kỹ thuật. Nhưng sự tử tế thật phải làm sự thật rõ hơn và phẩm giá được giữ hơn — kể cả khi điều đó khiến cuộc trò chuyện không còn dễ chịu."
+      "*Đắc Nhân Tâm* được viết trong một bối cảnh khác. Những nguyên tắc về sự thân thiện rất đáng học, nhưng không phải tình huống nào cũng nên được giải quyết bằng việc nói khéo hơn.",
+      "Khi gặp quấy rối, đe dọa, gian lận, bạo lực hoặc ranh giới liên tục bị xâm phạm, ưu tiên của mình không phải tạo thiện cảm. Đó là bảo vệ sự an toàn và phẩm giá.",
+      "Khi ấy, mình có thể:",
+      "- Nói “không” rõ ràng nếu việc đó an toàn.",
+      "- Rời khỏi cuộc trò chuyện.",
+      "- Lưu lại thông tin hoặc bằng chứng cần thiết.",
+      "- Tìm người hỗ trợ đáng tin cậy.",
+      "- Sử dụng kênh chính thức phù hợp.",
+      "- Không gặp riêng nếu cảm thấy không an toàn.",
+      "Trước một cuộc trao đổi khó, hãy tự hỏi:",
+      "- Đây là vấn đề giao tiếp hay vấn đề an toàn?",
+      "- Có sự chênh lệch quyền lực đáng kể không?",
+      "- Người kia đã từng phớt lờ ranh giới của mình chưa?",
+      "- Mình cần ai ở bên hoặc biết về chuyện này?",
+      "==Tử tế không có nghĩa là chịu đựng mọi thứ trong im lặng. Đôi khi điều tử tế nhất với chính mình là dừng cuộc trò chuyện và tìm sự hỗ trợ phù hợp.==",
+      "[[dac-illustration:safety-boundary]]",
     ]
   },
   {
-    heading: "Nhu cầu được thích đôi khi làm mình rời xa sự chân thành",
+    heading: "Nhu cầu được yêu mến đôi khi kéo mình xa sự chân thành",
     paragraphs: [
-      "Có lẽ điều khiến mình dễ biến những nguyên tắc giao tiếp thành công thức nhất là nỗi sợ không được yêu mến. Khi quá cần một cuộc trò chuyện kết thúc êm, mình có thể nuốt điều cần nói, cười lúc không muốn cười và gọi đó là khéo léo.",
-      "Nhưng một mối quan hệ chỉ yên vì một người luôn tự thu nhỏ thì chưa thật sự yên. Sự dễ chịu ấy được trả bằng khoảng cách ngày càng lớn giữa điều mình cảm thấy và điều mình dám nói ra.",
-      "Mình muốn học cách quan tâm người khác mà không bỏ rơi chính mình. Có thể nói mềm, nhưng vẫn nói thật. Có thể lắng nghe rất sâu, nhưng vẫn giữ quyền bước ra khi ranh giới liên tục bị vượt qua."
+      "Khi quá cần một cuộc trò chuyện kết thúc êm đẹp, mình có thể cười dù đang khó chịu, nói “không sao” khi thật ra có vấn đề hoặc nhận lời vì sợ người khác thất vọng.",
+      "Nhưng một mối quan hệ chỉ yên khi một người liên tục thu nhỏ mình thì chưa thật sự bình yên. Khoảng cách giữa điều mình cảm thấy và điều mình dám nói sẽ ngày càng lớn.",
+      "Sự tử tế không đồng nghĩa với luôn đồng ý.",
+      "Mình có thể nói mềm nhưng vẫn nói thật:",
+      "- “Mình hiểu việc này quan trọng, nhưng hiện tại mình không thể nhận thêm.”",
+      "- “Mình cần thời gian suy nghĩ trước khi trả lời.”",
+      "- “Mình nghe quan điểm của bạn, nhưng mình đang nhìn khác.”",
+      "- “Mình không thoải mái với cách nói vừa rồi.”",
+      "- “Nếu chuyện này tiếp tục, mình sẽ dừng cuộc trao đổi.”",
+      "Người khác thất vọng không tự động có nghĩa là mình đã làm sai. Đôi khi họ chỉ đang gặp một giới hạn không giống điều họ mong muốn.",
+      "==Giá trị bền nhất từ *Đắc Nhân Tâm* không phải khiến tất cả mọi người đều thích mình. Đó là học cách quan tâm người khác mà không bỏ rơi chính mình.==",
+      "[[dac-illustration:family-loan]]",
     ]
   },
   {
-    heading: "Được lắng nghe có thể làm một người bớt cô đơn hơn mình tưởng",
+    heading: "Được lắng nghe có thể khiến một người bớt cô đơn",
     paragraphs: [
-      "Sau tất cả nguyên tắc, điều làm mình xúc động nhất vẫn là một việc rất nhỏ: có người ngồi trước mặt và không vội sửa mình. Họ không chờ tới lượt kể chuyện của họ, không biến nỗi buồn của mình thành một bài học, chỉ ở đó đủ lâu.",
-      "Mình từng nghĩ giao tiếp giỏi phải có câu trả lời đúng. Cuốn sách làm mình nghĩ khác: đôi khi giá trị của cuộc trò chuyện nằm ở việc người kia không còn phải mang câu chuyện một mình.",
-      "Nếu mình có thể bớt ngắt lời một chút, hỏi thật hơn một câu và để một khoảng im lặng không bị lấp vội, có lẽ đó đã là một cách tạo ảnh hưởng rất đẹp — ảnh hưởng khiến người khác trở về gần với chính họ hơn."
+      "Có những lúc người ngồi trước mặt mình không cần một bài học, một câu động viên thật lớn hay một danh sách giải pháp. Họ chỉ cần được kể câu chuyện mà không bị sửa ngay lập tức.",
+      "Một khoảng lắng nghe tử tế có thể bắt đầu rất đơn giản:",
+      "- Đặt điện thoại xuống.",
+      "- Không vội kể câu chuyện tương tự của mình.",
+      "- Hỏi: “Điều gì đang nặng nhất với bạn?”",
+      "- Để một khoảng im lặng mà không lập tức lấp đầy.",
+      "- Nhắc lại điều mình hiểu để họ có thể sửa.",
+      "- Hỏi họ muốn được lắng nghe hay cần cùng tìm cách giải quyết.",
+      "Lắng nghe không có nghĩa là mình phải đồng ý với mọi điều hoặc chịu trách nhiệm giải quyết toàn bộ cuộc đời của người kia. Mình vẫn có thể nói:",
+      "> “Mình rất muốn ở đây với bạn, nhưng chuyện này vượt quá khả năng của mình. Mình nghĩ chúng ta nên tìm thêm một người có thể hỗ trợ tốt hơn.”",
+      "==Trước đây, mình có thể nghĩ giao tiếp giỏi là luôn có câu trả lời đúng. Nhưng đôi khi giá trị của cuộc trò chuyện chỉ nằm ở việc người kia không còn phải mang câu chuyện một mình.==",
+      "[[dac-illustration:sad-story]]",
     ]
   },
   {
     heading: "Bảy ngày — thực hành sự quan tâm có thật",
     paragraphs: [
-      "Thay vì cố áp dụng mọi nguyên tắc cùng lúc, mình có thể chọn một thực hành trong bảy ngày: không ngắt lời, ghi nhận một đóng góp cụ thể hoặc hỏi trước khi đưa lời khuyên.",
-      "Cuối mỗi ngày, ghi lại một cuộc trò chuyện: mình đã tò mò ở điểm nào, cái tôi xuất hiện lúc nào, và người kia có đủ không gian để nói khác mình không. Không cần chấm điểm bản thân; mục tiêu là nhìn thấy thói quen.",
-      "Nếu chỉ giữ một điều sau cuốn sách, mình muốn đó là điều này: ==giao tiếp giỏi không phải khiến căn phòng xoay quanh mình, mà giúp những người trong phòng được nhìn thấy rõ hơn==."
+      "Không cần áp dụng toàn bộ nguyên tắc cùng lúc. Trong bảy ngày, mỗi ngày hãy thử một hành động nhỏ.",
+      "[[seven-day-care-table]]",
+      "Cuối mỗi ngày, ghi lại một cuộc trò chuyện:",
+      "- Mình đã tò mò ở khoảnh khắc nào?",
+      "- Khi nào cái tôi muốn xuất hiện hoặc giành phần đúng?",
+      "- Người kia có đủ không gian để nói khác mình không?",
+      "- Lần sau mình muốn làm điều gì tốt hơn?",
+      "Đừng dùng bài tập này để chấm điểm mình là người giao tiếp tốt hay kém. Hãy xem nó như một cách nhận ra những phản xạ vẫn thường diễn ra quá nhanh.",
+      "Nếu chỉ giữ lại một điều sau cuốn sách, có lẽ đó là:",
+      "> ==Giao tiếp giỏi không phải khiến căn phòng xoay quanh mình, mà giúp những người trong phòng được nhìn thấy rõ hơn.==",
     ]
   }
 ];
@@ -339,827 +457,610 @@ const DAC_NHAN_TAM_PAGES: BookReadingPage[] = [
 // attributed to the book as a model, not literal parts of the brain.
 const THINKING_FAST_SLOW_PAGES: BookReadingPage[] = [
   {
-    heading: "Bản đồ — hai nhịp nghĩ trong cùng một quyết định",
+    heading: "Trong đầu mình có hai nhịp nghĩ",
     paragraphs: [
-      "Trong *Tư Duy Nhanh Và Chậm*, Daniel Kahneman gọi cách nghĩ nhanh, tự động và trực giác là Hệ thống 1; cách nghĩ chậm, cần chú ý và kiểm tra là Hệ thống 2. Đây là ngôn ngữ để quan sát cách tâm trí vận hành trong lựa chọn hằng ngày.",
-      "Hệ thống 1 giúp mình nhận ra và phản ứng nhanh; vấn đề xuất hiện khi câu trả lời đến dễ đến mức mình quên kiểm tra. Hệ thống 2 có thể rà lại, nhưng sự chú ý của nó có hạn, nhất là lúc mình mệt hoặc đang ôm nhiều việc.",
-      "Vì vậy, bài học không phải trực giác luôn sai và phân tích luôn đúng. Mình chỉ cần nhận ra quyết định nào đáng được chậm lại."
-    ]
+      "[[thinking-dossier-series]]",
+      "Daniel Kahneman dùng **Hệ thống 1** và **Hệ thống 2** như một cách gọi dễ nhớ cho hai nhịp suy nghĩ quen thuộc.",
+      "Hệ thống 1 hoạt động nhanh và gần như tự động. Nó giúp mình nhận ra gương mặt quen, hiểu một câu nói đơn giản hay né một chiếc xe đang lao tới. Hệ thống 2 chậm hơn, cần tập trung hơn và thường xuất hiện khi mình tính toán, so sánh hoặc kiểm tra một nhận định.",
+      "**THỬ NGAY**",
+      "- `2 + 2 = ?` — câu trả lời gần như tự xuất hiện.",
+      "- `17 × 24 = ?` — mình phải dừng lại và thật sự suy nghĩ.",
+      "Nhịp nhanh không xấu; nhờ nó mà mình không phải phân tích mọi việc từ đầu. ==Vấn đề chỉ xuất hiện khi một quyết định khó lại mang đến cảm giác quá dễ.==",
+      "**DẤU HIỆU NÊN CHẬM LẠI**",
+      "Quyết định có hậu quả lớn, khó sửa, liên quan nhiều tiền hoặc khiến mình lập tức nghĩ: *“Chắc chắn là vậy.”*",
+    ],
   },
   {
-    heading: "Cảnh báo 1 — cảm giác đúng chưa phải bằng chứng",
+    heading: "Cảm giác đúng chưa phải là bằng chứng",
     paragraphs: [
-      "Kahneman cho thấy phán đoán dễ bị kéo bởi mỏ neo, điều vừa hiện lên trong trí nhớ và khuôn mẫu quen thuộc. Giá đầu tiên có thể neo cách mình định giá; tin được nhắc nhiều có thể làm một rủi ro trông phổ biến; một mô tả hợp khuôn dễ khiến mình quên tỷ lệ nền.",
-      "Trước một nhận định quan trọng, mình thử tách ba câu hỏi: bằng chứng trực tiếp là gì, dữ liệu chung nói gì, và thông tin đầu tiên đã kéo mình theo hướng nào.",
-      "Câu hỏi không xóa thiên kiến ngay lập tức. Nó chỉ tạo khoảng cách giữa *“nghe có vẻ đúng”* và *“đã đủ căn cứ để tin”*."
-    ]
+      "Buổi đầu xem nhà, môi giới nói căn hộ từng được chào giá 5 tỷ. Sau đó họ đưa mức 4,2 tỷ và mình lập tức cảm thấy “khá hời”. Có thể mức giá hợp lý thật, nhưng cũng có thể con số đầu tiên đã âm thầm trở thành một **mỏ neo**.",
+      "Tâm trí còn dễ bị kéo theo những điều vừa xuất hiện. Sau khi nghe một câu chuyện mất tiền vì đầu tư, mình có thể cảm thấy mọi khoản đầu tư đều quá nguy hiểm. Gặp một ứng viên nói chuyện tự tin, mình dễ xem sự tự tin ấy như bằng chứng cho năng lực.",
+      "**BA DẤU VẾT CẦN KIỂM TRA**",
+      "1. Bằng chứng trực tiếp mình đang có là gì?",
+      "2. Những trường hợp tương tự thường có kết quả thế nào?",
+      "3. Con số hoặc câu chuyện nào xuất hiện đầu tiên và đang kéo suy nghĩ của mình?",
+      "==Câu hỏi này không khiến thiên kiến biến mất, nhưng nó tạo khoảng cách giữa *“nghe có vẻ đúng”* và *“đã đủ căn cứ để tin”*.==",
+    ],
   },
   {
-    heading: "Cảnh báo 2 — kế hoạch thường đẹp hơn đời thật",
+    heading: "Kế hoạch thường đẹp hơn đời thật",
     paragraphs: [
-      "Cuốn sách nhắc rằng mình dễ quá tự tin vào dự đoán và kể kết quả như thể chúng hoàn toàn đến từ kỹ năng, dù thời điểm, bối cảnh và may rủi cũng có phần. Vì thế, một kế hoạch trơn tru trên giấy chưa phải bằng chứng nó sẽ diễn ra đúng như vậy.",
-      "Kahneman đề nghị dùng góc nhìn bên ngoài: xem những việc tương tự thường mất bao lâu, hay vướng ở đâu, rồi thêm phần đệm thay vì chỉ tin lần này sẽ khác.",
-      "Dữ liệu cũ không quyết định chắc chắn trường hợp của mình. Nó giúp hiệu chỉnh mức tự tin, để hy vọng vẫn còn nhưng không phải gánh cả kế hoạch."
-    ]
+      "Mình dự tính sửa căn phòng trong ba tuần: đặt vật liệu, thi công, lắp nội thất rồi dọn vào. Trên giấy, mọi thứ nối nhau rất đẹp. Nhưng đời thật còn có hàng giao trễ, thợ bận, phát sinh kỹ thuật và hàng loạt việc mình chưa nghĩ tới.",
+      "Đó là lúc **góc nhìn bên ngoài** trở nên hữu ích. Thay vì chỉ hỏi kế hoạch của mình hợp lý đến đâu, hãy nhìn những việc tương tự trước đây đã thật sự mất bao lâu.",
+      "**BÀI KIỂM TRA TRƯỚC KHI CHỐT KẾ HOẠCH**",
+      "- Tìm vài trường hợp gần giống nhất.",
+      "- Xem thời gian và chi phí thực tế của họ.",
+      "- Lấy mức phổ biến làm điểm bắt đầu.",
+      "- Sau đó mới điều chỉnh cho hoàn cảnh riêng.",
+      "- Thêm khoảng đệm cho những việc chưa nhìn thấy.",
+      "==Hy vọng vẫn cần thiết để bắt đầu. Nhưng một kế hoạch tốt không chỉ chứa điều mình mong sẽ xảy ra; nó còn dành chỗ cho đời thật bước vào.==",
+    ],
   },
   {
-    heading: "Cảnh báo 3 — mất, được và chiếc khung",
+    heading: "Mất, được và chiếc khung quanh lựa chọn",
     paragraphs: [
-      "Theo Kahneman, mất một khoản thường gây đau mạnh hơn niềm vui từ khoản được tương đương. Khuynh hướng né mất mát có thể khiến mình giữ một lựa chọn chỉ vì tiếc công, tiếc tiền hoặc sợ rời vùng an toàn.",
-      "Cách diễn đạt cũng đổi cảm giác: cùng một tỷ lệ, nói theo phần thành công có thể tạo phản ứng khác với nói theo phần thất bại. Khi quyết định quan trọng, mình nên nhìn cả hai cách đóng khung trước khi chọn.",
-      "Sở hữu còn làm mình dễ định giá điều đang có cao hơn. Điều đó không có nghĩa mọi gắn bó đều vô lý; câu kiểm tra hữu ích là: *nếu hôm nay chưa sở hữu nó, mình có chủ động chọn lại không?*"
-    ]
+      "Hai câu sau mô tả cùng một kết quả:",
+      "- “Phương án này có 90% khả năng thành công.”",
+      "- “Phương án này có 10% khả năng thất bại.”",
+      "Con số không đổi, nhưng cảm giác có thể khác hẳn. Đó là sức mạnh của **cách đóng khung**.",
+      "Mình cũng thường cảm thấy mất một thứ đang có đau hơn niềm vui khi nhận được một thứ tương đương. Vì vậy, ta dễ giữ một gói dịch vụ không còn dùng, tiếp tục một dự án không còn hiệu quả hoặc ngại thay đổi chỉ vì đã bỏ quá nhiều công sức.",
+      "**THỬ ĐẢO CHIỀU**",
+      "- Viết lựa chọn dưới cả khung “được” và “mất”.",
+      "- Nếu chưa sở hữu món này, hôm nay mình có mua nó không?",
+      "- Nếu chưa đầu tư vào dự án này, hôm nay mình có bắt đầu không?",
+      "- Mình đang chọn vì tương lai hay vì tiếc phần đã bỏ ra?",
+      "==Đôi khi mình không bảo vệ một lựa chọn tốt. Mình chỉ đang bảo vệ cảm giác không muốn thừa nhận một mất mát.==",
+    ],
   },
   {
-    heading: "Hai cái tôi — phút đang sống và câu chuyện còn lại",
+    heading: "Người đang sống và người kể lại",
     paragraphs: [
-      "Kahneman phân biệt cái tôi trải nghiệm, sống qua từng khoảnh khắc, với cái tôi ghi nhớ, kể lại câu chuyện sau đó. Một trải nghiệm có thể mệt khi đang diễn ra nhưng được nhớ bằng vài đoạn nổi bật; một quãng dài cũng có thể bị phần kết nhuộm màu.",
-      "Góc nhìn này nhắc mình đừng chỉ tối ưu ký ức đẹp mà bỏ quên chất lượng những phút đang sống. Ngược lại, chạy theo cảm giác tức thời mà không nhìn câu chuyện dài hạn cũng chưa đủ.",
-      "Không cái tôi nào nên độc quyền quyết định. Câu hỏi cân bằng là: *việc này đang đối xử thế nào với mình hôm nay, và mình muốn nhớ nó ra sao về sau?*"
-    ]
+      "Một chuyến đi có thể rất vui trong bốn ngày, nhưng kết thúc bằng một trận cãi nhau. Khi nhớ lại, mình dễ để đoạn kết phủ màu lên toàn bộ trải nghiệm.",
+      "Kahneman gợi ra hai góc nhìn: **cái tôi đang trải nghiệm** sống qua từng khoảnh khắc, còn **cái tôi ghi nhớ** kể lại câu chuyện sau đó. Trí nhớ không lưu mọi phút với trọng lượng ngang nhau; những đoạn cao trào và phần kết thường nổi bật hơn.",
+      "[[thinking-film-album-comparison]]",
+      "Vì vậy, khi đánh giá công việc, mối quan hệ hay một chuyến đi, mình có thể hỏi hai câu:",
+      "1. Trong lúc sống với điều này, phần lớn thời gian mình cảm thấy thế nào?",
+      "2. Sau khi kết thúc, mình muốn nhớ câu chuyện ấy ra sao?",
+      "==Một ký ức đẹp chưa chắc đại diện cho cả hành trình; một đoạn kết tệ cũng chưa chắc xóa sạch những ngày từng rất vui.==",
+    ],
   },
   {
-    heading: "Phiếu dừng 60 giây — dành cho việc đáng chậm",
+    heading: "Phiếu dừng 60 giây",
     paragraphs: [
-      "Không phải lựa chọn nào cũng cần một cuộc phân tích dài. Với quyết định có hậu quả lớn, mình có thể dừng một phút và hỏi: bằng chứng hay chỉ cảm giác; mỏ neo hoặc cách đóng khung nào đang có mặt; dữ liệu nền và góc nhìn bên ngoài nói gì; mình đang chọn vì giá trị hay chỉ vì sợ mất.",
-      "Nếu đang mệt hoặc quá tải, hoãn quyết định khi có thể cũng là cách cho Hệ thống 2 một cơ hội làm việc. Đây là bước kiểm tra, không phải lời hứa rằng mình sẽ trở nên hoàn toàn khách quan.",
-      "Điều mình giữ lại từ Kahneman là một vốn từ để nhận ra giới hạn của phán đoán. Cuốn sách không bảo mình nghi ngờ mọi trực giác; nó giúp mình biết lúc nào nên để trực giác được kiểm tra."
-    ]
+      "Không phải lựa chọn nào cũng cần phân tích dài. Nhưng với việc có hậu quả lớn, một phút kiểm tra có thể cứu mình khỏi nhiều tháng sửa sai.",
+      "**PHIẾU DỪNG**",
+      "- Mình thật sự đang quyết định điều gì?",
+      "- Nếu sai, hậu quả lớn nhất là gì?",
+      "- Có con số đầu tiên nào đang neo suy nghĩ của mình?",
+      "- Những trường hợp tương tự thường kết thúc ra sao?",
+      "- Thông tin quan trọng nào còn thiếu?",
+      "- Nếu diễn đạt lựa chọn theo chiều ngược lại, mình có đổi ý không?",
+      "- Quyết định này dễ hay khó quay lại?",
+      "- Mình đang tỉnh táo hay đang mệt, vội, giận hoặc quá hào hứng?",
+      "==Phiếu này không đảm bảo mình luôn đúng. Nó chỉ giúp Hệ thống 2 có cơ hội bước vào căn phòng trước khi Hệ thống 1 chốt cửa.==",
+    ],
   },
   {
-    heading: "Trở về mức trung bình — đừng vội kể một nguyên nhân",
+    heading: "Đừng vội kể một nguyên nhân",
     paragraphs: [
-      "Một kết quả đặc biệt tốt hoặc đặc biệt xấu thường có xu hướng bớt cực đoan ở lần đo tiếp theo. Kahneman dùng hiện tượng hồi quy về mức trung bình để cho thấy mình dễ gán sự thay đổi tự nhiên ấy cho lời khen, hình phạt hoặc một biện pháp vừa áp dụng.",
-      "Ví dụ, sau một ngày làm việc tệ bất thường, ngày kế tiếp có thể khá hơn ngay cả khi mình không tìm ra bí quyết nào. Ngược lại, thành tích xuất sắc một lần chưa đủ chứng minh phương pháp mới luôn hiệu quả.",
-      "Trước khi kể câu chuyện nhân quả, mình nên hỏi: đây là xu hướng qua nhiều lần quan sát hay chỉ là hai điểm dữ liệu đứng cạnh nhau? ==Một lời giải thích hấp dẫn vẫn cần cơ hội được kiểm tra.=="
-    ]
+      "Một nhân viên thường bán được hai hợp đồng mỗi tuần, nhưng tuần này bất ngờ bán được năm. Tuần sau, kết quả trở lại mức bình thường. Nếu chỉ nhìn hai tuần, mình rất dễ kể rằng người ấy sa sút vì được khen quá sớm.",
+      "Thật ra, những kết quả đặc biệt tốt hoặc đặc biệt xấu thường có xu hướng trở lại gần mức bình thường hơn. Đây là **sự hồi quy về mức trung bình**.",
+      "Điều này không có nghĩa mọi thay đổi đều do ngẫu nhiên. Nó chỉ nhắc mình đừng dựng quan hệ nhân quả từ quá ít dữ liệu.",
+      "**TRƯỚC KHI KẾT LUẬN**",
+      "- Mình đang nhìn một lần hay một chuỗi dài?",
+      "- Kết quả này có bất thường so với mức thường ngày không?",
+      "- Có nhóm hoặc thời điểm nào để so sánh không?",
+      "- Lời giải thích của mình đã được kiểm tra hay chỉ nghe rất hợp lý?",
+      "==Một câu chuyện hấp dẫn vẫn cần cơ hội được chứng minh.==",
+    ],
   },
   {
-    heading: "Một câu chuyện trơn tru dễ làm mình quên phần còn thiếu",
+    heading: "Câu chuyện quá tròn thường che phần còn thiếu",
     paragraphs: [
-      "Mình rất thích những câu chuyện mạch lạc. Chúng cho cảm giác mọi thứ đã vào đúng chỗ, nguyên nhân nối với kết quả, một người tốt ở điểm này thì chắc cũng đáng tin ở điểm khác. Chính cảm giác dễ chịu đó lại là thứ Kahneman bảo mình nên dè chừng.",
-      "Tâm trí nối những gì đang có thành một bức tranh, rồi dễ quên rằng ngoài khung vẫn còn dữ liệu. Một ấn tượng tốt có thể nhuộm màu toàn bộ đánh giá; một điều được lặp nhiều lần có thể nghe quen đến mức trông giống sự thật.",
-      "Mình giữ lại từ *WYSIATI* một câu hỏi rất nhỏ: *điều gì chưa có mặt trong câu chuyện này?* Không phải để nghi ngờ tất cả, mà để một câu chuyện hay không được quyền đóng cửa quá sớm."
-    ]
+      "Tâm trí rất giỏi nối những gì đang có thành một câu chuyện mạch lạc. Một ứng viên nói chuyện thông minh, có hồ sơ đẹp và đến từ công ty nổi tiếng — thế là mình cảm thấy đã hiểu rõ năng lực của họ.",
+      "Nhưng điều đang có mặt không phải toàn bộ sự thật. Có thể mình chưa xem sản phẩm thực tế, chưa kiểm tra cách họ xử lý sai sót hoặc chưa nghe nhận xét từ người từng làm việc cùng.",
+      "Kahneman gọi xu hướng này là **WYSIATI**: tâm trí thường xây câu chuyện từ những gì đang hiện diện và ít chú ý đến phần vắng mặt.",
+      "**BA Ô TRỐNG CẦN ĐIỀN**",
+      "[[thinking-knowledge-gaps-table]]",
+      "==Câu chuyện càng trơn tru, mình càng nên hỏi: *“Mảnh ghép nào chưa có mặt ở đây?”*==",
+    ],
   },
   {
-    heading: "Bộ não mình rất giỏi trả lời nhầm câu hỏi",
+    heading: "Bộ não rất giỏi trả lời nhầm câu hỏi",
     paragraphs: [
-      "Có một ý trong sách làm mình vừa buồn cười vừa thấy bị bắt quả tang: khi câu hỏi thật quá khó, bộ não lặng lẽ đổi sang một câu dễ hơn rồi trả lời rất tự tin.",
-      "Mình tưởng mình đang đánh giá một rủi ro, nhưng thật ra chỉ đang nhớ xem có câu chuyện đáng sợ nào hiện lên nhanh không. Mình tưởng mình đang nhìn năng lực một người, nhưng đôi khi chỉ đang phản ứng với việc họ giống hình mẫu “người giỏi” trong đầu tới đâu.",
-      "Với chuyện quan trọng, mình muốn viết câu hỏi gốc ra, xem những trường hợp tương tự thường thế nào và tự ước lượng trước khi nghe con số đầu tiên. Chậm thêm một nhịp đôi khi chỉ để chắc rằng mình đang trả lời đúng câu hỏi."
-    ]
+      "Có những câu hỏi khó khiến tâm trí âm thầm đổi sang một câu dễ hơn rồi trả lời rất tự tin.",
+      "[[thinking-question-substitution-table]]",
+      "Cảm xúc vẫn là một phần quan trọng của quyết định. Nhưng trước việc lớn, mình nên viết lại câu hỏi gốc và xác định loại bằng chứng thật sự có thể trả lời nó.",
+      "**CÂU NHẮC NHỎ**",
+      "*“Mình đang trả lời câu hỏi được đặt ra, hay chỉ đang trả lời câu dễ nhất?”*",
+    ],
   },
   {
-    heading: "Kinh nghiệm lâu năm chưa chắc đã biến thành trực giác đúng",
+    heading: "Kinh nghiệm lâu năm chưa chắc tạo ra trực giác đúng",
     paragraphs: [
-      "Kahneman không bảo mình vứt trực giác đi. Ông khiến mình hỏi trực giác đó đã được nuôi trong môi trường nào. Nếu một công việc có quy luật đủ ổn định, được lặp nhiều và trả phản hồi rõ, cảm giác nghề nghiệp có thể chứa rất nhiều năm học thật.",
-      "Nhưng có những lĩnh vực quá nhiễu, kết quả đến quá muộn hoặc hiếm khi lặp. Ở đó, làm lâu có thể tăng sự tự tin nhanh hơn tăng độ chính xác. Số năm kinh nghiệm nghe rất nặng, nhưng tự nó chưa trả lời mình đã học đúng từ những năm đó chưa.",
-      "Trước một câu *“tôi làm nghề này lâu rồi, tôi biết”*, mình muốn hỏi thêm: đã có bao nhiêu lần kiểm tra, phản hồi có rõ không, và khi sai thì có được biết mình sai ở đâu không?"
-    ]
+      "Trực giác chuyên môn có thể rất giá trị khi một người làm việc trong môi trường có quy luật tương đối ổn định, gặp nhiều tình huống lặp lại và nhận phản hồi đủ nhanh để học từ đúng lẫn sai.",
+      "Nhưng trong lĩnh vực quá nhiễu, kết quả đến quá muộn hoặc hiếm khi lặp lại, số năm kinh nghiệm có thể làm sự tự tin tăng nhanh hơn độ chính xác.",
+      "**ĐÈN XANH CHO TRỰC GIÁC**",
+      "- Các tình huống có thật sự tương đồng không?",
+      "- Quy luật của môi trường có tương đối ổn định không?",
+      "- Phản hồi có đến đủ nhanh và rõ không?",
+      "- Người ra quyết định có theo dõi những lần mình sai không?",
+      "==Nếu phần lớn câu trả lời là “không”, trực giác vẫn đáng lắng nghe — nhưng nên được xem như một giả thuyết cần kiểm tra, không phải phán quyết cuối cùng.==",
+    ],
   },
   {
     heading: "Mình không nhìn được và mất bằng cùng một đôi mắt",
     paragraphs: [
-      "Phần lý thuyết triển vọng làm mình hiểu vì sao hai lựa chọn có cùng kết quả cuối vẫn có thể tạo cảm giác rất khác. Mình không chỉ nhìn mình sẽ có bao nhiêu; mình nhìn mình đang được thêm hay bị lấy đi so với một điểm đã coi là của mình.",
-      "Phần mất thường đau hơn phần được tương đương, còn một khả năng rất nhỏ đôi khi được mình phóng lớn chỉ vì nó đáng sợ hoặc quá hấp dẫn. Chỉ cần đổi cách đóng khung, cùng một dữ kiện đã có thể kéo cảm xúc sang hướng khác.",
-      "Điều mình muốn tập là nhìn cả hai khung: nếu gọi đây là được thì sao, nếu gọi là mất thì sao, xác suất thật là bao nhiêu, và mình có còn chọn như vậy nếu không bị mắc vào một quyết định riêng lẻ?"
-    ]
+      "Nhận thêm một triệu đồng và mất đi một triệu đồng không tạo ra hai cảm xúc đối xứng. Thông thường, mất mát để lại sức nặng lớn hơn một khoản được tương đương.",
+      "Điều đó giải thích vì sao mình có thể từ chối một cơ hội hợp lý chỉ để giữ cảm giác an toàn, hoặc tiếp tục ôm một lựa chọn kém hiệu quả vì không muốn “chốt lỗ”.",
+      "**BÀI KIỂM TRA HAI KHUNG**",
+      "1. Nếu gọi đây là một khoản được, mình nhìn nó thế nào?",
+      "2. Nếu gọi đây là một khoản mất, mình phản ứng ra sao?",
+      "3. Xác suất thật sự của từng kết quả là bao nhiêu?",
+      "4. Nếu chưa mắc kẹt trong quyết định cũ, hôm nay mình có chọn như vậy không?",
+      "==Cảm xúc trước mất mát là thật. Nhưng cảm xúc mạnh không tự động biến lựa chọn giữ nguyên thành lựa chọn tốt nhất.==",
+    ],
   },
   {
-    heading: "Hiểu thiên kiến không làm mình tự động bớt thiên kiến",
+    heading: "Biết tên thiên kiến chưa đủ để tránh nó",
     paragraphs: [
-      "Có một sự kiêu ngạo rất tinh vi khi đọc sách về sai lầm tư duy: mình bắt đầu nhìn thiên kiến ở khắp mọi người, trừ bản thân. Mình gọi tên được hiệu ứng, giải thích được vì sao người khác suy nghĩ sai, rồi tưởng vốn từ mới đã làm mình khách quan hơn.",
-      "Nhưng biết tên một cái bẫy không có nghĩa mình không còn rơi vào nó. Thậm chí, mình có thể dùng chính kiến thức đó để bảo vệ kết luận đã thích sẵn, chỉ là lần này nghe thông minh hơn.",
-      "Điều mình muốn giữ không phải khả năng chẩn đoán người khác. Nó là thói quen quay câu hỏi lại: *bằng chứng nào sẽ khiến mình đổi ý, và nếu không có bằng chứng nào đủ sức làm điều đó, mình đang suy nghĩ hay chỉ đang bảo vệ bản thân?*"
-    ]
+      "Đọc về sai lầm tư duy có một cái bẫy khá tinh vi: mình bắt đầu nhìn thấy thiên kiến ở khắp mọi người, trừ chính mình.",
+      "Biết thuật ngữ giúp mình gọi tên vấn đề, nhưng kiến thức đơn thuần không bảo đảm mình sẽ khách quan hơn. Thậm chí, mình có thể dùng chính những khái niệm ấy để bảo vệ kết luận mình đã thích sẵn.",
+      "Thứ hữu ích hơn là tạo **lan can cho quyết định**:",
+      "- Chọn tiêu chí trước khi xem phương án.",
+      "- Tự ước lượng trước khi nghe con số của người khác.",
+      "- Ghi dự đoán và lý do trước khi biết kết quả.",
+      "- Nhờ người khác tìm bằng chứng phản bác.",
+      "- Xem lại những lần mình sai, không chỉ những lần mình đúng.",
+      "==Thiên kiến không chỉ là lỗi của một cá nhân. Nhiều khi, nó là dấu hiệu cho thấy quy trình đang đặt con người vào một tình huống quá dễ đoán sai.==",
+    ],
   },
   {
     heading: "Khiêm tốn trước bất định không có nghĩa là đứng yên",
     paragraphs: [
-      "Đọc Kahneman lâu, mình có thể rơi vào một nỗi sợ khác: nếu phán đoán có quá nhiều lỗ hổng, liệu mình còn dám quyết định gì không? Nhưng đời sống không chờ tới lúc dữ liệu hoàn hảo mới bắt đầu chạy.",
-      "Có lẽ trưởng thành không phải loại bỏ hết sai số. Nó là biết mình đang không chắc ở đâu, quyết định nào có thể đảo ngược, hậu quả nào cần thêm lớp bảo vệ và lúc nào phải cập nhật thay vì cố giữ thể diện.",
-      "Mình vẫn phải chọn, vẫn có thể sai. Chỉ là thay vì xem thay đổi ý kiến như một thất bại, mình muốn xem nó như bằng chứng rằng thông tin mới đã thật sự được phép bước vào."
-    ]
+      "Nếu chờ đủ mọi dữ liệu mới quyết định, có lẽ mình sẽ chẳng bắt đầu được gì. Trưởng thành không phải là loại bỏ hoàn toàn sai số; đó là biết quyết định nào có thể đi nhanh và quyết định nào xứng đáng được chậm lại.",
+      "**MA TRẬN TỐC ĐỘ QUYẾT ĐỊNH**",
+      "- Dễ quay lại, hậu quả thấp: quyết nhanh và học từ kết quả.",
+      "- Dễ quay lại, hậu quả cao: thử ở quy mô nhỏ, giới hạn rủi ro.",
+      "- Khó quay lại, hậu quả thấp: kiểm tra ngắn trước khi chốt.",
+      "- Khó quay lại, hậu quả cao: dùng góc nhìn bên ngoài, xin ý kiến độc lập và dành thêm thời gian.",
+      "==Mục tiêu không phải lúc nào cũng nghĩ thật chậm. Mục tiêu là dành sự chú ý cho đúng nơi.==",
+      "[[thinking-decision-speed-matrix]]",
+    ],
   },
   {
-    heading: "Nghĩ cùng nhau — thêm quy trình, bớt tranh thắng",
+    heading: "Nghĩ cùng nhau: thêm quy trình, bớt tranh thắng",
     paragraphs: [
-      "Trong quyết định nhóm, người nói đầu tiên hoặc người có vị trí cao dễ trở thành mỏ neo cho cả căn phòng. Một cách giảm ảnh hưởng ấy là để mỗi người ghi nhận định độc lập trước khi thảo luận.",
-      "Nhóm cũng có thể thống nhất tiêu chí trước khi xem phương án, tách dữ kiện khỏi diễn giải và chỉ định một người tìm bằng chứng phản bác. Những bước này không loại bỏ thiên kiến; chúng làm thiên kiến dễ nhìn thấy và dễ sửa hơn.",
-      "Điều quan trọng nhất mình học được không phải danh sách tên gọi, mà là thái độ: ==tự tin vừa đủ để quyết định, khiêm tốn đủ để cập nhật khi bằng chứng đổi khác==."
-    ]
-  }
+      "Trong một cuộc họp, ý kiến được nói đầu tiên dễ trở thành mỏ neo. Nếu người nói có vị trí cao, cả phòng càng dễ điều chỉnh suy nghĩ theo họ trước khi tự mình đánh giá vấn đề.",
+      "Một nhóm tốt không cần mọi người suy nghĩ giống nhau. Nhóm cần một quy trình giúp những góc nhìn khác nhau được xuất hiện đủ sớm.",
+      "**NGHI THỨC RA QUYẾT ĐỊNH NHÓM**",
+      "1. Thống nhất tiêu chí trước khi xem các phương án.",
+      "2. Mỗi người viết nhận định độc lập trước khi thảo luận.",
+      "3. Chia sẻ các ước lượng cùng lúc để giảm hiệu ứng mỏ neo.",
+      "4. Xem dữ liệu từ những trường hợp tương tự.",
+      "5. Chỉ định một người tìm bằng chứng phản bác.",
+      "6. Giả sử sáu tháng sau kế hoạch thất bại và hỏi: *“Điều gì có thể đã xảy ra?”*",
+      "7. Ghi lại quyết định, lý do và thời điểm sẽ xem xét lại.",
+      "Điều quan trọng nhất không phải là danh sách tên gọi của các thiên kiến. Đó là thái độ: **tự tin vừa đủ để quyết định, nhưng khiêm tốn đủ để cập nhật khi bằng chứng thay đổi.**",
+      "**GHI CHÚ BIÊN TẬP VÀ ĐỐI CHIẾU**",
+      "Các khái niệm cốt lõi trong 14 hồ sơ được diễn giải theo hướng phổ thông từ nội dung tác phẩm, đồng thời tham khảo phần giới thiệu chính thức của Penguin Random House, thông tin Nobel về công trình của Daniel Kahneman và các nghiên cứu nền tảng về hiệu ứng đóng khung, cái tôi trải nghiệm — cái tôi ghi nhớ, cùng điều kiện hình thành trực giác chuyên môn. Khi dùng cho một quyết định quan trọng, người đọc nên quay lại nguyên tác và nguồn nghiên cứu gốc.",
+      "Các tình huống đời thường, câu hỏi thực hành và ma trận tốc độ quyết định là minh họa biên tập để giúp người đọc ứng dụng; chúng không phải trích dẫn nguyên văn, kết luận chẩn đoán hay lời khuyên chuyên môn.",
+    ],
+  },
 ];
 
-// Vietnamese identity-and-systems reflection. English reading mode uses the
-// linked English review instead of this localized deck.
+// Vietnamese identity-and-systems guide. English reading mode continues to use
+// the English key-point deck.
 const ATOMIC_HABITS_PAGES: BookReadingPage[] = [
   {
     heading: "La bàn — mình muốn trở thành ai?",
     paragraphs: [
-      "Trong *Atomic Habits*, James Clear mô tả thay đổi qua ba tầng: kết quả mình muốn, quy trình mình lặp lại và căn tính mình đang xây. Ghi chú của mình đặt trọng tâm ở tầng cuối: mỗi hành động nhỏ góp thêm bằng chứng cho kiểu người mình muốn trở thành.",
-      "Đọc hai trang chưa biến mình thành người đọc nhiều; nó chỉ là một phiếu nhỏ cho hướng đó. Giá trị nằm ở việc phiếu ấy có thể được bỏ tiếp vào ngày mai, thay vì ép mình chứng minh một danh tính hoàn hảo ngay hôm nay.",
-      "Căn tính nên là la bàn, không phải nhãn cứng. Một lần bỏ lỡ không chứng minh mình lười hay thất bại; nó chỉ cho biết hệ thống cần được nhìn lại."
+      "Khi muốn thay đổi, chúng ta thường bắt đầu bằng một kết quả: đọc 12 cuốn sách, giảm 5 kg, tiết kiệm nhiều tiền hơn hoặc làm việc hiệu quả hơn.",
+      "Những mục tiêu này giúp mình biết nơi muốn đến, nhưng chưa chắc giúp mình duy trì hành động mỗi ngày. Khi sự hào hứng ban đầu qua đi, mình rất dễ quay lại nếp sống cũ.",
+      "Trong *Atomic Habits*, James Clear gợi ý nhìn sự thay đổi qua ba tầng:",
+      "- **Kết quả:** Mình muốn đạt được điều gì?",
+      "- **Quy trình:** Mình sẽ làm gì đều đặn để tiến gần đến điều đó?",
+      "- **Bản sắc:** Mình muốn trở thành người như thế nào?",
+      "Tầng sâu nhất là ==bản sắc==. Thay vì chỉ đặt mục tiêu “đọc xong một cuốn sách”, mình có thể bắt đầu xây dựng hình ảnh của một người dành thời gian đọc và học hỏi mỗi ngày.",
+      "Mỗi lần đọc vài trang là một bằng chứng nhỏ cho hướng mình đang đi. Một lần chưa thể thay đổi hoàn toàn con người mình, nhưng khi những hành động ấy được lặp lại, mình sẽ ngày càng tin rằng: ==“Đây là điều mình thường làm. Đây là kiểu người mình đang trở thành.”==",
+      "==Bản sắc nên là chiếc la bàn, không phải chiếc nhãn để phán xét bản thân.== Nếu lỡ bỏ một ngày, điều đó không có nghĩa mình lười biếng hay thất bại. Mình chỉ cần nhìn lại cách đang làm và tìm một bước đủ nhỏ để quay lại.",
     ]
   },
   {
-    heading: "Bản đồ ba tầng — nối đích đến với hôm nay",
+    heading: "Bản đồ ba tầng — nối mục tiêu với hôm nay",
     paragraphs: [
-      "==Kết quả== trả lời mình muốn đạt gì. Nó cho hướng đi, nhưng thường ở quá xa để tự tạo hành động cho một buổi tối cụ thể.",
-      "==Quy trình== trả lời hôm nay mình làm gì và trong điều kiện nào: sau khi đánh răng thì đọc hai trang, sau khi mở laptop thì viết ba dòng kế hoạch. Đây là chỗ mục tiêu được đổi thành nhịp sống.",
-      "==Căn tính== trả lời hành động ấy đang nuôi con người nào. Ba tầng cần đi cùng nhau: chỉ nhìn kết quả dễ nôn nóng; chỉ nói về căn tính mà không có quy trình thì vẫn là một ý định đẹp."
+      "### 1. Kết quả — mình muốn đạt được điều gì?",
+      "Kết quả là đích đến mình mong muốn: đọc 12 cuốn sách, chạy được 5 km hoặc tiết kiệm 30 triệu đồng.",
+      "Đích đến rất cần thiết vì nó cho mình phương hướng. Nhưng nếu chỉ nhìn vào kết quả, mình có thể thấy mục tiêu quá xa và nhanh chóng mất kiên nhẫn.",
+      "### 2. Quy trình — hôm nay mình sẽ làm gì?",
+      "Quy trình là những hành động cụ thể được lặp lại mỗi ngày. Đây là nơi mục tiêu được biến thành một phần của cuộc sống.",
+      "Ví dụ, thay vì chỉ nói “mình sẽ đọc sách nhiều hơn”, hãy thử:",
+      "> Sau khi đánh răng buổi tối, mình sẽ ngồi vào chiếc ghế cạnh giường và đọc hai trang sách.",
+      "Hành động này có thời điểm, địa điểm và điểm bắt đầu rõ ràng. Hai trang nghe có vẻ ít, nhưng ==nó giúp mình vượt qua phần khó nhất: bắt đầu.==",
+      "### 3. Bản sắc — mình muốn trở thành ai?",
+      "Bản sắc là cách mình nhìn nhận về chính mình.",
+      "- Không chỉ “mình muốn đọc 12 cuốn sách”, mà là “mình muốn trở thành người duy trì việc đọc”.",
+      "- Không chỉ “mình muốn giảm cân”, mà là “mình muốn trở thành người biết chăm sóc cơ thể”.",
+      "- Không chỉ “mình muốn tiết kiệm”, mà là “mình muốn trở thành người sử dụng tiền có chủ đích”.",
+      "Ba tầng đều cần thiết. ==Kết quả cho mình hướng đi, quy trình giúp mình hành động, còn bản sắc giúp mình duy trì hành động ấy lâu dài.==",
+      "[[identity-change-diagram]]",
     ]
   },
   {
-    heading: "Cơ chế — nhìn cả đường đi của một thói quen",
+    heading: "Một ví dụ thực tế — tiết kiệm mà không chờ cuối tháng",
     paragraphs: [
-      "Clear mô tả một vòng lặp gồm tín hiệu, ham muốn, phản ứng và phần thưởng. Điện thoại sáng là tín hiệu; tò mò kéo mình lại; mở máy là phản ứng; cảm giác bớt chán là phần thưởng. Nhìn đủ vòng lặp giúp mình tìm đúng chỗ để can thiệp.",
-      "Từ đó, cuốn sách gợi bốn hướng cho thói quen tốt: làm nó rõ ràng, hấp dẫn, dễ thực hiện và có cảm giác thỏa mãn. Với thói quen xấu, mình đi theo chiều ngược lại.",
-      "Khung này dùng để thiết kế hành vi, không phải để kết tội ý chí. Nếu một cách bố trí không giúp mình lặp lại, mình đổi thiết kế trước khi vội gắn nhãn xấu cho bản thân."
+      "Giả sử mình muốn tạo một khoản dự phòng nhưng tháng nào cũng định chờ đến cuối tháng mới chuyển phần tiền còn lại. Kết quả là ý định tốt phải cạnh tranh với hàng chục khoản chi nhỏ đã xảy ra trước đó.",
+      "**Nếu chỉ tập trung vào kết quả:**",
+      "> Năm nay mình phải tiết kiệm được một khoản thật lớn.",
+      "Đích đến giúp mình biết điều quan trọng, nhưng con số lớn dễ tạo cảm giác xa và khiến một tháng chưa đạt kế hoạch trông giống thất bại.",
+      "**Nếu chuyển sang hệ thống:**",
+      "> Sau ngày nhận thu nhập, mình sẽ chuyển tự động một khoản phù hợp sang tài khoản riêng, rồi xem lại mức đó mỗi tháng.",
+      "Hệ thống giảm số lần mình phải nhớ và quyết định lại. Số tiền cần phù hợp với chi phí thiết yếu; mục tiêu là tạo nhịp bền, không ép hiện tại thiếu an toàn để có một bảng theo dõi đẹp.",
+      "**Nếu kết nối với bản sắc:**",
+      "> Mình đang tập trở thành người sử dụng tiền có chủ đích.",
+      "Mỗi lần thực hiện đúng kế hoạch là một bằng chứng nhỏ cho hướng ấy. Nếu hoàn cảnh thay đổi, mình có thể điều chỉnh số tiền mà không biến việc điều chỉnh thành phán quyết về giá trị bản thân.",
+      "### Thử áp dụng ngay",
+      "Hãy chọn một điều mình muốn thay đổi và điền vào ba dòng sau:",
+      "- **Kết quả mình muốn:** ................................................",
+      "- **Bản sắc mình muốn xây:** ................................................",
+      "- **Hành động nhỏ mình có thể làm ngay hôm nay:** ................................................",
+      "Đừng cố chứng minh rằng mình đã trở thành một con người hoàn toàn mới. ==Hãy bắt đầu bằng một hành động nhỏ mà con người ấy sẽ làm hôm nay.==",
     ]
   },
   {
-    heading: "Thiết kế — giảm ma sát trước khi tăng quyết tâm",
+    heading: "Một thói quen bắt đầu như thế nào?",
     paragraphs: [
-      "Muốn đọc, mình có thể để sách ở nơi dễ thấy; muốn bớt lướt, mình có thể tắt thông báo và đặt điện thoại xa bàn. Môi trường không quyết định thay mình, nhưng nó khiến lựa chọn tốt bớt phải thắng một cuộc giằng co mỗi lần xuất hiện.",
-      "Bước khởi động cũng nên nhỏ, chỉ khoảng hai phút: mở sách và đọc một đoạn, viết ba dòng, mang giày ra cửa. Mục tiêu lúc đầu là trở thành người bắt đầu đều, chưa phải hoàn thành phiên bản lớn nhất của thói quen.",
-      "Thiết kế tốt không bảo đảm ngày nào cũng trơn tru. James Clear vẫn dành chỗ cho lúc lệch nhịp: bỏ lỡ một lần thì quay lại ở cơ hội kế tiếp, thay vì biến một sự cố thành mùa bỏ cuộc."
+      "Bạn vừa ngồi xuống làm việc thì điện thoại sáng màn hình. Chưa kịp suy nghĩ, tay bạn đã mở thông báo. Từ một tin nhắn, bạn xem thêm vài video và đến khi ngẩng lên thì mười phút đã trôi qua.",
+      "Điều này không hẳn xảy ra vì bạn thiếu quyết tâm. Não chỉ đang đi theo ==một vòng lặp quen thuộc gồm bốn bước:==",
+      "**1. Tín hiệu — điều khiến mình chú ý**",
+      "Đó có thể là tiếng chuông điện thoại, quyển sách đặt trên bàn hoặc cảm giác mệt mỏi sau một ngày dài.",
+      "**2. Mong muốn — cảm giác mình đang tìm kiếm**",
+      "Mình không thật sự muốn “lướt điện thoại”. Điều mình muốn có thể là cảm giác được giải trí, bớt buồn chán hoặc tạm quên áp lực.",
+      "**3. Hành động — việc mình thực sự làm**",
+      "Mình mở điện thoại, ăn một món gì đó, đọc sách hoặc mang giày ra ngoài đi bộ.",
+      "**4. Phần thưởng — điều mình nhận lại ngay sau đó**",
+      "Đó có thể là cảm giác vui, nhẹ nhõm, thỏa mãn hoặc đơn giản là hết tò mò.",
+      "==Khi một hành động mang lại cảm giác dễ chịu, não sẽ ghi nhớ và có xu hướng lặp lại nó khi tín hiệu cũ xuất hiện.==",
+      "[[habit-loop-diagram]]",
     ]
   },
   {
-    heading: "Thử nghiệm bảy ngày — một lời hứa đủ nhỏ",
+    heading: "Nhìn một thói quen từ đầu đến cuối",
     paragraphs: [
-      "Có thể bắt đầu bằng một thử nghiệm ngắn: chọn một hướng căn tính, một bước khởi động khoảng hai phút và một tín hiệu đã có sẵn. Ví dụ: sau khi đánh răng buổi tối, mở sách và đọc một đoạn.",
-      "Trong bảy ngày, chỉ đánh dấu việc đã làm và ghi lại chỗ gây vướng. Nếu bỏ lỡ, quay lại ở lần kế tiếp; đừng tăng khối lượng chỉ để bù và cũng đừng dùng chuỗi ngày như thước đo giá trị bản thân.",
-      "Thành công của thử nghiệm không phải là đổi đời sau một tuần. Nó là tìm được một thiết kế đủ rõ, đủ dễ và đủ thật để mình có thể tiếp tục bỏ phiếu cho con người mình muốn trở thành."
+      "Hãy thử nhìn thói quen kiểm tra điện thoại:",
+      "- **Tín hiệu:** Điện thoại sáng màn hình.",
+      "- **Mong muốn:** Mình muốn biết có chuyện gì mới.",
+      "- **Hành động:** Mình cầm điện thoại và mở thông báo.",
+      "- **Phần thưởng:** Sự tò mò được giải tỏa.",
+      "Nếu vòng lặp này diễn ra đủ nhiều lần, chỉ cần nhìn thấy điện thoại là mình đã muốn cầm lên, ngay cả khi không có thông báo nào.",
+      "Một thói quen tốt cũng hình thành theo cách tương tự:",
+      "- **Tín hiệu:** Quyển sách được đặt trên gối.",
+      "- **Mong muốn:** Mình muốn thư giãn trước khi ngủ.",
+      "- **Hành động:** Mình đọc hai trang.",
+      "- **Phần thưởng:** Mình thấy nhẹ nhàng và vui vì đã giữ lời với bản thân.",
+      "Từ vòng lặp này, James Clear xây dựng **Bốn nguyên tắc thay đổi hành vi** để thiết kế một thói quen tốt:",
+      "- Làm cho nó **dễ nhìn thấy**.",
+      "- Làm cho nó **trở nên hấp dẫn**.",
+      "- Làm cho nó **dễ bắt đầu**.",
+      "- Làm cho nó **mang lại cảm giác dễ chịu**.",
+      "Bốn nguyên tắc sẽ rõ hơn khi cùng được đặt vào một tình huống đời thường:",
+      "[[four-laws-practice-board]]",
+      "Ở bước **hấp dẫn**, mình có thể chỉ nghe chương trình yêu thích trong lúc đi bộ. Ở bước **dễ chịu**, một dấu hoàn thành, một tách trà sau khi đọc hoặc tin nhắn “đã xong” cho người đồng hành tạo phản hồi ngay mà không phá ngược mục tiêu.",
+      "Muốn hạn chế một thói quen xấu, mình có thể đảo chiều cả bốn đòn bẩy: làm tín hiệu khó thấy, hành vi kém hấp dẫn, tăng ma sát khi thực hiện và khiến hệ quả trở nên rõ ràng hơn. Ví dụ, để điện thoại ngoài phòng, đăng xuất khỏi ứng dụng và xem lại thời gian sử dụng thật vào cuối ngày.",
+      "==Khung này không dùng để trách bản thân.== Nó giúp mình đặt một câu hỏi hữu ích hơn:",
+      "> Thói quen này đang bắt đầu từ đâu, và mình có thể thay đổi điều gì trong vòng lặp?",
     ]
   },
   {
-    heading: "Phản hồi — đo để học, không đo để tự phán xét",
+    heading: "Thiết kế môi trường — để lựa chọn tốt trở nên dễ hơn",
     paragraphs: [
-      "Theo dõi một thói quen khiến tiến bộ trở nên nhìn thấy được, nhất là khi kết quả lớn còn ở xa. Một dấu tick có thể nhắc rằng mình đã xuất hiện, nhưng nó chỉ hữu ích khi phục vụ việc học chứ không biến thành bảng điểm về giá trị bản thân.",
-      "Nên đo thứ gần với hành vi mình kiểm soát: số lần ngồi vào bàn, số buổi vận động hoặc số tối tắt màn hình đúng giờ. Con số kết quả như cân nặng, lượt xem hay doanh thu còn chịu nhiều yếu tố khác.",
-      "Nếu việc ghi chép nặng hơn chính thói quen, hãy giản lược. ==Hệ thống theo dõi tốt giúp mình quay lại hành động; nó không bắt mình sống để giữ cho biểu đồ đẹp.=="
+      "Chúng ta thường nghĩ mình cần quyết tâm mạnh hơn. Nhưng nhiều khi, điều mình cần chỉ là sắp xếp lại không gian xung quanh.",
+      "Muốn đọc sách nhưng sách nằm sâu trong tủ, còn điện thoại luôn ở cạnh tay, mình sẽ dễ chọn điện thoại hơn. Không phải vì mình không thích đọc, mà vì điện thoại đang là lựa chọn thuận tiện nhất.",
+      "Hãy để môi trường nhắc mình làm điều tốt:",
+      "- **Muốn đọc sách:** Đặt sách trên gối hoặc cạnh tách cà phê.",
+      "- **Muốn uống nhiều nước:** Chuẩn bị sẵn một chai nước trên bàn.",
+      "- **Muốn tập thể dục:** Để quần áo và giày tập ở nơi dễ nhìn thấy.",
+      "- **Muốn ăn lành mạnh:** Rửa sẵn trái cây và đặt ở phía trước tủ lạnh.",
+      "- **Muốn dùng điện thoại ít hơn:** Tắt thông báo và sạc điện thoại ngoài phòng ngủ.",
+      "- **Muốn tiết kiệm:** Cài chuyển tiền tự động ngay sau ngày nhận lương.",
+      "==Một cách sắp xếp tốt không thể khiến mọi ngày đều hoàn hảo. Nhưng nó giúp mình bớt phải đấu tranh với chính mình mỗi lần cần lựa chọn.==",
+      "Hãy nhìn quanh căn phòng và tự hỏi:",
+      "> Việc gì đang quá dễ thực hiện? Việc gì mình muốn làm nhưng lại đang quá bất tiện?",
+      "==Đôi khi, thay đổi vị trí của một món đồ cũng có thể thay đổi cách một ngày diễn ra.==",
+    ]
+  },
+  {
+    heading: "Bắt đầu trong hai phút",
+    paragraphs: [
+      "Một thói quen thường thất bại vì bước đầu tiên quá lớn.",
+      "“Mỗi ngày đọc 30 phút” nghe có vẻ đơn giản, nhưng vào một ngày mệt mỏi, 30 phút lại trở thành lý do để mình trì hoãn.",
+      "Quy tắc hai phút gợi ý thu nhỏ thói quen đến mức mình có thể bắt đầu gần như ngay lập tức:",
+      "- “Đọc sách mỗi tối” trở thành **đọc một trang**.",
+      "- “Chạy bộ mỗi sáng” trở thành **mang giày và bước ra ngoài**.",
+      "- “Viết nhật ký” trở thành **viết một câu**.",
+      "- “Dọn phòng” trở thành **cất một món đồ về đúng chỗ**.",
+      "- “Học tiếng Anh” trở thành **ôn một từ mới**.",
+      "==Mục tiêu ban đầu không phải là làm thật nhiều. Mục tiêu là tập cho mình xuất hiện và bắt đầu đều đặn.== Khi việc bắt đầu đã tự nhiên hơn, mình có thể tăng dần thời gian và mức độ.",
+      "### Cho hành động dài hạn một phản hồi ngay",
+      "Kết quả của việc đọc, vận động hay tiết kiệm thường đến chậm. Vì vậy, sau khi hoàn thành phiên bản hai phút, hãy tạo một tín hiệu nhỏ cho thấy mình vừa tiến thêm một bước:",
+      "- Đọc một trang → đánh dấu vào lịch.",
+      "- Đi bộ năm phút → ghi một từ mô tả mức năng lượng.",
+      "- Chuyển tiền tiết kiệm → tô thêm một ô trên thanh tiến độ.",
+      "Phản hồi nên củng cố hành vi, không phá ngược mục tiêu. Đừng dùng mua sắm bốc đồng để thưởng cho việc tiết kiệm hoặc dùng xấu hổ để ép mình tiếp tục.",
+      "### Thử thiết kế một thói quen",
+      "- **Thói quen mình muốn xây dựng:** ........................................",
+      "- **Tín hiệu nhắc mình bắt đầu:** ........................................",
+      "- **Phiên bản có thể làm trong hai phút:** ........................................",
+      "- **Điều mình sẽ chuẩn bị từ trước:** ........................................",
+      "- **Cách mình ghi nhận sau khi hoàn thành:** ........................................",
+    ]
+  },
+  {
+    heading: "Thử nghiệm bảy ngày — đừng hứa cả đời, chỉ cần thử một tuần",
+    paragraphs: [
+      "“Duy trì thói quen này mãi mãi” nghe khá áp lực. Nhưng thử trong bảy ngày thì nhẹ nhàng hơn nhiều.",
+      "Bảy ngày chưa đủ để thay đổi hoàn toàn một con người, nhưng đủ để mình nhận ra: thời điểm nào dễ thực hiện, điều gì hay cản trở và cách sắp xếp nào phù hợp với cuộc sống của mình.",
+      "### Bước 1: Chọn một hướng mình muốn đi",
+      "Đừng bắt đầu bằng quá nhiều thói quen. Hãy chọn một điều đang thật sự có ý nghĩa với mình.",
+      "Ví dụ:",
+      "> Mình muốn trở thành người dành thời gian đọc và học hỏi mỗi ngày.",
+      "### Bước 2: Thu nhỏ hành động",
+      "Hành động nên đơn giản đến mức mình vẫn có thể làm vào một ngày bận rộn.",
+      "> Sau khi đánh răng buổi tối, mình sẽ đọc hai trang sách.",
+      "### Bước 3: Chuẩn bị từ trước",
+      "Đặt sách trên gối, để điện thoại ngoài tầm tay và đánh dấu trang cần đọc. Khi đến giờ, mình không cần tìm sách hay quyết định đọc gì nữa.",
+      "### Bước 4: Ghi lại thật nhanh",
+      "Sau khi đọc xong, chỉ cần đánh một dấu ✓ vào lịch. Nếu gặp trở ngại, ghi thêm một câu ngắn.",
+      "==Mục tiêu của bảy ngày không phải tạo ra một chuỗi hoàn hảo. Mục tiêu là tìm được cách thực hiện đủ rõ ràng, đủ nhẹ nhàng và phù hợp để mình muốn tiếp tục.==",
+    ]
+  },
+  {
+    heading: "Một tuần thực tế sẽ trông như thế nào?",
+    paragraphs: [
+      "Hãy thử nhìn vào một tuần xây dựng thói quen đọc sách:",
+      "[[seven-day-reading-table]]",
+      "**Ký hiệu:**",
+      "- **✓** Hoàn thành thói quen.",
+      "- **•** Thực hiện phiên bản nhỏ nhất.",
+      "- **—** Bỏ lỡ và ghi lại lý do.",
+      "==Ngày thứ tư không làm hỏng cả thử nghiệm.== Ngược lại, nó giúp mình phát hiện một điều quan trọng: khi quyển sách không xuất hiện trước mắt, mình rất dễ quên.",
+      "Vì vậy, thay vì trách bản thân thiếu kỷ luật, mình thay đổi cách sắp xếp: đặt sách lên gối từ buổi sáng. Một điều chỉnh nhỏ đã giúp việc đọc dễ quay lại hơn vào ngày hôm sau.",
+      "==Đó mới là giá trị của thử nghiệm: không phải chứng minh mình hoàn hảo, mà là hiểu cách nào thật sự phù hợp với mình.==",
+    ]
+  },
+  {
+    heading: "Theo dõi để học, không phải để chấm điểm bản thân",
+    paragraphs: [
+      "Kết quả lớn thường xuất hiện khá chậm. Mình có thể đi bộ nhiều tuần mà cân nặng chưa thay đổi, đọc mỗi tối nhưng chưa cảm thấy mình hiểu biết hơn, hoặc tiết kiệm từng khoản nhỏ mà số tiền vẫn còn xa mục tiêu.",
+      "Trong lúc chờ kết quả, một dấu ✓ nhắc mình rằng: hôm nay mình đã xuất hiện.",
+      "==Tuy nhiên, bảng theo dõi nên giống một tấm bản đồ, không phải một phiên tòa.== Nó cho mình biết điều gì đang diễn ra để có thể điều chỉnh, chứ không quyết định mình là người thành công hay thất bại.",
+      "### Hãy theo dõi điều mình có thể làm hôm nay",
+      "- Muốn khỏe hơn → theo dõi **số buổi đi bộ sau bữa tối**.",
+      "- Muốn đọc nhiều hơn → theo dõi **số ngày mình mở sách**.",
+      "- Muốn học tốt hơn → theo dõi **số lần ngồi vào bàn học đúng giờ**.",
+      "- Muốn ngủ sớm → theo dõi **số tối để điện thoại ngoài phòng**.",
+      "- Muốn tiết kiệm → theo dõi **số lần chuyển tiền vào khoản tiết kiệm**.",
+      "Cân nặng, điểm số hay số tiền trong tài khoản đều quan trọng, nhưng chúng thay đổi chậm và còn chịu ảnh hưởng bởi nhiều yếu tố. ==Hành động hằng ngày mới là phần mình có thể chủ động.==",
+      "### Giữ việc theo dõi thật nhẹ",
+      "- Chỉ theo dõi từ **một đến ba thói quen quan trọng**.",
+      "- Đánh dấu ngay sau khi hoàn thành.",
+      "- Việc ghi chép chỉ nên mất vài giây.",
+      "- Nếu bảng theo dõi khiến mình mệt hơn cả thói quen, hãy làm nó đơn giản lại.",
+      "Một tờ lịch và cây bút đôi khi đã đủ. Mình không cần một hệ thống thật đẹp mới có thể bắt đầu.",
+    ]
+  },
+  {
+    heading: "Nhìn lại để đi tiếp",
+    paragraphs: [
+      "Sau bảy ngày, đừng chỉ đếm xem mình có bao nhiêu dấu ✓. Hãy dành vài phút trả lời ba câu hỏi:",
+      "### 1. Điều gì đã giúp mình bắt đầu dễ dàng?",
+      "Có thể là quyển sách được đặt trên gối, đôi giày để sẵn cạnh cửa hoặc chai nước có màu nổi bật nằm ngay trên bàn.",
+      "### 2. Điều gì thường khiến mình bỏ lỡ?",
+      "Có thể hành động đang quá lớn, thời điểm chưa phù hợp hoặc tín hiệu chưa đủ rõ ràng.",
+      "### 3. Mình sẽ thay đổi một điều gì trong tuần tới?",
+      "Chỉ chọn một điều chỉnh nhỏ:",
+      "- Chuyển thời gian đọc từ buổi tối sang sau bữa sáng.",
+      "- Giảm mười phút tập luyện xuống còn năm phút.",
+      "- Để điện thoại xa bàn làm việc.",
+      "- Chuẩn bị quần áo tập từ tối hôm trước.",
+      "- Đặt chai nước ở nơi mình chắc chắn sẽ nhìn thấy.",
+      "==Đừng thay đổi cả hệ thống cùng lúc.== Nếu sửa quá nhiều thứ, mình sẽ không biết điều gì thật sự mang lại hiệu quả.",
+      "### Phiếu thử nghiệm tuần tới",
+      "- **Thói quen mình muốn duy trì:** ........................................",
+      "- **Tín hiệu bắt đầu:** ........................................",
+      "- **Phiên bản nhỏ nhất:** ........................................",
+      "- **Điều mình sẽ chuẩn bị trước:** ........................................",
+      "- **Cách mình đánh dấu:** ........................................",
+      "- **Một trở ngại mình dự đoán:** ........................................",
+      "- **Cách mình sẽ xử lý:** ........................................",
+      "==Hãy nhớ: bảng theo dõi không phải thứ mình cần sống để làm cho đẹp. Nó chỉ là công cụ giúp mình hiểu bản thân, điều chỉnh cách làm và quay lại nhanh hơn khi lỡ nhịp.==",
+      "[[review-loop-diagram]]",
     ]
   },
   {
     heading: "Khoảng lặng — tiến bộ không phải lúc nào cũng nhìn thấy",
     paragraphs: [
-      "Những hành động nhỏ thường có độ trễ. Vài buổi học chưa tạo cảm giác giỏi hơn; vài lần tập chưa làm cơ thể đổi khác. Khoảng cách giữa nỗ lực và kết quả là nơi mình dễ bỏ cuộc nhất.",
-      "Trong đoạn ấy, có thể tìm tín hiệu gần hơn: bắt đầu bớt khó, thời gian hồi phục ngắn hơn, hoặc mình ít phải thương lượng với bản thân hơn. Chúng chưa phải đích đến, nhưng là dấu hiệu hệ thống đang bén rễ.",
-      "Kiên nhẫn ở đây không phải chờ thụ động. Mình vẫn xem lại cách làm, xin phản hồi và đổi chiến lược khi cần; chỉ là không kết luận thất bại quá sớm vì phần thưởng chưa kịp xuất hiện."
+      "Bạn đã đi bộ mười ngày nhưng cơ thể vẫn chưa khác. Bạn học tiếng Anh mỗi tối nhưng vẫn nói vấp. Bạn tiết kiệm từng khoản nhỏ mà số tiền trong tài khoản vẫn còn xa mục tiêu.",
+      "Đây là lúc nhiều người bắt đầu nghĩ: *Có lẽ cách này không hiệu quả.*",
+      "Nhưng kết quả thường xuất hiện chậm hơn hành động. Trong khoảng thời gian chưa nhìn thấy thay đổi lớn, những điều nhỏ hơn vẫn đang diễn ra: mình bắt đầu nhanh hơn, bớt phải đấu tranh với bản thân và biết cách xử lý những ngày thiếu năng lượng.",
+      "Hãy để ý những tín hiệu gần hơn:",
+      "- Mình có bắt đầu dễ hơn tuần trước không?",
+      "- Khi bận, mình có nhớ làm phiên bản nhỏ nhất không?",
+      "- Sau một ngày bỏ lỡ, mình có quay lại nhanh hơn không?",
+      "- Mình đã nhận ra điều gì thường khiến mình chệch nhịp?",
+      "==Đó chưa phải đích đến, nhưng là dấu hiệu cho thấy cách làm đang dần bén rễ.==",
+      "Kiên nhẫn không có nghĩa là ngồi yên và hy vọng. Mình vẫn cần nhìn lại cách làm, xin phản hồi và điều chỉnh khi cần. Chỉ là mình không vội kết luận bản thân thất bại khi phần thưởng chưa kịp xuất hiện.",
+      "> Khi kết quả còn im lặng, hãy nhìn xem hệ thống của mình có đang tốt lên không.",
+      "[[silent-progress-diagram]]",
     ]
   },
   {
-    heading: "Luật đầu tiên — đừng bắt ý chí phải nhớ mọi thứ",
+    heading: "Đừng bắt trí nhớ phải nhắc mình mọi thứ",
     paragraphs: [
-      "Mình từng viết rất nhiều lời hứa kiểu *từ mai sẽ chăm hơn*. Vấn đề là sáng mai tới, cuộc sống vẫn y như cũ và lời hứa phải tự tìm đường chen vào giữa hàng chục việc đã quen.",
-      "James Clear khiến mình cụ thể hơn: khi nào, ở đâu, sau việc gì thì mình sẽ bắt đầu? Muốn đọc thì để sách ở chỗ nhìn thấy; muốn nhớ uống nước thì đặt bình cạnh bàn; muốn thêm một thói quen mới thì móc nó vào một việc mình đã làm đều.",
-      "Điều mình thích là cách này bớt đổ mọi lỗi cho ý chí. Môi trường không sống thay mình, nhưng nó có thể thôi bắt mình phải nhớ và phải thắng chính mình từ đầu, ngày nào cũng vậy."
+      "“Mình sẽ đọc nhiều hơn”, “mai mình sẽ tập” hay “từ tuần sau mình sẽ uống đủ nước” đều là những ý định tốt. Vấn đề là khi ngày mới bắt đầu, chúng phải cạnh tranh với hàng chục việc đã quen thuộc.",
+      "Thay vì chờ trí nhớ lên tiếng đúng lúc, hãy cho thói quen một điểm hẹn rõ ràng. Có hai công thức khác nhau và có thể dùng cùng nhau:",
+      "- **Ý định thực hiện:** Vào **[thời gian]**, tại **[địa điểm]**, mình sẽ **[hành động nhỏ]**.",
+      "- **Xếp chồng thói quen:** Sau khi **[thói quen hiện tại]**, mình sẽ **[thói quen mới]**.",
+      "Ví dụ:",
+      "- Sau khi đánh răng buổi tối, mình sẽ đọc hai trang trên giường.",
+      "- Sau khi đặt cốc cà phê xuống, mình sẽ viết ba việc quan trọng trong ngày.",
+      "- Sau khi ăn tối, mình sẽ mang giày và đi bộ quanh nhà năm phút.",
+      "- Sau khi ngồi vào bàn làm việc, mình sẽ để điện thoại vào ngăn kéo.",
+      "Môi trường cũng có thể nhắc mình thay cho trí nhớ:",
+      "- Đặt chai nước ngay cạnh máy tính.",
+      "- Để sách trên gối.",
+      "- Chuẩn bị quần áo tập từ tối hôm trước.",
+      "- Để sổ chi tiêu cạnh chiếc ví mình vẫn mang theo.",
+      "==Một lời nhắc tốt không cần ồn ào. Nó chỉ cần xuất hiện đúng nơi, đúng lúc.==",
+      "### Viết điểm hẹn cho thói quen của bạn",
+      "> Vào ........................, tại ........................, mình sẽ ........................",
+      "> Sau khi ........................, mình sẽ ........................",
+      "Câu càng cụ thể, khoảnh khắc bắt đầu càng ít mơ hồ.",
     ]
   },
   {
     heading: "Mình không thèm hành vi, mình thèm cảm giác phía sau nó",
     paragraphs: [
-      "Có lúc mình mở điện thoại không phải vì thật sự muốn xem thêm một video. Mình chỉ muốn bớt chán, bớt căng hoặc trì hoãn vài phút trước một việc khó. Hành vi là cái cửa; cảm giác phía sau mới là nơi mình muốn tới.",
-      "Phần *làm nó hấp dẫn* giúp mình nhìn thói quen theo hướng đó. Mình có thể ghép việc cần làm với điều mình thích, hoặc ở gần những người xem hành vi ấy là bình thường. Nhưng quan trọng hơn, mình cần hiểu nhu cầu nào đang đứng sau thói quen cũ.",
-      "Nếu chỉ giật cái điện thoại khỏi tay mà không tìm cách nghỉ, kết nối hay trấn an mình theo một cách khác, khoảng trống vẫn còn đó. Thay đổi bền không chỉ cắt một hành vi; nó còn học cách chăm nhu cầu bên dưới tử tế hơn."
+      "Có lúc mình mở điện thoại không phải vì thật sự muốn xem thêm một video. Mình chỉ đang mệt, chán hoặc muốn trì hoãn một việc khó.",
+      "==Hành vi giống như cánh cửa. Cảm giác phía sau mới là nơi mình muốn đến.==",
+      "- Lướt mạng có thể là cách tìm sự giải trí.",
+      "- Ăn vặt có thể là cách tìm cảm giác dễ chịu.",
+      "- Mua sắm có thể mang lại chút hào hứng.",
+      "- Trì hoãn có thể giúp mình tạm tránh cảm giác khó khăn.",
+      "- Kiểm tra tin nhắn liên tục có thể xuất phát từ mong muốn được kết nối.",
+      "Nếu chỉ giật điện thoại khỏi tay mà không tìm một cách nghỉ ngơi khác, khoảng trống vẫn còn đó. Sớm hay muộn, thói quen cũ rất dễ quay lại.",
+      "Trước khi hành động theo quán tính, hãy dừng lại vài giây và hỏi:",
+      "> Lúc này mình đang muốn cảm thấy điều gì?",
+      "Nếu cần nghỉ, mình có thể đứng dậy đi lại hoặc nhắm mắt một phút. Nếu thấy cô đơn, mình có thể nhắn cho một người bạn. Nếu đang né một việc khó, mình có thể thu nhỏ nó thành bước đầu tiên kéo dài hai phút.",
+      "==Không phải lần nào mình cũng chọn được cách tốt hơn. Nhưng chỉ cần nhận ra nhu cầu phía sau, mình đã có thêm một lựa chọn.==",
     ]
   },
   {
     heading: "Chuẩn bị rất nhiều vẫn có thể là một cách chưa bắt đầu",
     paragraphs: [
-      "Mình rất dễ có cảm giác tiến bộ khi đang sắp xếp: chọn ứng dụng, tạo bảng theo dõi, xem thêm một video hướng dẫn. Tất cả đều có vẻ liên quan, nhưng chưa việc nào thật sự là lần luyện tập đầu tiên.",
-      "Luật hai phút kéo mình về một bước nhỏ tới mức khó viện cớ: mở tài liệu, viết một câu, mang giày ra cửa. Hai phút không phải đích đến. Nó chỉ làm cái cửa đủ nhẹ để mình thôi đứng ngoài chuẩn bị mãi.",
-      "Với thói quen xấu, mình làm ngược lại: thêm khoảng cách, thêm một bước xác nhận, để quyết định khó xuất hiện tự động. Có lẽ kỷ luật không phải lúc nào cũng là cố mạnh hơn; đôi khi là sắp căn phòng để phần yếu nhất của mình bớt phải chiến đấu."
+      "Có những buổi mình dành gần một giờ để chọn ứng dụng ghi chú, sắp xếp bàn làm việc và xem video hướng dẫn. Mọi thứ trông rất có ích, nhưng đến cuối buổi mình vẫn chưa viết được câu nào.",
+      "Chuẩn bị tạo cảm giác an toàn vì mình đang bận mà chưa phải đối diện với khả năng làm chưa tốt. Nó cần thiết, nhưng cũng có thể trở thành một kiểu trì hoãn khó nhận ra.",
+      "Hãy phân biệt:",
+      "[[preparation-action-table]]",
+      "Một cách đơn giản để thoát khỏi vòng chuẩn bị:",
+      "> Sau mười phút chuẩn bị, hãy làm ít nhất hai phút của việc thật.",
+      "==Chuẩn bị tốt là khi nó làm bước tiếp theo dễ hơn.== Nếu mình cứ chỉnh sửa hệ thống nhưng vẫn chưa hành động, đã đến lúc dừng sắp xếp và bắt đầu bằng một phiên bản chưa hoàn hảo.",
+      "Với thói quen xấu, mình có thể làm ngược lại: đăng xuất khỏi ứng dụng, để đồ ăn vặt ở nơi khó lấy hoặc cất điều khiển tivi xa ghế ngồi. Chỉ một bước bất tiện cũng đủ tạo ra khoảng dừng để mình lựa chọn lại.",
     ]
   },
   {
-    heading: "Đường dài không chỉ cần động lực, nó cần một lý do để quay lại",
+    heading: "Đường dài cần nhiều hơn cảm hứng",
     paragraphs: [
-      "Nhiều thói quen tốt bắt mình trả công trước và nhận kết quả rất lâu sau. Vì thế mình hiểu tại sao một dấu tick, một phần nhỏ hoàn tất hay cảm giác được nhìn thấy tiến bộ lại quan trọng: nó cho hôm nay một lý do để muốn quay lại ngày mai.",
-      "Nhưng rồi sự mới mẻ cũng hết. Lúc đó thử thách cần vừa đủ khó để mình còn chú ý, vừa đủ gần để mình không liên tục thất bại. Người duy trì lâu không phải người lúc nào cũng hứng; họ học được cách đi qua cả những ngày rất chán.",
-      "Mình cũng không muốn thói quen biến thành nhà tù mới. Thứ từng giúp mình có thể đến lúc không còn phù hợp. Vì vậy, ngoài chuyện lặp lại, mình muốn giữ quyền hỏi: *thói quen này còn đưa mình tới nơi mình muốn sống không?*"
+      "Cảm hứng thường rất mạnh vào ngày đầu và nhỏ dần theo thời gian. Vì vậy, một thói quen bền không thể phụ thuộc vào việc ngày nào mình cũng thấy hào hứng.",
+      "Thử thách quá dễ khiến mình chán. Quá khó khiến mình muốn tránh. Mức phù hợp thường nằm ở giữa: đủ quen để mình có thể bắt đầu, nhưng vẫn có một chút thử thách để thấy mình đang tiến lên.",
+      "Ví dụ với thói quen đọc:",
+      "- Nếu hai trang vẫn còn khó, hãy bắt đầu bằng một trang.",
+      "- Nếu hai trang đã quá dễ trong nhiều tuần, có thể tăng lên năm trang.",
+      "- Nếu cuốn sách khiến mình chán đến mức liên tục né tránh, mình được phép chọn một cuốn khác.",
+      "==Duy trì không có nghĩa là giữ nguyên mọi thứ mãi mãi.== Thói quen cũng cần được điều chỉnh theo khả năng và hoàn cảnh hiện tại.",
+      "Một vài lý do nhỏ giúp mình muốn quay lại:",
+      "- Nhìn thấy tiến bộ trên lịch.",
+      "- Chọn hoạt động mình thật sự thích.",
+      "- Làm cùng một người bạn.",
+      "- Ghi nhận cảm giác dễ chịu sau khi hoàn thành.",
+      "- Nhớ lại vì sao điều này quan trọng với mình.",
+      "Thỉnh thoảng, hãy tự hỏi:",
+      "> Thói quen này vẫn đang đưa mình đến cuộc sống mình muốn chứ?",
+      "==Nếu câu trả lời là không, thay đổi hoặc dừng lại cũng có thể là một quyết định đúng.==",
     ]
   },
   {
-    heading: "Căn tính có thể nâng mình lên, cũng có thể nhốt mình lại",
+    heading: "Bản sắc có thể nâng mình lên, cũng có thể giữ mình lại",
     paragraphs: [
-      "Ý tưởng bỏ phiếu cho căn tính là phần mình thích nhất, nhưng cũng là phần mình muốn giữ nhẹ tay nhất. Khi câu *mình là người kỷ luật* trở thành một chiếc huy hiệu, chỉ một ngày lệch nhịp cũng dễ làm mình thấy như toàn bộ con người đã bị chứng minh là giả.",
-      "Căn tính tốt nên cho mình một hướng đi, không biến mỗi hành động thành phiên tòa. Mình có thể là người yêu việc viết và vẫn có những ngày không viết nổi; có thể quan tâm sức khỏe và vẫn cần một buổi nằm yên không hoàn thành gì.",
-      "Mình muốn dùng căn tính như một lời mời quay về: *đây là kiểu người mình đang tập trở thành*. Có chữ *đang tập*, mọi thứ bớt cứng. Nó chừa chỗ cho sai, cho đổi và cho một phiên bản mình chưa kịp biết tới."
+      "“Mình là người kỷ luật” có thể giúp mình giữ lời với bản thân. Nhưng nếu biến câu nói ấy thành một chiếc huy hiệu phải bảo vệ, chỉ một ngày bỏ lỡ cũng khiến mình cảm thấy toàn bộ con người đã bị phủ nhận.",
+      "Những chiếc nhãn tiêu cực cũng dễ trở thành chiếc lồng:",
+      "- “Mình vốn lười.”",
+      "- “Mình không có năng khiếu viết.”",
+      "- “Mình dở toán.”",
+      "- “Mình không phải người thích vận động.”",
+      "==Một trải nghiệm cũ không nhất thiết phải trở thành kết luận cho cả tương lai.==",
+      "Thay vì nói “mình là người luôn giữ kỷ luật”, hãy thử:",
+      "> Mình đang tập cách giữ những lời hứa nhỏ với bản thân.",
+      "Thay vì “mình không thể viết”, hãy thử:",
+      "> Mình chưa viết thường xuyên và vẫn đang học cách diễn đạt.",
+      "Bản sắc tốt nên cho mình một hướng đi, không biến mỗi hành động thành một phiên tòa. Mình có thể yêu việc viết nhưng vẫn có ngày không viết nổi. Mình có thể quan tâm sức khỏe nhưng vẫn cần nghỉ khi cơ thể mệt.",
+      "Một cách nhìn nhẹ nhàng hơn là:",
+      "> Đây là kiểu người mình đang tập trở thành.",
+      "Chữ **đang tập** chừa chỗ cho sai, cho đổi và cho những phần của bản thân mình chưa kịp hiểu hết.",
     ]
   },
   {
-    heading: "Không phải thói quen nào hỏng cũng là lỗi của một cá nhân",
+    heading: "Không phải thói quen nào đổ vỡ cũng là lỗi của một cá nhân",
     paragraphs: [
-      "Sách rất mạnh ở việc trao lại cảm giác chủ động, nhưng mình cũng muốn nhớ rằng môi trường không chỉ là chiếc bàn hay vị trí cái điện thoại. Nó còn là giờ làm, tiền bạc, sức khỏe, trách nhiệm chăm sóc và những điều một người không thể tự sắp xếp lại trong một buổi tối.",
-      "Có người không duy trì được thói quen không phải vì thiếu quyết tâm, mà vì họ đang sống trong một hệ thống lấy gần hết năng lượng chỉ để tồn tại. Lúc đó, lời khuyên tối ưu tín hiệu có thể đúng nhưng vẫn chưa đủ.",
-      "Điều này không làm những bước nhỏ mất giá trị. Nó chỉ khiến mình bớt phán xét hơn — với người khác và với chính mình. Có những ngày tiến bộ là làm thêm một chút; cũng có ngày tiến bộ là nhận ra mình cần được giúp."
+      "Môi trường không chỉ là chiếc bàn, căn phòng hay vị trí của điện thoại. Nó còn là giờ làm việc, tiền bạc, sức khỏe, trách nhiệm chăm sóc gia đình và sự hỗ trợ mình đang có.",
+      "Có người không duy trì được thói quen vì thiếu quyết tâm. Nhưng cũng có người đang sống trong một lịch trình lấy gần hết năng lượng chỉ để hoàn thành những việc thiết yếu.",
+      "Trong hoàn cảnh đó, lời khuyên “hãy cố thêm một chút” có thể đúng nhưng chưa đủ.",
+      "==Hãy chuẩn bị ba phiên bản cho cùng một thói quen:==",
+      "**Ngày nhiều năng lượng**",
+      "- Tập đủ 30 phút.",
+      "- Viết một trang.",
+      "- Nấu một bữa đầy đủ.",
+      "**Ngày năng lượng vừa phải**",
+      "- Đi bộ năm phút.",
+      "- Viết ba câu.",
+      "- Chuẩn bị một món đơn giản.",
+      "**Ngày quá tải**",
+      "- Duỗi người một phút hoặc nghỉ ngơi.",
+      "- Ghi lại một ý để quay lại sau.",
+      "- Ăn thứ có sẵn và xin hỗ trợ nếu cần.",
+      "Phiên bản nhỏ không thay thế hoàn toàn mục tiêu chính. Nó giúp mình giữ một cánh cửa để quay lại mà không phải bắt đầu từ con số không.",
+      "==Và có những ngày, tiến bộ không phải làm thêm. Tiến bộ là nhận ra mình cần nghỉ, cần thay đổi kỳ vọng hoặc cần được giúp đỡ.==",
+      "[[energy-levels-diagram]]",
     ]
   },
   {
-    heading: "Quay lại — kỹ năng quan trọng hơn chuỗi hoàn hảo",
+    heading: "Quay lại — kỹ năng quan trọng hơn một chuỗi hoàn hảo",
     paragraphs: [
-      "Một ngày bỏ lỡ thường ít nguy hiểm hơn câu chuyện mình kể sau đó: *mình lại thất bại rồi, thôi để tuần sau*. Vì thế, hệ thống nên có sẵn một phiên bản quay lại thật nhỏ.",
-      "Nếu không thể tập đủ buổi, mình đi bộ năm phút; nếu không thể viết một trang, mình ghi ba câu. Phiên bản nhỏ không thay thế hoàn toàn mục tiêu chính, nhưng giữ cánh cửa hành động khỏi đóng lại.",
-      "Thói quen bền không được chứng minh bằng việc chưa từng đứt quãng. ==Nó được chứng minh bằng số lần mình biết cách trở về mà không dùng xấu hổ làm nhiên liệu.=="
-    ]
-  }
-];
-
-// Vietnamese minimalism experiment with explicit limits for different homes,
-// work, health, finances, and shared belongings.
-const GOODBYE_THINGS_PAGES: BookReadingPage[] = [
-  {
-    heading: "Điểm xuất phát — một lời kể, không phải công thức",
-    paragraphs: [
-      "*Goodbye, Things* đi từ sự thay đổi trong đời sống của Fumio Sasaki. Với mình, chính góc nhìn cá nhân làm câu chuyện có sức thuyết phục, nhưng cũng nhắc rằng trải nghiệm của một người không thể trở thành tiêu chuẩn cho mọi nhà.",
-      "Gợi ý cốt lõi rất sáng rõ: đồ đạc không chỉ chiếm diện tích; chúng còn cần thời gian chọn, cất, tìm và chăm sóc. Bớt đi có thể trả lại sự chú ý cho điều quan trọng hơn.",
-      "Nên đọc tối giản như một lời mời thử nghiệm: ==giữ những gì phục vụ đời sống, thay vì chạy theo một con số thật ít.=="
-    ]
-  },
-  {
-    heading: "Bài kiểm kê — bắt đầu từ một vùng nhỏ",
-    paragraphs: [
-      "Chọn một ngăn kéo, mặt bàn hoặc túi thường dùng. Chia đồ thành ba nhóm: dùng đều; ít dùng nhưng có giá trị rõ ràng; và không còn phục vụ nhu cầu hiện tại.",
-      "Với từng món, hỏi ba điều: lần gần nhất mình dùng là khi nào; giữ nó cần bao nhiêu chỗ và công sức bảo quản; nếu chưa sở hữu, hôm nay mình có chủ động mang nó về không?",
-      "Không cần quyết định bằng cảm giác xấu hổ vì từng mua sai. ==Mục tiêu của kiểm kê là nhìn rõ hiện tại, không phải trừng phạt phiên bản cũ của mình.=="
-    ]
-  },
-  {
-    heading: "Thử nghiệm — ưu tiên bước có thể đảo ngược",
-    paragraphs: [
-      "Với món còn phân vân, có thể đặt vào một hộp tạm trong thời hạn đã chọn thay vì bỏ ngay. Nếu thực sự cần, lấy lại; nếu không nhớ đến, lúc ấy mới cân nhắc bán, tặng hoặc xử lý phù hợp.",
-      "Với việc mua mới, thử trì hoãn vài ngày đối với món không thiết yếu và ghi lại nhu cầu mình mong món đồ sẽ giải quyết. Đôi khi thứ cần là sửa đồ cũ, mượn tạm hoặc sắp lại thứ đang có.",
-      "Một thử nghiệm tốt cho mình thêm dữ liệu và giảm nguy cơ hối tiếc. ==Tối giản không cần bắt đầu bằng một quyết định cực đoan.=="
-    ]
-  },
-  {
-    heading: "Biên áp dụng — mỗi đời sống có một chữ đủ khác nhau",
-    paragraphs: [
-      "Gia đình đông người, công việc đặc thù, việc chăm sóc trẻ nhỏ, tình trạng sức khỏe hay nhu cầu dùng đồ trợ năng đều làm lượng đồ cần thiết khác nhau. Dụng cụ y tế, đồ hỗ trợ, tài liệu nghề nghiệp và vật dụng dự phòng không nên bị loại chỉ để căn phòng trông trống hơn.",
-      "Nếu một món khó hoặc tốn kém để mua lại, giữ nó có thể là lựa chọn hợp lý. Đồ dùng chung cũng cần được quyết định cùng người liên quan, không tự ý dọn thay họ.",
-      "Kỷ vật có thể được giữ nguyên, giới hạn trong một khu vực hoặc lưu theo cách khác. ==Tối giản chỉ có ích khi tôn trọng hoàn cảnh và quyền lựa chọn của người sống trong không gian ấy.=="
-    ]
-  },
-  {
-    heading: "Điểm dừng — khi không gian quay lại phục vụ mình",
-    paragraphs: [
-      "Không cần đếm đồ để biết mình đã đủ. Những dấu hiệu thiết thực hơn là dễ tìm thứ cần dùng, ít tốn công bảo quản, có khoảng trống cho sinh hoạt và không thường xuyên tiếc những gì đã bỏ.",
-      "Nếu việc dọn dẹp tạo thêm lo âu, thúc đẩy mua lại liên tục hoặc biến thành tiêu chuẩn để phán xét người khác, công cụ đã bắt đầu lấn át mục đích.",
-      "Điểm đến không phải một căn phòng giống ảnh mẫu. Đó là đời sống trong đó ==mình bớt phục vụ đồ đạc, chăm tốt hơn cho thứ còn lại và có thêm chỗ cho con người, trải nghiệm cùng sự nghỉ ngơi.=="
-    ]
-  },
-  {
-    heading: "Kỷ vật — giữ ký ức mà không giữ mọi thứ",
-    paragraphs: [
-      "Một món đồ có thể không còn công dụng nhưng vẫn gắn với một người, một giai đoạn hoặc phiên bản cũ của mình. Khi ấy, câu hỏi *“có dùng không?”* là chưa đủ; mình còn cần hỏi ký ức nào đang được món đồ đại diện.",
-      "Có thể chọn một vài vật tiêu biểu, chụp lại những món cồng kềnh hoặc viết câu chuyện của chúng trước khi cho đi. Nhưng giữ nguyên cũng là lựa chọn hợp lệ nếu món đồ đem lại kết nối và không tạo gánh nặng quá lớn.",
-      "Tối giản không đòi mình lạnh lùng với quá khứ. ==Mục tiêu là chủ động chọn cách mang ký ức theo, thay vì để cảm giác tội lỗi quyết định thay mình.=="
-    ]
-  },
-  {
-    heading: "Trước khi dọn — nhìn lại nhịp mua vào",
-    paragraphs: [
-      "Nếu đồ mới tiếp tục đi vào nhanh hơn đồ cũ rời đi, một đợt dọn lớn chỉ tạo khoảng trống tạm thời. Vì vậy, nửa còn lại của tối giản là hiểu điều gì kích hoạt việc mua: buồn chán, khuyến mãi, so sánh hay mong một món đồ sẽ tạo ra phiên bản mới của mình.",
-      "Trước một món không thiết yếu, mình có thể ghi nó vào danh sách chờ, kiểm tra thứ tương tự đang có và hình dung nơi cất cụ thể. Khoảng dừng ngắn giúp phân biệt nhu cầu bền với hứng thú vừa được quảng cáo đánh thức.",
-      "Không mua cũng không phải thành tích đạo đức. Điều đáng quan tâm là ==dòng đồ đi vào có phù hợp với không gian, ngân sách và đời sống mình thực sự muốn chăm sóc hay không==."
-    ]
-  },
-  {
-    heading: "Mình đã từng mong một món đồ làm mình thành người khác",
-    paragraphs: [
-      "Có những món mình không mua vì thật sự cần. Mình mua vì thích phiên bản của mình khi tưởng tượng đang dùng nó: chăm đọc hơn, gọn gàng hơn, có gu hơn, sống có vẻ ổn hơn.",
-      "Rồi món đồ mới cũng thành quen. Cảm giác đổi đời biến mất nhanh hơn cái hộp đựng nó, và mình lại nhìn sang thứ tiếp theo. So sánh làm chữ *đủ* cứ lùi ra xa; căn phòng đầy dần bằng những phiên bản mình đã định trở thành nhưng chưa sống tới.",
-      "Sasaki khiến mình không chỉ hỏi *món nào nên bỏ*. Mình muốn hỏi sâu hơn: *mình đang mong món này chứng minh điều gì về mình?* Có khi thứ cần buông không phải món đồ, mà là lời hứa mình đã bắt nó gánh thay."
-    ]
-  },
-  {
-    heading: "Buông một món đồ không cần biến thành một cuộc xử án",
-    paragraphs: [
-      "Mình từng giữ một món chỉ vì đã lỡ mua đắt, như thể cất nó thêm vài năm sẽ làm số tiền quay lại. Cuốn sách nhắc mình rằng giá đã trả thuộc về quá khứ; câu hỏi của hôm nay là món đó còn phục vụ đời sống hiện tại không.",
-      "Mình có thể bắt đầu từ đồ trùng, đồ lâu không dùng, chụp lại kỷ vật hoặc để món phân vân vào một hộp tạm. Không cần cầm từng thứ lên rồi kết tội phiên bản cũ đã mua nó. Dọn nhà không phải buổi xét xử những lựa chọn trước đây.",
-      "Và buông cũng cần có trách nhiệm. Bán, tặng, sửa hay tái chế tốt hơn việc chỉ đẩy một món khỏi tầm mắt rồi chuyển gánh nặng sang căn nhà khác hoặc ra môi trường."
-    ]
-  },
-  {
-    heading: "Khoảng trống đáng giá khi nó trả lại cho mình một đời sống",
-    paragraphs: [
-      "Điều làm mình thích tối giản không phải ảnh một căn phòng trắng không có gì. Nó là ý nghĩ mình sẽ bớt mất thời gian tìm, chọn, dọn và chăm những thứ vốn không còn giúp mình sống tốt hơn.",
-      "Sasaki kể rằng ít đồ đem lại cho ông cảm giác tự do và biết ơn rõ hơn. Mình không nghĩ kết quả đó được bảo đảm cho tất cả, nhưng mình tin khoảng trống có thể giảm tiếng ồn — nếu nó thật sự được trả lại cho nghỉ ngơi, con người và những việc mình quan tâm.",
-      "Nên có lẽ mình không cần đếm còn bao nhiêu món. Mình chỉ cần hỏi: buổi sáng có nhẹ hơn không, thứ còn lại có được chăm tốt hơn không, và căn phòng này đã trở lại thành nơi sống hay vẫn chỉ là một dự án để mình chứng minh điều gì đó?"
-    ]
-  },
-  {
-    heading: "Ít đồ cũng có thể trở thành một kiểu khoe khác",
-    paragraphs: [
-      "Mình cũng dè chừng lúc tối giản biến thành một căn tính mới để khoe: ít đồ hơn, căn phòng đẹp hơn, kiểm soát bản thân tốt hơn. Khi đó mình vẫn đang để đồ vật định nghĩa mình, chỉ là đổi từ phía *có nhiều* sang phía *có ít*.",
-      "Sống với rất ít đôi khi cần cửa hàng ở gần, dịch vụ thuê, chỗ lưu trữ số, thu nhập ổn định và khả năng mua lại khi cần. Nếu quên phần hạ tầng đó, mình rất dễ lấy một lựa chọn có điều kiện thuận lợi làm chuẩn đạo đức cho tất cả mọi người.",
-      "Điều mình muốn học từ Sasaki không phải số áo hay số cái bát ông giữ. Nó là sự chủ ý. Một căn nhà nhiều dụng cụ vẫn có thể rất vừa nếu chúng phục vụ công việc, chăm sóc và niềm vui thật — chứ không giữ mình mắc kẹt trong một đời sống tưởng tượng."
-    ]
-  },
-  {
-    heading: "Có những món mình giữ vì chưa sẵn sàng tạm biệt một phiên bản cũ",
-    paragraphs: [
-      "Đồ đạc đôi khi không nặng vì kích thước. Nó nặng vì một người đã tặng, một quãng đời đã đi qua hoặc một lời hứa mình từng viết cho tương lai. Bỏ món đồ lúc đó nghe giống thừa nhận rằng có điều sẽ không quay lại nữa.",
-      "Mình nghĩ việc dọn dẹp cần chừa chỗ cho tiếc nuối. Không phải mọi món đều phải được quyết trong một buổi chiều tràn động lực. Có thứ mình có thể chụp lại, viết lại câu chuyện của nó, cất riêng một thời gian hoặc đơn giản là giữ thêm chút nữa.",
-      "Buông đúng lúc không phải phủ nhận ý nghĩa cũ. Nó là cảm ơn món đồ vì phần đời đã mang, rồi thừa nhận ký ức có thể ở lại ngay cả khi vật chứa của nó không còn nằm trong phòng."
-    ]
-  },
-  {
-    heading: "Biết đủ là một lựa chọn phải thực hiện lại nhiều lần",
-    paragraphs: [
-      "Mình từng nghĩ chữ *đủ* là một cảm giác sẽ tự đến khi có đúng số tiền, đúng căn phòng hay đúng phiên bản bản thân. Nhưng mọi thứ xung quanh được thiết kế để cái đích đó dịch thêm một chút ngay khi mình vừa tới.",
-      "Vì vậy, biết đủ không phải ngừng mong muốn. Nó là đủ tỉnh để phân biệt điều mình thật sự muốn với điều mình vừa được dạy phải muốn. Có những ước mơ làm đời rộng ra; cũng có những ham muốn chỉ làm mình chạy mà không biết đang đuổi theo ai.",
-      "Mình muốn chữ *đủ* trở thành một quyết định có thể gọi tên: đủ đồ để sống, đủ khoảng trống để thở, đủ tham vọng để đi tiếp và đủ dịu dàng để không coi đời hiện tại chỉ là phòng chờ của một đời khác."
-    ]
-  },
-  {
-    heading: "Nhịp duy trì — một căn nhà vẫn đang sống",
-    paragraphs: [
-      "Không gian sẽ lại thay đổi vì công việc, mùa mới, sở thích và những người sống trong đó đều thay đổi. Một hệ thống tốt không giữ căn nhà bất động; nó giúp đồ có chỗ trở về và giúp mình nhận ra khi một khu vực bắt đầu gây ma sát.",
-      "Có thể dành mười phút mỗi tuần cho một bề mặt thường dùng, và một lần mỗi mùa để xem lại đồ ít chạm tới. Nhịp nhỏ khiến việc chăm nhà bớt phụ thuộc vào những ngày có thật nhiều năng lượng.",
-      "Cuốn sách hữu ích nhất khi nó không tạo thêm một dự án phải hoàn hảo. ==Ít hơn chỉ đáng giá nếu phần khoảng trống ấy được trả lại cho một đời sống dễ thở hơn.=="
+      "Một ngày bỏ lỡ thường ít nguy hiểm hơn câu chuyện mình kể sau đó:",
+      "> Mình lại thất bại rồi. Thôi để tuần sau bắt đầu lại.",
+      "Mình không cần chờ thứ Hai, đầu tháng hay một phiên bản có động lực hơn của chính mình. Cơ hội gần nhất đã đủ để quay lại.",
+      "### Cách quay lại sau một lần lỡ nhịp",
+      "**1. Dừng câu chuyện tự trách**",
+      "Gọi đúng điều đã xảy ra: *Hôm nay mình bỏ lỡ một lần.* Đừng biến một sự kiện thành kết luận về con người mình.",
+      "**2. Làm phiên bản nhỏ nhất ở cơ hội tiếp theo**",
+      "Không tập đủ buổi thì đi bộ năm phút. Không viết được một trang thì ghi ba câu. Không đọc được một chương thì mở sách và đọc một đoạn.",
+      "**3. Gỡ một trở ngại**",
+      "Đặt lại sách lên gối, chuẩn bị giày từ tối hôm trước hoặc chuyển thời gian thực hiện sang lúc phù hợp hơn.",
+      "**4. Đừng trừng phạt bản thân bằng cách làm gấp đôi**",
+      "Quay lại nhịp bình thường thường hữu ích hơn cố bù thật nhiều rồi kiệt sức.",
+      "**5. Ghi nhận lần quay lại**",
+      "Dấu quan trọng nhất trên bảng theo dõi đôi khi không phải chuỗi dài nhất, mà là dấu xuất hiện ngay sau một khoảng trống.",
+      "==Thói quen bền không được chứng minh bằng việc chưa từng gián đoạn. Nó được chứng minh bằng số lần mình biết đường trở về mà không dùng sự xấu hổ làm nhiên liệu.==",
+      "### Ghi chú biên tập",
+      "Khung mục tiêu–hệ thống–bản sắc, vòng lặp tín hiệu–mong muốn–hành động–phần thưởng và bốn nguyên tắc thay đổi hành vi được đối chiếu với [phần tóm tắt chính thức của James Clear](https://jamesclear.com/atomic-habits-summary). Các tình huống đời thường, bảng thử nghiệm bảy ngày và ba mức năng lượng là phần biên tập để người đọc dễ áp dụng; chúng không phải lời hứa rằng một công thức sẽ phù hợp với mọi hoàn cảnh.",
     ]
   }
 ];
 
-// Vietnamese reflection that keeps the book's spiritual narrative separate
-// from present-day ethical takeaways and claims requiring evidence.
-const MUON_KIEP_1_PAGES: BookReadingPage[] = [
-  {
-    heading: "Mở sách — đọc trên hai tầng",
-    paragraphs: [
-      "Cuốn sách thuật lại các cuộc trò chuyện với Thomas cùng những hồi tưởng được diễn giải là tiền kiếp ở Atlantis. Đây là ==mạch kể và góc nhìn tâm linh của tác giả==; bản tóm tắt này không xem chúng là chứng cứ lịch sử hay khoa học.",
-      "Cách mình chọn đọc là tách hai tầng: một bên là câu chuyện về luân hồi, nhân quả; bên kia là những câu hỏi rất hiện tại về quyền lực, lòng tham, trách nhiệm và tình thương. Không cần vội tin hoặc bác bỏ toàn bộ mới có thể suy ngẫm cùng sách."
-    ]
-  },
-  {
-    heading: "Tầng câu chuyện — quyền lực để lại gì?",
-    paragraphs: [
-      "Trong mạch kể của sách, qua các đời sống Thomas được cho là đã trải qua, sự suy tàn của những nền văn minh được nối với lòng tham, chiến tranh và việc lạm dụng tri thức.",
-      "Phần mình giữ lại là: quyền lực và năng lực càng lớn thì trách nhiệm càng lớn. Điều này có thể soi vào việc gần hơn như cách một người lãnh đạo, sử dụng dữ liệu, tiền bạc hoặc ảnh hưởng của mình.",
-      "Còn Atlantis và các ký ức tiền kiếp không nên được kể lại như lịch sử đã kiểm chứng. Giá trị của chúng ở đây nằm trong vai trò ẩn dụ và lời cảnh báo đạo đức."
-    ]
-  },
-  {
-    heading: "Tầng hiện tại — trách nhiệm, không phán xét",
-    paragraphs: [
-      "Theo thế giới quan của sách, mỗi suy nghĩ và hành động đều gieo một “nhân”, rồi kết quả có thể trở lại trong đời này hoặc một đời khác.",
-      "Ở mức có thể quan sát, mình thấy lời nói ảnh hưởng đến người nghe, lựa chọn lặp lại thành thói quen, còn thói quen góp phần tạo nên quan hệ và hướng sống. Nhìn hậu quả như vậy giúp mình sửa việc thuộc phần mình.",
-      "Nhưng không nên dùng “nhân quả” để kết luận người gặp bệnh tật, nghèo khó hay bạo lực là đáng chịu. Mình thường không biết đủ hoàn cảnh của họ; trách nhiệm cá nhân không xóa trách nhiệm của cộng đồng và hệ thống."
-    ]
-  },
-  {
-    heading: "Nơi hiểu biết dừng lại",
-    paragraphs: [
-      "Sách đặt khoa học cạnh tâm linh, đồng thời dùng hồi tưởng, luân hồi và sự tiến hóa của linh hồn để giải thích hành trình của Thomas.",
-      "Điều mình giữ lại là sự khiêm tốn trước điều chưa biết: không chế giễu trải nghiệm tinh thần của người khác, nhưng cũng không gọi một diễn giải là sự thật chỉ vì nó đem lại cảm giác có ý nghĩa.",
-      "Tiền kiếp, ký ức hồi quy và cơ chế nhân quả qua nhiều đời vẫn là các khẳng định cần bằng chứng nếu muốn xem là tri thức khoa học. Người đọc có thể giữ chúng như niềm tin hoặc câu hỏi."
-    ]
-  },
-  {
-    heading: "Trục suy ngẫm — ba câu hỏi mang theo",
-    paragraphs: [
-      "Ba câu hỏi đáng mang theo: *Việc mình làm đang tác động đến ai? Quyền lực nhỏ mình có đang được dùng tử tế không? Có điều gì cần sửa ngay thay vì chờ một “quả” xa xôi?*",
-      "Mình giữ lại lời mời sống có trách nhiệm hơn trong hiện tại: nhận lỗi sớm, giữ lời, bớt làm đau và cân nhắc hậu quả trước khi hành động.",
-      "Mình vẫn để mở toàn bộ bản đồ siêu hình phía sau câu chuyện. Không chắc về luân hồi không ngăn mình chọn tử tế; tin vào luân hồi cũng không cho mình quyền phán xét số phận người khác."
-    ]
-  },
-  {
-    heading: "Tự do trong những lựa chọn rất nhỏ",
-    paragraphs: [
-      "Nhân quả trong sách trải rộng qua nhiều đời, nhưng phần mình có thể quan sát luôn bắt đầu từ một khoảnh khắc gần: cách trả lời khi đang giận, việc giữ lời khi không ai kiểm tra, hoặc quyết định dừng trước một hành động có thể làm người khác đau.",
-      "Không phải lựa chọn nào cũng tạo kết quả ngay, và kết quả cũng không chỉ do một cá nhân kiểm soát. Dù vậy, nhìn vào phần thuộc trách nhiệm của mình giúp đạo đức bớt là một ý tưởng xa xôi.",
-      "Mình không cần biết toàn bộ tương lai mới chọn bước tiếp theo. ==Một hành động nhỏ không giải quyết mọi thứ, nhưng nó xác định điều mình đang góp vào thế giới hôm nay.=="
-    ]
-  },
-  {
-    heading: "Giữa tin và không tin — giữ cuộc đối thoại mở",
-    paragraphs: [
-      "Một người có thể đọc các câu chuyện tiền kiếp như sự thật tâm linh, người khác xem chúng là ẩn dụ, còn người khác nữa muốn có bằng chứng trước khi tin. Ba vị trí ấy không nhất thiết loại bỏ khả năng trò chuyện.",
-      "Cuộc đối thoại tốt phân biệt rõ trải nghiệm cá nhân, niềm tin và khẳng định có thể kiểm chứng. Mình có thể hỏi điều một niềm tin giúp ai đó sống ra sao mà không phải giả vờ đồng ý với mọi kết luận của họ.",
-      "Sự cởi mở không có nghĩa chấp nhận mọi tuyên bố; hoài nghi cũng không buộc mình chế giễu điều đem lại ý nghĩa cho người khác. ==Tôn trọng con người và kiểm tra một khẳng định là hai việc có thể cùng tồn tại.=="
-    ]
-  },
-  {
-    heading: "Mình chọn bước vào câu chuyện của Thomas như thế nào",
-    paragraphs: [
-      "Tập 1 mở ra từ những cuộc trò chuyện với Thomas, một doanh nhân ở Mỹ, rồi đi vào các trải nghiệm được kể như ký ức tiền kiếp. Có lúc mình bị cuốn theo câu chuyện; có lúc mình dừng lại vì biết niềm tin của mình chưa đi xa đến vậy.",
-      "Hành trình từ Atlantis, Ai Cập cổ đại tới nước Mỹ hiện đại làm cuốn sách giống một chiếc gương lớn đặt nhiều đời sống cạnh nhau. Mỗi bối cảnh lại quay về những câu hỏi rất cũ: con người làm gì khi có quyền lực, lòng tham bắt đầu ở đâu, và một lựa chọn để lại điều gì.",
-      "Mình không đọc những phần ấy như một cuốn sử. Mình cũng không muốn vì chưa tin hết mà đóng sách lại. Mình chọn ở giữa: để câu chuyện đặt câu hỏi, còn sự thật của từng khẳng định vẫn được quyền chờ bằng chứng."
-    ]
-  },
-  {
-    heading: "Điều làm mình sợ không phải là thiếu tri thức",
-    paragraphs: [
-      "Trong câu chuyện của sách, Atlantis có rất nhiều tri thức nhưng vẫn suy tàn khi năng lực đi nhanh hơn đạo đức. Những phần về Ai Cập lại đưa mình qua quyền lực, tôn giáo và địa vị, nơi con người có thể dùng điều thiêng liêng để nâng đỡ nhau hoặc để giữ người khác ở dưới.",
-      "Mình không xem đó là lịch sử đã được xác minh. Nhưng hình ảnh một nền văn minh rất giỏi mà không đủ trưởng thành vẫn khiến mình thấy gần. Công nghệ mới hơn không tự làm con người tử tế hơn; quyền lực lớn hơn chỉ làm động cơ bên trong mình vang to hơn.",
-      "Điều mình muốn giữ là bốn câu hỏi: ai đang nắm tri thức, ai hưởng lợi, ai gánh rủi ro, và có gì ngăn người mạnh nhất dùng năng lực chung cho lòng tham riêng?"
-    ]
-  },
-  {
-    heading: "Nhân quả mình có thể nhìn thấy ngay trong một đời",
-    paragraphs: [
-      "Sách kéo nhân quả qua nhiều kiếp. Còn phần mình nhìn thấy rõ nhất lại rất gần: một ý nghĩ được nuôi lâu thành động cơ, động cơ đi vào hành động, hành động lặp lại thành tính cách, rồi tính cách quay lại chọn hộ mình trong lần sau.",
-      "Có những lời mình nói vài phút nhưng ở lại trong người khác rất lâu. Có cách phản ứng mình tập đủ nhiều đến mức tưởng đó là bản chất. Nhìn nhân quả như vậy làm mình bớt chờ một sự trừng phạt xa xôi và chú ý hơn tới điều đang được tạo ngay hôm nay.",
-      "Nhưng mình không muốn dùng nhân quả để đoán lý do ai đó đau khổ. Một ý niệm giúp mình tự soi không cho mình quyền phán xét số phận người khác. ==Trách nhiệm nên quay mũi nhọn về phía mình trước khi chĩa sang bất kỳ ai.=="
-    ]
-  },
-  {
-    heading: "Tiền bạc không đứng ngoài những câu hỏi tâm linh",
-    paragraphs: [
-      "Việc Thomas là một doanh nhân khiến những câu hỏi trong sách không thể ở mãi trên mây. Chúng phải quay về tiền, quyền quyết định và cách một người dùng nguồn lực khi không còn ai buộc họ phải chọn điều tử tế.",
-      "Mình nghĩ nhiều về những kết quả nhìn rất đẹp trên bảng số nhưng phần chi phí lại bị đẩy sang người ít tiếng nói hơn hoặc một tương lai mình chưa phải sống. Thành công như vậy có thể hợp lệ trên giấy, nhưng câu hỏi về trách nhiệm vẫn chưa biến mất.",
-      "Mình không cần tin hết vào luân hồi để thực hành phần này. Chỉ cần tập nhìn xa hơn lợi ích trước mắt, nói rõ xung đột lợi ích, nhận phần hậu quả thuộc về mình và dùng năng lực để bớt làm đau thay vì khuếch đại nó."
-    ]
-  },
-  {
-    heading: "Mình từng muốn nhân quả là một phép tính thật rõ",
-    paragraphs: [
-      "Có một phần trong mình thích ý nghĩ rằng mọi điều tốt rồi sẽ được trả lại và mọi tổn thương cuối cùng đều có lời giải. Nó làm thế giới bớt ngẫu nhiên, khiến những ngày khó khăn có vẻ đang nằm trong một trật tự mình chưa nhìn thấy.",
-      "Nhưng nếu bám quá chặt vào mong muốn công bằng đó, mình có thể vô tình nhìn người đang đau rồi tìm lý do họ phải chịu. Một niềm tin từng dùng để an ủi mình bỗng trở thành cách đẩy trách nhiệm khỏi người gây hại và khỏi hệ thống có thể thay đổi.",
-      "Mình vẫn muốn tin điều tử tế có sức lan dài. Chỉ là mình không muốn chờ vũ trụ cân sổ thay cho phần việc của con người: bảo vệ người yếu hơn, sửa điều sai và tạo công bằng bằng những quyết định có thật."
-    ]
-  },
-  {
-    heading: "Không chắc về một đời sau làm đời này quý hơn với mình",
-    paragraphs: [
-      "Cuốn sách mở ra nhiều kiếp sống, còn mình khép lại với cảm giác đời hiện tại bỗng đáng giữ hơn. Vì mình không biết chắc có bao nhiêu lần được gặp lại một người, một buổi sáng hay chính phiên bản mình đang là.",
-      "Sự không chắc ấy không làm mình bi quan. Nó khiến lời xin lỗi bớt nên để sau, lòng biết ơn bớt nên cất trong đầu, và những điều mình thật sự quan tâm bớt bị hoãn bởi một ngày hoàn hảo chưa biết khi nào tới.",
-      "Nếu có nhiều đời, sống tử tế hôm nay vẫn không thừa. Nếu chỉ có đời này, nó càng không thừa. Có lẽ đó là điểm mình có thể đứng vững, dù phần còn lại của bản đồ tâm linh vẫn để mở."
-    ]
-  },
-  {
-    heading: "Trang ghi chú — đưa câu chuyện về hiện tại",
-    paragraphs: [
-      "Sau mỗi phần gây ấn tượng, mình có thể chia trang giấy làm ba cột: *sách kể gì*, *mình đang tin điều gì*, và *việc nào có thể làm ngay*. Cách ghi này giữ ranh giới giữa nội dung, diễn giải và hành động.",
-      "Một ý về nhân quả có thể trở thành lời xin lỗi còn thiếu; một cảnh về quyền lực có thể dẫn đến việc chia lại công lao; một suy tư về tình thương có thể thành cuộc gọi hỏi thăm cụ thể.",
-      "Nếu câu chuyện chỉ khiến mình say mê một thế giới xa xôi mà không đối xử tốt hơn với đời sống trước mặt, phần quan trọng nhất có lẽ vẫn chưa được đọc."
-    ]
-  }
-];
+const MASTER_COLLECTION_ORDER = [
+  "atomic-habits",
+  "dac-nhan-tam",
+  "thinking-fast-and-slow",
+  "48-laws-of-power",
+  "silence-of-the-lambs",
+  "goodbye-things",
+  "muon-kiep-nhan-sinh-1",
+  "muon-kiep-nhan-sinh-2",
+  "muon-kiep-nhan-sinh-3",
+] as const;
 
-// Vietnamese reflection on repeated patterns, responsibility, care, and
-// boundaries without presenting karma or spiritual healing as established fact.
-const MUON_KIEP_2_PAGES: BookReadingPage[] = [
-  {
-    heading: "Vòng lặp 1 — điều gì đang tái diễn?",
-    paragraphs: [
-      "Tập 2 tiếp tục hành trình của Thomas và cho rằng những đau khổ lặp lại là bài học nghiệp lực chưa được hoàn tất.",
-      "Trong đời sống hiện tại, có những kiểu phản ứng thật sự dễ tái diễn: né tránh đối thoại, nóng giận rồi hối hận, hoặc làm việc đến kiệt sức để tìm sự công nhận. Gọi tên vòng lặp có thể giúp mình thử một lựa chọn khác.",
-      "Việc một linh hồn trở lại để học bài học cũ thuộc thế giới quan của sách. Mình có thể dùng hình ảnh “bài học chưa xong” như ẩn dụ mà không cần coi đó là kết luận đã được chứng minh."
-    ]
-  },
-  {
-    heading: "Vòng lặp 2 — từ cá nhân đến cộng đồng",
-    paragraphs: [
-      "Sách gọi lựa chọn của nhiều người kết lại thành hệ quả chung cho một cộng đồng hoặc dân tộc là “cộng nghiệp”.",
-      "Ở mức có thể quan sát, hành vi tập thể thật sự để lại hậu quả: thói quen tiêu dùng, cách lan truyền thông tin, chính sách và sự im lặng trước điều sai đều góp phần tạo môi trường sống chung.",
-      "Nhưng mình không thể nhìn một thiên tai, chiến tranh hay dịch bệnh rồi suy ra đó là sự “trả nghiệp” của nạn nhân. Cách giải thích ấy thiếu căn cứ, dễ đổ lỗi và che khuất những nguyên nhân xã hội, tự nhiên cần được xử lý."
-    ]
-  },
-  {
-    heading: "Vòng lặp 3 — đau khổ và chữa lành",
-    paragraphs: [
-      "Sách liên hệ việc chuyển hóa tâm trí, lòng biết ơn và tình thương với quá trình chữa lành tinh thần.",
-      "Mình giữ lại ý rằng chăm sóc tinh thần, quan hệ an toàn và lối sống phù hợp có thể là một phần của quá trình hồi phục. Nỗi đau cũng có thể khiến mình nhìn lại, nhưng nó không tự động cao quý hay luôn đem đến bài học.",
-      "Điều không nên suy diễn là bệnh tật chứng minh một người nghĩ sai, sống sai hay mang “nghiệp nặng”. Thực hành tinh thần không thay thế chẩn đoán, thuốc men, trị liệu hoặc hỗ trợ chuyên môn khi những điều ấy cần thiết."
-    ]
-  },
-  {
-    heading: "Vòng lặp 4 — tha thứ nhưng vẫn có ranh giới",
-    paragraphs: [
-      "Trong thế giới quan của sách, lòng từ bi, biết ơn và tha thứ giúp con người chuyển hóa những món nợ cũ.",
-      "Phần mình giữ lại là: buông bớt oán giận có thể giúp một số người không bị quá khứ chi phối. Nhưng tha thứ không đồng nghĩa quên chuyện đã xảy ra, hòa giải bằng mọi giá hay mở cửa cho tổn thương tiếp diễn.",
-      "Không có một nhịp tha thứ đúng cho tất cả. Khi có bạo lực hoặc lạm dụng, ưu tiên hợp lý là an toàn, khoảng cách và sự hỗ trợ; “nợ nghiệp” vẫn là cách giải thích thuộc niềm tin của sách."
-    ]
-  },
-  {
-    heading: "Một bản đồ chuyển hóa đủ gần",
-    paragraphs: [
-      "Thay vì đoán một kiếp trước, có thể vẽ một vòng lặp hiện tại: ==tác nhân → phản ứng quen thuộc → hậu quả → lựa chọn mới==. Đây không phải bằng chứng về nghiệp; nó chỉ là cách lấy lại phần chủ động mình đang có.",
-      "Thử hỏi: *Điều gì kích hoạt mình? Mình thường phản ứng ra sao? Ai chịu tác động? Lần tới có thể dừng ở đâu để chọn khác?* Một thay đổi nhỏ nhưng lặp lại đáng tin hơn một lời hứa rất lớn.",
-      "Từ Tập 2, mình giữ tinh thần nhận trách nhiệm mà không tự kết tội; còn luân hồi, cộng nghiệp siêu hình và sự tiến hóa của linh hồn vẫn được đặt đúng chỗ: ==niềm tin và câu hỏi mở==."
-    ]
-  },
-  {
-    heading: "Sửa chữa — trách nhiệm cần một hình dạng",
-    paragraphs: [
-      "Nhận ra một vòng lặp mới chỉ là bước đầu. Nếu hành động của mình đã gây tổn thương, chuyển hóa cần đi qua việc gọi đúng điều đã xảy ra, lắng nghe tác động và sửa phần có thể sửa.",
-      "Một lời xin lỗi có trọng lượng không đòi người kia phải tha thứ ngay. Nó nói rõ trách nhiệm, tránh biện minh và đi kèm thay đổi có thể quan sát. Với tổn hại lớn, sự hỗ trợ chuyên môn hoặc quy trình chính thức có thể cần thiết.",
-      "Không phải mọi hậu quả đều biến mất sau khi mình hiểu bài học. ==Trách nhiệm trưởng thành là chịu ở lại với công việc sửa chữa, kể cả khi hình ảnh tốt đẹp về bản thân bị lung lay.=="
-    ]
-  },
-  {
-    heading: "Từ bi — không đi vòng qua cảm xúc khó",
-    paragraphs: [
-      "Ngôn ngữ chữa lành đôi khi khiến mình vội tìm ý nghĩa, lòng biết ơn hoặc sự tha thứ khi nỗi đau còn chưa được gọi tên. Điều đó có thể biến tinh thần tích cực thành một cách né tránh cảm xúc thật.",
-      "Từ bi cũng có thể bắt đầu bằng việc thừa nhận: chuyện này đã làm mình giận, sợ hoặc kiệt sức. Cảm xúc không tự quyết định hành động, nhưng nó cung cấp thông tin về điều cần được bảo vệ và chăm sóc.",
-      "Không phải lúc nào cũng cần biến đau khổ thành bài học đẹp. Có lúc điều tử tế nhất là nghỉ, tìm người hỗ trợ và để quá trình hồi phục diễn ra theo nhịp của chính mình."
-    ]
-  },
-  {
-    heading: "Tập 2 làm chiếc vòng quanh mình rộng ra",
-    paragraphs: [
-      "Nếu Tập 1 khiến mình nhìn vào lựa chọn cá nhân, Tập 2 kéo chiếc vòng rộng hơn: gia đình, cộng đồng, những tầng năng lượng theo thế giới quan của sách, rồi cả tương lai của hành tinh.",
-      "Có những phần mình tiếp nhận như một niềm tin tâm linh, không phải mô hình vật lý đã được chứng minh. Nhưng câu hỏi nằm dưới chúng lại rất thật: một ý nghĩ hay hành động của mình dừng ở đâu, và liệu có điều gì thật sự chỉ thuộc về riêng mình không?",
-      "Mình cố đọc trên hai đường. Đường nói về bản chất vũ trụ vẫn cần bằng chứng. Đường nói về trách nhiệm liên đới thì có thể kiểm tra ngay, trong cách lựa chọn của một người cộng lại thành môi trường sống của rất nhiều người."
-    ]
-  },
-  {
-    heading: "Không ai tạo ra tất cả, nhưng điều đó không có nghĩa không ai chịu trách nhiệm",
-    paragraphs: [
-      "Khái niệm cộng nghiệp trong sách làm mình nghĩ đến những vấn đề không có một thủ phạm duy nhất. Một tin sai được chia thêm một lần, một thói quen tiêu dùng lặp lại, một sự im lặng trước điều sai — từng việc rất nhỏ, nhưng khi đủ nhiều người làm thì nó thành môi trường chung.",
-      "Điều đó không có nghĩa lỗi được chia đều. Người có nhiều quyền quyết định, biết nhiều hơn và hưởng lợi nhiều hơn không thể trốn sau câu *“ai cũng có phần”*. Trách nhiệm chung vẫn cần được đặt đúng trọng lượng.",
-      "Mình giữ lại một cách nhìn vừa khiêm tốn vừa không phủi tay: mình không tạo ra toàn bộ vấn đề, nhưng mình vẫn phải hỏi phần nào đang được mình tiếp tục nuôi."
-    ]
-  },
-  {
-    heading: "Nỗi sợ có thể đánh thức mình, nhưng không nên nghĩ thay mình",
-    paragraphs: [
-      "Tập 2 có nhiều đoạn mang cảm giác cảnh tỉnh về những biến cố của nhân loại. Đọc những đoạn đó, mình thấy vừa muốn sống cẩn thận hơn, vừa sợ bản thân tin quá nhanh chỉ vì câu chuyện làm mình bất an.",
-      "Nỗi sợ có thể kéo sự chú ý trở lại, nhưng nó cũng rất giỏi lấp những chỗ chưa có bằng chứng. Một hiện tượng phức tạp hiếm khi chỉ có một nguyên nhân đẹp và gọn như điều mình muốn tin.",
-      "Điều mình chọn là không dùng bất định làm lý do đứng yên: kiểm tra dữ kiện, thừa nhận phần chưa biết, giảm tổn hại có thể thấy trước và bảo vệ người dễ bị ảnh hưởng. Cẩn trọng không cần phải chờ đến lúc mình chắc chắn tuyệt đối."
-    ]
-  },
-  {
-    heading: "Thiện ý đẹp, nhưng thiện ý một mình chưa đủ",
-    paragraphs: [
-      "Mình thích lời kêu gọi chữa lành trong sách, nhưng cũng tự hỏi chữa lành sẽ trông như thế nào khi rời khỏi trang giấy. Có thể là chăm sóc tinh thần, bớt bạo lực trong quan hệ, dùng tài nguyên có trách nhiệm và tham gia vào những quyết định ảnh hưởng đến cộng đồng.",
-      "Thiền, cầu nguyện hay lòng biết ơn có thể nâng đỡ một người. Nhưng nếu vấn đề nằm ở chính sách, tiền bạc hoặc một cấu trúc gây hại, mình không thể chỉ gửi năng lượng tốt rồi coi phần việc đã xong.",
-      "Mình không nghĩ thay đổi bên trong và thay đổi hệ thống phải loại trừ nhau. Một bên giúp mình bớt lặp lại điều gây hại; bên kia sửa căn phòng đang liên tục thưởng cho chính điều đó."
-    ]
-  },
-  {
-    heading: "Chữa lành không phải lúc nào cũng trông thật sáng",
-    paragraphs: [
-      "Có những ngày mình nghĩ chữa lành phải là bình an, biết ơn và đã hiểu hết bài học. Nhưng đôi khi nó chỉ là đủ thành thật để nói mình vẫn giận, vẫn sợ, vẫn chưa thể tha thứ và chưa biết bao giờ mới thấy nhẹ.",
-      "Mình không muốn dùng ngôn ngữ tâm linh để thúc một người đi nhanh hơn vết thương của họ. Tha thứ khi chưa an toàn, tìm ý nghĩa khi còn đang choáng hoặc cố tỏ ra tích cực có thể chỉ là một cách khác để nỗi đau bị bỏ lại một mình.",
-      "Với mình, chữa lành sâu hơn khi nó chừa chỗ cho sự thật không đẹp. Có khi bước đầu không phải buông bỏ, mà là gọi đúng điều đã xảy ra và tin rằng cảm xúc của mình không cần phải dễ chịu mới xứng đáng được chăm sóc."
-    ]
-  },
-  {
-    heading: "Hy vọng không phải ngồi chờ một chu kỳ tự đổi hướng",
-    paragraphs: [
-      "Những chu kỳ lớn trong sách dễ làm một cá nhân thấy mình quá nhỏ. Nếu mọi thứ đã đi qua nhiều kiếp, nhiều cộng đồng và những lực mình không nhìn thấy, một lựa chọn hôm nay liệu có đáng kể gì không?",
-      "Mình nghĩ hy vọng không nằm ở việc chắc rằng mình sẽ thấy kết quả. Nó nằm ở việc vẫn chọn không góp thêm điều mình biết là gây hại, vẫn sửa một vòng lặp trong tầm tay và vẫn kết nối với người khác để phần nhỏ ấy không còn đứng một mình.",
-      "Mình không cứu được cả thế giới bằng một hành động tốt. Nhưng thế giới cũng không phải một vật ở đâu xa; nó đang được làm nên từ những căn phòng, mối quan hệ và quyết định mà mỗi ngày mình có mặt trong đó."
-    ]
-  },
-  {
-    heading: "Bản kiểm tra một vòng lặp",
-    paragraphs: [
-      "Chọn một tình huống thường lặp lại và ghi lại trong một tuần: điều xảy ra ngay trước đó, cảm giác trong cơ thể, suy nghĩ bật lên, phản ứng của mình và điều xảy ra sau cùng.",
-      "Sau vài lần, khoanh một điểm ngắt nhỏ: rời màn hình hai phút, hỏi lại thay vì đoán, hoặc nhắn cho người có thể giúp. Nếu vòng lặp liên quan đến sang chấn, nghiện, bạo lực hay nguy cơ an toàn, đừng tự xử lý một mình.",
-      "Bài thực hành này không chứng minh hay bác bỏ nghiệp. Nó chỉ đưa thông điệp về chuyển hóa về nơi mình có thể bắt đầu: ==một khuôn mẫu nhìn rõ hơn và một lựa chọn mới đủ nhỏ để thử==."
-    ]
-  }
-];
+const MASTER_COLLECTION_INDEX = new Map<string, number>(
+  MASTER_COLLECTION_ORDER.map((slug, index) => [slug, index]),
+);
 
-// Vietnamese question-led reflection on technology and responsibility; the
-// book's claims about karma, souls, and consciousness remain explicitly open.
-const MUON_KIEP_3_PAGES: BookReadingPage[] = [
-  {
-    heading: "Công nghệ mạnh hơn có làm mình tốt hơn không?",
-    paragraphs: [
-      "Có một câu hỏi đi theo mình suốt Tập 3: nếu máy móc ngày càng làm được nhiều hơn, con người có tự nhiên trở nên tốt hơn không? Hay mình chỉ đang trao thêm sức mạnh cho những động cơ vốn đã có sẵn?",
-      "Mình giữ lại lời nhắc rằng một công cụ mạnh không tự quyết định mục đích sử dụng. Trách nhiệm nằm ở những con người và tổ chức thiết kế, triển khai, giám sát công cụ, cùng khung pháp lý điều chỉnh nó.",
-      "Còn ý thức là gì, máy có thể có ý thức không, và linh hồn liên hệ với trí tuệ ra sao — mình không nghĩ một phép so sánh đẹp đã đủ để chốt những câu hỏi lớn như vậy."
-    ]
-  },
-  {
-    heading: "Lòng tham đôi khi mặc chiếc áo rất hợp lý",
-    paragraphs: [
-      "Sách nói nhiều về lòng tham, nhưng điều khiến mình nghĩ lâu là lòng tham hiếm khi tự giới thiệu bằng đúng tên của nó. Nó có thể mặc áo tham vọng, tăng trưởng, trách nhiệm hoặc câu *ai cũng đang làm vậy*.",
-      "Điều mình giữ lại là nhìn không chỉ vào mong muốn, mà cả cái giá của nó: ai hưởng lợi, ai chịu thiệt, điều gì bị khai thác và mình đang tự hợp thức hóa điều gì.",
-      "Mình cũng không muốn gọi mọi tham vọng là xấu. Tăng trưởng không tự tốt hay xấu; điều quan trọng là nó đang phục vụ ai và để cái giá lại cho ai. Một cuộc khủng hoảng phức tạp cũng không nên bị thu gọn thành một lời giải thích duy nhất về nghiệp hay tâm thức."
-    ]
-  },
-  {
-    heading: "Cho đi không nên tạo thêm một món nợ",
-    paragraphs: [
-      "Trong câu chuyện, Thomas dần đi về phía phụng sự và tình thương. Đọc tới đó, mình nghĩ về những lần cho đi rất nhỏ: một ít thời gian, một phần năng lực, hay chỉ là sự chú ý trọn vẹn cho một người đang cần được nghe.",
-      "Mình giữ lại ý rằng cho đi thời gian, năng lực hoặc sự chú ý có thể tạo giá trị ngay trong hiện tại, nhất là khi có sự đồng thuận và không biến sự cho đi thành món nợ tinh thần buộc người nhận phải đáp trả.",
-      "Việc cho đi có hóa giải nghiệp hay không vẫn thuộc niềm tin của sách. Mình không cần chắc về điều đó mới có thể sống rộng lượng hơn. Và mình cũng muốn nhớ: rộng lượng không đòi mình phải cạn kiệt để chứng minh lòng tốt."
-    ]
-  },
-  {
-    heading: "Tự do của mình có thật, nhưng không phải vô hạn",
-    paragraphs: [
-      "Theo sách, tự do ý chí cho phép mỗi người chọn những hạt giống cho tương lai. Mình thích phần chủ động trong ý này: dù không chọn được mọi hoàn cảnh, mình vẫn còn một khoảng để chọn cách đáp lại.",
-      "Trong phạm vi mình có thể kiểm soát, mình vẫn chọn cách phản hồi, xin giúp đỡ, sửa sai và đặt giới hạn. Nhìn ra phần chủ động giúp hành động cụ thể hơn.",
-      "Nhưng khoảng tự do của mỗi người không giống nhau. Nghèo đói, bệnh tật, sang chấn và phân biệt đối xử đều làm cánh cửa hẹp đi. Mình không muốn dùng tự do ý chí hay nhân quả để quy toàn bộ hoàn cảnh về một cá nhân vốn đã phải gánh quá nhiều."
-    ]
-  },
-  {
-    heading: "Mình khép câu chuyện mà không khép câu hỏi",
-    paragraphs: [
-      "Sách dần khép hành trình của Thomas bằng tình thương, sự thức tỉnh và vị trí rất nhỏ của con người trong một vũ trụ rộng. Mình không bước ra với một lời giải chắc chắn như lúc đầu từng mong.",
-      "Mình không giữ một lời giải chắc chắn, mà giữ ba câu hỏi: *Mong muốn này đang nuôi điều gì? Ai sẽ chịu hậu quả từ lựa chọn của mình? Mình đang dựa vào bằng chứng, niềm tin hay nỗi sợ?*",
-      "Luân hồi, ý thức vũ trụ và mục đích của linh hồn vẫn để ngỏ với mình. Có lẽ mình không cần ép mọi câu hỏi phải đóng lại. Phần thiết thực nhất vẫn là sống có trách nhiệm với người và thế giới đang ở ngay trước mặt."
-    ]
-  },
-  {
-    heading: "Một công cụ mạnh cần nhiều hơn thiện ý",
-    paragraphs: [
-      "Mình không tin một công cụ mạnh sẽ an toàn chỉ vì người tạo ra nó nói mình có ý tốt. Hệ thống càng ảnh hưởng tới nhiều người càng cần mục đích rõ, giới hạn sử dụng, cách kiểm tra sai lệch và một nơi thật sự để người bị tác động lên tiếng.",
-      "Câu hỏi thực tế là: dữ liệu đến từ đâu, ai có quyền từ chối, lỗi sẽ gây hại cho ai và ai chịu trách nhiệm sửa. Tốc độ triển khai không nên nhanh hơn khả năng nhìn thấy và phản hồi tổn hại.",
-      "Câu *công nghệ phục vụ con người* nghe rất đẹp nhưng vẫn còn quá nhẹ. Với mình, sự phục vụ đó phải nhìn thấy được bằng quyền lựa chọn, biện pháp bảo vệ và một cái tên cụ thể đứng ra chịu trách nhiệm khi điều xấu xảy ra."
-    ]
-  },
-  {
-    heading: "Nhanh hơn chưa chắc đã gần hơn với một đời sống tốt",
-    paragraphs: [
-      "Mình rất dễ gọi một thứ là tiến bộ khi nó nhanh hơn, làm được nhiều hơn hoặc dự đoán chính xác hơn. Nhưng những con số ấy chưa tự trả lời đời sống có công bằng, an toàn và đáng sống hơn không.",
-      "Khi đánh giá một đổi mới, mình có thể nhìn thêm thời gian nó trả lại hoặc lấy đi, nhóm người được trao thêm quyền và nhóm phải gánh chi phí vô hình. Không có một thước đo duy nhất, nhưng bỏ qua những câu hỏi ấy cũng là một lựa chọn giá trị.",
-      "Mình muốn giữ khả năng nói *không nên*, *chưa nên* hoặc *chỉ nên trong những điều kiện này*. Đó không phải sợ tiến bộ. Đó là từ chối để chữ tiến bộ tự đi mà không cần một hướng tới."
-    ]
-  },
-  {
-    heading: "Tập cuối không chỉ khép chuyện, nó nối lại những điều còn dang dở",
-    paragraphs: [
-      "Tập 3 đưa Thomas qua những đời sống được kể ở Hy Lạp, La Mã, nước Pháp thời trung cổ rồi trở về nước Mỹ hiện đại. Mình đọc các đoạn ấy không chỉ để biết nhân vật từng là ai, mà để nhìn xem điều gì cứ quay lại dù bối cảnh đã thay đổi.",
-      "Những cuộc gặp được nối bằng nhân duyên, những lựa chọn cũ tìm đường trở lại trong hình dạng mới. Đó là cách cuốn sách khép mạch chuyện tâm linh ấy; còn việc các đời sống được kể có thật hay không, mình vẫn để ở vị trí một niềm tin chưa được xác nhận độc lập.",
-      "Điều làm mình chú ý nhất là khoảnh khắc một người thôi hỏi *tại sao chuyện này lại xảy đến với tôi* và bắt đầu hỏi *mình sẽ làm gì khác khi đã nhìn ra khuôn mẫu này*."
-    ]
-  },
-  {
-    heading: "Một cỗ máy trả lời rất hay vẫn để lại câu hỏi về ý thức",
-    paragraphs: [
-      "Là người làm việc gần công nghệ, mình dừng lâu ở những phần nói về AI, bộ não và ý thức. Một hệ thống có thể xử lý dữ liệu rất nhanh, tạo câu trả lời rất giống con người, nhưng điều đó vẫn chưa tự trả lời bên trong nó có một trải nghiệm hay không.",
-      "Mình muốn tách ba chuyện ra: làm được một tác vụ thông minh, có trải nghiệm chủ quan và có trách nhiệm đạo đức. Chúng nghe gần nhau trong một cuộc trò chuyện, nhưng không phải cùng một câu hỏi.",
-      "Sách đi xa hơn tới linh hồn; phần đó mình để mở. Điều mình chắc hơn là không nên nhân cách hóa máy để con người trốn trách nhiệm. Dữ liệu đưa vào, mục tiêu chọn, quyền trao và tổn hại gây ra vẫn có tên của những người và tổ chức đứng phía sau."
-    ]
-  },
-  {
-    heading: "Mình tin vào ý nghĩa của một cuộc gặp, nhưng không muốn biến nó thành sợi dây trói",
-    paragraphs: [
-      "Bộ sách nhìn những cuộc gặp quan trọng như nhân duyên được nối qua nhiều đời. Mình hiểu vì sao ý nghĩ đó đẹp: nó khiến một người bước vào đời mình không còn hoàn toàn tình cờ, và cách mình đối xử với họ bỗng có sức nặng lâu hơn một khoảnh khắc.",
-      "Nhưng mình không muốn chữ *duyên* hay chữ *nợ* giữ ai ở lại trong một mối quan hệ đang làm họ đau. Không có ý nghĩa tâm linh nào nên đứng cao hơn sự đồng thuận, an toàn và quyền được rời đi.",
-      "Điều mình muốn làm với một cuộc gặp là nói thật hơn, sửa phần mình đã làm đau, biết ơn điều đã nhận và tôn trọng tự do của người kia. Nếu có một mối dây từ quá khứ, có lẽ cách đẹp nhất để đáp lại nó vẫn là sống tử tế trong hiện tại."
-    ]
-  },
-  {
-    heading: "Đi hết ba tập, điều còn lại với mình rất đơn giản",
-    paragraphs: [
-      "Tập 1 nói nhiều về nhân quả và quyền lực. Tập 2 mở chiếc vòng sang nghiệp chung và việc chữa lành. Tập 3 đem tất cả tới công nghệ, ý thức và tương lai. Đi một vòng rất xa, mình lại trở về một câu hỏi gần: *mình sẽ dùng phần năng lực đang có như thế nào?*",
-      "Tri thức, tiền bạc hay một công cụ mạnh không tự chọn điều tốt. Nếu bên trong vẫn là sợ hãi, tham lam và nhu cầu kiểm soát, sức mạnh mới chỉ làm những điều đó đi xa hơn.",
-      "Mình có thể chưa tin trọn bản đồ luân hồi của sách. Nhưng mình tin điều này: trưởng thành không nằm ở việc mình biết bao nhiêu điều lớn lao, mà ở cách người khác được đối xử khi quyền lựa chọn đang nằm trong tay mình."
-    ]
-  },
-  {
-    heading: "Điều làm con người khác biệt có lẽ không nằm ở việc thắng máy",
-    paragraphs: [
-      "Khi nói về AI, mình rất dễ mắc vào cuộc thi: con người còn làm gì tốt hơn, máy đã thay được tới đâu, và kỹ năng nào sắp mất giá. Càng nghĩ theo hướng đó, mình càng thấy con người như một phiên bản chậm hơn của công cụ mình tạo ra.",
-      "Nhưng có lẽ giá trị của mình không cần được chứng minh bằng việc tính nhanh hơn hay nhớ nhiều hơn. Nó còn nằm trong khả năng chịu trách nhiệm, chăm sóc một người cụ thể, sống cùng mâu thuẫn và quyết định điều gì không nên làm dù hoàn toàn có thể làm.",
-      "Mình không biết máy có thể đi xa tới đâu. Điều mình quan tâm hơn là trong lúc làm nó thông minh hơn, mình có đang tập cho con người sâu sắc, trung thực và có trách nhiệm hơn không."
-    ]
-  },
-  {
-    heading: "Tương lai không chỉ là thứ sẽ xảy đến với mình",
-    paragraphs: [
-      "Cuốn sách nói nhiều về tương lai nhân loại, nghe lớn đến mức đôi khi mình tưởng đó là câu chuyện của chính phủ, tập đoàn hoặc những người giỏi hơn. Nhưng nhiều công nghệ bước vào đời sống bằng những quyết định rất nhỏ: một nút mình bấm, dữ liệu mình đồng ý chia sẻ, một điều tiện lợi mình ngừng đặt câu hỏi.",
-      "Mình không kiểm soát toàn bộ hướng đi, nhưng mình vẫn góp phần bình thường hóa một cách sử dụng. Sự bất lực tuyệt đối đôi khi chỉ là câu chuyện dễ chịu để mình không phải nhìn phần trách nhiệm nhỏ và bất tiện của bản thân.",
-      "Tương lai vừa là điều sẽ đến, vừa là thứ đang được xây. Mình muốn nhớ rằng mỗi lần hỏi thêm *ai được lợi, ai gánh rủi ro, ai có quyền từ chối*, mình đã đặt một viên gạch khác vào con đường đó."
-    ]
-  },
-  {
-    heading: "Câu hỏi 8 — nguyên tắc mình muốn mang theo",
-    paragraphs: [
-      "Sau ba tập, mình có thể viết một nguyên tắc ngắn cho chính mình: không dùng niềm tin để phán xét nỗi đau; không dùng công nghệ để trốn trách nhiệm; không gọi một ý định tốt là đủ khi hậu quả đang gây hại.",
-      "Nguyên tắc ấy cần được kiểm tra trong quyết định thật: sản phẩm mình làm, dữ liệu mình chia sẻ, cách mình đối xử với người ít quyền lực hơn và khả năng nhận lỗi khi biết thêm điều mới.",
-      "Mình khép bộ sách với niềm tin còn để ngỏ, nhưng trách nhiệm thì không. ==Tương lai có thể bất định; cách mình góp phần tạo ra nó vẫn là câu hỏi của hiện tại.=="
-    ]
-  }
-];
-
-// Vietnamese, spoiler-light fiction reflection focused on narrative tension,
-// Clarice's agency, ethical distance, and the limits of reading people.
-const SILENCE_OF_THE_LAMBS_PAGES: BookReadingPage[] = [
-  {
-    heading: "Cánh cửa vào truyện làm mình thấy ngột ngạt rất sớm",
-    paragraphs: [
-      "*Sự Im Lặng Của Bầy Cừu* đưa Clarice Starling, một học viên FBI, vào cuộc điều tra nơi một cuộc trò chuyện cũng có thể căng như lúc lần theo dấu vết. Mình chưa cần biết kết cục đã cảm thấy căn phòng quanh cô quá chật.",
-      "Tiểu thuyết không chỉ hỏi ai đã gây án. Nó liên tục hỏi ai đang quan sát ai, ai nắm thông tin và một câu hỏi có thể đẩy người đối diện lùi xa đến đâu.",
-      "Với mình, phần hấp dẫn nhất không nằm riêng ở những cú sốc. Nó nằm trong cuộc đấu rất im giữa chú ý, ngôn ngữ và ranh giới — nơi một câu hỏi có thể vừa mở khóa manh mối vừa đẩy người khác lùi thêm một bước."
-    ]
-  },
-  {
-    heading: "Mình thích Clarice vì cô không cần hết sợ mới bước tiếp",
-    paragraphs: [
-      "Clarice không phải kiểu người hùng bước vào phòng và làm nỗi sợ biến mất. Mình nhìn thấy năng lực của cô trong kỷ luật, sự quan sát và việc vẫn làm điều cần làm khi áp lực chưa hề nhẹ đi.",
-      "Cô còn phải hoạt động trong những căn phòng nơi tuổi tác, vị trí và giới tính ảnh hưởng đến cách cô được nhìn nhận. Lớp xung đột ấy khiến cuộc điều tra đồng thời là hành trình giữ tiếng nói của một người chưa có nhiều quyền lực.",
-      "Điều mình nhớ không phải một người không biết sợ. Nó là một người vẫn run nhưng không trao quyền quyết định cho nỗi sợ. Kiểu can đảm đó gần với đời thật hơn nhiều."
-    ]
-  },
-  {
-    heading: "Thông minh làm mình ấn tượng, nhưng không làm mình yên tâm",
-    paragraphs: [
-      "Những cảnh giữa Clarice và Lecter giống các ván đấu bằng lời. Mình đọc chậm hơn ở đó, vì mỗi câu hỏi vừa có thể tìm ra một điều thật vừa có thể lách vào đúng phần yếu nhất của người nghe.",
-      "Lecter quan sát người khác rất sắc bén, nhưng khả năng nhìn thấu không đồng nghĩa với sự quan tâm. Tiểu thuyết nhờ đó tạo ra một phân biệt quan trọng: trí tuệ có thể gây ấn tượng, còn đạo đức mới quyết định nó được dùng để nâng đỡ hay làm tổn thương.",
-      "Mình tự nhắc không nhầm khả năng nhìn thấu với sự quan tâm. Có người hiểu rất rõ nỗi đau của người khác chỉ để biết nên ấn vào đâu. Vì vậy, mình luôn để ý ai đang đặt câu hỏi, ai đặt điều kiện và ai phải trả giá cho cuộc trao đổi."
-    ]
-  },
-  {
-    heading: "Điều chưa được kể mới là thứ làm mình lật trang",
-    paragraphs: [
-      "Thomas Harris không cần liên tục đẩy một cảnh gây sốc ra trước mặt. Ông cho mình một chi tiết điều tra, một căn phòng kín, vài câu đối thoại ngắn — rồi giữ lại đúng mảnh thông tin mình đang cần nhất.",
-      "Khoảng thiếu ấy khiến một vật nhỏ, một lựa chọn từ ngữ hay một lần đổi nhịp đều có trọng lượng. Hồi hộp đến từ việc phải ghép dấu hiệu trong khi thời gian của câu chuyện vẫn tiến lên.",
-      "Mình cũng muốn để kỹ thuật đó ở lại trong tiểu thuyết. Chú ý đến chi tiết có thể giúp mình đọc sâu hơn, nhưng không cho mình quyền lấy một dấu hiệu nhỏ rồi chẩn đoán toàn bộ con người ngoài đời."
-    ]
-  },
-  {
-    heading: "Một phản diện cuốn hút vẫn là một người gây tổn hại",
-    paragraphs: [
-      "Có lúc mình phải tự tách hai điều: một nhân vật được viết rất cuốn, và một con người đáng ngưỡng mộ. Lecter có thể lịch thiệp, sắc bén, hấp dẫn trên trang giấy; không điều nào trong đó xóa phần tổn hại hắn gây ra.",
-      "Cách đọc có trách nhiệm là không biến bạo lực thành màn trình diễn duy nhất. Cần giữ trong tầm nhìn cả nỗi sợ, quyền tự quyết và nỗ lực của những người đang đối diện với bạo lực ấy.",
-      "Câu hỏi ở lại với mình lớn hơn vụ án: liệu một người có thể nhìn thẳng vào bóng tối mà không học cách tôn sùng nó, vẫn giữ ranh giới, sự tỉnh táo và một phần lòng trắc ẩn của mình hay không?"
-    ]
-  },
-  {
-    heading: "Mình nhìn thấy một chi tiết, rồi rất dễ tưởng đã thấy cả con người",
-    paragraphs: [
-      "Clarice phải đọc dấu vết, giọng nói và cả những điều người khác né tránh. Đọc theo cô, mình cũng bị cuốn vào trò ghép nghĩa và đôi khi quên rằng mọi quan sát đều đi qua kinh nghiệm lẫn nỗi sợ của người đang nhìn.",
-      "Một chi tiết có thể là manh mối trong cấu trúc truyện; ngoài đời, nó hiếm khi đủ để kết luận toàn bộ con người. Sự tự tin rằng mình đã “nhìn thấu” ai đó có thể khiến mình chỉ còn tìm bằng chứng cho ấn tượng ban đầu.",
-      "Mình nghĩ đồng cảm bắt đầu bằng chú ý nhưng phải đi cùng khiêm tốn. Nhìn kỹ không có nghĩa mình sở hữu sự thật về ai đó. Nhiều khi điều tốt nhất nó cho mình chỉ là một câu hỏi bớt vội vàng hơn."
-    ]
-  },
-  {
-    heading: "Có những căn phòng bắt mình tốn quá nhiều sức chỉ để được nghe",
-    paragraphs: [
-      "Sức ép quanh Clarice không chỉ đến từ vụ án. Cô còn bước vào những căn phòng nơi tuổi tác, chức danh và giới tính đã quyết định ai đáng tin trước cả khi bằng chứng kịp được đặt lên bàn.",
-      "Điều này làm các cảnh điều tra có thêm một tầng: để hoàn thành công việc, cô vừa cần quan sát đối tượng vừa cần quan sát chính căn phòng đang đánh giá mình. Năng lực vì thế bao gồm cả việc giữ bình tĩnh trước ánh nhìn làm mình nhỏ lại.",
-      "Đọc tới đó, mình nghĩ đến một câu hỏi rất gần: một tổ chức đang bỏ lỡ bao nhiêu điều khi người trẻ hơn hoặc ít quyền lực hơn phải dùng gần hết sức chỉ để được lắng nghe?"
-    ]
-  },
-  {
-    heading: "Mình bị giữ lại không chỉ bởi vụ án",
-    paragraphs: [
-      "Mình bước vào sách vì một vụ án, nhưng thứ giữ mình ở lại là cảm giác Clarice luôn phải giải hai bài toán cùng lúc. Ngoài kia có một mối nguy đang chạy cùng thời gian; trước mặt cô lại là một người bị giam nhưng vẫn có thể điều khiển nhịp của cả căn phòng.",
-      "Thomas Harris cho người đọc vừa đủ thông tin để lo, nhưng hiếm khi đủ để thấy an toàn. Một chi tiết pháp y, một lần đổi điểm nhìn, một khoảng trống chưa được nối — mọi thứ làm chiếc đồng hồ trong đầu mình chạy nhanh hơn.",
-      "Năng lực của Clarice vì thế không nằm ở một khoảnh khắc thật ngầu. Nó nằm trong việc chuẩn bị, nhìn kỹ, sửa giả thuyết và tiếp tục làm khi cả hệ thống lẫn người đối diện đều khiến cô nghi ngờ vị trí của mình."
-    ]
-  },
-  {
-    heading: "Mỗi manh mối đều có một cái giá",
-    paragraphs: [
-      "Những cuộc nói chuyện giữa Clarice và Lecter làm mình căng hơn nhiều cảnh hành động. Clarice cần thông tin, còn Lecter muốn được bước vào những vùng riêng tư cô không định mở. Mỗi manh mối đều có một cái giá, và chính Lecter muốn là người đặt giá.",
-      "Hắn đọc giọng nói, quần áo, xuất thân và những khoảng ngập ngừng, khiến Clarice có cảm giác mình tới để quan sát nhưng lại bị nhìn xuyên qua trước. Sự nguy hiểm nằm ở chỗ một cuộc trao đổi chuyên môn cứ từ từ biến thành sự xâm phạm tâm lý.",
-      "Mình không muốn học cách thao túng từ những đoạn này. Điều mình học là nhận ra điều kiện ẩn của một cuộc thương lượng: người kia thật sự muốn gì, mình cần gì đến mức nào, và có ranh giới nào dù rất cần kết quả mình vẫn không nên đem ra đổi."
-    ]
-  },
-  {
-    heading: "Có những tiếng kêu mình cứu được, có những tiếng kêu phải học cách sống cùng",
-    paragraphs: [
-      "Hình ảnh những con cừu làm động cơ của Clarice vừa đẹp vừa buồn. Cô không chỉ muốn hoàn thành một vụ án; đâu đó còn có mong muốn cứu được một sinh mạng để tiếng kêu cũ trong mình chịu im đi.",
-      "Chính điều khiến cô bền bỉ cũng là nơi Lecter có thể chạm vào. Khi ai đó nhìn thấy vết thương mình đang cố giấu, ranh giới giữa được thấu hiểu và bị khai thác trở nên rất mỏng.",
-      "Cuốn sách không hứa rằng cứu được một người sẽ chữa lành tất cả. Mình thích sự không dễ dàng đó. Có lẽ can đảm không phải làm quá khứ im hẳn; nó là vẫn chọn cứu điều có thể cứu, dù bên trong mình còn những tiếng kêu chưa biết khi nào mới yên."
-    ]
-  },
-  {
-    heading: "Mình không muốn chỉ nhớ kẻ gây án",
-    paragraphs: [
-      "Đọc truyện tội phạm, mình sợ nhất lúc kẻ gây án được viết quá cuốn còn nạn nhân chỉ còn là một chi tiết để cốt truyện chạy tiếp. Cuốn sách có những đoạn cố trả lại tên, quan hệ và đời sống cho người đã bị biến thành một hồ sơ.",
-      "Nhưng mình cũng không thể bỏ qua tranh luận quanh cách tác phẩm nối bạo lực với giới và căn tính. Dù văn bản cố phân biệt hung thủ với người chuyển giới, hình tượng ấy vẫn có thể nuôi một liên tưởng gây hại trong một nền văn hóa vốn đã thiếu đại diện đúng và đủ.",
-      "Mình muốn giữ cả hai khi đọc: công nhận cách Clarice được xây dựng mạnh mẽ, và vẫn chất vấn phần di sản làm người khác bị nhìn sai. Yêu một tác phẩm không có nghĩa phải bảo vệ nó khỏi mọi câu hỏi."
-    ]
-  },
-  {
-    heading: "Được nhìn thấu không giống với được thấu hiểu",
-    paragraphs: [
-      "Lecter có thể nhìn ra những điều Clarice chưa nói, nhưng cảm giác đó không hề giống được một người tử tế hiểu mình. Một bên làm vết thương được đặt trong an toàn; bên kia biến nó thành chiếc tay cầm để người khác điều khiển.",
-      "Điều này làm mình nghĩ đến những người rất giỏi đọc cảm xúc nhưng không dùng khả năng ấy để chăm sóc. Sự tinh tế tự nó chưa mang đạo đức. Biết ai đó đang yếu ở đâu chỉ cho mình thêm quyền lựa chọn sẽ dịu dàng hay tàn nhẫn.",
-      "Mình muốn nhớ rằng thấu hiểu thật không làm một người thấy bị lột trần. Nó cho họ quyền kể theo nhịp của mình, quyền giữ lại phần chưa sẵn sàng và cảm giác câu chuyện của họ sẽ không bị dùng ngược lại."
-    ]
-  },
-  {
-    heading: "Có lẽ bóng tối đáng sợ nhất là lúc nó trông rất có trật tự",
-    paragraphs: [
-      "Điều khiến Lecter ám ảnh không chỉ là bạo lực, mà là sự bình tĩnh, ngôn ngữ chính xác và vẻ lịch thiệp bao quanh nó. Mình thường muốn cái xấu phải ồn ào, vụng về và dễ nhận ra; như vậy việc tránh xa sẽ đơn giản hơn.",
-      "Nhưng tổn hại có thể đi cùng trí tuệ, địa vị và cách cư xử hoàn hảo. Một người nói rất hay về đạo đức vẫn có thể làm đau người khác; một hệ thống rất ngăn nắp vẫn có thể được xây trên sự im lặng của người yếu hơn.",
-      "Cuốn sách làm mình dè chừng vẻ ngoài của sự kiểm soát. Bình tĩnh không tự động là an toàn, thông minh không tự động là tốt, và cảm giác bị thu hút không phải lúc nào cũng là tín hiệu mình nên bước gần hơn."
-    ]
-  },
-  {
-    heading: "Sau trang cuối — điều gì còn ở lại?",
-    paragraphs: [
-      "Khi đọc xong một câu chuyện nặng, mình thường không muốn chỉ nhớ hung thủ hay những cảnh gây sốc. Có thể quay lại ba đường dây: Clarice đã bảo vệ điều gì, quyền lực đã đổi hướng các cuộc đối thoại ra sao và tác giả tạo căng thẳng bằng phần thông tin nào bị giữ lại.",
-      "Nếu một đoạn khiến mình khó chịu, cảm giác ấy cũng đáng được ghi nhận thay vì ép thành lời khen văn chương. Đọc phản biện cho phép vừa công nhận kỹ thuật kể chuyện vừa đặt câu hỏi về cách bạo lực và nạn nhân được thể hiện.",
-      "Phần mình muốn giữ là hình ảnh của sự can đảm có ranh giới: không cần trở nên giống bóng tối để đối diện nó, và không cần hết sợ mới có thể tiếp tục bước đi."
-    ]
-  }
-];
-
-export const LIBRARY_BOOKS: LibraryBook[] = [
+export const LIBRARY_BOOKS: LibraryBook[] = ([
   {
     slug: "dac-nhan-tam",
     title: "Đắc Nhân Tâm",
     titleEn: "How to Win Friends and Influence People",
     author: "Dale Carnegie",
-    cover: "/books/dac-nhan-tam.webp",
+    cover: "/books/rendered/dac-nhan-tam.webp",
+    coverAspect: 1352 / 2004,
     coverBack: "/books/dac-nhan-tam-back.webp",
     blogSlug: "dac-nhan-tam-review",
     hue: 222, // navy spine to match the VN First News cover
@@ -1167,6 +1068,46 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
     lightness: 20,
     foil: "#C9A24B",
     scale: 1.06,
+    readingDensity: "compact",
+    readingTheme: "conversation-atelier",
+    outsideSummary: {
+      vi: {
+        tagline: "Người khác hiếm khi mở lòng vì mình nói hay; họ mở lòng khi cảm thấy được lắng nghe, tôn trọng và vẫn có quyền giữ tiếng nói riêng.",
+        heading: "Nghệ thuật tạo ảnh hưởng mà không làm ai nhỏ đi",
+        introduction: [
+          "*Đắc Nhân Tâm* không dạy mình cách nói khéo để chiến thắng người khác. Cuốn sách bắt đầu từ một nhu cầu rất người: ai cũng muốn được lắng nghe, được giữ thể diện và được nhìn nhận như một người có ý nghĩa.",
+          "Giá trị bền vững của sách không nằm ở vài mẹo tạo thiện cảm. Nó nằm ở cách mình góp ý mà không phủ định con người, thuyết phục mà không lấy mất quyền lựa chọn, đồng thời nhận ra lúc sự khéo léo đang trượt thành lấy lòng hoặc thao túng.",
+        ],
+        lessonsHeading: "Năm điều có thể mang vào một cuộc trò chuyện thật",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Giao tiếp mà không tạo phòng vệ",
+            paragraph: "Khi một phần việc đến trễ, câu “Bạn lúc nào cũng thiếu trách nhiệm” dễ đẩy người nghe vào thế tự vệ. Mình có thể nói điều quan sát được, ảnh hưởng đang xảy ra và hỏi trở ngại nằm ở đâu. Vấn đề vẫn rõ, nhưng người kia còn đường để sửa.",
+          },
+          {
+            heading: "Tạo thiện cảm bằng sự chú ý thật",
+            paragraph: "Thay vì vội khuyên khi một người bạn muốn nghỉ việc, hãy hỏi: “Điều gì đang làm bạn kiệt sức nhất?”. Lắng nghe không buộc mình đồng ý; nó giúp mình hiểu đủ trước khi phản hồi và cho người kia cảm giác họ không bị xem như một vấn đề.",
+          },
+          {
+            heading: "Thuyết phục bằng hợp tác",
+            paragraph: "Một quy trình mới dù hợp lý vẫn dễ bị phản đối nếu chỉ được đưa xuống như mệnh lệnh. Hãy thống nhất mục tiêu, hỏi nơi đang vướng và thử ở quy mô nhỏ. Khi người bị ảnh hưởng được tham gia, sự hợp tác bền hơn một cái gật đầu vì áp lực.",
+          },
+          {
+            heading: "Lãnh đạo bằng kỳ vọng rõ và một con đường sửa",
+            paragraph: "Phản hồi tốt đi vào hành vi, tác động và bước tiếp theo, thay vì làm người nhận mất mặt trước tập thể. Người dẫn dắt cũng cần thừa nhận phần mình giao việc chưa rõ hoặc hỗ trợ chưa đủ. Tôn trọng không có nghĩa né một cuộc trò chuyện khó.",
+          },
+          {
+            heading: "Giữ ranh giới giữa ảnh hưởng và thao túng",
+            paragraph: "Một lời khen chân thành giúp người khác nhìn thấy giá trị họ đã tạo ra; một lời khen có điều kiện chỉ mở đường cho món nợ phải trả. Trước khi nói, hãy hỏi: người kia có đủ thông tin, có thể nói “không” và vẫn được tôn trọng hay không?",
+          },
+        ],
+        conclusion: [
+          "Sức ảnh hưởng bền không được đo bằng số lần mình khiến người khác đồng ý. Nó được nhìn thấy ở mức độ an toàn khi họ nói thật, đặt câu hỏi và cùng mình sửa điều chưa tốt.",
+          "Khi cuộc trò chuyện không còn là cuộc đấu hơn thua, sự tin tưởng sẽ trở thành nền tảng tự nhiên cho hợp tác—không phải phần thưởng của một kỹ thuật giao tiếp hoàn hảo.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "Listen long enough to understand the person, not only to prepare a reply.",
@@ -1176,11 +1117,11 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Use communication skills to make a relationship clearer and kinder, not to win it.",
       ],
       vi: [
-        "Lắng nghe đủ lâu để hiểu người đối diện, không chỉ để chuẩn bị câu trả lời.",
-        "Ghi nhận cụ thể và chân thành, thay vì dùng lời khen như một đòn bẩy.",
-        "Nói rõ vấn đề nhưng không làm nhỏ đi phẩm giá của người nghe.",
-        "Sự khéo léo trượt thành thao túng khi người kia không còn quyền bất đồng.",
-        "Dùng kỹ năng giao tiếp để mối quan hệ rõ ràng và tử tế hơn, không phải để thắng.",
+        "Giao tiếp mà không tạo phòng vệ: bớt phán xét, ghi nhận chân thành và nói rõ việc cần thay đổi.",
+        "Tạo thiện cảm bằng sự chú ý thật: lắng nghe, gọi đúng tên và nói về điều có ý nghĩa với người trước mặt.",
+        "Thuyết phục bằng hợp tác: tìm điểm chung, tôn trọng bất đồng và để người bị ảnh hưởng tham gia hoàn thiện phương án.",
+        "Lãnh đạo bằng câu hỏi, kỳ vọng rõ và phản hồi có đường sửa, thay vì ra lệnh hoặc làm người khác mất thể diện.",
+        "Dùng sự khéo léo để xây dựng tin tưởng và hợp tác, không biến giao tiếp thành công cụ thao túng.",
       ],
     },
     readingPages: { vi: DAC_NHAN_TAM_PAGES },
@@ -1190,13 +1131,54 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
     title: "Atomic Habits",
     titleEn: "Atomic Habits",
     author: "James Clear",
-    blogSlug: "atomic-habits",
-    cover: "/books/atomic-habits.webp",
+    cover: "/books/rendered/atomic-habits.webp",
+    coverAspect: 1200 / 1698,
     hue: 36,
     saturation: 28,
     lightness: 60,
     foil: "#6B4E2E",
     scale: 1.04,
+    readingLayout: "continuous",
+    readingTheme: "habit-field-guide",
+    outsideSummary: {
+      vi: {
+        tagline: "Thay đổi bền không cần một ngày hoàn hảo; nó cần một hệ thống đủ nhẹ để mình còn muốn quay lại vào ngày mai.",
+        heading: "Từ ý định tốt đến một hệ thống có thể sống cùng",
+        introduction: [
+          "Vì sao mình thường biết điều nên làm nhưng vẫn khó duy trì? Vì sao những kế hoạch đầy quyết tâm lại dễ bị bỏ dở chỉ sau vài ngày?",
+          "*Atomic Habits* giúp mình nhìn thói quen như một hệ thống có thể thiết kế. Những hành động nhỏ, khi được lặp lại trong môi trường phù hợp, vừa tích lũy thành kết quả vừa tạo bằng chứng cho kiểu người mình đang trở thành.",
+          "Đây không phải cuộc thi tối ưu mọi phút trong ngày. Giá trị của sách là làm điều quan trọng dễ bắt đầu, dễ lặp lại và dễ quay về hơn trong cả những ngày bận rộn hoặc thiếu năng lượng.",
+        ],
+        lessonsHeading: "Năm đòn bẩy để một thói quen có cơ hội bén rễ",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Đừng chỉ tập trung vào đích đến",
+            paragraph: "“Đọc 12 cuốn sách” là một đích đến; “sau bữa sáng, đọc hai trang trước khi mở điện thoại” mới là hệ thống có thể thực hiện hôm nay. Khi kết quả còn xa, hãy kiểm tra lịch, không gian và bước bắt đầu thay vì chỉ tăng áp lực lên mục tiêu.",
+          },
+          {
+            heading: "Bắt đầu nhỏ để có thể đi xa",
+            paragraph: "Nếu 30 phút đọc vẫn quá lớn, hãy mở sách và đọc một trang; nếu một buổi tập quá nặng, chỉ cần mang giày và đi năm phút. Phiên bản nhỏ không phải đích cuối. Nó là cánh cửa đủ nhẹ để mình xuất hiện trước khi nâng độ khó.",
+          },
+          {
+            heading: "Thiết kế môi trường thay vì chỉ dựa vào ý chí",
+            paragraph: "Để sách ở nơi mắt thường chạm tới giúp việc đọc dễ bắt đầu; đưa điện thoại ra khỏi phòng làm tăng ma sát cho thói quen lướt vô thức. Môi trường không quyết định thay mình, nhưng nó làm một lựa chọn trở nên tự nhiên hoặc tốn sức hơn.",
+          },
+          {
+            heading: "Xây dựng thói quen từ bản sắc mình muốn hướng tới",
+            paragraph: "Đi bộ năm phút không chỉ đóng góp vào sức khỏe; nó còn là một lá phiếu cho hình ảnh người biết chăm sóc cơ thể. Bản sắc nên là chiếc la bàn, không phải bản án. Một ngày bỏ lỡ không chứng minh mình lười hoặc kém giá trị.",
+          },
+          {
+            heading: "Một lần lỡ nhịp không có nghĩa là thất bại",
+            paragraph: "Bảng theo dõi nên là dữ liệu để học, không phải bảng điểm về giá trị bản thân. Nếu lỡ một ngày, hãy quay lại bằng phiên bản nhỏ nhất ở cơ hội kế tiếp, gỡ một trở ngại và tiếp tục nhịp bình thường thay vì làm gấp đôi để tự phạt.",
+          },
+        ],
+        conclusion: [
+          "Giá trị lớn nhất của *Atomic Habits* không nằm ở việc thúc ép mình thay đổi toàn bộ cuộc sống ngay lập tức. Khi biết thiết kế hành động nhỏ, môi trường phù hợp và một hệ thống có thể duy trì, mình không còn phải chờ cảm hứng mới bắt đầu. Mình có thể tiến bộ từng ngày—nhẹ nhàng, thực tế và bền vững hơn.",
+          "Hãy chọn một thói quen thật sự phục vụ cuộc sống mình muốn, làm nó đủ rõ và đủ nhỏ cho hoàn cảnh hiện tại. Tiến bộ có lúc là làm thêm một chút; cũng có lúc là biết nghỉ, điều chỉnh kỳ vọng và giữ cánh cửa để ngày mai quay lại.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "The book separates outcomes, daily systems, and the identity those actions support.",
@@ -1206,11 +1188,11 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Missing once does not define you; the useful question is how gently you return.",
       ],
       vi: [
-        "Cuốn sách tách kết quả, hệ thống hằng ngày và căn tính mà hành động đang bồi đắp.",
-        "Một hành động nhỏ có thể lặp lại hữu ích hơn kế hoạch lớn nhưng khó bắt đầu.",
-        "Tín hiệu, ma sát và môi trường có thể làm một thói quen dễ hoặc khó lặp lại.",
-        "Thói quen dựa trên căn tính là bằng chứng về hướng mình đi, không phải phán quyết về giá trị bản thân.",
-        "Một lần lỡ nhịp không định nghĩa mình; câu hỏi hữu ích là mình quay lại thế nào.",
+        "Đừng chỉ tập trung vào đích đến.",
+        "Bắt đầu nhỏ để có thể đi xa.",
+        "Thiết kế môi trường thay vì chỉ dựa vào ý chí.",
+        "Xây dựng thói quen từ bản sắc mình muốn hướng tới.",
+        "Một lần lỡ nhịp không có nghĩa là thất bại.",
       ],
     },
     readingPages: { vi: ATOMIC_HABITS_PAGES },
@@ -1220,12 +1202,51 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
     title: "Sự Im Lặng Của Bầy Cừu",
     titleEn: "The Silence of the Lambs",
     author: "Thomas Harris",
-    cover: "/books/silence-of-the-lambs.jpg",
+    cover: "/books/rendered/silence-of-the-lambs.webp",
+    coverAspect: 881 / 1414,
     hue: 210, // pale/white spine to match the VN cover
     saturation: 8,
     lightness: 86,
     foil: "#3A3A3A",
     scale: 1.0,
+    outsideSummary: {
+      vi: {
+        tagline: "Một cuộc đấu trí nghẹt thở, nơi đôi khi điều đáng sợ nhất không nằm trong lời nói—mà ẩn sau một khoảng im lặng.",
+        heading: "Đọc bóng tối bằng một cái nhìn còn nhân tính",
+        introduction: [
+          "*Sự Im Lặng Của Bầy Cừu* theo chân Clarice Starling, một học viên trẻ bước vào cuộc điều tra nơi thông tin, trực giác và ranh giới tâm lý đều có thể quyết định bước tiếp theo. Cô vừa tìm manh mối, vừa phải giữ tiếng nói trước những người nhiều địa vị hoặc sức ảnh hưởng hơn.",
+          "Sức cuốn hút của tiểu thuyết không chỉ nằm ở bí ẩn. Phía sau cuộc đấu trí là những câu hỏi rất gần: làm sao phân biệt quan sát với suy diễn, sức hút với sự an toàn, thấu hiểu với khai thác và sự tò mò với việc biến nỗi đau thành nội dung.",
+        ],
+        lessonsHeading: "Năm hồ sơ có thể mang về đời sống",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Lòng can đảm có thể được chuẩn bị",
+            paragraph: "Clarice không mạnh vì cô không biết sợ. Ngoài đời, trước một buổi phỏng vấn hoặc cuộc trò chuyện khó, mình có thể chuẩn bị câu mở đầu, ba điều cần nói và giới hạn khiến mình sẽ xin dừng. Một giọng còn run nhưng nói rõ vẫn là can đảm.",
+          },
+          {
+            heading: "Tách dữ kiện khỏi câu chuyện mình tự kể",
+            paragraph: "Nếu mình gửi một tin dài và chỉ nhận lại chữ “Ừ”, dữ kiện mới chỉ là người kia trả lời bằng một từ; kết luận rằng họ đang giận vẫn là suy đoán. Hãy ghi ba dòng: điều đã biết, điều đang đoán và thông tin còn thiếu trước khi phản ứng.",
+          },
+          {
+            heading: "Sức hút không phải bằng chứng của sự an toàn",
+            paragraph: "Một người thông minh và lịch thiệp vẫn có thể không tôn trọng ranh giới. Hãy quan sát phản ứng khi họ nghe lời từ chối. Người an toàn sẽ dừng lại; người muốn kiểm soát thường khiến mình thấy có lỗi vì đã giữ giới hạn.",
+          },
+          {
+            heading: "Thông tin luôn đi cùng quyền lực và một cái giá",
+            paragraph: "Nếu ai đó chỉ tiết lộ thông tin công việc khi mình kể bí mật của người khác, hãy hỏi điều ấy có thật sự cần thiết và cái giá có làm tổn thương ai không. Mình có thể yêu cầu phần liên quan được nói thẳng hoặc tìm một nguồn kiểm chứng khác.",
+          },
+          {
+            heading: "Giữ con người ở trung tâm, không biến tổn thương thành cảnh tượng",
+            paragraph: "Truyện tội phạm dễ khiến hung thủ thành tâm điểm còn nạn nhân chỉ còn là manh mối. Khi chia sẻ, hãy kiểm tra nguồn và lược chi tiết xâm phạm đời tư. Bạo lực của nhân vật hư cấu không đại diện hay giải thích cho người chuyển giới ngoài đời.",
+          },
+        ],
+        conclusion: [
+          "Điều ở lại sau nhịp truyện căng thẳng không chỉ là câu hỏi ai đã gây án. Đó còn là cách Clarice bảo vệ sự tỉnh táo, mục tiêu và phần người của mình trong những căn phòng luôn thử thách chúng.",
+          "Đọc về bóng tối không buộc mình phải trở nên lạnh lùng. Nó có thể giúp mình nhận diện nguy hiểm rõ hơn, giữ ranh giới chắc hơn và vẫn nhớ rằng phía sau mỗi hồ sơ là một con người.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "The crime story keeps Clarice Starling's attention, pressure, and resolve at its center.",
@@ -1235,14 +1256,16 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "The novel's darkness is worth reading critically, without turning harm into spectacle.",
       ],
       vi: [
-        "Câu chuyện điều tra luôn giữ sự quan sát, áp lực và quyết tâm của Clarice Starling ở trung tâm.",
-        "Lòng can đảm trong truyện vẫn có thể đi cùng nỗi sợ, sự mong manh và cảm giác bị xem nhẹ.",
-        "Trí thông minh cùng vẻ lịch thiệp không phải bằng chứng của lương tri hay sự an toàn.",
-        "Clarice cần thông tin nhưng vẫn phải giữ ranh giới với người đang cung cấp nó.",
-        "Bóng tối của cuốn tiểu thuyết cần được đọc tỉnh táo, không biến tổn thương thành màn trình diễn.",
+        "Clarice Starling không phải một người hùng không biết sợ. Sức mạnh của cô nằm ở khả năng quan sát, kiên trì và tiếp tục bước tới dù đang bị xem nhẹ.",
+        "Lòng can đảm không phải là hết sợ, mà là vẫn giữ được sự tỉnh táo khi nỗi sợ đang ở rất gần.",
+        "Hannibal Lecter nhắc ta rằng trí thông minh, vẻ lịch thiệp và sức hút không đồng nghĩa với lòng tốt hay sự an toàn.",
+        "Trong một cuộc đấu trí, thông tin luôn có cái giá của nó. Clarice phải biết lắng nghe nhưng không để người khác bước qua ranh giới của mình.",
+        "Đằng sau mỗi manh mối là một con người. Cuốn sách không chỉ kể về việc truy tìm hung thủ, mà còn đặt ra câu hỏi: ta có còn nhìn thấy nạn nhân khi mọi ánh mắt đều bị bóng tối thu hút?",
       ],
     },
     // Vietnamese reflection; English intentionally falls back to English key points.
+    readingDensity: "compact",
+    readingTheme: "silence-casefile",
     readingPages: { vi: SILENCE_OF_THE_LAMBS_PAGES },
   },
   {
@@ -1250,16 +1273,56 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
     title: "48 Nguyên Tắc Chủ Chốt Của Quyền Lực",
     titleEn: "The 48 Laws of Power",
     author: "Robert Greene",
-    cover: "/books/48-laws-of-power.jpg",
-    coverBack: "/books/48-laws-of-power-back.jpg",
+    cover: "/books/rendered/48-laws-of-power.webp",
+    coverAspect: 814 / 1200,
+    coverBack: "/books/rendered/48-laws-of-power-back.webp",
     hue: 0, // near-black spine to match the VN cover
     saturation: 30,
     lightness: 12,
     foil: "#CFCFCF",
     scale: 1.12,
+    readingTheme: "power-board",
     coverNote: {
       en: "A critical reading of power, not a manual for manipulation: notice status and insecurity while keeping credit honest, boundaries clear, and disagreement possible.",
-      vi: "Một cách đọc phản biện về quyền lực, không phải cẩm nang thao túng: nhìn ra địa vị và bất an, nhưng vẫn ghi nhận công bằng, giữ ranh giới và chừa chỗ cho bất đồng.",
+      vi: "19 lăng kính và 48 nước cờ để hiểu quyền lực mà vẫn giữ được mình",
+    },
+    outsideSummary: {
+      vi: {
+        tagline: "19 lăng kính và 48 nước cờ để hiểu quyền lực mà vẫn giữ được mình",
+        heading: "Bàn cờ quyền lực",
+        introduction: [
+          "Quyền lực không chỉ nằm trong chức danh hay tiền bạc. Nó xuất hiện khi một người có quyền quyết định, giữ thông tin, phân chia cơ hội, định nghĩa điều gì được xem là “đúng” hoặc khiến người khác khó nói lời từ chối.",
+          "*48 Nguyên Tắc Chủ Chốt Của Quyền Lực* mô tả rất sắc những cơ chế ấy. Tuy nhiên, mô tả một chiến thuật không có nghĩa mình phải sử dụng nó. Cuốn sổ này chọn một cách đọc khác: hiểu để nhìn rõ, tự bảo vệ và tạo ảnh hưởng mà không làm người khác nhỏ đi.",
+        ],
+        lessonsHeading: "Năm lăng kính để đọc quyền lực tỉnh táo",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Nhìn cấu trúc trước khi đoán động cơ",
+            paragraph: "Khi thấy lép vế trong cuộc họp, hãy hỏi: ai có quyền chốt, ai giữ thông tin, ai chịu hậu quả nếu sai và tiếng nói nào chưa xuất hiện? Nhìn đúng cấu trúc giúp mình biết nên hỏi thêm dữ liệu, làm rõ quyền hạn hay tìm hỗ trợ.",
+          },
+          {
+            heading: "Khéo léo không có nghĩa là tự xóa mình",
+            paragraph: "Mình có thể góp ý riêng, mang dữ liệu và đề xuất thử nghiệm thay vì làm cấp trên mất mặt giữa cuộc họp. Nhưng bản tổng kết vẫn cần ghi đúng người nghiên cứu, phát triển và thực hiện. Tinh tế không có nghĩa làm đóng góp biến mất.",
+          },
+          {
+            heading: "Xây ảnh hưởng bằng uy tín có thể kiểm chứng",
+            paragraph: "Sự chú ý có thể mở cửa, nhưng danh tiếng bền được tạo từ việc giữ lời, báo sớm rủi ro, chia sẻ công lao và nhận trách nhiệm khi sai. Một bản cập nhật ngắn, rõ kết quả và trở ngại thường có giá trị hơn màn thể hiện ồn ào.",
+          },
+          {
+            heading: "Xem chiến thuật nguy hiểm như tín hiệu để tự bảo vệ",
+            paragraph: "Giữ thông tin để tạo phụ thuộc, dựng thời hạn giả hoặc biến bất đồng thành phép thử lòng trung thành là những dấu hiệu cần chú ý. Bước tỉnh táo là yêu cầu tài liệu, xin thời gian kiểm tra và mở rộng nguồn hỗ trợ—không phải tìm cách lừa lại.",
+          },
+          {
+            heading: "Đánh giá một nước đi bằng điều còn lại sau chiến thắng",
+            paragraph: "Một chiến thuật có thể giúp mình thắng tranh luận nhưng làm mất lòng tin và quyền lựa chọn của người khác. Hãy hỏi: nếu nước đi này được công khai và mọi người đều làm giống mình, môi trường còn là nơi mình muốn ở không?",
+          },
+        ],
+        conclusion: [
+          "Đọc cuốn sách này không buộc mình phải lạnh lùng hay nghi ngờ mọi quan hệ. Giá trị lớn nhất là giúp mình bớt ngây thơ trước địa vị, thông tin và những áp lực thường không được gọi tên.",
+          "Tỉnh táo để không bị điều khiển; có nguyên tắc để không trở thành điều mình từng phải đề phòng. Quyền lực đáng giữ là quyền lực vẫn chừa chỗ cho sự thật, phản biện và phẩm giá của người khác.",
+        ],
+      },
     },
     keyPoints: {
       en: [
@@ -1270,11 +1333,8 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Before using a tactic, ask whether it respects the other person's dignity, right to know, and real freedom to choose.",
       ],
       vi: [
-        "Cuốn sách mô tả các chiến lược quyền lực; mô tả không đồng nghĩa với tán thành về đạo đức.",
-        "Sự bất an về địa vị có thể chi phối một căn phòng, nhưng không buộc mình phải giấu năng lực hay tâng bốc người có quyền.",
-        "Ghi nhận công bằng và tránh làm người khác bẽ mặt, nhưng không xóa phần đóng góp của chính mình.",
-        "Không dùng chiến thuật dựa trên lừa dối, ép buộc, tạo lệ thuộc hoặc buộc người khác im lặng trước điều sai.",
-        "Trước một chiến thuật, hãy hỏi nó có tôn trọng phẩm giá, quyền được biết và quyền lựa chọn thật sự của người kia hay không.",
+        "Quyền lực không chỉ nằm trong chức danh hay tiền bạc. Nó xuất hiện khi một người có quyền quyết định, giữ thông tin, phân chia cơ hội, định nghĩa điều gì được xem là “đúng” hoặc khiến người khác khó nói lời từ chối.",
+        "*48 Nguyên Tắc Chủ Chốt Của Quyền Lực* mô tả rất sắc những cơ chế ấy. Tuy nhiên, mô tả một chiến thuật không có nghĩa mình phải sử dụng nó. Cuốn sổ này chọn một cách đọc khác: hiểu để nhìn rõ, tự bảo vệ và tạo ảnh hưởng mà không làm người khác nhỏ đi.",
       ],
     },
     // Vietnamese critical reflection; English intentionally uses the English key points.
@@ -1285,12 +1345,53 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
     title: "Tư Duy Nhanh Và Chậm",
     titleEn: "Thinking, Fast and Slow",
     author: "Daniel Kahneman",
-    cover: "/books/thinking-fast-and-slow.webp",
+    cover: "/books/rendered/thinking-fast-and-slow.webp",
+    coverAspect: 532 / 808,
+    coverBack: "/books/rendered/thinking-fast-and-slow-back.webp",
     hue: 40,
     saturation: 12,
     lightness: 66,
     foil: "#4A463E",
     scale: 1.08,
+    readingTheme: "thinking-dossier",
+    outsideSummary: {
+      vi: {
+        tagline: "Không phải mọi câu trả lời đến nhanh đều sai; điều đáng học là nhận ra quyết định nào xứng đáng được chậm lại.",
+        heading: "Phòng điều tra những phán đoán rất tự tin",
+        introduction: [
+          "Phần lớn thời gian, mình không phân tích mọi thứ từ đầu. Não thường dựa vào kinh nghiệm, cảm xúc và những lối tắt quen thuộc để đưa ra câu trả lời thật nhanh. Điều này giúp cuộc sống nhẹ hơn, nhưng đôi khi cũng khiến mình tự tin vào một phán đoán chưa đủ căn cứ.",
+          "*Tư Duy Nhanh Và Chậm* không biến trực giác thành kẻ thù và cũng không xem suy nghĩ chậm là bảo đảm đúng. Cuốn sách giúp mình nhận ra lúc cảm giác “rõ ràng quá rồi” đang đi trước dữ kiện, nhất là với lựa chọn nhiều tiền, khó sửa hoặc ảnh hưởng đến người khác.",
+        ],
+        lessonsHeading: "Năm dấu hiệu cho biết mình nên kiểm tra thêm một nhịp",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Hai nhịp suy nghĩ cùng điều khiển một ngày",
+            paragraph: "Phép tính 2 + 2 gần như tự bật ra, còn 17 × 24 buộc mình dừng lại. Trong đời sống, thích cách một ứng viên nói chuyện không tự động trả lời họ có phù hợp công việc hay không. Hãy viết lại câu hỏi thật sự trước khi chọn bằng chứng.",
+          },
+          {
+            heading: "Câu chuyện tròn trịa có thể che mảnh ghép vắng mặt",
+            paragraph: "Một hồ sơ đẹp và phong thái tự tin dễ tạo cảm giác mình đã hiểu rõ một người. Nhưng có thể mình chưa xem sản phẩm thật hoặc cách họ xử lý sai sót. Câu chuyện càng mượt, mình càng nên hỏi: thông tin quan trọng nào chưa có mặt?",
+          },
+          {
+            heading: "Con số đầu tiên có thể trở thành một chiếc mỏ neo",
+            paragraph: "Khi căn hộ được giới thiệu từng có giá 5 tỷ, mức 4,2 tỷ dễ tạo cảm giác hời trước khi xem giá thị trường. Hãy tự ước lượng trước, rồi so với những trường hợp tương tự thay vì chỉ điều chỉnh quanh mốc đầu tiên.",
+          },
+          {
+            heading: "Mất mát và cách đóng khung làm cảm xúc đổi hướng",
+            paragraph: "“90% khả năng thành công” và “10% khả năng thất bại” mô tả cùng một xác suất nhưng có thể tạo hai phản ứng khác nhau. Hãy viết lựa chọn dưới cả khung được và mất, rồi hỏi: nếu hôm nay chưa sở hữu nó, mình có còn chọn như vậy không?",
+          },
+          {
+            heading: "Nghĩ chậm là tạo một điểm dừng, không phải bảo đảm đúng",
+            paragraph: "Với việc dễ quay lại và ít hậu quả, mình có thể quyết nhanh rồi học. Với hợp đồng dài hạn hoặc quyết định khó sửa, hãy dùng dữ liệu nền, ý kiến độc lập và một khoảng chờ. Mục tiêu là chú ý đúng nơi, không phân tích mọi việc đến kiệt sức.",
+          },
+        ],
+        conclusion: [
+          "Cuốn sách không dạy mình ngừng tin vào trực giác. Nó giúp mình biết khi nào trực giác đáng tin, và khi nào một quyết định quan trọng cần được kiểm tra kỹ hơn.",
+          "Mình không cần trở thành người không bao giờ thiên kiến. Chỉ cần tạo đủ khoảng dừng để bằng chứng mới bước vào, và giữ đủ khiêm tốn để cập nhật khi câu chuyện ban đầu không còn đứng vững.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "The book uses System 1 and System 2 as a model for fast and effortful thinking.",
@@ -1300,11 +1401,11 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Slower thinking is not automatically correct; it is a chance to check, compare, and revise.",
       ],
       vi: [
-        "Cuốn sách dùng Hệ thống 1 và Hệ thống 2 như một mô hình cho lối nghĩ nhanh và lối nghĩ cần nhiều nỗ lực.",
-        "Ấn tượng đầu, câu chuyện quen và con số xuất hiện trước có thể chi phối phán đoán khi mình chưa nhận ra.",
-        "Với quyết định quan trọng, hãy hỏi bằng chứng nào đang có và thông tin nào còn thiếu.",
-        "Cách đóng khung và nỗi sợ mất mát có thể làm thay đổi lựa chọn dù dữ kiện nền vẫn vậy.",
-        "Nghĩ chậm không tự động đúng; nó chỉ tạo cơ hội để kiểm tra, so sánh và sửa lại.",
+        "Có thể hình dung tư duy qua hai chế độ: một bên nhanh, tự động và giàu trực giác; một bên chậm hơn, cần tập trung và biết kiểm tra.",
+        "Ấn tượng đầu tiên, câu chuyện dễ nhớ hoặc thông tin xuất hiện gần đây có thể khiến mình tưởng đó là toàn bộ sự thật.",
+        "Một con số được nhắc đến trước có thể trở thành “mỏ neo”, âm thầm kéo dự đoán và lựa chọn của mình về phía nó.",
+        "Con người thường cảm nhận mất mát mạnh hơn một lợi ích tương đương, nên dễ giữ nguyên lựa chọn cũ hoặc phản ứng quá mức khi sợ mất.",
+        "Nghĩ chậm không bảo đảm mình luôn đúng. Nó chỉ tạo ra một khoảng dừng để kiểm tra bằng chứng, xem thêm góc nhìn và cân nhắc điều mình có thể đã bỏ sót.",
       ],
     },
     readingPages: { vi: THINKING_FAST_SLOW_PAGES },
@@ -1314,13 +1415,58 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
     title: "Lối Sống Tối Giản Của Người Nhật",
     titleEn: "Goodbye, Things",
     author: "Fumio Sasaki",
-    cover: "/books/goodbye-things.webp",
-    coverBack: "/books/goodbye-things-back.webp",
+    cover: "/books/rendered/goodbye-things.webp",
+    coverAspect: 584 / 955,
+    coverBack: "/books/rendered/goodbye-things-back.webp",
     hue: 150,
     saturation: 10,
     lightness: 80,
     foil: "#6A8A82",
     scale: 0.96,
+    readingDensity: "compact",
+    readingTheme: "breathing-house",
+    coverNote: {
+      en: "Minimalism does not ask how much more I can discard. It asks: what truly deserves a place in my life?",
+      vi: "Tối giản không hỏi mình có thể vứt thêm bao nhiêu. Nó hỏi: điều gì thật sự xứng đáng chiếm một chỗ trong cuộc sống của mình?",
+    },
+    outsideSummary: {
+      vi: {
+        tagline: "Không phải cuộc thi sở hữu ít nhất, mà là hành trình trả lại chỗ cho điều mình thật sự muốn sống cùng.",
+        heading: "Một ngôi nhà nhẹ hơn, một đời sống rõ hơn",
+        introduction: [
+          "Trong *Lối Sống Tối Giản Của Người Nhật*, Fumio Sasaki kể từ trải nghiệm của một người từng sống giữa đồ đạc, bất an và thói quen so sánh. Khi căn phòng nhẹ đi, điều ông nhận lại không chỉ là diện tích mà còn là thời gian, sự tập trung và cảm giác biết đủ.",
+          "Tối giản ở đây nên được xem như một công cụ, không phải tiêu chuẩn đạo đức. Nhu cầu còn tùy gia đình, công việc, sức khỏe và tài chính. Câu hỏi hữu ích không phải “Mình còn bao nhiêu món?”, mà là “Những thứ ở đây có phục vụ đời sống thật không?”.",
+        ],
+        lessonsHeading: "Năm cách để không gian phục vụ lại mình",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Nhìn cả hóa đơn vô hình của một món đồ",
+            paragraph: "Giá mua chỉ là chi phí đầu tiên; một món đồ còn cần chỗ cất, thời gian lau dọn và sự chú ý mỗi khi mình tìm hoặc di chuyển nó. Hãy hỏi: mình đang dùng món này trong nhịp sống hiện tại hay chỉ trong một cuộc sống từng tưởng tượng?",
+          },
+          {
+            heading: "Bắt đầu từ nơi đang tạo nhiều ma sát nhất",
+            paragraph: "Không cần dọn cả căn nhà trong một ngày. Hãy chọn một ngăn kéo thường gây bất tiện, đặt 15 phút và chia đồ thành ba nhóm: đang phục vụ, chưa rõ và đã hoàn thành vai trò. Thành công là lần mở tiếp theo mình tìm được thứ cần dùng ngay.",
+          },
+          {
+            heading: "Phân biệt ký ức, tiếc tiền và phiên bản tương lai",
+            paragraph: "Một chiếc áo đắt có thể được giữ vì tiếc tiền; dụng cụ tập có thể đại diện cho con người mình muốn trở thành. Không cần ép bỏ ngay. Hãy thử hỏi: nếu hôm nay chưa sở hữu, mình có mua lại không, và giá trị nào mình thật sự muốn giữ?",
+          },
+          {
+            heading: "Nhìn dòng đồ đi vào trước khi tiếp tục dọn ra",
+            paragraph: "Nếu đồ mới vào nhanh hơn đồ cũ rời đi, khoảng trống chỉ tồn tại tạm thời. Trước món không thiết yếu, hãy tạo một khoảng chờ, đo nơi định đặt và xem ở nhà đã có thứ làm được phần lớn công việc ấy chưa. Đôi khi mượn hoặc thuê phù hợp hơn mua.",
+          },
+          {
+            heading: "Định nghĩa chữ “đủ” theo đời sống thật của từng người",
+            paragraph: "Gia đình có trẻ nhỏ, người cao tuổi hoặc công việc chuyên môn sẽ cần lượng đồ khác người sống một mình. Đừng tự ý dọn đồ của người khác hay bỏ vật dụng thiết yếu. Chữ “đủ” cần dựa trên công dụng và khả năng chăm sóc, không phải con số đẹp.",
+          },
+        ],
+        conclusion: [
+          "Đích đến của tối giản không phải căn phòng trống. Đó là không gian nơi nghỉ ngơi, làm việc, trò chuyện và chăm sóc nhau có thể diễn ra dễ dàng hơn.",
+          "Một mặt bàn dễ dùng hơn, một món mua sắm được cân nhắc kỹ hơn hoặc một hộp ký ức vừa đủ cũng đã là cách trả lại sự chú ý cho đời sống mình đang thật sự có.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "The book presents minimalism as a tool, not a moral score or a contest to own the least.",
@@ -1330,11 +1476,11 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Needs differ across families, work, hobbies, health, and finances; minimalism should adapt to real life.",
       ],
       vi: [
-        "Cuốn sách xem tối giản là một công cụ, không phải thước đo đạo đức hay cuộc thi sở hữu ít nhất.",
-        "Mỗi món đồ cần chỗ, công sức bảo quản và sự chú ý; giữ lại cũng nên là một lựa chọn có ý thức.",
-        "Một câu hỏi hữu ích là món đồ có phục vụ đời sống hiện tại không, thay vì chỉ nhìn số tiền đã lỡ chi.",
-        "Dọn một ngăn kéo đã đủ để thử xem ít ma sát hơn có thật sự hợp với mình hay không.",
-        "Nhu cầu khác nhau theo gia đình, công việc, sở thích, sức khỏe và tài chính; tối giản cần đi cùng đời sống thật.",
+        "Tối giản không phải sống trong một căn phòng trống. Đó là giữ lại những gì mình thật sự cần, sử dụng và trân trọng.",
+        "Một món đồ không chỉ tốn tiền mua. Nó còn cần chỗ cất, thời gian dọn dẹp, công sức bảo quản và một phần sự chú ý của mình.",
+        "Mình thường giữ đồ vì tiếc tiền, sợ quên kỷ niệm hoặc hy vọng “một ngày nào đó” sẽ dùng. Nhưng buông một món đồ không có nghĩa là xóa đi ký ức hay phủ nhận con người trước đây.",
+        "Không cần dọn sạch cả căn nhà trong một ngày. Hãy bắt đầu bằng một ngăn kéo, một nhóm đồ trùng công dụng hoặc những thứ mình đã lâu không còn nhớ tới.",
+        "Đích đến của tối giản không phải sở hữu ít nhất. Đó là có thêm không gian để thở, thời gian để sống và sự tự do để thôi so sánh mình với người khác.",
       ],
     },
     // Vietnamese reflection; English intentionally falls back to English key points.
@@ -1342,16 +1488,57 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
   },
   {
     slug: "muon-kiep-nhan-sinh-1",
-    title: "Muôn Kiếp Nhân Sinh - Tập 1",
+    title: "Muôn Kiếp Nhân Sinh — Tập 1",
     titleEn: "Many Lives, Many Times - Vol. 1",
     author: "Nguyên Phong",
-    cover: "/books/muon-kiep-nhan-sinh-1.webp",
+    cover: "/books/rendered/muon-kiep-nhan-sinh-1.webp",
+    coverAspect: 1352 / 2004,
     coverBack: "/books/muon-kiep-nhan-sinh-1-back.jpg",
     hue: 220, // dark navy (broken-watch cover)
     saturation: 30,
     lightness: 12,
     foil: "#D8DCE4",
     scale: 1.0,
+    readingDensity: "compact",
+    readingTheme: "layered-time-map",
+    outsideSummary: {
+      vi: {
+        tagline: "Không cần biết mình đã sống bao nhiêu đời để hiểu rằng mỗi lựa chọn hôm nay đều đang để lại một điều gì đó.",
+        heading: "Dấu vết của mỗi lựa chọn",
+        introduction: [
+          "*Muôn Kiếp Nhân Sinh — Tập 1* mở ra qua những cuộc trò chuyện với Thomas và các trải nghiệm được ông nhìn nhận như ký ức tiền kiếp. Từ Atlantis, Ai Cập cổ đại đến nước Mỹ hiện đại, câu chuyện luôn trở về cách con người sử dụng tri thức, tiền bạc và quyền lực.",
+          "Luân hồi, nhân quả, linh hồn và những nền văn minh cổ thuộc thế giới quan tâm linh của tác phẩm, không phải kết luận lịch sử hay khoa học đã được kiểm chứng. Mình vẫn có thể đọc mở lòng, đồng thời đưa câu hỏi của sách trở về lựa chọn và trách nhiệm trong hiện tại.",
+        ],
+        lessonsHeading: "Năm điều có thể mang về đời sống hôm nay",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Đọc câu chuyện như một tấm gương, không như bằng chứng",
+            paragraph: "Một chi tiết về Atlantis hay tiền kiếp có thể gợi tò mò, nhưng giá trị gần nhất nằm ở câu hỏi nó đánh thức: nếu quyền lực từng khiến con người kiêu ngạo, mình đang sử dụng vị trí và hiểu biết của mình để nâng đỡ hay kiểm soát người khác?",
+          },
+          {
+            heading: "Nhân quả gần nhất nằm trong điều mình có thể quan sát",
+            paragraph: "Không cần chờ lời giải thích siêu hình để thấy lựa chọn tạo ra hệ quả. Thất hứa nhiều lần làm niềm tin giảm; nhận lỗi và sửa sai cho quan hệ cơ hội hồi phục. Hãy nhìn một quyết định qua ba bước: việc mình làm, ảnh hưởng và phần có thể sửa.",
+          },
+          {
+            heading: "Quyền lực là nơi phẩm chất được nhìn thấy rõ hơn",
+            paragraph: "Tiền bạc, địa vị và tri thức không tự quyết định một người tốt hay xấu, nhưng chúng mở rộng phạm vi ảnh hưởng. Một trưởng nhóm có thể giữ công lao để củng cố vị trí, hoặc ghi nhận đúng đóng góp và giúp đồng đội trưởng thành.",
+          },
+          {
+            heading: "Trách nhiệm không bao giờ đồng nghĩa với đổ lỗi nạn nhân",
+            paragraph: "Không nên dùng nhân quả để kết luận một người đáng chịu bệnh tật, nghèo khó, bạo lực hoặc mất mát. Bài học an toàn hơn là chịu trách nhiệm cho phần thuộc về mình, đồng thời nhìn thấy hoàn cảnh, bất công và trách nhiệm của người gây hại.",
+          },
+          {
+            heading: "Giữ niềm tin rộng mở, giữ hành động thật cụ thể",
+            paragraph: "Mình không cần giải quyết mọi câu hỏi về linh hồn mới có thể sống tử tế hơn. Cuối ngày, hãy ghi một lựa chọn đáng giữ, một ảnh hưởng chưa lường hết và một việc nhỏ có thể sửa ngày mai. Suy ngẫm chỉ có giá trị khi đi vào hành động.",
+          },
+        ],
+        conclusion: [
+          "Tập 1 hấp dẫn bởi tầm nhìn trải qua nhiều thời đại, nhưng điểm chạm gần nhất vẫn là đời sống đang diễn ra. Mình không kiểm soát mọi hoàn cảnh, song có thể thành thật hơn với động cơ và ảnh hưởng của lựa chọn mình tạo ra.",
+          "Điều đáng giữ không phải nỗi sợ về một hình phạt vô hình, mà là mong muốn sống tỉnh thức, biết sửa sai và để lại nhiều điều tốt lành hơn từ hôm nay.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "The book presents reincarnation and karma as the worldview through which Thomas's story is told.",
@@ -1361,28 +1548,67 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Belief can remain open while kindness, repair, and accountability are practiced in the present.",
       ],
       vi: [
-        "Cuốn sách dùng luân hồi và nhân quả làm thế giới quan để kể hành trình của Thomas.",
-        "Nếu đọc như một lăng kính đạo đức, nhân quả gợi mình chú ý đến điều lựa chọn hôm nay để lại.",
-        "Atlantis, tiền kiếp và linh hồn thuộc về câu chuyện tâm linh của sách; trang này không trình bày chúng như sự thật đã được kiểm chứng.",
-        "Điều mình giữ là trách nhiệm, nhưng không dùng nhân quả để đổ lỗi cho người đang chịu khổ.",
-        "Niềm tin có thể để ngỏ, còn sống tử tế, sửa sai và chịu trách nhiệm có thể bắt đầu trong hiện tại.",
+        "Cuốn sách kể lại những cuộc trò chuyện với Thomas và các trải nghiệm được ông nhìn nhận như ký ức tiền kiếp, mở ra hành trình từ Atlantis, Ai Cập cổ đại đến nước Mỹ hiện đại.",
+        "Luân hồi và nhân quả là lăng kính tâm linh xuyên suốt tác phẩm. Người đọc có thể suy ngẫm từ lăng kính ấy, nhưng không nên xem mọi chi tiết như lịch sử hay khoa học đã được kiểm chứng.",
+        "Những câu chuyện về quyền lực, tiền bạc và tri thức đều trở về một câu hỏi rất hiện tại: mình đang dùng khả năng của mình để nâng đỡ hay kiểm soát người khác?",
+        "Nhân quả không chỉ được hình dung qua nhiều kiếp. Trong đời sống này, một suy nghĩ được nuôi lâu có thể thành hành động, hành động lặp lại thành thói quen và thói quen dần tạo nên con người mình.",
+        "Bài học đáng giữ nhất không phải là phán xét số phận của ai. Đó là sống tử tế hơn, sửa điều mình làm sai và chịu trách nhiệm với phần ảnh hưởng thuộc về mình.",
       ],
     },
     // Vietnamese reflection; English intentionally falls back to attributed key points.
-    readingPages: { vi: MUON_KIEP_1_PAGES },
+    readingPages: { vi: MUON_KIEP_NHAN_SINH_1_PAGES },
   },
   {
     slug: "muon-kiep-nhan-sinh-2",
-    title: "Muôn Kiếp Nhân Sinh - Tập 2",
+    title: "Muôn Kiếp Nhân Sinh — Tập 2",
     titleEn: "Many Lives, Many Times - Vol. 2",
     author: "Nguyên Phong",
-    cover: "/books/muon-kiep-nhan-sinh-2.jpg",
-    coverBack: "/books/muon-kiep-nhan-sinh-2-back.jpg",
+    cover: "/books/rendered/muon-kiep-nhan-sinh-2.webp",
+    coverAspect: 1352 / 2004,
+    coverBack: "/books/rendered/muon-kiep-nhan-sinh-2-back.webp",
     hue: 210, // ocean blue
     saturation: 42,
     lightness: 30,
     foil: "#EAF1FB",
     scale: 1.0,
+    outsideSummary: {
+      vi: {
+        tagline: "Một vòng lặp không kết thúc khi mình hiểu vì sao nó tồn tại. Nó bắt đầu thay đổi khi mình lựa chọn hành động khác đi.",
+        heading: "Xưởng sửa những vòng lặp",
+        introduction: [
+          "*Muôn Kiếp Nhân Sinh — Tập 2* đưa hành trình của Thomas qua nước Mỹ hiện đại, Assyria, Hy Lạp, Ba Tư và Ấn Độ, đồng thời mở rộng câu chuyện từ lựa chọn cá nhân đến những khuôn mẫu được cộng đồng lặp lại.",
+          "Luân hồi, nhân quả và “cộng nghiệp” là lăng kính tâm linh của tác phẩm, không phải cơ chế khoa học đã được chứng minh. Mình có thể dùng chúng để suy ngẫm về hành vi, văn hóa và hệ thống, nhưng không để chúng thay thế y khoa, pháp luật hoặc trách nhiệm xã hội.",
+        ],
+        lessonsHeading: "Năm bước để nhìn và thay đổi một vòng lặp",
+        numbered: true,
+        lessons: [
+          {
+            heading: "Gọi tên vòng lặp trước khi cố thoát khỏi nó",
+            paragraph: "Khi cảm thấy bị xem nhẹ, mình có thể công kích; đối phương phòng thủ và cuộc trò chuyện đổ vỡ, càng củng cố cảm giác ban đầu. Viết ra tác nhân, phản ứng và hậu quả giúp mình tìm điểm ngắt nhỏ nhất cho lần tiếp theo.",
+          },
+          {
+            heading: "Vấn đề chung cần được nhìn ở cả con người lẫn hệ thống",
+            paragraph: "Nhiều lựa chọn cá nhân có thể thành văn hóa, nhưng trách nhiệm không vì thế được chia đều. Nếu tổ chức đặt chỉ tiêu khiến nhân viên phải che giấu sai sót, người thiết kế và duy trì cơ chế ấy có trách nhiệm lớn hơn người ít quyền lựa chọn.",
+          },
+          {
+            heading: "Chịu trách nhiệm mà không biến mình thành bị cáo",
+            paragraph: "Tự nhận phần sai khác với ôm mọi lỗi về mình. Mình có thể xin lỗi vì lời nói gây tổn thương, nhưng không nhận trách nhiệm cho bạo lực của người khác. Người bị xâm hại, mắc bệnh hoặc chịu bất công không phải nguyên nhân đạo đức của việc ấy.",
+          },
+          {
+            heading: "Tha thứ không yêu cầu mình từ bỏ ranh giới",
+            paragraph: "Tha thứ, nếu phù hợp, có thể làm nhẹ sức nặng oán giận; nó không đồng nghĩa với quên đi hoặc quay lại nơi nguy hiểm. Một lựa chọn lành mạnh vẫn có thể là giữ khoảng cách, lưu bằng chứng, nhờ người đáng tin hoặc tìm hỗ trợ pháp lý.",
+          },
+          {
+            heading: "Thực hành tinh thần nên đi cùng trợ giúp thực tế",
+            paragraph: "Thiền và lòng biết ơn có thể giúp mình bình tâm, nhưng không thay thế bác sĩ, trị liệu, hỗ trợ pháp lý hay kế hoạch an toàn. Khi vòng lặp liên quan sang chấn, nghiện, bạo lực hoặc nguy cơ tự hại, tìm chuyên môn là trách nhiệm.",
+          },
+        ],
+        conclusion: [
+          "Tập 2 nhắc rằng hiểu biết chưa tự tạo ra chuyển hóa. Thay đổi cần một phản ứng mới, một ranh giới rõ hơn hoặc một cơ chế công bằng hơn được duy trì đủ lâu.",
+          "Mình có thể bắt đầu rất nhỏ: gọi đúng điều đã xảy ra, sửa phần thuộc trách nhiệm của mình và tìm sự hỗ trợ cho phần không thể giải quyết một mình.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "The book expands its spiritual worldview from individual karma to shared patterns and responsibility.",
@@ -1392,28 +1618,69 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "Spiritual reflection can support care, but it does not replace medical, legal, or practical help.",
       ],
       vi: [
-        "Cuốn sách mở rộng thế giới quan tâm linh từ nghiệp cá nhân sang những khuôn mẫu và trách nhiệm chung.",
-        "Mình có thể đọc “nghiệp” như lời nhắc nhìn vào lựa chọn lặp lại, không xem đó là bằng chứng hay hình phạt.",
-        "Nhận trách nhiệm không phải tự kết tội; bệnh tật và đau khổ cũng không nên bị biến thành phán quyết đạo đức.",
-        "Tha thứ có thể giúp buông oán giận, trong khi ranh giới vẫn bảo vệ mình khỏi tổn thương lặp lại.",
-        "Chiêm nghiệm tinh thần có thể nâng đỡ, nhưng không thay thế hỗ trợ y khoa, pháp lý hay thực tế.",
+        "Tập 2 tiếp tục hành trình của Thomas qua nước Mỹ hiện đại, Assyria, Hy Lạp, Ba Tư, Ấn Độ và những trải nghiệm được sách mô tả như hành trình của linh hồn.",
+        "Từ nhân quả cá nhân, cuốn sách mở rộng đến “cộng nghiệp”: nhiều lựa chọn nhỏ lặp lại có thể tạo nên văn hóa, hệ thống và hậu quả chung của cả cộng đồng.",
+        "Những câu chuyện về chiến tranh và chinh phục đặt ra một câu hỏi gần gũi: khi nào khát vọng phát triển biến thành nhu cầu chứng minh mình bằng cách kiểm soát người khác?",
+        "Chuyển hóa không phải phủ nhận tổn thương hay tự kết tội. Nó bắt đầu bằng việc nhìn ra vòng lặp, gọi đúng điều đã xảy ra và sửa phần mình có thể sửa.",
+        "Thiền, lòng biết ơn và tha thứ có thể nâng đỡ tinh thần, nhưng không thay thế chăm sóc y khoa, trị liệu, pháp luật, ranh giới an toàn hay thay đổi xã hội cần thiết.",
       ],
     },
+    readingDensity: "compact",
+    readingTheme: "loop-restoration-workshop",
     // Vietnamese reflection; English intentionally falls back to attributed key points.
-    readingPages: { vi: MUON_KIEP_2_PAGES },
+    readingPages: { vi: MUON_KIEP_NHAN_SINH_2_PAGES },
   },
   {
     slug: "muon-kiep-nhan-sinh-3",
-    title: "Muôn Kiếp Nhân Sinh - Tập 3",
+    title: "Muôn Kiếp Nhân Sinh – Tập 3",
     titleEn: "Many Lives, Many Times - Vol. 3",
     author: "Nguyên Phong",
-    cover: "/books/muon-kiep-nhan-sinh-3.webp",
-    coverBack: "/books/muon-kiep-nhan-sinh-3-back.jpg",
+    cover: "/books/rendered/muon-kiep-nhan-sinh-3.webp",
+    coverAspect: 1352 / 2004,
+    coverBack: "/books/rendered/muon-kiep-nhan-sinh-3-back.webp",
     hue: 205, // deep door-blue
     saturation: 48,
     lightness: 22,
     foil: "#CFE6F5",
     scale: 1.0,
+    outsideSummary: {
+      vi: {
+        tagline: "Máy móc có thể ngày càng thông minh. Nhưng nó không thể thay con người quyết định điều gì xứng đáng để theo đuổi.",
+        heading: "La bàn cho một tương lai có AI",
+        introduction: [
+          "*Muôn Kiếp Nhân Sinh — Tập 3* khép hành trình của Thomas nhưng mở ra vùng suy ngẫm mới về trí tuệ nhân tạo, ý chí tự do và tương lai. Khi công nghệ giúp mình hành động nhanh hơn ở quy mô lớn hơn, ai sẽ chọn mục tiêu và bảo vệ người chịu rủi ro?",
+          "Những luận bàn về linh hồn, luân hồi, nhân quả và ý thức vẫn thuộc thế giới quan tâm linh của tác phẩm, không phải kết luận khoa học về AI. Quyết định công nghệ trong đời thực cần dựa trên bằng chứng, quyền con người và cơ chế giám sát có thể kiểm tra.",
+        ],
+        lessonsHeading: "Năm nguyên tắc để công nghệ phục vụ con người",
+        numbered: true,
+        lessons: [
+          {
+            heading: "AI khuếch đại mục tiêu, dữ liệu và động cơ phía sau",
+            paragraph: "Nếu hệ thống tuyển dụng học từ dữ liệu từng ưu ái một nhóm ứng viên, nó có thể lặp bất công ở quy mô lớn hơn. Trước khi dùng công cụ, hãy hỏi: nó đang tối ưu điều gì, học từ dữ liệu nào và giá trị nào đã bị bỏ ra ngoài?",
+          },
+          {
+            heading: "Trách nhiệm phải có tên người và tên tổ chức",
+            paragraph: "Không thể giải thích một quyết định gây hại bằng câu “thuật toán chọn như vậy”. Người thiết kế, đơn vị triển khai và lãnh đạo phê duyệt phải chịu phần tương xứng với quyền lực. Người bị ảnh hưởng cũng cần biết lý do và có nơi khiếu nại.",
+          },
+          {
+            heading: "Rủi ro công nghệ không được phân bổ đồng đều",
+            paragraph: "Một sai số có thể chỉ gây bất tiện cho nhóm này nhưng làm nhóm khác mất việc hoặc bị từ chối dịch vụ. Vì vậy, tổ chức cần kiểm tra tác động trên những nhóm liên quan và mời chính người dễ chịu ảnh hưởng tham gia thiết kế biện pháp bảo vệ.",
+          },
+          {
+            heading: "Phán đoán con người phải là điểm kiểm soát thật sự",
+            paragraph: "Trong y tế, giáo dục hay tín dụng, “có người tham gia” là chưa đủ nếu họ chỉ bấm chấp nhận gợi ý của máy. Người phụ trách cần đủ thông tin, thời gian và quyền hạn để đặt câu hỏi, từ chối kết quả tự động và chịu trách nhiệm cuối cùng.",
+          },
+          {
+            heading: "Tách suy tưởng tâm linh khỏi kết luận kỹ thuật",
+            paragraph: "Câu hỏi về ý thức có thể làm thảo luận AI sâu hơn, nhưng không chứng minh một mô hình có cảm xúc hay đạo đức. Hãy phân biệt rõ đâu là niềm tin, giả thuyết và kết luận có bằng chứng để không trao cho máy thẩm quyền mà nó không sở hữu.",
+          },
+        ],
+        conclusion: [
+          "Tương lai không chỉ phụ thuộc AI mạnh đến đâu, mà còn vào cách con người đặt giới hạn, công khai sai sót và sửa tổn hại. Tốc độ phát triển càng lớn, trách nhiệm của người thiết kế và vận hành càng không thể mơ hồ.",
+          "Một chiếc la bàn tốt không chống lại tiến bộ. Nó giúp tiến bộ đi đúng hướng: tăng năng lực nhưng vẫn giữ phẩm giá, quyền lựa chọn và cơ hội được lên tiếng của con người ở trung tâm.",
+        ],
+      },
+    },
     keyPoints: {
       en: [
         "The book connects its spiritual worldview to questions about technology, free will, and humanity's future.",
@@ -1423,14 +1690,20 @@ export const LIBRARY_BOOKS: LibraryBook[] = [
         "A grounded takeaway is to pair capability with accountability, care, and room to correct harm.",
       ],
       vi: [
-        "Cuốn sách nối thế giới quan tâm linh với các câu hỏi về công nghệ, tự do ý chí và tương lai con người.",
-        "Mình đọc lời cảnh báo ấy như lời nhắc hỏi ai hưởng lợi từ một công cụ mạnh và ai phải gánh rủi ro.",
-        "Các khẳng định về linh hồn, nhân quả và tâm thức vẫn là niềm tin trong sách, không phải kết luận đã được xác lập ở đây.",
-        "AI có thể hỗ trợ quyết định, nhưng con người vẫn chịu trách nhiệm về mục đích, biện pháp bảo vệ và hệ quả khi sử dụng.",
-        "Điều thực tế mình giữ là đặt trách nhiệm, sự quan tâm và khả năng sửa sai đi cùng năng lực.",
+        "Tập cuối khép lại hành trình của Thomas, đồng thời mở ra một câu hỏi lớn hơn: khi có thêm quyền lực và công nghệ, con người sẽ dùng chúng để trở thành ai?",
+        "AI không tự tốt hay xấu. Nó có thể khuếch đại rất nhanh mục tiêu, dữ liệu và động cơ của những người đứng phía sau.",
+        "Luân hồi, linh hồn và nhân quả thuộc thế giới quan tâm linh của tác phẩm. Mình có thể suy ngẫm từ đó mà không cần biến niềm tin thành kết luận khoa học.",
+        "Tự do của mỗi người luôn đi cùng hoàn cảnh và giới hạn. Vì vậy, người có nhiều quyền lực và lựa chọn hơn cũng cần chịu trách nhiệm lớn hơn.",
+        "Tương lai không chỉ được tạo nên bởi những phát minh lớn, mà còn từ cách mình sử dụng dữ liệu, tiền bạc, sự chú ý và quyền quyết định mỗi ngày.",
       ],
     },
+    readingDensity: "compact",
+    readingTheme: "future-ethics-lab",
     // Vietnamese reflection; English intentionally falls back to attributed key points.
-    readingPages: { vi: MUON_KIEP_3_PAGES },
+    readingPages: { vi: MUON_KIEP_NHAN_SINH_3_PAGES },
   },
-];
+] satisfies LibraryBook[]).sort(
+  (left, right) =>
+    (MASTER_COLLECTION_INDEX.get(left.slug) ?? Number.MAX_SAFE_INTEGER)
+    - (MASTER_COLLECTION_INDEX.get(right.slug) ?? Number.MAX_SAFE_INTEGER),
+);

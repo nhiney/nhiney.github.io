@@ -1,0 +1,46 @@
+.pageShell {
+  position: relative;
+  min-height: 100%;
+  isolation: isolate;
+}
+
+.pageContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep the orbital field visible beneath every homepage section while giving
+   long-form content a calm, translucent reading surface. */
+.pageContent > :global(section) {
+  background-color: hsl(var(--background) / 0.12);
+  background-image:
+    radial-gradient(circle at 12% 20%, hsl(var(--site-accent) / 0.055), transparent 34%),
+    radial-gradient(circle at 88% 30%, hsl(var(--site-accent-2) / 0.065), transparent 36%);
+}
+
+.pageContent > :global(section:nth-of-type(even)) {
+  background-color: hsl(var(--background) / 0.24);
+}
+
+:global(.dark) .pageContent > :global(section) {
+  background-color: hsl(var(--background) / 0.08);
+  background-image:
+    radial-gradient(circle at 12% 20%, hsl(var(--site-accent) / 0.055), transparent 34%),
+    radial-gradient(circle at 88% 30%, hsl(var(--site-accent-2) / 0.045), transparent 36%);
+}
+
+:global(.dark) .pageContent > :global(section:nth-of-type(even)) {
+  background-color: hsl(var(--background) / 0.18);
+}
+
+@media (prefers-contrast: more) {
+  .pageContent > :global(section) {
+    background-color: hsl(var(--background) / 0.72);
+  }
+}
+
+@media (forced-colors: active) {
+  .pageContent > :global(section) {
+    background: Canvas;
+  }
+}

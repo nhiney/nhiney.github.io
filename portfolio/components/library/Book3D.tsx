@@ -34,6 +34,10 @@ export function Book3D({
   showDesignedCover = false,
   ...group
 }: Book3DProps) {
+  // Real editions vary in width. Matching the mesh to the published cover
+  // avoids stretching narrow covers or squeezing wider ones into one ratio.
+  const renderedCoverWidth = meta.coverAspect ? height * meta.coverAspect : coverWidth;
+
   const { materials, owned } = useMemo(() => {
     const coverTex = makeCoverTexture(meta, title);
     const spineTex = makeSpineTexture(meta, title);
@@ -98,7 +102,7 @@ export function Book3D({
   return (
     <group {...group}>
       <mesh castShadow receiveShadow material={materials}>
-        <boxGeometry args={[thickness, height, coverWidth]} />
+        <boxGeometry args={[thickness, height, renderedCoverWidth]} />
       </mesh>
     </group>
   );

@@ -222,7 +222,10 @@ export default async function BlogPostPage({ params }: PostPageProps) {
 
                 <div className="mx-auto mt-8 flex max-w-[42rem] flex-col items-center gap-4">
                   <p className="book-byline text-sm leading-none">
-                    Nguyễn Thị Yến Nhi
+                    <LocaleText map={{
+                      en: "Nguyen Thi Yen Nhi",
+                      vi: "Nguyễn Thị Yến Nhi",
+                    }} />
                   </p>
                   <p className="book-meta flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.72rem]">
                     <time className="inline-flex items-center gap-1.5" dateTime={post.date as string}>

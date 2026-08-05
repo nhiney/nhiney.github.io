@@ -221,7 +221,7 @@ export function VibrantHome() {
             <div className="vb-about-id">
               <span className="vb-avatar">YN</span>
               <div>
-                <p className="vb-about-name">Nguyễn Thị Yến Nhi</p>
+                <p className="vb-about-name">Nguyen Thi Yen Nhi</p>
                 <p className="vb-about-role">Software Engineer · Product</p>
               </div>
             </div>

@@ -47,9 +47,13 @@ export async function getLibraryBooks(): Promise<LibBookFull[]> {
         en: b.coverNote?.en,
         vi: b.coverNote?.vi ?? b.coverNote?.en,
       };
+      const outsideSummary: LibBookFull["outsideSummary"] = {
+        en: b.outsideSummary?.en,
+        vi: b.outsideSummary?.vi ?? b.outsideSummary?.en,
+      };
       const readingPages: LibBookFull["readingPages"] = {
         en: b.readingPages?.en,
-        vi: b.readingPages?.vi ?? b.readingPages?.en,
+        vi: b.readingPages?.vi,
       };
 
       // Pre-build a flipbook deck per locale the reader might show. The union of
@@ -60,7 +64,14 @@ export async function getLibraryBooks(): Promise<LibBookFull[]> {
         const review = rawBodies[loc] ?? rawBodies.en;
         const points = keyPoints[loc] ?? keyPoints.en;
         const customPages = readingPages[loc] ?? readingPages.en;
-        pages[loc] = buildDeck(review, points, customPages);
+        pages[loc] = buildDeck(
+          review,
+          points,
+          customPages,
+          b.readingLayout,
+          b.readingDensity,
+          b.readingTheme
+        );
       }
 
       return {
@@ -73,6 +84,7 @@ export async function getLibraryBooks(): Promise<LibBookFull[]> {
         bodies,
         keyPoints,
         coverNote,
+        outsideSummary,
         readingPages,
         pages,
         date,

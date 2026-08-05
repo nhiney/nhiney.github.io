@@ -57,7 +57,7 @@ export function Navbar() {
             href="/"
             className="text-base font-black tracking-tight transition-opacity hover:opacity-80 whitespace-nowrap"
           >
-            Nguyễn Thị Yến Nhi
+            {t("home.hero.name")}
           </Link>
 
           {/* Portfolio badge — hidden for now; uncomment to restore

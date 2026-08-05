@@ -227,6 +227,7 @@ export const dictionaries = {
     home: {
       hero: {
         title_prefix: "Hi, I'm",
+        name: "Nguyen Thi Yen Nhi",
         cta_secondary: "Fellowship VNNIC",
         tech_count_label: "core technologies mastered",
         shipped_prefix: "shipped",
@@ -705,7 +706,7 @@ export const dictionaries = {
         stats: [
           { value: "4",    label: "Projects Shipped" },
           { value: "3.34", label: "GPA / 4.0"        },
-          { value: "5+",   label: "Certifications"   },
+          { value: "6",    label: "Google Programs" },
         ],
         about: {
           eyebrow: "About Me",
@@ -714,7 +715,7 @@ export const dictionaries = {
           heading_3: "and the builder's.",
           p1: "I'm drawn to how a product comes to life — from **understanding user needs** and **analyzing problems** to building experiences that are **genuinely useful**.",
           p2: "As **Team Lead** on academic projects, I work across the full cycle: **user research**, **Figma wireframes**, **functional specs**, **sprint coordination**, and **real-device testing**. On the build side, I've used **Flutter, Firebase, ASP.NET MVC, and REST APIs** to ship ideas into real products.",
-          p3: "I'm currently earning **Google certificates** in **Project Management, AI, and UX Design**, and leading a **healthcare mobile app**. To me, a good product doesn't just work — it solves the **right problem** with a **great experience**.",
+          p3: "I've completed **6 verified Google programs** spanning **Project Management, AI, UX Design, IT Automation, and Digital Marketing**, while leading a **healthcare mobile app**. To me, a good product doesn't just work — it solves the **right problem** with a **great experience**.",
           tags: ["Business Analysis", "Product Thinking", "UX / UI", "Team Leadership"],
         },
         traits: [
@@ -802,26 +803,24 @@ export const dictionaries = {
         },
         experience: {
           eyebrow: "Experience & Activities",
-          heading: "Where I've grown",
-          desc: "A track record built in academic sprints, research labs, and self-directed learning — not just classrooms.",
+          heading: "The three proof points that matter most",
+          desc: "Not a long list — just the clearest evidence of how I lead, research, and keep learning to build better products.",
           items: [
-            { period: "May 2026", title: "Google UX Design Professional Certificate", org: "Google · Coursera", desc: "Completed the full UX Design program, covering user research, wireframing, hi-fi prototyping in Figma, and usability testing." },
-            { period: "Apr – May 2026", title: "Google Professional Certificates × 4", org: "Google · Coursera", desc: "Completed Project Management, AI Professional, AI Essentials, and IT Automation with Python — all within six weeks." },
-            { period: "Mar 2026", title: "Scientific Research Competition", org: "Ho Chi Minh City University of Industry and Trade", desc: "Co-authored research on an AI-integrated social network for students. Conceptualized the system architecture and designed core user interactions." },
-            { period: "Feb 2026 – Present", title: "Team Lead — Smart Medical Booking App", org: "Academic Project", desc: "Leading a 4-member team building a Flutter/Firebase healthcare app with voice-assisted booking for elderly users." },
-            { period: "Dec 2025", title: "Team Lead — E-Commerce System", org: "Academic Project", desc: "Led a 3-member team to ship an ASP.NET MVC e-commerce platform with automated inventory management in one month." },
+            { kind: "leadership", period: "Feb 2026 – Present", title: "Leading a voice-assisted booking app", org: "Academic Project · Team Lead", desc: "Leading a 4-person team building a Flutter/Firebase app with conflict prevention and voice support for elderly users.", evidence: ["4-person team", "100+ test scenarios"] },
+            { kind: "research", period: "Mar 2026", title: "Co-authored student AI research", org: "HUIT · Research Competition", desc: "Co-authored an AI-integrated student social network project, contributing the system architecture and core user interactions.", evidence: ["AI social network", "System architecture"] },
+            { kind: "learning", period: "Apr–Jul 2026", title: "6 verified Google programs", org: "Google · Coursera", desc: "Completed six Google credentials spanning UX, project management, AI, Python automation, and digital marketing.", evidence: ["UX · Project Mgmt", "AI · Python · Marketing"] },
           ],
         },
         certifications: {
           eyebrow: "Certifications",
           heading: "Learning is a continuous journey",
-          desc: "I actively pursue Product, UX, AI, and Project Management programs from Google to broaden my perspective and apply what I learn to real-world projects.",
+          desc: "I completed verified Google programs across Product, UX, AI, IT Automation, and Digital Marketing, then applied that learning to real projects.",
           all_cta: "View all",
           items: [
             { emoji: "📋", title: "Google Project Management", issuer: "Google · Coursera", date: "May 2026" },
             { emoji: "🤖", title: "Google AI Professional", issuer: "Google · Coursera", date: "Apr 2026" },
-            { emoji: "🎨", title: "Google UX Design", issuer: "Google · Coursera", date: "In Progress" },
-            { emoji: "⚙️", title: "Google IT Automation with Python", issuer: "Google · Coursera", date: "Apr 2026" },
+            { emoji: "🎨", title: "Google UX Design", issuer: "Google · Coursera", date: "May 2026" },
+            { emoji: "⚙️", title: "Google IT Automation with Python", issuer: "Google · Coursera", date: "May 2026" },
           ],
         },
         contact: {
@@ -1177,6 +1176,7 @@ export const dictionaries = {
     home: {
       hero: {
         title_prefix: "Xin chào, mình là",
+        name: "Nguyễn Thị Yến Nhi",
         cta_secondary: "Học bổng VNNIC",
         tech_count_label: "công nghệ cốt lõi đã thành thạo",
         shipped_prefix: "đã hoàn thành",
@@ -1655,7 +1655,7 @@ export const dictionaries = {
         stats: [
           { value: "4",    label: "Dự án đã hoàn thành" },
           { value: "3.34", label: "GPA / 4.0"           },
-          { value: "5+",   label: "Chứng chỉ"           },
+          { value: "6",    label: "Chương trình Google" },
         ],
         about: {
           eyebrow: "Về mình",
@@ -1664,7 +1664,7 @@ export const dictionaries = {
           heading_3: "người dùng lẫn người xây dựng.",
           p1: "Mình bị cuốn hút bởi cách một sản phẩm được hình thành — từ **thấu hiểu nhu cầu người dùng** và **phân tích vấn đề** đến xây dựng những trải nghiệm **thực sự hữu ích**.",
           p2: "Với vai trò **Team Lead** trong các dự án học thuật, mình tham gia toàn bộ quy trình: **nghiên cứu người dùng**, **wireframe Figma**, **đặc tả chức năng**, **điều phối sprint** và **kiểm thử trên thiết bị thực**. Về phần xây dựng, mình đã dùng **Flutter, Firebase, ASP.NET MVC và REST APIs** để biến ý tưởng thành sản phẩm thực tế.",
-          p3: "Hiện mình đang học các **chứng chỉ Google** về **Project Management, AI và UX Design**, đồng thời dẫn dắt một **ứng dụng y tế di động**. Với mình, một sản phẩm tốt không chỉ hoạt động được — nó giải quyết **đúng vấn đề** với một **trải nghiệm tuyệt vời**.",
+          p3: "Mình đã hoàn thành **6 chương trình Google có liên kết xác minh** về **Project Management, AI, UX Design, IT Automation và Digital Marketing**, đồng thời dẫn dắt một **ứng dụng y tế di động**. Với mình, một sản phẩm tốt không chỉ hoạt động được — nó giải quyết **đúng vấn đề** với một **trải nghiệm tuyệt vời**.",
           tags: ["Phân tích Nghiệp vụ", "Tư duy Sản phẩm", "UX / UI", "Lãnh đạo Nhóm"],
         },
         traits: [
@@ -1752,26 +1752,24 @@ export const dictionaries = {
         },
         experience: {
           eyebrow: "Kinh nghiệm & Hoạt động",
-          heading: "Nơi tôi đã trưởng thành",
-          desc: "Thành tích được xây dựng qua các sprint học thuật, phòng nghiên cứu và tự học — không chỉ trong lớp học.",
+          heading: "Ba dấu mốc đáng giá nhất",
+          desc: "Không phải một danh sách dài — chỉ là ba bằng chứng rõ nhất cho cách mình dẫn dắt, nghiên cứu và học để làm sản phẩm tốt hơn.",
           items: [
-            { period: "Tháng 5/2026", title: "Google UX Design Professional Certificate", org: "Google · Coursera", desc: "Hoàn thành toàn bộ chương trình UX Design, bao gồm nghiên cứu người dùng, wireframe, prototype hi-fi trên Figma và usability testing." },
-            { period: "Tháng 4 – 5/2026", title: "Chứng chỉ Google Professional × 4", org: "Google · Coursera", desc: "Hoàn thành Project Management, AI Professional, AI Essentials và IT Automation with Python — trong sáu tuần." },
-            { period: "Tháng 3/2026", title: "Nghiên cứu Khoa học Sinh viên", org: "Trường ĐH Công Thương TP.HCM", desc: "Đồng tác giả nghiên cứu về mạng xã hội tích hợp AI cho sinh viên. Lên ý tưởng kiến trúc hệ thống và thiết kế tương tác người dùng cốt lõi." },
-            { period: "Tháng 2/2026 – Hiện tại", title: "Team Lead — Smart Medical Booking App", org: "Dự án Học thuật", desc: "Dẫn dắt nhóm 4 người xây ứng dụng y tế Flutter/Firebase với tính năng đặt lịch bằng giọng nói cho người cao tuổi." },
-            { period: "Tháng 12/2025", title: "Team Lead — E-Commerce System", org: "Dự án Học thuật", desc: "Dẫn dắt nhóm 3 người hoàn thiện nền tảng e-commerce ASP.NET MVC với quản lý kho tự động trong một tháng." },
+            { kind: "leadership", period: "02/2026 – Hiện tại", title: "Dẫn dắt ứng dụng đặt khám hỗ trợ giọng nói", org: "Dự án học thuật · Trưởng nhóm", desc: "Dẫn dắt nhóm 4 người xây ứng dụng Flutter/Firebase có chống trùng lịch và hỗ trợ giọng nói cho người cao tuổi.", evidence: ["Nhóm 4 người", "100+ kịch bản kiểm thử"] },
+            { kind: "research", period: "03/2026", title: "Đồng tác giả nghiên cứu AI sinh viên", org: "HUIT · Cuộc thi NCKH sinh viên", desc: "Đồng tác giả đề tài mạng xã hội tích hợp AI cho sinh viên, đóng góp kiến trúc hệ thống và tương tác cốt lõi.", evidence: ["Mạng xã hội AI", "Kiến trúc hệ thống"] },
+            { kind: "learning", period: "04–07/2026", title: "6 chương trình Google có xác minh", org: "Google · Coursera", desc: "Hoàn thành sáu chương trình về UX, quản lý dự án, AI, tự động hóa Python và digital marketing.", evidence: ["UX · Quản lý dự án", "AI · Python · Marketing"] },
           ],
         },
         certifications: {
           eyebrow: "Chứng chỉ",
           heading: "Học hỏi là một quá trình liên tục",
-          desc: "Mình chủ động học thêm về Product, UX, AI và Project Management thông qua các chương trình chuyên môn từ Google để mở rộng góc nhìn và áp dụng vào các dự án thực tế.",
+          desc: "Mình đã hoàn thành các chương trình Google có xác minh về Product, UX, AI, IT Automation và Digital Marketing, sau đó áp dụng những gì học được vào dự án thực tế.",
           all_cta: "Xem tất cả",
           items: [
             { emoji: "📋", title: "Google Project Management", issuer: "Google · Coursera", date: "05/2026" },
             { emoji: "🤖", title: "Google AI Professional", issuer: "Google · Coursera", date: "04/2026" },
-            { emoji: "🎨", title: "Google UX Design", issuer: "Google · Coursera", date: "Đang học" },
-            { emoji: "⚙️", title: "Google IT Automation with Python", issuer: "Google · Coursera", date: "04/2026" },
+            { emoji: "🎨", title: "Google UX Design", issuer: "Google · Coursera", date: "05/2026" },
+            { emoji: "⚙️", title: "Google IT Automation with Python", issuer: "Google · Coursera", date: "05/2026" },
           ],
         },
         contact: {

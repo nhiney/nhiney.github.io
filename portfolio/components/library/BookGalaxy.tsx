@@ -145,11 +145,11 @@ function GalaxyContent({
     <>
       {isDark ? (
         <>
-          <color attach="background" args={["#07080f"]} />
-          <fog attach="fog" args={["#07080f", 16, 46]} />
+          <color attach="background" args={["#080d18"]} />
+          <fog attach="fog" args={["#0d1526", 16, 46]} />
         </>
       ) : (
-        <fog attach="fog" args={["#eef1f6", 20, 50]} />
+        <fog attach="fog" args={["#e8edf7", 20, 50]} />
       )}
       <Env />
 
@@ -159,12 +159,12 @@ function GalaxyContent({
           <Stars radius={26} depth={16} count={1200} factor={3} saturation={0} fade speed={2} />
         </>
       ) : (
-        <Sparkles count={60} scale={[16, 12, 16]} size={5} speed={0.3} opacity={0.5} color="#b98ac0" />
+        <Sparkles count={72} scale={[16, 12, 16]} size={5} speed={0.3} opacity={0.62} color="#7489ef" />
       )}
 
-      <ambientLight intensity={isDark ? 0.34 : 0.8} color={isDark ? "#9fb0d8" : "#ffffff"} />
+      <ambientLight intensity={isDark ? 0.42 : 0.86} color={isDark ? "#a9b9e8" : "#ffffff"} />
       <directionalLight position={[5, 6, 6]} intensity={isDark ? 1.4 : 1.7} color="#fff1da" />
-      <directionalLight position={[-6, 2, -5]} intensity={isDark ? 1.0 : 0.7} color={isDark ? "#7da0ff" : "#dfe6ff"} />
+      <directionalLight position={[-6, 2, -5]} intensity={isDark ? 1.12 : 0.82} color={isDark ? "#859efa" : "#d8e1ff"} />
       <directionalLight position={[0, 3, -9]} intensity={isDark ? 1.6 : 1.0} color="#ffd6a6" />
       <pointLight position={[0, 0, 8]} intensity={isDark ? 16 : 10} distance={26} color="#ffe9cf" />
 

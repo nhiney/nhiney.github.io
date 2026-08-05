@@ -5,10 +5,8 @@ import Link from "next/link";
 import { ArrowRight, GitBranch, Clock, Code2, Mail } from "lucide-react";
 
 import { ColourfulText }      from "@/components/effects/ColourfulText";
-import { BackgroundLines }    from "@/components/effects/BackgroundLines";
 import { GlowingEffect }      from "@/components/effects/GlowingEffect";
-import { CursorTrailCanvas }  from "@/components/effects/CursorTrailCanvas";
-import { MouseSpotlight }     from "@/components/effects/MouseSpotlight";
+import { AIBackground }       from "@/components/effects/AIBackground";
 import { Container }          from "@/components/ui/Container";
 import { PortfolioClient }    from "@/app/portfolio/PortfolioClient";
 import { useLanguage }   from "@/context/LanguageContext";
@@ -16,6 +14,7 @@ import { SITE_CONFIG }   from "@/lib/constants";
 import wakatimeTotal     from "@/data/wakatime.json";
 import { cn }            from "@/lib/utils";
 import { Post }          from "@/types";
+import pageStyles        from "./HomeClient.module.css";
 
 function Highlight({ text }: { text: string }) {
   const parts = text.split(/\*\*(.+?)\*\*/);
@@ -33,37 +32,37 @@ function Highlight({ text }: { text: string }) {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const TECH_PILLS = [
-  { label: "Laravel", cls: "border-rose-200/70 bg-rose-50/55 text-rose-700/85 dark:border-rose-300/15 dark:bg-rose-400/[0.045] dark:text-rose-100/85" },
-  { label: "Flutter", cls: "border-sky-200/70 bg-sky-50/55 text-sky-700/85 dark:border-sky-300/15 dark:bg-sky-400/[0.045] dark:text-sky-100/85" },
-  { label: "Oracle DB", cls: "border-red-200/70 bg-red-50/50 text-red-700/85 dark:border-red-300/15 dark:bg-red-400/[0.045] dark:text-red-100/85" },
-  { label: "Firebase", cls: "border-amber-200/80 bg-amber-50/55 text-amber-700/85 dark:border-amber-300/15 dark:bg-amber-400/[0.045] dark:text-amber-100/85" },
-  { label: "ASP.NET", cls: "border-violet-200/70 bg-violet-50/55 text-violet-700/85 dark:border-violet-300/15 dark:bg-violet-400/[0.045] dark:text-violet-100/85" },
-  { label: "Dart", cls: "border-cyan-200/70 bg-cyan-50/55 text-cyan-700/85 dark:border-cyan-300/15 dark:bg-cyan-400/[0.045] dark:text-cyan-100/85" },
-  { label: "C#", cls: "border-indigo-200/70 bg-indigo-50/55 text-indigo-700/85 dark:border-indigo-300/15 dark:bg-indigo-400/[0.045] dark:text-indigo-100/85" },
-  { label: "PHP", cls: "border-fuchsia-200/70 bg-fuchsia-50/50 text-fuchsia-700/85 dark:border-fuchsia-300/15 dark:bg-fuchsia-400/[0.045] dark:text-fuchsia-100/85" },
-  { label: "PL/SQL", cls: "border-orange-200/70 bg-orange-50/55 text-orange-700/85 dark:border-orange-300/15 dark:bg-orange-400/[0.045] dark:text-orange-100/85" },
-  { label: "REST APIs", cls: "border-emerald-200/70 bg-emerald-50/55 text-emerald-700/85 dark:border-emerald-300/15 dark:bg-emerald-400/[0.045] dark:text-emerald-100/85" },
-  { label: "Node.js", cls: "border-lime-200/70 bg-lime-50/50 text-lime-700/85 dark:border-lime-300/15 dark:bg-lime-400/[0.045] dark:text-lime-100/85" },
-  { label: "Git", cls: "border-slate-200/80 bg-slate-50/70 text-slate-700/85 dark:border-slate-300/15 dark:bg-slate-400/[0.04] dark:text-slate-100/85" },
+  { label: "Laravel", cls: "border-rose-200/85 bg-rose-50/80 text-rose-700/95 dark:border-rose-300/30 dark:bg-rose-400/[0.12] dark:text-rose-100/95" },
+  { label: "Flutter", cls: "border-sky-200/85 bg-sky-50/80 text-sky-700/95 dark:border-sky-300/30 dark:bg-sky-400/[0.12] dark:text-sky-100/95" },
+  { label: "Oracle DB", cls: "border-red-200/85 bg-red-50/78 text-red-700/95 dark:border-red-300/30 dark:bg-red-400/[0.12] dark:text-red-100/95" },
+  { label: "Firebase", cls: "border-amber-200/90 bg-amber-50/82 text-amber-700/95 dark:border-amber-300/30 dark:bg-amber-400/[0.12] dark:text-amber-100/95" },
+  { label: "ASP.NET", cls: "border-violet-200/85 bg-violet-50/80 text-violet-700/95 dark:border-violet-300/30 dark:bg-violet-400/[0.12] dark:text-violet-100/95" },
+  { label: "Dart", cls: "border-cyan-200/85 bg-cyan-50/80 text-cyan-700/95 dark:border-cyan-300/30 dark:bg-cyan-400/[0.12] dark:text-cyan-100/95" },
+  { label: "C#", cls: "border-indigo-200/85 bg-indigo-50/80 text-indigo-700/95 dark:border-indigo-300/30 dark:bg-indigo-400/[0.12] dark:text-indigo-100/95" },
+  { label: "PHP", cls: "border-fuchsia-200/85 bg-fuchsia-50/78 text-fuchsia-700/95 dark:border-fuchsia-300/30 dark:bg-fuchsia-400/[0.12] dark:text-fuchsia-100/95" },
+  { label: "PL/SQL", cls: "border-orange-200/85 bg-orange-50/80 text-orange-700/95 dark:border-orange-300/30 dark:bg-orange-400/[0.12] dark:text-orange-100/95" },
+  { label: "REST APIs", cls: "border-emerald-200/85 bg-emerald-50/80 text-emerald-700/95 dark:border-emerald-300/30 dark:bg-emerald-400/[0.12] dark:text-emerald-100/95" },
+  { label: "Node.js", cls: "border-lime-200/85 bg-lime-50/78 text-lime-700/95 dark:border-lime-300/30 dark:bg-lime-400/[0.12] dark:text-lime-100/95" },
+  { label: "Git", cls: "border-slate-200/90 bg-slate-50/85 text-slate-700/95 dark:border-slate-300/30 dark:bg-slate-400/[0.12] dark:text-slate-100/95" },
 ];
 
 const BENTO_TONES = {
   github: {
-    frame: "border-sky-200/55 bg-white/55 dark:border-sky-300/10 dark:bg-white/[0.025]",
-    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(239,246,255,0.32))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(56,189,248,0.035))]",
-    icon: "border-sky-200/80 bg-sky-50/65 text-sky-700/90 dark:border-sky-300/15 dark:bg-sky-400/[0.055] dark:text-sky-100/85",
+    frame: "border-sky-200/80 bg-white/78 dark:border-sky-300/24 dark:bg-sky-300/[0.06]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(248,250,255,0.96)_52%,rgba(232,245,255,0.58))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(17,27,50,0.96)_56%,rgba(56,189,248,0.11))]",
+    icon: "border-sky-200/90 bg-sky-50/88 text-sky-700 dark:border-sky-300/32 dark:bg-sky-400/[0.14] dark:text-sky-100",
     rule: "from-sky-300/45 via-blue-300/45 to-indigo-300/40",
   },
   coding: {
-    frame: "border-indigo-200/55 bg-white/55 dark:border-indigo-300/10 dark:bg-white/[0.025]",
-    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(238,242,255,0.32))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(99,102,241,0.035))]",
-    icon: "border-indigo-200/80 bg-indigo-50/65 text-indigo-700/90 dark:border-indigo-300/15 dark:bg-indigo-400/[0.055] dark:text-indigo-100/85",
+    frame: "border-indigo-200/80 bg-white/78 dark:border-indigo-300/24 dark:bg-indigo-300/[0.06]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(248,249,255,0.96)_52%,rgba(235,237,255,0.62))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(19,25,52,0.96)_56%,rgba(99,102,241,0.13))]",
+    icon: "border-indigo-200/90 bg-indigo-50/88 text-indigo-700 dark:border-indigo-300/32 dark:bg-indigo-400/[0.14] dark:text-indigo-100",
     rule: "from-blue-300/45 via-indigo-300/45 to-violet-300/40",
   },
   tech: {
-    frame: "border-violet-200/50 bg-white/55 dark:border-violet-300/10 dark:bg-white/[0.025]",
-    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(248,250,252,0.94)_52%,rgba(245,243,255,0.3))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.94),rgba(15,23,42,0.86)_56%,rgba(168,85,247,0.035))]",
-    icon: "border-violet-200/80 bg-violet-50/65 text-violet-700/90 dark:border-violet-300/15 dark:bg-violet-400/[0.055] dark:text-violet-100/85",
+    frame: "border-violet-200/78 bg-white/78 dark:border-violet-300/24 dark:bg-violet-300/[0.06]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(250,248,255,0.96)_52%,rgba(244,237,255,0.6))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(25,21,51,0.96)_56%,rgba(168,85,247,0.12))]",
+    icon: "border-violet-200/90 bg-violet-50/88 text-violet-700 dark:border-violet-300/32 dark:bg-violet-400/[0.14] dark:text-violet-100",
     rule: "from-violet-300/42 via-fuchsia-300/35 to-amber-300/38",
   },
 } as const;
@@ -73,13 +72,13 @@ const GITHUB_STAT_BOXES = [
     key: "github_contributions",
     value: 186,
     delay: 0,
-    cls: "border-blue-200/65 bg-white/72 text-blue-700/90 dark:border-blue-300/15 dark:bg-blue-400/[0.045] dark:text-blue-100/85",
+    cls: "border-blue-200/85 bg-white/88 text-blue-700 dark:border-blue-300/30 dark:bg-blue-400/[0.13] dark:text-blue-100",
   },
   {
     key: "github_repos",
     value: 8,
     delay: 0.2,
-    cls: "border-indigo-200/65 bg-white/72 text-indigo-700/90 dark:border-indigo-300/15 dark:bg-indigo-400/[0.045] dark:text-indigo-100/85",
+    cls: "border-indigo-200/85 bg-white/88 text-indigo-700 dark:border-indigo-300/30 dark:bg-indigo-400/[0.13] dark:text-indigo-100",
   },
 ] as const;
 
@@ -289,29 +288,22 @@ export function HomeClient(_props: { projects: Post[]; latestPosts: Post[] }) {
   const { t } = useLanguage();
 
   return (
-    <>
-      <CursorTrailCanvas className="pointer-events-none fixed inset-0 z-50 h-full w-full hidden [@media(hover:hover)]:block" />
+    <div className={pageStyles.pageShell}>
+      <AIBackground />
 
-      {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden">
+      <div className={pageStyles.pageContent}>
+        {/* ══ HERO ════════════════════════════════════════════════════════════ */}
+        <section className="relative min-h-[calc(100svh-4rem)] overflow-hidden">
 
-        <div className="pointer-events-none absolute inset-0 overflow-hidden hidden md:block">
-          <BackgroundLines className="h-full w-full [&_svg]:opacity-[0.10]">
-            <span />
-          </BackgroundLines>
-        </div>
-
-        <MouseSpotlight />
-
-        <Container className="relative z-10 flex flex-col justify-center py-10 sm:py-12 md:py-16">
-          <div className="grid w-full grid-cols-1 gap-10 md:gap-12 xl:grid-cols-2 xl:items-center xl:gap-16">
+          <Container className="relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-start pb-10 pt-20 sm:justify-center sm:py-12 md:py-16 xl:justify-start xl:pb-16 xl:pt-[clamp(5.5rem,11svh,8rem)]">
+            <div className="grid w-full grid-cols-1 gap-10 md:gap-12 xl:grid-cols-2 xl:items-center xl:gap-16">
 
             {/* ── Left: text ─────────────────────────────────────────── */}
             <div className="flex flex-col items-center gap-5 text-center xl:items-start xl:text-left">
 
               <p className="text-sm font-medium site-soft tracking-wide">
                 <span className="block sm:inline">{t("home.hero.title_prefix")}</span>{" "}
-                <ColourfulText text="Nguyễn Thị Yến Nhi" />
+                <ColourfulText text={t("home.hero.name")} />
               </p>
 
               <h1 className="max-w-3xl text-3xl font-bold leading-tight site-heading sm:text-4xl md:text-5xl md:leading-[1.1]">
@@ -356,12 +348,13 @@ export function HomeClient(_props: { projects: Post[]; latestPosts: Post[] }) {
               <PersonalBentoGrid />
             </div>
 
-          </div>
-        </Container>
-      </section>
+            </div>
+          </Container>
+        </section>
 
-      {/* ══ PORTFOLIO CONTENT ════════════════════════════════════════════════ */}
-      <PortfolioClient projects={[]} hideHero hideCerts />
-    </>
+        {/* ══ PORTFOLIO CONTENT ══════════════════════════════════════════════ */}
+        <PortfolioClient projects={[]} hideHero hideCerts />
+      </div>
+    </div>
   );
 }

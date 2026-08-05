@@ -34,8 +34,8 @@ function Env() {
 
 function StaticBook({ title, meta }: { title: string; meta: BookMeta }) {
   // Still by default — the cover faces the viewer; dragging spins it.
-  // In the detail view, a localized cover hook should be part of the clickable
-  // cover itself, so prefer the designed cover whenever a hook is provided.
+  // Always show the published cover when one exists. The designed canvas is a
+  // fallback only for books that do not have a cover asset at all.
   return (
     <Book3D
       rotation={[0, -Math.PI / 2, 0]}
@@ -44,7 +44,7 @@ function StaticBook({ title, meta }: { title: string; meta: BookMeta }) {
       height={2.5}
       thickness={0.24}
       coverWidth={1.7}
-      showDesignedCover={!!meta.coverBlurb}
+      showDesignedCover={!meta.cover && !!meta.coverBlurb}
     />
   );
 }
@@ -54,15 +54,15 @@ export default function BookViewer3D({ title, meta }: { title: string; meta: Boo
     <Canvas
       dpr={[1, 2]}
       shadows={false}
-      camera={{ fov: 40, near: 0.1, far: 50, position: [0.5, 0.35, 3.6] }}
-      gl={{ alpha: true, antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.08 }}
+      camera={{ fov: 40, near: 0.1, far: 50, position: [0.5, 0.3, 4.1] }}
+      gl={{ alpha: true, antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 0.84 }}
       style={{ background: "transparent" }}
     >
       <Env />
-      <ambientLight intensity={0.6} color="#fff6ec" />
-      <directionalLight position={[4, 6, 5]} intensity={1.7} color="#fff3e2" />
-      <directionalLight position={[-5, 2, -3]} intensity={0.8} color="#cdd8ff" />
-      <pointLight position={[0, -2, 3]} intensity={5} distance={9} color="#ffe6c4" />
+      <ambientLight intensity={0.45} color="#fff6ec" />
+      <directionalLight position={[4, 6, 5]} intensity={1.25} color="#fff3e2" />
+      <directionalLight position={[-5, 2, -3]} intensity={0.55} color="#cdd8ff" />
+      <pointLight position={[0, -2, 3]} intensity={3.2} distance={9} color="#ffe6c4" />
 
       <Suspense fallback={null}>
         <StaticBook title={title} meta={meta} />

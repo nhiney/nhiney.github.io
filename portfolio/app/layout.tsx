@@ -1,5 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Caveat, Sora, Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Be_Vietnam_Pro,
+  Caveat,
+  Cormorant_Garamond,
+  IBM_Plex_Mono,
+  Inter,
+  Lora,
+  Outfit,
+  Plus_Jakarta_Sans,
+  Sora,
+} from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/layout/Navbar";
@@ -10,7 +20,6 @@ import { RouteTextPalette } from "@/components/layout/RouteTextPalette";
 import { ServiceWorkerRegistration } from "@/components/pwa/ServiceWorkerRegistration";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { PostHogProvider } from "@/components/posthog/PostHogProvider";
-import { AnalyticsConsentBanner } from "@/components/privacy/AnalyticsConsentBanner";
 import "./globals.css";
 
 const inter = Inter({
@@ -48,6 +57,36 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
+});
+
+// Scoped editorial pair for “Ngôi nhà đang thở”. The variables are exposed at
+// the root, but only the goodbye-things reader theme consumes them.
+const breathingSerif = Lora({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-breathing-serif",
+  display: "swap",
+  weight: ["500", "600", "700"],
+});
+
+const breathingSans = Be_Vietnam_Pro({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-breathing-sans",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const futureLabSerif = Cormorant_Garamond({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-future-lab-serif",
+  display: "swap",
+  weight: ["500", "600", "700"],
+});
+
+const futureLabMono = IBM_Plex_Mono({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-future-lab-mono",
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 const BASE = SITE_CONFIG.url;
@@ -137,8 +176,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FBFEFE" },
-    { media: "(prefers-color-scheme: dark)",  color: "#0B0C0E" },
+    { media: "(prefers-color-scheme: light)", color: "#F8F9FC" },
+    { media: "(prefers-color-scheme: dark)",  color: "#0D121C" },
   ],
 };
 
@@ -219,9 +258,9 @@ const themeScript = `
     try {
       var theme = localStorage.getItem('theme');
       var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-      if (!theme && supportDarkMode) theme = 'dark';
-      if (!theme) theme = 'light';
+      if (theme !== 'light' && theme !== 'dark') theme = supportDarkMode ? 'dark' : 'light';
       document.documentElement.classList.toggle('dark', theme === 'dark');
+      document.documentElement.style.colorScheme = theme;
     } catch (e) {}
   })();
 `;
@@ -251,6 +290,10 @@ export default function RootLayout({
         sora.variable,
         outfit.variable,
         plusJakarta.variable,
+        breathingSerif.variable,
+        breathingSans.variable,
+        futureLabSerif.variable,
+        futureLabMono.variable,
         inter.className,
         "min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans"
       )}>
@@ -263,7 +306,6 @@ export default function RootLayout({
             <main className="flex-1 relative z-10">{children}</main>
             <Footer />
             <ServiceWorkerRegistration />
-            <AnalyticsConsentBanner />
           </PostHogProvider>
         </LanguageProvider>
       </body>
