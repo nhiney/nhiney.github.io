@@ -1,52 +1,200 @@
 1:"$Sreact.fragment"
-b:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default",1]
-:HL["/_next/static/chunks/10sqmh8pah3vh.css","style"]
-:HL["/_next/static/chunks/0sxoodkkvrqnx.css","style"]
+b:I[68027,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"default",1]
+:HL["/_next/static/chunks/0bss.xxyeb375.css","style"]
+:HL["/_next/static/chunks/0dsv7y0xcvlh0.css","style"]
+:HL["/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/02263ebadd758ea4-s.p.0qg7j5o.yrclm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/11cc37d7380d16b4-s.p.0ptcwqi9jx~4d.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1b99372b3eaef0c8-s.p.0gx2haw2tmll8.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/1bffadaabf893a1e-s.p.16ipb6fqu393i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/23b7a97ae3b5c134-s.p.0o14nraug8u5s.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/3c285486269019b7-s.p.0sn2213rkw2e_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/53e45098eac42afb-s.p.0l2qk94b1u89y.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/625a092f804baad3-s.p.0mrp_qm_8jqq_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/6bd983bd58a87a3d-s.p.0h108oidc_0fm.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/6f42e0a3b0519c4d-s.p.0czffigx~77c..woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8c2eb9ceedecfc8e-s.p.0oeo8epbafgia.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8f46d218c8f79e34-s.p.0xhl7b6zs4.~j.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/8ffc259da9d23054-s.p.0b_.2~bprftx..woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/99e609270109b47d-s.p.16-z~2sp29ex6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/9a4838fcda0d1bca-s.p.0787d67~10694.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/a3bcb02a0e9e5d11-s.p.0p40-daftjh_g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/a4f4f75ad654963f-s.p.0h6jagi-ln9qy.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a85fe84266768609-s.p.05b418i5bs~lg.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d0b60be57f16ee32-s.p.0m2lc_66fsc~9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e1ccd2766b08c828-s.p.0dd-~h-3wf1jt.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e532fa1b9921e1cd-s.p.0~wrfy7sm-h4g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/effe91970fc4db64-s.p.07ig5l8azj~hy.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:T917,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Business Analyst","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Business Analysis","Requirements Analysis","User Story Writing","BPMN 2.0","System Analysis","Agile Project Management","Stakeholder Communication","Product Documentation","REST API Design","Data Analysis"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Project Management Professional Certificate"},{"@type":"EducationalOccupationalCredential","name":"Google Digital Marketing & E-commerce Professional Certificate"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Business Analyst Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-08-04"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["","classic",""],"q":"","i":false,"f":[[["",{"children":["classic",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0sxoodkkvrqnx.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/057-53bz69c92.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0f-fatr3sa~~9.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0xw5orn9hw4kl.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (!theme && supportDarkMode) theme = 'dark';\n      if (!theme) theme = 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc","$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"dawOn26wtHfpnFYhNQdT9"}
-e:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"LanguageProvider"]
-f:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PostHogProvider"]
-10:I[64844,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"RouteTextPalette"]
-11:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ScrollProgress"]
-12:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"BackgroundEffects"]
-13:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"Navbar"]
-14:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-15:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-16:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/167cn-q_pg51-.js"],"FadeIn"]
-17:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/167cn-q_pg51-.js"],""]
-1e:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-1f:"$Sreact.suspense"
-22:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ViewportBoundary"]
-24:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"MetadataBoundary"]
+:HL["/_next/static/chunks/11kn0-znew7q6.css","style"]
+2:T917,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://startup.id.vn/#person","name":"Nguyen Thi Yen Nhi","alternateName":["Yen Nhi","Nhi Yen","Nguyễn Thị Yến Nhi"],"url":"https://startup.id.vn","image":{"@type":"ImageObject","url":"https://startup.id.vn/og/home.png","width":1200,"height":630},"jobTitle":"Business Analyst","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","email":"mailto:nhiyen.engineer@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ho Chi Minh City","addressCountry":"VN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Information Technology (UIT)","sameAs":"https://www.uit.edu.vn"},"knowsAbout":["Business Analysis","Requirements Analysis","User Story Writing","BPMN 2.0","System Analysis","Agile Project Management","Stakeholder Communication","Product Documentation","REST API Design","Data Analysis"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Google Project Management Professional Certificate"},{"@type":"EducationalOccupationalCredential","name":"Google Digital Marketing & E-commerce Professional Certificate"}],"sameAs":["https://github.com/nhiney","https://www.linkedin.com/in/nhi-yen-410b2a2b7/","https://wakatime.com/@nhiney","https://startup.id.vn"]},{"@type":"ProfilePage","@id":"https://startup.id.vn/#profilepage","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi — Business Analyst Portfolio","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","mainEntity":{"@id":"https://startup.id.vn/#person"},"dateModified":"2026-08-05"},{"@type":"WebSite","@id":"https://startup.id.vn/#website","url":"https://startup.id.vn","name":"Nguyen Thi Yen Nhi","description":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles.","author":{"@id":"https://startup.id.vn/#person"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://startup.id.vn/?q={search_term_string}"},"query-input":"required name=search_term_string"}}]}0:{"P":null,"c":["","classic",""],"q":"","i":false,"f":[[["",{"children":["classic",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0bss.xxyeb375.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0dsv7y0xcvlh0.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/17q37u4iag1dw.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0kbvd7a5yn.ag.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/0gfu27mqk2z0_.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0d3shmwh5_nmn.js","async":true,"nonce":"$undefined"}],["$","script","script-4",{"src":"/_next/static/chunks/0crj674jgwzi5.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"h-full antialiased","children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n  (function() {\n    try {\n      var theme = localStorage.getItem('theme');\n      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;\n      if (theme !== 'light' && theme !== 'dark') theme = supportDarkMode ? 'dark' : 'light';\n      document.documentElement.classList.toggle('dark', theme === 'dark');\n      document.documentElement.style.colorScheme = theme;\n    } catch (e) {}\n  })();\n"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],"$L3","$L4","$L5"]}],"$L6"]}]]}],{"children":["$L7",{"children":["$L8",{},null,false,null]},null,false,"$@9"]},null,false,null],"$La",false]],"m":"$undefined","G":["$b",["$Lc","$Ld"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"PrNFLp4ZLsQnH2MoRdQlY"}
+e:I[87236,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"LanguageProvider"]
+f:I[31344,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"PostHogProvider"]
+10:I[64844,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"RouteTextPalette"]
+11:I[31612,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"ScrollProgress"]
+12:I[77066,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"BackgroundEffects"]
+13:I[92190,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"Navbar"]
+14:I[39756,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"default"]
+15:I[37457,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"default"]
+16:I[7723,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js","/_next/static/chunks/0xulm4v716vmp.js"],"FadeIn"]
+17:I[22016,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js","/_next/static/chunks/0xulm4v716vmp.js"],""]
+1d:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"OutletBoundary"]
+1e:"$Sreact.suspense"
+21:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"ViewportBoundary"]
+23:I[97367,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"MetadataBoundary"]
 3:["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}]
 4:["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}]
 5:["$","link",null,{"rel":"dns-prefetch","href":"https://github.com"}]
-6:["$","body",null,{"className":"inter_356d7d38-module__VP9iza__variable caveat_43e898ed-module__nXgwXW__variable sora_f0ca33ab-module__zIZe8a__variable outfit_becbef28-module__Yo5XbG__variable plus_jakarta_sans_a50c2f49-module__OnnQPa__variable inter_356d7d38-module__VP9iza__className min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans","children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$L10",null,{}],["$","$L11",null,{}],["$","$L12",null,{}],["$","$L13",null,{}],["$","main",null,{"className":"flex-1 relative z-10","children":["$","$L14",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10","children":["$","section",null,{"className":"flex min-h-[60vh] flex-col items-center justify-center text-center","children":["$","$L16",null,{"children":[["$","h1",null,{"className":"text-6xl font-bold tracking-tight site-heading","children":"404"}],["$","p",null,{"className":"mt-4 text-xl site-body","children":"The page you are looking for does not exist."}],["$","div",null,{"className":"mt-10","children":["$","$L17",null,{"href":"/","className":"rounded-md bg-zinc-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300","children":"Go back home"}]}]]}]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"border-t border-border/50 bg-background","children":["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 flex flex-col items-center gap-5 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left","children":[["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-start sm:gap-5","children":[["$","span",null,{"className":"text-sm font-semibold text-foreground whitespace-nowrap","children":"Nguyen Thi Yen Nhi"}],["$","span",null,{"className":"h-4 w-px bg-border/60"}],["$","div",null,{"className":"flex items-center gap-2","children":[["$","a","GitHub",{"href":"https://github.com/nhiney","target":"_blank","rel":"noopener noreferrer","aria-label":"GitHub","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":[["$","path",null,{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path",null,{"d":"M9 18c-4.51 2-5-2-7-2"}]]}]}],["$","a","LinkedIn",{"href":"https://www.linkedin.com/in/nhi-yen-410b2a2b7/","target":"_blank","rel":"noopener noreferrer","aria-label":"LinkedIn","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":[["$","path",null,{"d":"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"}],["$","rect",null,{"width":"4","height":"12","x":"2","y":"9"}],["$","circle",null,{"cx":"4","cy":"4","r":"2"}]]}]}],["$","a","Email",{"href":"mailto:nhiyen.engineer@gmail.com","target":"$undefined","rel":"$undefined","aria-label":"Email","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":["$L18","$L19"]}]}]]}]]}],"$L1a"]}]}],"$L1b","$L1c"]}]}]}]
+6:["$","body",null,{"className":"inter_356d7d38-module__VP9iza__variable caveat_43e898ed-module__nXgwXW__variable sora_f0ca33ab-module__zIZe8a__variable outfit_becbef28-module__Yo5XbG__variable plus_jakarta_sans_a50c2f49-module__OnnQPa__variable lora_3eb6b19c-module__z_xzBa__variable be_vietnam_pro_b4fdd715-module__saN7eq__variable cormorant_garamond_169f17a7-module__vCisWa__variable ibm_plex_mono_a8f9c639-module__Dz6Dva__variable inter_356d7d38-module__VP9iza__className min-h-full flex flex-col bg-background text-foreground transition-colors relative selection:bg-primary/20 font-sans","children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$L10",null,{}],["$","$L11",null,{}],["$","$L12",null,{}],["$","$L13",null,{}],["$","main",null,{"className":"flex-1 relative z-10","children":["$","$L14",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10","children":["$","section",null,{"className":"flex min-h-[60vh] flex-col items-center justify-center text-center","children":["$","$L16",null,{"children":[["$","h1",null,{"className":"text-6xl font-bold tracking-tight site-heading","children":"404"}],["$","p",null,{"className":"mt-4 text-xl site-body","children":"The page you are looking for does not exist."}],["$","div",null,{"className":"mt-10","children":["$","$L17",null,{"href":"/","className":"rounded-md bg-zinc-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300","children":"Go back home"}]}]]}]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"relative z-20 border-t border-border/50 bg-background/80 backdrop-blur-xl","children":["$","div",null,{"className":"mx-auto w-full max-w-[1400px] px-6 md:px-10 flex flex-col items-center gap-5 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:text-left","children":[["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-start sm:gap-5","children":[["$","span",null,{"className":"text-sm font-semibold text-foreground whitespace-nowrap","children":"Nguyen Thi Yen Nhi"}],["$","span",null,{"className":"h-4 w-px bg-border/60"}],["$","div",null,{"className":"flex items-center gap-2","children":[["$","a","GitHub",{"href":"https://github.com/nhiney","target":"_blank","rel":"noopener noreferrer","aria-label":"GitHub","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":[["$","path",null,{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path",null,{"d":"M9 18c-4.51 2-5-2-7-2"}]]}]}],["$","a","LinkedIn",{"href":"https://www.linkedin.com/in/nhi-yen-410b2a2b7/","target":"_blank","rel":"noopener noreferrer","aria-label":"LinkedIn","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":[["$","path",null,{"d":"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"}],["$","rect",null,{"width":"4","height":"12","x":"2","y":"9"}],["$","circle",null,{"cx":"4","cy":"4","r":"2"}]]}]}],["$","a","Email",{"href":"mailto:nhiyen.engineer@gmail.com","target":"$undefined","rel":"$undefined","aria-label":"Email","className":"flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/60 transition-all hover:text-foreground hover:bg-secondary/60","children":"$L18"}]]}]]}],"$L19"]}]}],"$L1a","$L1b"]}]}]}]
 7:["$","$1","c",{"children":[null,["$","$L14",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L15",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
-8:["$","$1","c",{"children":["$L1d",[["$","script","script-0",{"src":"/_next/static/chunks/10fxtddioso-k.js","async":true,"nonce":"$undefined"}]],["$","$L1e",null,{"children":["$","$1f",null,{"name":"Next.MetadataOutlet","children":"$@20"}]}]]}]
-21:[]
-9:"$W21"
-a:["$","$1","h",{"children":[null,["$","$L22",null,{"children":"$L23"}],["$","div",null,{"hidden":true,"children":["$","$L24",null,{"children":["$","$1f",null,{"name":"Next.Metadata","children":"$L25"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
-c:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/10sqmh8pah3vh.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0sxoodkkvrqnx.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-26:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"default"]
-27:I[29826,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"T"]
-28:I[95156,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"PrivacyFooterLink"]
-29:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"FooterLanguageSelector"]
-2a:I[92513,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"ServiceWorkerRegistration"]
-2b:I[22166,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"AnalyticsConsentBanner"]
-18:["$","rect",null,{"width":"20","height":"16","x":"2","y":"4","rx":"2"}]
-19:["$","path",null,{"d":"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"}]
-1a:["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-5","children":[["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]],["$","a",null,{"href":"/cv.pdf","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground","children":[["$","$L26",null,{"ref":"$undefined","iconNode":[["path",{"d":"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z","key":"1oefj6"}],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5","key":"wfsgrz"}],["path",{"d":"M10 9H8","key":"b1mrlr"}],["path",{"d":"M16 13H8","key":"t4e002"}],["path",{"d":"M16 17H8","key":"z1uh3a"}]],"className":"lucide-file-text h-3.5 w-3.5"}],["$","$L27",null,{"k":"footer.view_cv"}]]}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L28",null,{}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L29",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
+8:["$","$1","c",{"children":["$L1c",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/11kn0-znew7q6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0xeob5awfsp13.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0_hxrcl.-_2pi.js","async":true,"nonce":"$undefined"}]],["$","$L1d",null,{"children":["$","$1e",null,{"name":"Next.MetadataOutlet","children":"$@1f"}]}]]}]
+20:[]
+9:"$W20"
+a:["$","$1","h",{"children":[null,["$","$L21",null,{"children":"$L22"}],["$","div",null,{"hidden":true,"children":["$","$L23",null,{"children":["$","$1e",null,{"name":"Next.Metadata","children":"$L24"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+c:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0bss.xxyeb375.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+d:["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0dsv7y0xcvlh0.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+25:I[58541,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"default"]
+26:I[29826,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"T"]
+27:I[95156,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"PrivacyFooterLink"]
+28:I[29839,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"FooterLanguageSelector"]
+29:I[92513,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"ServiceWorkerRegistration"]
+2a:I[22166,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"AnalyticsConsentBanner"]
+18:["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round","className":"$undefined","children":[["$","rect",null,{"width":"20","height":"16","x":"2","y":"4","rx":"2"}],["$","path",null,{"d":"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"}]]}]
+19:["$","div",null,{"className":"flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-5","children":[["$","div",null,{"className":"hidden sm:flex items-center gap-4","children":[[["$","a","Mei Closet",{"href":"https://mei-closet.vercel.app","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground transition-colors hover:text-foreground","children":"Mei Closet"}]],["$","a",null,{"href":"/cv.pdf","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground","children":[["$","$L25",null,{"ref":"$undefined","iconNode":[["path",{"d":"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z","key":"1oefj6"}],["path",{"d":"M14 2v5a1 1 0 0 0 1 1h5","key":"wfsgrz"}],["path",{"d":"M10 9H8","key":"b1mrlr"}],["path",{"d":"M16 13H8","key":"t4e002"}],["path",{"d":"M16 17H8","key":"z1uh3a"}]],"className":"lucide-file-text h-3.5 w-3.5"}],["$","$L26",null,{"k":"footer.view_cv"}]]}]]}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L27",null,{}],["$","span",null,{"className":"hidden sm:block h-4 w-px bg-border/60"}],["$","$L28",null,{}],["$","span",null,{"className":"hidden md:block h-4 w-px bg-border/60"}],["$","span",null,{"className":"hidden md:block text-xs text-muted-foreground/40 whitespace-nowrap","children":["© 2026 ","Yen Nhi"]}]]}]
+1a:["$","$L29",null,{}]
 1b:["$","$L2a",null,{}]
-1c:["$","$L2b",null,{}]
-2c:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/10fxtddioso-k.js"],"HomeClient"]
+2b:I[19635,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js","/_next/static/chunks/0xeob5awfsp13.js","/_next/static/chunks/0_hxrcl.-_2pi.js"],"HomeClient"]
+2c:T1e7d,
+There is a strange feeling that appears after I have been writing and sharing for a while.
+
+The blank page is no longer the scariest part. What feels scarier is when a new idea appears, I place it beside older posts, and I realize: I may have said this already.
+
+Not in the exact same words. But in the same conclusion, the same path toward the lesson, the same feeling that the post is wearing a new outfit while carrying an old idea.
+
+I used to see writing more as a good sign. It meant I was practicing, observing, and not leaving my thoughts unattended. That is still true.
+
+But the more I look back, the more I notice another truth: writing more does not always mean saying something new.
+
+If I do not pause to reread myself, I can easily confuse consistency with depth.
+
+---
+
+## Some paths return because they matter
+
+When I look at the blog like a small map, I see some themes returning many times: growth, self-worth, learning, slowing down, technology, writing, drafts, and how I understand a request.
+
+That is not a bad thing.
+
+Some things repeat because they are long-term questions. Someone who writes about learning may return many times to beginning, failing, reflecting, or keeping independent thinking while using AI. Someone who writes about daily life may return many times to rest, self-compassion, or not forcing everything into a lesson.
+
+Repetition can be a sign that a question still matters.
+
+For example, the post about **a terrible first draft** reminds me that the first version does not need to be perfect; it only needs to be real enough to revise. The post about **a vague request** reminds me that before moving quickly, I need to ask more clearly. Both touch the act of beginning, but one is about material for revision, while the other is about clarifying the brief before doing the work.
+
+They are close, but they are not the same.
+
+What I need to learn is not how to avoid all repetition. What I need to learn is how to notice whether this new piece adds another layer of understanding, or whether I am walking the same path again because it feels familiar.
+
+<KeyTakeaway label="A note to myself" tone="sage">
+Returning to a topic is not automatically empty repetition. It becomes empty when the new piece adds no new context, question, boundary, or way to apply the idea.
+</KeyTakeaway>
+
+---
+
+## Repeating to practice is different from repeating to avoid the harder question
+
+I see at least three kinds of repetition.
+
+The first is **repeating to practice**. This is healthy repetition. I return to an old theme, but I bring a new example, a new situation, or a more mature level of understanding.
+
+It is similar to learning design. I can create many login screens. On the surface, they all have a form, a button, and a few lines of text. But each better attempt can teach me more about spacing, error states, labels, or how a user feels when they get stuck.
+
+Writing is similar. An old theme can deserve to be written again if this time I can see another side of it.
+
+The second kind is **repeating to avoid the harder question**. This is when I change the title, the opening, and a few images, but still arrive at a very safe conclusion. The post looks new, but the core has not really been explored more deeply.
+
+For example, if every post ends with "be kind to yourself" but never shows the specific situation, boundary, or small step for practicing that kindness, the words begin to lose weight.
+
+The third kind is **repeating because I want to publish consistently**. This one is easy to fall into when a writing rhythm becomes pressure. The post has an opening, a body, and a conclusion. It has a few warm sentences. It has a neat lesson. But if I ask what the reader will understand differently after reading it, I cannot answer.
+
+The problem is not whether the post is short or long. The problem is whether it adds anything to the conversation that already exists.
+
+---
+
+## Looking back is not the same as criticizing myself
+
+Rereading old posts can easily turn into an internal review of everything that still looks unfinished.
+
+Some sentences may be rough. Some paragraphs may be a little too certain. Some ideas may be ones I would write differently now. A few posts may be more similar than I expected.
+
+But looking back does not have to be an act of self-criticism.
+
+It can be a kind editorial act.
+
+When I look back, I can see what I have said many times because it is still alive in me. I can also see what has become a writing reflex. Some phrases are repeated because they are true. Some phrases are repeated because they are convenient.
+
+That difference matters.
+
+An idea that is still alive usually helps me ask a new question. It makes me want to understand more deeply, apply more clearly, or be more honest about my limits.
+
+An idea that has become only a habit often lets me write very quickly and smoothly, but without thinking much further.
+
+And sometimes, that smoothness is exactly the sign that I should pause.
+
+---
+
+## Before writing forward, I try asking four questions
+
+What helps me most is not forbidding myself from writing about old themes. That would turn writing into a hunt for unusual ideas, while some familiar ideas deserve deeper attention.
+
+I only need a small check before I begin.
+
+**1. Where have I said something close to this before?**
+
+If I do not remember, I search with a few keywords. It does not need to become a heavy audit of everything I have written. I only need to know where this idea sits on my content map.
+
+**2. What has actually changed since then?**
+
+Is there a new experience, example, response, piece of data, or question? Do I understand this differently now? Or do I only want to say it again because it is easy to write?
+
+**3. What new layer of value will the reader receive?**
+
+That layer can be a clearer distinction, a small checklist, a practical example, a more honest boundary, or a question that helps them reflect.
+
+If I cannot find a new layer, the idea may not need to become its own post yet.
+
+**4. Should this idea be written now, merged into another piece, or left alone a little longer?**
+
+Not every idea needs to be published today. Some ideas only need to stay in notes. Some are better as one section inside another article. Some need more time so they do not become a rushed conclusion.
+
+For me, these four questions make writing a little slower, but much more respectful.
+
+---
+
+## Not writing immediately is also an editorial decision
+
+I still believe in writing consistently.
+
+Consistent writing helps me keep an appointment with my own thoughts. It gives me chances to practice observing, phrasing, cutting, arranging, and sharing. If I do not write enough, it is hard to know where my voice really is.
+
+But consistency should not become a reason to publish something that does not actually add anything.
+
+On some days, the best next step is not another article. It may be rereading the last three pieces. Underlining the ideas that are repeating. Writing down the missing question. Or admitting that today’s idea sounds good, but is not mature enough yet.
+
+That does not make me less creative.
+
+It only reminds me that creativity is not only about making more. Creativity is also about choosing, leaving things out, waiting, and respecting the reader’s attention.
+
+If you are also writing, learning, building a portfolio, or using AI to share more consistently, I think this question is worth keeping:
+
+"What will my next piece add that the previous one did not?"
+
+The answer does not have to be huge. A more honest example is enough. A clearer boundary is enough. A more concrete step is enough. A more truthful question is enough.
+
+It only needs one more layer.
+
+Because writing more can help me stay close to my thoughts. But looking back helps those thoughts grow up.
 2d:T1e7d,
 There is a strange feeling that appears after I have been writing and sharing for a while.
 
@@ -177,137 +325,7 @@ The answer does not have to be huge. A more honest example is enough. A clearer 
 It only needs one more layer.
 
 Because writing more can help me stay close to my thoughts. But looking back helps those thoughts grow up.
-2e:T1e7d,
-There is a strange feeling that appears after I have been writing and sharing for a while.
-
-The blank page is no longer the scariest part. What feels scarier is when a new idea appears, I place it beside older posts, and I realize: I may have said this already.
-
-Not in the exact same words. But in the same conclusion, the same path toward the lesson, the same feeling that the post is wearing a new outfit while carrying an old idea.
-
-I used to see writing more as a good sign. It meant I was practicing, observing, and not leaving my thoughts unattended. That is still true.
-
-But the more I look back, the more I notice another truth: writing more does not always mean saying something new.
-
-If I do not pause to reread myself, I can easily confuse consistency with depth.
-
----
-
-## Some paths return because they matter
-
-When I look at the blog like a small map, I see some themes returning many times: growth, self-worth, learning, slowing down, technology, writing, drafts, and how I understand a request.
-
-That is not a bad thing.
-
-Some things repeat because they are long-term questions. Someone who writes about learning may return many times to beginning, failing, reflecting, or keeping independent thinking while using AI. Someone who writes about daily life may return many times to rest, self-compassion, or not forcing everything into a lesson.
-
-Repetition can be a sign that a question still matters.
-
-For example, the post about **a terrible first draft** reminds me that the first version does not need to be perfect; it only needs to be real enough to revise. The post about **a vague request** reminds me that before moving quickly, I need to ask more clearly. Both touch the act of beginning, but one is about material for revision, while the other is about clarifying the brief before doing the work.
-
-They are close, but they are not the same.
-
-What I need to learn is not how to avoid all repetition. What I need to learn is how to notice whether this new piece adds another layer of understanding, or whether I am walking the same path again because it feels familiar.
-
-<KeyTakeaway label="A note to myself" tone="sage">
-Returning to a topic is not automatically empty repetition. It becomes empty when the new piece adds no new context, question, boundary, or way to apply the idea.
-</KeyTakeaway>
-
----
-
-## Repeating to practice is different from repeating to avoid the harder question
-
-I see at least three kinds of repetition.
-
-The first is **repeating to practice**. This is healthy repetition. I return to an old theme, but I bring a new example, a new situation, or a more mature level of understanding.
-
-It is similar to learning design. I can create many login screens. On the surface, they all have a form, a button, and a few lines of text. But each better attempt can teach me more about spacing, error states, labels, or how a user feels when they get stuck.
-
-Writing is similar. An old theme can deserve to be written again if this time I can see another side of it.
-
-The second kind is **repeating to avoid the harder question**. This is when I change the title, the opening, and a few images, but still arrive at a very safe conclusion. The post looks new, but the core has not really been explored more deeply.
-
-For example, if every post ends with "be kind to yourself" but never shows the specific situation, boundary, or small step for practicing that kindness, the words begin to lose weight.
-
-The third kind is **repeating because I want to publish consistently**. This one is easy to fall into when a writing rhythm becomes pressure. The post has an opening, a body, and a conclusion. It has a few warm sentences. It has a neat lesson. But if I ask what the reader will understand differently after reading it, I cannot answer.
-
-The problem is not whether the post is short or long. The problem is whether it adds anything to the conversation that already exists.
-
----
-
-## Looking back is not the same as criticizing myself
-
-Rereading old posts can easily turn into an internal review of everything that still looks unfinished.
-
-Some sentences may be rough. Some paragraphs may be a little too certain. Some ideas may be ones I would write differently now. A few posts may be more similar than I expected.
-
-But looking back does not have to be an act of self-criticism.
-
-It can be a kind editorial act.
-
-When I look back, I can see what I have said many times because it is still alive in me. I can also see what has become a writing reflex. Some phrases are repeated because they are true. Some phrases are repeated because they are convenient.
-
-That difference matters.
-
-An idea that is still alive usually helps me ask a new question. It makes me want to understand more deeply, apply more clearly, or be more honest about my limits.
-
-An idea that has become only a habit often lets me write very quickly and smoothly, but without thinking much further.
-
-And sometimes, that smoothness is exactly the sign that I should pause.
-
----
-
-## Before writing forward, I try asking four questions
-
-What helps me most is not forbidding myself from writing about old themes. That would turn writing into a hunt for unusual ideas, while some familiar ideas deserve deeper attention.
-
-I only need a small check before I begin.
-
-**1. Where have I said something close to this before?**
-
-If I do not remember, I search with a few keywords. It does not need to become a heavy audit of everything I have written. I only need to know where this idea sits on my content map.
-
-**2. What has actually changed since then?**
-
-Is there a new experience, example, response, piece of data, or question? Do I understand this differently now? Or do I only want to say it again because it is easy to write?
-
-**3. What new layer of value will the reader receive?**
-
-That layer can be a clearer distinction, a small checklist, a practical example, a more honest boundary, or a question that helps them reflect.
-
-If I cannot find a new layer, the idea may not need to become its own post yet.
-
-**4. Should this idea be written now, merged into another piece, or left alone a little longer?**
-
-Not every idea needs to be published today. Some ideas only need to stay in notes. Some are better as one section inside another article. Some need more time so they do not become a rushed conclusion.
-
-For me, these four questions make writing a little slower, but much more respectful.
-
----
-
-## Not writing immediately is also an editorial decision
-
-I still believe in writing consistently.
-
-Consistent writing helps me keep an appointment with my own thoughts. It gives me chances to practice observing, phrasing, cutting, arranging, and sharing. If I do not write enough, it is hard to know where my voice really is.
-
-But consistency should not become a reason to publish something that does not actually add anything.
-
-On some days, the best next step is not another article. It may be rereading the last three pieces. Underlining the ideas that are repeating. Writing down the missing question. Or admitting that today’s idea sounds good, but is not mature enough yet.
-
-That does not make me less creative.
-
-It only reminds me that creativity is not only about making more. Creativity is also about choosing, leaving things out, waiting, and respecting the reader’s attention.
-
-If you are also writing, learning, building a portfolio, or using AI to share more consistently, I think this question is worth keeping:
-
-"What will my next piece add that the previous one did not?"
-
-The answer does not have to be huge. A more honest example is enough. A clearer boundary is enough. A more concrete step is enough. A more truthful question is enough.
-
-It only needs one more layer.
-
-Because writing more can help me stay close to my thoughts. But looking back helps those thoughts grow up.
-2f:T25c2,
+2e:T25c2,
 Có một cảm giác khá lạ khi mình đã viết và chia sẻ được một thời gian.
 
 Trang trắng không còn đáng sợ như lúc đầu nữa. Điều đáng sợ hơn là khi một ý tưởng mới xuất hiện, mình đặt nó cạnh những bài cũ và nhận ra: hình như mình từng nói điều này rồi.
@@ -437,6 +455,135 @@ Không cần câu trả lời phải lớn. Một ví dụ thật hơn cũng đ�
 Chỉ cần có thêm một lớp.
 
 Vì viết nhiều có thể giúp mình ở gần suy nghĩ của mình hơn. Nhưng nhìn lại mới giúp suy nghĩ đó trưởng thành hơn.
+2f:T1dff,
+Some requests sound very short, very light, as if I should simply start right away.
+
+"Write me an article."
+
+"Make this screen look better."
+
+"Optimize this workflow so it is cleaner."
+
+In the past, I easily treated those sentences as enough to begin. I thought moving fast was useful. Make a draft first, revise later. Anything unclear would reveal itself while I was working.
+
+But the more I learn about product work, UX/UI, Business Analysis, and working with AI, the more I see the opposite: a short request is not necessarily a clear request.
+
+Sometimes it is only hiding many assumptions inside.
+
+Who is this article for? What does "better-looking" mean, by whose taste, and for which user behavior? Does "cleaner" mean fewer steps for users, fewer operations for the team, or less complexity in the code?
+
+If I rush straight into execution, I may work very hard. But hard work cannot rescue a problem statement I misunderstood from the beginning.
+
+---
+
+## Going faster can just mean being wrong faster
+
+AI makes this even clearer.
+
+With one short prompt, AI can return a very smooth draft. An article with an opening, body, and conclusion. A list of user stories that sound reasonable. A screen with a clean layout. An email more polite than the one I would write while tired.
+
+Looking at that output, I can easily feel the work is already halfway done.
+
+But if the original request is vague, that smoothness can trick me. A fluent answer can still miss the point. A design that looks fine can still solve the wrong problem. A professional-sounding brief can still lack the most important thing: what are we doing this for?
+
+AI does not automatically know my real context. A teammate cannot guess everything I did not say. Even I can fool myself, if I do not pause to write things down more clearly, into thinking I understand a request just because it sounds familiar.
+
+I am beginning to realize that speed only matters when the direction is reasonably right.
+
+If I do not know where I am going, moving faster may only take me farther away from where I needed to be.
+
+---
+
+## A clear brief does not have to be long
+
+I used to think a clear brief meant a very long document with many sections, many terms, and a slightly "grown-up" look. But a good brief does not have to be complicated.
+
+It only needs enough anchors so the person doing the work does not have to guess too much.
+
+Right now, when I meet a loose request, I usually ask five basic questions:
+
+1. **What is the real goal?** Are we trying to create awareness, persuade, explain, sell, save time, or reduce mistakes?
+2. **Who is the reader or user?** What do they already know, what do they need, what are they afraid of, and when will they use the result?
+3. **What is the current context?** Is this a new thing, an improvement to something existing, or a fix for a pain point?
+4. **Are there constraints?** Voice, deadline, required data, publishing platform, technical limits, or topics that must not be mentioned?
+5. **What counts as done or good?** When we look at the final result, what signs show it has met the need?
+
+These five questions sound simple, but every time I answer them seriously, the request becomes much less foggy.
+
+For example, "write an article about AI" is very broad. But if it becomes: "write a personal blog post in a warm voice for young people studying technology, about how to use AI to learn faster while keeping independent thinking," the work immediately has a better chance of going in the right direction.
+
+It still does not need to be perfect. But now it has a goal, audience, angle, voice, and boundary.
+
+For me, that is the difference between a casual ask and a brief someone can actually execute.
+
+<KeyTakeaway label="Reminder to myself" tone="sage">
+A good request does not have to be long to prove it is professional. It needs to be clear enough for the person doing the work to understand the goal, context, constraints, and definition of done.
+</KeyTakeaway>
+
+---
+
+## Asking again is not making things difficult
+
+For a while, I felt awkward asking follow-up questions.
+
+I was afraid people would think I was slow to understand. Afraid of making the conversation longer. Afraid my questions sounded too basic. Afraid that if I asked too much, the person assigning the work would think I was not capable enough.
+
+But later I saw that asking again is not resisting the request. Asking again is a way of caring for the outcome.
+
+When I ask, "Who is this article for?", I am not making things hard for the requester. I am trying not to write a grammatically correct article for the wrong reader.
+
+When I ask, "Do you want this screen to feel more minimal, friendly, or professional?", I am not nitpicking the word "better." I am helping both sides avoid repeated revisions because each person imagined a different direction.
+
+When I ask, "If we could keep only one message, what should the reader remember?", I am not slowing the article down. I am looking for the axis that keeps it from wandering.
+
+The right question can save more time than immediate action.
+
+Because fixing a wrong assumption at the beginning is usually lighter than fixing a nearly finished product.
+
+---
+
+## Using AI as someone that helps me think more clearly
+
+What I like about AI is not only that it can write quickly. What I find more useful is that it can help me see what is still unclear.
+
+Instead of starting with a prompt like "do this for me," I am practicing prompts like:
+
+- "Ask me the missing questions needed to clarify this request."
+- "Point out the vague assumptions in this brief."
+- "If you were a BA or Product Designer, what would you ask before doing this?"
+- "Turn these messy notes into a clear brief, but do not invent missing data."
+
+That way of asking makes AI a companion in the thinking part, not just a machine that generates drafts.
+
+It also forces me to be more honest with myself. If I do not know who the reader is, I have to admit I do not know yet. If I do not have a real example, I have to mark that as something to add. If I am using broad words like "better," "cooler," or "optimized," I have to bring them down to earth with more specific criteria.
+
+This skill feels very close to Business Analysis.
+
+A BA does not only record requirements. A BA helps requirements become understandable, discussable, testable, and executable. Product thinking is similar: before rushing into a solution, I need to understand the problem, the user, the context, and how we will know whether we solved the right thing.
+
+AI can strongly support expression, synthesis, and structure. But the responsibility for the question still belongs to me.
+
+---
+
+## A clear brief is a small gift
+
+I do not think every piece of work needs a heavy process. Some small tasks only need a few lines. Some conversations become clear after one extra question.
+
+But I want to stop treating vagueness as something we simply have to endure.
+
+A clearer request is a small gift to the person doing the work, because they do not have to guess so much.
+
+It is a gift to the person receiving the result, because what they receive is closer to what they really need.
+
+And it is also a gift to my future self, because when I look back, I understand why I chose one direction, left another out, and called something finished.
+
+I am still learning to ask better questions. Sometimes I still miss things. Sometimes I still rush. Sometimes a request feels so familiar that I assume I understand it.
+
+But at least now, before beginning, I often stop for one breath and ask myself:
+
+"Do I actually have a clear request, or only a sentence that sounds easy?"
+
+Often, that one pause makes the work more honest.
 30:T1dff,
 Some requests sound very short, very light, as if I should simply start right away.
 
@@ -566,136 +713,7 @@ But at least now, before beginning, I often stop for one breath and ask myself:
 "Do I actually have a clear request, or only a sentence that sounds easy?"
 
 Often, that one pause makes the work more honest.
-31:T1dff,
-Some requests sound very short, very light, as if I should simply start right away.
-
-"Write me an article."
-
-"Make this screen look better."
-
-"Optimize this workflow so it is cleaner."
-
-In the past, I easily treated those sentences as enough to begin. I thought moving fast was useful. Make a draft first, revise later. Anything unclear would reveal itself while I was working.
-
-But the more I learn about product work, UX/UI, Business Analysis, and working with AI, the more I see the opposite: a short request is not necessarily a clear request.
-
-Sometimes it is only hiding many assumptions inside.
-
-Who is this article for? What does "better-looking" mean, by whose taste, and for which user behavior? Does "cleaner" mean fewer steps for users, fewer operations for the team, or less complexity in the code?
-
-If I rush straight into execution, I may work very hard. But hard work cannot rescue a problem statement I misunderstood from the beginning.
-
----
-
-## Going faster can just mean being wrong faster
-
-AI makes this even clearer.
-
-With one short prompt, AI can return a very smooth draft. An article with an opening, body, and conclusion. A list of user stories that sound reasonable. A screen with a clean layout. An email more polite than the one I would write while tired.
-
-Looking at that output, I can easily feel the work is already halfway done.
-
-But if the original request is vague, that smoothness can trick me. A fluent answer can still miss the point. A design that looks fine can still solve the wrong problem. A professional-sounding brief can still lack the most important thing: what are we doing this for?
-
-AI does not automatically know my real context. A teammate cannot guess everything I did not say. Even I can fool myself, if I do not pause to write things down more clearly, into thinking I understand a request just because it sounds familiar.
-
-I am beginning to realize that speed only matters when the direction is reasonably right.
-
-If I do not know where I am going, moving faster may only take me farther away from where I needed to be.
-
----
-
-## A clear brief does not have to be long
-
-I used to think a clear brief meant a very long document with many sections, many terms, and a slightly "grown-up" look. But a good brief does not have to be complicated.
-
-It only needs enough anchors so the person doing the work does not have to guess too much.
-
-Right now, when I meet a loose request, I usually ask five basic questions:
-
-1. **What is the real goal?** Are we trying to create awareness, persuade, explain, sell, save time, or reduce mistakes?
-2. **Who is the reader or user?** What do they already know, what do they need, what are they afraid of, and when will they use the result?
-3. **What is the current context?** Is this a new thing, an improvement to something existing, or a fix for a pain point?
-4. **Are there constraints?** Voice, deadline, required data, publishing platform, technical limits, or topics that must not be mentioned?
-5. **What counts as done or good?** When we look at the final result, what signs show it has met the need?
-
-These five questions sound simple, but every time I answer them seriously, the request becomes much less foggy.
-
-For example, "write an article about AI" is very broad. But if it becomes: "write a personal blog post in a warm voice for young people studying technology, about how to use AI to learn faster while keeping independent thinking," the work immediately has a better chance of going in the right direction.
-
-It still does not need to be perfect. But now it has a goal, audience, angle, voice, and boundary.
-
-For me, that is the difference between a casual ask and a brief someone can actually execute.
-
-<KeyTakeaway label="Reminder to myself" tone="sage">
-A good request does not have to be long to prove it is professional. It needs to be clear enough for the person doing the work to understand the goal, context, constraints, and definition of done.
-</KeyTakeaway>
-
----
-
-## Asking again is not making things difficult
-
-For a while, I felt awkward asking follow-up questions.
-
-I was afraid people would think I was slow to understand. Afraid of making the conversation longer. Afraid my questions sounded too basic. Afraid that if I asked too much, the person assigning the work would think I was not capable enough.
-
-But later I saw that asking again is not resisting the request. Asking again is a way of caring for the outcome.
-
-When I ask, "Who is this article for?", I am not making things hard for the requester. I am trying not to write a grammatically correct article for the wrong reader.
-
-When I ask, "Do you want this screen to feel more minimal, friendly, or professional?", I am not nitpicking the word "better." I am helping both sides avoid repeated revisions because each person imagined a different direction.
-
-When I ask, "If we could keep only one message, what should the reader remember?", I am not slowing the article down. I am looking for the axis that keeps it from wandering.
-
-The right question can save more time than immediate action.
-
-Because fixing a wrong assumption at the beginning is usually lighter than fixing a nearly finished product.
-
----
-
-## Using AI as someone that helps me think more clearly
-
-What I like about AI is not only that it can write quickly. What I find more useful is that it can help me see what is still unclear.
-
-Instead of starting with a prompt like "do this for me," I am practicing prompts like:
-
-- "Ask me the missing questions needed to clarify this request."
-- "Point out the vague assumptions in this brief."
-- "If you were a BA or Product Designer, what would you ask before doing this?"
-- "Turn these messy notes into a clear brief, but do not invent missing data."
-
-That way of asking makes AI a companion in the thinking part, not just a machine that generates drafts.
-
-It also forces me to be more honest with myself. If I do not know who the reader is, I have to admit I do not know yet. If I do not have a real example, I have to mark that as something to add. If I am using broad words like "better," "cooler," or "optimized," I have to bring them down to earth with more specific criteria.
-
-This skill feels very close to Business Analysis.
-
-A BA does not only record requirements. A BA helps requirements become understandable, discussable, testable, and executable. Product thinking is similar: before rushing into a solution, I need to understand the problem, the user, the context, and how we will know whether we solved the right thing.
-
-AI can strongly support expression, synthesis, and structure. But the responsibility for the question still belongs to me.
-
----
-
-## A clear brief is a small gift
-
-I do not think every piece of work needs a heavy process. Some small tasks only need a few lines. Some conversations become clear after one extra question.
-
-But I want to stop treating vagueness as something we simply have to endure.
-
-A clearer request is a small gift to the person doing the work, because they do not have to guess so much.
-
-It is a gift to the person receiving the result, because what they receive is closer to what they really need.
-
-And it is also a gift to my future self, because when I look back, I understand why I chose one direction, left another out, and called something finished.
-
-I am still learning to ask better questions. Sometimes I still miss things. Sometimes I still rush. Sometimes a request feels so familiar that I assume I understand it.
-
-But at least now, before beginning, I often stop for one breath and ask myself:
-
-"Do I actually have a clear request, or only a sentence that sounds easy?"
-
-Often, that one pause makes the work more honest.
-32:T244e,
+31:T244e,
 Có những yêu cầu nghe rất ngắn, rất nhẹ, tưởng như chỉ cần bắt tay vào làm ngay.
 
 "Viết giúp mình một bài."
@@ -824,6 +842,162 @@ Nhưng ít nhất bây giờ, trước khi bắt đầu làm, mình thường d�
 "Mình đang có một yêu cầu thật sự rõ, hay chỉ có một câu nghe có vẻ dễ?"
 
 Nhiều khi, chính một nhịp dừng đó làm công việc tử tế hơn.
+32:T1b19,
+Some days, what tires me is not exactly what happened.
+
+It is the feeling that I have to understand it immediately.
+
+A conversation ends awkwardly. A plan shifts. A class passes while my mind keeps drifting somewhere else. An afternoon disappears into my phone, and then I feel a little disappointed in myself.
+
+The thing that happened has not even cooled down, but my mind already starts asking: "What did I learn from this? How should I optimize next time? Is there a positive message here?"
+
+It sounds mature. But sometimes that question is exactly what exhausts me.
+
+Because not everything in life needs to become a lesson right away. Some things first need to be felt all the way through.
+
+---
+
+## When life becomes a constant analysis exercise
+
+I think reflection is a good thing.
+
+Reflection, simply put, is looking back at what happened so I can understand myself and do better next time. Without it, I can easily repeat the same mistake, get carried by the same emotions, or live through days without really knowing what is going on inside me.
+
+But there is a thin line between reflection and turning life into a continuous analysis assignment.
+
+If I feel sad, I have to name the cause.
+
+If I fail once, I have to turn it into a growth story.
+
+If I rest for an afternoon, I have to prove that it will make me more productive.
+
+If a relationship changes, I have to immediately extract "a lesson about boundaries."
+
+Even an ordinary day gets pulled into the same system of questions: was anything meaningful today, did I develop, what can I take away?
+
+I do not deny the value of learning from experience. But if every moment is forced to have meaning, I begin to stop living inside the moment. I only stand outside it with a red pen, trying to turn it into a neat note.
+
+And life is not always neat.
+
+Some emotions are messy. Some days do not have a beautiful conclusion. Some things happen not because they were sent to teach me a profound lesson, but simply because life falls out of rhythm, people are clumsy, and I am not okay for a while.
+
+---
+
+## Some emotions need to sit still before they are named
+
+I used to be very impatient with my emotions.
+
+As soon as I felt sad, I wanted to know why. As soon as I felt disappointed, I wanted to move past it. As soon as I felt jealous, I wanted to turn it into motivation. As soon as I made a mistake, I wanted to learn from it quickly so I would not have to stay with the shame.
+
+But emotion is not a pop-up window that disappears once I click "understood."
+
+Often, it is more like a person who has just walked a long road, still out of breath, not yet able to explain anything clearly. If I immediately interrogate it with "what is the lesson, what is the message, what is the improvement plan," it only becomes more tangled.
+
+Sometimes the kindest thing I can do for myself is say: "Yes, this hurts. I do not need to turn it into something prettier right now."
+
+A sadness is allowed to be sadness.
+
+A disappointment is allowed to be disappointment.
+
+A slow day is allowed to be a slow day.
+
+Not because I want to stay stuck there forever. But because if I have never honestly acknowledged the feeling that is present, any "lesson" I draw afterward may only be decoration.
+
+<KeyTakeaway label="Reminder to myself" tone="sage">
+Not every emotion needs to be fixed immediately. Sometimes the first step of maturity is allowing myself to tell the truth: this hurts, this is tiring, this does not have a conclusion yet.
+</KeyTakeaway>
+
+---
+
+## Learning is different from interrogating myself
+
+I find there is a simple way to tell the difference.
+
+Learning from experience is when I look back because I want to understand more clearly.
+
+Interrogating myself is when I look back to find more reasons to convict myself.
+
+They can use similar questions, but they leave very different feelings behind.
+
+Learning asks:
+
+- What really happened?
+- Which part was within my control?
+- Which part was not?
+- What small step could I try differently next time?
+
+Interrogation asks:
+
+- Why am I so bad at this?
+- Why can other people do it and I cannot?
+- Why did I not know earlier?
+- Why am I still not good enough?
+
+One helps me stand up. The other makes me smaller.
+
+I do not want to use reflection like a whip. If something already hurt, I do not need to make it hurt more by turning every detail into evidence against myself.
+
+Some mistakes need to be fixed, of course. Some apologies need to be said. Some moments require me to be honest that I was careless, impatient, or not brave enough. But responsibility does not have to come with humiliating myself in my head.
+
+I can say, "I did not handle this well."
+
+Without adding, "So I am a failure."
+
+I can say, "Next time I will prepare more carefully."
+
+Without adding, "Why am I so stupid?"
+
+The first sentence gives me a path. The second only digs a deeper hole.
+
+---
+
+## Allowing a day to produce no conclusion
+
+One small thing I am practicing is letting some things end temporarily with a comma, not an exclamation point.
+
+Not everything needs a beautiful conclusion on the same day.
+
+If my heart feels heavy today, I can write only three lines:
+
+- What happened?
+- What am I feeling?
+- What do I need right now to get through this evening more gently?
+
+That is all.
+
+No need to force it into "5 things I learned." No need to rush meaning. No need to become a wiser version of myself immediately.
+
+Tomorrow, when the emotion is softer, maybe I will see something. Maybe I will understand why I reacted so strongly. Maybe I will know whether to apologize, set a boundary, try again, let go, or simply sleep earlier.
+
+But maybe there is no big lesson at all.
+
+Maybe it was only a difficult day. A conversation slightly out of rhythm. A plan that did not work. An emotion that passed through and left a few wrinkles inside me.
+
+And that is okay too.
+
+Not everything that passes through my life has to pay rent by becoming a lesson.
+
+---
+
+I still want to live more consciously. I still want to learn from what happens. I still want to become someone who can take responsibility, adjust, and grow from the times that were not okay.
+
+But I also want to remember that growing up is not always turning pain into philosophy as quickly as possible.
+
+Sometimes growing up is slowing down before an emotion. Not naming it too fast. Not retelling it prettily too fast. Not framing it as "this is why everything happened" too fast.
+
+Sometimes growing up is letting an afternoon be only an afternoon.
+
+Letting one sadness be only one sadness.
+
+Letting a day when I do not understand myself still count as a day I lived honestly.
+
+If today you are also trying to force something unhealed into a lesson, I hope you soften a little. If the lesson is real, it will not disappear because you gave yourself more time.
+
+Breathe first.
+
+Let things stay without conclusion a little longer.
+
+I do not need to understand my whole life today to deserve peace.
 33:T1b19,
 Some days, what tires me is not exactly what happened.
 
@@ -980,163 +1154,7 @@ Breathe first.
 Let things stay without conclusion a little longer.
 
 I do not need to understand my whole life today to deserve peace.
-34:T1b19,
-Some days, what tires me is not exactly what happened.
-
-It is the feeling that I have to understand it immediately.
-
-A conversation ends awkwardly. A plan shifts. A class passes while my mind keeps drifting somewhere else. An afternoon disappears into my phone, and then I feel a little disappointed in myself.
-
-The thing that happened has not even cooled down, but my mind already starts asking: "What did I learn from this? How should I optimize next time? Is there a positive message here?"
-
-It sounds mature. But sometimes that question is exactly what exhausts me.
-
-Because not everything in life needs to become a lesson right away. Some things first need to be felt all the way through.
-
----
-
-## When life becomes a constant analysis exercise
-
-I think reflection is a good thing.
-
-Reflection, simply put, is looking back at what happened so I can understand myself and do better next time. Without it, I can easily repeat the same mistake, get carried by the same emotions, or live through days without really knowing what is going on inside me.
-
-But there is a thin line between reflection and turning life into a continuous analysis assignment.
-
-If I feel sad, I have to name the cause.
-
-If I fail once, I have to turn it into a growth story.
-
-If I rest for an afternoon, I have to prove that it will make me more productive.
-
-If a relationship changes, I have to immediately extract "a lesson about boundaries."
-
-Even an ordinary day gets pulled into the same system of questions: was anything meaningful today, did I develop, what can I take away?
-
-I do not deny the value of learning from experience. But if every moment is forced to have meaning, I begin to stop living inside the moment. I only stand outside it with a red pen, trying to turn it into a neat note.
-
-And life is not always neat.
-
-Some emotions are messy. Some days do not have a beautiful conclusion. Some things happen not because they were sent to teach me a profound lesson, but simply because life falls out of rhythm, people are clumsy, and I am not okay for a while.
-
----
-
-## Some emotions need to sit still before they are named
-
-I used to be very impatient with my emotions.
-
-As soon as I felt sad, I wanted to know why. As soon as I felt disappointed, I wanted to move past it. As soon as I felt jealous, I wanted to turn it into motivation. As soon as I made a mistake, I wanted to learn from it quickly so I would not have to stay with the shame.
-
-But emotion is not a pop-up window that disappears once I click "understood."
-
-Often, it is more like a person who has just walked a long road, still out of breath, not yet able to explain anything clearly. If I immediately interrogate it with "what is the lesson, what is the message, what is the improvement plan," it only becomes more tangled.
-
-Sometimes the kindest thing I can do for myself is say: "Yes, this hurts. I do not need to turn it into something prettier right now."
-
-A sadness is allowed to be sadness.
-
-A disappointment is allowed to be disappointment.
-
-A slow day is allowed to be a slow day.
-
-Not because I want to stay stuck there forever. But because if I have never honestly acknowledged the feeling that is present, any "lesson" I draw afterward may only be decoration.
-
-<KeyTakeaway label="Reminder to myself" tone="sage">
-Not every emotion needs to be fixed immediately. Sometimes the first step of maturity is allowing myself to tell the truth: this hurts, this is tiring, this does not have a conclusion yet.
-</KeyTakeaway>
-
----
-
-## Learning is different from interrogating myself
-
-I find there is a simple way to tell the difference.
-
-Learning from experience is when I look back because I want to understand more clearly.
-
-Interrogating myself is when I look back to find more reasons to convict myself.
-
-They can use similar questions, but they leave very different feelings behind.
-
-Learning asks:
-
-- What really happened?
-- Which part was within my control?
-- Which part was not?
-- What small step could I try differently next time?
-
-Interrogation asks:
-
-- Why am I so bad at this?
-- Why can other people do it and I cannot?
-- Why did I not know earlier?
-- Why am I still not good enough?
-
-One helps me stand up. The other makes me smaller.
-
-I do not want to use reflection like a whip. If something already hurt, I do not need to make it hurt more by turning every detail into evidence against myself.
-
-Some mistakes need to be fixed, of course. Some apologies need to be said. Some moments require me to be honest that I was careless, impatient, or not brave enough. But responsibility does not have to come with humiliating myself in my head.
-
-I can say, "I did not handle this well."
-
-Without adding, "So I am a failure."
-
-I can say, "Next time I will prepare more carefully."
-
-Without adding, "Why am I so stupid?"
-
-The first sentence gives me a path. The second only digs a deeper hole.
-
----
-
-## Allowing a day to produce no conclusion
-
-One small thing I am practicing is letting some things end temporarily with a comma, not an exclamation point.
-
-Not everything needs a beautiful conclusion on the same day.
-
-If my heart feels heavy today, I can write only three lines:
-
-- What happened?
-- What am I feeling?
-- What do I need right now to get through this evening more gently?
-
-That is all.
-
-No need to force it into "5 things I learned." No need to rush meaning. No need to become a wiser version of myself immediately.
-
-Tomorrow, when the emotion is softer, maybe I will see something. Maybe I will understand why I reacted so strongly. Maybe I will know whether to apologize, set a boundary, try again, let go, or simply sleep earlier.
-
-But maybe there is no big lesson at all.
-
-Maybe it was only a difficult day. A conversation slightly out of rhythm. A plan that did not work. An emotion that passed through and left a few wrinkles inside me.
-
-And that is okay too.
-
-Not everything that passes through my life has to pay rent by becoming a lesson.
-
----
-
-I still want to live more consciously. I still want to learn from what happens. I still want to become someone who can take responsibility, adjust, and grow from the times that were not okay.
-
-But I also want to remember that growing up is not always turning pain into philosophy as quickly as possible.
-
-Sometimes growing up is slowing down before an emotion. Not naming it too fast. Not retelling it prettily too fast. Not framing it as "this is why everything happened" too fast.
-
-Sometimes growing up is letting an afternoon be only an afternoon.
-
-Letting one sadness be only one sadness.
-
-Letting a day when I do not understand myself still count as a day I lived honestly.
-
-If today you are also trying to force something unhealed into a lesson, I hope you soften a little. If the lesson is real, it will not disappear because you gave yourself more time.
-
-Breathe first.
-
-Let things stay without conclusion a little longer.
-
-I do not need to understand my whole life today to deserve peace.
-35:T2374,
+34:T2374,
 Có những ngày điều làm mình mệt không hẳn là chuyện đã xảy ra.
 
 Mà là cảm giác mình phải hiểu nó ngay.
@@ -1292,8 +1310,8 @@ Cứ thở trước đã.
 Cứ để mọi thứ chưa có kết luận thêm một lúc.
 
 Mình không cần hiểu hết cuộc đời mình ngay trong hôm nay mới xứng đáng được bình yên.
-1d:["$","$L2c",null,{"projects":[],"latestPosts":[{"slug":"viet-nhieu-chua-chac-da-noi-them-dieu-moi","content":"$2d","title":"Writing More Does Not Always Mean Saying Something New","description":"Writing consistently is good, but quantity does not automatically create depth. Sometimes the kindest thing to do for the reader is to look back before writing forward.","date":"2026-07-14","tags":["Reflection","Creativity","Clarity"],"readingTime":"7 min read","i18n":{"en":{"title":"Writing More Does Not Always Mean Saying Something New","description":"Writing consistently is good, but quantity does not automatically create depth. Sometimes the kindest thing to do for the reader is to look back before writing forward.","content":"$2e","readingTime":"7 min read"},"vi":{"title":"Viết nhiều chưa chắc đã nói thêm điều mới","description":"Viết đều là tốt, nhưng số lượng không tự động tạo thêm chiều sâu. Có lúc điều tử tế nhất với người đọc là nhìn lại điều mình đã nói trước khi viết tiếp.","content":"$2f","readingTime":"8 min read"}}},{"slug":"khi-yeu-cau-con-mo-ho-minh-hoc-cach-hoi-ro-hon","content":"$30","title":"When the Request Is Vague, I Am Learning to Ask Better Questions","description":"A vague request does not always need an immediate answer. Sometimes the kindest thing I can do for the work is ask more clearly before I begin.","date":"2026-07-07","tags":["Product Thinking","Business Analysis","AI","Reflection"],"readingTime":"7 min read","i18n":{"en":{"title":"When the Request Is Vague, I Am Learning to Ask Better Questions","description":"A vague request does not always need an immediate answer. Sometimes the kindest thing I can do for the work is ask more clearly before I begin.","content":"$31","readingTime":"7 min read"},"vi":{"title":"Khi yêu cầu còn mơ hồ, mình học cách hỏi rõ hơn","description":"Một yêu cầu mơ hồ không phải lúc nào cũng cần câu trả lời ngay. Đôi khi điều tử tế nhất mình có thể làm cho công việc là hỏi rõ hơn trước khi bắt đầu.","content":"$32","readingTime":"8 min read"}}},{"slug":"not-everything-needs-to-be-a-lesson","content":"$33","title":"Not Everything Needs to Become a Lesson","description":"Some days I only need to let sadness be sadness and an afternoon be an afternoon, instead of forcing everything to become an upgraded version of myself.","date":"2026-07-04","tags":["Mindfulness","Self Compassion","Reflection"],"readingTime":"7 min read","i18n":{"en":{"title":"Not Everything Needs to Become a Lesson","description":"Some days I only need to let sadness be sadness and an afternoon be an afternoon, instead of forcing everything to become an upgraded version of myself.","content":"$34","readingTime":"7 min read"},"vi":{"title":"Không phải điều gì cũng cần biến thành bài học","description":"Có những ngày mình chỉ cần để một chuyện buồn được là chuyện buồn, một buổi chiều trôi qua được là buổi chiều trôi qua, thay vì ép mọi thứ phải trở thành phiên bản nâng cấp của bản thân.","content":"$35","readingTime":"8 min read"}}}]}]
-23:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#FBFEFE","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0B0C0E","media":"(prefers-color-scheme: dark)"}]]
-36:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/057-53bz69c92.js","/_next/static/chunks/0f-fatr3sa~~9.js","/_next/static/chunks/0xw5orn9hw4kl.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"IconMark"]
-20:null
-25:[["$","title","0",{"children":"Classic Home · Yen Nhi"}],["$","meta","1",{"name":"description","content":"Previous homepage design."}],["$","meta","2",{"name":"application-name","content":"Nguyen Thi Yen Nhi"}],["$","link","3",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","4",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","link","5",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","7",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","8",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","9",{"name":"robots","content":"noindex, nofollow"}],["$","meta","10",{"name":"category","content":"technology"}],["$","link","11",{"rel":"canonical","href":"https://startup.id.vn/classic/"}],["$","meta","12",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","13",{"name":"apple-mobile-web-app-title","content":"Yen Nhi"}],["$","meta","14",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","15",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","16",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","17",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","18",{"property":"og:site_name","content":"Nguyen Thi Yen Nhi Portfolio"}],["$","meta","19",{"property":"og:locale","content":"en_US"}],["$","meta","20",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","21",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","22",{"property":"og:image:type","content":"image/png"}],["$","meta","23",{"property":"og:image:width","content":"1200"}],["$","meta","24",{"property":"og:image:height","content":"630"}],["$","meta","25",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","26",{"property":"og:type","content":"profile"}],["$","meta","27",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","28",{"name":"twitter:creator","content":"@nhiney"}],["$","meta","29",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","30",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","31",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","32",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","33",{"name":"twitter:image:width","content":"1200"}],["$","meta","34",{"name":"twitter:image:height","content":"630"}],["$","link","35",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","36",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","37",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L36","38",{}]]
+1c:["$","$L2b",null,{"projects":[],"latestPosts":[{"slug":"viet-nhieu-chua-chac-da-noi-them-dieu-moi","content":"$2c","title":"Writing More Does Not Always Mean Saying Something New","description":"Writing consistently is good, but quantity does not automatically create depth. Sometimes the kindest thing to do for the reader is to look back before writing forward.","date":"2026-07-14","tags":["Reflection","Creativity","Clarity"],"readingTime":"7 min read","i18n":{"en":{"title":"Writing More Does Not Always Mean Saying Something New","description":"Writing consistently is good, but quantity does not automatically create depth. Sometimes the kindest thing to do for the reader is to look back before writing forward.","content":"$2d","readingTime":"7 min read"},"vi":{"title":"Viết nhiều chưa chắc đã nói thêm điều mới","description":"Viết đều là tốt, nhưng số lượng không tự động tạo thêm chiều sâu. Có lúc điều tử tế nhất với người đọc là nhìn lại điều mình đã nói trước khi viết tiếp.","content":"$2e","readingTime":"8 min read"}}},{"slug":"khi-yeu-cau-con-mo-ho-minh-hoc-cach-hoi-ro-hon","content":"$2f","title":"When the Request Is Vague, I Am Learning to Ask Better Questions","description":"A vague request does not always need an immediate answer. Sometimes the kindest thing I can do for the work is ask more clearly before I begin.","date":"2026-07-07","tags":["Product Thinking","Business Analysis","AI","Reflection"],"readingTime":"7 min read","i18n":{"en":{"title":"When the Request Is Vague, I Am Learning to Ask Better Questions","description":"A vague request does not always need an immediate answer. Sometimes the kindest thing I can do for the work is ask more clearly before I begin.","content":"$30","readingTime":"7 min read"},"vi":{"title":"Khi yêu cầu còn mơ hồ, mình học cách hỏi rõ hơn","description":"Một yêu cầu mơ hồ không phải lúc nào cũng cần câu trả lời ngay. Đôi khi điều tử tế nhất mình có thể làm cho công việc là hỏi rõ hơn trước khi bắt đầu.","content":"$31","readingTime":"8 min read"}}},{"slug":"not-everything-needs-to-be-a-lesson","content":"$32","title":"Not Everything Needs to Become a Lesson","description":"Some days I only need to let sadness be sadness and an afternoon be an afternoon, instead of forcing everything to become an upgraded version of myself.","date":"2026-07-04","tags":["Mindfulness","Self Compassion","Reflection"],"readingTime":"7 min read","i18n":{"en":{"title":"Not Everything Needs to Become a Lesson","description":"Some days I only need to let sadness be sadness and an afternoon be an afternoon, instead of forcing everything to become an upgraded version of myself.","content":"$33","readingTime":"7 min read"},"vi":{"title":"Không phải điều gì cũng cần biến thành bài học","description":"Có những ngày mình chỉ cần để một chuyện buồn được là chuyện buồn, một buổi chiều trôi qua được là buổi chiều trôi qua, thay vì ép mọi thứ phải trở thành phiên bản nâng cấp của bản thân.","content":"$34","readingTime":"8 min read"}}}]}]
+22:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#F8F9FC","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0D121C","media":"(prefers-color-scheme: dark)"}]]
+35:I[27201,["/_next/static/chunks/17q37u4iag1dw.js","/_next/static/chunks/0kbvd7a5yn.ag.js","/_next/static/chunks/0gfu27mqk2z0_.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0crj674jgwzi5.js"],"IconMark"]
+1f:null
+24:[["$","title","0",{"children":"Classic Home · Yen Nhi"}],["$","meta","1",{"name":"description","content":"Previous homepage design."}],["$","meta","2",{"name":"application-name","content":"Nguyen Thi Yen Nhi"}],["$","link","3",{"rel":"author","href":"https://startup.id.vn"}],["$","meta","4",{"name":"author","content":"Nguyen Thi Yen Nhi"}],["$","link","5",{"rel":"manifest","href":"/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","6",{"name":"keywords","content":"Nguyen Thi Yen Nhi,Business Analyst Vietnam,Technical Business Analyst,Business Analyst Ho Chi Minh City,Business Analyst Intern,BPMN 2.0,User Stories,System Analysis,Requirements Analysis,Agile Business Analyst,Nguyễn Thị Yến Nhi"}],["$","meta","7",{"name":"creator","content":"Nguyen Thi Yen Nhi"}],["$","meta","8",{"name":"publisher","content":"Nguyen Thi Yen Nhi"}],["$","meta","9",{"name":"robots","content":"noindex, nofollow"}],["$","meta","10",{"name":"category","content":"technology"}],["$","link","11",{"rel":"canonical","href":"https://startup.id.vn/classic/"}],["$","meta","12",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","13",{"name":"apple-mobile-web-app-title","content":"Yen Nhi"}],["$","meta","14",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","15",{"property":"og:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","16",{"property":"og:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","17",{"property":"og:url","content":"https://startup.id.vn/"}],["$","meta","18",{"property":"og:site_name","content":"Nguyen Thi Yen Nhi Portfolio"}],["$","meta","19",{"property":"og:locale","content":"en_US"}],["$","meta","20",{"property":"og:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","21",{"property":"og:image:secure_url","content":"https://startup.id.vn/og/home.png"}],["$","meta","22",{"property":"og:image:type","content":"image/png"}],["$","meta","23",{"property":"og:image:width","content":"1200"}],["$","meta","24",{"property":"og:image:height","content":"630"}],["$","meta","25",{"property":"og:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst & Product Owner"}],["$","meta","26",{"property":"og:type","content":"profile"}],["$","meta","27",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","28",{"name":"twitter:creator","content":"@nhiney"}],["$","meta","29",{"name":"twitter:title","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","30",{"name":"twitter:description","content":"Business Analyst with a Computer Science background in Ho Chi Minh City. I turn business needs into user stories, system flows & specs. Open to BA roles."}],["$","meta","31",{"name":"twitter:image","content":"https://startup.id.vn/og/home.png"}],["$","meta","32",{"name":"twitter:image:alt","content":"Nguyen Thi Yen Nhi — Business Analyst"}],["$","meta","33",{"name":"twitter:image:width","content":"1200"}],["$","meta","34",{"name":"twitter:image:height","content":"630"}],["$","link","35",{"rel":"icon","href":"/favicon.ico?favicon.0isjd09sl1phz.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","36",{"rel":"icon","href":"/icon.png?icon.175tjcttjcr32.png","sizes":"512x512","type":"image/png"}],["$","link","37",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.03rj5-h0rj_0t.png","sizes":"180x180","type":"image/png"}],["$","$L35","38",{}]]
