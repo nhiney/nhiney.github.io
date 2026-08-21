@@ -5,13 +5,11 @@ import { usePathname } from "next/navigation";
 
 export function BackgroundEffects() {
   const pathname = usePathname();
-  // The homepage owns a single, full-page AI atmosphere. Avoid stacking the
-  // generic orb loops underneath it; quieter routes keep the ambient wash.
+  // The homepage keeps a plain, transparent backdrop — no orb loops.
   const hasHeroAtmosphere = pathname === "/";
   // Pages that opt out of the full-viewport paper-grain overlay: the restored
   // BA pages and the blog (its reading column reads cleaner on a flat sheet).
   const hideGrain =
-    pathname === "/" ||
     pathname === "/portfolio" ||
     pathname?.startsWith("/portfolio/") ||
     pathname === "/blog" ||

@@ -2,6 +2,158 @@
   position: relative;
   min-height: 100%;
   isolation: isolate;
+  --grid-line: var(--primary);
+  --grid-op: 0.1;
+  --grid-size: 84px;
+  /* Pure white in light mode — cleaner and more legible than the site's
+     default slightly-tinted off-white background token. */
+  --page-bg: #ffffff;
+}
+
+/* A quiet isometric (triaxial) line grid — three sets of parallel lines at
+   0deg/60deg/-60deg form an even triangular lattice, read as a technical
+   "3D geometric" backdrop. Pure CSS, no canvas/JS, so it renders
+   identically and instantly in both color schemes. */
+.pageShell {
+  background-color: var(--page-bg);
+  background-image:
+    repeating-linear-gradient(
+      60deg,
+      hsl(var(--grid-line) / var(--grid-op)) 0 1px,
+      transparent 1px var(--grid-size)
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      hsl(var(--grid-line) / var(--grid-op)) 0 1px,
+      transparent 1px var(--grid-size)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      hsl(var(--grid-line) / var(--grid-op)) 0 1px,
+      transparent 1px var(--grid-size)
+    ),
+    radial-gradient(
+      ellipse 75% 60% at 50% 20%,
+      var(--page-bg) 0%,
+      transparent 70%
+    );
+  background-attachment: fixed;
+}
+
+:global(.dark) .pageShell {
+  --grid-op: 0.14;
+  --page-bg: hsl(var(--background));
+}
+
+/* Light mode only — a slow glossy shimmer sweep plus a scatter of tiny
+   sparkle glints, both tinted with the site's blue accent so they read as
+   "white and shimmering" without ever needing pure-white-on-white dots. */
+.pageShell::before,
+.pageShell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pageShell::before {
+  background-image: linear-gradient(
+    100deg,
+    transparent 32%,
+    hsl(var(--primary) / 0.05) 47%,
+    hsl(var(--primary) / 0.09) 50%,
+    hsl(var(--primary) / 0.05) 53%,
+    transparent 68%
+  );
+  background-size: 220% 220%;
+  animation: homeShimmerSweep 16s ease-in-out infinite;
+}
+
+.pageShell::after {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: transparent;
+  animation: homeSparkleTwinkle 6s ease-in-out infinite;
+  box-shadow:
+    1263px 134px 0 hsl(var(--primary) / 0.49),
+    789px 20px 0 hsl(var(--primary) / 0.31),
+    557px 25px 0 hsl(var(--primary) / 0.47),
+    786px 231px 0 1px hsl(var(--primary) / 0.59),
+    196px 467px 0 hsl(var(--primary) / 0.44),
+    1170px 282px 0 hsl(var(--primary) / 0.43),
+    1103px 357px 0 1px hsl(var(--primary) / 0.63),
+    1134px 1057px 0 hsl(var(--primary) / 0.37),
+    1500px 779px 0 1px hsl(var(--primary) / 0.75),
+    1504px -19px 0 hsl(var(--primary) / 0.46),
+    1579px 66px 0 hsl(var(--primary) / 0.32),
+    116px 885px 0 hsl(var(--primary) / 0.47),
+    493px 323px 0 hsl(var(--primary) / 0.43),
+    1634px 69px 0 1px hsl(var(--primary) / 0.69),
+    793px 495px 0 hsl(var(--primary) / 0.32),
+    636px 711px 0 1px hsl(var(--primary) / 0.75),
+    314px 50px 0 1px hsl(var(--primary) / 0.76),
+    267px 1051px 0 1px hsl(var(--primary) / 0.59),
+    999px 99px 0 hsl(var(--primary) / 0.32),
+    409px 517px 0 hsl(var(--primary) / 0.52),
+    636px 253px 0 1px hsl(var(--primary) / 0.64),
+    1434px 1060px 0 1px hsl(var(--primary) / 0.61),
+    809px 176px 0 hsl(var(--primary) / 0.36),
+    688px 1022px 0 1px hsl(var(--primary) / 0.65),
+    44px 897px 0 1px hsl(var(--primary) / 0.58),
+    623px 145px 0 1px hsl(var(--primary) / 0.78),
+    331px 906px 0 hsl(var(--primary) / 0.46),
+    1348px 629px 0 hsl(var(--primary) / 0.39),
+    1062px 186px 0 hsl(var(--primary) / 0.31),
+    373px 403px 0 hsl(var(--primary) / 0.38),
+    881px 987px 0 hsl(var(--primary) / 0.33),
+    674px 290px 0 hsl(var(--primary) / 0.48),
+    390px 549px 0 hsl(var(--primary) / 0.48),
+    27px 722px 0 hsl(var(--primary) / 0.30),
+    911px 169px 0 hsl(var(--primary) / 0.37),
+    1461px 963px 0 hsl(var(--primary) / 0.35),
+    1347px 329px 0 hsl(var(--primary) / 0.35),
+    14px 1061px 0 1px hsl(var(--primary) / 0.74),
+    953px 328px 0 hsl(var(--primary) / 0.53),
+    367px 485px 0 hsl(var(--primary) / 0.33),
+    1416px 639px 0 hsl(var(--primary) / 0.32),
+    49px 738px 0 hsl(var(--primary) / 0.52),
+    1610px 205px 0 hsl(var(--primary) / 0.44),
+    409px 499px 0 hsl(var(--primary) / 0.52),
+    1547px 246px 0 hsl(var(--primary) / 0.31),
+    1546px 889px 0 1px hsl(var(--primary) / 0.71),
+    263px 744px 0 hsl(var(--primary) / 0.38),
+    15px 744px 0 hsl(var(--primary) / 0.43),
+    1239px 444px 0 hsl(var(--primary) / 0.32),
+    1555px 512px 0 hsl(var(--primary) / 0.40),
+    1478px 55px 0 hsl(var(--primary) / 0.44),
+    918px 710px 0 1px hsl(var(--primary) / 0.72),
+    101px 140px 0 hsl(var(--primary) / 0.35),
+    607px 333px 0 hsl(var(--primary) / 0.30),
+    1215px 926px 0 hsl(var(--primary) / 0.51);
+}
+
+@keyframes homeShimmerSweep {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+@keyframes homeSparkleTwinkle {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.85; }
+}
+
+:global(.dark) .pageShell::before,
+:global(.dark) .pageShell::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pageShell::before,
+  .pageShell::after {
+    animation: none;
+  }
 }
 
 .pageContent {
@@ -9,38 +161,18 @@
   z-index: 1;
 }
 
-/* Keep the orbital field visible beneath every homepage section while giving
-   long-form content a calm, translucent reading surface. */
-.pageContent > :global(section) {
-  background-color: hsl(var(--background) / 0.12);
-  background-image:
-    radial-gradient(circle at 12% 20%, hsl(var(--site-accent) / 0.055), transparent 34%),
-    radial-gradient(circle at 88% 30%, hsl(var(--site-accent-2) / 0.065), transparent 36%);
-}
-
-.pageContent > :global(section:nth-of-type(even)) {
-  background-color: hsl(var(--background) / 0.24);
-}
-
-:global(.dark) .pageContent > :global(section) {
-  background-color: hsl(var(--background) / 0.08);
-  background-image:
-    radial-gradient(circle at 12% 20%, hsl(var(--site-accent) / 0.055), transparent 34%),
-    radial-gradient(circle at 88% 30%, hsl(var(--site-accent-2) / 0.045), transparent 36%);
-}
-
-:global(.dark) .pageContent > :global(section:nth-of-type(even)) {
-  background-color: hsl(var(--background) / 0.18);
-}
-
 @media (prefers-contrast: more) {
-  .pageContent > :global(section) {
-    background-color: hsl(var(--background) / 0.72);
+  .pageShell {
+    --grid-op: 0;
+  }
+  .pageShell::before,
+  .pageShell::after {
+    display: none;
   }
 }
 
 @media (forced-colors: active) {
-  .pageContent > :global(section) {
+  .pageShell {
     background: Canvas;
   }
 }

@@ -6,7 +6,6 @@ import { ArrowRight, GitBranch, Clock, Code2, Mail } from "lucide-react";
 
 import { ColourfulText }      from "@/components/effects/ColourfulText";
 import { GlowingEffect }      from "@/components/effects/GlowingEffect";
-import { AIBackground }       from "@/components/effects/AIBackground";
 import { Container }          from "@/components/ui/Container";
 import { PortfolioClient }    from "@/app/portfolio/PortfolioClient";
 import { useLanguage }   from "@/context/LanguageContext";
@@ -48,20 +47,20 @@ const TECH_PILLS = [
 
 const BENTO_TONES = {
   github: {
-    frame: "border-sky-200/80 bg-white/78 dark:border-sky-300/24 dark:bg-sky-300/[0.06]",
-    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(248,250,255,0.96)_52%,rgba(232,245,255,0.58))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(17,27,50,0.96)_56%,rgba(56,189,248,0.11))]",
+    frame: "border-sky-200/80 bg-white/78 dark:border-sky-300/24 dark:bg-sky-300/[0.05]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(248,250,255,0.96)_52%,rgba(232,245,255,0.58))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.32),rgba(17,27,50,0.28)_56%,rgba(56,189,248,0.08))]",
     icon: "border-sky-200/90 bg-sky-50/88 text-sky-700 dark:border-sky-300/32 dark:bg-sky-400/[0.14] dark:text-sky-100",
     rule: "from-sky-300/45 via-blue-300/45 to-indigo-300/40",
   },
   coding: {
-    frame: "border-indigo-200/80 bg-white/78 dark:border-indigo-300/24 dark:bg-indigo-300/[0.06]",
-    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(248,249,255,0.96)_52%,rgba(235,237,255,0.62))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(19,25,52,0.96)_56%,rgba(99,102,241,0.13))]",
+    frame: "border-indigo-200/80 bg-white/78 dark:border-indigo-300/24 dark:bg-indigo-300/[0.05]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(248,249,255,0.96)_52%,rgba(235,237,255,0.62))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.32),rgba(19,25,52,0.28)_56%,rgba(99,102,241,0.09))]",
     icon: "border-indigo-200/90 bg-indigo-50/88 text-indigo-700 dark:border-indigo-300/32 dark:bg-indigo-400/[0.14] dark:text-indigo-100",
     rule: "from-blue-300/45 via-indigo-300/45 to-violet-300/40",
   },
   tech: {
-    frame: "border-violet-200/78 bg-white/78 dark:border-violet-300/24 dark:bg-violet-300/[0.06]",
-    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(250,248,255,0.96)_52%,rgba(244,237,255,0.6))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.98),rgba(25,21,51,0.96)_56%,rgba(168,85,247,0.12))]",
+    frame: "border-violet-200/78 bg-white/78 dark:border-violet-300/24 dark:bg-violet-300/[0.05]",
+    panel: "bg-[linear-gradient(135deg,hsl(var(--card)/0.99),rgba(250,248,255,0.96)_52%,rgba(244,237,255,0.6))] dark:bg-[linear-gradient(135deg,hsl(var(--card)/0.32),rgba(25,21,51,0.28)_56%,rgba(168,85,247,0.08))]",
     icon: "border-violet-200/90 bg-violet-50/88 text-violet-700 dark:border-violet-300/32 dark:bg-violet-400/[0.14] dark:text-violet-100",
     rule: "from-violet-300/42 via-fuchsia-300/35 to-amber-300/38",
   },
@@ -140,7 +139,7 @@ function BentoItem({ area, icon, title, tone, children }: {
 
   return (
     <li className={cn("min-h-[12rem] list-none sm:min-h-[14rem]", area)}>
-      <div className={cn("relative h-full rounded-2xl border p-2 shadow-[0_18px_48px_-38px_hsl(var(--foreground)/0.24)] sm:rounded-3xl", styles.frame)}>
+      <div className={cn("relative h-full rounded-2xl border p-2 shadow-[0_18px_48px_-38px_hsl(var(--foreground)/0.24)] transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_hsl(var(--foreground)/0.38)] sm:rounded-3xl", styles.frame)}>
         <GlowingEffect spread={40} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
         <div className={cn("relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-5 shadow-[0_10px_28px_-26px_hsl(var(--foreground)/0.2)] sm:p-6", styles.panel)}>
           <div className={cn("absolute inset-x-10 top-0 h-px rounded-b-full bg-gradient-to-r opacity-65", styles.rule)} />
@@ -289,8 +288,6 @@ export function HomeClient(_props: { projects: Post[]; latestPosts: Post[] }) {
 
   return (
     <div className={pageStyles.pageShell}>
-      <AIBackground />
-
       <div className={pageStyles.pageContent}>
         {/* ══ HERO ════════════════════════════════════════════════════════════ */}
         <section className="relative min-h-[calc(100svh-4rem)] overflow-hidden">
