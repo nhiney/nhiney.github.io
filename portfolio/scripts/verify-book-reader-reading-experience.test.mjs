@@ -113,8 +113,7 @@ function readFunctionDeclaration(source, name) {
 function stripOverviewHelperTypes(source) {
   return source
     .replace(/:\s*BookOutsideSummary\s*\|\s*undefined/g, "")
-    .replace(/:\s*OverviewSlide\[\]/g, "")
-    .replace(/:\s*string\[\]\[\]/g, "")
+    .replace(/:\s*OverviewContent/g, "")
     .replace(/:\s*string\s*\|\s*undefined/g, "")
     .replace(/:\s*string\[\]/g, "")
     .replace(/:\s*string/g, "");
@@ -156,11 +155,16 @@ test("live book pages have no inner auto/scroll surface or scroll lifecycle", ()
   const forbiddenUtilityOverflow = /\boverflow(?:-[xy])?-(?:auto|scroll)\b/i;
   const forbiddenInlineOverflow = /\boverflow(?:X|Y)?\s*:\s*["'](?:auto|scroll)["']/;
   const scrollLifecyclePatterns = [
-    /\b(?:scrollTop|scrollHeight|clientHeight)\b/,
+    /\bscrollTop\b/,
     /\b(?:add|remove)EventListener\s*\(\s*["']scroll["']/,
     /\bonScroll\s*=/,
     /\.(?:scrollTo|scrollIntoView)\s*\(/,
   ];
+  // Reading a box against its content is measurement, not scrolling: the
+  // OUTSIDE notes sheet uses it to scale the overview down onto one page.
+  // Only that file may measure; the leaves themselves stay clear of it.
+  const measurementPattern = /\b(?:scrollHeight|clientHeight)\b/;
+  const MEASURES_TO_FIT = new Set(["components/library/ReadingOverlay.tsx"]);
 
   LIVE_READER_STYLES.forEach((path) => {
     assert.doesNotMatch(
@@ -177,6 +181,9 @@ test("live book pages have no inner auto/scroll surface or scroll lifecycle", ()
     scrollLifecyclePatterns.forEach((pattern) => {
       assert.doesNotMatch(source, pattern, `${path} contains inner-scroll lifecycle code`);
     });
+    if (!MEASURES_TO_FIT.has(path)) {
+      assert.doesNotMatch(source, measurementPattern, `${path} measures a scroll surface`);
+    }
   });
 
   const readerRules = readFlatCssRules(readProjectFile(GLOBAL_STYLES_PATH)).filter(
@@ -332,16 +339,11 @@ test("oversized rich objects continue by page turn without duplicating source ma
   assert.deepEqual(JSON.parse(result.stdout.trim()), { objectCount: 26, valid: true });
 });
 
-test("outside overview opens on an editorial cover and retains every introduction", () => {
+test("outside overview keeps every authored section on one scaled page", () => {
   const overlay = readProjectFile("components/library/ReadingOverlay.tsx");
-  const helperSource = [
-    "splitOverviewText",
-    "packOverviewParagraphs",
-    "buildOverviewSlides",
-  ]
-    .map((name) => readFunctionDeclaration(overlay, name))
-    .map(stripOverviewHelperTypes)
-    .join("\n");
+  const helperSource = stripOverviewHelperTypes(
+    readFunctionDeclaration(overlay, "buildOverviewContent"),
+  );
   const program = `
     import { registerHooks } from "node:module";
     registerHooks({ resolve(specifier, context, nextResolve) {
@@ -354,60 +356,53 @@ test("outside overview opens on an editorial cover and retains every introductio
       }
     }});
     ${helperSource}
-    const { LIBRARY_BOOKS } = await import("./data/books.ts?verify-overview-cover-flow");
-    // Page boundaries may add/remove whitespace around punctuation. Compare
-    // every authored non-whitespace character so prose cannot disappear or be
-    // reordered without making the check brittle to line-breaking details.
+    const { LIBRARY_BOOKS } = await import("./data/books.ts?verify-overview-content");
+    // Compare every authored non-whitespace character so prose cannot
+    // disappear or be reordered without making the check brittle to
+    // line-breaking details.
     const normalize = (value) => value.replace(/\\s+/g, "");
+    const lessonText = (lessons) => normalize(
+      lessons.map((lesson) => lesson.heading + " " + (lesson.paragraph ?? "")).join(" ")
+    );
     const reports = LIBRARY_BOOKS.map((book) => {
       const summary = book.outsideSummary?.vi;
       if (!summary) return { slug: book.slug, missing: true };
-      const slides = buildOverviewSlides(summary, undefined, []);
-      const opening = slides[0] ?? {};
-      const introSlideIndexes = slides.flatMap((slide, index) =>
-        slide.introduction?.length ? [index] : []
-      );
-      const lessonSlideIndexes = slides.flatMap((slide, index) =>
-        slide.lessons?.length ? [index] : []
-      );
+      // Pass a cover note and key points too: an authored overview must win
+      // outright rather than blending the generic fallback into the page.
+      const content = buildOverviewContent(summary, "Ghi chú bìa dự phòng", ["Ý chính dự phòng"]);
       return {
         slug: book.slug,
         missing: false,
-        openingKeys: Object.entries(opening)
-          .filter(([, value]) => value !== undefined)
-          .map(([key]) => key)
-          .sort(),
-        openingHeading: opening.heading,
-        openingTagline: opening.tagline,
-        openingHasLongForm: Boolean(
-          opening.introduction?.length
-          || opening.lessons?.length
-          || opening.conclusion?.length
-        ),
-        introSlideIndexes,
-        firstLessonIndex: lessonSlideIndexes[0] ?? -1,
+        heading: content.heading,
+        tagline: content.tagline,
+        lessonsHeading: content.lessonsHeading,
+        numbered: content.numbered,
+        keyPointCount: content.keyPoints.length,
         sourceIntroduction: normalize(summary.introduction.join(" ")),
-        renderedIntroduction: normalize(
-          slides.flatMap((slide) => slide.introduction ?? []).join(" ")
-        ),
+        renderedIntroduction: normalize(content.introduction.join(" ")),
+        sourceLessons: lessonText(summary.lessons),
+        renderedLessons: lessonText(content.lessons),
+        sourceConclusion: normalize(summary.conclusion.join(" ")),
+        renderedConclusion: normalize(content.conclusion.join(" ")),
       };
     });
-    const emptySummary = {
-      heading: "Bìa biên tập",
-      tagline: "Một câu dẫn vẫn có mặt trên bìa.",
-      introduction: [],
-      numbered: true,
-      lessons: [{ heading: "Bài học đầu", paragraph: "Một ứng dụng ngắn." }],
-      conclusion: [],
-    };
-    const emptySlides = buildOverviewSlides(emptySummary, undefined, []);
+    const fallback = buildOverviewContent(undefined, "Một câu dẫn vẫn có mặt trên bìa.", [
+      "Ý chính đầu",
+      "Ý chính sau",
+    ]);
     console.log(JSON.stringify({
       reports,
-      emptyOpeningKeys: Object.entries(emptySlides[0] ?? {})
-        .filter(([, value]) => value !== undefined)
-        .map(([key]) => key)
-        .sort(),
-      emptyLessonStartsAfterCover: Boolean(emptySlides[1]?.lessons?.length),
+      fallback: {
+        coverNote: fallback.coverNote,
+        keyPoints: fallback.keyPoints,
+        hasSummaryProse: Boolean(
+          fallback.heading
+          || fallback.tagline
+          || fallback.introduction.length
+          || fallback.lessons.length
+          || fallback.conclusion.length
+        ),
+      },
     }));
   `;
   const result = spawnSync(process.execPath, [
@@ -423,31 +418,38 @@ test("outside overview opens on an editorial cover and retains every introductio
   assert.equal(audit.reports.length, 9);
   audit.reports.forEach((report) => {
     assert.equal(report.missing, false, `${report.slug}: missing Vietnamese overview`);
-    assert.deepEqual(
-      report.openingKeys,
-      ["heading", "tagline"],
-      `${report.slug}: slide zero must remain an editorial cover only`,
-    );
-    assert.ok(report.openingHeading, `${report.slug}: opening cover lost its heading`);
-    assert.ok(report.openingTagline, `${report.slug}: opening cover lost its tagline`);
+    assert.ok(report.heading, `${report.slug}: overview lost its heading`);
+    assert.ok(report.tagline, `${report.slug}: overview lost its tagline`);
+    assert.ok(report.lessonsHeading, `${report.slug}: overview lost its lesson framing`);
+    assert.equal(report.numbered, true, `${report.slug}: overview journey must stay ordered`);
     assert.equal(
-      report.openingHasLongForm,
-      false,
-      `${report.slug}: prose must not spill onto the opening cover`,
-    );
-    assert.equal(report.introSlideIndexes[0], 1, `${report.slug}: introduction must start after cover`);
-    assert.ok(
-      report.introSlideIndexes.every((index) => index > 0 && index < report.firstLessonIndex),
-      `${report.slug}: introduction slides must stay together before the lessons`,
+      report.keyPointCount,
+      0,
+      `${report.slug}: an authored overview must not fall back to key points`,
     );
     assert.equal(
       report.renderedIntroduction,
       report.sourceIntroduction,
-      `${report.slug}: overview pagination lost or reordered introduction copy`,
+      `${report.slug}: overview lost or reordered introduction copy`,
+    );
+    assert.equal(
+      report.renderedLessons,
+      report.sourceLessons,
+      `${report.slug}: overview lost or reordered lesson copy`,
+    );
+    assert.equal(
+      report.renderedConclusion,
+      report.sourceConclusion,
+      `${report.slug}: overview lost or reordered closing copy`,
     );
   });
-  assert.deepEqual(audit.emptyOpeningKeys, ["heading", "tagline"]);
-  assert.equal(audit.emptyLessonStartsAfterCover, true);
+  assert.equal(audit.fallback.coverNote, "Một câu dẫn vẫn có mặt trên bìa.");
+  assert.deepEqual(audit.fallback.keyPoints, ["Ý chính đầu", "Ý chính sau"]);
+  assert.equal(
+    audit.fallback.hasSummaryProse,
+    false,
+    "Books without an authored overview must fall back to the cover note only",
+  );
 });
 
 test("outside overviews reserve stable header, content, and footer lanes", () => {

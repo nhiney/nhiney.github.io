@@ -11,7 +11,7 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNod
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { X, BookOpen, RotateCw, ArrowLeft, ArrowDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, BookOpen, RotateCw, ArrowLeft, ArrowDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Language } from "@/lib/i18n/dictionaries";
 import BookViewer3D from "./BookViewer3D";
@@ -81,132 +81,38 @@ function OutsideSummaryLessons({
   );
 }
 
-interface OverviewSlide {
+interface OverviewContent {
   heading?: string;
   tagline?: string;
-  introduction?: string[];
-  lessons?: Array<{ heading: string; paragraph?: string }>;
-  lessonStart?: number;
-  conclusion?: string[];
+  introduction: string[];
+  lessonsHeading?: string;
+  numbered?: boolean;
+  lessons: Array<{ heading: string; paragraph?: string }>;
+  conclusion: string[];
   coverNote?: string;
-  keyPoints?: string[];
-  keyPointStart?: number;
+  keyPoints: string[];
 }
 
-function splitOverviewText(text: string, limit = 240): string[] {
-  if (text.length <= limit) return [text];
-  const sentences = text.match(/[^.!?…]+[.!?…]+|[^.!?…]+$/g)?.map((part) => part.trim()) ?? [text];
-  const pieces = sentences.flatMap((sentence) => {
-    if (sentence.length <= limit) return [sentence];
-
-    // A single Vietnamese sentence can be longer than the page budget. Keep
-    // inline emphasis tokens intact, then fall back to word boundaries so one
-    // long sentence cannot silently overflow into the footer.
-    const tokens = sentence.match(/\*\*[^*]+\*\*|\*[^*]+\*|\S+/g) ?? [sentence];
-    const sentenceChunks: string[] = [];
-    let sentenceChunk = "";
-    tokens.forEach((token) => {
-      if (sentenceChunk && sentenceChunk.length + token.length + 1 > limit) {
-        sentenceChunks.push(sentenceChunk);
-        sentenceChunk = token;
-      } else {
-        sentenceChunk = sentenceChunk ? `${sentenceChunk} ${token}` : token;
-      }
-    });
-    if (sentenceChunk) sentenceChunks.push(sentenceChunk);
-    return sentenceChunks;
-  });
-  const chunks: string[] = [];
-  let current = "";
-  pieces.forEach((piece) => {
-    if (current && current.length + piece.length + 1 > limit) {
-      chunks.push(current);
-      current = piece;
-    } else {
-      current = current ? `${current} ${piece}` : piece;
-    }
-  });
-  if (current) chunks.push(current);
-  return chunks;
-}
-
-function packOverviewParagraphs(paragraphs: string[], limit = 300): string[][] {
-  const parts = paragraphs.flatMap((paragraph) => splitOverviewText(paragraph));
-  const groups: string[][] = [];
-  let current: string[] = [];
-  let length = 0;
-  parts.forEach((part) => {
-    if (current.length && length + part.length > limit) {
-      groups.push(current);
-      current = [];
-      length = 0;
-    }
-    current.push(part);
-    length += part.length;
-  });
-  if (current.length) groups.push(current);
-  return groups;
-}
-
-function buildOverviewSlides(
+// Everything the book has to say up front now lives on one page — no
+// character-budget slicing, no pagination. Long entries simply scroll.
+function buildOverviewContent(
   summary: BookOutsideSummary | undefined,
   coverNote: string | undefined,
   keyPoints: string[]
-): OverviewSlide[] {
+): OverviewContent {
   if (summary) {
-    // Keep the opening as a true editorial cover. The book title and author are
-    // rendered by the surrounding sheet; this slide contributes only the
-    // summary's tagline and heading, leaving every introduction paragraph for
-    // the following running pages.
-    const slides: OverviewSlide[] = [];
-    slides.push({
+    return {
       heading: summary.heading,
       tagline: summary.tagline,
-    });
-    const introGroups = packOverviewParagraphs(summary.introduction, 200);
-    introGroups.forEach((introduction) => {
-      slides.push({
-        heading: summary.heading,
-        introduction,
-      });
-    });
-    summary.lessons.forEach((lesson, lessonIndex) => {
-      const paragraphParts = lesson.paragraph
-        ? splitOverviewText(lesson.paragraph, 200)
-        : [undefined];
-      paragraphParts.forEach((paragraph) => {
-        slides.push({
-          heading: summary.lessonsHeading ?? summary.heading,
-          lessons: [{ heading: lesson.heading, paragraph }],
-          lessonStart: lessonIndex,
-        });
-      });
-    });
-    packOverviewParagraphs(summary.conclusion, 200).forEach((conclusion) => {
-      slides.push({ heading: summary.heading, conclusion });
-    });
-    return slides;
+      introduction: summary.introduction,
+      lessonsHeading: summary.lessonsHeading,
+      numbered: summary.numbered,
+      lessons: summary.lessons,
+      conclusion: summary.conclusion,
+      keyPoints: [],
+    };
   }
-
-  const slides: OverviewSlide[] = [];
-  const coverParts = coverNote ? splitOverviewText(coverNote, 220) : [];
-  coverParts.forEach((part) => slides.push({ coverNote: part }));
-  let current: string[] = [];
-  let currentLength = 0;
-  let start = 0;
-  keyPoints.forEach((point, index) => {
-    const nextLength = currentLength + point.length;
-    if (current.length && (current.length >= 2 || nextLength > 260)) {
-      slides.push({ keyPoints: current, keyPointStart: start });
-      current = [];
-      currentLength = 0;
-      start = index;
-    }
-    current.push(point);
-    currentLength += point.length;
-  });
-  if (current.length) slides.push({ keyPoints: current, keyPointStart: start });
-  return slides.length ? slides : [{}];
+  return { coverNote, keyPoints, introduction: [], lessons: [], conclusion: [] };
 }
 
 export function ReadingOverlay({
@@ -227,6 +133,11 @@ export function ReadingOverlay({
   // Distinguish a click on the 3D book from an orbit-drag, so spinning the book
   // doesn't accidentally open it.
   const pointer = useRef<{ x: number; y: number; at: number } | null>(null);
+  // The whole overview (tagline, lessons, conclusion…) must read on one sheet
+  // with no scrolling — so instead of clipping overflow we scale the content
+  // block down until it fits the space left after the title/author/CTA.
+  const overviewFitOuterRef = useRef<HTMLDivElement>(null);
+  const overviewFitInnerRef = useRef<HTMLDivElement>(null);
 
   // Gate the portal until after hydration (document.body isn't there during the
   // static-export prerender).
@@ -280,32 +191,45 @@ export function ReadingOverlay({
   const outsideSummary = book
     ? book.outsideSummary[lang] ?? book.outsideSummary.en
     : undefined;
-  const overviewSlides = useMemo(
-    () => buildOverviewSlides(outsideSummary, coverNote, keyPoints),
+  const overview = useMemo(
+    () => buildOverviewContent(outsideSummary, coverNote, keyPoints),
     [outsideSummary, coverNote, keyPoints]
   );
-  const [overviewState, setOverviewState] = useState({
-    slug: book?.slug,
-    lang,
-    index: 0,
-  });
-  const overviewIndex = overviewState.slug === book?.slug && overviewState.lang === lang
-    ? Math.min(overviewState.index, overviewSlides.length - 1)
-    : 0;
-  const overviewSlide = overviewSlides[overviewIndex] ?? overviewSlides[0];
-  const isOverviewOpening = overviewIndex === 0;
   const noteTitleScale = title.length >= 38
     ? "long"
     : title.length >= 24
       ? "medium"
       : "short";
-  const setOverviewIndex = (index: number) => {
-    setOverviewState({
-      slug: book?.slug,
-      lang,
-      index: Math.min(Math.max(index, 0), overviewSlides.length - 1),
-    });
-  };
+
+  // Shrink the overview block to fit its box exactly, so long books (many
+  // lessons) still land on one page instead of scrolling or spilling out.
+  useEffect(() => {
+    const outer = overviewFitOuterRef.current;
+    const inner = overviewFitInnerRef.current;
+    if (!outer || !inner) return;
+
+    // Legibility comes first: only shrink a little before handing the rest
+    // off to scroll, rather than scaling long books down to unreadable text.
+    const MIN_SCALE = 0.85;
+    const fit = () => {
+      const availableWidth = outer.clientWidth;
+      const availableHeight = outer.clientHeight;
+      if (!availableWidth || !availableHeight) return;
+      inner.style.width = `${availableWidth}px`;
+      inner.style.transform = "none";
+      const naturalHeight = inner.scrollHeight;
+      const rawScale = availableHeight / naturalHeight;
+      const scale = Math.min(1, Math.max(MIN_SCALE, rawScale));
+      inner.style.transformOrigin = "top center";
+      inner.style.transform = scale < 1 ? `scale(${scale})` : "none";
+    };
+
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(outer);
+    document.fonts?.ready?.then(fit).catch(() => {});
+    return () => ro.disconnect();
+  }, [book?.slug, lang, overview]);
   const deck = book ? book.pages[lang] ?? book.pages.en ?? [] : [];
   const usesFutureLabTheme = deck.some((page) => page.theme === "future-ethics-lab");
   // Locales offered in the segmented switch (de-duped, en first).
@@ -459,19 +383,19 @@ export function ReadingOverlay({
                 {/* Right — the key-ideas note, written on the book's OWN paper,
                     shown as a full sheet at the photo's true proportions. */}
                 <div className="relative min-h-0 flex-1 overflow-hidden">
-                  <div className="flex h-full items-center justify-center overflow-hidden p-2 sm:p-3 lg:p-4 xl:p-5">
+                  <div className="flex h-full items-center justify-center overflow-hidden p-1.5 sm:p-2 lg:p-3 xl:p-4">
                     <div
                       className="note-sheet relative"
                       style={{
                         aspectRatio: paperRatio ?? 0.562,
-                        width: "min(50rem, 100%, var(--note-sheet-wide))",
-                        maxHeight: "94dvh",
-                        "--note-sheet-wide": `${(paperRatio ?? 0.562) * 94}dvh`,
-                        "--note-sheet-mobile": `${(paperRatio ?? 0.562) * 94}dvh`,
+                        width: "min(58rem, 100%, var(--note-sheet-wide))",
+                        maxHeight: "97dvh",
+                        "--note-sheet-wide": `${(paperRatio ?? 0.562) * 97}dvh`,
+                        "--note-sheet-mobile": `${(paperRatio ?? 0.562) * 97}dvh`,
                         ...(paperSrc ? { backgroundImage: `url(${paperSrc})` } : {}),
                       } as CSSProperties}
                       data-note-title-scale={noteTitleScale}
-                      data-overview-opening={isOverviewOpening ? "true" : "false"}
+                      data-overview-opening="true"
                     >
                       {/* Language switch — floats on the sheet's top corner */}
                       {locales.length > 1 && (
@@ -503,56 +427,57 @@ export function ReadingOverlay({
                             : "relative h-full justify-start px-[14%] py-[7%] sm:px-[18%] sm:py-[10%]"
                         }`}
                       >
-                        {isOverviewOpening && book.tags?.[0] && (
+                        {book.tags?.[0] && (
                           <p className="note-book-kicker note-accent text-[0.72rem] font-semibold uppercase tracking-[0.26em]">
                             {book.tags[0]}
                           </p>
                         )}
-                        <h1 className={`note-title note-ink font-heading font-bold tracking-tight text-balance${
-                          isOverviewOpening ? "" : " is-running"
-                        }`}>
+                        <h1 className="note-title note-ink font-heading font-bold tracking-tight text-balance">
                           {title}
                         </h1>
-                        {isOverviewOpening ? (
-                          <p className="note-author note-soft font-serif italic">{book.meta.author}</p>
-                        ) : null}
+                        <p className="note-author note-soft font-serif italic">{book.meta.author}</p>
                         <div
-                          key={`${book.slug}-${lang}-${overviewIndex}`}
-                          className="note-overview-slide min-h-0 w-full max-w-[31rem] flex-1 overflow-hidden text-left"
-                          data-overview-index={overviewIndex}
+                          key={`${book.slug}-${lang}`}
+                          ref={overviewFitOuterRef}
+                          className="note-overview-slide min-h-0 w-full max-w-[31rem] flex-1 text-left"
                           aria-live="polite"
                         >
+                          {/* Scrolling lives on this wrapper, never on the
+                              transformed element itself — mixing overflow
+                              and transform on one box scrolls unreliably. */}
+                          <div className="note-overview-scroll">
+                          <div ref={overviewFitInnerRef} className="note-overview-fit">
                           {outsideSummary ? (
                             <>
-                              {overviewSlide.tagline && (
+                              {overview.tagline && (
                                 <p className="note-overview-tagline note-ink mx-auto max-w-[28rem] text-center font-serif italic text-balance">
-                                  {renderNoteInline(overviewSlide.tagline)}
+                                  {renderNoteInline(overview.tagline)}
                                 </p>
                               )}
-                              {overviewSlide.heading && (
+                              {overview.heading && (
                                 <h2 className={`note-overview-heading note-accent text-center font-heading font-bold tracking-tight ${
-                                  overviewSlide.tagline ? "mt-3" : ""
+                                  overview.tagline ? "mt-3" : ""
                                 }`}>
-                                  {overviewSlide.heading}
+                                  {overview.heading}
                                 </h2>
                               )}
-                              {overviewSlide.introduction?.length ? (
+                              {overview.introduction.length ? (
                                 <div className="note-ink mt-3 space-y-2.5">
-                                  {overviewSlide.introduction.map((paragraph, index) => (
+                                  {overview.introduction.map((paragraph, index) => (
                                     <p key={index}>{renderNoteInline(paragraph)}</p>
                                   ))}
                                 </div>
                               ) : null}
-                              {overviewSlide.lessons?.length ? (
+                              {overview.lessons.length ? (
                                 <OutsideSummaryLessons
-                                  numbered={outsideSummary.numbered}
-                                  lessons={overviewSlide.lessons}
-                                  start={overviewSlide.lessonStart}
+                                  heading={overview.lessonsHeading}
+                                  numbered={overview.numbered}
+                                  lessons={overview.lessons}
                                 />
                               ) : null}
-                              {overviewSlide.conclusion?.length ? (
+                              {overview.conclusion.length ? (
                                 <div className="note-ink mt-3 space-y-2.5">
-                                  {overviewSlide.conclusion.map((paragraph, index) => (
+                                  {overview.conclusion.map((paragraph, index) => (
                                     <p key={index}>{renderNoteInline(paragraph)}</p>
                                   ))}
                                 </div>
@@ -560,21 +485,21 @@ export function ReadingOverlay({
                             </>
                           ) : (
                             <>
-                              {overviewSlide.coverNote && (
+                              {overview.coverNote && (
                                 <p className="note-cover-note note-accent mx-auto max-w-[26rem] text-center font-serif italic leading-relaxed text-balance">
-                                  {renderNoteInline(overviewSlide.coverNote)}
+                                  {renderNoteInline(overview.coverNote)}
                                 </p>
                               )}
-                              {overviewSlide.keyPoints?.length ? (
+                              {overview.keyPoints.length ? (
                                 <div className="note-key-ideas mt-2">
                                   <p className="note-key-ideas-label note-soft text-center text-[0.72rem] font-semibold uppercase tracking-[0.22em]">
                                     {t("libraryPage.key_ideas")}
                                   </p>
                                   <ol className="note-key-ideas-list mx-auto mt-3 flex max-w-[25rem] flex-col gap-2.5 text-left">
-                                    {overviewSlide.keyPoints.map((point, index) => (
-                                      <li key={`${overviewSlide.keyPointStart ?? 0}-${index}`} className="note-key-idea note-ink flex gap-2.5 leading-snug">
+                                    {overview.keyPoints.map((point, index) => (
+                                      <li key={index} className="note-key-idea note-ink flex gap-2.5 leading-snug">
                                         <span className="note-badge mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[0.68rem] font-bold">
-                                          {(overviewSlide.keyPointStart ?? 0) + index + 1}
+                                          {index + 1}
                                         </span>
                                         <span>{point}</span>
                                       </li>
@@ -584,35 +509,11 @@ export function ReadingOverlay({
                               ) : null}
                             </>
                           )}
+                          </div>
+                          </div>
                         </div>
 
                         <footer className="note-footer flex shrink-0 flex-col items-center">
-                          {overviewSlides.length > 1 ? (
-                            <nav className="note-pagination flex items-center justify-center gap-3" aria-label={lang === "vi" ? "Phân trang tổng quan" : "Overview pagination"}>
-                            <button
-                              type="button"
-                              onClick={() => setOverviewIndex(overviewIndex - 1)}
-                              disabled={overviewIndex === 0}
-                              aria-label={lang === "vi" ? "Trang tổng quan trước" : "Previous overview page"}
-                              className="note-page-button inline-flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(43,41,38,0.26)] text-[#2b2926] transition hover:bg-white/40 disabled:cursor-not-allowed disabled:opacity-30"
-                            >
-                              <ChevronLeft size={17} aria-hidden />
-                            </button>
-                            <span className="note-soft min-w-12 text-center text-xs font-semibold tabular-nums">
-                              {overviewIndex + 1} / {overviewSlides.length}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => setOverviewIndex(overviewIndex + 1)}
-                              disabled={overviewIndex === overviewSlides.length - 1}
-                              aria-label={lang === "vi" ? "Trang tổng quan sau" : "Next overview page"}
-                              className="note-page-button inline-flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(43,41,38,0.26)] text-[#2b2926] transition hover:bg-white/40 disabled:cursor-not-allowed disabled:opacity-30"
-                            >
-                              <ChevronRight size={17} aria-hidden />
-                            </button>
-                            </nav>
-                          ) : null}
-
                           {/* Open CTA + full review link */}
                           <div className="note-actions flex flex-wrap items-center justify-center gap-2.5">
                             <button

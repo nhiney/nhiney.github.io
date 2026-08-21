@@ -16,6 +16,18 @@ const GLOBAL_STYLES_PATH = resolve(PROJECT_DIR, "app/globals.css");
 
 const NO_VERTICAL_SCROLL = /(?:overflow-y-(?:auto|scroll)|overflow-y\s*:\s*(?:auto|scroll))/;
 const SCROLL_LIFECYCLE = /(?:leafScrollRatiosRef|syncScrollAffordances|restoreLeafScroll|scrollSurface(?:\.|\?\.)addEventListener\(\s*["']scroll["'])/;
+// The no-scroll rule guards the flipbook leaves themselves. The OUTSIDE notes
+// sheet scales its overview down to one page and only hands the remainder to a
+// scroll box past a legibility floor, so scope this to reader-leaf rules
+// instead of asserting over the whole stylesheet.
+function readerLeafRules(css) {
+  return [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+    .filter(([, selector]) =>
+      /\.(?:flipreader(?:-[\w-]+)?|flip-page|flip-leaf|leaf-[\w-]+)/.test(selector))
+    .map(([, , declarations]) => declarations)
+    .join("\n");
+}
+
 
 function findBalancedEnd(source, start, opening, closing) {
   let depth = 0;
@@ -193,7 +205,7 @@ test("has no vertical leaf scrolling and keeps body type at a reading size", () 
   const readerSource = readFileSync(READER_PATH, "utf8");
   const globalStyles = readFileSync(GLOBAL_STYLES_PATH, "utf8");
   assert.doesNotMatch(layoutSource, NO_VERTICAL_SCROLL);
-  assert.doesNotMatch(globalStyles, NO_VERTICAL_SCROLL);
+  assert.doesNotMatch(readerLeafRules(globalStyles), NO_VERTICAL_SCROLL);
   assert.doesNotMatch(readerSource, SCROLL_LIFECYCLE);
   assert.match(layoutSource, /breathing-page[^`]*overflow-hidden/);
   const bodySize = /breathing-page[^`]*text-\[([0-9.]+)rem\]/.exec(layoutSource);
