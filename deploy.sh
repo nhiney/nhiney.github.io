@@ -25,6 +25,10 @@ cd "$REPO_ROOT"
 
 if git ls-remote --exit-code origin "$BRANCH" > /dev/null 2>&1; then
   git fetch origin "$BRANCH"
+  # The deploy branch carries build artifacts only, and scheduled runs push to
+  # it from elsewhere. Always publish on top of the remote tip so a stale local
+  # ref cannot build against an old base and get the push rejected.
+  git branch -f "$BRANCH" "origin/$BRANCH"
   git worktree add "$WORKTREE_DIR" "$BRANCH"
 else
   git worktree add --orphan -b "$BRANCH" "$WORKTREE_DIR"
