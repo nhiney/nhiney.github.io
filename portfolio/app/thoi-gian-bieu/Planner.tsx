@@ -10,7 +10,7 @@ type Cup = { time: string; ml: number; note: string };
 type Milestone = { from: string; to: string; title: string; note: string };
 // Every personal string (labels, dates, categories) lives in the encrypted vault, never in this file.
 type Data = {
-  defense: string; event: string; phases: [string, string]; tags: Record<Tag, string>; planFields: [string, string][];
+  start: string; defense: string; event: string; phases: [string, string]; tags: Record<Tag, string>; planFields: [string, string][];
   kcal: string; slots: Slot[]; water: Cup[]; milestones: Milestone[];
 };
 type Expense = { n: string; a: number; k: string };
@@ -179,7 +179,8 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
   });
   const [now, setNow] = useState(() => new Date());
   const today = ymd(now);
-  const [cur, setCur] = useState(today);
+  // Before the plan's first day, open on that day instead of an empty "today".
+  const [cur, setCur] = useState(() => { const t = ymd(new Date()); return t < data.start ? data.start : t; });
   const [tab, setTab] = useState<TabId>("plan");
 
   useEffect(() => { const t = setInterval(() => setNow(new Date()), 30000); return () => clearInterval(t); }, []);
@@ -209,7 +210,11 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
             <button className={s.iconBtn} onClick={() => setCur(addDays(cur, -1))} aria-label="Ngày trước"><Icon d={I.left} /></button>
             <div className={s.dateText}>
               <strong>{isToday ? "Hôm nay · " : ""}{dayLabel(cur)}</strong>
-              <span>{cur <= data.defense ? data.phases[0] : data.phases[1]}</span>
+              <span>
+                {cur < data.start
+                  ? `Bắt đầu từ ${dayLabel(data.start)}`
+                  : `Ngày ${diffDays(data.start, cur) + 1} · ${cur <= data.defense ? data.phases[0] : data.phases[1]}`}
+              </span>
             </div>
             <button className={s.iconBtn} onClick={() => setCur(addDays(cur, 1))} aria-label="Ngày sau"><Icon d={I.right} /></button>
             {!isToday && <button className={s.btn} onClick={() => setCur(today)}>Hôm nay</button>}
@@ -257,7 +262,7 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
               {tab === "water" && <WaterTab data={data} v={v} isToday={isToday} nowMin={nowMin} toggle={toggleCup} />}
               {tab === "money" && <MoneyTab days={days} cur={cur} v={v} update={update} />}
               {tab === "tomorrow" && <TomorrowTab fields={data.planFields} cur={cur} v={v} update={update} />}
-              {tab === "stats" && <StatsTab days={days} today={today} cur={cur} score={score} onPick={setCur} />}
+              {tab === "stats" && <StatsTab days={days} start={data.start} today={today} cur={cur} score={score} onPick={setCur} />}
             </div>
           </section>
         </div>
@@ -488,17 +493,25 @@ function TomorrowTab({ fields, cur, v, update }: { fields: [string, string][]; c
   );
 }
 
-function StatsTab({ days, today, cur, score, onPick }: {
-  days: Record<string, Day>; today: string; cur: string; score: (d: string) => { n: number; tot: number }; onPick: (d: string) => void;
+function StatsTab({ days, start, today, cur, score, onPick }: {
+  days: Record<string, Day>; start: string; today: string; cur: string; score: (d: string) => { n: number; tot: number }; onPick: (d: string) => void;
 }) {
-  const range = Array.from({ length: 14 }, (_, i) => addDays(today, i - 13));
+  const range = Array.from({ length: 14 }, (_, i) => addDays(today, i - 13)).filter((d) => d >= start);
+  if (range.length === 0) {
+    return (
+      <>
+        <Head title="Thống kê" />
+        <p className={s.empty}>Thống kê bắt đầu từ {dayLabel(start)}. Tick các mục mỗi ngày, biểu đồ sẽ hiện ở đây.</p>
+      </>
+    );
+  }
   const pct = range.map((d) => { const x = score(d); return x.tot ? x.n / x.tot : 0; });
   const spend = range.map((d) => (days[d]?.exp ?? []).reduce((a, x) => a + x.a, 0));
   const maxSpend = Math.max(...spend, 1);
   const avg = Math.round((pct.reduce((a, b) => a + b, 0) / range.length) * 100);
   return (
     <>
-      <Head title="14 ngày gần nhất" note={`Hoàn thành trung bình ${avg}%`} />
+      <Head title={`${range.length} ngày gần nhất`} note={`Hoàn thành trung bình ${avg}%`} />
       <h3 className={s.chartTitle}>Mức hoàn thành</h3>
       <div className={s.chart}>
         {range.map((d, i) => (
