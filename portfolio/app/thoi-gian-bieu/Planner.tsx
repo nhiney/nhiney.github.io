@@ -19,6 +19,7 @@ type Vault = { v: number; iter: number; salt: string; iv: string; data: string }
 
 const PASS_KEY = "lich24h:pass";
 const DAYS_KEY = "lich24h:days";
+const THEME_KEY = "lich24h:theme";
 const KINDS = ["Thiết yếu", "Muốn", "Học tập", "Tiết kiệm"];
 const TABS = [
   ["plan", "Lịch"],
@@ -91,6 +92,8 @@ const Icon = ({ d, size = 18 }: { d: string; size?: number }) => (
 const I = {
   left: "M15 18l-6-6 6-6", right: "M9 18l6-6-6-6", check: "M5 12.5l4.5 4.5L19 7.5", x: "M6 6l12 12M18 6L6 18", plus: "M12 5v14M5 12h14",
   lock: "M6 11V8a6 6 0 0 1 12 0v3M5 11h14v10H5z",
+  sun: "M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z",
+  moon: "M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z",
   plan: "M3 6h18v15H3zM3 10h18M8 3v4M16 3v4", water: "M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z",
   money: "M3 6h18v13H3zM3 10h18M16 15h2", tomorrow: "M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01", stats: "M4 20V10M10 20V4M16 20v-7M22 20H2",
 };
@@ -100,9 +103,13 @@ export function Planner({ vault, fontClass }: { vault: Vault; fontClass: string 
   const [data, setData] = useState<Data | null>(null);
   const [checking, setChecking] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [dark, setDark] = useState(false);
+  const toggleTheme = () => { store(THEME_KEY, dark ? "light" : "dark"); setDark(!dark); };
 
   useEffect(() => {
     setMounted(true);
+    const t = store(THEME_KEY);
+    setDark(t ? t === "dark" : document.documentElement.classList.contains("dark"));
     const saved = store(PASS_KEY);
     if (!saved) { setChecking(false); return; }
     openVault(vault, saved).then(setData).catch(() => store(PASS_KEY, null)).finally(() => setChecking(false));
@@ -111,9 +118,9 @@ export function Planner({ vault, fontClass }: { vault: Vault; fontClass: string 
   // Portal to <body>: the layout's <main> is its own stacking context, so the site navbar would otherwise sit on top.
   if (!mounted) return null;
   return createPortal(
-    <div className={cx(s.root, fontClass, "ph-no-capture")}>
+    <div className={cx(s.root, dark && s.dark, fontClass, "ph-no-capture")}>
       {data ? (
-        <App data={data} onLock={() => { store(PASS_KEY, null); setData(null); }} />
+        <App data={data} dark={dark} onTheme={toggleTheme} onLock={() => { store(PASS_KEY, null); setData(null); }} />
       ) : (
         <Lock vault={vault} checking={checking} onOpen={setData} />
       )}
@@ -166,7 +173,7 @@ function Lock({ vault, checking, onOpen }: { vault: Vault; checking: boolean; on
 }
 
 // ---------- app ----------
-function App({ data, onLock }: { data: Data; onLock: () => void }) {
+function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onTheme: () => void; onLock: () => void }) {
   const [days, setDays] = useState<Record<string, Day>>(() => {
     try { return JSON.parse(store(DAYS_KEY) || "{}"); } catch { return {}; }
   });
@@ -209,6 +216,9 @@ function App({ data, onLock }: { data: Data; onLock: () => void }) {
           </div>
           <div className={s.topRight}>
             <span className={s.pill}><b>{sc.n}</b>/{sc.tot}<span className={s.hideSm}>&nbsp;mục xong</span></span>
+            <button className={s.iconBtn} onClick={onTheme} aria-label={dark ? "Chuyển sang nền sáng" : "Chuyển sang nền tối"} title={dark ? "Nền sáng" : "Nền tối"}>
+              <Icon d={dark ? I.sun : I.moon} />
+            </button>
             <button className={s.iconBtn} onClick={onLock} aria-label="Khóa trang" title="Khóa trang"><Icon d={I.lock} /></button>
           </div>
         </div>
@@ -355,7 +365,7 @@ function PlanTab({ data, days, cur, slots, v, curIdx, toggle }: {
                 <span className={s.rowBody}>
                   <span className={s.rowTitle}>{sl.label}{isNow && <em className={s.nowChip}>Đang diễn ra</em>}</span>
                   <span className={s.rowNote}>{sl.note}</span>
-                  <span className={s.rowMeta}><i className={cx(s.dot, s[sl.tag])} />{data.tags[sl.tag]} · {shortDur(span(toMin(sl.start), toMin(sl.end)))}</span>
+                  <span className={s.rowMeta}><span className={cx(s.tagPill, s[sl.tag])}>{data.tags[sl.tag]}</span> {shortDur(span(toMin(sl.start), toMin(sl.end)))}</span>
                 </span>
                 <input type="checkbox" className={s.vh} checked={on} onChange={(e) => toggle(sl.id, e.target.checked)} />
                 <span className={s.check} aria-hidden="true"><Icon d={I.check} size={14} /></span>
@@ -452,7 +462,7 @@ function MoneyTab({ days, cur, v, update }: { days: Record<string, Day>; cur: st
         <div className={s.sums}>
           <div className={s.sumRow}><span>Hôm nay</span><b>{vnd(total)}</b></div>
           {by.map(([k, n]) => (
-            <div key={k} className={s.kind}><span>{k}</span><div className={s.bar}><i style={{ width: `${Math.round((n / total) * 100)}%` }} /></div><b>{vnd(n)}</b></div>
+            <div key={k} className={cx(s.kind, s[`k${KINDS.indexOf(k)}`])}><span>{k}</span><div className={s.bar}><i style={{ width: `${Math.round((n / total) * 100)}%` }} /></div><b>{vnd(n)}</b></div>
           ))}
           <div className={s.sumRow}><span>7 ngày</span><b>{vnd(sumDays(7))}</b></div>
           <div className={s.sumRow}><span>30 ngày</span><b>{vnd(sumDays(30))}</b></div>
