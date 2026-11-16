@@ -68,3 +68,6 @@ portfolio/app/nguyenthiyennhi-klcn-ai-logistics-doc-extractor/**
 /design-qa.md
 /portfolio/design-qa.md
 /portfolio/.agent_context/
+
+# Private planner: only the encrypted page ships; the encrypt script and plain data (docs/lich24h/) stay local.
+portfolio/scripts/encrypt-vault.mjs
