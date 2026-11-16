@@ -1,0 +1,14 @@
+{
+  "id": "/thoi-gian-bieu/",
+  "name": "Thời gian biểu",
+  "short_name": "Lịch 24h",
+  "start_url": "/thoi-gian-bieu/",
+  "scope": "/thoi-gian-bieu/",
+  "display": "standalone",
+  "background_color": "#f4f7ff",
+  "theme_color": "#2563eb",
+  "icons": [
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}
