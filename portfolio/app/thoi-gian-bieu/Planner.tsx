@@ -252,12 +252,16 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
           <section className={s.right}>
             <nav className={s.tabs} role="tablist" aria-label="Mục">
               {TABS.map(([id, label]) => (
-                <button key={id} role="tab" aria-selected={tab === id} className={cx(s.tab, tab === id && s.tabOn)} onClick={() => setTab(id)}>
+                <button key={id} role="tab" aria-selected={tab === id} className={cx(s.tab, tab === id && s.tabOn)} onClick={() => {
+                  setTab(id);
+                  // Phones stack the dial above the panel: jump to the panel so the tap shows its content.
+                  if (window.innerWidth <= 960) requestAnimationFrame(() => document.getElementById("planner-panel")?.scrollIntoView({ block: "start" }));
+                }}>
                   <Icon d={I[id]} size={18} /><span>{label}</span>
                 </button>
               ))}
             </nav>
-            <div role="tabpanel" className={s.panel}>
+            <div role="tabpanel" id="planner-panel" className={s.panel}>
               {tab === "plan" && <PlanTab data={data} days={days} cur={cur} slots={slots} v={v} curIdx={curIdx} toggle={toggleSlot} />}
               {tab === "water" && <WaterTab data={data} v={v} isToday={isToday} nowMin={nowMin} toggle={toggleCup} />}
               {tab === "money" && <MoneyTab days={days} cur={cur} v={v} update={update} />}

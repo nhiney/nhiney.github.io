@@ -143,8 +143,8 @@
 /* ---------- top bar ---------- */
 .top {
   position: sticky; top: 0; z-index: 10; padding-top: env(safe-area-inset-top, 0px);
-  background: var(--glass); backdrop-filter: saturate(1.6) blur(14px); -webkit-backdrop-filter: saturate(1.6) blur(14px);
-  border-bottom: 1px solid var(--line);
+  background: var(--surface); /* opaque: scrolled text must not show through */
+  border-bottom: 1px solid var(--line); box-shadow: 0 4px 16px -12px rgba(14, 26, 54, 0.35);
 }
 .topIn {
   max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px;
@@ -222,7 +222,7 @@
 .tab span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tab:hover { color: var(--accent); background: var(--accent-soft); }
 .tabOn, .tabOn:hover { color: #fff; background: linear-gradient(135deg, var(--btn-1), var(--btn-2)); box-shadow: var(--shadow-btn); }
-.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); padding: 22px; min-width: 0; }
+.panel { scroll-margin-top: 72px; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); padding: 22px; min-width: 0; }
 .head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 14px; }
 .head h2 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: -0.015em; }
 .head span { font-size: 12px; color: var(--muted); }
@@ -364,21 +364,27 @@
   .cups { gap: 8px; }
   .cup { padding: 10px 12px; }
   .big { font-size: 28px; }
-  .cdNum { font-size: 40px; }
   .segCtl button { font-size: 12px; }
 }
+/* Phones: the header keeps only date nav + theme + lock (progress already shows in the dial),
+   the dial and countdown shrink so the day list starts sooner, and the bottom tab bar is opaque. */
 @media (max-width: 640px) {
-  .hideSm { display: none; }
-}
-@media (max-width: 420px) {
-  .pill { padding: 0 10px; }
-  .dateText strong { font-size: 15px; }
-  .iconBtn { width: 36px; height: 36px; }
-  .topIn { gap: 6px; }
+  .hideSm, .pill { display: none; }
+  .topIn { gap: 6px; padding-block: 8px; }
   .dateNav, .topRight { gap: 4px; }
-}
-@media (max-width: 360px) {
-  .pill { display: none; }
+  .iconBtn { width: 36px; height: 36px; border-radius: 10px; }
+  .dateNav .btn { height: 36px; padding: 0 10px; font-size: 13px; border-radius: 10px; flex: none; }
+  .dateText { padding: 0 4px; }
+  .dateText strong { font-size: 15px; }
+  .tabs { background: var(--surface); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .left { gap: 12px; }
+  .dialBox { max-width: 230px; }
+  .dialTime { font-size: 30px; }
+  .legend { font-size: 11.5px; gap: 4px 10px; margin-top: 6px; }
+  .nowBox { margin-top: 12px; padding-top: 12px; }
+  .cdNum { font-size: 34px; }
+  .cdUnit { font-size: 13px; }
+  .steps { margin: 12px 0 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .seg, .bar i, .check, .btn, .cup, .tab { transition: none; }
