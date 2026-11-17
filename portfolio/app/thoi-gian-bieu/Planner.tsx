@@ -3,6 +3,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import s from "./planner.module.css";
+import { FOODS, findFood, fold, parseQty } from "./foods";
 
 type Tag = "thesis" | "code" | "learn" | "life";
 type Slot = { id: string; start: string; end: string; label: string; note: string; tag: Tag; after?: { label: string; note: string; tag: Tag } };
@@ -14,16 +15,20 @@ type Data = {
   kcal: string; slots: Slot[]; water: Cup[]; milestones: Milestone[];
 };
 type Expense = { n: string; a: number; k: string };
-type Day = { done: Record<string, boolean>; water: Record<string, boolean>; exp: Expense[]; plan: Record<string, string> };
+type Eat = { n: string; q: string; k: number; m: number };
+// food is optional: days saved before the food tab existed have none.
+type Day = { done: Record<string, boolean>; water: Record<string, boolean>; exp: Expense[]; plan: Record<string, string>; food?: Eat[] };
 type Vault = { v: number; iter: number; salt: string; iv: string; data: string };
 
 const PASS_KEY = "lich24h:pass";
 const DAYS_KEY = "lich24h:days";
 const THEME_KEY = "lich24h:theme";
 const KINDS = ["Thiết yếu", "Muốn", "Học tập", "Tiết kiệm"];
+const MEALS = ["Sáng", "Trưa", "Phụ", "Tối"];
 const TABS = [
   ["plan", "Lịch"],
   ["water", "Nước"],
+  ["food", "Ăn uống"],
   ["money", "Chi tiêu"],
   ["tomorrow", "Ngày mai"],
   ["stats", "Thống kê"],
@@ -95,7 +100,7 @@ const I = {
   sun: "M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z",
   moon: "M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z",
   plan: "M3 6h18v15H3zM3 10h18M8 3v4M16 3v4", water: "M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z",
-  money: "M3 6h18v13H3zM3 10h18M16 15h2", tomorrow: "M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01", stats: "M4 20V10M10 20V4M16 20v-7M22 20H2",
+  money: "M3 6h18v13H3zM3 10h18M16 15h2", food: "M7 3v18M4 3v5a3 3 0 0 0 6 0V3M17 21V3c-2.5 0-4 2.5-4 6.5S14.5 14 17 14", tomorrow: "M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01", stats: "M4 20V10M10 20V4M16 20v-7M22 20H2",
 };
 
 // ---------- root ----------
@@ -264,9 +269,10 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
             <div role="tabpanel" id="planner-panel" className={s.panel}>
               {tab === "plan" && <PlanTab data={data} days={days} cur={cur} slots={slots} v={v} curIdx={curIdx} toggle={toggleSlot} />}
               {tab === "water" && <WaterTab data={data} v={v} isToday={isToday} nowMin={nowMin} toggle={toggleCup} />}
+              {tab === "food" && <FoodTab data={data} days={days} v={v} update={update} />}
               {tab === "money" && <MoneyTab days={days} cur={cur} v={v} update={update} />}
               {tab === "tomorrow" && <TomorrowTab fields={data.planFields} cur={cur} v={v} update={update} />}
-              {tab === "stats" && <StatsTab days={days} start={data.start} today={today} cur={cur} score={score} onPick={setCur} />}
+              {tab === "stats" && <StatsTab days={days} start={data.start} goal={kcalGoals(data.kcal).total} today={today} cur={cur} score={score} onPick={setCur} />}
             </div>
           </section>
         </div>
@@ -481,6 +487,114 @@ function MoneyTab({ days, cur, v, update }: { days: Record<string, Day>; cur: st
   );
 }
 
+// Targets come from the vault's kcal line, shaped like "~2.000 kcal · sáng 500 · trưa 700 · phụ 200 · tối 600".
+function kcalGoals(line: string) {
+  const num = (x?: string) => Number((x ?? "").replace(/\./g, "")) || 0;
+  const meals = MEALS.map((m) => num(line.match(new RegExp(`${m}\\s+([\\d.]+)`, "i"))?.[1]));
+  return { total: num(line.match(/([\d.]+)\s*kcal/)?.[1]) || meals.reduce((a, b) => a + b, 0), meals };
+}
+const eaten = (d?: Day) => (d?.food ?? []).reduce((a, x) => a + x.k, 0);
+const mealNow = () => { const h = new Date().getHours(); return h < 10 ? 0 : h < 14 ? 1 : h < 17 ? 2 : 3; };
+
+function FoodTab({ data, days, v, update }: { data: Data; days: Record<string, Day>; v: Day; update: (fn: (d: Day) => Day) => void }) {
+  const [name, setName] = useState("");
+  const [qty, setQty] = useState("");
+  const [kcal, setKcal] = useState("");
+  const [meal, setMeal] = useState(mealNow);
+  const [hint, setHint] = useState("");
+  const goals = kcalGoals(data.kcal);
+  const food = findFood(name);
+  const q = parseQty(qty, food);
+  const manual = Number(kcal.replace(/\D/g, ""));
+  const k = manual || (food && q ? Math.round(food.k * q) : 0);
+  const matches = name.trim() && !food ? FOODS.filter((f) => fold(f.n).includes(fold(name))).slice(0, 6) : [];
+  const list = v.food ?? [];
+  // Distinct foods from the latest days, for one-tap re-adding.
+  const recent = Object.keys(days).sort().reverse().flatMap((d) => [...(days[d].food ?? [])].reverse())
+    .filter((x, i, a) => a.findIndex((y) => y.n === x.n && y.q === x.q) === i).slice(0, 8);
+
+  const push = (e: Eat) => update((d) => ({ ...d, food: [...(d.food ?? []), e] }));
+  function add(e: FormEvent) {
+    e.preventDefault();
+    if (!name.trim()) return;
+    if (!q) { setHint(food?.g ? "Số lượng chưa đúng. Ví dụ: 1, 1,5 hoặc 120g" : "Số lượng chưa đúng. Ví dụ: 1 hoặc 1,5"); return; }
+    if (!k) { setHint("Món này chưa có trong danh sách, hãy nhập số calo."); return; }
+    const grams = /g$/i.test(qty.trim());
+    const ql = food ? (grams ? qty.trim().replace(/\s*g$/i, " g") : q === 1 ? food.u : `${q.toLocaleString("vi-VN")} × ${food.u}`) : qty.trim();
+    push({ n: food?.n ?? name.trim(), q: ql, k, m: meal });
+    setName(""); setQty(""); setKcal(""); setHint("");
+  }
+
+  const total = eaten(v);
+  const left = goals.total - total;
+  return (
+    <>
+      <Head title="Ăn uống" note={`Mục tiêu ${goals.total.toLocaleString("vi-VN")} kcal`} />
+      <form className={s.foodForm} onSubmit={add} autoComplete="off">
+        <input className={s.input} placeholder="Món ăn, vd: cơm trắng" aria-label="Món ăn" value={name} onChange={(e) => { setName(e.target.value); setHint(""); }} />
+        <input className={s.input} inputMode="decimal" placeholder="1" aria-label="Số lượng (phần hoặc gram, vd 120g)" value={qty} onChange={(e) => { setQty(e.target.value); setHint(""); }} />
+        <div className={cx(s.amt, s.amtWide)}>
+          <input className={s.input} inputMode="numeric" placeholder={food && q ? String(Math.round(food.k * q)) : "0"} aria-label="Calo (để trống thì tự tính)" value={kcal} onChange={(e) => { setKcal(e.target.value); setHint(""); }} />
+          <span>kcal</span>
+        </div>
+        <div className={s.segCtl} role="radiogroup" aria-label="Bữa">
+          {MEALS.map((m, i) => (
+            <button type="button" key={m} role="radio" aria-checked={meal === i} className={cx(meal === i && s.segOn)} onClick={() => setMeal(i)}>{m}</button>
+          ))}
+        </div>
+        <button className={cx(s.btn, s.btnPrimary)} disabled={!name.trim()}><Icon d={I.plus} size={16} />Thêm</button>
+      </form>
+      {matches.length > 0 && (
+        <div className={s.chips} aria-label="Gợi ý món">
+          {matches.map((f) => <button type="button" key={f.n} onClick={() => setName(f.n)}>{f.n}<small>{f.u} · {f.k}</small></button>)}
+        </div>
+      )}
+      <p className={s.hint}>
+        {hint || (food ? `${food.u} = ${food.k} kcal${q && q !== 1 ? ` · ${q.toLocaleString("vi-VN", { maximumFractionDigits: 2 })} phần` : ""} → ${k} kcal${food.g ? " · gõ 120g để tính theo gram" : ""}`
+          : name.trim() ? "Không có trong danh sách: nhập calo bằng tay." : "Gõ tên món (không dấu cũng được). Calo là ước tính trung bình.")}
+      </p>
+      {recent.length > 0 && (
+        <div className={s.chips} aria-label="Thêm nhanh món gần đây">
+          {recent.map((x) => <button type="button" key={x.n + x.q} onClick={() => push({ ...x, m: meal })}><Icon d={I.plus} size={12} />{x.n}<small>{x.k}</small></button>)}
+        </div>
+      )}
+
+      <div className={s.moneyGrid}>
+        <div>
+          {list.length === 0 ? (
+            <p className={s.empty}>Chưa ghi món nào. Ghi ngay sau mỗi bữa, kể cả đồ uống.</p>
+          ) : (
+            <ul className={s.expList}>
+              {list.map((x, i) => (
+                <li key={i}>
+                  <span className={s.expName}>{x.n}<small>{MEALS[x.m]}{x.q ? ` · ${x.q}` : ""}</small></span>
+                  <b>{x.k} kcal</b>
+                  <button className={s.del} aria-label={`Xóa ${x.n}`} onClick={() => update((d) => ({ ...d, food: (d.food ?? []).filter((_, j) => j !== i) }))}><Icon d={I.x} size={14} /></button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div className={s.sums}>
+          <div className={s.sumRow}><span>Đã nạp</span><b>{total.toLocaleString("vi-VN")} kcal</b></div>
+          <div className={cx(s.bar, left < 0 && s.barOver)}><i style={{ width: `${Math.min(100, Math.round((total / (goals.total || 1)) * 100))}%` }} /></div>
+          <div className={s.sumRow}><span>{left >= 0 ? "Còn được ăn" : "Vượt mục tiêu"}</span><b className={left < 0 ? s.over : undefined}>{Math.abs(left).toLocaleString("vi-VN")} kcal</b></div>
+          {MEALS.map((m, i) => {
+            const n = list.filter((x) => x.m === i).reduce((a, x) => a + x.k, 0), g = goals.meals[i];
+            return (
+              <div key={m} className={cx(s.kind, s[`k${i}`])}>
+                <span>{m}</span>
+                <div className={cx(s.bar, g > 0 && n > g && s.barOver)}><i style={{ width: `${g ? Math.min(100, Math.round((n / g) * 100)) : 0}%` }} /></div>
+                <b className={g > 0 && n > g ? s.over : undefined}>{n}{g ? `/${g}` : ""}</b>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
 function TomorrowTab({ fields, cur, v, update }: { fields: [string, string][]; cur: string; v: Day; update: (fn: (d: Day) => Day) => void }) {
   return (
     <>
@@ -497,8 +611,8 @@ function TomorrowTab({ fields, cur, v, update }: { fields: [string, string][]; c
   );
 }
 
-function StatsTab({ days, start, today, cur, score, onPick }: {
-  days: Record<string, Day>; start: string; today: string; cur: string; score: (d: string) => { n: number; tot: number }; onPick: (d: string) => void;
+function StatsTab({ days, start, goal, today, cur, score, onPick }: {
+  days: Record<string, Day>; start: string; goal: number; today: string; cur: string; score: (d: string) => { n: number; tot: number }; onPick: (d: string) => void;
 }) {
   const range = Array.from({ length: 14 }, (_, i) => addDays(today, i - 13)).filter((d) => d >= start);
   if (range.length === 0) {
@@ -512,6 +626,8 @@ function StatsTab({ days, start, today, cur, score, onPick }: {
   const pct = range.map((d) => { const x = score(d); return x.tot ? x.n / x.tot : 0; });
   const spend = range.map((d) => (days[d]?.exp ?? []).reduce((a, x) => a + x.a, 0));
   const maxSpend = Math.max(...spend, 1);
+  const kcal = range.map((d) => eaten(days[d]));
+  const maxKcal = Math.max(...kcal, goal, 1);
   const avg = Math.round((pct.reduce((a, b) => a + b, 0) / range.length) * 100);
   return (
     <>
@@ -529,6 +645,14 @@ function StatsTab({ days, start, today, cur, score, onPick }: {
         {range.map((d, i) => (
           <button key={d} className={cx(s.col, s.colSpend, d === cur && s.colSel)} onClick={() => onPick(d)} aria-label={`${dayLabel(d)}: ${vnd(spend[i])}`}>
             <i style={{ height: `${Math.max(3, (spend[i] / maxSpend) * 100)}%` }} /><span>{parseDate(d).getDate()}</span>
+          </button>
+        ))}
+      </div>
+      <h3 className={s.chartTitle}>Calo nạp mỗi ngày <span>mục tiêu {goal.toLocaleString("vi-VN")} kcal</span></h3>
+      <div className={s.chart}>
+        {range.map((d, i) => (
+          <button key={d} className={cx(s.col, s.colKcal, goal > 0 && kcal[i] > goal && s.colOver, d === cur && s.colSel)} onClick={() => onPick(d)} aria-label={`${dayLabel(d)}: ${kcal[i]} kcal`}>
+            <i style={{ height: `${Math.max(3, (kcal[i] / maxKcal) * 100)}%` }} /><span>{parseDate(d).getDate()}</span>
           </button>
         ))}
       </div>
