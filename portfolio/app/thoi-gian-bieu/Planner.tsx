@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import s from "./planner.module.css";
-import { FOODS, findFood, fold, parseQty } from "./foods";
+import { findFood, parseQty, searchFoods } from "./foods";
 
 type Tag = "thesis" | "code" | "learn" | "life";
 type Slot = { id: string; start: string; end: string; label: string; note: string; tag: Tag; after?: { label: string; note: string; tag: Tag } };
@@ -507,7 +507,7 @@ function FoodTab({ data, days, v, update }: { data: Data; days: Record<string, D
   const q = parseQty(qty, food);
   const manual = Number(kcal.replace(/\D/g, ""));
   const k = manual || (food && q ? Math.round(food.k * q) : 0);
-  const matches = name.trim() && !food ? FOODS.filter((f) => fold(f.n).includes(fold(name))).slice(0, 6) : [];
+  const matches = food ? [] : searchFoods(name);
   const list = v.food ?? [];
   // Distinct foods from the latest days, for one-tap re-adding.
   const recent = Object.keys(days).sort().reverse().flatMap((d) => [...(days[d].food ?? [])].reverse())
