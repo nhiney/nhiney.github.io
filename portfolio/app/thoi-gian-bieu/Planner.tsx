@@ -16,8 +16,10 @@ type Data = {
 };
 type Expense = { n: string; a: number; k: string };
 type Eat = { n: string; q: string; k: number; m: number };
-// food is optional: days saved before the food tab existed have none.
-type Day = { done: Record<string, boolean>; water: Record<string, boolean>; exp: Expense[]; plan: Record<string, string>; food?: Eat[] };
+// t = text, d = done, at = "HH:MM" when the line starts with a time, hi = marked important with "!".
+type Todo = { t: string; d: boolean; at?: string; hi?: boolean };
+// food / todo are optional: days saved before those tabs existed have none.
+type Day = { done: Record<string, boolean>; water: Record<string, boolean>; exp: Expense[]; plan: Record<string, string>; food?: Eat[]; todo?: Todo[] };
 type Vault = { v: number; iter: number; salt: string; iv: string; data: string };
 
 const PASS_KEY = "lich24h:pass";
@@ -27,6 +29,7 @@ const KINDS = ["Thiết yếu", "Muốn", "Học tập", "Tiết kiệm"];
 const MEALS = ["Sáng", "Trưa", "Phụ", "Tối"];
 const TABS = [
   ["plan", "Lịch"],
+  ["todo", "Việc"],
   ["water", "Nước"],
   ["food", "Ăn uống"],
   ["money", "Chi tiêu"],
@@ -95,6 +98,11 @@ const Icon = ({ d, size = 18 }: { d: string; size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
 );
 const I = {
+  todo: "M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11",
+  clock: "M12 7v5l3 2M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18z", flag: "M5 21V4M5 4h12l-2.5 4.5L17 13H5",
+  edit: "M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z", history: "M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 8v4l3 2",
+  trash: "M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3", list: "M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01",
+  spark: "M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z", down: "M6 9l6 6 6-6",
   left: "M15 18l-6-6 6-6", right: "M9 18l6-6-6-6", check: "M5 12.5l4.5 4.5L19 7.5", x: "M6 6l12 12M18 6L6 18", plus: "M12 5v14M5 12h14",
   lock: "M6 11V8a6 6 0 0 1 12 0v3M5 11h14v10H5z",
   sun: "M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z",
@@ -206,6 +214,7 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
   };
   const sc = score(cur);
   const curIdx = isToday ? slots.findIndex((x) => inSlot(x, nowMin)) : -1;
+  const todoLeft = (v.todo ?? []).filter((x) => !x.d).length;
 
   return (
     <>
@@ -263,11 +272,13 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
                   if (window.innerWidth <= 960) requestAnimationFrame(() => document.getElementById("planner-panel")?.scrollIntoView({ block: "start" }));
                 }}>
                   <Icon d={I[id]} size={18} /><span>{label}</span>
+                  {id === "todo" && todoLeft > 0 && <b className={s.badge} aria-label={`${todoLeft} việc chưa xong`}>{todoLeft}</b>}
                 </button>
               ))}
             </nav>
             <div role="tabpanel" id="planner-panel" className={s.panel}>
               {tab === "plan" && <PlanTab data={data} days={days} cur={cur} slots={slots} v={v} curIdx={curIdx} toggle={toggleSlot} />}
+              {tab === "todo" && <TodoTab key={cur} cur={cur} days={days} v={v} isToday={isToday} nowMin={nowMin} update={update} />}
               {tab === "water" && <WaterTab data={data} v={v} isToday={isToday} nowMin={nowMin} toggle={toggleCup} />}
               {tab === "food" && <FoodTab data={data} days={days} v={v} update={update} />}
               {tab === "money" && <MoneyTab days={days} cur={cur} v={v} update={update} />}
@@ -389,6 +400,207 @@ function PlanTab({ data, days, cur, slots, v, curIdx, toggle }: {
           );
         })}
       </ol>
+    </>
+  );
+}
+
+// One task per line. Optional leading bullet / "[ ]" / "[x]", then "!" for important, then a time ("9:00", "14h30", "9h").
+function parseTodo(line: string): Todo | null {
+  let x = line.replace(/^\s*(?:[-*•+]|\d+[.)])\s+/, "").trim();
+  let d = false, hi = false, at: string | undefined;
+  const box = x.match(/^\[([ xX]?)\]\s*/);
+  if (box) { d = /x/i.test(box[1]); x = x.slice(box[0].length); }
+  const bang = () => { const m = x.match(/^!+\s*/); if (m) { hi = true; x = x.slice(m[0].length); } };
+  bang();
+  const tm = x.match(/^(\d{1,2})[:h](\d{2})?(?:\s+|$)/i);
+  if (tm && +tm[1] < 24 && +(tm[2] ?? 0) < 60) { at = `${tm[1].padStart(2, "0")}:${tm[2] ?? "00"}`; x = x.slice(tm[0].length); }
+  bang();
+  x = x.trim();
+  if (!x) return null;
+  const todo: Todo = { t: x, d };
+  if (at) todo.at = at;
+  if (hi) todo.hi = true;
+  return todo;
+}
+const parseTodos = (text: string) => text.split("\n").map(parseTodo).filter((x): x is Todo => !!x);
+const todoLine = (x: Todo) => `${x.d ? "[x] " : ""}${x.hi ? "! " : ""}${x.at ? x.at + " " : ""}${x.t}`;
+const sameTask = (a: Todo, b: Todo) => a.t.toLowerCase() === b.t.toLowerCase();
+
+function TodoRow({ x, late, onToggle, onRemove }: { x: Todo; late?: boolean; onToggle?: (on: boolean) => void; onRemove?: () => void }) {
+  const body = (
+    <>
+      <span className={s.todoMain}>
+        <span className={s.todoText}>{x.t}</span>
+        {(x.at || x.hi) && (
+          <span className={s.todoMeta}>
+            {x.at && <span className={cx(s.chip, late && s.chipLate)}><Icon d={I.clock} size={12} />{x.at}{late && " · trễ"}</span>}
+            {x.hi && <span className={cx(s.chip, s.chipHi)}><Icon d={I.flag} size={12} />Quan trọng</span>}
+          </span>
+        )}
+      </span>
+    </>
+  );
+  return (
+    <li className={cx(s.todo, x.d && s.todoDone, x.hi && !x.d && s.todoHi, !onToggle && s.todoPreview)}>
+      {onToggle ? (
+        <label className={s.todoLabel}>
+          <input type="checkbox" className={s.vh} checked={x.d} onChange={(e) => onToggle(e.target.checked)} />
+          <span className={s.box} aria-hidden="true"><Icon d={I.check} size={13} /></span>
+          {body}
+        </label>
+      ) : (
+        <span className={s.todoLabel}><span className={s.box} aria-hidden="true" />{body}</span>
+      )}
+      {onRemove && <button className={s.todoDel} aria-label={`Xóa ${x.t}`} title="Xóa" onClick={onRemove}><Icon d={I.trash} size={15} /></button>}
+    </li>
+  );
+}
+
+function Ring({ pct }: { pct: number }) {
+  const r = 26, c = 2 * Math.PI * r;
+  return (
+    <div className={s.ring} role="img" aria-label={`Hoàn thành ${pct}%`}>
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="todoRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" className={s.ringA} /><stop offset="1" className={s.ringB} /></linearGradient></defs>
+        <circle cx="32" cy="32" r={r} className={s.ringTrack} />
+        <circle cx="32" cy="32" r={r} className={s.ringFill} strokeDasharray={c} strokeDashoffset={c * (1 - pct / 100)} />
+      </svg>
+      <b>{pct}<small>%</small></b>
+    </div>
+  );
+}
+
+function TodoTab({ cur, days, v, isToday, nowMin, update }: {
+  cur: string; days: Record<string, Day>; v: Day; isToday: boolean; nowMin: number; update: (fn: (d: Day) => Day) => void;
+}) {
+  const list = v.todo ?? [];
+  const [editing, setEditing] = useState(list.length === 0);
+  const [draft, setDraft] = useState(() => list.map(todoLine).join("\n"));
+  const [quick, setQuick] = useState("");
+  const [showDone, setShowDone] = useState(true);
+  const drafted = parseTodos(draft);
+
+  // Yesterday's unfinished tasks and its "3 việc chính" plan, minus anything already on today's list.
+  const prev = days[addDays(cur, -1)];
+  const have = editing ? drafted : list;
+  const carry = [
+    ...[prev?.plan?.m1, prev?.plan?.m2, prev?.plan?.m3].map((t) => (t ? parseTodo(t) : null)),
+    ...(prev?.todo ?? []).filter((x) => !x.d),
+  ].filter((x, i, a): x is Todo => !!x && a.findIndex((y) => !!y && sameTask(x, y)) === i && !have.some((y) => sameTask(x, y)));
+
+  const setList = (fn: (l: Todo[]) => Todo[]) => update((d) => ({ ...d, todo: fn(d.todo ?? []) }));
+  const toggle = (i: number, on: boolean) => setList((l) => l.map((x, j) => (j === i ? { ...x, d: on } : x)));
+  const remove = (i: number) => setList((l) => l.filter((_, j) => j !== i));
+  const late = (x: Todo) => isToday && !x.d && !!x.at && toMin(x.at) < nowMin;
+
+  function generate() {
+    setList(() => drafted);
+    if (drafted.length) setEditing(false);
+  }
+  function startEdit() { setDraft(list.map(todoLine).join("\n")); setEditing(true); }
+  function addCarry() {
+    if (editing) setDraft((t) => [t.trimEnd(), ...carry.map((x) => todoLine({ ...x, d: false }))].filter(Boolean).join("\n"));
+    else setList((l) => [...l, ...carry.map((x) => ({ ...x, d: false }))]);
+  }
+  function addQuick(e: FormEvent) {
+    e.preventDefault();
+    const x = parseTodo(quick);
+    if (!x) return;
+    setList((l) => [...l, x]);
+    setQuick("");
+  }
+
+  const carryBox = carry.length > 0 && (
+    <div className={s.carry}>
+      <span className={s.carryIcon}><Icon d={I.history} size={18} /></span>
+      <span className={s.carryText}>
+        <b>Còn {carry.length} việc từ hôm qua</b>
+        <small>{carry.slice(0, 3).map((x) => x.t).join(" · ")}{carry.length > 3 ? " …" : ""}</small>
+      </span>
+      <button type="button" className={cx(s.btn, s.btnSm)} onClick={addCarry}><Icon d={I.plus} size={15} />Chép sang</button>
+    </div>
+  );
+
+  if (editing) {
+    return (
+      <>
+        <Head title="Việc cần làm" note={dayLabel(cur)} />
+        {carryBox}
+        <div className={s.compose}>
+          <div className={s.composeIn}>
+            <textarea className={s.textarea} value={draft} autoFocus={list.length > 0} aria-label="Danh sách việc, mỗi dòng một việc"
+              placeholder={"Mỗi dòng một việc, ví dụ:\n9:00 Họp nhóm\n! Nộp báo cáo chương 2\nĐi chợ mua rau\n20h Gọi điện cho mẹ"}
+              onChange={(e) => setDraft(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); generate(); } }} />
+            <div className={s.tips}>
+              <span><Icon d={I.list} size={14} />Mỗi dòng một việc</span>
+              <span><Icon d={I.clock} size={14} /><kbd>9:00</kbd> <kbd>14h30</kbd> ở đầu dòng để ghi giờ</span>
+              <span><Icon d={I.flag} size={14} /><kbd>!</kbd> ở đầu dòng là quan trọng</span>
+            </div>
+          </div>
+          <div className={s.preview} aria-live="polite">
+            <div className={s.previewHead}>Xem trước<span>{drafted.length} việc</span></div>
+            {drafted.length ? (
+              <ul className={s.todoList}>{drafted.map((x, i) => <TodoRow key={i} x={x} />)}</ul>
+            ) : (
+              <p className={s.previewEmpty}>Gõ việc bên cạnh, danh sách sẽ hiện ở đây.</p>
+            )}
+          </div>
+        </div>
+        <div className={s.todoActions}>
+          <span className={s.kbdHint}><kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> để tạo nhanh</span>
+          {list.length > 0 && <button type="button" className={s.btn} onClick={() => setEditing(false)}>Hủy</button>}
+          <button type="button" className={cx(s.btn, s.btnPrimary)} disabled={!drafted.length && !list.length} onClick={generate}>
+            <Icon d={I.check} size={16} />{drafted.length ? `Tạo danh sách · ${drafted.length} việc` : list.length ? "Xóa danh sách" : "Tạo danh sách"}
+          </button>
+        </div>
+      </>
+    );
+  }
+
+  const doneN = list.filter((x) => x.d).length;
+  const leftN = list.length - doneN;
+  const pct = list.length ? Math.round((doneN / list.length) * 100) : 0;
+  const hiLeft = list.filter((x) => x.hi && !x.d).length;
+  const lateN = list.filter(late).length;
+  const rows = list.map((x, i) => ({ x, i }));
+  const todo = rows.filter((r) => !r.x.d), done = rows.filter((r) => r.x.d);
+  const row = ({ x, i }: { x: Todo; i: number }) => <TodoRow key={i} x={x} late={late(x)} onToggle={(on) => toggle(i, on)} onRemove={() => remove(i)} />;
+
+  return (
+    <>
+      <Head title="Việc cần làm" note={dayLabel(cur)} />
+      <div className={s.todoSum}>
+        <Ring pct={pct} />
+        <div className={s.todoSumText}>
+          <strong>{leftN === 0 ? "Hoàn thành tất cả!" : `${doneN}/${list.length} việc đã xong`}</strong>
+          <span>
+            {leftN === 0 ? "Hôm nay bạn làm rất tốt." : <>Còn {leftN} việc{hiLeft > 0 && <> · <em className={s.sumHi}>{hiLeft} quan trọng</em></>}{lateN > 0 && <> · <em className={s.sumLate}>{lateN} trễ giờ</em></>}</>}
+          </span>
+        </div>
+        <button type="button" className={cx(s.btn, s.btnSm)} onClick={startEdit}><Icon d={I.edit} size={15} /><span className={s.hideXs}>Sửa danh sách</span></button>
+      </div>
+      {carryBox}
+
+      {todo.length > 0 && <ul className={s.todoList}>{todo.map(row)}</ul>}
+      {leftN === 0 && (
+        <div className={s.allDone}><Icon d={I.spark} size={20} />Xong hết việc hôm nay. Nghỉ ngơi thôi!</div>
+      )}
+
+      <form className={s.todoQuick} onSubmit={addQuick} autoComplete="off">
+        <span className={s.quickIcon}><Icon d={I.plus} size={16} /></span>
+        <input className={s.quickInput} placeholder="Thêm việc… (Enter để lưu)" aria-label="Thêm việc" value={quick} onChange={(e) => setQuick(e.target.value)} />
+        {quick.trim() && <button className={cx(s.btn, s.btnPrimary, s.btnSm)}>Thêm</button>}
+      </form>
+
+      {done.length > 0 && (
+        <>
+          <button type="button" className={s.doneHead} aria-expanded={showDone} onClick={() => setShowDone(!showDone)}>
+            <Icon d={showDone ? I.down : I.right} size={14} />Đã xong<span>{done.length}</span>
+          </button>
+          {showDone && <ul className={s.todoList}>{done.map(row)}</ul>}
+        </>
+      )}
     </>
   );
 }
