@@ -33,6 +33,7 @@
   --shadow: 0 1px 2px rgba(14, 26, 54, 0.04), 0 8px 24px -8px rgba(37, 99, 235, 0.14);
   --shadow-btn: 0 8px 20px -8px rgba(79, 70, 229, 0.55);
 
+  --gutter: 24px; /* matches the site's <Container> (px-6, md:px-10) so content lines up with the Navbar */
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -89,6 +90,9 @@
 .root :where(h1, h2, h3, p) { color: inherit; font-family: inherit; letter-spacing: normal; line-height: inherit; font-weight: inherit; }
 .root :where(button) { font: inherit; color: inherit; cursor: pointer; }
 .root :where(button:disabled) { cursor: default; }
+/* Site header (shared Navbar). It uses the site's Tailwind tokens and font, not this page's. */
+.siteNav { position: relative; z-index: 20; font-family: var(--font-inter), system-ui, sans-serif; }
+.siteNav :where(a) { color: inherit; }
 .vh { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none; }
 
 /* category hues: each tag class sets --c (fill) and --ink (readable text) */
@@ -115,6 +119,7 @@
   border: 1px solid var(--line); background: var(--surface); color: var(--fg);
 }
 .iconBtn:hover { background: var(--surface-2); color: var(--accent); }
+@media (min-width: 768px) { .root { --gutter: 40px; } }
 .input {
   height: 46px; width: 100%; min-width: 0; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line);
   background: var(--surface); color: var(--fg); font: inherit; font-size: 16px; /* 16px stops iOS zoom on focus */
@@ -147,8 +152,8 @@
   border-bottom: 1px solid var(--line); box-shadow: 0 4px 16px -12px rgba(14, 26, 54, 0.35);
 }
 .topIn {
-  max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding-block: 10px; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
 .dateNav { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .dateText { display: flex; flex-direction: column; min-width: 0; padding: 0 6px; }
@@ -163,8 +168,8 @@
 
 /* ---------- layout ---------- */
 .wrap {
-  max-width: 1200px; margin: 0 auto; padding-block: 22px 48px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  max-width: 1400px; margin: 0 auto; padding-block: 22px 48px;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
 .layout { display: grid; grid-template-columns: 370px minmax(0, 1fr); gap: 22px; align-items: start; }
 .left { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 86px; min-width: 0; }

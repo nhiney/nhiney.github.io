@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { createPortal } from "react-dom";
+import { Navbar } from "@/components/layout/Navbar";
 import s from "./planner.module.css";
 import { SEP, parseMeal, searchFoods, type Item } from "./foods";
 
@@ -24,7 +25,6 @@ type Vault = { v: number; iter: number; salt: string; iv: string; data: string }
 
 const PASS_KEY = "lich24h:pass";
 const DAYS_KEY = "lich24h:days";
-const THEME_KEY = "lich24h:theme";
 const KINDS = ["Thiết yếu", "Muốn", "Học tập", "Tiết kiệm"];
 const MEALS = ["Sáng", "Trưa", "Phụ", "Tối"];
 const TABS = [
@@ -105,8 +105,6 @@ const I = {
   spark: "M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z", down: "M6 9l6 6 6-6",
   left: "M15 18l-6-6 6-6", right: "M9 18l6-6-6-6", check: "M5 12.5l4.5 4.5L19 7.5", x: "M6 6l12 12M18 6L6 18", plus: "M12 5v14M5 12h14",
   lock: "M6 11V8a6 6 0 0 1 12 0v3M5 11h14v10H5z",
-  sun: "M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8z",
-  moon: "M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z",
   plan: "M3 6h18v15H3zM3 10h18M8 3v4M16 3v4", water: "M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z",
   money: "M3 6h18v13H3zM3 10h18M16 15h2", food: "M7 3v18M4 3v5a3 3 0 0 0 6 0V3M17 21V3c-2.5 0-4 2.5-4 6.5S14.5 14 17 14", tomorrow: "M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01", stats: "M4 20V10M10 20V4M16 20v-7M22 20H2",
 };
@@ -116,13 +114,18 @@ export function Planner({ vault, fontClass }: { vault: Vault; fontClass: string 
   const [data, setData] = useState<Data | null>(null);
   const [checking, setChecking] = useState(true);
   const [mounted, setMounted] = useState(false);
-  const [dark, setDark] = useState(false);
-  const toggleTheme = () => { store(THEME_KEY, dark ? "light" : "dark"); setDark(!dark); };
+  // Follow the site theme (the Navbar's toggle flips the "dark" class on <html>), so this page and the rest of the site always match.
+  const [dark, setDark] = useState(() => typeof document !== "undefined" && document.documentElement.classList.contains("dark"));
+  useEffect(() => {
+    const html = document.documentElement;
+    const sync = () => setDark(html.classList.contains("dark"));
+    const mo = new MutationObserver(sync);
+    mo.observe(html, { attributes: true, attributeFilter: ["class"] });
+    return () => mo.disconnect();
+  }, []);
 
   useEffect(() => {
     setMounted(true);
-    const t = store(THEME_KEY);
-    setDark(t ? t === "dark" : document.documentElement.classList.contains("dark"));
     const saved = store(PASS_KEY);
     if (!saved) { setChecking(false); return; }
     openVault(vault, saved).then(setData).catch(() => store(PASS_KEY, null)).finally(() => setChecking(false));
@@ -132,8 +135,10 @@ export function Planner({ vault, fontClass }: { vault: Vault; fontClass: string 
   if (!mounted) return null;
   return createPortal(
     <div className={cx(s.root, dark && s.dark, fontClass, "ph-no-capture")}>
+      {/* The site's own header, same as the home page; the wrapper keeps it from sticking so the date bar below can. */}
+      <div className={s.siteNav}><Navbar /></div>
       {data ? (
-        <App data={data} dark={dark} onTheme={toggleTheme} onLock={() => { store(PASS_KEY, null); setData(null); }} />
+        <App data={data} onLock={() => { store(PASS_KEY, null); setData(null); }} />
       ) : (
         <Lock vault={vault} checking={checking} onOpen={setData} />
       )}
@@ -186,7 +191,7 @@ function Lock({ vault, checking, onOpen }: { vault: Vault; checking: boolean; on
 }
 
 // ---------- app ----------
-function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onTheme: () => void; onLock: () => void }) {
+function App({ data, onLock }: { data: Data; onLock: () => void }) {
   const [days, setDays] = useState<Record<string, Day>>(() => {
     try { return JSON.parse(store(DAYS_KEY) || "{}"); } catch { return {}; }
   });
@@ -235,9 +240,6 @@ function App({ data, dark, onTheme, onLock }: { data: Data; dark: boolean; onThe
           </div>
           <div className={s.topRight}>
             <span className={s.pill}><b>{sc.n}</b>/{sc.tot}<span className={s.hideSm}>&nbsp;mục xong</span></span>
-            <button className={s.iconBtn} onClick={onTheme} aria-label={dark ? "Chuyển sang nền sáng" : "Chuyển sang nền tối"} title={dark ? "Nền sáng" : "Nền tối"}>
-              <Icon d={dark ? I.sun : I.moon} />
-            </button>
             <button className={s.iconBtn} onClick={onLock} aria-label="Khóa trang" title="Khóa trang"><Icon d={I.lock} /></button>
           </div>
         </div>
