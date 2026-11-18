@@ -15,7 +15,7 @@ export const FOODS: Food[] = [
   { n: "Bún tươi", u: "100 g", k: 110, g: 100 },
   { n: "Xôi", u: "1 gói (200 g)", k: 400, g: 200 },
   // Đạm
-  { n: "Trứng gà luộc", u: "1 quả", k: 75 },
+  { n: "Trứng luộc", u: "1 quả", k: 75 },
   { n: "Trứng chiên", u: "1 quả", k: 110 },
   { n: "Ức gà áp chảo", u: "100 g", k: 165, g: 100 },
   { n: "Đùi gà", u: "100 g", k: 210, g: 100 },
@@ -66,7 +66,7 @@ export const FOODS: Food[] = [
   { n: "Sữa tươi không đường", u: "1 hộp 180 ml", k: 115 },
   { n: "Sữa tươi có đường", u: "1 hộp 180 ml", k: 140 },
   { n: "Sữa chua không đường", u: "1 hũ", k: 60 },
-  { n: "Sữa chua có đường", u: "1 hũ", k: 100 },
+  { n: "Sữa chua", u: "1 hũ (có đường)", k: 100 },
   { n: "Sữa đậu nành", u: "1 ly 250 ml", k: 130 },
   { n: "Hạnh nhân", u: "1 nắm (30 g)", k: 170, g: 30 },
   { n: "Hạt điều", u: "1 nắm (30 g)", k: 165, g: 30 },
@@ -277,6 +277,34 @@ export const FOODS: Food[] = [
   { n: "Nước tăng lực", u: "1 lon", k: 110 },
   { n: "Rượu vang", u: "1 ly 150 ml", k: 125 },
   { n: "Soju", u: "1 chai", k: 540 },
+
+  // Món hay gõ tắt (thêm)
+  { n: "Bánh mì trứng", u: "1 ổ", k: 350 },
+  { n: "Bánh mì chả", u: "1 ổ", k: 380 },
+  { n: "Bánh mì xíu mại", u: "1 ổ", k: 450 },
+  { n: "Bánh mì gà", u: "1 ổ", k: 400 },
+  { n: "Xôi gà", u: "1 gói", k: 500 },
+  { n: "Xôi mặn", u: "1 gói", k: 550 },
+  { n: "Xôi xéo", u: "1 gói", k: 450 },
+  { n: "Xôi đậu xanh", u: "1 gói", k: 400 },
+  { n: "Cơm sườn", u: "1 dĩa", k: 600 },
+  { n: "Cơm thịt kho", u: "1 dĩa", k: 650 },
+  { n: "Cơm cá kho", u: "1 dĩa", k: 550 },
+  { n: "Cơm chiên dương châu", u: "1 dĩa", k: 650 },
+  { n: "Cơm bò xào", u: "1 dĩa", k: 600 },
+  { n: "Cơm ức gà", u: "1 phần", k: 450 },
+  { n: "Cháo cá", u: "1 tô", k: 300 },
+  { n: "Cháo thịt bằm", u: "1 tô", k: 280 },
+  { n: "Bún gà", u: "1 tô", k: 400 },
+  { n: "Bún xào", u: "1 dĩa", k: 500 },
+  { n: "Bánh ướt", u: "1 dĩa", k: 300 },
+  { n: "Mì trộn", u: "1 phần", k: 500 },
+  { n: "Mì cay", u: "1 tô", k: 600 },
+  { n: "Mì gói trứng", u: "1 gói + 1 trứng", k: 450 },
+  { n: "Bò kho", u: "1 tô", k: 450 },
+  { n: "Gà nướng", u: "100 g", k: 220, g: 100 },
+  { n: "Thịt nướng", u: "100 g", k: 250, g: 100 },
+  { n: "Salad ức gà", u: "1 phần", k: 300 },
 ];
 
 // Lowercase without Vietnamese diacritics, so "com trang" finds "Cơm trắng".
@@ -284,20 +312,68 @@ export const fold = (x: string) => x.normalize("NFD").replace(/[̀-ͯ]/g, "").re
 
 export const findFood = (name: string) => { const f = fold(name); return f ? FOODS.find((x) => fold(x.n) === f) : undefined; };
 
-// "" -> 1 serving; "1,5" | "0.5" -> servings; "120g" -> grams / unit grams (only when the food has g). 0 = invalid.
-export function parseQty(raw: string, food?: Food) {
-  const x = raw.trim().toLowerCase().replace(",", ".");
-  if (!x) return 1;
-  const gm = x.match(/^(\d+(?:\.\d+)?)\s*g$/);
-  if (gm) return food?.g ? Number(gm[1]) / food.g : 0;
-  const n = Number(x);
-  return isFinite(n) && n > 0 ? n : 0;
-}
-
 // Every typed word must appear (any order); names starting with the query come first.
 export function searchFoods(q: string, limit = 8) {
   const f = fold(q), words = f.split(/\s+/).filter(Boolean);
   if (!words.length) return [];
-  const hit = FOODS.filter((x) => { const n = fold(x.n); return words.every((w) => n.includes(w)); });
+  let hit = FOODS.filter((x) => { const n = fold(x.n); return words.every((w) => n.includes(w)); });
+  if (!hit.length) hit = FOODS.filter((x) => toks(x.n).includes(words[0])); // nothing has every word: offer the first word's foods
   return hit.sort((a, b) => Number(fold(b.n).startsWith(f)) - Number(fold(a.n).startsWith(f))).slice(0, limit);
 }
+
+// ---------- free-text meal parser ----------
+// "2 trứng, 1 chén cơm, 150g ức gà và rau luộc" -> one item per food, each matched to the closest FOODS entry.
+const toks = (x: string) => fold(x).replace(/[()]/g, " ").split(/\s+/).filter(Boolean);
+const accents = (x: string) => x.toLowerCase().replace(/[()]/g, " ").split(/\s+/).filter(Boolean);
+const FOOD_TOKS = FOODS.map((f) => toks(f.n));
+const FOOD_ACC = FOODS.map((f) => accents(f.n));
+// Unit words that also start a food name ("hủ tiếu") are never stripped as units.
+const LEADS = new Set(FOOD_TOKS.map((x) => x[0]));
+const UNITS = new Set("chen bat to dia ly coc qua trai cai mieng cuon goi lat hop lon chai phan muong thia nam cu cay xien bich hu khoanh con suat".split(" "));
+const WORD_NUM: Record<string, number> = { nua: 0.5, mot: 1, hai: 2 };
+export const SEP = /(\s*(?:[,;+\n]|\s(?:và|với|va|voi)\s)\s*)/i;
+
+// ok = calories could be computed (false: unknown food, or grams on a food without a gram size).
+export type Item = { text: string; pre: string; food?: Food; exact: boolean; ok: boolean; qty: number; grams: number; k: number };
+
+function match(q: string[], qa: string[]) {
+  let best = -1, score = 0, exact = false;
+  FOOD_TOKS.forEach((nt, i) => {
+    const mq = q.filter((w) => nt.includes(w)).length;
+    if (mq * 2 < q.length) return; // "bánh gì đó" shares only "bánh": too weak to guess
+    const mn = nt.filter((w) => q.includes(w)).length;
+    // Cover what was typed first, then prefer the tighter name; exact accents break "bơ" / "bò" ties.
+    const sc = (mq / q.length) * 2 + mn / nt.length + qa.filter((w) => FOOD_ACC[i].includes(w)).length * 0.01;
+    if (sc > score) { score = sc; best = i; exact = mq === q.length && mn === nt.length; }
+  });
+  return best < 0 ? undefined : { food: FOODS[best], exact };
+}
+
+const isUnit = (w?: string) => !!w && UNITS.has(w) && !LEADS.has(w);
+
+export function parseItem(text: string): Item {
+  const raw = text.trim().split(/\s+/).filter(Boolean), t = raw.map((w) => fold(w));
+  let qty = 1, grams = 0, ml = false;
+  const drop = new Set<number>();
+  const ni = t.findIndex((w) => /^\d+([.,]\d+)?(g|gr|gram|ml)?$/.test(w) || /^\d+\/\d+$/.test(w) || w in WORD_NUM);
+  if (ni >= 0) {
+    const w = t[ni], m = w.match(/^(\d+(?:[.,]\d+)?)(g|gr|gram|ml)?$/);
+    let unit = m?.[2] ?? "";
+    const n = w in WORD_NUM ? WORD_NUM[w] : /\//.test(w) ? Number(w.split("/")[0]) / Number(w.split("/")[1]) : Number(m![1].replace(",", "."));
+    drop.add(ni);
+    if (!unit && /^(g|gr|gram|ml)$/.test(t[ni + 1] ?? "")) { unit = t[ni + 1]; drop.add(ni + 1); }
+    if (unit === "ml") ml = true; else if (unit) grams = n; else qty = n;
+    if (isUnit(t[ni + 1]) && !drop.has(ni + 1)) drop.add(ni + 1);
+  }
+  if (isUnit(t[0]) && t.length > 1) drop.add(0);
+  const pre = raw.filter((_, i) => drop.has(i)).join(" ");
+  const q = t.filter((_, i) => !drop.has(i)), qa = raw.filter((_, i) => !drop.has(i)).map((w) => w.toLowerCase());
+  const hit = q.length ? match(q, qa) : undefined;
+  const food = hit?.food;
+  // ml on a drink just names the cup size; grams only scale foods that define grams per unit.
+  const k = !food || !(qty > 0) ? 0 : grams ? (food.g ? (food.k * grams) / food.g : 0) : ml ? food.k : food.k * qty;
+  const ok = !!food && qty > 0 && !(grams && !food.g);
+  return { text: text.trim(), pre, food, exact: !!hit?.exact, ok, qty: ml ? 1 : qty, grams, k: Math.round(k) };
+}
+
+export const parseMeal = (text: string) => text.split(SEP).filter((x, i) => i % 2 === 0 && x.trim()).map(parseItem);

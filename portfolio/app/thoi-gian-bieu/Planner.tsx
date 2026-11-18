@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import s from "./planner.module.css";
-import { findFood, parseQty, searchFoods } from "./foods";
+import { SEP, parseMeal, searchFoods, type Item } from "./foods";
 
 type Tag = "thesis" | "code" | "learn" | "life";
 type Slot = { id: string; start: string; end: string; label: string; note: string; tag: Tag; after?: { label: string; note: string; tag: Tag } };
@@ -498,31 +498,34 @@ const mealNow = () => { const h = new Date().getHours(); return h < 10 ? 0 : h <
 
 function FoodTab({ data, days, v, update }: { data: Data; days: Record<string, Day>; v: Day; update: (fn: (d: Day) => Day) => void }) {
   const [name, setName] = useState("");
-  const [qty, setQty] = useState("");
   const [kcal, setKcal] = useState("");
   const [meal, setMeal] = useState(mealNow);
   const [hint, setHint] = useState("");
   const goals = kcalGoals(data.kcal);
-  const food = findFood(name);
-  const q = parseQty(qty, food);
+  const items = parseMeal(name);
+  const auto = items.reduce((a, x) => a + x.k, 0);
   const manual = Number(kcal.replace(/\D/g, ""));
-  const k = manual || (food && q ? Math.round(food.k * q) : 0);
-  const matches = food ? [] : searchFoods(name);
+  const unknown = items.filter((x) => !x.ok);
+  const last = items[items.length - 1];
+  const matches = last && !last.exact ? searchFoods(last.text.split(/\s+/).filter((w) => !last.pre.split(" ").includes(w)).join(" ")) : [];
   const list = v.food ?? [];
   // Distinct foods from the latest days, for one-tap re-adding.
   const recent = Object.keys(days).sort().reverse().flatMap((d) => [...(days[d].food ?? [])].reverse())
     .filter((x, i, a) => a.findIndex((y) => y.n === x.n && y.q === x.q) === i).slice(0, 8);
 
-  const push = (e: Eat) => update((d) => ({ ...d, food: [...(d.food ?? []), e] }));
+  const push = (...e: Eat[]) => update((d) => ({ ...d, food: [...(d.food ?? []), ...e] }));
+  const qtyLabel = (x: Item) => !x.food ? "" : x.grams ? `${x.grams.toLocaleString("vi-VN")} g` : x.qty === 1 ? x.food.u : `${x.qty.toLocaleString("vi-VN", { maximumFractionDigits: 2 })} × ${x.food.u}`;
+  // Swap the last typed food for a picked suggestion, keeping its quantity ("2 trung" -> "2 Trứng gà luộc").
+  const pick = (n: string) => { const parts = name.split(SEP); parts[parts.length - 1] = `${last?.pre ? last.pre + " " : ""}${n}`; setName(parts.join("")); setHint(""); };
+
   function add(e: FormEvent) {
     e.preventDefault();
-    if (!name.trim()) return;
-    if (!q) { setHint(food?.g ? "Số lượng chưa đúng. Ví dụ: 1, 1,5 hoặc 120g" : "Số lượng chưa đúng. Ví dụ: 1 hoặc 1,5"); return; }
-    if (!k) { setHint("Món này chưa có trong danh sách, hãy nhập số calo."); return; }
-    const grams = /g$/i.test(qty.trim());
-    const ql = food ? (grams ? qty.trim().replace(/\s*g$/i, " g") : q === 1 ? food.u : `${q.toLocaleString("vi-VN")} × ${food.u}`) : qty.trim();
-    push({ n: food?.n ?? name.trim(), q: ql, k, m: meal });
-    setName(""); setQty(""); setKcal(""); setHint("");
+    if (!items.length) return;
+    // A typed calorie number logs the whole line as one entry (for dishes the list does not know).
+    if (manual) push({ n: name.trim(), q: "", k: manual, m: meal });
+    else if (unknown.length) { setHint(`Chưa nhận ra: ${unknown.map((x) => `“${x.text}”`).join(", ")}. Chọn gợi ý hoặc nhập calo.`); return; }
+    else push(...items.map((x) => ({ n: x.food!.n, q: qtyLabel(x), k: x.k, m: meal })));
+    setName(""); setKcal(""); setHint("");
   }
 
   const total = eaten(v);
@@ -531,10 +534,9 @@ function FoodTab({ data, days, v, update }: { data: Data; days: Record<string, D
     <>
       <Head title="Ăn uống" note={`Mục tiêu ${goals.total.toLocaleString("vi-VN")} kcal`} />
       <form className={s.foodForm} onSubmit={add} autoComplete="off">
-        <input className={s.input} placeholder="Món ăn, vd: cơm trắng" aria-label="Món ăn" value={name} onChange={(e) => { setName(e.target.value); setHint(""); }} />
-        <input className={s.input} inputMode="decimal" placeholder="1" aria-label="Số lượng (phần hoặc gram, vd 120g)" value={qty} onChange={(e) => { setQty(e.target.value); setHint(""); }} />
+        <input className={s.input} placeholder="Gõ bữa ăn, vd: 2 trứng, 1 chén cơm, rau luộc" aria-label="Bữa ăn" value={name} onChange={(e) => { setName(e.target.value); setHint(""); }} />
         <div className={cx(s.amt, s.amtWide)}>
-          <input className={s.input} inputMode="numeric" placeholder={food && q ? String(Math.round(food.k * q)) : "0"} aria-label="Calo (để trống thì tự tính)" value={kcal} onChange={(e) => { setKcal(e.target.value); setHint(""); }} />
+          <input className={s.input} inputMode="numeric" placeholder={auto ? String(auto) : "tự tính"} aria-label="Calo (để trống thì tự tính)" value={kcal} onChange={(e) => { setKcal(e.target.value); setHint(""); }} />
           <span>kcal</span>
         </div>
         <div className={s.segCtl} role="radiogroup" aria-label="Bữa">
@@ -542,16 +544,25 @@ function FoodTab({ data, days, v, update }: { data: Data; days: Record<string, D
             <button type="button" key={m} role="radio" aria-checked={meal === i} className={cx(meal === i && s.segOn)} onClick={() => setMeal(i)}>{m}</button>
           ))}
         </div>
-        <button className={cx(s.btn, s.btnPrimary)} disabled={!name.trim()}><Icon d={I.plus} size={16} />Thêm</button>
+        <button className={cx(s.btn, s.btnPrimary)} disabled={!items.length}><Icon d={I.plus} size={16} />Thêm{manual || auto ? ` ${(manual || auto).toLocaleString("vi-VN")} kcal` : ""}</button>
       </form>
+      {items.length > 0 && !manual && (
+        <ul className={s.parsed} aria-live="polite">
+          {items.map((x, i) => (
+            <li key={i} className={x.ok ? undefined : s.parsedMiss}>
+              <span>{x.ok && x.food ? <>{x.exact ? "" : "≈ "}{x.food.n}<small>{qtyLabel(x)}</small></> : <>“{x.text}”<small>{x.food === undefined ? "chưa nhận ra" : "món này không tính theo gram"}</small></>}</span>
+              <b>{x.ok ? `${x.k} kcal` : "?"}</b>
+            </li>
+          ))}
+        </ul>
+      )}
       {matches.length > 0 && (
         <div className={s.chips} aria-label="Gợi ý món">
-          {matches.map((f) => <button type="button" key={f.n} onClick={() => setName(f.n)}>{f.n}<small>{f.u} · {f.k}</small></button>)}
+          {matches.map((f) => <button type="button" key={f.n} onClick={() => pick(f.n)}>{f.n}<small>{f.u} · {f.k}</small></button>)}
         </div>
       )}
       <p className={s.hint}>
-        {hint || (food ? `${food.u} = ${food.k} kcal${q && q !== 1 ? ` · ${q.toLocaleString("vi-VN", { maximumFractionDigits: 2 })} phần` : ""} → ${k} kcal${food.g ? " · gõ 120g để tính theo gram" : ""}`
-          : name.trim() ? "Không có trong danh sách: nhập calo bằng tay." : "Gõ tên món (không dấu cũng được). Calo là ước tính trung bình.")}
+        {hint || (manual ? "Sẽ ghi cả dòng thành 1 món với số calo bạn nhập." : items.length ? "≈ là món gần đúng nhất. Sai món thì bấm gợi ý bên dưới, hoặc nhập calo." : "Gõ tự nhiên, không dấu cũng được: 2 trung, 1 chen com, 150g uc ga, tra sua. Calo là ước tính trung bình.")}
       </p>
       {recent.length > 0 && (
         <div className={s.chips} aria-label="Thêm nhanh món gần đây">
