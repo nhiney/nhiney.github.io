@@ -23,7 +23,7 @@ import { PostHogProvider } from "@/components/posthog/PostHogProvider";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin", "latin-ext", "vietnamese"],
   variable: "--font-inter",
   display: "swap",
   preload: true,
@@ -176,8 +176,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F8F9FC" },
-    { media: "(prefers-color-scheme: dark)",  color: "#0D121C" },
+    { media: "(prefers-color-scheme: light)", color: "#FAF9F7" },
+    { media: "(prefers-color-scheme: dark)",  color: "#080808" },
   ],
 };
 
@@ -256,9 +256,9 @@ export const metadata: Metadata = {
 const themeScript = `
   (function() {
     try {
+      // Dark-first site; a theme the visitor picked still wins.
       var theme = localStorage.getItem('theme');
-      var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-      if (theme !== 'light' && theme !== 'dark') theme = supportDarkMode ? 'dark' : 'light';
+      if (theme !== 'light' && theme !== 'dark') theme = 'dark';
       document.documentElement.classList.toggle('dark', theme === 'dark');
       document.documentElement.style.colorScheme = theme;
     } catch (e) {}

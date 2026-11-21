@@ -54,10 +54,10 @@
 
 @layer base {
   :root {
-    /* Light mode — a softly tinted canvas with indigo, cyan and violet accents.
-       The off-white base cuts glare while keeping cards and paper clearly layered. */
+    /* Light mode — the dark theme's twin: a warm paper-white canvas, ink text,
+       the same violet accent (a touch deeper for contrast) and rare amber. */
     color-scheme: light;
-    --background: 220 38% 98%;              /* #F8F9FC — cool pearl canvas */
+    --background: 40 14% 98%;               /* #FAF9F7 — paper white */
     /* Knowledge Tree palette */
     --kt-trunk:  hsl(22 55% 28%);
     --kt-branch: hsl(22 48% 24%);
@@ -73,24 +73,24 @@
     --kt-fruit:  hsl(0 84% 56%);
     --kt-fruit-border: hsl(0 80% 45%);
     --kt-root:   hsl(22 45% 22%);
-    --foreground: 222 42% 17%;              /* #19243E — deep indigo ink */
-    --card: 0 0% 100%;                      /* #FFFFFF — white card, lifted by shadow */
-    --card-foreground: 222 42% 17%;
+    --foreground: 240 12% 9%;               /* #14141A — ink */
+    --card: 0 0% 100%;                      /* #FFFFFF — white card */
+    --card-foreground: 240 12% 9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 42% 17%;
-    --primary: 230 76% 59%;                 /* #4761E6 — signature indigo */
-    --primary-foreground: 0 0% 100%;       /* white on blue */
-    --secondary: 225 60% 96%;               /* #EFF2FB — indigo mist panel */
-    --secondary-foreground: 222 36% 24%;
-    --muted: 210 38% 95%;                   /* #EEF3F8 — true muted surface */
-    --muted-foreground: 219 22% 39%;        /* #4E5D79 — readable slate */
-    --accent: 187 48% 94%;                  /* #E8F5F7 — soft cyan surface */
-    --accent-foreground: 187 62% 29%;       /* #1C6D78 — deep teal ink */
+    --popover-foreground: 240 12% 9%;
+    --primary: 256 76% 57%;                 /* #6A40E6 — violet, deep enough for white text */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 95%;               /* #F1F1F4 — quiet panel */
+    --secondary-foreground: 240 10% 16%;
+    --muted: 240 8% 95%;                    /* #F1F1F3 — muted surface */
+    --muted-foreground: 240 5% 38%;         /* #5E5E66 — readable secondary */
+    --accent: 256 70% 96%;                  /* #F2EEFE — violet mist surface */
+    --accent-foreground: 30 85% 34%;        /* #A15A0D — amber ink */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 218 35% 88%;                  /* #D6DEEB — visible quiet boundary */
-    --input: 214 23% 58%;                   /* strong interactive boundary */
-    --ring: 230 76% 59%;
+    --border: 240 6% 88%;                   /* #DEDEE3 — quiet hairline */
+    --input: 240 5% 64%;                    /* interactive boundary */
+    --ring: 256 76% 57%;
     --radius: 0.75rem;
 
     /* ── Paper / hand-drawn design tokens — bright, teal accent ── */
@@ -104,10 +104,10 @@
   }
 
   .dark {
-    /* Dark mode — deep ink-blue rather than flat black. Raised navy surfaces
-       and luminous indigo/cyan accents keep the cosmic scene legible. */
+    /* Dark mode — the homepage's "constellation on black velvet": near-black
+       canvas, neutral graphite surfaces, one violet accent and rare amber. */
     color-scheme: dark;
-    --background: 222 35% 8%;          /* #0D121C — midnight canvas */
+    --background: 0 0% 3%;             /* #080808 — black velvet */
     /* Knowledge Tree palette — dark mode */
     --kt-trunk:  hsl(22 40% 18%);
     --kt-branch: hsl(22 36% 15%);
@@ -123,24 +123,24 @@
     --kt-fruit:  hsl(0 75% 55%);
     --kt-fruit-border: hsl(0 80% 65%);
     --kt-root:   hsl(22 32% 12%);
-    --foreground: 216 25% 92%;         /* #E6EAF0 — soft moonlight */
-    --card: 221 30% 12%;               /* #151B28 — raised navy card */
-    --card-foreground: 216 25% 92%;
-    --popover: 222 32% 10%;            /* #111622 */
-    --popover-foreground: 216 25% 92%;
-    --primary: 227 92% 75%;            /* #859EFA — luminous indigo */
-    --primary-foreground: 224 45% 13%; /* dark ink on the bright accent */
-    --secondary: 221 28% 16%;          /* #1D2534 — lifted panel */
-    --secondary-foreground: 216 22% 90%;
-    --muted: 213 22% 16%;              /* #202832 — true muted surface */
-    --muted-foreground: 215 18% 74%;   /* #B1BBC9 — readable secondary */
-    --accent: 190 35% 18%;             /* #1E393E — deep cyan surface */
-    --accent-foreground: 185 62% 72%;  /* #8BDCE4 — luminous cyan */
+    --foreground: 0 0% 96%;            /* #F5F5F5 — bone white */
+    --card: 240 6% 7%;                 /* #111113 — graphite card */
+    --card-foreground: 0 0% 96%;
+    --popover: 240 6% 8%;              /* #131315 */
+    --popover-foreground: 0 0% 96%;
+    --primary: 256 100% 66%;           /* #8052FF — electric iris */
+    --primary-foreground: 0 0% 100%;   /* white on violet */
+    --secondary: 240 5% 11%;           /* #1B1B1E — lifted panel */
+    --secondary-foreground: 0 0% 92%;
+    --muted: 240 5% 11%;               /* #1B1B1E — muted surface */
+    --muted-foreground: 0 0% 66%;      /* #A8A8A8 — readable secondary */
+    --accent: 256 45% 14%;             /* #1D1433 — deep violet surface */
+    --accent-foreground: 40 100% 62%;  /* #FFBA3D — saffron spark */
     --destructive: 0 65% 56%;
     --destructive-foreground: 0 45% 7%;
-    --border: 217 24% 24%;              /* #2F3A4C — visible hairline */
-    --input: 212 19% 40%;               /* #53657A — interactive boundary */
-    --ring: 227 92% 75%;
+    --border: 240 5% 16%;              /* #27272A — quiet hairline */
+    --input: 240 5% 30%;               /* #4A4A50 — interactive boundary */
+    --ring: 256 100% 70%;
 
     /* ── Paper / hand-drawn design tokens — dark, teal accent ── */
     --paper-cream:  224 28% 10%;   /* deep ink sheet             */
@@ -423,37 +423,37 @@
    The KLCN thesis deck route is excluded by RouteTextPalette so its slide
    typography and color system remain unchanged. */
 body.site-text-palette {
-  --foreground: 222 42% 17%;
-  --card-foreground: 222 42% 17%;
-  --popover-foreground: 222 42% 17%;
-  --primary: 230 76% 59%;
-  --secondary-foreground: 222 36% 24%;
-  --muted-foreground: 219 22% 39%;
-  --accent-foreground: 187 62% 29%;
+  --foreground: 240 12% 9%;
+  --card-foreground: 240 12% 9%;
+  --popover-foreground: 240 12% 9%;
+  --primary: 256 76% 57%;
+  --secondary-foreground: 240 10% 16%;
+  --muted-foreground: 240 5% 38%;
+  --accent-foreground: 30 85% 34%;
 
-  --site-heading: 222 46% 15%;
-  --site-body: 219 22% 39%;
-  --site-soft: 219 20% 43%;
-  --site-accent: 230 76% 59%;
-  --site-accent-2: 187 68% 38%;
-  --site-accent-3: 267 63% 58%;
+  --site-heading: 240 14% 8%;
+  --site-body: 240 5% 34%;
+  --site-soft: 240 4% 42%;
+  --site-accent: 256 76% 57%;
+  --site-accent-2: 30 85% 36%;
+  --site-accent-3: 190 80% 30%;
 }
 
 .dark body.site-text-palette {
-  --foreground: 216 25% 92%;
-  --card-foreground: 216 25% 92%;
-  --popover-foreground: 216 25% 92%;
-  --primary: 227 92% 75%;
-  --secondary-foreground: 216 22% 90%;
-  --muted-foreground: 215 18% 74%;
-  --accent-foreground: 185 62% 72%;
+  --foreground: 0 0% 96%;
+  --card-foreground: 0 0% 96%;
+  --popover-foreground: 0 0% 96%;
+  --primary: 256 100% 66%;
+  --secondary-foreground: 0 0% 92%;
+  --muted-foreground: 0 0% 66%;
+  --accent-foreground: 40 100% 62%;
 
-  --site-heading: 216 30% 95%;
-  --site-body: 215 18% 74%;
-  --site-soft: 215 16% 70%;
-  --site-accent: 227 92% 75%;
-  --site-accent-2: 185 62% 72%;
-  --site-accent-3: 267 86% 76%;
+  --site-heading: 0 0% 98%;
+  --site-body: 0 0% 72%;
+  --site-soft: 0 0% 62%;
+  --site-accent: 256 100% 74%;
+  --site-accent-2: 40 100% 62%;
+  --site-accent-3: 190 85% 65%;
 }
 
 .site-heading {
@@ -1605,9 +1605,9 @@ body.site-text-palette .text-gradient {
   border-radius: 0 2px 2px 0;
   background: linear-gradient(
     90deg,
-    hsl(285 70% 60% / 0.15),
-    hsl(210 80% 58% / 0.35),
-    hsl(160 70% 50% / 0.55)
+    hsl(244 80% 62% / 0.12),
+    hsl(256 85% 64% / 0.4),
+    hsl(270 85% 66% / 0.65)
   );
 }
 

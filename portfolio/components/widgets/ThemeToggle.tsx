@@ -34,7 +34,7 @@ function getInitialTheme(): "light" | "dark" {
   } catch {
     /* System preference remains a safe fallback when storage is unavailable. */
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return "dark"; // dark-first site; matches public/theme-strategy.js
 }
 
 export function ThemeToggle({ className, showLabel = false, labels }: ThemeToggleProps) {

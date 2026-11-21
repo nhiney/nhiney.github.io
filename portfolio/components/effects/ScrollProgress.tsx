@@ -18,7 +18,7 @@ const PERIOD = 0.8; // seconds per crawl step
  * Locomotion is the classic inchworm gait, driven per-frame: the body bunches
  * up into a hump (tail catching up to the anchored head) then extends flat
  * again, stepping forward in rhythm. It steps livelier while scrolling and
- * keeps a gentle idle bunching when still. Segments cycle through a rainbow.
+ * keeps a gentle idle bunching when still. Segments shimmer indigo → violet.
  */
 export function ScrollProgress() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -82,13 +82,14 @@ export function ScrollProgress() {
         // clips above the viewport edge.
         const y = ARCH * archScale * c * Math.sin(Math.PI * s);
         seg.style.transform = `translate(${x}px, ${y}px)`;
-        const hue = (s * 300 + hueDrift) % 360;
-        seg.style.background = `hsl(${hue} 85% 56%)`;
+        // Indigo → violet, the site accent, with a slow shimmer (was a rainbow).
+        const hue = 244 + s * 30 + Math.sin(hueDrift * 0.02) * 6;
+        seg.style.background = `hsl(${hue} 82% 62%)`;
       });
     };
 
     if (reduce) {
-      layout(0, 0, 0); // flat, static rainbow
+      layout(0, 0, 0); // flat, static
       return () => {
         window.removeEventListener("scroll", placeOnScroll);
         window.removeEventListener("resize", placeOnScroll);
