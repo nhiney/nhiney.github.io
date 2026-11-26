@@ -3512,7 +3512,6 @@ function answerHtml(it, terms) {
 }
 function metaHtml(it) {
   return '<span class="who">' + esc(it.ask === "Chung" ? "Câu chung" : it.ask + " hỏi") + "</span>" +
-    "<span>" + esc(it.who) + " trả lời</span>" +
     (it.k.includes("hot") ? '<span class="tag hot">Hay hỏi</span>' : "") +
     (it.k.includes("trap") ? '<span class="tag trp">Có bẫy</span>' : "") +
     (done[it.id] ? '<span class="tag dn">Đã thuộc</span>' : "");
